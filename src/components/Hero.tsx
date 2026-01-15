@@ -9,7 +9,7 @@ const Hero = () => {
           <img 
             src={logo} 
             alt="Intake" 
-            className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 logo-glow mb-10 animate-fade-in"
+            className="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 logo-glow mb-10 animate-fade-in"
             style={{ animationDelay: "0.1s" }}
           />
           
