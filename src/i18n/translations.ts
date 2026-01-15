@@ -54,7 +54,7 @@ export const translations = {
     
     // Hero
     heroTitle: "Kalorien zählen.",
-    heroTitleHighlight: "Vereinfacht.",
+    heroTitleHighlight: "Leicht gemacht.",
     heroDescription: "Keine Abonnements. Keine Gamification. Kein Coaching. Einfach ein leistungsstarker Kalorientracker, der deine Privatsphäre und dein Portemonnaie respektiert.",
     downloadOn: "Laden im",
     appStore: "App Store",
