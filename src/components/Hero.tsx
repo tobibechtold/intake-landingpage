@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section className="hero-gradient min-h-screen flex items-center justify-center pt-16">
       <div className="container py-20">
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <img 
             src={logo} 
             alt="Intake" 
