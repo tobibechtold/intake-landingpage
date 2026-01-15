@@ -1,5 +1,5 @@
-import { Apple } from "lucide-react";
 import logo from "@/assets/logo-hero.png";
+import appStoreBadge from "@/assets/app-store-badge.svg";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const Hero = () => {
@@ -35,14 +35,14 @@ const Hero = () => {
             href="https://apps.apple.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="btn-appstore animate-fade-in opacity-0"
+            className="animate-fade-in opacity-0 hover:opacity-80 transition-opacity"
             style={{ animationDelay: "0.4s" }}
           >
-            <Apple className="w-5 h-5" />
-            <div className="flex flex-col items-start">
-              <span className="text-xs opacity-80">{t("downloadOn")}</span>
-              <span className="text-base font-semibold">{t("appStore")}</span>
-            </div>
+            <img 
+              src={appStoreBadge} 
+              alt="Download on the App Store" 
+              className="h-12 md:h-14"
+            />
           </a>
           
           <p 
