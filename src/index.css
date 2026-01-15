@@ -102,7 +102,7 @@
   
   /* App Store button styling */
   .btn-appstore {
-    @apply inline-flex items-center gap-3 px-6 py-3 bg-foreground text-background rounded-xl font-semibold transition-all duration-300;
+    @apply inline-flex items-center gap-3 px-8 py-3 bg-foreground text-background rounded-xl font-semibold transition-all duration-300 whitespace-nowrap;
   }
   
   .btn-appstore:hover {
