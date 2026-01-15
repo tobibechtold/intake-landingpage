@@ -1,15 +1,18 @@
 import { Apple } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const CTA = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="py-24">
       <div className="container">
         <div className="glass-card p-12 md:p-16 text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Ready to start your journey?
+            {t("ctaTitle")}
           </h2>
           <p className="text-muted-foreground text-lg mb-8 max-w-lg mx-auto">
-            Join thousands of users who track their calories the simple way. One purchase, lifetime access.
+            {t("ctaDescription")}
           </p>
           
           <a 
@@ -20,8 +23,8 @@ const CTA = () => {
           >
             <Apple className="w-5 h-5" />
             <div className="flex flex-col items-start">
-              <span className="text-xs opacity-80">Download on the</span>
-              <span className="text-base font-semibold">App Store</span>
+              <span className="text-xs opacity-80">{t("downloadOn")}</span>
+              <span className="text-base font-semibold">{t("appStore")}</span>
             </div>
           </a>
         </div>

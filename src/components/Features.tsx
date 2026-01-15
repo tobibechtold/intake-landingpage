@@ -1,56 +1,60 @@
 import { Shield, Barcode, Heart, Database, Cloud, Target } from "lucide-react";
-
-const features = [
-  {
-    icon: Shield,
-    title: "Privacy First",
-    description: "All data stays on your device. No account required, no data uploads to servers.",
-  },
-  {
-    icon: Target,
-    title: "Reach Your Goals",
-    description: "Set your goal to lose, maintain, or gain weight. Intake calculates your daily calorie limit.",
-  },
-  {
-    icon: Database,
-    title: "3+ Million Foods",
-    description: "Huge database of food items. Search, scan barcodes, or create your own entries.",
-  },
-  {
-    icon: Barcode,
-    title: "Barcode Scanner",
-    description: "Quickly log foods by scanning barcodes. Fast and accurate tracking.",
-  },
-  {
-    icon: Heart,
-    title: "Apple Health Sync",
-    description: "Seamlessly sync your data with Apple Health for a complete health overview.",
-  },
-  {
-    icon: Cloud,
-    title: "iCloud Sync",
-    description: "Your data syncs across all your devices via iCloud. Always up to date.",
-  },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
+import { TranslationKey } from "@/i18n/translations";
 
 const Features = () => {
+  const { t } = useLanguage();
+  
+  const features = [
+    {
+      icon: Shield,
+      titleKey: "privacyFirst" as TranslationKey,
+      descKey: "privacyFirstDesc" as TranslationKey,
+    },
+    {
+      icon: Target,
+      titleKey: "reachGoals" as TranslationKey,
+      descKey: "reachGoalsDesc" as TranslationKey,
+    },
+    {
+      icon: Database,
+      titleKey: "millionFoods" as TranslationKey,
+      descKey: "millionFoodsDesc" as TranslationKey,
+    },
+    {
+      icon: Barcode,
+      titleKey: "barcodeScanner" as TranslationKey,
+      descKey: "barcodeScannerDesc" as TranslationKey,
+    },
+    {
+      icon: Heart,
+      titleKey: "appleHealthSync" as TranslationKey,
+      descKey: "appleHealthSyncDesc" as TranslationKey,
+    },
+    {
+      icon: Cloud,
+      titleKey: "icloudSync" as TranslationKey,
+      descKey: "icloudSyncDesc" as TranslationKey,
+    },
+  ];
+
   return (
     <section className="section-gradient py-24">
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Everything you need.{" "}
-            <span className="gradient-text">Nothing you don't.</span>
+            {t("featuresTitle")}{" "}
+            <span className="gradient-text">{t("featuresTitleHighlight")}</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            A focused calorie counter that helps you reach your goals without the bloat.
+            {t("featuresSubtitle")}
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <div 
-              key={feature.title} 
+              key={feature.titleKey} 
               className="feature-card animate-fade-in opacity-0"
               style={{ animationDelay: `${0.1 * (index + 1)}s` }}
             >
@@ -58,10 +62,10 @@ const Features = () => {
                 <feature.icon className="w-6 h-6 text-primary" />
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-2">
-                {feature.title}
+                {t(feature.titleKey)}
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                {feature.description}
+                {t(feature.descKey)}
               </p>
             </div>
           ))}

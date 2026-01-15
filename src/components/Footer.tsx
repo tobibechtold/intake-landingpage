@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+  
   return (
     <footer className="border-t border-border/50 bg-card/30">
       <div className="container py-12">
@@ -13,27 +16,27 @@ const Footer = () => {
           
           <div className="flex flex-col md:flex-row gap-6 md:gap-12">
             <div className="flex flex-col gap-3">
-              <span className="text-sm font-semibold text-foreground">Legal</span>
+              <span className="text-sm font-semibold text-foreground">{t("legal")}</span>
               <Link to="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Privacy Policy
+                {t("privacyPolicy")}
               </Link>
               <Link to="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Terms of Use
+                {t("termsOfUse")}
               </Link>
               <Link to="/datenschutz" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Datenschutzerklärung
+                {t("datenschutz")}
               </Link>
             </div>
             
             <div className="flex flex-col gap-3">
-              <span className="text-sm font-semibold text-foreground">App</span>
+              <span className="text-sm font-semibold text-foreground">{t("app")}</span>
               <a 
                 href="https://apps.apple.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
-                App Store
+                {t("appStore")}
               </a>
             </div>
           </div>
@@ -41,7 +44,7 @@ const Footer = () => {
         
         <div className="mt-12 pt-6 border-t border-border/50">
           <p className="text-xs text-muted-foreground text-center">
-            © {new Date().getFullYear()} Intake. All rights reserved.
+            © {new Date().getFullYear()} Intake. {t("allRightsReserved")}
           </p>
         </div>
       </div>
