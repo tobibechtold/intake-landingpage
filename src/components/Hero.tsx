@@ -1,5 +1,5 @@
 import { Apple } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-light.png";
 
 const Hero = () => {
   return (
