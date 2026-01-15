@@ -1,7 +1,10 @@
 import { Apple } from "lucide-react";
 import logo from "@/assets/logo-hero.png";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="hero-gradient min-h-screen flex items-center justify-center pt-16">
       <div className="container py-20">
@@ -17,15 +20,15 @@ const Hero = () => {
             className="text-4xl md:text-6xl font-bold text-foreground mb-4 text-balance animate-fade-in opacity-0"
             style={{ animationDelay: "0.2s" }}
           >
-            Calorie counting.{" "}
-            <span className="gradient-text">Simplified.</span>
+            {t("heroTitle")}{" "}
+            <span className="gradient-text">{t("heroTitleHighlight")}</span>
           </h1>
           
           <p 
             className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl text-balance animate-fade-in opacity-0"
             style={{ animationDelay: "0.3s" }}
           >
-            No subscriptions. No gamification. No coaching. Just a powerful calorie tracker that respects your privacy and your wallet.
+            {t("heroDescription")}
           </p>
           
           <a 
@@ -37,8 +40,8 @@ const Hero = () => {
           >
             <Apple className="w-5 h-5" />
             <div className="flex flex-col items-start">
-              <span className="text-xs opacity-80">Download on the</span>
-              <span className="text-base font-semibold">App Store</span>
+              <span className="text-xs opacity-80">{t("downloadOn")}</span>
+              <span className="text-base font-semibold">{t("appStore")}</span>
             </div>
           </a>
           
@@ -46,7 +49,7 @@ const Hero = () => {
             className="mt-4 text-sm text-primary font-medium animate-fade-in opacity-0"
             style={{ animationDelay: "0.5s" }}
           >
-            One-time purchase • iOS only
+            {t("oneTimePurchase")}
           </p>
         </div>
       </div>
