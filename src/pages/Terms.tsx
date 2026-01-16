@@ -127,7 +127,8 @@ const Terms = () => {
         <section className="space-y-3">
           <h2 className="text-xl font-semibold text-foreground">1. Provider</h2>
           <p>
-            Provided by: Tobias Bechtold
+            Provided by: <br />
+            Tobias Bechtold
             <br />
             In den Falzäckern 14
             <br />
