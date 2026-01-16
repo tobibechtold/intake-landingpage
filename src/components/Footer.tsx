@@ -23,9 +23,6 @@ const Footer = () => {
               <Link to="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 {t("termsOfUse")}
               </Link>
-              <Link to="/datenschutz" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                {t("datenschutz")}
-              </Link>
             </div>
             
             <div className="flex flex-col gap-3">

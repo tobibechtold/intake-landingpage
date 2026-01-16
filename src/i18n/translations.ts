@@ -44,7 +44,6 @@ export const translations = {
     legal: "Legal",
     privacyPolicy: "Privacy Policy",
     termsOfUse: "Terms of Use",
-    datenschutz: "Datenschutzerklärung",
     app: "App",
     allRightsReserved: "All rights reserved.",
   },
@@ -89,9 +88,8 @@ export const translations = {
     
     // Footer
     legal: "Rechtliches",
-    privacyPolicy: "Datenschutzrichtlinie",
+    privacyPolicy: "Datenschutz",
     termsOfUse: "Nutzungsbedingungen",
-    datenschutz: "Datenschutzerklärung",
     app: "App",
     allRightsReserved: "Alle Rechte vorbehalten.",
   },

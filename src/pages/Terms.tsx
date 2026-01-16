@@ -1,72 +1,173 @@
 import LegalLayout from "@/components/LegalLayout";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const Terms = () => {
+  const { language } = useLanguage();
+
+  if (language === "de") {
+    return (
+      <LegalLayout title="Nutzungsbedingungen">
+        <div className="space-y-6 text-muted-foreground">
+          <p className="text-foreground font-medium">Stand: Januar 2026</p>
+
+          <section className="space-y-3">
+            <h2 className="text-xl font-semibold text-foreground">1. Anbieter</h2>
+            <p>
+              Intake wird bereitgestellt von:<br />
+              Tobias Bechtold<br />
+              In den Falzäckern 14<br />
+              76307 Karlsbad<br />
+              <a href="mailto:support@tobibechtold.dev" className="text-primary hover:underline">support@tobibechtold.dev</a>
+            </p>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="text-xl font-semibold text-foreground">2. Zweck der App</h2>
+            <p>
+              Intake ist eine App zum Protokollieren von Lebensmitteln, Mahlzeiten und geschätzten Nährwerten (z.B. Kalorien und Makronährstoffe). Die App dient ausschließlich der persönlichen Orientierung.
+            </p>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="text-xl font-semibold text-foreground">3. Kein medizinischer Rat / keine Garantie</h2>
+            <p>
+              Intake ist kein Medizinprodukt und ersetzt keine ärztliche oder ernährungsmedizinische Beratung. Alle Berechnungen, Zielwerte und Schätzungen (z.B. Grundumsatz, Kalorienziel, Defizit) können ungenau sein und sind nicht als verbindliche Empfehlung zu verstehen. Ergebnisse können variieren. Es wird keine Garantie für Gewichtsverlust, Gewichtszunahme oder andere Ergebnisse übernommen.
+            </p>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="text-xl font-semibold text-foreground">4. Apple Health</h2>
+            <p>
+              Wenn du Apple Health verbindest, kann Intake – nur mit deiner Zustimmung – ausgewählte Gesundheitsdaten lesen oder schreiben (z.B. Aktivitätskalorien). Du kannst diese Berechtigungen jederzeit in iOS unter Einstellungen → Datenschutz & Sicherheit → Health ändern.
+            </p>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="text-xl font-semibold text-foreground">5. iCloud Synchronisation (optional)</h2>
+            <p>
+              Wenn du die iCloud-Synchronisation aktivierst, können von dir eingegebene Daten (z.B. Mahlzeiten, Ziele, Verläufe) in deiner iCloud gespeichert und zwischen deinen Geräten synchronisiert werden. Die Nutzung ist optional.
+            </p>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="text-xl font-semibold text-foreground">6. Inhalte und Datenbankquellen</h2>
+            <p>
+              Intake kann Daten aus externen Quellen verwenden (z.B. Open Food Facts oder ähnliche Datenbanken). Für Richtigkeit, Vollständigkeit und Aktualität dieser Daten übernimmt der Anbieter keine Gewähr.
+            </p>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="text-xl font-semibold text-foreground">7. Verantwortlichkeiten der Nutzer:innen</h2>
+            <p>
+              Du bist dafür verantwortlich, die App nur im Rahmen der geltenden Gesetze und dieser Bedingungen zu nutzen. Wenn du gesundheitliche Einschränkungen hast oder zu Essstörungen neigst, nutze die App bitte nur nach Rücksprache mit medizinischem Fachpersonal.
+            </p>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="text-xl font-semibold text-foreground">8. Verfügbarkeit</h2>
+            <p>
+              Der Anbieter bemüht sich um eine hohe Verfügbarkeit, kann jedoch keine unterbrechungsfreie Nutzung garantieren. Wartungen oder technische Störungen können auftreten.
+            </p>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="text-xl font-semibold text-foreground">9. Haftung</h2>
+            <p>
+              Soweit gesetzlich zulässig, haftet der Anbieter nicht für Schäden, die aus der Nutzung oder Nichtverfügbarkeit der App entstehen, insbesondere nicht für mittelbare Schäden, entgangenen Gewinn oder gesundheitliche Folgen.
+            </p>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="text-xl font-semibold text-foreground">10. Änderungen</h2>
+            <p>
+              Der Anbieter kann diese Nutzungsbedingungen anpassen. Wesentliche Änderungen werden in der App oder über den App Store angezeigt.
+            </p>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="text-xl font-semibold text-foreground">11. Kontakt</h2>
+            <p>
+              Bei Fragen: <a href="mailto:support@tobibechtold.dev" className="text-primary hover:underline">support@tobibechtold.dev</a>
+            </p>
+          </section>
+        </div>
+      </LegalLayout>
+    );
+  }
+
   return (
     <LegalLayout title="Terms of Use">
       <div className="space-y-6 text-muted-foreground">
-        <p className="text-foreground font-medium">Last updated: January 2025</p>
-        
+        <p className="text-foreground font-medium">Last updated: January 2026</p>
+
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-foreground">Agreement to Terms</h2>
+          <h2 className="text-xl font-semibold text-foreground">1. Provider</h2>
           <p>
-            By downloading and using Intake, you agree to be bound by these Terms of Use. If you do not agree 
-            to these terms, please do not use the app.
+            Provided by: Tobias Bechtold<br />
+            Contact: <a href="mailto:support@tobibechtold.dev" className="text-primary hover:underline">support@tobibechtold.dev</a>
           </p>
         </section>
-        
+
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-foreground">License</h2>
+          <h2 className="text-xl font-semibold text-foreground">2. Purpose</h2>
           <p>
-            Intake grants you a limited, non-exclusive, non-transferable, revocable license to use the app 
-            for your personal, non-commercial purposes. This license does not include the right to modify, 
-            distribute, or create derivative works of the app.
+            Intake is a food and nutrition logging app providing estimated calories and macro information for personal reference only.
           </p>
         </section>
-        
+
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-foreground">One-Time Purchase</h2>
+          <h2 className="text-xl font-semibold text-foreground">3. No Medical Advice / No Guaranteed Results</h2>
           <p>
-            Intake is available as a one-time purchase through the App Store. There are no subscription fees 
-            or recurring charges. All purchases are processed through Apple and are subject to Apple's terms and conditions.
+            Intake is not a medical device and does not provide medical advice. Any calculations or targets (e.g. calorie goals, deficit suggestions) are estimates and may be inaccurate. Results may vary. No guarantee of weight loss, weight gain, or any outcome is provided.
           </p>
         </section>
-        
+
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-foreground">Disclaimer</h2>
+          <h2 className="text-xl font-semibold text-foreground">4. Apple Health</h2>
           <p>
-            Intake is intended for informational purposes only and is not a substitute for professional medical advice, 
-            diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with 
-            any questions you may have regarding a medical condition or dietary changes.
-          </p>
-          <p>
-            The nutritional information provided in the app comes from third-party sources and may not be 100% accurate. 
-            Users should verify nutritional information independently when accuracy is critical.
+            If you connect Apple Health, Intake may read (and/or write) selected Health data only with your permission. You can change permissions at any time in iOS settings.
           </p>
         </section>
-        
+
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-foreground">Limitation of Liability</h2>
+          <h2 className="text-xl font-semibold text-foreground">5. iCloud Sync (optional)</h2>
           <p>
-            To the fullest extent permitted by law, Intake shall not be liable for any indirect, incidental, 
-            special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred 
-            directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting 
-            from your use of the app.
+            If enabled, your app data may be stored in iCloud and synced across your devices. This feature is optional.
           </p>
         </section>
-        
+
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-foreground">Changes to Terms</h2>
+          <h2 className="text-xl font-semibold text-foreground">6. External Databases</h2>
           <p>
-            We reserve the right to modify these terms at any time. We will notify users of any changes by 
-            updating the "Last updated" date of these Terms of Use. Your continued use of the app after any 
-            changes constitutes your acceptance of the new terms.
+            Intake may use external food databases. We do not guarantee the accuracy or completeness of third-party data.
           </p>
         </section>
-        
+
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-foreground">Contact</h2>
+          <h2 className="text-xl font-semibold text-foreground">7. Availability</h2>
           <p>
-            If you have any questions about these Terms of Use, please contact us through the App Store.
+            We aim for high availability but cannot guarantee uninterrupted service.
+          </p>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="text-xl font-semibold text-foreground">8. Liability</h2>
+          <p>
+            To the maximum extent permitted by law, we are not liable for damages resulting from your use or inability to use the app.
+          </p>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="text-xl font-semibold text-foreground">9. Changes</h2>
+          <p>
+            We may update these Terms from time to time.
+          </p>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="text-xl font-semibold text-foreground">10. Contact</h2>
+          <p>
+            Support: <a href="mailto:support@tobibechtold.dev" className="text-primary hover:underline">support@tobibechtold.dev</a>
           </p>
         </section>
       </div>
