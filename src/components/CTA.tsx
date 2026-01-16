@@ -1,5 +1,5 @@
-import { Apple } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import appStoreBadge from "@/assets/app-store-badge.svg";
 
 const CTA = () => {
   const { t } = useLanguage();
@@ -19,13 +19,13 @@ const CTA = () => {
             href="https://apps.apple.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="btn-appstore"
+            className="inline-block hover:opacity-80 transition-opacity"
           >
-            <Apple className="w-5 h-5" />
-            <div className="flex flex-col items-start">
-              <span className="text-xs opacity-80">{t("downloadOn")}</span>
-              <span className="text-base font-semibold">{t("appStore")}</span>
-            </div>
+            <img
+              src={appStoreBadge}
+              alt="Download on the App Store"
+              className="h-12 md:h-14"
+            />
           </a>
         </div>
       </div>
