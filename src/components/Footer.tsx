@@ -36,6 +36,26 @@ const Footer = () => {
                 {t("appStore")}
               </a>
             </div>
+            
+            <div className="flex flex-col gap-3">
+              <span className="text-sm font-semibold text-foreground">{t("social")}</span>
+              <a 
+                href="https://www.instagram.com/getintake.app/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                Instagram
+              </a>
+              <a 
+                href="https://www.threads.com/@getintake.app" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                Threads
+              </a>
+            </div>
           </div>
         </div>
         
