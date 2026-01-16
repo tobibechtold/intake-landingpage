@@ -45,6 +45,7 @@ export const translations = {
     privacyPolicy: "Privacy Policy",
     termsOfUse: "Terms of Use",
     app: "App",
+    social: "Social",
     allRightsReserved: "All rights reserved.",
   },
   de: {
@@ -91,6 +92,7 @@ export const translations = {
     privacyPolicy: "Datenschutz",
     termsOfUse: "Nutzungsbedingungen",
     app: "App",
+    social: "Social",
     allRightsReserved: "Alle Rechte vorbehalten.",
   },
 } as const;
