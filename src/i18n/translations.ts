@@ -13,6 +13,9 @@ export const translations = {
     appStore: "App Store",
     oneTimePurchase: "One-time purchase • iOS only",
     
+    // App Preview
+    appPreviewHeading: "See it in action",
+    
     // Features
     featuresTitle: "Everything you need.",
     featuresTitleHighlight: "Nothing you don't.",
@@ -59,6 +62,9 @@ export const translations = {
     downloadOn: "Laden im",
     appStore: "App Store",
     oneTimePurchase: "Einmalkauf • Nur iOS",
+    
+    // App Preview
+    appPreviewHeading: "Erlebe die App",
     
     // Features
     featuresTitle: "Alles was du brauchst.",
