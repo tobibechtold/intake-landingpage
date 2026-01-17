@@ -37,6 +37,9 @@ export const translations = {
     icloudSync: "iCloud Sync",
     icloudSyncDesc: "Your data syncs across all your devices via iCloud. Always up to date.",
 
+    // App Preview
+    appPreviewHeading: "See it in action",
+
     // CTA
     ctaTitle: "Ready to start your journey?",
     ctaDescription: "Join thousands of users who track their calories the simple way. One purchase, lifetime access.",
@@ -86,6 +89,9 @@ export const translations = {
 
     icloudSync: "iCloud Sync",
     icloudSyncDesc: "Deine Daten werden über iCloud auf all deinen Geräten synchronisiert. Immer aktuell.",
+
+    // App Preview
+    appPreviewHeading: "Erlebe die App",
 
     // CTA
     ctaTitle: "Bereit, deine Reise zu beginnen?",
