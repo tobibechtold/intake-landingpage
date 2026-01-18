@@ -1,5 +1,5 @@
 import { useLanguage } from "@/i18n/LanguageContext";
-import appPreviewGif from "@/assets/app-preview.gif";
+import PhoneFrame from "./PhoneFrame";
 
 const AppPreview = () => {
   const { t } = useLanguage();
@@ -12,11 +12,19 @@ const AppPreview = () => {
         </h2>
         
         <div className="flex justify-center animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          <img
-            src={appPreviewGif}
-            alt="Intake App Preview"
-            className="max-w-[90%] md:max-w-[500px] drop-shadow-2xl"
-          />
+          <div className="max-w-[280px] md:max-w-[320px]">
+            <PhoneFrame>
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+              >
+                <source src="/ScreenRecording_01-18-2026 21-34-04_1.mp4" type="video/mp4" />
+              </video>
+            </PhoneFrame>
+          </div>
         </div>
       </div>
     </section>
