@@ -21,7 +21,7 @@ const AppPreview = () => {
                 playsInline
                 className="w-full h-full object-cover"
               >
-                <source src="/ScreenRecording_01-18-2026 21-34-04_1.mp4" type="video/mp4" />
+                <source src="/app-demo.mp4" type="video/mp4" />
               </video>
             </PhoneFrame>
           </div>
