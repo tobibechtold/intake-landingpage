@@ -11,9 +11,9 @@ export const translations = {
     heroDescription:
       "No subscriptions. No gamification. No coaching. Just a powerful calorie tracker that respects your privacy and your wallet.",
     downloadOn: "Download on the",
-    appStore: "App Store",
+    appStore: "AppStore",
     oneTimePurchase: "One-time purchase • iOS only",
-    comingSoon: "Coming soon on the AppStore",
+    comingSoon: "Soon on the  App Store",
 
     // Features
     featuresTitle: "Everything you need.",
@@ -67,9 +67,9 @@ export const translations = {
     heroDescription:
       "Keine Abonnements. Keine Gamification. Kein Coaching. Einfach ein leistungsstarker Kalorientracker, der deine Privatsphäre und dein Portemonnaie respektiert.",
     downloadOn: "Laden im",
-    appStore: "App Store",
+    appStore: "AppStore",
     oneTimePurchase: "Einmalkauf • Nur iOS",
-    comingSoon: "Bald im AppStore verfügbar",
+    comingSoon: "Bald im  AppStore verfügbar",
 
     // Features
     featuresTitle: "Alles was du brauchst.",
