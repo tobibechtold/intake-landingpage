@@ -54,7 +54,7 @@ const ScreenshotGallery = () => {
                       alt={screenshot.alt}
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-auto rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                      className="w-full h-auto rounded-lg shadow-lg"
                     />
                   </div>
                 </CarouselItem>
