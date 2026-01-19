@@ -22,7 +22,7 @@ const ScreenshotGallery = () => {
   const { t, language } = useLanguage();
 
   const getScreenshotPath = (id: number, name: string) =>
-    `/screenshots/${language}-${id}-${name}.png`;
+    `/screenshots/${language}-${id}-${encodeURIComponent(name)}.png`;
 
   return (
     <section className="py-20 md:py-32">
@@ -43,7 +43,7 @@ const ScreenshotGallery = () => {
               {screenshots.map((screenshot) => (
                 <CarouselItem
                   key={screenshot.id}
-                  className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4"
+                  className="pl-2 md:pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
                 >
                   <div className="p-1">
                     <img
