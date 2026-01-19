@@ -1,13 +1,19 @@
 import { useLanguage } from "@/i18n/LanguageContext";
 import appStoreBadge from "@/assets/app-store-badge.svg";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const CTA = () => {
   const { t } = useLanguage();
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
   
   return (
-    <section className="py-24">
+    <section ref={ref} className="py-24">
       <div className="container">
-        <div className="glass-card p-12 md:p-16 text-center max-w-3xl mx-auto">
+        <div 
+          className={`glass-card p-12 md:p-16 text-center max-w-3xl mx-auto opacity-0 ${
+            isVisible ? 'animate-fade-scale' : ''
+          }`}
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             {t("ctaTitle")}
           </h2>

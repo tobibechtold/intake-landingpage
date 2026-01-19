@@ -12,12 +12,12 @@ const Hero = () => {
           <img 
             src={logo} 
             alt="Intake" 
-            className="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 logo-glow mb-10 animate-fade-in"
+            className="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 logo-glow mb-10 opacity-0 animate-fade-scale animate-float"
             style={{ animationDelay: "0.1s" }}
           />
           
           <h1 
-            className="text-4xl md:text-6xl font-bold text-foreground mb-4 text-balance animate-fade-in opacity-0"
+            className="text-4xl md:text-6xl font-bold text-foreground mb-4 text-balance opacity-0 animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
             {t("heroTitle")}{" "}
@@ -25,8 +25,8 @@ const Hero = () => {
           </h1>
           
           <p 
-            className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl text-balance animate-fade-in opacity-0"
-            style={{ animationDelay: "0.3s" }}
+            className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl text-balance opacity-0 animate-fade-up"
+            style={{ animationDelay: "0.35s" }}
           >
             {t("heroDescription")}
           </p>
@@ -35,8 +35,8 @@ const Hero = () => {
             href="https://apps.apple.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="animate-fade-in opacity-0 hover:opacity-80 transition-opacity"
-            style={{ animationDelay: "0.4s" }}
+            className="opacity-0 animate-fade-up hover:opacity-80 transition-opacity"
+            style={{ animationDelay: "0.5s" }}
           >
             <img 
               src={appStoreBadge} 
@@ -46,8 +46,8 @@ const Hero = () => {
           </a>
           
           <p 
-            className="mt-4 text-sm text-primary font-medium animate-fade-in opacity-0"
-            style={{ animationDelay: "0.5s" }}
+            className="mt-4 text-sm text-primary font-medium opacity-0 animate-fade-up"
+            style={{ animationDelay: "0.6s" }}
           >
             {t("oneTimePurchase")}
           </p>

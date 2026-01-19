@@ -1,9 +1,11 @@
 import { Shield, Barcode, Heart, Database, Cloud, Target } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { TranslationKey } from "@/i18n/translations";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Features = () => {
   const { t } = useLanguage();
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
   
   const features = [
     {
@@ -39,14 +41,23 @@ const Features = () => {
   ];
 
   return (
-    <section className="section-gradient py-24">
+    <section ref={ref} className="section-gradient py-24">
       <div className="container">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 
+            className={`text-3xl md:text-4xl font-bold text-foreground mb-4 opacity-0 ${
+              isVisible ? 'animate-fade-up' : ''
+            }`}
+          >
             {t("featuresTitle")}{" "}
             <span className="gradient-text">{t("featuresTitleHighlight")}</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+          <p 
+            className={`text-muted-foreground text-lg max-w-xl mx-auto opacity-0 ${
+              isVisible ? 'animate-fade-up' : ''
+            }`}
+            style={{ animationDelay: '0.1s' }}
+          >
             {t("featuresSubtitle")}
           </p>
         </div>
@@ -55,8 +66,8 @@ const Features = () => {
           {features.map((feature, index) => (
             <div 
               key={feature.titleKey} 
-              className="feature-card animate-fade-in opacity-0"
-              style={{ animationDelay: `${0.1 * (index + 1)}s` }}
+              className={`feature-card opacity-0 ${isVisible ? 'animate-fade-scale' : ''}`}
+              style={{ animationDelay: `${0.15 + 0.08 * index}s` }}
             >
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                 <feature.icon className="w-6 h-6 text-primary" />
