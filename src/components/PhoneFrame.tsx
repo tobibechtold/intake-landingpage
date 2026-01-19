@@ -16,7 +16,7 @@ const PhoneFrame = ({ children }: PhoneFrameProps) => {
           
           
           {/* Screen content */}
-          <div className="relative aspect-[9/19.5]">
+          <div className="relative aspect-[1320/2868]">
             {children}
           </div>
         </div>
