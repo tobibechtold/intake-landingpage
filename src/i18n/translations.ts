@@ -13,7 +13,7 @@ export const translations = {
     downloadOn: "Download on the",
     appStore: "App Store",
     oneTimePurchase: "One-time purchase • iOS only",
-    comingSoon: "Soon on the AppStore",
+    comingSoon: "Coming soon on the AppStore",
 
     // Features
     featuresTitle: "Everything you need.",
