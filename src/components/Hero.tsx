@@ -51,7 +51,7 @@ const Hero = () => {
           </a>
           */}
           <span 
-            className="text-lg md:text-xl font-medium text-muted-foreground opacity-0 animate-fade-up"
+            className="text-lg md:text-xl font-medium text-primary text-glow opacity-0 animate-fade-up"
             style={{ animationDelay: "0.5s" }}
           >
             {t("comingSoon")}
