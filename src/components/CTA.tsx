@@ -1,6 +1,7 @@
 import { useLanguage } from "@/i18n/LanguageContext";
 // import appStoreBadge from "@/assets/app-store-badge.svg"; // Uncomment when app is released
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import AppleLogo from "./AppleLogo";
 
 const CTA = () => {
   const { t } = useLanguage();
@@ -35,8 +36,8 @@ const CTA = () => {
             />
           </a>
           */}
-          <span className="text-lg font-medium text-muted-foreground">
-            {t("comingSoon")}
+          <span className="text-lg font-medium text-muted-foreground inline-flex items-center gap-1.5">
+            {t("comingSoon")} <AppleLogo className="w-5 h-5" /> {t("comingSoonSuffix")}
           </span>
         </div>
       </div>
