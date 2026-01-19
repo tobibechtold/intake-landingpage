@@ -35,6 +35,7 @@ const Footer = () => {
 
             <div className="flex flex-col gap-3">
               <span className="text-sm font-semibold text-foreground">{t("app")}</span>
+              {/* Uncomment when app is released:
               <a
                 href="https://apps.apple.com"
                 target="_blank"
@@ -43,6 +44,10 @@ const Footer = () => {
               >
                 {t("appStore")}
               </a>
+              */}
+              <span className="text-sm text-muted-foreground">
+                {t("comingSoon")}
+              </span>
             </div>
 
             <div className="flex flex-col gap-3">

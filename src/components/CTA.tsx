@@ -1,5 +1,5 @@
 import { useLanguage } from "@/i18n/LanguageContext";
-import appStoreBadge from "@/assets/app-store-badge.svg";
+// import appStoreBadge from "@/assets/app-store-badge.svg"; // Uncomment when app is released
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const CTA = () => {
@@ -21,6 +21,7 @@ const CTA = () => {
             {t("ctaDescription")}
           </p>
           
+          {/* Uncomment when app is released:
           <a 
             href="https://apps.apple.com" 
             target="_blank" 
@@ -33,6 +34,10 @@ const CTA = () => {
               className="h-12 md:h-14"
             />
           </a>
+          */}
+          <span className="text-lg font-medium text-muted-foreground">
+            {t("comingSoon")}
+          </span>
         </div>
       </div>
     </section>

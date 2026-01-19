@@ -15,6 +15,7 @@ const Header = () => {
         </Link>
         <div className="flex items-center gap-4">
           <LanguageSwitcher />
+          {/* Uncomment when app is released:
           <a 
             href="https://apps.apple.com" 
             target="_blank" 
@@ -23,6 +24,10 @@ const Header = () => {
           >
             {t("download")}
           </a>
+          */}
+          <span className="text-sm font-medium text-muted-foreground">
+            {t("comingSoon")}
+          </span>
         </div>
       </div>
     </header>
