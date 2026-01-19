@@ -2,7 +2,8 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import PhoneFrame from "./PhoneFrame";
 
 const AppPreview = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const videoSrc = language === "de" ? "/promo-video-de.mp4" : "/promo-video-en.mp4";
 
   return (
     <section className="section-gradient py-20 md:py-32">
@@ -15,13 +16,14 @@ const AppPreview = () => {
           <div className="max-w-[280px] md:max-w-[320px]">
             <PhoneFrame>
               <video
+                key={language}
                 autoPlay
                 muted
                 loop
                 playsInline
                 className="w-full h-full object-cover"
               >
-                <source src="/app-demo.mp4" type="video/mp4" />
+                <source src={videoSrc} type="video/mp4" />
               </video>
             </PhoneFrame>
           </div>

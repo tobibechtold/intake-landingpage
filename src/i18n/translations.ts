@@ -40,6 +40,9 @@ export const translations = {
     // App Preview
     appPreviewHeading: "See it in action",
 
+    // Screenshot Gallery
+    screenshotGalleryHeading: "App Screenshots",
+
     // CTA
     ctaTitle: "Ready to start your journey?",
     ctaDescription: "Join thousands of users who track their calories the simple way. One purchase, lifetime access.",
@@ -92,6 +95,9 @@ export const translations = {
 
     // App Preview
     appPreviewHeading: "Erlebe die App",
+
+    // Screenshot Gallery
+    screenshotGalleryHeading: "App Screenshots",
 
     // CTA
     ctaTitle: "Bereit, deine Reise zu beginnen?",
