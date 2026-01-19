@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import { useLanguage } from "@/i18n/LanguageContext";
+import AppleLogo from "./AppleLogo";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -45,8 +46,8 @@ const Footer = () => {
                 {t("appStore")}
               </a>
               */}
-              <span className="text-sm text-muted-foreground">
-                {t("comingSoon")}
+              <span className="text-sm text-muted-foreground inline-flex items-center gap-1">
+                {t("comingSoon")} <AppleLogo className="w-3.5 h-3.5" /> {t("comingSoonSuffix")}
               </span>
             </div>
 

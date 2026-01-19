@@ -1,6 +1,7 @@
 import logo from "@/assets/logo-hero.png";
 // import appStoreBadge from "@/assets/app-store-badge.svg"; // Uncomment when app is released
 import { useLanguage } from "@/i18n/LanguageContext";
+import AppleLogo from "./AppleLogo";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -51,10 +52,10 @@ const Hero = () => {
           </a>
           */}
           <span 
-            className="text-lg md:text-xl font-medium text-primary text-glow opacity-0 animate-fade-up"
+            className="text-lg md:text-xl font-medium text-primary text-glow opacity-0 animate-fade-up inline-flex items-center gap-1.5"
             style={{ animationDelay: "0.5s" }}
           >
-            {t("comingSoon")}
+            {t("comingSoon")} <AppleLogo className="w-5 h-5" /> {t("comingSoonSuffix")}
           </span>
           
           <p 

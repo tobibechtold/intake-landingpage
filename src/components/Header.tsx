@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "@/assets/logo-hero.png";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/i18n/LanguageContext";
+import AppleLogo from "./AppleLogo";
 
 const Header = () => {
   const { t } = useLanguage();
@@ -25,8 +26,8 @@ const Header = () => {
             {t("download")}
           </a>
           */}
-          <span className="text-sm font-medium text-muted-foreground">
-            {t("comingSoon")}
+          <span className="text-sm font-medium text-muted-foreground inline-flex items-center gap-1">
+            {t("comingSoon")} <AppleLogo className="w-3.5 h-3.5" /> {t("comingSoonSuffix")}
           </span>
         </div>
       </div>
