@@ -9,12 +9,16 @@ const Hero = () => {
     <section className="hero-gradient min-h-screen flex items-center justify-center pt-16">
       <div className="container py-20">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          <img 
-            src={logo} 
-            alt="Intake" 
-            className="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 logo-glow mb-10 opacity-0 animate-fade-scale animate-float"
+          <div 
+            className="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 mb-10 opacity-0 animate-fade-scale"
             style={{ animationDelay: "0.1s" }}
-          />
+          >
+            <img 
+              src={logo} 
+              alt="Intake" 
+              className="w-full h-full logo-glow animate-float"
+            />
+          </div>
           
           <h1 
             className="text-4xl md:text-6xl font-bold text-foreground mb-4 text-balance opacity-0 animate-fade-up"
