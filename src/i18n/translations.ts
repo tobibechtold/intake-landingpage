@@ -13,7 +13,7 @@ export const translations = {
     downloadOn: "Download on the",
     appStore: "App Store",
     oneTimePurchase: "One-time purchase • iOS only",
-    comingSoon: "Coming soon on the App Store",
+    comingSoon: "Coming soon on the AppStore",
 
     // Features
     featuresTitle: "Everything you need.",
@@ -69,7 +69,7 @@ export const translations = {
     downloadOn: "Laden im",
     appStore: "App Store",
     oneTimePurchase: "Einmalkauf • Nur iOS",
-    comingSoon: "Bald im App Store verfügbar",
+    comingSoon: "Bald im AppStore verfügbar",
 
     // Features
     featuresTitle: "Alles was du brauchst.",
