@@ -1,6 +1,7 @@
 import logo from "@/assets/logo-hero.png";
 // import appStoreBadge from "@/assets/app-store-badge.svg"; // Uncomment when app is released
 import { useLanguage } from "@/i18n/LanguageContext";
+import { Apple } from "lucide-react";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -51,10 +52,12 @@ const Hero = () => {
           </a>
           */}
           <span 
-            className="text-lg md:text-xl font-medium text-primary text-glow opacity-0 animate-fade-up"
+            className="text-lg md:text-xl font-medium text-primary text-glow opacity-0 animate-fade-up flex items-center gap-2"
             style={{ animationDelay: "0.5s" }}
           >
-            {t("comingSoon")}
+            {t("comingSoon").replace("AppStore", "")}
+            <Apple className="inline-block" size={20} />
+            AppStore
           </span>
           
           <p 
