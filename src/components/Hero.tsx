@@ -1,5 +1,5 @@
 import logo from "@/assets/logo-hero.png";
-import appStoreBadge from "@/assets/app-store-badge.svg";
+// import appStoreBadge from "@/assets/app-store-badge.svg"; // Uncomment when app is released
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const Hero = () => {
@@ -35,6 +35,7 @@ const Hero = () => {
             {t("heroDescription")}
           </p>
           
+          {/* Uncomment when app is released:
           <a 
             href="https://apps.apple.com" 
             target="_blank" 
@@ -48,6 +49,13 @@ const Hero = () => {
               className="h-12 md:h-14"
             />
           </a>
+          */}
+          <span 
+            className="text-lg md:text-xl font-medium text-muted-foreground opacity-0 animate-fade-up"
+            style={{ animationDelay: "0.5s" }}
+          >
+            {t("comingSoon")}
+          </span>
           
           <p 
             className="mt-4 text-sm text-primary font-medium opacity-0 animate-fade-up"
