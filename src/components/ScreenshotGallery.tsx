@@ -1,4 +1,5 @@
 import { useLanguage } from "@/i18n/LanguageContext";
+import { useIsMobile } from "@/hooks/use-mobile";
 import {
   Carousel,
   CarouselContent,
@@ -21,21 +22,22 @@ const screenshots = [
 
 const ScreenshotGallery = () => {
   const { t, language } = useLanguage();
+  const isMobile = useIsMobile();
 
   const getScreenshotPath = (id: number, file: string) =>
     `/screenshots/${language}-${id}-${file}.png`;
 
   return (
     <section className="py-20 md:py-32">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 animate-fade-in">
+      <div className="container mx-auto px-0 md:px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 px-4 md:px-0 animate-fade-in">
           {t("screenshotGalleryHeading")}
         </h2>
 
-        <div className="relative px-12 md:px-16 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+        <div className="relative px-0 md:px-16 animate-fade-in" style={{ animationDelay: "0.2s" }}>
           <Carousel
             opts={{
-              align: "start",
+              align: isMobile ? "center" : "start",
               loop: true,
             }}
             className="w-full"
@@ -44,7 +46,7 @@ const ScreenshotGallery = () => {
               {screenshots.map((screenshot) => (
                 <CarouselItem
                   key={screenshot.id}
-                  className="pl-2 md:pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
+                  className="pl-2 md:pl-4 basis-[85%] sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
                 >
                   <div className="p-1">
                     <img
@@ -58,8 +60,8 @@ const ScreenshotGallery = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-0" />
-            <CarouselNext className="right-0" />
+            <CarouselPrevious className="left-0 hidden md:flex" />
+            <CarouselNext className="right-0 hidden md:flex" />
           </Carousel>
         </div>
       </div>
