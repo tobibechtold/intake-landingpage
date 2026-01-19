@@ -16,7 +16,7 @@ const Hero = () => {
             <img 
               src={logo} 
               alt="Intake" 
-              className="w-full h-full logo-glow animate-float"
+              className="w-full h-full logo-glow"
             />
           </div>
           

@@ -22,7 +22,7 @@ const AppPreview = () => {
           className={`flex justify-center opacity-0 ${isVisible ? 'animate-fade-scale' : ''}`}
           style={{ animationDelay: "0.2s" }}
         >
-          <div className="max-w-[280px] md:max-w-[320px] animate-float" style={{ animationDelay: "0.5s" }}>
+          <div className="max-w-[280px] md:max-w-[320px]">
             <PhoneFrame>
               <video
                 key={language}
