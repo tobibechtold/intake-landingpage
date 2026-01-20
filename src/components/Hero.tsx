@@ -1,4 +1,4 @@
-import logo from "@/assets/logo-hero.webp";
+import logo from "@/assets/logo-hero.png";
 import appStoreBadge from "@/assets/app-store-badge.svg";
 import { useLanguage } from "@/i18n/LanguageContext";
 
