@@ -1,4 +1,4 @@
-import logo from "@/assets/logo-hero.png";
+import logo from "@/assets/logo-hero.webp";
 import appStoreBadge from "@/assets/app-store-badge.svg";
 import { useLanguage } from "@/i18n/LanguageContext";
 
@@ -17,6 +17,11 @@ const Hero = () => {
               src={logo} 
               alt="Intake" 
               className="w-full h-full relative z-10"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              width={320}
+              height={320}
             />
             {/* Glow effect as separate element for browser compatibility */}
             <div 
