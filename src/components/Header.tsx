@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import logo from "@/assets/logo-hero.png";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/i18n/LanguageContext";
-import AppleLogo from "./AppleLogo";
 
 const Header = () => {
   const { t } = useLanguage();
@@ -16,19 +15,14 @@ const Header = () => {
         </Link>
         <div className="flex items-center gap-4">
           <LanguageSwitcher />
-          {/* Uncomment when app is released:
           <a 
-            href="https://apps.apple.com" 
+            href="https://apps.apple.com/us/app/intake-kalorienz%C3%A4hler/id6757768955" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-sm font-medium text-primary hover:text-primary/80 transition-colors"
           >
             {t("download")}
           </a>
-          */}
-          <span className="text-sm font-medium text-muted-foreground inline-flex items-center gap-1">
-            {t("comingSoon")} <AppleLogo className="w-3.5 h-3.5" /> {t("comingSoonSuffix")}
-          </span>
         </div>
       </div>
     </header>
