@@ -10,13 +10,21 @@ const Hero = () => {
       <div className="container py-20">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <div 
-            className="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 mb-10 opacity-0 animate-fade-scale"
+            className="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 mb-10 opacity-0 animate-fade-scale relative"
             style={{ animationDelay: "0.1s" }}
           >
             <img 
               src={logo} 
               alt="Intake" 
-              className="w-full h-full logo-glow"
+              className="w-full h-full relative z-10"
+            />
+            {/* Glow effect as separate element for browser compatibility */}
+            <div 
+              className="absolute inset-0 -z-10 scale-150"
+              style={{
+                background: 'radial-gradient(circle at center, hsl(185 75% 55% / 0.4) 0%, hsl(185 75% 55% / 0.2) 30%, transparent 70%)',
+                filter: 'blur(30px)',
+              }}
             />
           </div>
           
