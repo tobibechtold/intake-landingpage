@@ -1,7 +1,6 @@
 import logo from "@/assets/logo-hero.png";
-// import appStoreBadge from "@/assets/app-store-badge.svg"; // Uncomment when app is released
+import appStoreBadge from "@/assets/app-store-badge.svg";
 import { useLanguage } from "@/i18n/LanguageContext";
-import AppleLogo from "./AppleLogo";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -36,9 +35,8 @@ const Hero = () => {
             {t("heroDescription")}
           </p>
           
-          {/* Uncomment when app is released:
           <a 
-            href="https://apps.apple.com" 
+            href="https://apps.apple.com/us/app/intake-kalorienz%C3%A4hler/id6757768955" 
             target="_blank" 
             rel="noopener noreferrer"
             className="opacity-0 animate-fade-up hover:opacity-80 transition-opacity"
@@ -50,13 +48,6 @@ const Hero = () => {
               className="h-12 md:h-14"
             />
           </a>
-          */}
-          <span 
-            className="text-lg md:text-xl font-medium text-primary text-glow opacity-0 animate-fade-up inline-flex items-center gap-1.5"
-            style={{ animationDelay: "0.5s" }}
-          >
-            {t("comingSoon")} <AppleLogo className="w-5 h-5" /> {t("comingSoonSuffix")}
-          </span>
           
           <p 
             className="mt-4 text-sm text-primary font-medium opacity-0 animate-fade-up"

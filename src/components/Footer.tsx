@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import { useLanguage } from "@/i18n/LanguageContext";
-import AppleLogo from "./AppleLogo";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -36,19 +35,14 @@ const Footer = () => {
 
             <div className="flex flex-col gap-3">
               <span className="text-sm font-semibold text-foreground">{t("app")}</span>
-              {/* Uncomment when app is released:
               <a
-                href="https://apps.apple.com"
+                href="https://apps.apple.com/us/app/intake-kalorienz%C3%A4hler/id6757768955"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 {t("appStore")}
               </a>
-              */}
-              <span className="text-sm text-muted-foreground inline-flex items-center gap-1">
-                {t("comingSoon")} <AppleLogo className="w-3.5 h-3.5" /> {t("comingSoonSuffix")}
-              </span>
             </div>
 
             <div className="flex flex-col gap-3">

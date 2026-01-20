@@ -1,7 +1,6 @@
 import { useLanguage } from "@/i18n/LanguageContext";
-// import appStoreBadge from "@/assets/app-store-badge.svg"; // Uncomment when app is released
+import appStoreBadge from "@/assets/app-store-badge.svg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import AppleLogo from "./AppleLogo";
 
 const CTA = () => {
   const { t } = useLanguage();
@@ -22,9 +21,8 @@ const CTA = () => {
             {t("ctaDescription")}
           </p>
           
-          {/* Uncomment when app is released:
           <a 
-            href="https://apps.apple.com" 
+            href="https://apps.apple.com/us/app/intake-kalorienz%C3%A4hler/id6757768955" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-block hover:opacity-80 transition-opacity"
@@ -35,10 +33,6 @@ const CTA = () => {
               className="h-12 md:h-14"
             />
           </a>
-          */}
-          <span className="text-lg font-medium text-muted-foreground inline-flex items-center gap-1.5">
-            {t("comingSoon")} <AppleLogo className="w-5 h-5" /> {t("comingSoonSuffix")}
-          </span>
         </div>
       </div>
     </section>
