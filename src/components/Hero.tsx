@@ -25,10 +25,10 @@ const Hero = () => {
             />
             {/* Glow effect as separate element for browser compatibility */}
             <div 
-              className="absolute inset-0 -z-10 scale-150"
+              className="absolute inset-0 -z-10 scale-[1.8]"
               style={{
-                background: 'radial-gradient(circle at center, hsl(185 75% 55% / 0.4) 0%, hsl(185 75% 55% / 0.2) 30%, transparent 70%)',
-                filter: 'blur(30px)',
+                background: 'radial-gradient(circle at center, hsl(185 75% 55% / 0.55) 0%, hsl(185 75% 55% / 0.35) 25%, hsl(185 75% 55% / 0.15) 50%, transparent 75%)',
+                filter: 'blur(40px)',
               }}
             />
           </div>
