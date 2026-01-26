@@ -45,6 +45,10 @@ export const translations = {
     // Screenshot Gallery
     screenshotGalleryHeading: "App Screenshots",
 
+    // Reviews
+    reviewsTitle: "What Users Say",
+    reviewsSubtitle: "Real reviews from the App Store",
+
     // CTA
     ctaTitle: "Ready to start your journey?",
     ctaDescription: "Join thousands of users who track their calories the simple way. One purchase, lifetime access.",
@@ -102,6 +106,10 @@ export const translations = {
 
     // Screenshot Gallery
     screenshotGalleryHeading: "App Screenshots",
+
+    // Reviews
+    reviewsTitle: "Was Nutzer sagen",
+    reviewsSubtitle: "Echte Bewertungen aus dem AppStore",
 
     // CTA
     ctaTitle: "Bereit, deine Reise zu beginnen?",
