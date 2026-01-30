@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Star } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -83,6 +84,43 @@ const StarRating = ({ rating }: { rating: number }) => (
   </div>
 );
 
+const CHARACTER_THRESHOLD = 200;
+
+const ReviewCard = ({ review }: { review: Review }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const { t } = useLanguage();
+  const isLongReview = review.text.length > CHARACTER_THRESHOLD;
+
+  return (
+    <div className="feature-card h-full flex flex-col">
+      <StarRating rating={review.rating} />
+      <h3 className="text-lg font-semibold text-foreground mt-3 mb-2">
+        {review.title}
+      </h3>
+      <p
+        className={`text-muted-foreground text-sm leading-relaxed mb-2 ${
+          !isExpanded && isLongReview ? "line-clamp-4" : ""
+        }`}
+      >
+        {review.text}
+      </p>
+      {isLongReview && (
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="text-primary text-sm font-medium hover:underline text-left mb-2"
+        >
+          {isExpanded ? t("showLess") : t("showMore")}
+        </button>
+      )}
+      <div className="text-xs text-muted-foreground/70 mt-auto">
+        <span className="font-medium">{review.author}</span>
+        <span className="mx-2">•</span>
+        <span>{review.date}</span>
+      </div>
+    </div>
+  );
+};
+
 const Reviews = () => {
   const { t } = useLanguage();
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
@@ -131,20 +169,7 @@ const Reviews = () => {
               key={review.id}
               className="pl-4 basis-[85%] sm:basis-[45%] lg:basis-[32%]"
             >
-              <div className="feature-card h-full">
-                <StarRating rating={review.rating} />
-                <h3 className="text-lg font-semibold text-foreground mt-3 mb-2">
-                  {review.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  {review.text}
-                </p>
-                <div className="text-xs text-muted-foreground/70">
-                  <span className="font-medium">{review.author}</span>
-                  <span className="mx-2">•</span>
-                  <span>{review.date}</span>
-                </div>
-              </div>
+              <ReviewCard review={review} />
             </CarouselItem>
           ))}
         </CarouselContent>

@@ -48,6 +48,8 @@ export const translations = {
     // Reviews
     reviewsTitle: "What Users Say",
     reviewsSubtitle: "Real reviews from the App Store",
+    showMore: "Show more",
+    showLess: "Show less",
 
     // CTA
     ctaTitle: "Ready to start your journey?",
@@ -110,6 +112,8 @@ export const translations = {
     // Reviews
     reviewsTitle: "Was Nutzer sagen",
     reviewsSubtitle: "Echte Bewertungen aus dem AppStore",
+    showMore: "Mehr anzeigen",
+    showLess: "Weniger anzeigen",
 
     // CTA
     ctaTitle: "Bereit, deine Reise zu beginnen?",
