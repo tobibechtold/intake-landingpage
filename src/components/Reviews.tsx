@@ -107,48 +107,48 @@ const Reviews = () => {
             {t("reviewsSubtitle")}
           </p>
         </div>
-
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          plugins={[
-            AutoScroll({
-              speed: 1,
-              startDelay: 0,
-              stopOnInteraction: false,
-              stopOnMouseEnter: true,
-              playOnInit: true,
-            }),
-          ]}
-          className="w-full"
-        >
-          <CarouselContent className="-ml-4">
-            {reviews.map((review) => (
-              <CarouselItem
-                key={review.id}
-                className="pl-4 basis-[85%] sm:basis-[45%] lg:basis-[32%]"
-              >
-                <div className="feature-card h-full">
-                  <StarRating rating={review.rating} />
-                  <h3 className="text-lg font-semibold text-foreground mt-3 mb-2">
-                    {review.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                    {review.text}
-                  </p>
-                  <div className="text-xs text-muted-foreground/70">
-                    <span className="font-medium">{review.author}</span>
-                    <span className="mx-2">•</span>
-                    <span>{review.date}</span>
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
       </div>
+
+      <Carousel
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+        plugins={[
+          AutoScroll({
+            speed: 1,
+            startDelay: 0,
+            stopOnInteraction: false,
+            stopOnMouseEnter: true,
+            playOnInit: true,
+          }),
+        ]}
+        className="w-full"
+      >
+        <CarouselContent className="-ml-4 px-4 md:px-8">
+          {reviews.map((review) => (
+            <CarouselItem
+              key={review.id}
+              className="pl-4 basis-[85%] sm:basis-[45%] lg:basis-[32%]"
+            >
+              <div className="feature-card h-full">
+                <StarRating rating={review.rating} />
+                <h3 className="text-lg font-semibold text-foreground mt-3 mb-2">
+                  {review.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                  {review.text}
+                </p>
+                <div className="text-xs text-muted-foreground/70">
+                  <span className="font-medium">{review.author}</span>
+                  <span className="mx-2">•</span>
+                  <span>{review.date}</span>
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
     </section>
   );
 };
