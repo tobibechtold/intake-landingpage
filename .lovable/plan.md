@@ -1,61 +1,49 @@
 
 
-# Reviews Carousel Implementation Plan
+# Truncated Reviews with "Show More" Button
 
-## Overview
-Transform the Reviews section from a static 3-column grid into a continuously auto-scrolling horizontal carousel. Add the 3 new reviews and implement support for variable star ratings (since one review is 4 stars).
+## Problem
+Long reviews (like the "Super Alternative" review with ~150 words) make the cards very tall, creating an uneven carousel experience.
 
-## New Reviews to Add
+## Solution
+Truncate review text after a certain number of lines and add a "Show more" / "Show less" button for longer reviews.
 
-| Title | Rating | Author | Date |
-|-------|--------|--------|------|
-| Installiert und direkt geflasht | 5 stars | RalleTeeFau | 26. Jan. 2026 |
-| Super Alternative | 4 stars | LennartLesch | 27. Jan. 2026 |
-| Tolle App | 5 stars | Anna.N. | 28. Jan. 2026 |
+## Implementation Details
 
-## Implementation Steps
+### Create a `ReviewCard` Component
+Extract the card into its own component with local state to track expanded/collapsed status:
 
-### 1. Install Auto-Scroll Plugin
-Add the `embla-carousel-auto-scroll` package for smooth continuous scrolling functionality.
+- Use `line-clamp-4` (Tailwind CSS) to limit text to 4 lines when collapsed
+- Add a "Show more" button that appears only for reviews that exceed the line limit
+- Toggle between truncated and full text on click
+- Button text changes to "Show less" when expanded
 
-### 2. Update `src/components/Reviews.tsx`
+### Character Threshold
+- Only show the "Show more" button for reviews longer than ~200 characters
+- This ensures short reviews like "Tolle App" (Nico Sebastian) don't show unnecessary buttons
 
-**Changes:**
-- Add `rating` field to the Review interface
-- Add the 3 new reviews to the data array (total: 6 reviews)
-- Update `StarRating` component to accept a `rating` prop and render filled vs empty stars
-- Replace the grid layout with the Embla Carousel components
-- Configure the auto-scroll plugin with:
-  - `speed: 1` (slow, smooth scrolling - 1 pixel per frame)
-  - `direction: 'forward'` (left to right)
-  - `loop: true` (infinite scroll)
-  - `stopOnInteraction: false` (keeps scrolling after user interaction)
-  - `stopOnMouseEnter: true` (pause on hover for readability)
-- Each carousel item shows ~1.5 cards on mobile, ~2.5 on tablet, ~3.5 on desktop (peek effect)
-- Remove individual card animations since the carousel itself provides movement
+### Styling
+- "Show more" button: subtle text button in primary color, positioned below the review text
+- Smooth height transition when expanding/collapsing for polish
+- Keep the author/date section always visible at the bottom
 
-## Design Details
-
-- Cards maintain `feature-card` glass styling
-- Carousel spans full container width
-- Smooth continuous movement creates an engaging, dynamic feel
-- Pauses on hover so users can read reviews
-- No navigation arrows (continuous auto-scroll handles movement)
-- Star ratings: filled stars in primary color, empty stars in muted color
-
-## Technical Notes
+## Technical Approach
 
 ```text
-Auto-scroll plugin configuration:
-┌─────────────────────────────────────┐
-│  AutoScroll({                       │
-│    speed: 1,        // slow scroll  │
-│    startDelay: 0,   // start immed. │
-│    stopOnInteraction: false,        │
-│    stopOnMouseEnter: true           │
-│  })                                 │
-└─────────────────────────────────────┘
+ReviewCard Component Structure:
+┌─────────────────────────────────┐
+│ ★★★★★ (StarRating)              │
+│ Title                           │
+│                                 │
+│ Review text that is truncated   │
+│ after 4 lines when the content  │
+│ is too long to fit...           │
+│ [Show more]                     │
+│                                 │
+│ Author • Date                   │
+└─────────────────────────────────┘
 ```
 
-The carousel will use `playOnInit: true` to start automatically without needing to call `play()` manually.
+### Files to Modify
+- `src/components/Reviews.tsx`: Add `ReviewCard` component with expand/collapse state and update the carousel to use it
 
