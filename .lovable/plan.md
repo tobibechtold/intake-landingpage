@@ -1,48 +1,61 @@
 
 
-# Reviews Section Implementation Plan
+# Reviews Carousel Implementation Plan
 
 ## Overview
-Add a new "Reviews" section displaying App Store reviews directly below the Hero section for immediate social proof.
+Transform the Reviews section from a static 3-column grid into a continuously auto-scrolling horizontal carousel. Add the 3 new reviews and implement support for variable star ratings (since one review is 4 stars).
 
-## Reviews Data
-Three 5-star reviews from the German App Store:
+## New Reviews to Add
 
-1. **"Übersichtlich & schick"** - ipfreaks (Jan 23, 2026)
-2. **"Tolle App"** - Nico Sebastian (Jan 23, 2026)
-3. **"Top App"** - ©pa.tric (Jan 23, 2026)
+| Title | Rating | Author | Date |
+|-------|--------|--------|------|
+| Installiert und direkt geflasht | 5 stars | RalleTeeFau | 26. Jan. 2026 |
+| Super Alternative | 4 stars | LennartLesch | 27. Jan. 2026 |
+| Tolle App | 5 stars | Anna.N. | 28. Jan. 2026 |
 
-## Files to Create/Modify
+## Implementation Steps
 
-### 1. New File: `src/components/Reviews.tsx`
-- Review cards in a responsive grid (1 column mobile, 3 columns desktop)
-- 5-star rating display using Star icons from lucide-react
-- Glass-card styling matching the site's design
-- Scroll-triggered fade-in animations using `useScrollAnimation`
-- Reviews kept in original German for authenticity
+### 1. Install Auto-Scroll Plugin
+Add the `embla-carousel-auto-scroll` package for smooth continuous scrolling functionality.
 
-### 2. Modify: `src/i18n/translations.ts`
-Add translation keys:
-- `reviewsTitle`: "What Users Say" / "Was Nutzer sagen"
-- `reviewsSubtitle`: "Real reviews from the App Store" / "Echte Bewertungen aus dem App Store"
+### 2. Update `src/components/Reviews.tsx`
 
-### 3. Modify: `src/pages/Index.tsx`
-Update component order:
-```text
-<Header />
-<Hero />
-<Reviews />      ← NEW (directly after Hero)
-<AppPreview />
-<ScreenshotGallery />
-<Features />
-<CTA />
-<Footer />
-```
+**Changes:**
+- Add `rating` field to the Review interface
+- Add the 3 new reviews to the data array (total: 6 reviews)
+- Update `StarRating` component to accept a `rating` prop and render filled vs empty stars
+- Replace the grid layout with the Embla Carousel components
+- Configure the auto-scroll plugin with:
+  - `speed: 1` (slow, smooth scrolling - 1 pixel per frame)
+  - `direction: 'forward'` (left to right)
+  - `loop: true` (infinite scroll)
+  - `stopOnInteraction: false` (keeps scrolling after user interaction)
+  - `stopOnMouseEnter: true` (pause on hover for readability)
+- Each carousel item shows ~1.5 cards on mobile, ~2.5 on tablet, ~3.5 on desktop (peek effect)
+- Remove individual card animations since the carousel itself provides movement
 
 ## Design Details
-- Section uses `section-gradient` background for subtle visual interest
-- Each review card uses `feature-card` styling (glass effect with hover glow)
-- Star ratings displayed in primary color (cyan/teal)
-- Staggered animation delays (0.1s, 0.2s, 0.3s) for visual polish
-- Author names and dates in muted foreground color
+
+- Cards maintain `feature-card` glass styling
+- Carousel spans full container width
+- Smooth continuous movement creates an engaging, dynamic feel
+- Pauses on hover so users can read reviews
+- No navigation arrows (continuous auto-scroll handles movement)
+- Star ratings: filled stars in primary color, empty stars in muted color
+
+## Technical Notes
+
+```text
+Auto-scroll plugin configuration:
+┌─────────────────────────────────────┐
+│  AutoScroll({                       │
+│    speed: 1,        // slow scroll  │
+│    startDelay: 0,   // start immed. │
+│    stopOnInteraction: false,        │
+│    stopOnMouseEnter: true           │
+│  })                                 │
+└─────────────────────────────────────┘
+```
+
+The carousel will use `playOnInit: true` to start automatically without needing to call `play()` manually.
 
