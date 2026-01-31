@@ -51,6 +51,12 @@ export const translations = {
     showMore: "Show more",
     showLess: "Show less",
 
+    // Feature Voting
+    featureVotingTitle: "You decide",
+    featureVotingTitleHighlight: "what's next.",
+    featureVotingDescription: "View the roadmap, vote on features, and report bugs. Your feedback directly shapes the future of Intake.",
+    featureVotingButton: "View Roadmap & Vote",
+
     // CTA
     ctaTitle: "Ready to start your journey?",
     ctaDescription: "Join thousands of users who track their calories the simple way. One purchase, lifetime access.",
@@ -114,6 +120,12 @@ export const translations = {
     reviewsSubtitle: "Echte Bewertungen aus dem AppStore",
     showMore: "Mehr anzeigen",
     showLess: "Weniger anzeigen",
+
+    // Feature Voting
+    featureVotingTitle: "Du entscheidest,",
+    featureVotingTitleHighlight: "was als nächstes kommt.",
+    featureVotingDescription: "Sieh dir die Roadmap an, stimme für Features ab und melde Bugs. Dein Feedback bestimmt die Zukunft von Intake.",
+    featureVotingButton: "Roadmap & Abstimmung",
 
     // CTA
     ctaTitle: "Bereit, deine Reise zu beginnen?",
