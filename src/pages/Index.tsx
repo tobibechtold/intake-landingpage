@@ -4,6 +4,7 @@ import Reviews from "@/components/Reviews";
 import AppPreview from "@/components/AppPreview";
 import ScreenshotGallery from "@/components/ScreenshotGallery";
 import Features from "@/components/Features";
+import FeatureVoting from "@/components/FeatureVoting";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -16,6 +17,7 @@ const Index = () => {
       <AppPreview />
       <ScreenshotGallery />
       <Features />
+      <FeatureVoting />
       <CTA />
       <Footer />
     </div>
