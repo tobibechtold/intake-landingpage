@@ -43,6 +43,14 @@ const Footer = () => {
               >
                 {t("appStore")}
               </a>
+              <a
+                href="https://featurevoting.tobibechtold.dev/app/intake/changelog"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                {t("changelog")}
+              </a>
             </div>
 
             <div className="flex flex-col gap-3">
