@@ -1,7 +1,7 @@
 import logo from "@/assets/logo-hero.webp";
 import appStoreBadge from "@/assets/app-store-badge.svg";
-import { useLanguage } from "@/i18n/LanguageContext";
 import { Star } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 import PhoneFrame from "./PhoneFrame";
 
 const Hero = () => {
@@ -74,20 +74,30 @@ const Hero = () => {
             </p>
 
             <div
-              className="mt-5 flex items-center gap-3 opacity-0 animate-fade-up"
+              className="mt-5 opacity-0 animate-fade-up"
               style={{ animationDelay: "0.7s" }}
             >
-              {/* Left accolade */}
-              <span className="text-2xl text-muted-foreground/40 font-light select-none">❮</span>
-              <div className="flex flex-col items-center">
-                <div className="flex items-center gap-1">
-                  <span className="text-2xl font-bold text-foreground">4.9</span>
-                  <Star className="w-5 h-5 fill-primary text-primary" />
+              <div className="inline-flex flex-col items-center bg-muted/60 rounded-2xl px-5 py-3">
+                {/* 5 small stars */}
+                <div className="flex items-center gap-0.5 mb-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-3 h-3 fill-foreground text-foreground" />
+                  ))}
                 </div>
-                <span className="text-xs text-muted-foreground mt-0.5">{t("heroRating")}</span>
+                {/* Laurel wreath around rating number */}
+                <div className="flex items-center gap-1">
+                  {/* Left laurel */}
+                  <svg viewBox="0 0 24 40" className="w-5 h-8 text-muted-foreground/50" fill="currentColor">
+                    <path d="M12 2C10 6 6 8 4 12C2 16 3 20 6 22C4 18 5 14 8 11C6 16 6 20 8 24C6 20 7 16 10 13C8 18 8 22 10 26C8 22 9 18 12 15C10 20 10 24 12 28C10 24 10 20 12 16C10 22 11 26 12 30C12 26 12 22 12 18C12 14 12 10 12 6V2Z" />
+                  </svg>
+                  <span className="text-3xl font-bold text-foreground">4.9</span>
+                  {/* Right laurel (mirrored) */}
+                  <svg viewBox="0 0 24 40" className="w-5 h-8 text-muted-foreground/50 scale-x-[-1]" fill="currentColor">
+                    <path d="M12 2C10 6 6 8 4 12C2 16 3 20 6 22C4 18 5 14 8 11C6 16 6 20 8 24C6 20 7 16 10 13C8 18 8 22 10 26C8 22 9 18 12 15C10 20 10 24 12 28C10 24 10 20 12 16C10 22 11 26 12 30C12 26 12 22 12 18C12 14 12 10 12 6V2Z" />
+                  </svg>
+                </div>
+                <span className="text-[10px] text-muted-foreground uppercase tracking-wider mt-0.5">{t("heroRating")}</span>
               </div>
-              {/* Right accolade */}
-              <span className="text-2xl text-muted-foreground/40 font-light select-none">❯</span>
             </div>
           </div>
 
