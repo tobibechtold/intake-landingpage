@@ -52,46 +52,34 @@ const Hero = () => {
               {t("heroDescription")}
             </p>
 
-            <a
-              href="https://apps.apple.com/us/app/intake-kalorienz%C3%A4hler/id6757768955"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="opacity-0 animate-fade-up hover:opacity-80 transition-opacity"
+            <div
+              className="flex flex-col md:flex-row items-center gap-4 md:gap-6 opacity-0 animate-fade-up"
               style={{ animationDelay: "0.5s" }}
             >
-              <img
-                src={appStoreBadge}
-                alt="Download on the App Store"
-                className="h-12 md:h-14"
-              />
-            </a>
+              <a
+                href="https://apps.apple.com/us/app/intake-kalorienz%C3%A4hler/id6757768955"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <img
+                  src={appStoreBadge}
+                  alt="Download on the App Store"
+                  className="h-12 md:h-14"
+                />
+              </a>
 
-            <p
-              className="mt-4 text-sm text-primary font-medium opacity-0 animate-fade-up"
-              style={{ animationDelay: "0.6s" }}
-            >
-              {t("oneTimePurchase")}
-            </p>
-
-            <div
-              className="mt-5 opacity-0 animate-fade-up"
-              style={{ animationDelay: "0.7s" }}
-            >
               <div className="inline-flex flex-col items-center bg-muted/60 rounded-2xl px-5 py-3">
-                {/* 5 small stars */}
                 <div className="flex items-center gap-0.5 mb-1">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-3 h-3 fill-foreground text-foreground" />
                   ))}
                 </div>
-                {/* Laurel wreath around rating number */}
                 <div className="flex items-center gap-1">
-                  {/* Left laurel */}
                   <svg viewBox="0 0 24 40" className="w-5 h-8 text-muted-foreground/50" fill="currentColor">
                     <path d="M12 2C10 6 6 8 4 12C2 16 3 20 6 22C4 18 5 14 8 11C6 16 6 20 8 24C6 20 7 16 10 13C8 18 8 22 10 26C8 22 9 18 12 15C10 20 10 24 12 28C10 24 10 20 12 16C10 22 11 26 12 30C12 26 12 22 12 18C12 14 12 10 12 6V2Z" />
                   </svg>
                   <span className="text-3xl font-bold text-foreground">4.9</span>
-                  {/* Right laurel (mirrored) */}
                   <svg viewBox="0 0 24 40" className="w-5 h-8 text-muted-foreground/50 scale-x-[-1]" fill="currentColor">
                     <path d="M12 2C10 6 6 8 4 12C2 16 3 20 6 22C4 18 5 14 8 11C6 16 6 20 8 24C6 20 7 16 10 13C8 18 8 22 10 26C8 22 9 18 12 15C10 20 10 24 12 28C10 24 10 20 12 16C10 22 11 26 12 30C12 26 12 22 12 18C12 14 12 10 12 6V2Z" />
                   </svg>
@@ -99,6 +87,13 @@ const Hero = () => {
                 <span className="text-[10px] text-muted-foreground uppercase tracking-wider mt-0.5">{t("heroRating")}</span>
               </div>
             </div>
+
+            <p
+              className="mt-4 text-sm text-primary font-medium opacity-0 animate-fade-up"
+              style={{ animationDelay: "0.6s" }}
+            >
+              {t("oneTimePurchase")}
+            </p>
           </div>
 
           {/* Right column — Phone mockup */}
