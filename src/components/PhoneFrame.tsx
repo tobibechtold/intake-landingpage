@@ -12,7 +12,7 @@ const PhoneFrame = ({ children }: PhoneFrameProps) => {
       <div
         className="absolute rounded-[12.5%] overflow-hidden"
         style={{
-          top: "1.8%",
+          top: "calc(1.8% + 10px)",
           left: "3.8%",
           right: "3.8%",
           bottom: "2.4%",
