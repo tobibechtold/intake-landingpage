@@ -6,7 +6,7 @@ import PhoneFrame from "./PhoneFrame";
 
 const Hero = () => {
   const { t, language } = useLanguage();
-  const videoSrc = language === "de" ? "/promo-video-de.mp4" : "/promo-video-en.mp4";
+  const videoSrc = "/promo-video.webm";
 
   return (
     <section className="hero-gradient min-h-screen flex items-center justify-center pt-16">
@@ -111,7 +111,7 @@ const Hero = () => {
                   playsInline
                   className="w-full h-full object-cover"
                 >
-                  <source src={videoSrc} type="video/mp4" />
+                  <source src={videoSrc} type="video/webm" />
                 </video>
               </PhoneFrame>
             </div>
