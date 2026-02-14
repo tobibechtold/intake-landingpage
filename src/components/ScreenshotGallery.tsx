@@ -8,22 +8,37 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-// Note: Filenames use hyphens instead of spaces (URL-safe)
-const screenshots = [
-  { id: 1, alt: "Onboarding", file: "Onboarding" },
-  { id: 2, alt: "Dashboard", file: "Dashboard" },
-  { id: 3, alt: "Feature B", file: "Feature-B" },
-  { id: 4, alt: "Screenshot 9", file: "Screenshot-9" },
-  { id: 5, alt: "Screenshot 11", file: "Screenshot-11" },
-  { id: 6, alt: "Screenshot 17", file: "Screenshot-17" },
-  { id: 7, alt: "Screenshot 7", file: "Screenshot-7" },
-  { id: 8, alt: "Screenshot 13", file: "Screenshot-13" },
-];
+// Per-language screenshot configs
+const screenshotsByLang: Record<string, { id: number; alt: string; file: string }[]> = {
+  en: [
+    { id: 1, alt: "Onboarding", file: "Onboarding" },
+    { id: 2, alt: "Dashboard", file: "Dashboard" },
+    { id: 3, alt: "Testimonial", file: "Testimonial" },
+    { id: 4, alt: "Add Food", file: "Add-Food" },
+    { id: 5, alt: "Scan Food", file: "Scan-Food" },
+    { id: 6, alt: "Apple Watch", file: "Apple-Watch" },
+    { id: 7, alt: "Health", file: "Health" },
+    { id: 8, alt: "Recipes", file: "Recipes" },
+    { id: 9, alt: "Statistics", file: "Statistics" },
+    { id: 10, alt: "Water", file: "Water" },
+  ],
+  de: [
+    { id: 1, alt: "Onboarding", file: "Onboarding" },
+    { id: 2, alt: "Dashboard", file: "Dashboard" },
+    { id: 3, alt: "Feature B", file: "Feature-B" },
+    { id: 4, alt: "Screenshot 9", file: "Screenshot-9" },
+    { id: 5, alt: "Screenshot 11", file: "Screenshot-11" },
+    { id: 6, alt: "Screenshot 17", file: "Screenshot-17" },
+    { id: 7, alt: "Screenshot 7", file: "Screenshot-7" },
+    { id: 8, alt: "Screenshot 13", file: "Screenshot-13" },
+  ],
+};
 
 const ScreenshotGallery = () => {
   const { t, language } = useLanguage();
   const isMobile = useIsMobile();
 
+  const screenshots = screenshotsByLang[language] || screenshotsByLang.en;
   const getScreenshotPath = (id: number, file: string) =>
     `/screenshots/${language}-${id}-${file}.png`;
 
