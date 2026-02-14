@@ -70,21 +70,31 @@ const Hero = () => {
               </a>
 
               <div className="inline-flex flex-col items-center bg-muted/60 rounded-2xl px-5 py-3">
-                <div className="flex items-center gap-0.5 mb-1">
+                <div className="flex items-center gap-0.5 mb-1.5">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3 h-3 fill-foreground text-foreground" />
+                    <Star key={i} className="w-3.5 h-3.5 fill-foreground text-foreground" />
                   ))}
                 </div>
-                <div className="flex items-center gap-1">
-                  <svg viewBox="0 0 24 40" className="w-5 h-8 text-muted-foreground/50" fill="currentColor">
-                    <path d="M12 2C10 6 6 8 4 12C2 16 3 20 6 22C4 18 5 14 8 11C6 16 6 20 8 24C6 20 7 16 10 13C8 18 8 22 10 26C8 22 9 18 12 15C10 20 10 24 12 28C10 24 10 20 12 16C10 22 11 26 12 30C12 26 12 22 12 18C12 14 12 10 12 6V2Z" />
+                <div className="flex items-center">
+                  {/* Left laurel */}
+                  <svg viewBox="0 0 36 48" className="w-7 h-10 text-muted-foreground/60" fill="currentColor">
+                    <ellipse cx="10" cy="10" rx="5" ry="8" transform="rotate(-30 10 10)" />
+                    <ellipse cx="7" cy="20" rx="5" ry="8" transform="rotate(-15 7 20)" />
+                    <ellipse cx="6" cy="31" rx="4.5" ry="7.5" transform="rotate(-5 6 31)" />
+                    <ellipse cx="8" cy="41" rx="4" ry="6" transform="rotate(10 8 41)" />
+                    <rect x="14" y="6" width="2.5" height="40" rx="1.25" transform="rotate(5 15 26)" opacity="0.5" />
                   </svg>
-                  <span className="text-3xl font-bold text-foreground">4.9</span>
-                  <svg viewBox="0 0 24 40" className="w-5 h-8 text-muted-foreground/50 scale-x-[-1]" fill="currentColor">
-                    <path d="M12 2C10 6 6 8 4 12C2 16 3 20 6 22C4 18 5 14 8 11C6 16 6 20 8 24C6 20 7 16 10 13C8 18 8 22 10 26C8 22 9 18 12 15C10 20 10 24 12 28C10 24 10 20 12 16C10 22 11 26 12 30C12 26 12 22 12 18C12 14 12 10 12 6V2Z" />
+                  <span className="text-3xl font-bold text-foreground -mx-1">4.9</span>
+                  {/* Right laurel (mirrored) */}
+                  <svg viewBox="0 0 36 48" className="w-7 h-10 text-muted-foreground/60 scale-x-[-1]" fill="currentColor">
+                    <ellipse cx="10" cy="10" rx="5" ry="8" transform="rotate(-30 10 10)" />
+                    <ellipse cx="7" cy="20" rx="5" ry="8" transform="rotate(-15 7 20)" />
+                    <ellipse cx="6" cy="31" rx="4.5" ry="7.5" transform="rotate(-5 6 31)" />
+                    <ellipse cx="8" cy="41" rx="4" ry="6" transform="rotate(10 8 41)" />
+                    <rect x="14" y="6" width="2.5" height="40" rx="1.25" transform="rotate(5 15 26)" opacity="0.5" />
                   </svg>
                 </div>
-                <span className="text-[10px] text-muted-foreground uppercase tracking-wider mt-0.5">{t("heroRating")}</span>
+                <span className="text-[10px] text-muted-foreground uppercase tracking-wider">{t("heroRating")}</span>
               </div>
             </div>
 
