@@ -25,12 +25,14 @@ const screenshotsByLang: Record<string, { id: number; alt: string; file: string 
   de: [
     { id: 1, alt: "Onboarding", file: "Onboarding" },
     { id: 2, alt: "Dashboard", file: "Dashboard" },
-    { id: 3, alt: "Feature B", file: "Feature-B" },
-    { id: 4, alt: "Screenshot 9", file: "Screenshot-9" },
-    { id: 5, alt: "Screenshot 11", file: "Screenshot-11" },
-    { id: 6, alt: "Screenshot 17", file: "Screenshot-17" },
-    { id: 7, alt: "Screenshot 7", file: "Screenshot-7" },
-    { id: 8, alt: "Screenshot 13", file: "Screenshot-13" },
+    { id: 3, alt: "Testimonial", file: "Testimonial" },
+    { id: 4, alt: "Lebensmittel hinzufügen", file: "Add-Food" },
+    { id: 5, alt: "Barcode scannen", file: "Scan-Food" },
+    { id: 6, alt: "Apple Watch", file: "Apple-Watch" },
+    { id: 7, alt: "Health Integration", file: "Health" },
+    { id: 8, alt: "Rezepte", file: "Recipes" },
+    { id: 9, alt: "Statistik", file: "Statistics" },
+    { id: 10, alt: "Wasser", file: "Water" },
   ],
 };
 
