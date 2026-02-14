@@ -13,6 +13,7 @@ export const translations = {
     downloadOn: "Download on the",
     appStore: "App Store",
     oneTimePurchase: "One-time purchase • iOS only",
+    heroRating: "4.9 on the AppStore",
     comingSoon: "Soon on the",
     comingSoonSuffix: "AppStore",
 
@@ -83,6 +84,7 @@ export const translations = {
     downloadOn: "Laden im",
     appStore: "App Store",
     oneTimePurchase: "Einmalkauf • Nur iOS",
+    heroRating: "4.9 im AppStore",
     comingSoon: "Bald im",
     comingSoonSuffix: "AppStore verfügbar",
 

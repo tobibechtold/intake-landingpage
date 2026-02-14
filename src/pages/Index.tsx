@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Reviews from "@/components/Reviews";
-import AppPreview from "@/components/AppPreview";
 import ScreenshotGallery from "@/components/ScreenshotGallery";
 import Features from "@/components/Features";
 import FeatureVoting from "@/components/FeatureVoting";
@@ -14,7 +13,6 @@ const Index = () => {
       <Header />
       <Hero />
       <Reviews />
-      <AppPreview />
       <ScreenshotGallery />
       <Features />
       <FeatureVoting />
