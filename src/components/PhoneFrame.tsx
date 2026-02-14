@@ -1,4 +1,5 @@
 import React from "react";
+import iphoneBezel from "@/assets/iphone-bezel.png";
 
 interface PhoneFrameProps {
   children: React.ReactNode;
@@ -7,20 +8,26 @@ interface PhoneFrameProps {
 const PhoneFrame = ({ children }: PhoneFrameProps) => {
   return (
     <div className="relative inline-block">
-      {/* Phone outer frame */}
-      <div className="relative bg-[#1a1a1a] rounded-[3rem] p-[10px] shadow-2xl">
-        {/* Inner bezel */}
-        <div className="relative bg-black rounded-[2.5rem] overflow-hidden">
-          {/* Dynamic Island */}
-          <div className="absolute top-3 left-1/2 -translate-x-1/2 z-20 w-[90px] h-[28px] bg-black rounded-full" />
-          
-          
-          {/* Screen content */}
-          <div className="relative aspect-[1320/2868]">
-            {children}
-          </div>
-        </div>
+      {/* Screen content behind the bezel */}
+      <div
+        className="absolute rounded-[12.5%] overflow-hidden"
+        style={{
+          top: "2.4%",
+          left: "3.8%",
+          right: "3.8%",
+          bottom: "2.4%",
+        }}
+      >
+        {children}
       </div>
+      {/* Bezel overlay on top */}
+      <img
+        src={iphoneBezel}
+        alt=""
+        aria-hidden="true"
+        className="relative z-10 w-full h-auto pointer-events-none select-none"
+        draggable={false}
+      />
     </div>
   );
 };
