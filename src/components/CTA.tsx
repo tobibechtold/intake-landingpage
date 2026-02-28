@@ -1,5 +1,6 @@
 import { useLanguage } from "@/i18n/LanguageContext";
 import appStoreBadge from "@/assets/app-store-badge.svg";
+import googlePlayBadge from "@/assets/google-play-badge.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const CTA = () => {
@@ -21,18 +22,31 @@ const CTA = () => {
             {t("ctaDescription")}
           </p>
           
-          <a 
-            href="https://apps.apple.com/us/app/intake-kalorienz%C3%A4hler/id6757768955" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-block hover:opacity-80 transition-opacity"
-          >
-            <img
-              src={appStoreBadge}
-              alt="Download on the App Store"
-              className="h-12 md:h-14"
-            />
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a 
+              href="https://apps.apple.com/us/app/intake-kalorienz%C3%A4hler/id6757768955" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block hover:opacity-80 transition-opacity"
+            >
+              <img
+                src={appStoreBadge}
+                alt="Download on the App Store"
+                className="h-12 md:h-14"
+              />
+            </a>
+
+            <div className="relative inline-block opacity-60 cursor-default">
+              <img
+                src={googlePlayBadge}
+                alt="Get it on Google Play"
+                className="h-12 md:h-14"
+              />
+              <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-[10px] font-semibold px-2 py-0.5 rounded-full">
+                {t("comingSoonBadge")}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
