@@ -54,34 +54,36 @@ const Hero = () => {
             </p>
 
             <div
-              className="flex flex-col md:flex-row items-center gap-4 md:gap-6 opacity-0 animate-fade-up"
+              className="flex flex-col items-center md:items-start gap-4 opacity-0 animate-fade-up"
               style={{ animationDelay: "0.5s" }}
             >
-              <a
-                href="https://apps.apple.com/us/app/intake-kalorienz%C3%A4hler/id6757768955"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <img
-                  src={appStoreBadge}
-                  alt="Download on the App Store"
-                  className="h-12 md:h-14"
-                />
-              </a>
+              <div className="flex flex-col sm:flex-row items-center gap-4">
+                <a
+                  href="https://apps.apple.com/us/app/intake-kalorienz%C3%A4hler/id6757768955"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                >
+                  <img
+                    src={appStoreBadge}
+                    alt="Download on the App Store"
+                    className="h-12 md:h-14"
+                  />
+                </a>
 
-              <div className="relative inline-block opacity-60 cursor-default">
-                <img
-                  src={googlePlayBadge}
-                  alt="Get it on Google Play"
-                  className="h-12 md:h-14"
-                />
-                <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-[10px] font-semibold px-2 py-0.5 rounded-full">
-                  {t("comingSoonBadge")}
-                </span>
+                <div className="relative inline-block opacity-60 cursor-default">
+                  <img
+                    src={googlePlayBadge}
+                    alt="Get it on Google Play"
+                    className="h-12 md:h-14"
+                  />
+                  <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-[10px] font-semibold px-2 py-0.5 rounded-full">
+                    {t("comingSoonBadge")}
+                  </span>
+                </div>
               </div>
 
-              <div className="inline-flex flex-col items-center px-5 py-3">
+              <div className="inline-flex flex-col items-center px-5 py-1">
                 <div className="flex items-center gap-0.5 mb-1.5">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-3 h-3 fill-foreground text-foreground" />
