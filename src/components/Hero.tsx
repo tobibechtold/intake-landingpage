@@ -1,5 +1,6 @@
 import logo from "@/assets/logo-hero.webp";
 import appStoreBadge from "@/assets/app-store-badge.svg";
+import googlePlayBadge from "@/assets/google-play-badge.png";
 import { Star } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import PhoneFrame from "./PhoneFrame";
@@ -68,6 +69,17 @@ const Hero = () => {
                   className="h-12 md:h-14"
                 />
               </a>
+
+              <div className="relative inline-block opacity-60 cursor-default">
+                <img
+                  src={googlePlayBadge}
+                  alt="Get it on Google Play"
+                  className="h-12 md:h-14"
+                />
+                <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-[10px] font-semibold px-2 py-0.5 rounded-full">
+                  {t("comingSoonBadge")}
+                </span>
+              </div>
 
               <div className="inline-flex flex-col items-center px-5 py-3">
                 <div className="flex items-center gap-0.5 mb-1.5">

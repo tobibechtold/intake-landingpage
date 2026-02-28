@@ -43,6 +43,9 @@ const Footer = () => {
               >
                 {t("appStore")}
               </a>
+              <span className="text-sm text-muted-foreground/50 cursor-default">
+                {t("googlePlay")} ({t("comingSoonBadge")})
+              </span>
               <a
                 href="https://featurevoting.tobibechtold.dev/app/intake/changelog"
                 target="_blank"
