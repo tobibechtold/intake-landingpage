@@ -2,8 +2,10 @@ import logo from "@/assets/logo-hero.webp";
 import appStoreBadge from "@/assets/app-store-badge.svg";
 import googlePlayBadge from "@/assets/google-play-badge.png";
 import { Star } from "lucide-react";
+import { useEffect, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import PhoneFrame from "./PhoneFrame";
+import { getPromoVideoSourceForCapabilities, PROMO_VIDEO_SOURCES } from "@/lib/videoSupport";
 
 const RatingComponent = ({ label }: { label: string }) => (
   <div className="inline-flex flex-col items-center px-5 py-1">
@@ -27,7 +29,12 @@ const RatingComponent = ({ label }: { label: string }) => (
 
 const Hero = () => {
   const { t, language } = useLanguage();
-  const videoSrc = "/promo-video.webm";
+  const [videoSrc, setVideoSrc] = useState(PROMO_VIDEO_SOURCES.mp4);
+
+  useEffect(() => {
+    const video = document.createElement("video");
+    setVideoSrc(getPromoVideoSourceForCapabilities((type) => video.canPlayType(type)));
+  }, []);
 
   return (
     <section className="hero-gradient min-h-screen flex items-center justify-center pt-16">
@@ -140,7 +147,10 @@ const Hero = () => {
                   playsInline
                   className="w-full h-full object-cover"
                 >
-                  <source src={videoSrc} type="video/webm" />
+                  <source
+                    src={videoSrc}
+                    type={videoSrc.endsWith(".webm") ? "video/webm" : "video/mp4"}
+                  />
                 </video>
               </PhoneFrame>
             </div>
