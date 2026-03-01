@@ -6,6 +6,7 @@ import Features from "@/components/Features";
 import FeatureVoting from "@/components/FeatureVoting";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <FeatureVoting />
       <CTA />
       <Footer />
+      <Analytics />
     </div>
   );
 };
