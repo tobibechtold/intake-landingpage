@@ -6,6 +6,7 @@ import {
   getLocaleFromPathname,
   getPageFromPathname,
 } from "@/lib/localeRouting";
+import { getAppStoreUrl } from "@/lib/storeLinks";
 
 interface PageSeo {
   title: string;
@@ -69,9 +70,6 @@ const OG_LOCALE: Record<Language, string> = {
   de: "de_DE",
 };
 
-const APP_STORE_URL =
-  "https://apps.apple.com/us/app/intake-kalorienz%C3%A4hler/id6757768955";
-
 export interface SeoContent {
   locale: Language;
   page: SitePage;
@@ -127,7 +125,7 @@ export const getSeoContent = (pathname: string, origin: string): SeoContent => {
         applicationCategory: "HealthApplication",
         operatingSystem: "iOS 15.0+",
         url: canonicalizePath(origin, locale === "de" ? "/de" : "/"),
-        downloadUrl: APP_STORE_URL,
+        downloadUrl: getAppStoreUrl(locale),
         inLanguage: ["en", "de"],
         image: `${origin}/og-image.png`,
         screenshot: [

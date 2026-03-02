@@ -2,9 +2,10 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import appStoreBadge from "@/assets/app-store-badge.svg";
 import googlePlayBadge from "@/assets/google-play-badge.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { getAppStoreUrl } from "@/lib/storeLinks";
 
 const CTA = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
   
   return (
@@ -24,7 +25,7 @@ const CTA = () => {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a 
-              href="https://apps.apple.com/us/app/intake-kalorienz%C3%A4hler/id6757768955" 
+              href={getAppStoreUrl(language)} 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block hover:opacity-80 transition-opacity"

@@ -3,6 +3,7 @@ import logo from "@/assets/logo-hero.webp";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { buildLocalizedPath } from "@/lib/localeRouting";
+import { getAppStoreUrl } from "@/lib/storeLinks";
 
 const Header = () => {
   const { t, language } = useLanguage();
@@ -17,7 +18,7 @@ const Header = () => {
         <div className="flex items-center gap-4">
           <LanguageSwitcher />
           <a 
-            href="https://apps.apple.com/us/app/intake-kalorienz%C3%A4hler/id6757768955" 
+            href={getAppStoreUrl(language)} 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-sm font-medium text-primary hover:text-primary/80 transition-colors"

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { buildLocalizedPath } from "@/lib/localeRouting";
+import { getAppStoreUrl } from "@/lib/storeLinks";
 
 const Footer = () => {
   const { t, language } = useLanguage();
@@ -37,7 +38,7 @@ const Footer = () => {
             <div className="flex flex-col gap-3">
               <span className="text-sm font-semibold text-foreground">{t("app")}</span>
               <a
-                href="https://apps.apple.com/us/app/intake-kalorienz%C3%A4hler/id6757768955"
+                href={getAppStoreUrl(language)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"

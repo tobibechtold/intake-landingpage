@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import PhoneFrame from "./PhoneFrame";
 import { getPromoVideoSourceForCapabilities, PROMO_VIDEO_SOURCES } from "@/lib/videoSupport";
+import { getAppStoreUrl } from "@/lib/storeLinks";
 
 const RatingComponent = ({ label }: { label: string }) => (
   <div className="inline-flex flex-col items-center px-5 py-1">
@@ -94,7 +95,7 @@ const Hero = () => {
             >
               <div className="flex flex-col sm:flex-row items-center gap-4">
                 <a
-                  href="https://apps.apple.com/us/app/intake-kalorienz%C3%A4hler/id6757768955"
+                  href={getAppStoreUrl(language)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:opacity-80 transition-opacity"
