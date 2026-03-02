@@ -3,193 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Preconnect for Performance -->
-    <link rel="preload" href="/src/assets/logo-hero.webp" as="image" type="image/webp" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    
-    <!-- Primary Meta Tags -->
-    <title>Intake - Simple Calorie Counter for iOS | No Subscription, One-Time Purchase</title>
-    <meta name="title" content="Intake - Simple Calorie Counter for iOS | No Subscription, One-Time Purchase" />
-    <meta name="description" content="Intake - The simple calorie counter for iOS. No subscription, no account required. Track calories with 3M+ foods database, barcode scanner, Apple Health & iCloud sync. One-time purchase, privacy-first." />
-    <meta name="keywords" content="calorie counter app, calorie tracker iOS, food diary app, weight loss app, nutrition tracker, barcode food scanner, Apple Health sync, iCloud backup, no subscription calorie app, one time purchase app, privacy calorie tracker, simple food tracker, best calorie counter iPhone, calorie counting app, diet tracker, meal tracker, food logging app" />
-    <meta name="author" content="Tobi Bechtold" />
+    <title>Intake - Calorie Counter for iPhone | No Subscription</title>
+    <meta
+      name="description"
+      content="Simple calorie tracking for iOS. No subscription, no account required. Track calories with barcode scan, Apple Health sync, and iCloud."
+    />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="theme-color" content="#000000" />
     <meta name="color-scheme" content="dark light" />
-    
-    <!-- Language Alternates -->
-    <link rel="alternate" hreflang="en" href="https://intake.tobibechtold.dev/" />
-    <link rel="alternate" hreflang="de" href="https://intake.tobibechtold.dev/?lang=de" />
-    <link rel="alternate" hreflang="x-default" href="https://intake.tobibechtold.dev/" />
-    
-    <!-- Favicon -->
+
     <link rel="icon" href="/favicon.webp" type="image/webp" />
     <link rel="apple-touch-icon" href="/favicon.webp" />
-    
-    <!-- Apple-Specific Meta Tags -->
+
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Intake" />
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://intake.tobibechtold.dev/" />
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://intake.tobibechtold.dev/" />
-    <meta property="og:title" content="Intake - Simple Calorie Counter for iOS | No Subscription" />
-    <meta property="og:description" content="Calorie counting, simplified. No subscription, no account required. Privacy-first with 3M+ foods, barcode scanner & iCloud sync. One-time purchase for iOS." />
-    <meta property="og:image" content="https://intake.tobibechtold.dev/og-image.png" />
-    <meta property="og:image:secure_url" content="https://intake.tobibechtold.dev/og-image.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Intake calorie counter app - Simple calorie tracking on iPhone with no subscription required" />
-    <meta property="og:site_name" content="Intake" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="de_DE" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://intake.tobibechtold.dev/" />
-    <meta name="twitter:title" content="Intake - Simple Calorie Counter for iOS" />
-    <meta name="twitter:description" content="Calorie counting, simplified. No subscription. No account. Just simple tracking with 3M+ foods, barcode scanner & iCloud sync. One-time purchase." />
-    <meta name="twitter:image" content="https://intake.tobibechtold.dev/og-image.png" />
-    <meta name="twitter:image:alt" content="Intake calorie counter app showing dashboard with calorie tracking on iPhone" />
-
-    <!-- Structured Data - SoftwareApplication -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Intake",
-      "alternateName": "Intake Calorie Counter",
-      "applicationCategory": "HealthApplication",
-      "applicationSubCategory": "Calorie Counter",
-      "operatingSystem": "iOS 15.0+",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "priceValidUntil": "2026-12-31",
-        "description": "One-time purchase - No subscription",
-        "seller": {
-          "@type": "Person",
-          "name": "Tobi Bechtold"
-        }
-      },
-      "description": "Simple calorie counter for iOS. No subscription fees, no account required. Privacy-first design with 3M+ foods database, barcode scanner, Apple Health integration and iCloud sync.",
-      "featureList": [
-        "3+ Million Foods Database",
-        "Barcode Scanner",
-        "Apple Health Sync",
-        "iCloud Sync",
-        "Privacy First - No Account Required",
-        "No Subscription - One-Time Purchase",
-        "Offline Support",
-        "Custom Food Entries",
-        "Daily Calorie Goals",
-        "Nutrition Tracking"
-      ],
-      "screenshot": [
-        "https://intake.tobibechtold.dev/screenshots/en-1-Onboarding.png",
-        "https://intake.tobibechtold.dev/screenshots/en-2-Dashboard.png",
-        "https://intake.tobibechtold.dev/screenshots/en-3-Feature-B.png"
-      ],
-      "image": "https://intake.tobibechtold.dev/og-image.png",
-      "softwareVersion": "1.0",
-      "datePublished": "2025-01-01",
-      "inLanguage": ["en", "de"],
-      "author": {
-        "@type": "Person",
-        "name": "Tobi Bechtold",
-        "url": "https://intake.tobibechtold.dev"
-      }
-    }
-    </script>
-
-    <!-- Structured Data - Organization -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Intake",
-      "url": "https://intake.tobibechtold.dev",
-      "logo": "https://intake.tobibechtold.dev/favicon.webp",
-      "description": "Simple calorie counter for iOS with no subscription"
-    }
-    </script>
-
-    <!-- Structured Data - WebSite -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Intake",
-      "url": "https://intake.tobibechtold.dev/",
-      "description": "Simple calorie counter for iOS with no subscription",
-      "inLanguage": ["en", "de"],
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://intake.tobibechtold.dev/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
-
-    <!-- Structured Data - FAQPage -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Is Intake a subscription-based app?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No, Intake is a one-time purchase. You pay once and get lifetime access with no recurring fees or hidden costs."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do I need to create an account to use Intake?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No account is required. All your data stays on your device and syncs securely via iCloud. Your privacy is protected."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How many foods are in the Intake database?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Intake includes over 3 million food items in its database. You can also scan barcodes or create custom food entries for items not in the database."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does Intake sync with Apple Health?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, Intake fully integrates with Apple Health, allowing you to sync your nutrition data with other health and fitness apps on your iPhone."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is my data private with Intake?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Absolutely. Intake is privacy-first by design. No account required, no data sent to servers. All your information stays on your device and syncs via your personal iCloud."
-          }
-        }
-      ]
-    }
-    </script>
   </head>
 
   <body>

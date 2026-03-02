@@ -54,6 +54,10 @@ export const translations = {
     showMore: "Show more",
     showLess: "Show less",
 
+    // FAQ
+    faqTitle: "Frequently Asked Questions",
+    faqSubtitle: "Quick answers about pricing, privacy, and features.",
+
     // Feature Voting
     featureVotingTitle: "You decide",
     featureVotingTitleHighlight: "what's next.",
@@ -127,6 +131,10 @@ export const translations = {
     reviewsSubtitle: "Echte Bewertungen aus dem AppStore",
     showMore: "Mehr anzeigen",
     showLess: "Weniger anzeigen",
+
+    // FAQ
+    faqTitle: "Haufige Fragen",
+    faqSubtitle: "Schnelle Antworten zu Preis, Datenschutz und Funktionen.",
 
     // Feature Voting
     featureVotingTitle: "Du entscheidest,",

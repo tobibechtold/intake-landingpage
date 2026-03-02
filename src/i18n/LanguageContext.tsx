@@ -1,5 +1,7 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { Language, translations, TranslationKey } from "./translations";
+import { useLocation } from "react-router-dom";
+import { getLocaleFromPathname } from "@/lib/localeRouting";
 
 interface LanguageContextType {
   language: Language;
@@ -10,7 +12,12 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
+  const location = useLocation();
   const [language, setLanguageState] = useState<Language>(() => {
+    if (typeof window !== "undefined") {
+      return getLocaleFromPathname(window.location.pathname);
+    }
+
     const stored = localStorage.getItem("language");
     if (stored === "en" || stored === "de") return stored;
     
@@ -32,6 +39,14 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     document.documentElement.lang = language;
   }, [language]);
+
+  useEffect(() => {
+    const pathLanguage = getLocaleFromPathname(location.pathname);
+    if (pathLanguage !== language) {
+      setLanguageState(pathLanguage);
+      localStorage.setItem("language", pathLanguage);
+    }
+  }, [location.pathname, language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>

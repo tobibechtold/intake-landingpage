@@ -6,17 +6,23 @@ import Features from "@/components/Features";
 import FeatureVoting from "@/components/FeatureVoting";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import SeoHead from "@/components/SeoHead";
+import Faq from "@/components/Faq";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <SeoHead />
       <Header />
-      <Hero />
-      <Reviews />
-      <ScreenshotGallery />
-      <Features />
-      <FeatureVoting />
-      <CTA />
+      <main>
+        <Hero />
+        <Reviews />
+        <ScreenshotGallery />
+        <Features />
+        <Faq />
+        <FeatureVoting />
+        <CTA />
+      </main>
       <Footer />
     </div>
   );

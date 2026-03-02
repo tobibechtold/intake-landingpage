@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { buildLocalizedPath } from "@/lib/localeRouting";
 
 const Footer = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <footer className="border-t border-border/50 bg-card/30">
@@ -17,10 +18,10 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row gap-6 md:gap-12">
             <div className="flex flex-col gap-3">
               <span className="text-sm font-semibold text-foreground">{t("legal")}</span>
-              <Link to="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to={buildLocalizedPath("privacy", language)} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 {t("privacyPolicy")}
               </Link>
-              <Link to="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to={buildLocalizedPath("terms", language)} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 {t("termsOfUse")}
               </Link>
               <a

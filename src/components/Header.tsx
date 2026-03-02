@@ -2,14 +2,15 @@ import { Link } from "react-router-dom";
 import logo from "@/assets/logo-hero.webp";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { buildLocalizedPath } from "@/lib/localeRouting";
 
 const Header = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="container flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center gap-3">
+        <Link to={buildLocalizedPath("home", language)} className="flex items-center gap-3">
           <img src={logo} alt="Intake" className="w-8 h-8" />
           <span className="text-lg font-semibold text-foreground">Intake</span>
         </Link>

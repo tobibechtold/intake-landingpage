@@ -1,4 +1,5 @@
 import LegalLayout from "@/components/LegalLayout";
+import SeoHead from "@/components/SeoHead";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const Privacy = () => {
@@ -6,8 +7,10 @@ const Privacy = () => {
 
   if (language === "de") {
     return (
-      <LegalLayout title="Datenschutzerklärung">
-        <div className="space-y-6 text-muted-foreground">
+      <>
+        <SeoHead />
+        <LegalLayout title="Datenschutzerklärung">
+          <div className="space-y-6 text-muted-foreground">
           <p className="text-foreground font-medium">Stand: Januar 2026</p>
 
           <section className="space-y-3">
@@ -99,14 +102,17 @@ const Privacy = () => {
               Diese Datenschutzerklärung kann aktualisiert werden. Änderungen werden in der App oder im App Store veröffentlicht.
             </p>
           </section>
-        </div>
-      </LegalLayout>
+          </div>
+        </LegalLayout>
+      </>
     );
   }
 
   return (
-    <LegalLayout title="Privacy Policy">
-      <div className="space-y-6 text-muted-foreground">
+    <>
+      <SeoHead />
+      <LegalLayout title="Privacy Policy">
+        <div className="space-y-6 text-muted-foreground">
         <p className="text-foreground font-medium">Last updated: January 2026</p>
 
         <section className="space-y-3">
@@ -172,8 +178,9 @@ const Privacy = () => {
           <h2 className="text-xl font-semibold text-foreground">8. Changes</h2>
           <p>We may update this Privacy Policy from time to time.</p>
         </section>
-      </div>
-    </LegalLayout>
+        </div>
+      </LegalLayout>
+    </>
   );
 };
 

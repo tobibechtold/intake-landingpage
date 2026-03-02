@@ -1,0 +1,59 @@
+import { describe, expect, it } from "vitest";
+import { getSeoContent } from "./seo";
+
+describe("getSeoContent", () => {
+  it("returns German homepage metadata and alternates", () => {
+    const seo = getSeoContent("/de", "https://intake.tobibechtold.dev");
+
+    expect(seo.locale).toBe("de");
+    expect(seo.page).toBe("home");
+    expect(seo.canonical).toBe("https://intake.tobibechtold.dev/de");
+    expect(seo.alternates.de).toBe("https://intake.tobibechtold.dev/de");
+    expect(seo.alternates.en).toBe("https://intake.tobibechtold.dev/");
+    expect(seo.title).toContain("Kalorienz");
+    expect(seo.homeSchema).not.toBeNull();
+  });
+
+  it("returns English privacy metadata and no homepage schema", () => {
+    const seo = getSeoContent("/privacy", "https://intake.tobibechtold.dev");
+
+    expect(seo.locale).toBe("en");
+    expect(seo.page).toBe("privacy");
+    expect(seo.canonical).toBe("https://intake.tobibechtold.dev/privacy");
+    expect(seo.title).toContain("Privacy");
+    expect(seo.homeSchema).toBeNull();
+    expect(seo.noIndex).toBe(false);
+  });
+
+  it("returns noindex metadata for unknown routes", () => {
+    const seo = getSeoContent("/de/missing-page", "https://intake.tobibechtold.dev");
+
+    expect(seo.locale).toBe("de");
+    expect(seo.page).toBe("notFound");
+    expect(seo.noIndex).toBe(true);
+    expect(seo.title).toContain("404");
+    expect(seo.homeSchema).toBeNull();
+  });
+
+  it("spot checks canonical and locale for key localized routes", () => {
+    const origin = "https://intake.tobibechtold.dev";
+
+    const homeEn = getSeoContent("/", origin);
+    expect(homeEn.locale).toBe("en");
+    expect(homeEn.canonical).toBe(`${origin}/`);
+
+    const homeDe = getSeoContent("/de", origin);
+    expect(homeDe.locale).toBe("de");
+    expect(homeDe.canonical).toBe(`${origin}/de`);
+
+    const privacyEn = getSeoContent("/privacy", origin);
+    expect(privacyEn.locale).toBe("en");
+    expect(privacyEn.canonical).toBe(`${origin}/privacy`);
+
+    const privacyDe = getSeoContent("/de/privacy", origin);
+    expect(privacyDe.locale).toBe("de");
+    expect(privacyDe.canonical).toBe(`${origin}/de/privacy`);
+    expect(privacyDe.alternates.en).toBe(`${origin}/privacy`);
+    expect(privacyDe.alternates.de).toBe(`${origin}/de/privacy`);
+  });
+});

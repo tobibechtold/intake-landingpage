@@ -1,4 +1,5 @@
 import LegalLayout from "@/components/LegalLayout";
+import SeoHead from "@/components/SeoHead";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const Terms = () => {
@@ -6,8 +7,10 @@ const Terms = () => {
 
   if (language === "de") {
     return (
-      <LegalLayout title="Nutzungsbedingungen">
-        <div className="space-y-6 text-muted-foreground">
+      <>
+        <SeoHead />
+        <LegalLayout title="Nutzungsbedingungen">
+          <div className="space-y-6 text-muted-foreground">
           <p className="text-foreground font-medium">Stand: Januar 2026</p>
 
           <section className="space-y-3">
@@ -114,14 +117,17 @@ const Terms = () => {
               </a>
             </p>
           </section>
-        </div>
-      </LegalLayout>
+          </div>
+        </LegalLayout>
+      </>
     );
   }
 
   return (
-    <LegalLayout title="Terms of Use">
-      <div className="space-y-6 text-muted-foreground">
+    <>
+      <SeoHead />
+      <LegalLayout title="Terms of Use">
+        <div className="space-y-6 text-muted-foreground">
         <p className="text-foreground font-medium">Last updated: January 2026</p>
 
         <section className="space-y-3">
@@ -208,8 +214,9 @@ const Terms = () => {
             </a>
           </p>
         </section>
-      </div>
-    </LegalLayout>
+        </div>
+      </LegalLayout>
+    </>
   );
 };
 
