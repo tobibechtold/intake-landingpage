@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { getSeoContent } from "@/lib/seo";
 
 const SITE_ORIGIN = "https://intake.tobibechtold.dev";
+const OG_IMAGE_PATH = "/og-image.png";
 
 const upsertMeta = (attr: "name" | "property", key: string, content: string) => {
   const selector = `meta[${attr}="${key}"][data-seo-managed="true"]`;
@@ -60,8 +61,8 @@ const SeoHead = () => {
     upsertMeta("property", "og:title", seo.title);
     upsertMeta("property", "og:description", seo.description);
     upsertMeta("property", "og:url", seo.canonical);
-    upsertMeta("property", "og:image", `${SITE_ORIGIN}/og-image.png`);
-    upsertMeta("property", "og:image:secure_url", `${SITE_ORIGIN}/og-image.png`);
+    upsertMeta("property", "og:image", OG_IMAGE_PATH);
+    upsertMeta("property", "og:image:secure_url", OG_IMAGE_PATH);
     upsertMeta("property", "og:image:type", "image/png");
     upsertMeta("property", "og:image:width", "1200");
     upsertMeta("property", "og:image:height", "630");
@@ -72,7 +73,7 @@ const SeoHead = () => {
     upsertMeta("name", "twitter:card", "summary_large_image");
     upsertMeta("name", "twitter:title", seo.title);
     upsertMeta("name", "twitter:description", seo.description);
-    upsertMeta("name", "twitter:image", `${SITE_ORIGIN}/og-image.png`);
+    upsertMeta("name", "twitter:image", OG_IMAGE_PATH);
 
     upsertLink("canonical", { href: seo.canonical });
     upsertLink("alternate", { hreflang: "en", href: seo.alternates.en });
