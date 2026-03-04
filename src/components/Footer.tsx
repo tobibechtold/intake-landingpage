@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { buildLocalizedPath } from "@/lib/localeRouting";
-import { getAppStoreUrl } from "@/lib/storeLinks";
+import { getAppStoreUrl, getGooglePlayUrl } from "@/lib/storeLinks";
 
 const Footer = () => {
   const { t, language } = useLanguage();
@@ -45,9 +45,14 @@ const Footer = () => {
               >
                 {t("appStore")}
               </a>
-              <span className="text-sm text-muted-foreground/50 cursor-default">
-                {t("googlePlay")} ({t("comingSoonBadge")})
-              </span>
+              <a
+                href={getGooglePlayUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                {t("googlePlay")}
+              </a>
               <a
                 href="https://featurevoting.tobibechtold.dev/app/intake/changelog"
                 target="_blank"

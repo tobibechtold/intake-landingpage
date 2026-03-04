@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import PhoneFrame from "./PhoneFrame";
 import { getPromoVideoSourceForCapabilities, PROMO_VIDEO_SOURCES } from "@/lib/videoSupport";
-import { getAppStoreUrl } from "@/lib/storeLinks";
+import { getAppStoreUrl, getGooglePlayUrl } from "@/lib/storeLinks";
 
 const RatingComponent = ({ label }: { label: string }) => (
   <div className="inline-flex flex-col items-center px-5 py-1">
@@ -107,16 +107,18 @@ const Hero = () => {
                   />
                 </a>
 
-                <div className="relative inline-block opacity-60 cursor-default">
+                <a
+                  href={getGooglePlayUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                >
                   <img
                     src={googlePlayBadge}
                     alt="Get it on Google Play"
                     className="h-12 md:h-14"
                   />
-                  <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-[10px] font-semibold px-2 py-0.5 rounded-full">
-                    {t("comingSoonBadge")}
-                  </span>
-                </div>
+                </a>
               </div>
 
               {/* Rating below badges — mobile only */}
