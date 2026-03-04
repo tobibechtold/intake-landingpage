@@ -49,20 +49,21 @@ const Terms = () => {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-semibold text-foreground">4. Apple Health</h2>
+            <h2 className="text-xl font-semibold text-foreground">4. Health-Integrationen (Apple Health / Health Connect)</h2>
             <p>
-              Wenn du Apple Health verbindest, kann Intake – nur mit deiner Zustimmung – ausgewählte Gesundheitsdaten
-              lesen oder schreiben (z.B. Aktivitätskalorien). Du kannst diese Berechtigungen jederzeit in iOS unter
-              Einstellungen → Datenschutz & Sicherheit → Health ändern.
+              Wenn du Health-Integrationen aktivierst, kann Intake – nur mit deiner Zustimmung – ausgewählte
+              Gesundheitsdaten lesen oder schreiben (z.B. Aktivitätskalorien). Auf iOS erfolgt dies über Apple Health,
+              auf Android über Health Connect. Berechtigungen können jederzeit in den Systemeinstellungen geändert
+              werden.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-semibold text-foreground">5. iCloud Synchronisation (optional)</h2>
+            <h2 className="text-xl font-semibold text-foreground">5. Cloud-Synchronisation (iCloud / Google Drive, optional)</h2>
             <p>
-              Wenn du die iCloud-Synchronisation aktivierst, können von dir eingegebene Daten (z.B. Mahlzeiten, Ziele,
-              Verläufe) in deiner iCloud gespeichert und zwischen deinen Geräten synchronisiert werden. Die Nutzung ist
-              optional.
+              Wenn du die Synchronisation aktivierst, können von dir eingegebene Daten (z.B. Mahlzeiten, Ziele,
+              Verläufe) je nach Plattform in iCloud (iOS) oder Google Drive (Android) gespeichert und zwischen Geräten
+              synchronisiert werden. Die Nutzung ist optional.
             </p>
           </section>
 
@@ -104,7 +105,7 @@ const Terms = () => {
             <h2 className="text-xl font-semibold text-foreground">10. Änderungen</h2>
             <p>
               Der Anbieter kann diese Nutzungsbedingungen anpassen. Wesentliche Änderungen werden in der App oder über
-              den App Store angezeigt.
+              die jeweiligen Stores (App Store / Google Play) angezeigt.
             </p>
           </section>
 
@@ -165,17 +166,19 @@ const Terms = () => {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-foreground">4. Apple Health</h2>
+          <h2 className="text-xl font-semibold text-foreground">4. Health Integrations (Apple Health / Health Connect)</h2>
           <p>
-            If you connect Apple Health, Intake may read (and/or write) selected Health data only with your permission.
-            You can change permissions at any time in iOS settings.
+            If you enable health integrations, Intake may read (and/or write) selected health data only with your
+            permission. On iOS this uses Apple Health, and on Android this uses Health Connect. You can change
+            permissions at any time in your system settings.
           </p>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-foreground">5. iCloud Sync (optional)</h2>
+          <h2 className="text-xl font-semibold text-foreground">5. Cloud Sync (iCloud / Google Drive, optional)</h2>
           <p>
-            If enabled, your app data may be stored in iCloud and synced across your devices. This feature is optional.
+            If enabled, your app data may be stored in iCloud (iOS) or Google Drive (Android) and synced across your
+            devices. This feature is optional.
           </p>
         </section>
 

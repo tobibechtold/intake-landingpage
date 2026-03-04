@@ -11,7 +11,30 @@ describe("getSeoContent", () => {
     expect(seo.alternates.de).toBe("https://intake.tobibechtold.dev/de");
     expect(seo.alternates.en).toBe("https://intake.tobibechtold.dev/");
     expect(seo.title).toContain("Kalorienz");
+    expect(seo.description).toContain("Android");
     expect(seo.homeSchema).not.toBeNull();
+  });
+
+  it("includes iOS + Android stores and integrations in homepage schema", () => {
+    const seo = getSeoContent("/", "https://intake.tobibechtold.dev");
+    const appSchema = seo.homeSchema?.find((item) => item["@type"] === "SoftwareApplication");
+
+    expect(appSchema).toBeDefined();
+    expect(appSchema?.operatingSystem).toContain("Android");
+    expect(appSchema?.downloadUrl).toEqual(
+      expect.arrayContaining([
+        expect.stringContaining("apps.apple.com"),
+        expect.stringContaining("play.google.com/store/apps/details"),
+      ])
+    );
+    expect(appSchema?.featureList).toEqual(
+      expect.arrayContaining([
+        "Apple Health sync (iOS)",
+        "Health Connect sync (Android)",
+        "iCloud sync (iOS)",
+        "Google Drive sync (Android)",
+      ])
+    );
   });
 
   it("returns English privacy metadata and no homepage schema", () => {

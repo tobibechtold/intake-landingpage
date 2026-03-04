@@ -66,7 +66,7 @@ const SeoHead = () => {
     upsertMeta("property", "og:image:type", "image/png");
     upsertMeta("property", "og:image:width", "1200");
     upsertMeta("property", "og:image:height", "630");
-    upsertMeta("property", "og:image:alt", "Intake calorie counter app on iPhone");
+    upsertMeta("property", "og:image:alt", "Intake calorie counter app on iOS and Android");
     upsertMeta("property", "og:locale", seo.ogLocale);
     upsertMeta("property", "og:locale:alternate", seo.locale === "en" ? "de_DE" : "en_US");
 

@@ -6,7 +6,7 @@ import {
   getLocaleFromPathname,
   getPageFromPathname,
 } from "@/lib/localeRouting";
-import { getAppStoreUrl } from "@/lib/storeLinks";
+import { getAppStoreUrl, getGooglePlayUrl } from "@/lib/storeLinks";
 
 interface PageSeo {
   title: string;
@@ -23,19 +23,19 @@ interface SeoByLocale {
 const SEO_COPY: Record<Language, SeoByLocale> = {
   en: {
     home: {
-      title: "Intake - Calorie Counter for iPhone | No Subscription",
+      title: "Intake - Calorie Counter for iPhone & Android | No Subscription",
       description:
-        "Simple calorie tracking for iOS. No subscription, no account required. Track calories with barcode scan, Apple Health sync, and iCloud.",
+        "Simple calorie tracking for iOS and Android. No subscription, no account required. Track calories with barcode scan, Apple Health (iOS), Health Connect (Android), iCloud (iOS), and Google Drive sync (Android).",
     },
     privacy: {
       title: "Privacy Policy | Intake",
       description:
-        "Read the Intake Privacy Policy. Learn how calorie and nutrition data is processed, stored, and synced with Apple Health and iCloud.",
+        "Read the Intake Privacy Policy. Learn how calorie and nutrition data is processed, stored, and synced with Apple Health (iOS), Health Connect (Android), iCloud (iOS), and Google Drive (Android).",
     },
     terms: {
       title: "Terms of Use | Intake",
       description:
-        "Read the Intake Terms of Use for app usage, legal notes, Apple Health integration, and support information.",
+        "Read the Intake Terms of Use for app usage, legal notes, iOS and Android integrations, and support information.",
     },
     notFound: {
       title: "404 - Page Not Found | Intake",
@@ -44,19 +44,19 @@ const SEO_COPY: Record<Language, SeoByLocale> = {
   },
   de: {
     home: {
-      title: "Intake - Kalorienzähler für iPhone | Ohne Abo",
+      title: "Intake - Kalorienzähler für iPhone & Android | Ohne Abo",
       description:
-        "Einfaches Kalorientracking für iOS. Kein Abo, kein Konto notwendig. Mit Barcode-Scanner, Apple Health Sync und iCloud.",
+        "Einfaches Kalorientracking für iOS und Android. Kein Abo, kein Konto notwendig. Mit Barcode-Scanner, Apple Health (iOS), Health Connect (Android), iCloud (iOS) und Google Drive Sync (Android).",
     },
     privacy: {
       title: "Datenschutzerklärung | Intake",
       description:
-        "Lies die Datenschutzerklärung von Intake und erfahre, wie Daten verarbeitet, gespeichert und mit Apple Health oder iCloud synchronisiert werden.",
+        "Lies die Datenschutzerklärung von Intake und erfahre, wie Daten verarbeitet, gespeichert und mit Apple Health (iOS), Health Connect (Android), iCloud (iOS) oder Google Drive (Android) synchronisiert werden.",
     },
     terms: {
       title: "Nutzungsbedingungen | Intake",
       description:
-        "Lies die Nutzungsbedingungen von Intake mit Informationen zu App-Nutzung, Apple Health, Haftung und Support.",
+        "Lies die Nutzungsbedingungen von Intake mit Informationen zu App-Nutzung, iOS- und Android-Integrationen, Haftung und Support.",
     },
     notFound: {
       title: "404 - Seite nicht gefunden | Intake",
@@ -123,9 +123,9 @@ export const getSeoContent = (pathname: string, origin: string): SeoContent => {
         name: "Intake",
         alternateName: "Intake Calorie Counter",
         applicationCategory: "HealthApplication",
-        operatingSystem: "iOS 15.0+",
+        operatingSystem: "iOS 15.0+, Android",
         url: canonicalizePath(origin, locale === "de" ? "/de" : "/"),
-        downloadUrl: getAppStoreUrl(locale),
+        downloadUrl: [getAppStoreUrl(locale), getGooglePlayUrl()],
         inLanguage: ["en", "de"],
         image: `${origin}/og-image.png`,
         screenshot: [
@@ -137,8 +137,10 @@ export const getSeoContent = (pathname: string, origin: string): SeoContent => {
         featureList: [
           "3+ million foods database",
           "Barcode scanner",
-          "Apple Health sync",
-          "iCloud sync",
+          "Apple Health sync (iOS)",
+          "Health Connect sync (Android)",
+          "iCloud sync (iOS)",
+          "Google Drive sync (Android)",
           "No subscription",
           "No account required",
         ],

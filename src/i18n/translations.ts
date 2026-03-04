@@ -9,7 +9,7 @@ export const translations = {
     heroTitle: "Calorie counting.",
     heroTitleHighlight: "Simplified.",
     heroDescription:
-      "No subscriptions. No gamification. No coaching. Just a powerful calorie tracker that respects your privacy and your wallet.",
+      "Available on iPhone and Android. No subscriptions. No gamification. No coaching. Just a powerful calorie tracker that respects your privacy and your wallet.",
     downloadOn: "Download on the",
     appStore: "App Store",
     oneTimePurchase: "One-time purchase",
@@ -22,7 +22,7 @@ export const translations = {
     // Features
     featuresTitle: "Everything you need.",
     featuresTitleHighlight: "Nothing you don't.",
-    featuresSubtitle: "A focused calorie counter that helps you reach your goals without the bloat.",
+    featuresSubtitle: "A focused calorie counter for iOS and Android that helps you reach your goals without the bloat.",
 
     privacyFirst: "Privacy First",
     privacyFirstDesc: "All data stays on your device. No account required, no data uploads to servers.",
@@ -36,11 +36,11 @@ export const translations = {
     barcodeScanner: "Barcode Scanner",
     barcodeScannerDesc: "Quickly log foods by scanning barcodes. Fast and accurate tracking.",
 
-    appleHealthSync: "Apple Health Sync",
-    appleHealthSyncDesc: "Seamlessly sync your data with Apple Health for a complete health overview.",
+    appleHealthSync: "Apple Health + Health Connect",
+    appleHealthSyncDesc: "Sync your data with Apple Health on iOS and Health Connect on Android.",
 
-    icloudSync: "iCloud Sync",
-    icloudSyncDesc: "Your data syncs across all your devices via iCloud. Always up to date.",
+    icloudSync: "iCloud + Google Drive Sync",
+    icloudSyncDesc: "Keep data in sync via iCloud on iOS and Google Drive on Android.",
 
     // App Preview
     appPreviewHeading: "See it in action",
@@ -66,7 +66,7 @@ export const translations = {
 
     // CTA
     ctaTitle: "Ready to start your journey?",
-    ctaDescription: "Join thousands of users who track their calories the simple way. One purchase, lifetime access.",
+    ctaDescription: "Join thousands of users on iOS and Android who track calories the simple way.",
 
     // Footer
     legal: "Legal",
@@ -86,7 +86,7 @@ export const translations = {
     heroTitle: "Kalorien zählen.",
     heroTitleHighlight: "Leicht gemacht.",
     heroDescription:
-      "Keine Abonnements. Keine Gamification. Kein Coaching. Einfach ein leistungsstarker Kalorientracker, der deine Privatsphäre und dein Portemonnaie respektiert.",
+      "Verfügbar für iPhone und Android. Keine Abonnements. Keine Gamification. Kein Coaching. Einfach ein leistungsstarker Kalorientracker, der deine Privatsphäre und dein Portemonnaie respektiert.",
     downloadOn: "Laden im",
     appStore: "App Store",
     oneTimePurchase: "Einmalkauf",
@@ -99,7 +99,7 @@ export const translations = {
     // Features
     featuresTitle: "Alles was du brauchst.",
     featuresTitleHighlight: "Nichts, was du nicht brauchst.",
-    featuresSubtitle: "Ein fokussierter Kalorienzähler, der dir hilft, deine Ziele ohne Ballast zu erreichen.",
+    featuresSubtitle: "Ein fokussierter Kalorienzähler für iOS und Android, der dir hilft, deine Ziele ohne Ballast zu erreichen.",
 
     privacyFirst: "Datenschutz zuerst",
     privacyFirstDesc: "Alle Daten bleiben auf deinem Gerät. Kein Konto erforderlich, keine Daten-Uploads auf Server.",
@@ -113,12 +113,12 @@ export const translations = {
     barcodeScanner: "Barcode-Scanner",
     barcodeScannerDesc: "Lebensmittel schnell durch Scannen von Barcodes erfassen. Schnelles und genaues Tracking.",
 
-    appleHealthSync: "Apple Health Sync",
+    appleHealthSync: "Apple Health + Health Connect",
     appleHealthSyncDesc:
-      "Synchronisiere deine Daten nahtlos mit Apple Health für einen vollständigen Gesundheitsüberblick.",
+      "Synchronisiere deine Daten mit Apple Health auf iOS und Health Connect auf Android.",
 
-    icloudSync: "iCloud Sync",
-    icloudSyncDesc: "Deine Daten werden über iCloud auf all deinen Geräten synchronisiert. Immer aktuell.",
+    icloudSync: "iCloud + Google Drive Sync",
+    icloudSyncDesc: "Synchronisiere Daten über iCloud auf iOS und Google Drive auf Android.",
 
     // App Preview
     appPreviewHeading: "Erlebe die App",
@@ -145,7 +145,7 @@ export const translations = {
     // CTA
     ctaTitle: "Bereit, deine Reise zu beginnen?",
     ctaDescription:
-      "Schließe dich Tausenden von Nutzern an, die ihre Kalorien auf die einfache Weise tracken. Ein Kauf, lebenslanger Zugang.",
+      "Schließe dich Tausenden von Nutzern auf iOS und Android an, die ihre Kalorien einfach tracken.",
 
     // Footer
     legal: "Rechtliches",

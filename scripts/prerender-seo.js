@@ -4,9 +4,9 @@ const OG_IMAGE_URL = "/og-image.png";
 const PAGE_SEO = {
   "/": {
     lang: "en",
-    title: "Intake - Calorie Counter for iPhone | No Subscription",
+    title: "Intake - Calorie Counter for iPhone & Android | No Subscription",
     description:
-      "Simple calorie tracking for iOS. No subscription, no account required. Track calories with barcode scan, Apple Health sync, and iCloud.",
+      "Simple calorie tracking for iOS and Android. No subscription, no account required. Track calories with barcode scan, Apple Health (iOS), Health Connect (Android), iCloud (iOS), and Google Drive sync (Android).",
     canonical: `${SITE_ORIGIN}/`,
     ogLocale: "en_US",
   },
@@ -14,7 +14,7 @@ const PAGE_SEO = {
     lang: "en",
     title: "Privacy Policy | Intake",
     description:
-      "Read the Intake Privacy Policy. Learn how calorie and nutrition data is processed, stored, and synced with Apple Health and iCloud.",
+      "Read the Intake Privacy Policy. Learn how calorie and nutrition data is processed, stored, and synced with Apple Health (iOS), Health Connect (Android), iCloud (iOS), and Google Drive (Android).",
     canonical: `${SITE_ORIGIN}/privacy`,
     ogLocale: "en_US",
   },
@@ -22,15 +22,15 @@ const PAGE_SEO = {
     lang: "en",
     title: "Terms of Use | Intake",
     description:
-      "Read the Intake Terms of Use for app usage, legal notes, Apple Health integration, and support information.",
+      "Read the Intake Terms of Use for app usage, legal notes, iOS and Android integrations, and support information.",
     canonical: `${SITE_ORIGIN}/terms`,
     ogLocale: "en_US",
   },
   "/de": {
     lang: "de",
-    title: "Intake - Kalorienzähler für iPhone | Ohne Abo",
+    title: "Intake - Kalorienzähler für iPhone & Android | Ohne Abo",
     description:
-      "Einfaches Kalorientracking für iOS. Kein Abo, kein Konto notwendig. Mit Barcode-Scanner, Apple Health Sync und iCloud.",
+      "Einfaches Kalorientracking für iOS und Android. Kein Abo, kein Konto notwendig. Mit Barcode-Scanner, Apple Health (iOS), Health Connect (Android), iCloud (iOS) und Google Drive Sync (Android).",
     canonical: `${SITE_ORIGIN}/de`,
     ogLocale: "de_DE",
   },
@@ -38,7 +38,7 @@ const PAGE_SEO = {
     lang: "de",
     title: "Datenschutzerklärung | Intake",
     description:
-      "Lies die Datenschutzerklärung von Intake und erfahre, wie Daten verarbeitet, gespeichert und mit Apple Health oder iCloud synchronisiert werden.",
+      "Lies die Datenschutzerklärung von Intake und erfahre, wie Daten verarbeitet, gespeichert und mit Apple Health (iOS), Health Connect (Android), iCloud (iOS) oder Google Drive (Android) synchronisiert werden.",
     canonical: `${SITE_ORIGIN}/de/privacy`,
     ogLocale: "de_DE",
   },
@@ -46,7 +46,7 @@ const PAGE_SEO = {
     lang: "de",
     title: "Nutzungsbedingungen | Intake",
     description:
-      "Lies die Nutzungsbedingungen von Intake mit Informationen zu App-Nutzung, Apple Health, Haftung und Support.",
+      "Lies die Nutzungsbedingungen von Intake mit Informationen zu App-Nutzung, iOS- und Android-Integrationen, Haftung und Support.",
     canonical: `${SITE_ORIGIN}/de/terms`,
     ogLocale: "de_DE",
   },
@@ -81,7 +81,7 @@ const buildSeoBlock = (route, seo) => {
     '<meta property="og:image:type" content="image/png" />',
     '<meta property="og:image:width" content="1200" />',
     '<meta property="og:image:height" content="630" />',
-    '<meta property="og:image:alt" content="Intake calorie counter app on iPhone" />',
+    '<meta property="og:image:alt" content="Intake calorie counter app on iOS and Android" />',
     `<meta property="og:locale" content="${seo.ogLocale}" />`,
     `<meta property="og:locale:alternate" content="${seo.ogLocale === "en_US" ? "de_DE" : "en_US"}" />`,
     '<meta name="twitter:card" content="summary_large_image" />',

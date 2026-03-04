@@ -35,15 +35,16 @@ const Privacy = () => {
               <li>Notizen oder App-Einstellungen</li>
             </ul>
 
-            <h3 className="text-lg font-medium text-foreground">b) Apple Health Daten (nur mit Zustimmung)</h3>
-            <p>Wenn du Apple Health aktivierst, kann Intake folgende Daten abrufen:</p>
+            <h3 className="text-lg font-medium text-foreground">b) Health-Integrationen (nur mit Zustimmung)</h3>
+            <p>Wenn du Integrationen aktivierst, kann Intake folgende Daten abrufen:</p>
             <ul className="list-disc list-inside space-y-1 ml-2">
-              <li>Aktivitätskalorien / Bewegungsdaten (je nach freigegebenen Kategorien)</li>
+              <li>iOS: Daten aus Apple Health (z.B. Aktivitätskalorien), je nach freigegebenen Kategorien</li>
+              <li>Android: Daten über Health Connect, je nach erteilten Berechtigungen</li>
             </ul>
-            <p>Die App greift nur auf Daten zu, die du explizit in iOS freigegeben hast.</p>
+            <p>Die App greift nur auf Daten zu, die du explizit im jeweiligen Betriebssystem freigegeben hast.</p>
 
-            <h3 className="text-lg font-medium text-foreground">c) iCloud (optional)</h3>
-            <p>Wenn du iCloud Sync aktivierst, werden bestimmte App-Daten in deiner iCloud gespeichert und zwischen Geräten synchronisiert.</p>
+            <h3 className="text-lg font-medium text-foreground">c) Cloud-Sync (optional)</h3>
+            <p>Wenn du Sync aktivierst, können bestimmte App-Daten je nach Plattform in iCloud (iOS) oder Google Drive (Android) gespeichert und zwischen Geräten synchronisiert werden.</p>
           </section>
 
           <section className="space-y-3">
@@ -61,15 +62,15 @@ const Privacy = () => {
             <h2 className="text-xl font-semibold text-foreground">4. Wo werden Daten gespeichert?</h2>
             <ul className="list-disc list-inside space-y-1 ml-2">
               <li>Standardmäßig lokal auf deinem Gerät</li>
-              <li>Optional in iCloud, wenn du Sync aktivierst</li>
-              <li>Falls du Apple Health nutzt: Health-Daten liegen in iOS Health und werden nur nach Berechtigung verarbeitet</li>
+              <li>Optional in iCloud (iOS) oder Google Drive (Android), wenn du Sync aktivierst</li>
+              <li>Falls du Health-Integrationen nutzt: Daten in Apple Health (iOS) oder Health Connect (Android) werden nur nach Berechtigung verarbeitet</li>
             </ul>
           </section>
 
           <section className="space-y-3">
             <h2 className="text-xl font-semibold text-foreground">5. Weitergabe an Dritte</h2>
             <p>
-              Intake gibt keine personenbezogenen Daten an Dritte weiter, außer wenn dies für die Funktion erforderlich ist (z.B. Apple iCloud) oder gesetzlich vorgeschrieben ist.
+              Intake gibt keine personenbezogenen Daten an Dritte weiter, außer wenn dies für die Funktion erforderlich ist (z.B. Apple iCloud, Google Drive oder Health-Plattformen) oder gesetzlich vorgeschrieben ist.
             </p>
           </section>
 
@@ -84,7 +85,7 @@ const Privacy = () => {
             <ul className="list-disc list-inside space-y-1 ml-2">
               <li>Löschen von App-Einträgen in der App (falls angeboten)</li>
               <li>Deinstallation der App (lokale Daten)</li>
-              <li>Deaktivieren von iCloud Sync (iCloud-Datenverwaltung über Apple)</li>
+              <li>Deaktivieren von iCloud Sync oder Google-Drive-Sync (Cloud-Datenverwaltung über die jeweilige Plattform)</li>
             </ul>
           </section>
 
@@ -99,7 +100,7 @@ const Privacy = () => {
           <section className="space-y-3">
             <h2 className="text-xl font-semibold text-foreground">9. Änderungen</h2>
             <p>
-              Diese Datenschutzerklärung kann aktualisiert werden. Änderungen werden in der App oder im App Store veröffentlicht.
+              Diese Datenschutzerklärung kann aktualisiert werden. Änderungen werden in der App oder in den jeweiligen Stores (App Store / Google Play) veröffentlicht.
             </p>
           </section>
           </div>
@@ -134,11 +135,15 @@ const Privacy = () => {
             <li>App settings</li>
           </ul>
 
-          <h3 className="text-lg font-medium text-foreground">b) Apple Health data (with permission)</h3>
-          <p>If enabled, Intake may access selected Health data such as activity calories, depending on your permissions.</p>
+          <h3 className="text-lg font-medium text-foreground">b) Health integrations (with permission)</h3>
+          <p>If enabled, Intake may access selected Health data based on your platform permissions:</p>
+          <ul className="list-disc list-inside space-y-1 ml-2">
+            <li>iOS: Apple Health data (e.g. activity calories)</li>
+            <li>Android: Health Connect data (based on granted categories)</li>
+          </ul>
 
-          <h3 className="text-lg font-medium text-foreground">c) iCloud (optional)</h3>
-          <p>If you enable iCloud Sync, your app data may be stored in iCloud to sync across devices.</p>
+          <h3 className="text-lg font-medium text-foreground">c) Cloud sync (optional)</h3>
+          <p>If enabled, your app data may be stored in iCloud (iOS) or Google Drive (Android) to sync across devices.</p>
         </section>
 
         <section className="space-y-3">
@@ -152,15 +157,15 @@ const Privacy = () => {
           <h2 className="text-xl font-semibold text-foreground">4. Storage</h2>
           <ul className="list-disc list-inside space-y-1 ml-2">
             <li>Locally on your device by default</li>
-            <li>Optionally in iCloud if enabled</li>
-            <li>Apple Health data is managed by iOS Health and accessed only as permitted</li>
+            <li>Optionally in iCloud (iOS) or Google Drive (Android) if enabled</li>
+            <li>Health integration data is managed by Apple Health (iOS) or Health Connect (Android) and accessed only as permitted</li>
           </ul>
         </section>
 
         <section className="space-y-3">
           <h2 className="text-xl font-semibold text-foreground">5. Sharing</h2>
           <p>
-            We do not share personal data with third parties except where required to provide the service (e.g. Apple iCloud) or required by law.
+            We do not share personal data with third parties except where required to provide the service (e.g. Apple iCloud, Google Drive, or health platform providers) or required by law.
           </p>
         </section>
 
@@ -171,7 +176,7 @@ const Privacy = () => {
 
         <section className="space-y-3">
           <h2 className="text-xl font-semibold text-foreground">7. Deleting Data</h2>
-          <p>You can delete data by removing entries (if available), disabling iCloud Sync, or uninstalling the app.</p>
+          <p>You can delete data by removing entries (if available), disabling iCloud/Google Drive sync, or uninstalling the app.</p>
         </section>
 
         <section className="space-y-3">

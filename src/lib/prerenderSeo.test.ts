@@ -38,6 +38,15 @@ describe("prerender-seo", () => {
     );
   });
 
+  it("uses updated cross-platform SEO copy in prerendered home HTML", () => {
+    const html = buildPrerenderedHtml(template, "/");
+
+    expect(html).toContain("iPhone &amp; Android");
+    expect(html).toContain("Health Connect (Android)");
+    expect(html).toContain("Google Drive sync (Android)");
+    expect(html).toContain('property="og:image:alt" content="Intake calorie counter app on iOS and Android"');
+  });
+
   it("defines all localized routes that should be emitted", () => {
     expect(PRERENDER_ROUTES).toEqual([
       "/",

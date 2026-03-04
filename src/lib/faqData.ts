@@ -20,8 +20,13 @@ export const FAQ_BY_LANGUAGE: Record<Language, FaqItem[]> = {
       answer: "Intake includes access to a food database with over 3 million entries.",
     },
     {
-      question: "Does Intake integrate with Apple Health (iOS) or HealthConnect (Android)?",
-      answer: "Yes. Intake supports Apple Health and HealthConnect integration so nutrition data can sync with your health ecosystem.",
+      question: "Where does the food data come from?",
+      answer:
+        "Intake combines food data from USDA, the German Bundeslebensmittelschlüssel (BLS), and Open Food Facts (which provides most entries). By combining these sources, search results are broader and more accurate.",
+    },
+    {
+      question: "Does Intake integrate with Apple Health (iOS) or Health Connect (Android)?",
+      answer: "Yes. Intake supports Apple Health on iOS and Health Connect on Android so your nutrition data can sync with your health ecosystem.",
     },
     {
       question: "Is Intake privacy-first?",
@@ -42,8 +47,13 @@ export const FAQ_BY_LANGUAGE: Record<Language, FaqItem[]> = {
       answer: "Intake bietet Zugriff auf eine Lebensmitteldatenbank mit über 3 Millionen Einträgen.",
     },
     {
-      question: "Unterstützt Intake Apple Health (iOS) oder HealthConnect (Android)?",
-      answer: "Ja. Intake unterstützt Apple Health und HealthConnect, damit deine Ernährungsdaten in dein Gesundheits-Ökosystem passen.",
+      question: "Woher stammen die Lebensmitteldaten?",
+      answer:
+        "Intake kombiniert Lebensmitteldaten aus USDA, dem Bundeslebensmittelschlüssel (BLS) und Open Food Facts (daher kommt der Großteil der Einträge). Durch die Kombination dieser Quellen sind Suchergebnisse breiter und genauer.",
+    },
+    {
+      question: "Unterstützt Intake Apple Health (iOS) oder Health Connect (Android)?",
+      answer: "Ja. Intake unterstützt Apple Health auf iOS und Health Connect auf Android, damit deine Ernährungsdaten in dein Gesundheits-Ökosystem passen.",
     },
     {
       question: "Ist Intake datenschutzfreundlich?",
