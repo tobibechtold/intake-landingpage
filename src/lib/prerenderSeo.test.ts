@@ -47,14 +47,31 @@ describe("prerender-seo", () => {
     expect(html).toContain('property="og:image:alt" content="Intake calorie counter app on iOS and Android"');
   });
 
+  it("injects release metadata for localized what's new detail pages", () => {
+    const html = buildPrerenderedHtml(template, "/whats-new/2.1.1");
+
+    expect(html).toContain("What's new in Intake 2.1.1 | Intake");
+    expect(html).toContain('href="https://intake.tobibechtold.dev/whats-new/2.1.1"');
+    expect(html).toContain(
+      'hreflang="en" href="https://intake.tobibechtold.dev/whats-new/2.1.1"'
+    );
+    expect(html).toContain(
+      'hreflang="de" href="https://intake.tobibechtold.dev/de/whats-new/2.1.1"'
+    );
+  });
+
   it("defines all localized routes that should be emitted", () => {
     expect(PRERENDER_ROUTES).toEqual([
       "/",
       "/privacy",
       "/terms",
+      "/whats-new",
+      "/whats-new/2.1.1",
       "/de",
       "/de/privacy",
       "/de/terms",
+      "/de/whats-new",
+      "/de/whats-new/2.1.1",
     ]);
   });
 });

@@ -1,7 +1,9 @@
+import { getLocalizedWhatsNewRoutes, getWhatsNewEntry } from "./whats-new-content.js";
+
 const SITE_ORIGIN = "https://intake.tobibechtold.dev";
 const OG_IMAGE_URL = "/og-image.png";
 
-const PAGE_SEO = {
+const STATIC_PAGE_SEO = {
   "/": {
     lang: "en",
     title: "Intake - Calorie Counter for iPhone & Android | No Subscription",
@@ -52,7 +54,71 @@ const PAGE_SEO = {
   },
 };
 
-export const PRERENDER_ROUTES = Object.keys(PAGE_SEO);
+const WHATS_NEW_INDEX_SEO = {
+  en: {
+    lang: "en",
+    title: "What's New | Intake",
+    description:
+      "Release notes, feature updates, screenshots, and product improvements for every Intake version from 2.1.1 onward.",
+    canonical: `${SITE_ORIGIN}/whats-new`,
+    ogLocale: "en_US",
+  },
+  de: {
+    lang: "de",
+    title: "Was ist neu | Intake",
+    description:
+      "Release Notes, neue Funktionen, Screenshots und Produktverbesserungen fur jede Intake-Version ab 2.1.1.",
+    canonical: `${SITE_ORIGIN}/de/whats-new`,
+    ogLocale: "de_DE",
+  },
+};
+
+export const PRERENDER_ROUTES = [
+  "/",
+  "/privacy",
+  "/terms",
+  ...getLocalizedWhatsNewRoutes("en"),
+  "/de",
+  "/de/privacy",
+  "/de/terms",
+  ...getLocalizedWhatsNewRoutes("de"),
+];
+
+const getPageSeo = (route) => {
+  const staticSeo = STATIC_PAGE_SEO[route];
+  if (staticSeo) {
+    return staticSeo;
+  }
+
+  if (route === "/whats-new") {
+    return WHATS_NEW_INDEX_SEO.en;
+  }
+
+  if (route === "/de/whats-new") {
+    return WHATS_NEW_INDEX_SEO.de;
+  }
+
+  const match = route.match(/^\/(de\/)?whats-new\/([^/]+)$/);
+  if (!match) {
+    throw new Error(`Unsupported prerender route: ${route}`);
+  }
+
+  const [, dePrefix, version] = match;
+  const locale = dePrefix ? "de" : "en";
+  const entry = getWhatsNewEntry(locale, version);
+
+  if (!entry) {
+    throw new Error(`Missing What's New entry for prerender route: ${route}`);
+  }
+
+  return {
+    lang: locale,
+    title: `${entry.title} | Intake`,
+    description: entry.summary,
+    canonical: `${SITE_ORIGIN}${route}`,
+    ogLocale: locale === "de" ? "de_DE" : "en_US",
+  };
+};
 
 const escapeAttr = (value) =>
   value
@@ -64,7 +130,7 @@ const escapeAttr = (value) =>
 const buildSeoBlock = (route, seo) => {
   const alternateEn = route.startsWith("/de")
     ? `${SITE_ORIGIN}${route.slice(3) || "/"}`
-    : `${SITE_ORIGIN}${route === "/" ? "/" : `/de${route}`}`;
+    : `${SITE_ORIGIN}${route}`;
   const alternateDe = route.startsWith("/de")
     ? `${SITE_ORIGIN}${route}`
     : `${SITE_ORIGIN}${route === "/" ? "/de" : `/de${route}`}`;
@@ -97,10 +163,7 @@ const buildSeoBlock = (route, seo) => {
 };
 
 export const buildPrerenderedHtml = (templateHtml, route) => {
-  const seo = PAGE_SEO[route];
-  if (!seo) {
-    throw new Error(`Unsupported prerender route: ${route}`);
-  }
+  const seo = getPageSeo(route);
 
   const seoBlock = buildSeoBlock(route, seo);
 

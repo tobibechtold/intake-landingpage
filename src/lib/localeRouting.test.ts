@@ -18,6 +18,8 @@ describe("localeRouting", () => {
     expect(getPageFromPathname("/")).toBe("home");
     expect(getPageFromPathname("/privacy")).toBe("privacy");
     expect(getPageFromPathname("/terms")).toBe("terms");
+    expect(getPageFromPathname("/whats-new")).toBe("whatsNewIndex");
+    expect(getPageFromPathname("/de/whats-new/2.1.1")).toBe("whatsNewEntry");
     expect(getPageFromPathname("/de/privacy")).toBe("privacy");
     expect(getPageFromPathname("/missing-page")).toBe("notFound");
   });
@@ -27,6 +29,10 @@ describe("localeRouting", () => {
     expect(buildLocalizedPath("home", "de")).toBe("/de");
     expect(buildLocalizedPath("privacy", "en")).toBe("/privacy");
     expect(buildLocalizedPath("privacy", "de")).toBe("/de/privacy");
+    expect(buildLocalizedPath("whatsNewIndex", "en")).toBe("/whats-new");
+    expect(buildLocalizedPath("whatsNewIndex", "de")).toBe("/de/whats-new");
+    expect(buildLocalizedPath("whatsNewEntry", "en", "2.1.1")).toBe("/whats-new/2.1.1");
+    expect(buildLocalizedPath("whatsNewEntry", "de", "2.1.1")).toBe("/de/whats-new/2.1.1");
   });
 
   it("builds alternates for current page", () => {
@@ -34,6 +40,13 @@ describe("localeRouting", () => {
       canonical: "https://intake.tobibechtold.dev/de/terms",
       en: "https://intake.tobibechtold.dev/terms",
       de: "https://intake.tobibechtold.dev/de/terms",
+      xDefault: "https://intake.tobibechtold.dev/",
+    });
+
+    expect(buildAlternateUrls("/de/whats-new/2.1.1", "https://intake.tobibechtold.dev")).toEqual({
+      canonical: "https://intake.tobibechtold.dev/de/whats-new/2.1.1",
+      en: "https://intake.tobibechtold.dev/whats-new/2.1.1",
+      de: "https://intake.tobibechtold.dev/de/whats-new/2.1.1",
       xDefault: "https://intake.tobibechtold.dev/",
     });
   });

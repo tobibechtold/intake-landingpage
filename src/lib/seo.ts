@@ -5,8 +5,10 @@ import {
   buildAlternateUrls,
   getLocaleFromPathname,
   getPageFromPathname,
+  getWhatsNewVersionFromPathname,
 } from "@/lib/localeRouting";
 import { getAppStoreUrl, getGooglePlayUrl } from "@/lib/storeLinks";
+import { getWhatsNewEntry } from "@/lib/whatsNewContent";
 
 interface PageSeo {
   title: string;
@@ -17,6 +19,7 @@ interface SeoByLocale {
   home: PageSeo;
   privacy: PageSeo;
   terms: PageSeo;
+  whatsNewIndex: PageSeo;
   notFound: PageSeo;
 }
 
@@ -36,6 +39,11 @@ const SEO_COPY: Record<Language, SeoByLocale> = {
       title: "Terms of Use | Intake",
       description:
         "Read the Intake Terms of Use for app usage, legal notes, iOS and Android integrations, and support information.",
+    },
+    whatsNewIndex: {
+      title: "What's New | Intake",
+      description:
+        "Release notes, feature updates, screenshots, and product improvements for every Intake version from 2.1.1 onward.",
     },
     notFound: {
       title: "404 - Page Not Found | Intake",
@@ -57,6 +65,11 @@ const SEO_COPY: Record<Language, SeoByLocale> = {
       title: "Nutzungsbedingungen | Intake",
       description:
         "Lies die Nutzungsbedingungen von Intake mit Informationen zu App-Nutzung, iOS- und Android-Integrationen, Haftung und Support.",
+    },
+    whatsNewIndex: {
+      title: "Was ist neu | Intake",
+      description:
+        "Release Notes, neue Funktionen, Screenshots und Produktverbesserungen fur jede Intake-Version ab 2.1.1.",
     },
     notFound: {
       title: "404 - Seite nicht gefunden | Intake",
@@ -90,7 +103,41 @@ export const getSeoContent = (pathname: string, origin: string): SeoContent => {
   const locale = getLocaleFromPathname(pathname);
   const page = getPageFromPathname(pathname);
   const alternates = buildAlternateUrls(pathname, origin);
-  const copy = SEO_COPY[locale][page];
+  const copy =
+    page === "whatsNewEntry" ? null : SEO_COPY[locale][page as Exclude<SitePage, "whatsNewEntry">];
+
+  if (page === "whatsNewEntry") {
+    const version = getWhatsNewVersionFromPathname(pathname);
+    const entry = version ? getWhatsNewEntry(version, locale) : undefined;
+
+    if (!entry) {
+      const notFoundCopy = SEO_COPY[locale].notFound;
+
+      return {
+        locale,
+        page: "notFound",
+        title: notFoundCopy.title,
+        description: notFoundCopy.description,
+        canonical: alternates.canonical,
+        alternates,
+        ogLocale: OG_LOCALE[locale],
+        homeSchema: null,
+        noIndex: true,
+      };
+    }
+
+    return {
+      locale,
+      page,
+      title: `${entry.title} | Intake`,
+      description: entry.summary,
+      canonical: alternates.canonical,
+      alternates,
+      ogLocale: OG_LOCALE[locale],
+      homeSchema: null,
+      noIndex: false,
+    };
+  }
 
   if (page !== "home") {
     return {

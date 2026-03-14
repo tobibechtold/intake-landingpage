@@ -2,6 +2,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildPrerenderedHtml, PRERENDER_ROUTES } from "./prerender-seo.js";
+import { buildSitemapXml } from "./sitemap.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -26,6 +27,8 @@ const run = async () => {
     const rendered = buildPrerenderedHtml(template, route);
     await writeFile(outPath, rendered, "utf8");
   }
+
+  await writeFile(path.join(distDir, "sitemap.xml"), buildSitemapXml(), "utf8");
 };
 
 run().catch((error) => {
