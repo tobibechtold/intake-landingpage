@@ -8,6 +8,7 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import SeoHead from "@/components/SeoHead";
 import Faq from "@/components/Faq";
+import ProductUpdatesPreview from "@/components/ProductUpdatesPreview";
 
 const Index = () => {
   return (
@@ -19,6 +20,7 @@ const Index = () => {
         <Reviews />
         <ScreenshotGallery />
         <Features />
+        <ProductUpdatesPreview />
         <Faq />
         <FeatureVoting />
         <CTA />

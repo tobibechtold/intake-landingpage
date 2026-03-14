@@ -30,6 +30,10 @@ describe("What's New pages", () => {
       "href",
       "/de/whats-new/2.1.1"
     );
+    expect(screen.getByRole("link", { name: "Changelog öffnen" })).toHaveAttribute(
+      "href",
+      "https://featurevoting.tobibechtold.dev/app/intake/changelog"
+    );
   });
 
   it("renders the English detail page with a link back to the overview", () => {
@@ -51,5 +55,18 @@ describe("What's New pages", () => {
       "href",
       "/de/whats-new"
     );
+  });
+
+  it("renders inline release videos with autoplay behavior and desktop constraints", () => {
+    const view = renderWithRoute("/de/whats-new/2.1.1", <WhatsNewEntry />);
+
+    const video = screen.getByLabelText("Mahlzeit teilen");
+    const prose = view.container.querySelector(".prose");
+
+    expect(video).toHaveAttribute("autoplay");
+    expect(video).toHaveAttribute("loop");
+    expect(video).toHaveAttribute("muted");
+    expect(video).toHaveAttribute("playsinline");
+    expect(prose?.className).toContain("md:[&_video]:max-w-[34rem]");
   });
 });
