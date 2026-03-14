@@ -39,7 +39,7 @@ const WhatsNewArticle = ({ entry, language }: WhatsNewArticleProps) => (
     ) : null}
 
     <div
-      className="prose prose-invert max-w-none prose-headings:text-foreground prose-h2:mt-12 prose-h2:text-3xl prose-h2:font-semibold prose-h2:tracking-tight prose-p:text-base prose-p:text-muted-foreground prose-a:text-primary prose-strong:text-foreground prose-li:text-muted-foreground prose-img:rounded-[1.5rem] prose-img:border prose-img:border-border/70"
+      className="prose prose-invert max-w-none prose-headings:text-foreground prose-h2:mt-12 prose-h2:text-3xl prose-h2:font-semibold prose-h2:tracking-tight prose-p:text-base prose-p:text-muted-foreground prose-a:text-primary prose-strong:text-foreground prose-li:text-muted-foreground prose-img:rounded-[1.5rem] prose-img:border prose-img:border-border/70 [&_figure]:my-8 [&_video]:block [&_video]:w-full md:[&_video]:max-w-[34rem] [&_video]:rounded-[1.5rem] [&_video]:border [&_video]:border-border/70 [&_video]:bg-card/80"
       dangerouslySetInnerHTML={{ __html: entry.bodyHtml }}
     />
   </article>

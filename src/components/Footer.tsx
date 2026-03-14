@@ -4,6 +4,8 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { buildLocalizedPath } from "@/lib/localeRouting";
 import { getAppStoreUrl, getGooglePlayUrl } from "@/lib/storeLinks";
 
+const CHANGELOG_URL = "https://featurevoting.tobibechtold.dev/app/intake/changelog";
+
 const Footer = () => {
   const { t, language } = useLanguage();
 
@@ -59,6 +61,14 @@ const Footer = () => {
               >
                 {t("whatsNew")}
               </Link>
+              <a
+                href={CHANGELOG_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                {t("changelog")}
+              </a>
             </div>
 
             <div className="flex flex-col gap-3">

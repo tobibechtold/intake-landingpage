@@ -1,5 +1,9 @@
 import { useLanguage } from "@/i18n/LanguageContext";
-import { buildLocalizedPath, getPageFromPathname } from "@/lib/localeRouting";
+import {
+  buildLocalizedPath,
+  getPageFromPathname,
+  getWhatsNewVersionFromPathname,
+} from "@/lib/localeRouting";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const LanguageSwitcher = () => {
@@ -10,7 +14,8 @@ const LanguageSwitcher = () => {
   const toggleLanguage = () => {
     const nextLanguage = language === "en" ? "de" : "en";
     const page = getPageFromPathname(location.pathname);
-    navigate(buildLocalizedPath(page, nextLanguage));
+    const version = page === "whatsNewEntry" ? getWhatsNewVersionFromPathname(location.pathname) : undefined;
+    navigate(buildLocalizedPath(page, nextLanguage, version ?? undefined));
     setLanguage(nextLanguage);
   };
 

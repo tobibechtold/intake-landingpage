@@ -5,6 +5,8 @@ import WhatsNewList from "@/components/WhatsNewList";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { getWhatsNewEntries } from "@/lib/whatsNewContent";
 
+const CHANGELOG_URL = "https://featurevoting.tobibechtold.dev/app/intake/changelog";
+
 const WhatsNewIndex = () => {
   const { language } = useLanguage();
   const entries = getWhatsNewEntries(language);
@@ -28,6 +30,27 @@ const WhatsNewIndex = () => {
                 : "New features, improvements, and release notes for every version starting with 2.1.1."}
             </p>
           </div>
+
+          <section className="glass-card flex flex-col gap-4 rounded-[2rem] border border-border/70 p-6 md:flex-row md:items-center md:justify-between">
+            <div className="max-w-2xl space-y-2">
+              <h2 className="text-xl font-semibold text-foreground">
+                {language === "de" ? "Vollständigen Changelog ansehen" : "View the full changelog"}
+              </h2>
+              <p className="text-sm text-muted-foreground md:text-base">
+                {language === "de"
+                  ? "Diese Seite hebt größere Produktupdates hervor. Den vollständigen chronologischen Changelog findest du im Feature-Voting-Tool."
+                  : "This page highlights bigger product updates. The full chronological changelog lives in the feature voting tool."}
+              </p>
+            </div>
+            <a
+              href={CHANGELOG_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-primary/40 px-4 py-2 text-sm font-medium text-primary transition-colors hover:border-primary hover:bg-primary/10"
+            >
+              {language === "de" ? "Changelog öffnen" : "Open changelog"}
+            </a>
+          </section>
 
           <WhatsNewList entries={entries} language={language} />
         </div>

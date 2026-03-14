@@ -134,7 +134,7 @@ export const translations = {
     showLess: "Weniger anzeigen",
 
     // FAQ
-    faqTitle: "Haufige Fragen",
+    faqTitle: "Häufige Fragen",
     faqSubtitle: "Schnelle Antworten zu Preis, Datenschutz und Funktionen.",
 
     // Feature Voting

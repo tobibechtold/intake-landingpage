@@ -1,12 +1,19 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="630" rx="36" fill="#F4EFE3"/>
-  <rect x="58" y="58" width="1084" height="514" rx="28" fill="#1F3A2F"/>
-  <circle cx="214" cy="181" r="54" fill="#F7C66B"/>
-  <rect x="312" y="135" width="420" height="30" rx="15" fill="#F7F4EC"/>
-  <rect x="312" y="186" width="266" height="22" rx="11" fill="#C9D6C1"/>
-  <rect x="154" y="300" width="892" height="148" rx="26" fill="#2A4A3C"/>
-  <rect x="194" y="342" width="238" height="22" rx="11" fill="#F7F4EC"/>
-  <rect x="194" y="384" width="312" height="18" rx="9" fill="#C9D6C1"/>
-  <rect x="742" y="334" width="222" height="76" rx="20" fill="#F7C66B"/>
-  <text x="154" y="500" fill="#F7F4EC" font-family="Arial, sans-serif" font-size="54" font-weight="700">Intake 2.1.1</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Intake 2.1.1 cover</title>
+  <desc id="desc">Gradient cover image for the Intake 2.1.1 What's New entry.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="55%" stop-color="#1d4ed8" />
+      <stop offset="100%" stop-color="#22c55e" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="72" fill="url(#bg)" />
+  <g fill="#f8fafc">
+    <text x="120" y="220" font-family="Arial, sans-serif" font-size="44" opacity="0.72">Intake update</text>
+    <text x="120" y="360" font-family="Arial, sans-serif" font-size="120" font-weight="700">Version 2.1.1</text>
+    <text x="120" y="470" font-family="Arial, sans-serif" font-size="52" opacity="0.88">
+      Meal sharing. Macro distribution. Better search.
+    </text>
+  </g>
 </svg>

@@ -14,6 +14,7 @@ export interface WhatsNewEntry {
 }
 
 type FrontmatterValue = string | string[];
+const VIDEO_EXTENSIONS = new Set([".mp4", ".webm", ".ogg"]);
 
 const markdownModules = import.meta.glob("../../content/whats-new/*/*.md", {
   eager: true,
@@ -32,6 +33,13 @@ const escapeHtml = (value: string) =>
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;");
+
+const getFileExtension = (value: string): string => {
+  const normalized = value.split(/[?#]/, 1)[0] ?? value;
+  const lastDotIndex = normalized.lastIndexOf(".");
+
+  return lastDotIndex >= 0 ? normalized.slice(lastDotIndex).toLowerCase() : "";
+};
 
 const parseScalar = (value: string): string => {
   const trimmed = value.trim();
@@ -108,7 +116,15 @@ const renderMarkdown = (body: string, version: string): string => {
       const imageMatch = block.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
       if (imageMatch) {
         const [, alt, src] = imageMatch;
-        return `<figure><img src="${escapeHtml(resolveAssetPath(version, src))}" alt="${escapeHtml(
+        const resolvedSrc = resolveAssetPath(version, src);
+
+        if (VIDEO_EXTENSIONS.has(getFileExtension(src))) {
+          return `<figure><video autoplay loop muted playsinline preload="metadata" src="${escapeHtml(
+            resolvedSrc
+          )}" aria-label="${escapeHtml(alt)}"></video></figure>`;
+        }
+
+        return `<figure><img src="${escapeHtml(resolvedSrc)}" alt="${escapeHtml(
           alt
         )}" loading="lazy" /></figure>`;
       }
