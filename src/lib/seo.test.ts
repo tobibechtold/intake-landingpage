@@ -48,6 +48,28 @@ describe("getSeoContent", () => {
     expect(seo.noIndex).toBe(false);
   });
 
+  it("returns overview metadata for localized what's new pages", () => {
+    const seo = getSeoContent("/de/whats-new", "https://intake.tobibechtold.dev");
+
+    expect(seo.locale).toBe("de");
+    expect(seo.page).toBe("whatsNewIndex");
+    expect(seo.canonical).toBe("https://intake.tobibechtold.dev/de/whats-new");
+    expect(seo.alternates.en).toBe("https://intake.tobibechtold.dev/whats-new");
+    expect(seo.noIndex).toBe(false);
+    expect(seo.title).toContain("Was ist neu");
+  });
+
+  it("returns release metadata for localized what's new detail pages", () => {
+    const seo = getSeoContent("/whats-new/2.1.1", "https://intake.tobibechtold.dev");
+
+    expect(seo.locale).toBe("en");
+    expect(seo.page).toBe("whatsNewEntry");
+    expect(seo.canonical).toBe("https://intake.tobibechtold.dev/whats-new/2.1.1");
+    expect(seo.alternates.de).toBe("https://intake.tobibechtold.dev/de/whats-new/2.1.1");
+    expect(seo.noIndex).toBe(false);
+    expect(seo.title).toContain("2.1.1");
+  });
+
   it("returns noindex metadata for unknown routes", () => {
     const seo = getSeoContent("/de/missing-page", "https://intake.tobibechtold.dev");
 

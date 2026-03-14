@@ -9,6 +9,8 @@ import Index from "./pages/Index";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
+import WhatsNewIndex from "./pages/WhatsNewIndex";
+import WhatsNewEntry from "./pages/WhatsNewEntry";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -26,9 +28,13 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/whats-new" element={<WhatsNewIndex />} />
+            <Route path="/whats-new/:version" element={<WhatsNewEntry />} />
             <Route path="/de" element={<Index />} />
             <Route path="/de/privacy" element={<Privacy />} />
             <Route path="/de/terms" element={<Terms />} />
+            <Route path="/de/whats-new" element={<WhatsNewIndex />} />
+            <Route path="/de/whats-new/:version" element={<WhatsNewEntry />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Analytics />

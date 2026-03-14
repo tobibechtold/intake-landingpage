@@ -53,14 +53,12 @@ const Footer = () => {
               >
                 {t("googlePlay")}
               </a>
-              <a
-                href="https://featurevoting.tobibechtold.dev/app/intake/changelog"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to={buildLocalizedPath("whatsNewIndex", language)}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
-                {t("changelog")}
-              </a>
+                {t("whatsNew")}
+              </Link>
             </div>
 
             <div className="flex flex-col gap-3">
