@@ -2,11 +2,11 @@
 version: "2.1.1"
 publishedAt: "2026-03-14"
 title: "What's new in Intake 2.1.1"
-summary: "Share meals, fine-tune your macro targets, and get much faster food search."
+summary: "Share meals, use the redesigned calorie and macro goals, and get much faster food search."
 coverImage: "./assets/cover.svg"
 highlights:
   - "Share, copy, or turn meals into recipes"
-  - "Set macro goals using percentages"
+  - "Redesigned calorie and macro goals"
   - "Faster, more relevant food search"
   - "New What's New section in settings"
   - "More flexible portion input"
@@ -23,11 +23,13 @@ Open any meal and try the new actions.
 
 ![Share meal actions](./assets/share-recipes.mp4)
 
-## Macro goals by percentage
+## Redesigned calorie and macro goals
 
-Under Macro Goals in settings, you can now control how your macro targets are calculated by adjusting the percentage split yourself. Until now, Intake always suggested a 30% protein, 40% carbs, and 30% fat ratio. You can now choose your own balance without losing the benefits of calculated macro targets, such as adapting them to your activity level.
+Calorie and macro goals have been completely redesigned to give you more ways to set your targets while still keeping things simple. Power users get full control, while everyone else still gets a straightforward setup.
 
-![Macro goal percentages](./assets/macro-distribution.mp4)
+You can now choose whether Intake calculates your calorie target for you or whether you want to enter your own TDEE manually. If you use calculated macros, you can still adjust your protein intake in grams per kilogram of body weight. You can also decide how your carbs and fats should be split. You can see the full overview in the video below.
+
+![Calorie and macro goals](./assets/calorie-macro-goals.webm)
 
 ## Faster and better search
 

@@ -2,12 +2,12 @@
 version: "2.1.1"
 publishedAt: "2026-03-14"
 title: "Was ist neu in Intake 2.1.1"
-summary: "Mahlzeit an Freunde übertragen, kopieren. Makroverteilung in Prozenten einstellen. Verbesserte Suche"
+summary: "Mahlzeit an Freunde übertragen, kopieren. Kalorienziele und Makroziele überarbeitet. Verbesserte Suche"
 coverImage: "./assets/cover.svg"
 highlights:
   - "Mahlzeit an Freunde übertragen"
   - "Mahlzeiten kopieren und Rezept aus Mahlzeit erstellen"
-  - "Makroverteilung in Prozent einstellen"
+  - "Kalorienziele und Makroziele überarbeitet"
   - "Verbesserung der Lebensmittelsuche"
   - "Whats new Sektion und Informationen"
 ---
@@ -24,14 +24,16 @@ Tippt dazu einfach auf eine Mahlzeit und probiert es aus.
 
 ![Mahlzeit teilen](./assets/share-recipes.mp4)
 
-## Makroverteilung in Prozenten einstellen
+## Kalorienziele und Makroziele überarbeitet
 
-In den Einstellungen unter Makro-Ziele könnt ihr die Berechnung der Makro Ziele jetzt beeinflussen,
-indem ihr die prozentuale Berechnung anpasst. Bisher wurde immer ein Verhältnis von
-30% Protein, 40% Kohlenhydrate und 30% Fett empfohlen. Diese Verhältnisse könnt ihr nun selbst bestimmen, 
-ohne die Vorteile der berechneten Makros zu verlieren (z.B. Anpassung an Aktivität des Tages).
+Die Kalorienziele und Makroziele wurden vollständig überarbeitet, um euch mehr Möglichkeiten zu geben
+eure Ziele individuell aber gleichzeitig auch simpel einzustellen. Volle Kontrolle für Power-User, 
+unkomplizierte Anpassung für normale Benutzer. Nutzer können nun wählen, ob ihr Kalorienziel von Intake
+berechnet wird, oder ihren eigenen TDEE selbst eingeben. Wenn ihr die berechneten Makronährstoffe verwendet,
+könnt ihr dennoch eure Proteinaufnahme in g/kg Körpergewicht anpassen. Außerdem könnt ihr wählen, wie eure 
+Kohlenhydrate und Fette verteilt werden sollen. Die volle Übersicht seht ihr hier im Video:
 
-![Makro Prozente](./assets/macro-distribution.mp4)
+![Makro Prozente](./assets/calorie-macro-goals.webm)
 
 ## Verbesserung der Suchfunktion
 
