@@ -33,7 +33,7 @@ berechnet wird, oder ihren eigenen TDEE selbst eingeben. Wenn ihr die berechnete
 könnt ihr dennoch eure Proteinaufnahme in g/kg Körpergewicht anpassen. Außerdem könnt ihr wählen, wie eure 
 Kohlenhydrate und Fette verteilt werden sollen. Die volle Übersicht seht ihr hier im Video:
 
-![Makro Prozente](./assets/calorie-macro-goals.webm)
+![Makro Prozente](./assets/calorie-macro-distribution.mp4)
 
 ## Verbesserung der Suchfunktion
 

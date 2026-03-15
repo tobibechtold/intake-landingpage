@@ -29,7 +29,7 @@ Calorie and macro goals have been completely redesigned to give you more ways to
 
 You can now choose whether Intake calculates your calorie target for you or whether you want to enter your own TDEE manually. If you use calculated macros, you can still adjust your protein intake in grams per kilogram of body weight. You can also decide how your carbs and fats should be split. You can see the full overview in the video below.
 
-![Calorie and macro goals](./assets/calorie-macro-goals.webm)
+![Calorie and macro goals](./assets/calorie-macro-distribution.mp4)
 
 ## Faster and better search
 
