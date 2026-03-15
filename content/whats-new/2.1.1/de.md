@@ -48,6 +48,8 @@ und das Matching der Suchbegriffe sollte jetzt noch genauere Ergebnisse liefern.
 Nach jedem Update findet ihr eine Schaltfläche, die euch auf diese Seite bringt. So könnt ihr nach jedem 
 Update schauen was sich verändert hat.
 
+![Whats new button](./assets/whats-new.png)
+
 ## Schrittgrößen bei Portionen
 
 Die Schrittgrößen von Portionen wurden auf 0.25 geändert. Lasst mir hier gerne mal Feedback da.

@@ -41,6 +41,7 @@ Search results have also improved. Intake now prioritizes foods from the user's 
 
 After each update, you'll find a button in settings that takes you to this page so you can quickly see what changed in the latest version.
 
+![Whats new button](./assets/whats-new.png)
 ## More flexible portion entry
 
 Portion step sizes now use 0.25 increments. You can also tap directly on the amount, whether it's grams or portions, and enter exactly what you ate. There are no longer preset step restrictions limiting the value you can enter.
