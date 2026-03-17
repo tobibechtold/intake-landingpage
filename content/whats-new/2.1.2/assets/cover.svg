@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Intake 2.1.1 cover</title>
+  <desc id="desc">Gradient cover image for the Intake 2.1.1 What's New entry.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="55%" stop-color="#1d4ed8" />
+      <stop offset="100%" stop-color="#22c55e" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="72" fill="url(#bg)" />
+  <g fill="#f8fafc">
+    <text x="120" y="220" font-family="Arial, sans-serif" font-size="44" opacity="0.72">Intake update</text>
+    <text x="120" y="360" font-family="Arial, sans-serif" font-size="120" font-weight="700">Version 2.1.2</text>
+    <text x="120" y="470" font-family="Arial, sans-serif" font-size="52" opacity="0.88">
+      Bugfixes
+    </text>
+  </g>
+</svg>
