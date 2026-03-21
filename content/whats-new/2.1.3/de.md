@@ -2,11 +2,12 @@
 version: "2.1.3"
 publishedAt: "2026-03-22"
 title: "Was ist neu in Intake 2.1.3"
-summary: "Personalisierung, PDF Export, Uhrzeit beim tracken"
+summary: "Personalisierung, PDF Export, Nährwerte Übersicht, Uhrzeit beim tracken"
 coverImage: "./assets/cover.svg"
 highlights:
   - Personalisierung
   - PDF Export
+  - Nährwerte Übersicht
   - Uhrzeit beim Tracken
   - Bugfixes und Verbesserungen
 ---
@@ -27,9 +28,21 @@ gespeichert werden. Er enthält alle wichtigen Informationen und Daten, die ihr 
 
 ![PDF Export](./assets/pdf-export.mp4)
 
+## Nährwerte Übersicht
+
+Wenn du auf einen deiner Makronährstoff-Fortschritte tappst öffnet sich eine Übersicht, auf der du siehst welche Lebensmittel
+mit welchen Mengen dazu beigetragen haben.
+
+![Macro sheet](./assets/macro-sheet.mp4)
+
+## Uhrzeit beim Tracken
+
+Du kannst jetzt bei jedem Produkt das du loggst eine Uhrzeit angeben. Standardmäßig wird die aktuelle Uhrzeit zum Zeitpunkt des
+trackens genutzt. Das ist wichtig für den PDF Export, da du so eine Übersicht hast wann du etwas gegessen hast.
+
 ## Bugfixes und Verbesserungen
 
-Fehler behoben, der dazu geführt hat, dass alle Einträge eines Tages verschwinden. Gebt mir gerne Feedback, ob der Bug noch bei euch auftritt.
+Wie immer wurden einige Fehler in der App behoben, die ihr wie immer fleißig meldet. Weiter so :)
 
 
 Vielen Dank das ihr Intake nutzt, ich hoffe ihr habt weiterhin Freude an der App.

@@ -20,16 +20,17 @@ const renderWithRoute = (initialEntry: string, element: React.ReactElement) =>
   );
 
 describe("What's New pages", () => {
-  it("renders the German overview page with the seeded release", () => {
+  it("renders the German overview page with the latest release card", () => {
     renderWithRoute("/de/whats-new", <WhatsNewIndex />);
 
     expect(
-      screen.getByRole("heading", { name: "Was ist neu in Intake 2.1.1" })
+      screen.getByRole("heading", { name: "Was ist neu in Intake 2.1.3" })
     ).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /mehr erfahren/i })).toHaveAttribute(
-      "href",
-      "/de/whats-new/2.1.1"
-    );
+    expect(
+      screen
+        .getAllByRole("link", { name: /mehr erfahren/i })
+        .some((link) => link.getAttribute("href") === "/de/whats-new/2.1.3")
+    ).toBe(true);
     expect(screen.getByRole("link", { name: "Changelog öffnen" })).toHaveAttribute(
       "href",
       "https://featurevoting.tobibechtold.dev/app/intake/changelog"
