@@ -15,14 +15,15 @@ describe("ProductUpdatesPreview", () => {
     );
 
     expect(screen.getByRole("heading", { name: "Product Updates" })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "What's new in Intake 2.1.1" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "What's new in Intake 2.1.3" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /view all updates/i })).toHaveAttribute(
       "href",
       "/whats-new"
     );
-    expect(screen.getByRole("link", { name: /read update/i })).toHaveAttribute(
-      "href",
-      "/whats-new/2.1.1"
-    );
+    expect(
+      screen
+        .getAllByRole("link", { name: /read update/i })
+        .some((link) => link.getAttribute("href") === "/whats-new/2.1.3")
+    ).toBe(true);
   });
 });
