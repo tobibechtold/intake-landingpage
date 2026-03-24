@@ -9,6 +9,9 @@ import Footer from "@/components/Footer";
 import SeoHead from "@/components/SeoHead";
 import Faq from "@/components/Faq";
 import ProductUpdatesPreview from "@/components/ProductUpdatesPreview";
+import WhySwitch from "@/components/WhySwitch";
+import ComparisonTable from "@/components/ComparisonTable";
+import ProofStories from "@/components/ProofStories";
 
 const Index = () => {
   return (
@@ -17,6 +20,9 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        <WhySwitch />
+        <ComparisonTable />
+        <ProofStories />
         <Reviews />
         <ScreenshotGallery />
         <Features />

@@ -66,11 +66,15 @@ describe("prerender-seo", () => {
       "/privacy",
       "/terms",
       "/whats-new",
+      "/whats-new/2.1.3",
+      "/whats-new/2.1.2",
       "/whats-new/2.1.1",
       "/de",
       "/de/privacy",
       "/de/terms",
       "/de/whats-new",
+      "/de/whats-new/2.1.3",
+      "/de/whats-new/2.1.2",
       "/de/whats-new/2.1.1",
     ]);
   });

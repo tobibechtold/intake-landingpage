@@ -2,12 +2,6 @@ import { useState } from "react";
 import { Star } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import AutoScroll from "embla-carousel-auto-scroll";
 
 interface Review {
   id: number;
@@ -43,30 +37,6 @@ const reviews: Review[] = [
     date: "23. Jan. 2026",
     rating: 5,
   },
-  {
-    id: 4,
-    title: "Installiert und direkt geflasht",
-    text: "Das Einrichten ist einfach! Kein Account notwendig Keine Werbung Keine sinnlosen Streaks. Was ich mir wünsche, das die Hydration auch von der Health App übernommen wird, Da ich mit eine Hydration über die App Waterlama Tracke und diese ist auch mit Health App verknüpft. Ansonsten ist es diese App die ich wirklich brauchte ohne schnick Schnack.",
-    author: "RalleTeeFau",
-    date: "26. Jan. 2026",
-    rating: 5,
-  },
-  {
-    id: 5,
-    title: "Super Alternative",
-    text: "Super Alternative zu Yazio! Bin gestern zufällig über Threads auf die App aufmerksam geworden. Gecatcht hat mich, dass es kein Abo Modell ist. Nach Jahren der Nutzung mit Yazio bin ich nun sehr froh, nicht mehr an das Premium Abo gebunden zu sein. Zuden kann die App alles wichtige, sieht mMn schöner minimalistischer aus und ist insgesamt ohne das Abo Modell attraktiver. Verbesserungsvorschläge: 1. Es wäre cool, wenn man in der Hauptübersicht die einzelnen Mahlzeiten auf- und zuklappen könnte, damit der Bildschirm nicht so überladen wirkt. Das zerstört etwas den Minimalismus 2. bei den Rezepten wäre eine Notizfunktion mega, sodass man neben den Zutaten auch die Zubereitung eintragen kann 3. es ist schade, dass man 0 kcal Zutaten nicht einfügen kann, wie bspw. Wasser. Für manche Einträge (insb bei Rezepten) wichtig, auch wenn es keine kcal hat Also all in all: grds. sehr zufrieden!!",
-    author: "LennartLesch",
-    date: "27. Jan. 2026",
-    rating: 4,
-  },
-  {
-    id: 6,
-    title: "Tolle App",
-    text: "Die Bedienung ist sehr gut, der Scanner funktioniert schnell und unkompliziert. Teilweise sind auch schon realistische Mengenangaben möglich, zT noch optimierbar. Ich mag, dass es es nicht viel Schnickschnack hat, aber trotzdem viele Daten auswerten und anzeigen kann. Ich würde mich freuen, wenn die Wasseraufnahme noch optimiert wird, derzeit kann eine Einnahme nur á 250ml vorgenommen werden (Meine Teetasse hat z.B. 400ml Fassungsvermögen)",
-    author: "Anna.N.",
-    date: "28. Jan. 2026",
-    rating: 5,
-  },
 ];
 
 const StarRating = ({ rating }: { rating: number }) => (
@@ -74,11 +44,7 @@ const StarRating = ({ rating }: { rating: number }) => (
     {[...Array(5)].map((_, i) => (
       <Star
         key={i}
-        className={`w-4 h-4 ${
-          i < rating
-            ? "fill-primary text-primary"
-            : "fill-transparent text-muted-foreground/40"
-        }`}
+        className={`h-4 w-4 ${i < rating ? "fill-primary text-primary" : "fill-transparent text-muted-foreground/40"}`}
       />
     ))}
   </div>
@@ -92,13 +58,11 @@ const ReviewCard = ({ review }: { review: Review }) => {
   const isLongReview = review.text.length > CHARACTER_THRESHOLD;
 
   return (
-    <div className="feature-card h-full flex flex-col">
+    <div className="feature-card flex h-full flex-col">
       <StarRating rating={review.rating} />
-      <h3 className="text-lg font-semibold text-foreground mt-3 mb-2">
-        {review.title}
-      </h3>
+      <h3 className="mt-3 mb-2 text-lg font-semibold text-foreground">{review.title}</h3>
       <p
-        className={`text-muted-foreground text-sm leading-relaxed mb-2 ${
+        className={`mb-2 text-sm leading-relaxed text-muted-foreground ${
           !isExpanded && isLongReview ? "line-clamp-4" : ""
         }`}
       >
@@ -107,12 +71,12 @@ const ReviewCard = ({ review }: { review: Review }) => {
       {isLongReview && (
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="text-primary text-sm font-medium hover:underline text-left mb-2"
+          className="mb-2 text-left text-sm font-medium text-primary hover:underline"
         >
           {isExpanded ? t("showLess") : t("showMore")}
         </button>
       )}
-      <div className="text-xs text-muted-foreground/70 mt-auto">
+      <div className="mt-auto text-xs text-muted-foreground/70">
         <span className="font-medium">{review.author}</span>
         <span className="mx-2">•</span>
         <span>{review.date}</span>
@@ -128,16 +92,16 @@ const Reviews = () => {
   return (
     <section ref={ref} className="section-gradient py-24">
       <div className="container">
-        <div className="text-center mb-16">
+        <div className="mb-16 text-center">
           <h2
-            className={`text-3xl md:text-4xl font-bold text-foreground mb-4 opacity-0 ${
+            className={`mb-4 text-3xl font-bold text-foreground opacity-0 md:text-4xl ${
               isVisible ? "animate-fade-up" : ""
             }`}
           >
             {t("reviewsTitle")}
           </h2>
           <p
-            className={`text-muted-foreground text-lg max-w-xl mx-auto opacity-0 ${
+            className={`mx-auto max-w-xl text-lg text-muted-foreground opacity-0 ${
               isVisible ? "animate-fade-up" : ""
             }`}
             style={{ animationDelay: "0.1s" }}
@@ -145,35 +109,34 @@ const Reviews = () => {
             {t("reviewsSubtitle")}
           </p>
         </div>
-      </div>
 
-      <Carousel
-        opts={{
-          align: "start",
-          loop: true,
-        }}
-        plugins={[
-          AutoScroll({
-            speed: 1,
-            startDelay: 0,
-            stopOnInteraction: false,
-            stopOnMouseEnter: true,
-            playOnInit: true,
-          }),
-        ]}
-        className="w-full"
-      >
-        <CarouselContent className="-ml-4 px-4 md:px-8">
-          {reviews.map((review) => (
-            <CarouselItem
+        <div className="mx-auto mb-12 max-w-3xl rounded-[2rem] border border-primary/15 bg-card/70 px-6 py-6 text-left shadow-[0_20px_80px_-60px_rgba(255,76,145,0.7)] md:px-8">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="text-sm uppercase tracking-[0.2em] text-primary">{t("heroTrustRating")}</p>
+              <h3 className="mt-2 text-2xl font-semibold text-foreground">{t("reviewsSummaryTitle")}</h3>
+            </div>
+            <div className="flex items-center gap-3 rounded-full border border-border/70 bg-background/70 px-4 py-2">
+              <Star className="h-5 w-5 fill-primary text-primary" />
+              <span className="text-lg font-semibold text-foreground">4.9</span>
+              <span className="text-sm text-muted-foreground">App Store</span>
+            </div>
+          </div>
+          <p className="mt-4 text-sm leading-6 text-muted-foreground">{t("reviewsSummaryBody")}</p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {reviews.map((review, index) => (
+            <div
               key={review.id}
-              className="pl-4 basis-[85%] sm:basis-[45%] lg:basis-[32%]"
+              className={`opacity-0 ${isVisible ? "animate-fade-scale" : ""}`}
+              style={{ animationDelay: `${0.12 * index}s` }}
             >
               <ReviewCard review={review} />
-            </CarouselItem>
+            </div>
           ))}
-        </CarouselContent>
-      </Carousel>
+        </div>
+      </div>
     </section>
   );
 };
