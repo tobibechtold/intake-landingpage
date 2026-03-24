@@ -156,10 +156,10 @@ export const translations = {
     switchWhy: "Warum wechseln",
 
     // Hero
-    heroTitle: "Wechsle zu Kalorientracking",
+    heroTitle: "Kalorien tracken,",
     heroTitleHighlight: "ohne Abo.",
     heroDescription:
-      "Intake bietet dir ernsthaftes Ernährungstracking ohne monatliche Gebühren, ohne erzwungenes Konto und ohne dass deine Daten dein Gerät verlassen.",
+      "Mit Intake trackst du Kalorien und Makros ohne Monatsabo, ohne Konto und ohne dass deine Daten dein Gerät verlassen.",
     downloadOn: "Laden im",
     appStore: "App Store",
     oneTimePurchase: "Einmalkauf",
@@ -205,34 +205,34 @@ export const translations = {
     screenshotGalleryHeading: "Mehr von Intake",
 
     // Why switch
-    whySwitchTitle: "Warum Menschen wechseln",
+    whySwitchTitle: "Warum viele zu Intake wechseln",
     whySwitchSubtitle:
-      "Die meisten Kalorientracker bringen laufende Kosten, Account-Zwang und Datenschutz-Kompromisse mit sich. Intake entfernt genau das, ohne wichtige Funktionen wegzulassen.",
-    whySwitchSubscriptionsTitle: "Genug von Abos",
+      "Viele Kalorientracker kosten jeden Monat Geld, wollen erst ein Konto und gehen mit deinen Daten nicht gerade sparsam um. Intake lässt genau das weg.",
+    whySwitchSubscriptionsTitle: "Kein Bock mehr auf Abos",
     whySwitchSubscriptionsBody:
-      "Du solltest kein weiteres Monatsabo brauchen, nur um Mahlzeiten zu loggen und Makros zu tracken.",
-    whySwitchSubscriptionsBenefit: "Einmal zahlen und den Core-Tracker behalten.",
-    whySwitchAccountTitle: "Kein Zwangskonto mehr",
+      "Du brauchst kein weiteres Monatsabo, nur um Essen einzutragen und deine Makros im Blick zu behalten.",
+    whySwitchSubscriptionsBenefit: "Einmal zahlen, fertig.",
+    whySwitchAccountTitle: "Kein Konto nötig",
     whySwitchAccountBody:
-      "Food-Tracking sollte nicht bedeuten, zuerst deine E-Mail abzugeben, bevor du starten kannst.",
-    whySwitchAccountBenefit: "Direkt starten, ohne Account anzulegen.",
-    whySwitchPrivacyTitle: "Privates Tracking",
+      "Wenn du nur dein Essen tracken willst, solltest du nicht erst deine Mailadresse abgeben müssen.",
+    whySwitchAccountBenefit: "Direkt starten, ohne Account.",
+    whySwitchPrivacyTitle: "Deine Daten bleiben bei dir",
     whySwitchPrivacyBody:
-      "Ernährungsdaten sind persönlich. Intake hält deine Daten standardmäßig auf deinem Gerät.",
-    whySwitchPrivacyBenefit: "Dein Tracking bleibt bei dir.",
+      "Ernährungsdaten sind persönlich. Deshalb bleiben sie bei Intake standardmäßig auf deinem Gerät.",
+    whySwitchPrivacyBenefit: "Dein Tracking bleibt auf deinem Gerät.",
 
     // Comparison
-    comparisonTitle: "Intake vs. typische Abo-Tracker",
+    comparisonTitle: "Intake vs. klassische Abo-Tracker",
     comparisonSubtitle:
-      "Eine ruhigere und privatere Art zu tracken, ohne auf Wesentliches zu verzichten.",
+      "Alles, was du brauchst. Ohne Abo, ohne Konto und ohne unnötigen Ballast.",
     comparisonIntake: "Intake",
     comparisonTypical: "Typische Abo-Tracker",
-    comparisonRowSubscription: "Abo erforderlich",
-    comparisonRowAccount: "Konto erforderlich",
+    comparisonRowSubscription: "Abo nötig",
+    comparisonRowAccount: "Konto nötig",
     comparisonRowOnDevice: "Daten bleiben auf dem Gerät",
     comparisonRowBarcode: "Barcode-Scanner",
     comparisonRowRecipes: "Rezepte",
-    comparisonRowStats: "Makro- und Kalorienstatistiken",
+    comparisonRowStats: "Makro- und Kalorienwerte",
     comparisonRowHealth: "Apple Health / Health Connect",
     comparisonRowCost: "Laufende Kosten",
     comparisonYes: "Ja",
@@ -241,34 +241,34 @@ export const translations = {
     comparisonRecurring: "Wiederkehrendes Abo",
 
     // Proof stories
-    proofStoriesTitle: "Beweise statt Versprechen",
+    proofStoriesTitle: "Warum Intake im Alltag besser funktioniert",
     proofStoriesSubtitle:
-      "Intake bleibt schnell, fokussiert und privat, ohne abgespeckt zu wirken.",
+      "Schnell eintragen, klar sehen, privat bleiben. Genau darum geht's.",
     proofStoryTrackFastTitle: "Schnell tracken",
     proofStoryTrackFastBody:
-      "Suchen, scannen und hinzufügen geht schnell, damit Logging leicht bleibt und nicht zur Aufgabe wird.",
+      "Suchen, scannen und erfassen geht schnell, damit Tracking im Alltag nicht nervt.",
     proofStoryTrackFastPointOne: "3+ Millionen Lebensmittel",
     proofStoryTrackFastPointTwo: "Schnelle Suche und Barcode-Scan",
     proofStoryTrackFastPointThree: "Eigene Lebensmittel und Rezepte",
-    proofStorySeeMattersTitle: "Das Wesentliche sehen",
+    proofStorySeeMattersTitle: "Das Wichtige im Blick",
     proofStorySeeMattersBody:
-      "Dashboard und Statistik konzentrieren sich auf Kalorien, Makros und Fortschritt statt auf gamifizierte Ablenkung.",
+      "Dashboard und Statistiken zeigen dir Kalorien, Makros und Fortschritt ohne unnötige Spielereien.",
     proofStorySeeMattersPointOne: "Klarer Makro-Überblick",
     proofStorySeeMattersPointTwo: "Nützliche Tages- und Wochenstatistik",
-    proofStorySeeMattersPointThree: "Für schnelles Scannen gestaltet",
-    proofStoryStayControlTitle: "Die Kontrolle behalten",
+    proofStorySeeMattersPointThree: "Für schnelles Erfassen gemacht",
+    proofStoryStayControlTitle: "Alles unter Kontrolle",
     proofStoryStayControlBody:
-      "Du bleibst nah an deinen eigenen Daten und deinem Workflow, mit Sync-Optionen, die den Privacy-First-Ansatz respektieren.",
+      "Du behältst die Kontrolle über deine Daten und deinen Ablauf, ohne auf Sync und Auswertungen zu verzichten.",
     proofStoryStayControlPointOne: "Kein Konto nötig",
-    proofStoryStayControlPointTwo: "Datenschutz auf dem Gerät zuerst",
+    proofStoryStayControlPointTwo: "Datenschutz direkt auf dem Gerät",
     proofStoryStayControlPointThree: "Apple Health und Health Connect",
 
     // Reviews
     reviewsTitle: "Was Nutzer sagen",
     reviewsSubtitle: "Echte Bewertungen aus dem AppStore",
-    reviewsSummaryTitle: "Vertrauen von Menschen, die überladene Tracker hinter sich lassen",
+    reviewsSummaryTitle: "Für viele die bessere Alternative zu überladenen Trackern",
     reviewsSummaryBody:
-      "Echtes App-Store-Feedback von Nutzern, die einen einfacheren und ehrlicheren Kalorientracker wollten.",
+      "Echtes App-Store-Feedback von Menschen, die einfach tracken wollten statt noch ein Abo zu verwalten.",
     showMore: "Mehr anzeigen",
     showLess: "Weniger anzeigen",
 
@@ -278,15 +278,15 @@ export const translations = {
 
     // Feature Voting
     featureVotingTitle: "Hilf mit,",
-    featureVotingTitleHighlight: "was als Nächstes kommt.",
+    featureVotingTitleHighlight: "Intake weiter besser zu machen.",
     featureVotingDescription:
-      "Sieh dir die Roadmap an, stimme für Features ab und hilf dabei, Intake ohne den Lärm einer großen Abo-Plattform weiterzuentwickeln.",
+      "Schau dir die Roadmap an, stimme für Features ab und hilf dabei, Intake Schritt für Schritt besser zu machen.",
     featureVotingButton: "Roadmap & Abstimmung",
 
     // CTA
-    ctaTitle: "Wechsle zu einem ruhigeren Kalorientracker.",
+    ctaTitle: "Wechsle zu einem Kalorientracker ohne Abo.",
     ctaDescription:
-      "Keine monatlichen Gebühren. Keine Login-Hürde. Keine Ernährungsdaten, die dein Gerät verlassen, außer du willst es.",
+      "Keine Monatsgebühren. Kein Login-Zwang. Deine Daten bleiben auf deinem Gerät.",
 
     // Footer
     legal: "Rechtliches",

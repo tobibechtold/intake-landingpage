@@ -31,4 +31,33 @@ describe("Index", () => {
       screen.getByRole("link", { name: /view roadmap & vote/i })
     ).toBeInTheDocument();
   });
+
+  it("renders the revised German conversion copy on the /de homepage", () => {
+    render(
+      <MemoryRouter initialEntries={["/de"]}>
+        <LanguageProvider>
+          <Index />
+        </LanguageProvider>
+      </MemoryRouter>
+    );
+
+    expect(
+      screen.getByRole("heading", { name: /kalorien tracken, ohne abo\./i })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /warum viele zu intake wechseln/i })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /intake vs\. klassische abo-tracker/i })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /warum intake im alltag besser funktioniert/i })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /roadmap & abstimmung/i })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /wechsle zu einem kalorientracker ohne abo\./i })
+    ).toBeInTheDocument();
+  });
 });
