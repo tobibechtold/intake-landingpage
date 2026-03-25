@@ -11,12 +11,12 @@ const PhoneFrame = ({ children, className }: PhoneFrameProps) => {
   return (
     <div className={cn("relative inline-block", className)}>
       <div
-        className="absolute overflow-hidden rounded-[12.5%]"
+        className="absolute overflow-hidden rounded-[8%]"
         style={{
           top: "2.4%",
-          left: "3.8%",
-          right: "3.8%",
-          bottom: "2.4%",
+          left: "5.1%",
+          right: "5.1%",
+          bottom: "2.08%",
         }}
       >
         {children}

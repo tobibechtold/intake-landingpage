@@ -123,10 +123,6 @@
     @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-foreground;
   }
 
-  .hero-device-shell {
-    @apply rounded-[2.5rem] border border-white/10 bg-white/[0.03] p-3 shadow-[0_30px_100px_-50px_rgba(255,76,145,0.6)];
-  }
-
   .proof-story-card {
     @apply grid items-center gap-8 rounded-[2rem] border border-border/60 bg-card/70 p-6 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1fr)] md:p-8;
   }

@@ -146,23 +146,21 @@ const Hero = () => {
             className="mt-12 flex justify-center opacity-0 animate-fade-scale md:mt-0"
             style={{ animationDelay: "0.4s" }}
           >
-            <div className="hero-device-shell max-w-[280px] md:max-w-[320px]">
-              <PhoneFrame>
-                <video
-                  key={language}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="h-full w-full object-cover"
-                >
-                  <source
-                    src={videoSrc}
-                    type={videoSrc.endsWith(".webm") ? "video/webm" : "video/mp4"}
-                  />
-                </video>
-              </PhoneFrame>
-            </div>
+            <PhoneFrame className="max-w-[280px] md:max-w-[320px]">
+              <video
+                key={language}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="h-full w-full object-cover"
+              >
+                <source
+                  src={videoSrc}
+                  type={videoSrc.endsWith(".webm") ? "video/webm" : "video/mp4"}
+                />
+              </video>
+            </PhoneFrame>
           </div>
         </div>
       </div>

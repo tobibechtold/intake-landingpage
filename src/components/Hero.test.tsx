@@ -29,5 +29,6 @@ describe("Hero", () => {
     expect(screen.getByText(/no account required/i)).toBeInTheDocument();
     expect(screen.getByText(/100% on-device/i)).toBeInTheDocument();
     expect(container.querySelector("video")).toBeInTheDocument();
+    expect(container.querySelector(".hero-device-shell")).not.toBeInTheDocument();
   });
 });
