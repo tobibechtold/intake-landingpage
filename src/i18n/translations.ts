@@ -224,7 +224,7 @@ export const translations = {
     // Comparison
     comparisonTitle: "Intake vs. klassische Abo-Tracker",
     comparisonSubtitle:
-      "Alles, was du brauchst. Ohne Abo, ohne Konto und ohne unnötigen Ballast.",
+      "Intake ist ein Kalorienzähler ohne Abo, ohne Konto und ohne unnötigen Ballast.",
     comparisonIntake: "Intake",
     comparisonTypical: "Typische Abo-Tracker",
     comparisonRowSubscription: "Abo nötig",

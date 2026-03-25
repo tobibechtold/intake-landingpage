@@ -45,6 +45,9 @@ describe("Index", () => {
       screen.getByRole("heading", { name: /kalorien tracken, ohne abo\./i })
     ).toBeInTheDocument();
     expect(
+      screen.getByText(/kalorienzähler ohne abo, ohne konto/i)
+    ).toBeInTheDocument();
+    expect(
       screen.getByRole("heading", { name: /warum viele zu intake wechseln/i })
     ).toBeInTheDocument();
     expect(
