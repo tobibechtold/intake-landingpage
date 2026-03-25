@@ -35,6 +35,7 @@ describe("Index", () => {
     expect(
       screen.getByRole("heading", { name: /wechsle zu einem kalorientracker ohne abo\./i })
     ).toBeInTheDocument();
+    expect(screen.getByText("Bekannt aus")).toBeInTheDocument();
   });
 
   it("renders the English conversion-focused home page structure on /en", () => {
@@ -62,5 +63,6 @@ describe("Index", () => {
     expect(
       screen.getByRole("link", { name: /view roadmap & vote/i })
     ).toBeInTheDocument();
+    expect(screen.getByText("Featured in")).toBeInTheDocument();
   });
 });

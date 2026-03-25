@@ -120,6 +120,7 @@ export const translations = {
     reviewsSummaryTitle: "Trusted by people leaving bloated trackers behind",
     reviewsSummaryBody:
       "Real App Store feedback from users who wanted a simpler, more honest calorie tracker.",
+    pressMentionsLabel: "Featured in",
     showMore: "Show more",
     showLess: "Show less",
 
@@ -269,6 +270,7 @@ export const translations = {
     reviewsSummaryTitle: "Für viele die bessere Alternative zu überladenen Trackern",
     reviewsSummaryBody:
       "Echtes App-Store-Feedback von Menschen, die einfach tracken wollten statt noch ein Abo zu verwalten.",
+    pressMentionsLabel: "Bekannt aus",
     showMore: "Mehr anzeigen",
     showLess: "Weniger anzeigen",
 

@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import PressMentions from "@/components/PressMentions";
 import Reviews from "@/components/Reviews";
 import ScreenshotGallery from "@/components/ScreenshotGallery";
 import Features from "@/components/Features";
@@ -20,6 +21,7 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        <PressMentions />
         <WhySwitch />
         <ComparisonTable />
         <ProofStories />
