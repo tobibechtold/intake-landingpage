@@ -40,7 +40,7 @@ const Hero = () => {
 
   return (
     <section className="hero-gradient relative min-h-screen overflow-hidden pt-20">
-      <div className="absolute inset-x-0 top-0 h-[28rem] bg-[radial-gradient(circle_at_top,hsl(338_90%_62%_/_0.24),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_55%_at_50%_0%,hsl(338_90%_62%_/_0.24),transparent_70%)]" />
       <div className="container relative py-16 md:py-24">
         <div className="items-center md:grid md:grid-cols-[minmax(0,1.1fr)_minmax(280px,0.9fr)] md:gap-12">
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
