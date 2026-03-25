@@ -14,15 +14,15 @@ describe("ProductUpdatesPreview", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByRole("heading", { name: "Product Updates" })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "What's new in Intake 2.1.3" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /view all updates/i })).toHaveAttribute(
+    expect(screen.getByRole("heading", { name: "Produktupdates" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Was ist neu in Intake 2.1.3" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /alle updates ansehen/i })).toHaveAttribute(
       "href",
       "/whats-new"
     );
     expect(
       screen
-        .getAllByRole("link", { name: /read update/i })
+        .getAllByRole("link", { name: /update lesen/i })
         .some((link) => link.getAttribute("href") === "/whats-new/2.1.3")
     ).toBe(true);
   });

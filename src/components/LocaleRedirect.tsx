@@ -7,6 +7,11 @@ const LocaleRedirect = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const state = location.state as { legacyLocaleRedirect?: boolean } | null;
+    if (state?.legacyLocaleRedirect) {
+      return;
+    }
+
     const preferredLanguage = localStorage.getItem("language");
     const targetPath = getGermanRedirectPath(
       location.pathname,
@@ -16,7 +21,7 @@ const LocaleRedirect = () => {
     if (targetPath && targetPath !== location.pathname) {
       navigate(targetPath, { replace: true });
     }
-  }, [location.pathname, navigate]);
+  }, [location.pathname, location.state, navigate]);
 
   return null;
 };

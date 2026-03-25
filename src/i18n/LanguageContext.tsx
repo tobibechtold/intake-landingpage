@@ -13,19 +13,9 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const location = useLocation();
-  const [language, setLanguageState] = useState<Language>(() => {
-    if (typeof window !== "undefined") {
-      return getLocaleFromPathname(window.location.pathname);
-    }
-
-    const stored = localStorage.getItem("language");
-    if (stored === "en" || stored === "de") return stored;
-    
-    // Detect browser language
-    const browserLang = navigator.language.toLowerCase();
-    if (browserLang.startsWith("de")) return "de";
-    return "en";
-  });
+  const [language, setLanguageState] = useState<Language>(() =>
+    getLocaleFromPathname(location.pathname)
+  );
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
@@ -44,7 +34,6 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     const pathLanguage = getLocaleFromPathname(location.pathname);
     if (pathLanguage !== language) {
       setLanguageState(pathLanguage);
-      localStorage.setItem("language", pathLanguage);
     }
   }, [location.pathname, language]);
 

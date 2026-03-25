@@ -123,7 +123,7 @@ export const getWhatsNewVersions = () =>
   [...new Set(readEntries().map((entry) => entry.version))].sort(compareVersionsDesc);
 
 export const getLocalizedWhatsNewRoutes = (locale) => {
-  const prefix = locale === "de" ? "/de" : "";
+  const prefix = locale === "en" ? "/en" : "";
   return [
     `${prefix}/whats-new`,
     ...getWhatsNewVersions().map((version) => `${prefix}/whats-new/${version}`),

@@ -13,11 +13,11 @@ const LocationDisplay = () => {
 describe("LanguageSwitcher", () => {
   it("preserves the whats new version when switching locales on entry pages", () => {
     render(
-      <MemoryRouter initialEntries={["/de/whats-new/2.1.1"]}>
+      <MemoryRouter initialEntries={["/whats-new/2.1.1"]}>
         <LanguageProvider>
           <Routes>
             <Route
-              path="/de/whats-new/:version"
+              path="/whats-new/:version"
               element={
                 <>
                   <LanguageSwitcher />
@@ -26,7 +26,7 @@ describe("LanguageSwitcher", () => {
               }
             />
             <Route
-              path="/whats-new/:version"
+              path="/en/whats-new/:version"
               element={
                 <>
                   <LanguageSwitcher />
@@ -41,6 +41,6 @@ describe("LanguageSwitcher", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Switch to English" }));
 
-    expect(screen.getByTestId("location-display")).toHaveTextContent("/whats-new/2.1.1");
+    expect(screen.getByTestId("location-display")).toHaveTextContent("/en/whats-new/2.1.1");
   });
 });

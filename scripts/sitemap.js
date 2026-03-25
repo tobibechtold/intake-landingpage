@@ -4,11 +4,11 @@ const SITE_ORIGIN = "https://www.getintake.de";
 
 const STATIC_URLS = [
   { path: "/", lastmod: "2026-03-02", changefreq: "weekly", priority: "1.0" },
-  { path: "/de", lastmod: "2026-03-02", changefreq: "weekly", priority: "0.9" },
   { path: "/privacy", lastmod: "2026-03-02", changefreq: "monthly", priority: "0.5" },
-  { path: "/de/privacy", lastmod: "2026-03-02", changefreq: "monthly", priority: "0.5" },
   { path: "/terms", lastmod: "2026-03-02", changefreq: "monthly", priority: "0.5" },
-  { path: "/de/terms", lastmod: "2026-03-02", changefreq: "monthly", priority: "0.5" },
+  { path: "/en", lastmod: "2026-03-02", changefreq: "weekly", priority: "0.9" },
+  { path: "/en/privacy", lastmod: "2026-03-02", changefreq: "monthly", priority: "0.5" },
+  { path: "/en/terms", lastmod: "2026-03-02", changefreq: "monthly", priority: "0.5" },
 ];
 
 const getLatestPublishedAt = () => {
@@ -26,7 +26,7 @@ const buildUrlEntry = ({ path, lastmod, changefreq, priority }) => `  <url>
 export const buildSitemapXml = () => {
   const latestPublishedAt = getLatestPublishedAt();
   const releaseEntries = getWhatsNewEntries().map((entry) => ({
-    path: entry.locale === "de" ? `/de/whats-new/${entry.version}` : `/whats-new/${entry.version}`,
+    path: entry.locale === "de" ? `/whats-new/${entry.version}` : `/en/whats-new/${entry.version}`,
     lastmod: entry.publishedAt,
     changefreq: "monthly",
     priority: "0.8",
@@ -34,7 +34,7 @@ export const buildSitemapXml = () => {
 
   const overviewEntries = [
     { path: "/whats-new", lastmod: latestPublishedAt, changefreq: "weekly", priority: "0.8" },
-    { path: "/de/whats-new", lastmod: latestPublishedAt, changefreq: "weekly", priority: "0.8" },
+    { path: "/en/whats-new", lastmod: latestPublishedAt, changefreq: "weekly", priority: "0.8" },
   ];
 
   const urls = [...STATIC_URLS, ...overviewEntries, ...releaseEntries];

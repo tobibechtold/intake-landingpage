@@ -1,20 +1,23 @@
-import { buildLocalizedPath, getPageFromPathname } from "@/lib/localeRouting";
+import {
+  buildLocalizedPath,
+  getLegacyGermanRedirectPath,
+  getPageFromPathname,
+  getLocaleFromPathname,
+  getWhatsNewVersionFromPathname,
+} from "@/lib/localeRouting";
 
 export const getGermanRedirectPath = (
   pathname: string,
   browserLanguage: string | undefined,
   preferredLanguage?: string | null
 ): string | null => {
-  if (preferredLanguage === "en") {
-    return null;
+  const legacyGermanRedirect = getLegacyGermanRedirectPath(pathname);
+  if (legacyGermanRedirect) {
+    return legacyGermanRedirect;
   }
 
-  const lang = (browserLanguage ?? "").toLowerCase();
-  if (!lang.startsWith("de")) {
-    return null;
-  }
-
-  if (pathname === "/de" || pathname.startsWith("/de/")) {
+  const locale = getLocaleFromPathname(pathname);
+  if (locale === "en") {
     return null;
   }
 
@@ -23,5 +26,24 @@ export const getGermanRedirectPath = (
     return null;
   }
 
-  return buildLocalizedPath(page, "de");
+  const version = page === "whatsNewEntry" ? getWhatsNewVersionFromPathname(pathname) : undefined;
+
+  if (preferredLanguage === "de") {
+    return null;
+  }
+
+  if (preferredLanguage === "en") {
+    return buildLocalizedPath(page, "en", version ?? undefined);
+  }
+
+  if (!browserLanguage) {
+    return null;
+  }
+
+  const lang = browserLanguage.toLowerCase();
+  if (lang.startsWith("de")) {
+    return null;
+  }
+
+  return buildLocalizedPath(page, "en", version ?? undefined);
 };

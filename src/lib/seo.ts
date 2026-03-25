@@ -195,7 +195,7 @@ export const getSeoContent = (pathname: string, origin: string): SeoContent => {
         alternateName: locale === "de" ? "Intake Kalorienzähler" : "Intake Calorie Counter",
         applicationCategory: "HealthApplication",
         operatingSystem: "iOS 15.0+, Android",
-        url: canonicalizePath(origin, locale === "de" ? "/de" : "/"),
+        url: canonicalizePath(origin, locale === "de" ? "/" : "/en"),
         downloadUrl: [getAppStoreUrl(locale), getGooglePlayUrl()],
         inLanguage: ["en", "de"],
         image: `${origin}/og-image.png`,

@@ -7,7 +7,7 @@ import { LanguageProvider } from "@/i18n/LanguageContext";
 describe("Footer", () => {
   it("renders both the localized what's new link and the external changelog link", () => {
     render(
-      <MemoryRouter initialEntries={["/de"]}>
+      <MemoryRouter initialEntries={["/"]}>
         <LanguageProvider>
           <Footer />
         </LanguageProvider>
@@ -16,7 +16,7 @@ describe("Footer", () => {
 
     expect(screen.getByRole("link", { name: "Was ist neu" })).toHaveAttribute(
       "href",
-      "/de/whats-new"
+      "/whats-new"
     );
 
     expect(screen.getByRole("link", { name: "Changelog" })).toHaveAttribute(

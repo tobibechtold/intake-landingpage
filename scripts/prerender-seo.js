@@ -5,52 +5,52 @@ const OG_IMAGE_URL = "/og-image.png";
 
 const STATIC_PAGE_SEO = {
   "/": {
-    lang: "en",
-    title: "Intake App - Calorie Counter for iPhone & Android | No Subscription",
-    description:
-      "Intake is a private calorie counter app with no subscription and no account required. Track calories and macros with barcode scan, Apple Health (iOS), Health Connect (Android), iCloud (iOS), and Google Drive sync (Android).",
-    canonical: `${SITE_ORIGIN}/`,
-    ogLocale: "en_US",
-  },
-  "/privacy": {
-    lang: "en",
-    title: "Privacy Policy | Intake",
-    description:
-      "Read the Intake Privacy Policy. Learn how calorie and nutrition data is processed, stored, and synced with Apple Health (iOS), Health Connect (Android), iCloud (iOS), and Google Drive (Android).",
-    canonical: `${SITE_ORIGIN}/privacy`,
-    ogLocale: "en_US",
-  },
-  "/terms": {
-    lang: "en",
-    title: "Terms of Use | Intake",
-    description:
-      "Read the Intake Terms of Use for app usage, legal notes, iOS and Android integrations, and support information.",
-    canonical: `${SITE_ORIGIN}/terms`,
-    ogLocale: "en_US",
-  },
-  "/de": {
     lang: "de",
     title: "Intake App - Kalorienzähler ohne Abo für iPhone & Android",
     description:
       "Intake ist ein Kalorienzähler ohne Abo und ohne Konto. Tracke Kalorien und Makros mit Barcode-Scanner, Apple Health, Health Connect und Daten, die auf deinem Gerät bleiben.",
-    canonical: `${SITE_ORIGIN}/de`,
+    canonical: `${SITE_ORIGIN}/`,
     ogLocale: "de_DE",
   },
-  "/de/privacy": {
+  "/privacy": {
     lang: "de",
     title: "Datenschutzerklärung | Intake",
     description:
       "Lies die Datenschutzerklärung von Intake und erfahre, wie Daten verarbeitet, gespeichert und mit Apple Health (iOS), Health Connect (Android), iCloud (iOS) oder Google Drive (Android) synchronisiert werden.",
-    canonical: `${SITE_ORIGIN}/de/privacy`,
+    canonical: `${SITE_ORIGIN}/privacy`,
     ogLocale: "de_DE",
   },
-  "/de/terms": {
+  "/terms": {
     lang: "de",
     title: "Nutzungsbedingungen | Intake",
     description:
       "Lies die Nutzungsbedingungen von Intake mit Informationen zu App-Nutzung, iOS- und Android-Integrationen, Haftung und Support.",
-    canonical: `${SITE_ORIGIN}/de/terms`,
+    canonical: `${SITE_ORIGIN}/terms`,
     ogLocale: "de_DE",
+  },
+  "/en": {
+    lang: "en",
+    title: "Intake App - Calorie Counter for iPhone & Android | No Subscription",
+    description:
+      "Intake is a private calorie counter app with no subscription and no account required. Track calories and macros with barcode scan, Apple Health (iOS), Health Connect (Android), iCloud (iOS), and Google Drive sync (Android).",
+    canonical: `${SITE_ORIGIN}/en`,
+    ogLocale: "en_US",
+  },
+  "/en/privacy": {
+    lang: "en",
+    title: "Privacy Policy | Intake",
+    description:
+      "Read the Intake Privacy Policy. Learn how calorie and nutrition data is processed, stored, and synced with Apple Health (iOS), Health Connect (Android), iCloud (iOS), and Google Drive (Android).",
+    canonical: `${SITE_ORIGIN}/en/privacy`,
+    ogLocale: "en_US",
+  },
+  "/en/terms": {
+    lang: "en",
+    title: "Terms of Use | Intake",
+    description:
+      "Read the Intake Terms of Use for app usage, legal notes, iOS and Android integrations, and support information.",
+    canonical: `${SITE_ORIGIN}/en/terms`,
+    ogLocale: "en_US",
   },
 };
 
@@ -60,7 +60,7 @@ const WHATS_NEW_INDEX_SEO = {
     title: "What's New | Intake",
     description:
       "Release notes, feature updates, screenshots, and product improvements for every Intake version from 2.1.1 onward.",
-    canonical: `${SITE_ORIGIN}/whats-new`,
+    canonical: `${SITE_ORIGIN}/en/whats-new`,
     ogLocale: "en_US",
   },
   de: {
@@ -68,7 +68,7 @@ const WHATS_NEW_INDEX_SEO = {
     title: "Was ist neu | Intake",
     description:
       "Release Notes, neue Funktionen, Screenshots und Produktverbesserungen fur jede Intake-Version ab 2.1.1.",
-    canonical: `${SITE_ORIGIN}/de/whats-new`,
+    canonical: `${SITE_ORIGIN}/whats-new`,
     ogLocale: "de_DE",
   },
 };
@@ -77,11 +77,11 @@ export const PRERENDER_ROUTES = [
   "/",
   "/privacy",
   "/terms",
-  ...getLocalizedWhatsNewRoutes("en"),
-  "/de",
-  "/de/privacy",
-  "/de/terms",
   ...getLocalizedWhatsNewRoutes("de"),
+  "/en",
+  "/en/privacy",
+  "/en/terms",
+  ...getLocalizedWhatsNewRoutes("en"),
 ];
 
 const getPageSeo = (route) => {
@@ -91,20 +91,20 @@ const getPageSeo = (route) => {
   }
 
   if (route === "/whats-new") {
-    return WHATS_NEW_INDEX_SEO.en;
-  }
-
-  if (route === "/de/whats-new") {
     return WHATS_NEW_INDEX_SEO.de;
   }
 
-  const match = route.match(/^\/(de\/)?whats-new\/([^/]+)$/);
+  if (route === "/en/whats-new") {
+    return WHATS_NEW_INDEX_SEO.en;
+  }
+
+  const match = route.match(/^\/(en\/)?whats-new\/([^/]+)$/);
   if (!match) {
     throw new Error(`Unsupported prerender route: ${route}`);
   }
 
-  const [, dePrefix, version] = match;
-  const locale = dePrefix ? "de" : "en";
+  const [, enPrefix, version] = match;
+  const locale = enPrefix ? "en" : "de";
   const entry = getWhatsNewEntry(locale, version);
 
   if (!entry) {
@@ -128,12 +128,12 @@ const escapeAttr = (value) =>
     .replaceAll(">", "&gt;");
 
 const buildSeoBlock = (route, seo) => {
-  const alternateEn = route.startsWith("/de")
+  const alternateDe = route.startsWith("/en")
     ? `${SITE_ORIGIN}${route.slice(3) || "/"}`
     : `${SITE_ORIGIN}${route}`;
-  const alternateDe = route.startsWith("/de")
+  const alternateEn = route.startsWith("/en")
     ? `${SITE_ORIGIN}${route}`
-    : `${SITE_ORIGIN}${route === "/" ? "/de" : `/de${route}`}`;
+    : `${SITE_ORIGIN}${route === "/" ? "/en" : `/en${route}`}`;
 
   return [
     "<!-- PRERENDER_SEO_START -->",

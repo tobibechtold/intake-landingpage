@@ -25,18 +25,21 @@ const normalizePathname = (pathname: string): string => {
 
 export const getWhatsNewVersionFromPathname = (pathname: string): string | null => {
   const normalized = normalizePathname(pathname);
-  const match = normalized.match(/^\/(?:de\/)?whats-new\/([^/]+)$/);
+  const match = normalized.match(/^\/(?:(?:de|en)\/)?whats-new\/([^/]+)$/);
   return match?.[1] ?? null;
 };
 
 export const getLocaleFromPathname = (pathname: string): Language => {
   const normalized = normalizePathname(pathname);
-  return normalized === "/de" || normalized.startsWith("/de/") ? "de" : "en";
+  return normalized === "/en" || normalized.startsWith("/en/") ? "en" : "de";
 };
 
 export const getPageFromPathname = (pathname: string): SitePage => {
   const normalized = normalizePathname(pathname);
-  const noLocale = normalized === "/de" ? "/" : normalized.replace(/^\/de(?=\/|$)/, "") || "/";
+  const noLocale =
+    normalized === "/de" || normalized === "/en"
+      ? "/"
+      : normalized.replace(/^\/(?:de|en)(?=\/|$)/, "") || "/";
 
   if (/^\/whats-new\/[^/]+$/.test(noLocale)) {
     return "whatsNewEntry";
@@ -67,7 +70,7 @@ export const buildLocalizedPath = (page: SitePage, locale: Language, version?: s
       throw new Error("buildLocalizedPath requires a version for whatsNewEntry routes.");
     }
 
-    return locale === "en" ? `/whats-new/${version}` : `/de/whats-new/${version}`;
+    return locale === "de" ? `/whats-new/${version}` : `/en/whats-new/${version}`;
   }
 
   const basePath =
@@ -75,11 +78,25 @@ export const buildLocalizedPath = (page: SitePage, locale: Language, version?: s
       ? "/"
       : `/${PAGE_SEGMENT_BY_PAGE[page]}`;
 
-  if (locale === "en") {
+  if (locale === "de") {
     return basePath;
   }
 
-  return basePath === "/" ? "/de" : `/de${basePath}`;
+  return basePath === "/" ? "/en" : `/en${basePath}`;
+};
+
+export const getLegacyGermanRedirectPath = (pathname: string): string | null => {
+  const normalized = normalizePathname(pathname);
+
+  if (normalized === "/de") {
+    return "/";
+  }
+
+  if (normalized.startsWith("/de/")) {
+    return normalized.replace(/^\/de(?=\/)/, "") || "/";
+  }
+
+  return null;
 };
 
 export const buildAlternateUrls = (pathname: string, origin: string) => {

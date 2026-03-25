@@ -5,14 +5,14 @@ describe("getSeoContent", () => {
   const origin = "https://www.getintake.de";
 
   it("returns German homepage metadata and alternates", () => {
-    const seo = getSeoContent("/de", origin);
+    const seo = getSeoContent("/", origin);
     const appSchema = seo.homeSchema?.find((item) => item["@type"] === "SoftwareApplication");
 
     expect(seo.locale).toBe("de");
     expect(seo.page).toBe("home");
-    expect(seo.canonical).toBe("https://www.getintake.de/de");
-    expect(seo.alternates.de).toBe("https://www.getintake.de/de");
-    expect(seo.alternates.en).toBe("https://www.getintake.de/");
+    expect(seo.canonical).toBe("https://www.getintake.de/");
+    expect(seo.alternates.de).toBe("https://www.getintake.de/");
+    expect(seo.alternates.en).toBe("https://www.getintake.de/en");
     expect(seo.title).toMatch(/Intake App - Kalorienzähler ohne Abo/i);
     expect(seo.description).toMatch(/Kalorienzähler ohne Abo/i);
     expect(seo.description).toMatch(/ohne Konto/i);
@@ -30,7 +30,7 @@ describe("getSeoContent", () => {
   });
 
   it("includes iOS + Android stores and integrations in homepage schema", () => {
-    const seo = getSeoContent("/", origin);
+    const seo = getSeoContent("/en", origin);
     const appSchema = seo.homeSchema?.find((item) => item["@type"] === "SoftwareApplication");
 
     expect(appSchema).toBeDefined();
@@ -52,42 +52,42 @@ describe("getSeoContent", () => {
   });
 
   it("returns English privacy metadata and no homepage schema", () => {
-    const seo = getSeoContent("/privacy", origin);
+    const seo = getSeoContent("/en/privacy", origin);
 
     expect(seo.locale).toBe("en");
     expect(seo.page).toBe("privacy");
-    expect(seo.canonical).toBe("https://www.getintake.de/privacy");
+    expect(seo.canonical).toBe("https://www.getintake.de/en/privacy");
     expect(seo.title).toContain("Privacy");
     expect(seo.homeSchema).toBeNull();
     expect(seo.noIndex).toBe(false);
   });
 
   it("returns overview metadata for localized what's new pages", () => {
-    const seo = getSeoContent("/de/whats-new", origin);
+    const seo = getSeoContent("/whats-new", origin);
 
     expect(seo.locale).toBe("de");
     expect(seo.page).toBe("whatsNewIndex");
-    expect(seo.canonical).toBe("https://www.getintake.de/de/whats-new");
-    expect(seo.alternates.en).toBe("https://www.getintake.de/whats-new");
+    expect(seo.canonical).toBe("https://www.getintake.de/whats-new");
+    expect(seo.alternates.en).toBe("https://www.getintake.de/en/whats-new");
     expect(seo.noIndex).toBe(false);
     expect(seo.title).toContain("Was ist neu");
   });
 
   it("returns release metadata for localized what's new detail pages", () => {
-    const seo = getSeoContent("/whats-new/2.1.1", origin);
+    const seo = getSeoContent("/en/whats-new/2.1.1", origin);
 
     expect(seo.locale).toBe("en");
     expect(seo.page).toBe("whatsNewEntry");
-    expect(seo.canonical).toBe("https://www.getintake.de/whats-new/2.1.1");
-    expect(seo.alternates.de).toBe("https://www.getintake.de/de/whats-new/2.1.1");
+    expect(seo.canonical).toBe("https://www.getintake.de/en/whats-new/2.1.1");
+    expect(seo.alternates.de).toBe("https://www.getintake.de/whats-new/2.1.1");
     expect(seo.noIndex).toBe(false);
     expect(seo.title).toContain("2.1.1");
   });
 
   it("returns noindex metadata for unknown routes", () => {
-    const seo = getSeoContent("/de/missing-page", origin);
+    const seo = getSeoContent("/en/missing-page", origin);
 
-    expect(seo.locale).toBe("de");
+    expect(seo.locale).toBe("en");
     expect(seo.page).toBe("notFound");
     expect(seo.noIndex).toBe(true);
     expect(seo.title).toContain("404");
@@ -95,22 +95,22 @@ describe("getSeoContent", () => {
   });
 
   it("spot checks canonical and locale for key localized routes", () => {
-    const homeEn = getSeoContent("/", origin);
-    expect(homeEn.locale).toBe("en");
-    expect(homeEn.canonical).toBe(`${origin}/`);
-
-    const homeDe = getSeoContent("/de", origin);
+    const homeDe = getSeoContent("/", origin);
     expect(homeDe.locale).toBe("de");
-    expect(homeDe.canonical).toBe(`${origin}/de`);
+    expect(homeDe.canonical).toBe(`${origin}/`);
 
-    const privacyEn = getSeoContent("/privacy", origin);
-    expect(privacyEn.locale).toBe("en");
-    expect(privacyEn.canonical).toBe(`${origin}/privacy`);
+    const homeEn = getSeoContent("/en", origin);
+    expect(homeEn.locale).toBe("en");
+    expect(homeEn.canonical).toBe(`${origin}/en`);
 
-    const privacyDe = getSeoContent("/de/privacy", origin);
+    const privacyDe = getSeoContent("/privacy", origin);
     expect(privacyDe.locale).toBe("de");
-    expect(privacyDe.canonical).toBe(`${origin}/de/privacy`);
-    expect(privacyDe.alternates.en).toBe(`${origin}/privacy`);
-    expect(privacyDe.alternates.de).toBe(`${origin}/de/privacy`);
+    expect(privacyDe.canonical).toBe(`${origin}/privacy`);
+    expect(privacyDe.alternates.en).toBe(`${origin}/en/privacy`);
+    expect(privacyDe.alternates.de).toBe(`${origin}/privacy`);
+
+    const privacyEn = getSeoContent("/en/privacy", origin);
+    expect(privacyEn.locale).toBe("en");
+    expect(privacyEn.canonical).toBe(`${origin}/en/privacy`);
   });
 });
