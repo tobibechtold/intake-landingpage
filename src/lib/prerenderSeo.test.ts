@@ -19,7 +19,8 @@ describe("prerender-seo", () => {
     const html = buildPrerenderedHtml(template, "/de");
 
     expect(html).toContain('<html lang="de">');
-    expect(html).toContain("Kalorienzähler");
+    expect(html).toContain("Intake App - Kalorienzähler ohne Abo für iPhone & Android");
+    expect(html).toContain("Intake ist ein Kalorienzähler ohne Abo und ohne Konto");
     expect(html).toContain('property="og:title"');
     expect(html).toContain('content="https://intake.tobibechtold.dev/de"');
     expect(html).toContain('property="og:image"');
@@ -66,11 +67,15 @@ describe("prerender-seo", () => {
       "/privacy",
       "/terms",
       "/whats-new",
+      "/whats-new/2.1.3",
+      "/whats-new/2.1.2",
       "/whats-new/2.1.1",
       "/de",
       "/de/privacy",
       "/de/terms",
       "/de/whats-new",
+      "/de/whats-new/2.1.3",
+      "/de/whats-new/2.1.2",
       "/de/whats-new/2.1.1",
     ]);
   });

@@ -29,8 +29,8 @@ const ProductUpdatesPreview = () => {
             </h2>
             <p className="text-base text-muted-foreground md:text-lg">
               {language === "de"
-                ? "Ein schneller Blick auf die neuesten Verbesserungen, Features und Produktänderungen in Intake."
-                : "A quick look at the latest improvements, features, and product changes in Intake."}
+                ? "Neue Releases zeigen, dass Intake aktiv weiterentwickelt wird, ohne den Core-Tracker hinter ein Abo zu sperren."
+                : "Recent releases show Intake keeps improving without hiding the core tracker behind a subscription."}
             </p>
           </div>
 

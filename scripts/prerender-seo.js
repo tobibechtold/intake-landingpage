@@ -6,9 +6,9 @@ const OG_IMAGE_URL = "/og-image.png";
 const STATIC_PAGE_SEO = {
   "/": {
     lang: "en",
-    title: "Intake - Calorie Counter for iPhone & Android | No Subscription",
+    title: "Intake App - Calorie Counter for iPhone & Android | No Subscription",
     description:
-      "Simple calorie tracking for iOS and Android. No subscription, no account required. Track calories with barcode scan, Apple Health (iOS), Health Connect (Android), iCloud (iOS), and Google Drive sync (Android).",
+      "Intake is a private calorie counter app with no subscription and no account required. Track calories and macros with barcode scan, Apple Health (iOS), Health Connect (Android), iCloud (iOS), and Google Drive sync (Android).",
     canonical: `${SITE_ORIGIN}/`,
     ogLocale: "en_US",
   },
@@ -30,9 +30,9 @@ const STATIC_PAGE_SEO = {
   },
   "/de": {
     lang: "de",
-    title: "Intake - Kalorienzähler für iPhone & Android | Ohne Abo",
+    title: "Intake App - Kalorienzähler ohne Abo für iPhone & Android",
     description:
-      "Einfaches Kalorientracking für iOS und Android. Kein Abo, kein Konto notwendig. Mit Barcode-Scanner, Apple Health (iOS), Health Connect (Android), iCloud (iOS) und Google Drive Sync (Android).",
+      "Intake ist ein Kalorienzähler ohne Abo und ohne Konto. Tracke Kalorien und Makros mit Barcode-Scanner, Apple Health, Health Connect und Daten, die auf deinem Gerät bleiben.",
     canonical: `${SITE_ORIGIN}/de`,
     ogLocale: "de_DE",
   },

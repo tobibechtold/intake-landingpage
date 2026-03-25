@@ -26,9 +26,9 @@ interface SeoByLocale {
 const SEO_COPY: Record<Language, SeoByLocale> = {
   en: {
     home: {
-      title: "Intake - Calorie Counter for iPhone & Android | No Subscription",
+      title: "Intake App - Calorie Counter for iPhone & Android | No Subscription",
       description:
-        "Simple calorie tracking for iOS and Android. No subscription, no account required. Track calories with barcode scan, Apple Health (iOS), Health Connect (Android), iCloud (iOS), and Google Drive sync (Android).",
+        "Intake is a private calorie counter app with no subscription and no account required. Track calories and macros with barcode scan, Apple Health (iOS), Health Connect (Android), iCloud (iOS), and Google Drive sync (Android).",
     },
     privacy: {
       title: "Privacy Policy | Intake",
@@ -52,9 +52,9 @@ const SEO_COPY: Record<Language, SeoByLocale> = {
   },
   de: {
     home: {
-      title: "Intake - Kalorienzähler für iPhone & Android | Ohne Abo",
+      title: "Intake App - Kalorienzähler ohne Abo für iPhone & Android",
       description:
-        "Einfaches Kalorientracking für iOS und Android. Kein Abo, kein Konto notwendig. Mit Barcode-Scanner, Apple Health (iOS), Health Connect (Android), iCloud (iOS) und Google Drive Sync (Android).",
+        "Intake ist ein Kalorienzähler ohne Abo und ohne Konto. Tracke Kalorien und Makros mit Barcode-Scanner, Apple Health, Health Connect und Daten, die auf deinem Gerät bleiben.",
     },
     privacy: {
       title: "Datenschutzerklärung | Intake",
@@ -154,6 +154,30 @@ export const getSeoContent = (pathname: string, origin: string): SeoContent => {
   }
 
   const faq = FAQ_BY_LANGUAGE[locale];
+  const schemaDescription =
+    locale === "de"
+      ? "Intake ist ein Kalorienzähler ohne Abo und ohne Konto. Tracke Kalorien und Makros mit Barcode-Scanner, Apple Health, Health Connect und Daten, die auf deinem Gerät bleiben."
+      : "Intake is a private calorie counter app with no subscription and no account required. Track calories and macros with barcode scan, Apple Health (iOS), Health Connect (Android), iCloud (iOS), and Google Drive sync (Android).";
+  const schemaFeatureList =
+    locale === "de"
+      ? [
+          "Kalorienzähler ohne Abo",
+          "Kein Konto nötig",
+          "Barcode-Scanner",
+          "Daten bleiben auf deinem Gerät",
+          "Apple Health und Health Connect",
+          "iCloud und Google Drive Sync",
+        ]
+      : [
+          "Private calorie counter app",
+          "No subscription",
+          "No account required",
+          "Barcode scanner",
+          "Apple Health sync (iOS)",
+          "Health Connect sync (Android)",
+          "iCloud sync (iOS)",
+          "Google Drive sync (Android)",
+        ];
 
   return {
     locale,
@@ -168,7 +192,7 @@ export const getSeoContent = (pathname: string, origin: string): SeoContent => {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         name: "Intake",
-        alternateName: "Intake Calorie Counter",
+        alternateName: locale === "de" ? "Intake Kalorienzähler" : "Intake Calorie Counter",
         applicationCategory: "HealthApplication",
         operatingSystem: "iOS 15.0+, Android",
         url: canonicalizePath(origin, locale === "de" ? "/de" : "/"),
@@ -180,17 +204,8 @@ export const getSeoContent = (pathname: string, origin: string): SeoContent => {
           `${origin}/screenshots/en-2-Dashboard.png`,
           `${origin}/screenshots/en-3-Testimonial.png`,
         ],
-        description: copy.description,
-        featureList: [
-          "3+ million foods database",
-          "Barcode scanner",
-          "Apple Health sync (iOS)",
-          "Health Connect sync (Android)",
-          "iCloud sync (iOS)",
-          "Google Drive sync (Android)",
-          "No subscription",
-          "No account required",
-        ],
+        description: schemaDescription,
+        featureList: schemaFeatureList,
       },
       {
         "@context": "https://schema.org",

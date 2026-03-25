@@ -4,15 +4,27 @@ import { getSeoContent } from "./seo";
 describe("getSeoContent", () => {
   it("returns German homepage metadata and alternates", () => {
     const seo = getSeoContent("/de", "https://intake.tobibechtold.dev");
+    const appSchema = seo.homeSchema?.find((item) => item["@type"] === "SoftwareApplication");
 
     expect(seo.locale).toBe("de");
     expect(seo.page).toBe("home");
     expect(seo.canonical).toBe("https://intake.tobibechtold.dev/de");
     expect(seo.alternates.de).toBe("https://intake.tobibechtold.dev/de");
     expect(seo.alternates.en).toBe("https://intake.tobibechtold.dev/");
-    expect(seo.title).toContain("Kalorienz");
-    expect(seo.description).toContain("Android");
+    expect(seo.title).toMatch(/Intake App - Kalorienzähler ohne Abo/i);
+    expect(seo.description).toMatch(/Kalorienzähler ohne Abo/i);
+    expect(seo.description).toMatch(/ohne Konto/i);
+    expect(seo.description).toMatch(/deinem Gerät/i);
     expect(seo.homeSchema).not.toBeNull();
+    expect(appSchema?.alternateName).toBe("Intake Kalorienzähler");
+    expect(appSchema?.description).toMatch(/Kalorienzähler ohne Abo/i);
+    expect(appSchema?.featureList).toEqual(
+      expect.arrayContaining([
+        "Kalorienzähler ohne Abo",
+        "Kein Konto nötig",
+        "Daten bleiben auf deinem Gerät",
+      ])
+    );
   });
 
   it("includes iOS + Android stores and integrations in homepage schema", () => {

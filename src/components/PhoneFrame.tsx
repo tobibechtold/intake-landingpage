@@ -1,31 +1,31 @@
 import React from "react";
 import iphoneBezel from "@/assets/iphone-bezel.png";
+import { cn } from "@/lib/utils";
 
 interface PhoneFrameProps {
   children: React.ReactNode;
+  className?: string;
 }
 
-const PhoneFrame = ({ children }: PhoneFrameProps) => {
+const PhoneFrame = ({ children, className }: PhoneFrameProps) => {
   return (
-    <div className="relative inline-block">
-      {/* Screen content behind the bezel */}
+    <div className={cn("relative inline-block", className)}>
       <div
-        className="absolute rounded-[12.5%] overflow-hidden"
+        className="absolute overflow-hidden rounded-[8%]"
         style={{
           top: "2.4%",
-          left: "3.8%",
-          right: "3.8%",
-          bottom: "2.4%",
+          left: "5.1%",
+          right: "5.1%",
+          bottom: "2.08%",
         }}
       >
         {children}
       </div>
-      {/* Bezel overlay on top */}
       <img
         src={iphoneBezel}
         alt=""
         aria-hidden="true"
-        className="relative z-10 w-full h-auto pointer-events-none select-none"
+        className="pointer-events-none relative z-10 h-auto w-full select-none"
         draggable={false}
       />
     </div>
