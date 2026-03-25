@@ -1,6 +1,6 @@
 import { getLocalizedWhatsNewRoutes, getWhatsNewEntry } from "./whats-new-content.js";
 
-const SITE_ORIGIN = "https://intake.tobibechtold.dev";
+const SITE_ORIGIN = "https://www.getintake.de";
 const OG_IMAGE_URL = "/og-image.png";
 
 const STATIC_PAGE_SEO = {

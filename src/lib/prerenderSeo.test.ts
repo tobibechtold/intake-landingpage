@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { buildPrerenderedHtml, PRERENDER_ROUTES } from "../../scripts/prerender-seo.js";
 
 describe("prerender-seo", () => {
+  const origin = "https://www.getintake.de";
   const template = `<!doctype html>
 <html lang="en">
   <head>
@@ -22,7 +23,7 @@ describe("prerender-seo", () => {
     expect(html).toContain("Intake App - Kalorienzähler ohne Abo für iPhone & Android");
     expect(html).toContain("Intake ist ein Kalorienzähler ohne Abo und ohne Konto");
     expect(html).toContain('property="og:title"');
-    expect(html).toContain('content="https://intake.tobibechtold.dev/de"');
+    expect(html).toContain(`content="${origin}/de"`);
     expect(html).toContain('property="og:image"');
     expect(html).toContain('content="/og-image.png"');
   });
@@ -30,13 +31,9 @@ describe("prerender-seo", () => {
   it("includes canonical and alternate links", () => {
     const html = buildPrerenderedHtml(template, "/privacy");
 
-    expect(html).toContain('<link rel="canonical" href="https://intake.tobibechtold.dev/privacy" />');
-    expect(html).toContain(
-      '<link rel="alternate" hreflang="de" href="https://intake.tobibechtold.dev/de/privacy" />'
-    );
-    expect(html).toContain(
-      '<link rel="alternate" hreflang="x-default" href="https://intake.tobibechtold.dev/" />'
-    );
+    expect(html).toContain(`<link rel="canonical" href="${origin}/privacy" />`);
+    expect(html).toContain(`<link rel="alternate" hreflang="de" href="${origin}/de/privacy" />`);
+    expect(html).toContain(`<link rel="alternate" hreflang="x-default" href="${origin}/" />`);
   });
 
   it("uses updated cross-platform SEO copy in prerendered home HTML", () => {
@@ -52,13 +49,9 @@ describe("prerender-seo", () => {
     const html = buildPrerenderedHtml(template, "/whats-new/2.1.1");
 
     expect(html).toContain("What's new in Intake 2.1.1 | Intake");
-    expect(html).toContain('href="https://intake.tobibechtold.dev/whats-new/2.1.1"');
-    expect(html).toContain(
-      'hreflang="en" href="https://intake.tobibechtold.dev/whats-new/2.1.1"'
-    );
-    expect(html).toContain(
-      'hreflang="de" href="https://intake.tobibechtold.dev/de/whats-new/2.1.1"'
-    );
+    expect(html).toContain(`href="${origin}/whats-new/2.1.1"`);
+    expect(html).toContain(`hreflang="en" href="${origin}/whats-new/2.1.1"`);
+    expect(html).toContain(`hreflang="de" href="${origin}/de/whats-new/2.1.1"`);
   });
 
   it("defines all localized routes that should be emitted", () => {

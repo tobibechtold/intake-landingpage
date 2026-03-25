@@ -5,9 +5,9 @@ describe("sitemap", () => {
   it("includes localized what's new overview and detail URLs", () => {
     const xml = buildSitemapXml();
 
-    expect(xml).toContain("<loc>https://intake.tobibechtold.dev/whats-new</loc>");
-    expect(xml).toContain("<loc>https://intake.tobibechtold.dev/de/whats-new</loc>");
-    expect(xml).toContain("<loc>https://intake.tobibechtold.dev/whats-new/2.1.1</loc>");
-    expect(xml).toContain("<loc>https://intake.tobibechtold.dev/de/whats-new/2.1.1</loc>");
+    expect(xml).toContain("<loc>https://www.getintake.de/whats-new</loc>");
+    expect(xml).toContain("<loc>https://www.getintake.de/de/whats-new</loc>");
+    expect(xml).toContain("<loc>https://www.getintake.de/whats-new/2.1.1</loc>");
+    expect(xml).toContain("<loc>https://www.getintake.de/de/whats-new/2.1.1</loc>");
   });
 });

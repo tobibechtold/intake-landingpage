@@ -7,6 +7,8 @@ import {
 } from "./localeRouting";
 
 describe("localeRouting", () => {
+  const origin = "https://www.getintake.de";
+
   it("detects locale from pathname", () => {
     expect(getLocaleFromPathname("/")).toBe("en");
     expect(getLocaleFromPathname("/privacy")).toBe("en");
@@ -36,18 +38,18 @@ describe("localeRouting", () => {
   });
 
   it("builds alternates for current page", () => {
-    expect(buildAlternateUrls("/de/terms", "https://intake.tobibechtold.dev")).toEqual({
-      canonical: "https://intake.tobibechtold.dev/de/terms",
-      en: "https://intake.tobibechtold.dev/terms",
-      de: "https://intake.tobibechtold.dev/de/terms",
-      xDefault: "https://intake.tobibechtold.dev/",
+    expect(buildAlternateUrls("/de/terms", origin)).toEqual({
+      canonical: "https://www.getintake.de/de/terms",
+      en: "https://www.getintake.de/terms",
+      de: "https://www.getintake.de/de/terms",
+      xDefault: "https://www.getintake.de/",
     });
 
-    expect(buildAlternateUrls("/de/whats-new/2.1.1", "https://intake.tobibechtold.dev")).toEqual({
-      canonical: "https://intake.tobibechtold.dev/de/whats-new/2.1.1",
-      en: "https://intake.tobibechtold.dev/whats-new/2.1.1",
-      de: "https://intake.tobibechtold.dev/de/whats-new/2.1.1",
-      xDefault: "https://intake.tobibechtold.dev/",
+    expect(buildAlternateUrls("/de/whats-new/2.1.1", origin)).toEqual({
+      canonical: "https://www.getintake.de/de/whats-new/2.1.1",
+      en: "https://www.getintake.de/whats-new/2.1.1",
+      de: "https://www.getintake.de/de/whats-new/2.1.1",
+      xDefault: "https://www.getintake.de/",
     });
   });
 });

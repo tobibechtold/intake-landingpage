@@ -1,6 +1,6 @@
 import { getLocalizedWhatsNewRoutes, getWhatsNewEntries } from "./whats-new-content.js";
 
-const SITE_ORIGIN = "https://intake.tobibechtold.dev";
+const SITE_ORIGIN = "https://www.getintake.de";
 
 const STATIC_URLS = [
   { path: "/", lastmod: "2026-03-02", changefreq: "weekly", priority: "1.0" },

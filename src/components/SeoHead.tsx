@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { SITE_ORIGIN } from "@/lib/siteOrigin";
 import { getSeoContent } from "@/lib/seo";
 
-const SITE_ORIGIN = "https://intake.tobibechtold.dev";
 const OG_IMAGE_PATH = "/og-image.png";
 
 const upsertMeta = (attr: "name" | "property", key: string, content: string) => {
