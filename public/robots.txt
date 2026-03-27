@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://intake.tobibechtold.dev/sitemap.xml
+Sitemap: https://www.getintake.de/sitemap.xml

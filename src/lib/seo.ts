@@ -212,7 +212,7 @@ export const getSeoContent = (pathname: string, origin: string): SeoContent => {
         "@type": "Organization",
         name: "Intake",
         url: `${origin}/`,
-        logo: `${origin}/favicon.webp`,
+        logo: `${origin}/favicon-512x512.png`,
       },
       {
         "@context": "https://schema.org",
