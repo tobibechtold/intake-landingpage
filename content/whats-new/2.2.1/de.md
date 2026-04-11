@@ -10,7 +10,7 @@ highlights:
 
 ## Große Änderungen aus 2.2.0
 
-Dieses Update baut auf den großen Änderungen aus Update 2.2.0 auf. Was sich konkret geänder hat findet ihr [hier](https://www.getintake.de/whats-new/2.2.0).
+Dieses Update baut auf den großen Änderungen aus Update 2.2.0 auf. Was sich konkret geändert hat findet ihr [hier](https://www.getintake.de/whats-new/2.2.0).
 
 ## Nährstoffe selbst hinzufügen
 
