@@ -13,6 +13,7 @@ import ProductUpdatesPreview from "@/components/ProductUpdatesPreview";
 import WhySwitch from "@/components/WhySwitch";
 import ComparisonTable from "@/components/ComparisonTable";
 import ProofStories from "@/components/ProofStories";
+import TopicPages from "@/components/TopicPages";
 
 const Index = () => {
   return (
@@ -23,6 +24,7 @@ const Index = () => {
         <Hero />
         <PressMentions />
         <WhySwitch />
+        <TopicPages />
         <ComparisonTable />
         <ProofStories />
         <Reviews />

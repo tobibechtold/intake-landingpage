@@ -20,6 +20,46 @@ const Footer = () => {
 
           <div className="flex flex-col md:flex-row gap-6 md:gap-12">
             <div className="flex flex-col gap-3">
+              <span className="text-sm font-semibold text-foreground">{t("discover")}</span>
+              <Link
+                to={buildLocalizedPath("features", language)}
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                {t("featuresNav")}
+              </Link>
+              <Link
+                to={buildLocalizedPath("noSubscription", language)}
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                {t("noSubscriptionNav")}
+              </Link>
+              <Link
+                to={buildLocalizedPath("noAccount", language)}
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                {t("noAccountNav")}
+              </Link>
+              <Link
+                to={buildLocalizedPath("comparisons", language)}
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                {t("comparisonsNav")}
+              </Link>
+              <Link
+                to={buildLocalizedPath("comparisonDetail", language, "yazio-alternative")}
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                {t("yazioAlternative")}
+              </Link>
+              <Link
+                to={buildLocalizedPath("comparisonDetail", language, "fddb-alternative")}
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                {t("fddbAlternative")}
+              </Link>
+            </div>
+
+            <div className="flex flex-col gap-3">
               <span className="text-sm font-semibold text-foreground">{t("legal")}</span>
               <Link to={buildLocalizedPath("privacy", language)} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 {t("privacyPolicy")}

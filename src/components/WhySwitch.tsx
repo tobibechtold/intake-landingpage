@@ -26,9 +26,9 @@ const WhySwitch = () => {
   ];
 
   return (
-    <section id="why-switch" className="section-gradient py-20 md:py-24">
+    <section className="section-gradient py-20 md:py-24">
       <div className="container">
-        <div className="mx-auto max-w-3xl text-center">
+        <div id="why-switch" className="mx-auto max-w-3xl scroll-mt-28 text-center">
           <p className="section-kicker">{t("heroSecondaryCta")}</p>
           <h2 className="mt-3 text-3xl font-bold text-foreground md:text-5xl">
             {t("whySwitchTitle")}

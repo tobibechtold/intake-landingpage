@@ -8,7 +8,7 @@ const Faq = () => {
   return (
     <section className="section-gradient py-24">
       <div className="container max-w-4xl">
-        <div className="text-center mb-12">
+        <div id="faq" className="mb-12 scroll-mt-28 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             {t("faqTitle")}
           </h2>

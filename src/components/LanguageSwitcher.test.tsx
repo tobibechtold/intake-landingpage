@@ -43,4 +43,72 @@ describe("LanguageSwitcher", () => {
 
     expect(screen.getByTestId("location-display")).toHaveTextContent("/en/whats-new/2.1.1");
   });
+
+  it("switches between localized evergreen routes", () => {
+    render(
+      <MemoryRouter initialEntries={["/funktionen"]}>
+        <LanguageProvider>
+          <Routes>
+            <Route
+              path="/funktionen"
+              element={
+                <>
+                  <LanguageSwitcher />
+                  <LocationDisplay />
+                </>
+              }
+            />
+            <Route
+              path="/en/features"
+              element={
+                <>
+                  <LanguageSwitcher />
+                  <LocationDisplay />
+                </>
+              }
+            />
+          </Routes>
+        </LanguageProvider>
+      </MemoryRouter>
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: "Switch to English" }));
+
+    expect(screen.getByTestId("location-display")).toHaveTextContent("/en/features");
+  });
+
+  it("preserves comparison detail slugs when switching locales", () => {
+    render(
+      <MemoryRouter initialEntries={["/vergleiche/yazio-alternative"]}>
+        <LanguageProvider>
+          <Routes>
+            <Route
+              path="/vergleiche/:slug"
+              element={
+                <>
+                  <LanguageSwitcher />
+                  <LocationDisplay />
+                </>
+              }
+            />
+            <Route
+              path="/en/comparisons/:slug"
+              element={
+                <>
+                  <LanguageSwitcher />
+                  <LocationDisplay />
+                </>
+              }
+            />
+          </Routes>
+        </LanguageProvider>
+      </MemoryRouter>
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: "Switch to English" }));
+
+    expect(screen.getByTestId("location-display")).toHaveTextContent(
+      "/en/comparisons/yazio-alternative"
+    );
+  });
 });

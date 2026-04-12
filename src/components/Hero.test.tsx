@@ -7,7 +7,7 @@ import Hero from "./Hero";
 describe("Hero", () => {
   it("renders switch-focused messaging, trust chips, and the demo video", () => {
     const { container } = render(
-      <MemoryRouter initialEntries={["/"]}>
+      <MemoryRouter initialEntries={["/en"]}>
         <LanguageProvider>
           <Hero />
         </LanguageProvider>

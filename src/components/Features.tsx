@@ -1,4 +1,4 @@
-import { Shield, Barcode, Heart, Database, Cloud, Target } from "lucide-react";
+import { Shield, Barcode, Heart, Database, Cloud, Target, Droplets, Clock3, BarChart3 } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { TranslationKey } from "@/i18n/translations";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -37,6 +37,21 @@ const Features = () => {
       icon: Cloud,
       titleKey: "icloudSync" as TranslationKey,
       descKey: "icloudSyncDesc" as TranslationKey,
+    },
+    {
+      icon: BarChart3,
+      titleKey: "nutrientStats" as TranslationKey,
+      descKey: "nutrientStatsDesc" as TranslationKey,
+    },
+    {
+      icon: Clock3,
+      titleKey: "fastingTracking" as TranslationKey,
+      descKey: "fastingTrackingDesc" as TranslationKey,
+    },
+    {
+      icon: Droplets,
+      titleKey: "waterTracking" as TranslationKey,
+      descKey: "waterTrackingDesc" as TranslationKey,
     },
   ];
 

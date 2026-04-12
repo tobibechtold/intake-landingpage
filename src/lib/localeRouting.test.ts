@@ -20,9 +20,16 @@ describe("localeRouting", () => {
 
   it("detects logical page from pathname", () => {
     expect(getPageFromPathname("/")).toBe("home");
+    expect(getPageFromPathname("/funktionen")).toBe("features");
+    expect(getPageFromPathname("/kalorienzaehler-ohne-abo")).toBe("noSubscription");
+    expect(getPageFromPathname("/kalorien-tracker-ohne-konto")).toBe("noAccount");
+    expect(getPageFromPathname("/vergleiche")).toBe("comparisons");
+    expect(getPageFromPathname("/vergleiche/yazio-alternative")).toBe("comparisonDetail");
     expect(getPageFromPathname("/privacy")).toBe("privacy");
     expect(getPageFromPathname("/terms")).toBe("terms");
     expect(getPageFromPathname("/whats-new")).toBe("whatsNewIndex");
+    expect(getPageFromPathname("/en/features")).toBe("features");
+    expect(getPageFromPathname("/en/comparisons/yazio-alternative")).toBe("comparisonDetail");
     expect(getPageFromPathname("/en/whats-new")).toBe("whatsNewIndex");
     expect(getPageFromPathname("/en/whats-new/2.1.1")).toBe("whatsNewEntry");
     expect(getPageFromPathname("/de/whats-new/2.1.1")).toBe("whatsNewEntry");
@@ -33,6 +40,12 @@ describe("localeRouting", () => {
   it("builds localized path", () => {
     expect(buildLocalizedPath("home", "de")).toBe("/");
     expect(buildLocalizedPath("home", "en")).toBe("/en");
+    expect(buildLocalizedPath("features", "de")).toBe("/funktionen");
+    expect(buildLocalizedPath("features", "en")).toBe("/en/features");
+    expect(buildLocalizedPath("noSubscription", "de")).toBe("/kalorienzaehler-ohne-abo");
+    expect(buildLocalizedPath("noSubscription", "en")).toBe("/en/calorie-counter-no-subscription");
+    expect(buildLocalizedPath("comparisons", "de")).toBe("/vergleiche");
+    expect(buildLocalizedPath("comparisons", "en")).toBe("/en/comparisons");
     expect(buildLocalizedPath("privacy", "de")).toBe("/privacy");
     expect(buildLocalizedPath("privacy", "en")).toBe("/en/privacy");
     expect(buildLocalizedPath("whatsNewIndex", "de")).toBe("/whats-new");
@@ -42,6 +55,13 @@ describe("localeRouting", () => {
   });
 
   it("builds alternates for current page", () => {
+    expect(buildAlternateUrls("/funktionen", origin)).toEqual({
+      canonical: "https://www.getintake.de/funktionen",
+      en: "https://www.getintake.de/en/features",
+      de: "https://www.getintake.de/funktionen",
+      xDefault: "https://www.getintake.de/",
+    });
+
     expect(buildAlternateUrls("/terms", origin)).toEqual({
       canonical: "https://www.getintake.de/terms",
       en: "https://www.getintake.de/en/terms",

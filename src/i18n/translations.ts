@@ -4,13 +4,21 @@ export const translations = {
   en: {
     // Header
     download: "Download",
+    homeNav: "Home",
+    featuresNav: "Features",
+    comparisonsNav: "Comparisons",
+    updatesNav: "Updates",
+    noSubscriptionNav: "No subscription",
+    noAccountNav: "No account",
+    yazioAlternative: "Yazio Alternative",
+    fddbAlternative: "FDDB Alternative",
     switchWhy: "Why Switch",
 
     // Hero
     heroTitle: "Switch to calorie tracking",
     heroTitleHighlight: "without the subscription.",
     heroDescription:
-      "Intake gives you serious nutrition tracking without monthly fees, forced accounts, or sending your data off your device.",
+      "Intake gives you serious nutrition tracking for calories, macros, 30+ nutrients, fasting, and water without monthly fees, forced accounts, or sending your data off your device.",
     downloadOn: "Download on the",
     appStore: "App Store",
     oneTimePurchase: "One-time purchase",
@@ -48,6 +56,14 @@ export const translations = {
 
     icloudSync: "iCloud + Google Drive Sync",
     icloudSyncDesc: "Keep data in sync via iCloud on iOS and Google Drive on Android.",
+    nutrientStats: "30+ Nutrients",
+    nutrientStatsDesc:
+      "Go beyond calories and macros with vitamins, minerals, caffeine, and a deeper nutrient view.",
+    fastingTracking: "Intermittent Fasting",
+    fastingTrackingDesc:
+      "Track fasting windows with iOS Live Activities so the timing stays visible during the day.",
+    waterTracking: "Water Tracking",
+    waterTrackingDesc: "Track hydration in the same flow as meals, calories, and nutrient stats.",
 
     // App Preview
     appPreviewHeading: "See it in action",
@@ -141,6 +157,7 @@ export const translations = {
       "No monthly fee. No login wall. No nutrition data leaving your device unless you choose it.",
 
     // Footer
+    discover: "Discover",
     legal: "Legal",
     privacyPolicy: "Privacy Policy",
     termsOfUse: "Terms of Use",
@@ -154,13 +171,21 @@ export const translations = {
   de: {
     // Header
     download: "Herunterladen",
+    homeNav: "Start",
+    featuresNav: "Funktionen",
+    comparisonsNav: "Vergleiche",
+    updatesNav: "Updates",
+    noSubscriptionNav: "Kalorienzähler ohne Abo",
+    noAccountNav: "Kalorien-Tracker ohne Konto",
+    yazioAlternative: "Yazio Alternative",
+    fddbAlternative: "FDDB Alternative",
     switchWhy: "Warum wechseln",
 
     // Hero
     heroTitle: "Kalorien tracken,",
     heroTitleHighlight: "ohne Abo.",
     heroDescription:
-      "Mit Intake trackst du Kalorien und Makros ohne Monatsabo, ohne Konto und ohne dass deine Daten dein Gerät verlassen.",
+      "Mit Intake trackst du Kalorien, Makros und 30+ Nährwerte inklusive Fasten und Wasser ohne Monatsabo, ohne Konto und ohne dass deine Daten dein Gerät verlassen.",
     downloadOn: "Laden im",
     appStore: "App Store",
     oneTimePurchase: "Einmalkauf",
@@ -198,6 +223,14 @@ export const translations = {
 
     icloudSync: "iCloud + Google Drive Sync",
     icloudSyncDesc: "Synchronisiere Daten über iCloud auf iOS und Google Drive auf Android.",
+    nutrientStats: "30+ Nährwerte",
+    nutrientStatsDesc:
+      "Neben Kalorien und Makros siehst du auch Vitamine, Mineralstoffe, Koffein und weitere Mikronährstoffe.",
+    fastingTracking: "Intervallfasten",
+    fastingTrackingDesc:
+      "Tracke Fastenfenster mit iOS Live Activities, damit du den Verlauf direkt im Alltag im Blick behältst.",
+    waterTracking: "Wasser-Tracking",
+    waterTrackingDesc: "Tracke Wasser zusammen mit Mahlzeiten, Kalorien und Nährwerten in derselben App.",
 
     // App Preview
     appPreviewHeading: "Erlebe die App",
@@ -291,6 +324,7 @@ export const translations = {
       "Keine Monatsgebühren. Kein Login-Zwang. Deine Daten bleiben auf deinem Gerät.",
 
     // Footer
+    discover: "Entdecken",
     legal: "Rechtliches",
     privacyPolicy: "Datenschutz",
     termsOfUse: "Nutzungsbedingungen",

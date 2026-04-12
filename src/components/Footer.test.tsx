@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 
 describe("Footer", () => {
-  it("renders both the localized what's new link and the external changelog link", () => {
+  it("renders localized seo page links alongside the update links", () => {
     render(
       <MemoryRouter initialEntries={["/"]}>
         <LanguageProvider>
@@ -14,6 +14,18 @@ describe("Footer", () => {
       </MemoryRouter>
     );
 
+    expect(screen.getByRole("link", { name: "Funktionen" })).toHaveAttribute(
+      "href",
+      "/funktionen"
+    );
+    expect(screen.getByRole("link", { name: "Kalorienzähler ohne Abo" })).toHaveAttribute(
+      "href",
+      "/kalorienzaehler-ohne-abo"
+    );
+    expect(screen.getByRole("link", { name: "Vergleiche" })).toHaveAttribute(
+      "href",
+      "/vergleiche"
+    );
     expect(screen.getByRole("link", { name: "Was ist neu" })).toHaveAttribute(
       "href",
       "/whats-new"

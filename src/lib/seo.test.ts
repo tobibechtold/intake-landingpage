@@ -16,14 +16,14 @@ describe("getSeoContent", () => {
     expect(seo.title).toMatch(/Intake App - Kalorienzähler ohne Abo/i);
     expect(seo.description).toMatch(/Kalorienzähler ohne Abo/i);
     expect(seo.description).toMatch(/ohne Konto/i);
-    expect(seo.description).toMatch(/deinem Gerät/i);
+    expect(seo.description).toMatch(/Apple Watch|PDF-Export/i);
     expect(seo.homeSchema).not.toBeNull();
     expect(appSchema?.alternateName).toBe("Intake Kalorienzähler");
     expect(appSchema?.description).toMatch(/Kalorienzähler ohne Abo/i);
     expect(appSchema?.featureList).toEqual(
       expect.arrayContaining([
         "Kalorienzähler ohne Abo",
-        "Kein Konto nötig",
+        "Kein Konto",
         "Daten bleiben auf deinem Gerät",
       ])
     );
@@ -60,6 +60,24 @@ describe("getSeoContent", () => {
     expect(seo.title).toContain("Privacy");
     expect(seo.homeSchema).toBeNull();
     expect(seo.noIndex).toBe(false);
+  });
+
+  it("returns page-specific metadata for the new evergreen feature pages", () => {
+    const germanFeatures = getSeoContent("/funktionen", origin);
+    const englishFeatures = getSeoContent("/en/features", origin);
+
+    expect(germanFeatures.locale).toBe("de");
+    expect(germanFeatures.page).toBe("features");
+    expect(germanFeatures.canonical).toBe("https://www.getintake.de/funktionen");
+    expect(germanFeatures.alternates.en).toBe("https://www.getintake.de/en/features");
+    expect(germanFeatures.title).toMatch(/Funktionen|Apple Watch|Widgets/i);
+    expect(germanFeatures.description).toMatch(/30\+|Rezepte|PDF-Export|Widgets/i);
+    expect(germanFeatures.homeSchema).toBeNull();
+
+    expect(englishFeatures.locale).toBe("en");
+    expect(englishFeatures.page).toBe("features");
+    expect(englishFeatures.canonical).toBe("https://www.getintake.de/en/features");
+    expect(englishFeatures.alternates.de).toBe("https://www.getintake.de/funktionen");
   });
 
   it("returns overview metadata for localized what's new pages", () => {
