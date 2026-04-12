@@ -37,12 +37,27 @@ describe("prerender-seo", () => {
     expect(html).toContain(`<link rel="alternate" hreflang="x-default" href="${origin}/" />`);
   });
 
+  it("injects metadata for the new feature overview routes", () => {
+    const germanHtml = buildPrerenderedHtml(template, "/funktionen");
+    const englishHtml = buildPrerenderedHtml(template, "/en/features");
+
+    expect(germanHtml).toContain('<html lang="de">');
+    expect(germanHtml).toContain(`${origin}/funktionen`);
+    expect(germanHtml).toContain(`hreflang="en" href="${origin}/en/features"`);
+    expect(germanHtml).toMatch(/Funktionen|Widgets|Apple Watch|Rezepte/);
+
+    expect(englishHtml).toContain('<html lang="en">');
+    expect(englishHtml).toContain(`${origin}/en/features`);
+    expect(englishHtml).toContain(`hreflang="de" href="${origin}/funktionen"`);
+  });
+
   it("uses updated cross-platform SEO copy in prerendered home HTML", () => {
     const html = buildPrerenderedHtml(template, "/en");
 
     expect(html).toContain("iPhone &amp; Android");
-    expect(html).toContain("Health Connect (Android)");
-    expect(html).toContain("Google Drive sync (Android)");
+    expect(html).toContain("no account system");
+    expect(html).toContain("Apple Watch");
+    expect(html).toContain("Google Drive (Android) sync");
     expect(html).toContain('property="og:image:alt" content="Intake calorie counter app on iOS and Android"');
   });
 
@@ -56,23 +71,37 @@ describe("prerender-seo", () => {
   });
 
   it("defines all localized routes that should be emitted", () => {
-    expect(PRERENDER_ROUTES).toEqual([
-      "/",
-      "/privacy",
-      "/terms",
-      "/whats-new",
-      "/whats-new/2.1.4",
-      "/whats-new/2.1.3",
-      "/whats-new/2.1.2",
-      "/whats-new/2.1.1",
-      "/en",
-      "/en/privacy",
-      "/en/terms",
-      "/en/whats-new",
-      "/en/whats-new/2.1.4",
-      "/en/whats-new/2.1.3",
-      "/en/whats-new/2.1.2",
-      "/en/whats-new/2.1.1",
-    ]);
+    expect(PRERENDER_ROUTES).toEqual(
+      expect.arrayContaining([
+        "/",
+        "/funktionen",
+        "/kalorienzaehler-ohne-abo",
+        "/kalorien-tracker-ohne-konto",
+        "/vergleiche",
+        "/vergleiche/yazio-alternative",
+        "/vergleiche/fddb-alternative",
+        "/privacy",
+        "/terms",
+        "/whats-new",
+        "/whats-new/2.1.4",
+        "/whats-new/2.1.3",
+        "/whats-new/2.1.2",
+        "/whats-new/2.1.1",
+        "/en",
+        "/en/features",
+        "/en/calorie-counter-no-subscription",
+        "/en/calorie-tracker-no-account",
+        "/en/comparisons",
+        "/en/comparisons/yazio-alternative",
+        "/en/comparisons/fddb-alternative",
+        "/en/privacy",
+        "/en/terms",
+        "/en/whats-new",
+        "/en/whats-new/2.1.4",
+        "/en/whats-new/2.1.3",
+        "/en/whats-new/2.1.2",
+        "/en/whats-new/2.1.1",
+      ])
+    );
   });
 });

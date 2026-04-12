@@ -20,6 +20,8 @@ describe("Index", () => {
     expect(
       screen.getByText(/kalorienzähler ohne abo, ohne konto/i)
     ).toBeInTheDocument();
+    expect(screen.getAllByText(/30\+ Nährwerte|Vitamine|Mineralstoffe/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Intervallfasten|Wasser-Tracking/i).length).toBeGreaterThan(0);
     expect(
       screen.getByRole("heading", { name: /warum viele zu intake wechseln/i })
     ).toBeInTheDocument();

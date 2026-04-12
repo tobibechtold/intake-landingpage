@@ -15,7 +15,7 @@ describe("ProductUpdatesPreview", () => {
     );
 
     expect(screen.getByRole("heading", { name: "Produktupdates" })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Was ist neu in Intake 2.1.3" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Was ist neu in Intake 2.2.2" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /alle updates ansehen/i })).toHaveAttribute(
       "href",
       "/whats-new"
@@ -23,7 +23,7 @@ describe("ProductUpdatesPreview", () => {
     expect(
       screen
         .getAllByRole("link", { name: /update lesen/i })
-        .some((link) => link.getAttribute("href") === "/whats-new/2.1.3")
+        .some((link) => link.getAttribute("href") === "/whats-new/2.2.2")
     ).toBe(true);
   });
 });

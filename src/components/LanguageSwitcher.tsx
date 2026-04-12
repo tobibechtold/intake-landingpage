@@ -1,6 +1,7 @@
 import { useLanguage } from "@/i18n/LanguageContext";
 import {
   buildLocalizedPath,
+  getComparisonSlugFromPathname,
   getPageFromPathname,
   getWhatsNewVersionFromPathname,
 } from "@/lib/localeRouting";
@@ -14,8 +15,13 @@ const LanguageSwitcher = () => {
   const toggleLanguage = () => {
     const nextLanguage = language === "en" ? "de" : "en";
     const page = getPageFromPathname(location.pathname);
-    const version = page === "whatsNewEntry" ? getWhatsNewVersionFromPathname(location.pathname) : undefined;
-    navigate(buildLocalizedPath(page, nextLanguage, version ?? undefined));
+    const detail =
+      page === "whatsNewEntry"
+        ? getWhatsNewVersionFromPathname(location.pathname)
+        : page === "comparisonDetail"
+          ? getComparisonSlugFromPathname(location.pathname)
+          : undefined;
+    navigate(buildLocalizedPath(page, nextLanguage, detail ?? undefined));
     setLanguage(nextLanguage);
   };
 

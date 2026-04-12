@@ -17,6 +17,11 @@ interface PageSeo {
 
 interface SeoByLocale {
   home: PageSeo;
+  features: PageSeo;
+  noSubscription: PageSeo;
+  noAccount: PageSeo;
+  comparisons: PageSeo;
+  comparisonDetail: PageSeo;
   privacy: PageSeo;
   terms: PageSeo;
   whatsNewIndex: PageSeo;
@@ -28,7 +33,32 @@ const SEO_COPY: Record<Language, SeoByLocale> = {
     home: {
       title: "Intake App - Calorie Counter for iPhone & Android | No Subscription",
       description:
-        "Intake is a private calorie counter app with no subscription and no account required. Track calories and macros with barcode scan, Apple Health (iOS), Health Connect (Android), iCloud (iOS), and Google Drive sync (Android).",
+        "Intake is a private calorie counter app with no subscription and no account system. Track calories, macros, 30+ nutrients, fasting, water, widgets, Apple Watch, and PDF export with optional iCloud (iOS) or Google Drive (Android) sync.",
+    },
+    features: {
+      title: "Intake Features - Calories, Nutrients, Widgets, Apple Watch, and More",
+      description:
+        "Explore Intake features for calorie tracking, barcode scanning, custom foods and recipes, 30+ nutrients, widgets, Apple Watch, PDF export, intermittent fasting, water, and health integrations.",
+    },
+    noSubscription: {
+      title: "Calorie Counter Without Subscription | Intake",
+      description:
+        "Intake is a calorie counter without a subscription and without a premium wall. Track calories, macros, nutrients, widgets, Apple Watch, fasting, and water without recurring monthly fees.",
+    },
+    noAccount: {
+      title: "Calorie Tracker Without Account | Intake",
+      description:
+        "Intake has no account system at all. Track calories, macros, nutrients, fasting, and water while keeping your data on your device with optional iCloud or Google Drive sync.",
+    },
+    comparisons: {
+      title: "Intake Comparisons and Alternatives",
+      description:
+        "Compare Intake with subscription-led calorie trackers and see how it differs from Yazio and FDDB on pricing, feature gating, account logic, and product focus.",
+    },
+    comparisonDetail: {
+      title: "Intake Alternative Comparison",
+      description:
+        "Compare Intake with other calorie trackers on pricing, privacy, features, and overall tracking experience.",
     },
     privacy: {
       title: "Privacy Policy | Intake",
@@ -54,7 +84,32 @@ const SEO_COPY: Record<Language, SeoByLocale> = {
     home: {
       title: "Intake App - Kalorienzähler ohne Abo für iPhone & Android",
       description:
-        "Intake ist ein Kalorienzähler ohne Abo und ohne Konto. Tracke Kalorien und Makros mit Barcode-Scanner, Apple Health, Health Connect und Daten, die auf deinem Gerät bleiben.",
+        "Intake ist ein Kalorienzähler ohne Abo und ohne Konto. Tracke Kalorien, Makros, 30+ Nährwerte, Fasten, Wasser, Widgets, Apple Watch und PDF-Export mit optionalem iCloud- oder Google-Drive-Sync.",
+    },
+    features: {
+      title: "Intake Funktionen - Kalorien, Nährwerte, Widgets, Apple Watch und mehr",
+      description:
+        "Entdecke die Intake Funktionen für Kalorien, Barcode-Scan, eigene Produkte und Rezepte, 30+ Nährwerte, Widgets, Apple Watch, PDF-Export, Intervallfasten, Wasser und Health-Integrationen.",
+    },
+    noSubscription: {
+      title: "Kalorienzähler ohne Abo - Intake",
+      description:
+        "Intake ist ein Kalorienzähler ohne Abo und ohne Premium-Wall. Tracke Kalorien, Makros, Nährwerte, Widgets, Apple Watch, Wasser und Intervallfasten ohne monatliche Kosten.",
+    },
+    noAccount: {
+      title: "Kalorien-Tracker ohne Konto - Intake",
+      description:
+        "Intake hat gar kein Kontosystem. Tracke Kalorien, Makros, Wasser und Nährwerte lokal auf deinem Gerät mit optionalem iCloud- oder Google-Drive-Sync.",
+    },
+    comparisons: {
+      title: "Intake Vergleiche und Alternativen",
+      description:
+        "Vergleiche Intake mit Abo-Trackern und sieh dir Alternativen zu Yazio und FDDB an, mit Fokus auf Preis, Premium-Walls, Kontosysteme und Produktstil.",
+    },
+    comparisonDetail: {
+      title: "Intake Alternative im Vergleich",
+      description:
+        "Vergleiche Intake mit anderen Kalorientrackern bei Preis, Datenschutz, Funktionen und Tracking-Alltag.",
     },
     privacy: {
       title: "Datenschutzerklärung | Intake",
@@ -156,23 +211,33 @@ export const getSeoContent = (pathname: string, origin: string): SeoContent => {
   const faq = FAQ_BY_LANGUAGE[locale];
   const schemaDescription =
     locale === "de"
-      ? "Intake ist ein Kalorienzähler ohne Abo und ohne Konto. Tracke Kalorien und Makros mit Barcode-Scanner, Apple Health, Health Connect und Daten, die auf deinem Gerät bleiben."
-      : "Intake is a private calorie counter app with no subscription and no account required. Track calories and macros with barcode scan, Apple Health (iOS), Health Connect (Android), iCloud (iOS), and Google Drive sync (Android).";
+      ? "Intake ist ein Kalorienzähler ohne Abo und ohne Konto. Tracke Kalorien, Makros, 30+ Nährwerte, Fasten und Wasser mit Barcode-Scanner, Apple Health, Health Connect und optionalem iCloud- oder Google-Drive-Sync."
+      : "Intake is a private calorie counter app with no subscription and no account system. Track calories, macros, 30+ nutrients, fasting, and water with barcode scan, Apple Health (iOS), Health Connect (Android), and optional iCloud or Google Drive sync.";
   const schemaFeatureList =
     locale === "de"
       ? [
           "Kalorienzähler ohne Abo",
-          "Kein Konto nötig",
+          "Kein Konto",
           "Barcode-Scanner",
           "Daten bleiben auf deinem Gerät",
+          "30+ Nährwerte",
+          "Vitamine und Mineralstoffe",
+          "Koffein und Mikronährstoffe",
+          "Intervallfasten mit Live Activities",
+          "Wasser-Tracking",
           "Apple Health und Health Connect",
           "iCloud und Google Drive Sync",
         ]
       : [
           "Private calorie counter app",
           "No subscription",
-          "No account required",
+          "No account system",
           "Barcode scanner",
+          "30+ nutrients",
+          "Vitamins and minerals",
+          "Caffeine and micronutrients",
+          "Intermittent fasting with Live Activities",
+          "Water tracking",
           "Apple Health sync (iOS)",
           "Health Connect sync (Android)",
           "iCloud sync (iOS)",
@@ -200,9 +265,9 @@ export const getSeoContent = (pathname: string, origin: string): SeoContent => {
         inLanguage: ["en", "de"],
         image: `${origin}/og-image.png`,
         screenshot: [
-          `${origin}/screenshots/en-1-Onboarding.png`,
-          `${origin}/screenshots/en-2-Dashboard.png`,
-          `${origin}/screenshots/en-3-Testimonial.png`,
+          `${origin}/screenshots/landing/${locale}-dashboard.png`,
+          `${origin}/screenshots/landing/${locale}-statistics.png`,
+          `${origin}/screenshots/landing/${locale}-apple-watch.png`,
         ],
         description: schemaDescription,
         featureList: schemaFeatureList,
