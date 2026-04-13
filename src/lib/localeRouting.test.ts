@@ -25,10 +25,12 @@ describe("localeRouting", () => {
     expect(getPageFromPathname("/kalorien-tracker-ohne-konto")).toBe("noAccount");
     expect(getPageFromPathname("/vergleiche")).toBe("comparisons");
     expect(getPageFromPathname("/vergleiche/yazio-alternative")).toBe("comparisonDetail");
+    expect(getPageFromPathname("/hilfe")).toBe("help");
     expect(getPageFromPathname("/privacy")).toBe("privacy");
     expect(getPageFromPathname("/terms")).toBe("terms");
     expect(getPageFromPathname("/whats-new")).toBe("whatsNewIndex");
     expect(getPageFromPathname("/en/features")).toBe("features");
+    expect(getPageFromPathname("/en/help")).toBe("help");
     expect(getPageFromPathname("/en/comparisons/yazio-alternative")).toBe("comparisonDetail");
     expect(getPageFromPathname("/en/whats-new")).toBe("whatsNewIndex");
     expect(getPageFromPathname("/en/whats-new/2.1.1")).toBe("whatsNewEntry");
@@ -46,6 +48,8 @@ describe("localeRouting", () => {
     expect(buildLocalizedPath("noSubscription", "en")).toBe("/en/calorie-counter-no-subscription");
     expect(buildLocalizedPath("comparisons", "de")).toBe("/vergleiche");
     expect(buildLocalizedPath("comparisons", "en")).toBe("/en/comparisons");
+    expect(buildLocalizedPath("help", "de")).toBe("/hilfe");
+    expect(buildLocalizedPath("help", "en")).toBe("/en/help");
     expect(buildLocalizedPath("privacy", "de")).toBe("/privacy");
     expect(buildLocalizedPath("privacy", "en")).toBe("/en/privacy");
     expect(buildLocalizedPath("whatsNewIndex", "de")).toBe("/whats-new");

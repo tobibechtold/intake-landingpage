@@ -47,6 +47,12 @@ const Footer = () => {
                 {t("comparisonsNav")}
               </Link>
               <Link
+                to={buildLocalizedPath("help", language)}
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                {t("helpNav")}
+              </Link>
+              <Link
                 to={buildLocalizedPath("comparisonDetail", language, "yazio-alternative")}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >

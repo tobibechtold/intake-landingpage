@@ -8,10 +8,8 @@ import FeatureVoting from "@/components/FeatureVoting";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import SeoHead from "@/components/SeoHead";
-import Faq from "@/components/Faq";
 import ProductUpdatesPreview from "@/components/ProductUpdatesPreview";
 import WhySwitch from "@/components/WhySwitch";
-import ComparisonTable from "@/components/ComparisonTable";
 import ProofStories from "@/components/ProofStories";
 import TopicPages from "@/components/TopicPages";
 
@@ -25,13 +23,11 @@ const Index = () => {
         <PressMentions />
         <WhySwitch />
         <TopicPages />
-        <ComparisonTable />
         <ProofStories />
         <Reviews />
         <ScreenshotGallery />
         <Features />
         <ProductUpdatesPreview />
-        <Faq />
         <FeatureVoting />
         <CTA />
       </main>

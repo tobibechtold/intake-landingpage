@@ -105,14 +105,14 @@ const ComparisonDetailPage = () => {
                 <div className="mt-5 flex flex-wrap gap-3">
                   <Link
                     to={buildLocalizedPath("comparisons", language)}
-                    className="trust-chip"
+                    className="trust-chip-link"
                   >
                     {language === "de" ? "Alle Vergleiche" : "All comparisons"}
                   </Link>
-                  <Link to={buildLocalizedPath("features", language)} className="trust-chip">
+                  <Link to={buildLocalizedPath("features", language)} className="trust-chip-link">
                     {language === "de" ? "Alle Funktionen" : "Features"}
                   </Link>
-                  <Link to={buildLocalizedPath("home", language)} className="trust-chip">
+                  <Link to={buildLocalizedPath("home", language)} className="trust-chip-link">
                     {t("homeNav")}
                   </Link>
                 </div>

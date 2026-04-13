@@ -53,5 +53,10 @@ describe("Intent pages", () => {
         .getAllByRole("link", { name: /features/i })
         .some((link) => link.getAttribute("href") === "/en/features")
     ).toBe(true);
+    const relatedFeaturesLink = screen
+      .getAllByRole("link", { name: /^features$/i })
+      .find((link) => link.getAttribute("class")?.includes("trust-chip"));
+
+    expect(relatedFeaturesLink?.className).toContain("trust-chip-link");
   });
 });

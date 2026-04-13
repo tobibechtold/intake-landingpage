@@ -123,7 +123,11 @@ const MarketingPageLayout = ({
             </h2>
             <div className="mt-6 flex flex-wrap gap-3">
               {relatedLinks.map((link) => (
-                <Link key={link.label} to={getRelatedHref(language, link)} className="trust-chip">
+                <Link
+                  key={link.label}
+                  to={getRelatedHref(language, link)}
+                  className="trust-chip-link"
+                >
                   {link.label}
                 </Link>
               ))}

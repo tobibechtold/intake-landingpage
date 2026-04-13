@@ -16,8 +16,6 @@ import {
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 
-const FEATURE_VOTING_URL = "https://featurevoting.tobibechtold.dev/app/intake";
-
 const Header = () => {
   const { t, language } = useLanguage();
   const homePath = buildLocalizedPath("home", language);
@@ -29,14 +27,12 @@ const Header = () => {
   const isDownloadExternal = /^https?:\/\//.test(downloadHref);
   const navItems = [
     { label: t("featuresNav"), href: buildLocalizedPath("features", language) },
-    { label: t("switchWhy"), href: `${homePath}#why-switch` },
     { label: t("comparisonsNav"), href: buildLocalizedPath("comparisons", language) },
+    { label: t("helpNav"), href: buildLocalizedPath("help", language) },
     { label: t("updatesNav"), href: buildLocalizedPath("whatsNewIndex", language) },
-    { label: t("featureVotingNav"), href: FEATURE_VOTING_URL, external: true },
-    { label: t("faqTitle"), href: `${homePath}#faq` },
   ];
   const desktopNavItemClassName =
-    "text-sm font-medium text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+    "px-2 text-sm font-medium text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background";
   const mobileNavItemClassName =
     "rounded-full border border-border/60 bg-background/70 px-4 py-3 text-base font-medium text-foreground transition-colors hover:border-primary/40 hover:bg-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
@@ -70,18 +66,20 @@ const Header = () => {
         data-site-header-shell
         className="container mt-4 flex h-16 items-center justify-between rounded-full border border-border/60 bg-background/80 px-5 shadow-[0_20px_60px_-40px_rgba(255,76,145,0.6)] backdrop-blur-xl"
       >
-        <Link to={homePath} className="flex items-center gap-3">
-          <img src={logo} alt="Intake" className="h-8 w-8" />
-          <span className="text-lg font-semibold text-foreground">Intake</span>
-        </Link>
-        <div className="hidden items-center gap-5 lg:flex">
-          {navItems.map((item) => (
-            <div key={item.label} className="flex items-center">
-              {renderNavItem(item, desktopNavItemClassName)}
-            </div>
-          ))}
+        <div data-header-left-cluster className="flex min-w-0 items-center gap-6 lg:gap-8">
+          <Link to={homePath} className="flex items-center gap-3">
+            <img src={logo} alt="Intake" className="h-8 w-8" />
+            <span className="text-lg font-semibold text-foreground">Intake</span>
+          </Link>
+          <div data-header-desktop-nav className="hidden items-center gap-4 lg:flex">
+            {navItems.map((item) => (
+              <div key={item.label} className="flex items-center">
+                {renderNavItem(item, desktopNavItemClassName)}
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="flex items-center gap-3">
+        <div data-header-right-cluster className="flex items-center gap-3">
           <Sheet>
             <SheetTrigger asChild>
               <Button
@@ -99,8 +97,8 @@ const Header = () => {
                 <SheetTitle>{language === "de" ? "Navigation" : "Navigation"}</SheetTitle>
                 <SheetDescription>
                   {language === "de"
-                    ? "Springe zu Funktionen, Vergleichen, FAQ und weiteren Seiten."
-                    : "Jump to features, comparisons, FAQ, and other pages."}
+                    ? "Springe direkt zu Funktionen, Vergleichen und Updates."
+                    : "Jump straight to features, comparisons, and updates."}
                 </SheetDescription>
               </SheetHeader>
               <div className="mt-8 flex flex-col gap-3">

@@ -7,6 +7,7 @@ export const translations = {
     homeNav: "Home",
     featuresNav: "Features",
     comparisonsNav: "Comparisons",
+    helpNav: "Help",
     updatesNav: "Updates",
     featureVotingNav: "Feature Voting",
     noSubscriptionNav: "No subscription",
@@ -144,6 +145,12 @@ export const translations = {
     // FAQ
     faqTitle: "Frequently Asked Questions",
     faqSubtitle: "Quick answers about pricing, privacy, and features.",
+    helpTitle: "Help & FAQ",
+    helpSubtitle: "Answers about pricing, privacy, sync, and the most important features.",
+    helpCtaTitle: "Still deciding?",
+    helpCtaDescription:
+      "If you're still unsure, check out our features and comparisons with other tracking apps, or go straight to the download section.",
+    helpCtaButton: "Download Intake",
 
     // Feature Voting
     featureVotingTitle: "Help shape",
@@ -175,6 +182,7 @@ export const translations = {
     homeNav: "Start",
     featuresNav: "Funktionen",
     comparisonsNav: "Vergleiche",
+    helpNav: "Hilfe",
     updatesNav: "Updates",
     featureVotingNav: "Feature Voting",
     noSubscriptionNav: "Kalorienzähler ohne Abo",
@@ -312,6 +320,12 @@ export const translations = {
     // FAQ
     faqTitle: "Häufige Fragen",
     faqSubtitle: "Schnelle Antworten zu Preis, Datenschutz und Funktionen.",
+    helpTitle: "Hilfe & FAQ",
+    helpSubtitle: "Antworten zu Preis, Datenschutz, Sync und den wichtigsten Funktionen.",
+    helpCtaTitle: "Noch unsicher?",
+    helpCtaDescription:
+      "Wenn du noch unsicher bist, schau dir unsere Funktionen und Vergleiche mit anderen Tracking-Apps an oder geh direkt zum Download.",
+    helpCtaButton: "Intake herunterladen",
 
     // Feature Voting
     featureVotingTitle: "Hilf mit,",

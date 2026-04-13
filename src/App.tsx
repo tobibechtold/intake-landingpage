@@ -12,6 +12,7 @@ import NoSubscriptionPage from "./pages/NoSubscriptionPage";
 import NoAccountPage from "./pages/NoAccountPage";
 import ComparisonsIndexPage from "./pages/ComparisonsIndexPage";
 import ComparisonDetailPage from "./pages/ComparisonDetailPage";
+import HelpPage from "./pages/HelpPage";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
@@ -46,6 +47,7 @@ const App = () => (
             <Route path="/kalorien-tracker-ohne-konto" element={<NoAccountPage />} />
             <Route path="/vergleiche" element={<ComparisonsIndexPage />} />
             <Route path="/vergleiche/:slug" element={<ComparisonDetailPage />} />
+            <Route path="/hilfe" element={<HelpPage />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/whats-new" element={<WhatsNewIndex />} />
@@ -56,6 +58,7 @@ const App = () => (
             <Route path="/en/calorie-tracker-no-account" element={<NoAccountPage />} />
             <Route path="/en/comparisons" element={<ComparisonsIndexPage />} />
             <Route path="/en/comparisons/:slug" element={<ComparisonDetailPage />} />
+            <Route path="/en/help" element={<HelpPage />} />
             <Route path="/en/privacy" element={<Privacy />} />
             <Route path="/en/terms" element={<Terms />} />
             <Route path="/en/whats-new" element={<WhatsNewIndex />} />

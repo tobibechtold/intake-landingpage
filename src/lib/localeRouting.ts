@@ -6,6 +6,7 @@ export type SitePage =
   | "noSubscription"
   | "noAccount"
   | "comparisons"
+  | "help"
   | "comparisonDetail"
   | "privacy"
   | "terms"
@@ -32,6 +33,10 @@ const PAGE_SEGMENT_BY_PAGE: Record<
   comparisons: {
     de: "vergleiche",
     en: "comparisons",
+  },
+  help: {
+    de: "hilfe",
+    en: "help",
   },
   privacy: {
     de: "privacy",
@@ -101,6 +106,10 @@ export const getPageFromPathname = (pathname: string): SitePage => {
 
   if (noLocale === `/${localizedSegments.comparisons}`) {
     return "comparisons";
+  }
+
+  if (noLocale === `/${localizedSegments.help}`) {
+    return "help";
   }
 
   if (noLocale.startsWith(`/${localizedSegments.comparisons}/`)) {

@@ -21,6 +21,7 @@ interface SeoByLocale {
   noSubscription: PageSeo;
   noAccount: PageSeo;
   comparisons: PageSeo;
+  help: PageSeo;
   comparisonDetail: PageSeo;
   privacy: PageSeo;
   terms: PageSeo;
@@ -54,6 +55,11 @@ const SEO_COPY: Record<Language, SeoByLocale> = {
       title: "Intake Comparisons and Alternatives",
       description:
         "Compare Intake with subscription-led calorie trackers and see how it differs from Yazio and FDDB on pricing, feature gating, account logic, and product focus.",
+    },
+    help: {
+      title: "Help & FAQ | Intake",
+      description:
+        "Answers about pricing, privacy, sync, Apple Health, Health Connect, food data, and the most important Intake features.",
     },
     comparisonDetail: {
       title: "Intake Alternative Comparison",
@@ -105,6 +111,11 @@ const SEO_COPY: Record<Language, SeoByLocale> = {
       title: "Intake Vergleiche und Alternativen",
       description:
         "Vergleiche Intake mit Abo-Trackern und sieh dir Alternativen zu Yazio und FDDB an, mit Fokus auf Preis, Premium-Walls, Kontosysteme und Produktstil.",
+    },
+    help: {
+      title: "Hilfe & FAQ | Intake",
+      description:
+        "Antworten zu Preis, Datenschutz, Sync, Apple Health, Health Connect, Lebensmitteldaten und den wichtigsten Intake-Funktionen.",
     },
     comparisonDetail: {
       title: "Intake Alternative im Vergleich",
@@ -194,6 +205,35 @@ export const getSeoContent = (pathname: string, origin: string): SeoContent => {
     };
   }
 
+  if (page === "help") {
+    const faq = FAQ_BY_LANGUAGE[locale];
+
+    return {
+      locale,
+      page,
+      title: copy.title,
+      description: copy.description,
+      canonical: alternates.canonical,
+      alternates,
+      ogLocale: OG_LOCALE[locale],
+      homeSchema: [
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faq.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.answer,
+            },
+          })),
+        },
+      ],
+      noIndex: false,
+    };
+  }
+
   if (page !== "home") {
     return {
       locale,
@@ -208,7 +248,6 @@ export const getSeoContent = (pathname: string, origin: string): SeoContent => {
     };
   }
 
-  const faq = FAQ_BY_LANGUAGE[locale];
   const schemaDescription =
     locale === "de"
       ? "Intake ist ein Kalorienzähler ohne Abo und ohne Konto. Tracke Kalorien, Makros, 30+ Nährwerte, Fasten und Wasser mit Barcode-Scanner, Apple Health, Health Connect und optionalem iCloud- oder Google-Drive-Sync."
@@ -278,18 +317,6 @@ export const getSeoContent = (pathname: string, origin: string): SeoContent => {
         name: "Intake",
         url: `${origin}/`,
         logo: `${origin}/favicon-512x512.png`,
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: faq.map((item) => ({
-          "@type": "Question",
-          name: item.question,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: item.answer,
-          },
-        })),
       },
     ],
     noIndex: false,
