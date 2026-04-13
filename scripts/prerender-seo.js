@@ -44,6 +44,14 @@ const STATIC_PAGE_SEO = {
     canonical: `${SITE_ORIGIN}/vergleiche`,
     ogLocale: "de_DE",
   },
+  "/hilfe": {
+    lang: "de",
+    title: "Hilfe & FAQ | Intake",
+    description:
+      "Antworten zu Preis, Datenschutz, Sync, Apple Health, Health Connect, Lebensmitteldaten und den wichtigsten Intake-Funktionen.",
+    canonical: `${SITE_ORIGIN}/hilfe`,
+    ogLocale: "de_DE",
+  },
   "/vergleiche/yazio-alternative": {
     lang: "de",
     title: "Yazio Alternative - Intake vs. Yazio",
@@ -116,6 +124,14 @@ const STATIC_PAGE_SEO = {
     canonical: `${SITE_ORIGIN}/en/comparisons`,
     ogLocale: "en_US",
   },
+  "/en/help": {
+    lang: "en",
+    title: "Help & FAQ | Intake",
+    description:
+      "Answers about pricing, privacy, sync, Apple Health, Health Connect, food data, and the most important Intake features.",
+    canonical: `${SITE_ORIGIN}/en/help`,
+    ogLocale: "en_US",
+  },
   "/en/comparisons/yazio-alternative": {
     lang: "en",
     title: "Yazio Alternative - Intake vs. Yazio",
@@ -181,6 +197,7 @@ const STATIC_ROUTE_ALTERNATES = {
     en: "/en/calorie-tracker-no-account",
   },
   "/vergleiche": { de: "/vergleiche", en: "/en/comparisons" },
+  "/hilfe": { de: "/hilfe", en: "/en/help" },
   "/vergleiche/yazio-alternative": {
     de: "/vergleiche/yazio-alternative",
     en: "/en/comparisons/yazio-alternative",
@@ -203,6 +220,7 @@ const STATIC_ROUTE_ALTERNATES = {
     en: "/en/calorie-tracker-no-account",
   },
   "/en/comparisons": { de: "/vergleiche", en: "/en/comparisons" },
+  "/en/help": { de: "/hilfe", en: "/en/help" },
   "/en/comparisons/yazio-alternative": {
     de: "/vergleiche/yazio-alternative",
     en: "/en/comparisons/yazio-alternative",
@@ -240,6 +258,7 @@ export const PRERENDER_ROUTES = [
   "/kalorienzaehler-ohne-abo",
   "/kalorien-tracker-ohne-konto",
   "/vergleiche",
+  "/hilfe",
   "/vergleiche/yazio-alternative",
   "/vergleiche/fddb-alternative",
   "/privacy",
@@ -250,6 +269,7 @@ export const PRERENDER_ROUTES = [
   "/en/calorie-counter-no-subscription",
   "/en/calorie-tracker-no-account",
   "/en/comparisons",
+  "/en/help",
   "/en/comparisons/yazio-alternative",
   "/en/comparisons/fddb-alternative",
   "/en/privacy",

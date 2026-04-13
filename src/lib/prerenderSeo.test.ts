@@ -80,6 +80,7 @@ describe("prerender-seo", () => {
         "/vergleiche",
         "/vergleiche/yazio-alternative",
         "/vergleiche/fddb-alternative",
+        "/hilfe",
         "/privacy",
         "/terms",
         "/whats-new",
@@ -94,6 +95,7 @@ describe("prerender-seo", () => {
         "/en/comparisons",
         "/en/comparisons/yazio-alternative",
         "/en/comparisons/fddb-alternative",
+        "/en/help",
         "/en/privacy",
         "/en/terms",
         "/en/whats-new",
@@ -103,5 +105,19 @@ describe("prerender-seo", () => {
         "/en/whats-new/2.1.1",
       ])
     );
+  });
+
+  it("injects metadata for localized help pages", () => {
+    const germanHtml = buildPrerenderedHtml(template, "/hilfe");
+    const englishHtml = buildPrerenderedHtml(template, "/en/help");
+
+    expect(germanHtml).toContain('<html lang="de">');
+    expect(germanHtml).toContain(`${origin}/hilfe`);
+    expect(germanHtml).toContain(`hreflang="en" href="${origin}/en/help"`);
+    expect(germanHtml).toMatch(/Hilfe &amp; FAQ|Preis|Datenschutz|Sync/);
+
+    expect(englishHtml).toContain('<html lang="en">');
+    expect(englishHtml).toContain(`${origin}/en/help`);
+    expect(englishHtml).toContain(`hreflang="de" href="${origin}/hilfe"`);
   });
 });

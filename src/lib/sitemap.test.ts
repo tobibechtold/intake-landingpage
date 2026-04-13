@@ -11,12 +11,14 @@ describe("sitemap", () => {
     expect(xml).toContain("<loc>https://www.getintake.de/vergleiche</loc>");
     expect(xml).toContain("<loc>https://www.getintake.de/vergleiche/yazio-alternative</loc>");
     expect(xml).toContain("<loc>https://www.getintake.de/vergleiche/fddb-alternative</loc>");
+    expect(xml).toContain("<loc>https://www.getintake.de/hilfe</loc>");
     expect(xml).toContain("<loc>https://www.getintake.de/en/features</loc>");
     expect(xml).toContain(
       "<loc>https://www.getintake.de/en/calorie-counter-no-subscription</loc>"
     );
     expect(xml).toContain("<loc>https://www.getintake.de/en/calorie-tracker-no-account</loc>");
     expect(xml).toContain("<loc>https://www.getintake.de/en/comparisons</loc>");
+    expect(xml).toContain("<loc>https://www.getintake.de/en/help</loc>");
   });
 
   it("includes localized what's new overview and detail URLs", () => {

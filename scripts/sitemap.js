@@ -18,6 +18,7 @@ const STATIC_URLS = [
     priority: "0.8",
   },
   { path: "/vergleiche", lastmod: "2026-04-12", changefreq: "weekly", priority: "0.8" },
+  { path: "/hilfe", lastmod: "2026-04-13", changefreq: "weekly", priority: "0.7" },
   {
     path: "/vergleiche/yazio-alternative",
     lastmod: "2026-04-12",
@@ -47,6 +48,7 @@ const STATIC_URLS = [
     priority: "0.7",
   },
   { path: "/en/comparisons", lastmod: "2026-04-12", changefreq: "weekly", priority: "0.7" },
+  { path: "/en/help", lastmod: "2026-04-13", changefreq: "weekly", priority: "0.7" },
   {
     path: "/en/comparisons/yazio-alternative",
     lastmod: "2026-04-12",
