@@ -127,11 +127,19 @@
     @apply grid items-center gap-8 rounded-[2rem] border border-border/60 bg-card/70 p-6 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1fr)] md:p-8;
   }
 
+  .proof-story-card--text-only {
+    @apply md:grid-cols-1;
+  }
+
   .proof-story-media {
     @apply mx-auto w-full max-w-[320px];
   }
 
   .proof-story-copy {
     @apply max-w-2xl;
+  }
+
+  .proof-story-copy--full {
+    max-width: none;
   }
 }

@@ -9,7 +9,7 @@ const CTA = () => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
   
   return (
-    <section ref={ref} className="py-24">
+    <section id="cta" ref={ref} className="py-24">
       <div className="container">
         <div 
           className={`glass-card p-12 md:p-16 text-center max-w-3xl mx-auto opacity-0 ${

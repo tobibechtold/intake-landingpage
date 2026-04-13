@@ -28,6 +28,7 @@ describe("Hero", () => {
     expect(screen.getByText(/one-time purchase/i)).toBeInTheDocument();
     expect(screen.getByText(/no account required/i)).toBeInTheDocument();
     expect(screen.getByText(/100% on-device/i)).toBeInTheDocument();
+    expect(container.querySelector("#hero")).toBeInTheDocument();
     expect(container.querySelector("video")).toBeInTheDocument();
     expect(container.querySelector(".hero-device-shell")).not.toBeInTheDocument();
     expect(container.querySelector(".h-\\[28rem\\]")).not.toBeInTheDocument();

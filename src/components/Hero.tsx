@@ -39,7 +39,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="hero-gradient relative min-h-screen overflow-hidden pt-20">
+    <section id="hero" className="hero-gradient relative min-h-screen overflow-hidden pt-20">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_55%_at_50%_0%,hsl(338_90%_62%_/_0.24),transparent_70%)]" />
       <div className="container relative py-16 md:py-24">
         <div className="items-center md:grid md:grid-cols-[minmax(0,1.1fr)_minmax(280px,0.9fr)] md:gap-12">

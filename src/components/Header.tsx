@@ -3,7 +3,7 @@ import logo from "@/assets/logo-hero.webp";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { buildLocalizedPath } from "@/lib/localeRouting";
-import { getAppStoreUrl } from "@/lib/storeLinks";
+import { getNavbarDownloadUrl } from "@/lib/storeLinks";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -16,16 +16,53 @@ import {
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 
+const FEATURE_VOTING_URL = "https://featurevoting.tobibechtold.dev/app/intake";
+
 const Header = () => {
   const { t, language } = useLanguage();
   const homePath = buildLocalizedPath("home", language);
+  const downloadHref = getNavbarDownloadUrl(
+    language,
+    typeof navigator === "undefined" ? "" : navigator.userAgent,
+    `${homePath}#hero`,
+  );
+  const isDownloadExternal = /^https?:\/\//.test(downloadHref);
   const navItems = [
     { label: t("featuresNav"), href: buildLocalizedPath("features", language) },
     { label: t("switchWhy"), href: `${homePath}#why-switch` },
     { label: t("comparisonsNav"), href: buildLocalizedPath("comparisons", language) },
     { label: t("updatesNav"), href: buildLocalizedPath("whatsNewIndex", language) },
+    { label: t("featureVotingNav"), href: FEATURE_VOTING_URL, external: true },
     { label: t("faqTitle"), href: `${homePath}#faq` },
   ];
+  const desktopNavItemClassName =
+    "text-sm font-medium text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+  const mobileNavItemClassName =
+    "rounded-full border border-border/60 bg-background/70 px-4 py-3 text-base font-medium text-foreground transition-colors hover:border-primary/40 hover:bg-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+
+  const renderNavItem = (
+    item: { label: string; href: string; external?: boolean },
+    className: string,
+  ) => {
+    if (item.external) {
+      return (
+        <a
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={className}
+        >
+          {item.label}
+        </a>
+      );
+    }
+
+    return (
+      <Link to={item.href} className={className}>
+        {item.label}
+      </Link>
+    );
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -39,13 +76,9 @@ const Header = () => {
         </Link>
         <div className="hidden items-center gap-5 lg:flex">
           {navItems.map((item) => (
-            <Link
-              key={item.label}
-              to={item.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {item.label}
-            </Link>
+            <div key={item.label} className="flex items-center">
+              {renderNavItem(item, desktopNavItemClassName)}
+            </div>
           ))}
         </div>
         <div className="flex items-center gap-3">
@@ -77,17 +110,16 @@ const Header = () => {
                 </Link>
                 {navItems.map((item) => (
                   <SheetClose asChild key={item.label}>
-                    <Link
-                      to={item.href}
-                      className="rounded-2xl border border-border/60 px-4 py-3 text-base font-medium text-foreground transition-colors hover:bg-muted"
-                    >
-                      {item.label}
-                    </Link>
+                    {renderNavItem(item, mobileNavItemClassName)}
                   </SheetClose>
                 ))}
                 <div className="mt-2">
                   <Button asChild className="w-full rounded-full">
-                    <a href={getAppStoreUrl(language)} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={downloadHref}
+                      target={isDownloadExternal ? "_blank" : undefined}
+                      rel={isDownloadExternal ? "noopener noreferrer" : undefined}
+                    >
                       {t("download")}
                     </a>
                   </Button>
@@ -97,7 +129,11 @@ const Header = () => {
           </Sheet>
           <LanguageSwitcher />
           <Button asChild size="sm" className="hidden rounded-full px-4 sm:inline-flex">
-            <a href={getAppStoreUrl(language)} target="_blank" rel="noopener noreferrer">
+            <a
+              href={downloadHref}
+              target={isDownloadExternal ? "_blank" : undefined}
+              rel={isDownloadExternal ? "noopener noreferrer" : undefined}
+            >
               {t("download")}
             </a>
           </Button>

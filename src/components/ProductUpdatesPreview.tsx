@@ -44,44 +44,44 @@ const ProductUpdatesPreview = () => {
 
         <div className="grid gap-6 lg:grid-cols-3">
           {entries.map((entry) => (
-            <article
+            <Link
               key={`${entry.locale}-${entry.version}`}
-              className="glass-card overflow-hidden border border-border/70"
+              to={buildLocalizedPath("whatsNewEntry", language, entry.version)}
+              className="group block rounded-[2rem] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-4 focus-visible:ring-offset-background"
             >
-              <img src={entry.coverImage} alt={entry.title} className="h-48 w-full object-cover" />
-              <div className="space-y-4 p-6">
-                <div className="space-y-2">
-                  <p className="text-xs uppercase tracking-[0.25em] text-primary">
-                    {language === "de" ? `Version ${entry.version}` : `Version ${entry.version}`}
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    {dateFormatter.format(new Date(entry.publishedAt))}
-                  </p>
-                  <h3 className="text-xl font-semibold text-foreground">{entry.title}</h3>
-                  <p className="text-sm leading-6 text-muted-foreground">{entry.summary}</p>
+              <article className="glass-card h-full overflow-hidden border border-border/70 transition-colors group-hover:border-primary/40 group-focus-visible:border-primary/40">
+                <img src={entry.coverImage} alt={entry.title} className="h-48 w-full object-cover" />
+                <div className="space-y-4 p-6">
+                  <div className="space-y-2">
+                    <p className="text-xs uppercase tracking-[0.25em] text-primary">
+                      {language === "de" ? `Version ${entry.version}` : `Version ${entry.version}`}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {dateFormatter.format(new Date(entry.publishedAt))}
+                    </p>
+                    <h3 className="text-xl font-semibold text-foreground">{entry.title}</h3>
+                    <p className="text-sm leading-6 text-muted-foreground">{entry.summary}</p>
+                  </div>
+
+                  {entry.highlights.length > 0 ? (
+                    <ul className="grid gap-2 text-sm text-foreground/90">
+                      {entry.highlights.slice(0, 2).map((highlight) => (
+                        <li
+                          key={highlight}
+                          className="rounded-2xl border border-border/70 bg-background/40 px-4 py-3"
+                        >
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+
+                  <span className="inline-flex items-center text-sm font-medium text-primary transition-colors group-hover:text-primary/80 group-focus-visible:text-primary/80">
+                    {language === "de" ? "Update lesen" : "Read update"}
+                  </span>
                 </div>
-
-                {entry.highlights.length > 0 ? (
-                  <ul className="grid gap-2 text-sm text-foreground/90">
-                    {entry.highlights.slice(0, 2).map((highlight) => (
-                      <li
-                        key={highlight}
-                        className="rounded-2xl border border-border/70 bg-background/40 px-4 py-3"
-                      >
-                        {highlight}
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-
-                <Link
-                  to={buildLocalizedPath("whatsNewEntry", language, entry.version)}
-                  className="inline-flex items-center text-sm font-medium text-primary transition-colors hover:text-primary/80"
-                >
-                  {language === "de" ? "Update lesen" : "Read update"}
-                </Link>
-              </div>
-            </article>
+              </article>
+            </Link>
           ))}
         </div>
       </div>

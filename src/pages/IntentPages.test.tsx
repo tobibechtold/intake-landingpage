@@ -21,13 +21,22 @@ const renderRoute = (initialEntry: string, element: React.ReactElement) =>
 
 describe("Intent pages", () => {
   it("renders the german no-subscription page with full-feature messaging", () => {
-    renderRoute("/kalorienzaehler-ohne-abo", <NoSubscriptionPage />);
+    const view = renderRoute("/kalorienzaehler-ohne-abo", <NoSubscriptionPage />);
 
     expect(
       screen.getByRole("heading", { name: /Kalorienzähler ohne Abo und ohne Premium-Wall/i })
     ).toBeInTheDocument();
     expect(screen.getAllByText(/30\+ Nährwerte|PDF-Export|Apple Watch/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/Keine Streaks|Keine Punkte|Intervallfasten/i).length).toBeGreaterThan(0);
+
+    const textOnlySectionHeading = screen.getByRole("heading", {
+      name: /Keine Gamification, keine nervigen Ernährungstipps/i,
+    });
+    const textOnlyArticle = textOnlySectionHeading.closest("article");
+    const textOnlyCopy = view.container.querySelector(".proof-story-copy--full");
+
+    expect(textOnlyArticle?.className).toContain("proof-story-card--text-only");
+    expect(textOnlyCopy).toContainElement(textOnlySectionHeading);
   });
 
   it("renders the english no-account page with privacy-focused copy", () => {

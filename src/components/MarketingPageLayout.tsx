@@ -7,6 +7,7 @@ import { Language } from "@/i18n/translations";
 import { MarketingSection, RelatedLink } from "@/lib/marketingPages";
 import { buildLocalizedPath, SitePage } from "@/lib/localeRouting";
 import { getScreenshotAsset } from "@/lib/screenshotAssets";
+import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
 
 interface MarketingPageLayoutProps {
@@ -65,10 +66,13 @@ const MarketingPageLayout = ({
             return (
               <article
                 key={section.id}
-                className="proof-story-card border-border/70"
+                className={cn(
+                  "proof-story-card border-border/70",
+                  !screenshot && "proof-story-card--text-only",
+                )}
               >
-                <div className={`${index % 2 === 1 ? "md:order-2" : ""} proof-story-media`}>
-                  {screenshot ? (
+                {screenshot ? (
+                  <div className={`${index % 2 === 1 ? "md:order-2" : ""} proof-story-media`}>
                     <figure className="mx-auto w-full max-w-[340px]">
                       <img
                         src={screenshot.src}
@@ -81,10 +85,16 @@ const MarketingPageLayout = ({
                         {screenshot.caption}
                       </figcaption>
                     </figure>
-                  ) : null}
-                </div>
+                  </div>
+                ) : null}
 
-                <div className={`${index % 2 === 1 ? "md:order-1" : ""} proof-story-copy`}>
+                <div
+                  className={cn(
+                    index % 2 === 1 ? "md:order-1" : "",
+                    "proof-story-copy",
+                    !screenshot && "proof-story-copy--full",
+                  )}
+                >
                   <h2 className="text-2xl font-semibold text-foreground md:text-3xl">
                     {section.title}
                   </h2>

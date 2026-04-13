@@ -30,6 +30,10 @@ describe("Footer", () => {
       "href",
       "/whats-new"
     );
+    expect(screen.getByRole("link", { name: "Feature Voting" })).toHaveAttribute(
+      "href",
+      "https://featurevoting.tobibechtold.dev/app/intake"
+    );
 
     expect(screen.getByRole("link", { name: "Changelog" })).toHaveAttribute(
       "href",

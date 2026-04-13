@@ -4,6 +4,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { buildLocalizedPath } from "@/lib/localeRouting";
 import { getAppStoreUrl, getGooglePlayUrl } from "@/lib/storeLinks";
 
+const FEATURE_VOTING_URL = "https://featurevoting.tobibechtold.dev/app/intake";
 const CHANGELOG_URL = "https://featurevoting.tobibechtold.dev/app/intake/changelog";
 
 const Footer = () => {
@@ -101,6 +102,14 @@ const Footer = () => {
               >
                 {t("whatsNew")}
               </Link>
+              <a
+                href={FEATURE_VOTING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                {t("featureVotingNav")}
+              </a>
               <a
                 href={CHANGELOG_URL}
                 target="_blank"
