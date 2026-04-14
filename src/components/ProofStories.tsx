@@ -1,7 +1,11 @@
 import { useLanguage } from "@/i18n/LanguageContext";
+import { getScreenshotAsset } from "@/lib/screenshotAssets";
 
 const ProofStories = () => {
   const { t, language } = useLanguage();
+  const addFoodScreenshot = getScreenshotAsset(language, "addFood");
+  const statisticsScreenshot = getScreenshotAsset(language, "statistics");
+  const dashboardScreenshot = getScreenshotAsset(language, "dashboard");
 
   const stories = [
     {
@@ -12,8 +16,8 @@ const ProofStories = () => {
         t("proofStoryTrackFastPointTwo"),
         t("proofStoryTrackFastPointThree"),
       ],
-      image: `/screenshots/${language}-4-Add-Food.png`,
-      alt: t("proofStoryTrackFastTitle"),
+      image: addFoodScreenshot.src,
+      alt: addFoodScreenshot.alt,
     },
     {
       title: t("proofStorySeeMattersTitle"),
@@ -23,8 +27,8 @@ const ProofStories = () => {
         t("proofStorySeeMattersPointTwo"),
         t("proofStorySeeMattersPointThree"),
       ],
-      image: `/screenshots/${language}-9-Statistics.png`,
-      alt: t("proofStorySeeMattersTitle"),
+      image: statisticsScreenshot.src,
+      alt: statisticsScreenshot.alt,
     },
     {
       title: t("proofStoryStayControlTitle"),
@@ -34,8 +38,8 @@ const ProofStories = () => {
         t("proofStoryStayControlPointTwo"),
         t("proofStoryStayControlPointThree"),
       ],
-      image: `/screenshots/${language}-2-Dashboard.png`,
-      alt: t("proofStoryStayControlTitle"),
+      image: dashboardScreenshot.src,
+      alt: dashboardScreenshot.alt,
     },
   ];
 
