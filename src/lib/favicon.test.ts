@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
+import { buildPrerenderedHtml } from "../../scripts/prerender-seo.js";
 
 const projectRoot = path.resolve(import.meta.dirname, "../..");
 
@@ -21,6 +22,14 @@ describe("favicon and crawl hints", () => {
     expect(html).toContain('<link rel="icon" href="/favicon.ico" sizes="any" />');
     expect(html).toContain('<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />');
     expect(html).toContain('<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />');
+  });
+
+  it("declares the iOS Smart App Banner meta tag and preserves it during prerender", () => {
+    const html = readFileSync(path.join(projectRoot, "index.html"), "utf8");
+    const prerendered = buildPrerenderedHtml(html, "/");
+
+    expect(html).toContain('<meta name="apple-itunes-app" content="app-id=6757768955" />');
+    expect(prerendered).toContain('<meta name="apple-itunes-app" content="app-id=6757768955" />');
   });
 
   it("points robots.txt at the canonical sitemap host", () => {
