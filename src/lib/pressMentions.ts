@@ -14,9 +14,9 @@ export interface PressMention {
 export const PRESS_MENTIONS: PressMention[] = [
   {
     name: "iPhone-Ticker",
-    articleTitle: "Intake: Neuer Kalorienzähler ohne Abo, ohne Coaches, ohne Ballast",
+    articleTitle: "Beliebte Kalorien-App Intake: Nährstofftracking und Intervallfasten",
     articleUrl:
-      "https://www.iphone-ticker.de/intake-neuer-kalorienzaehler-ohne-abo-ohne-coaches-ohne-ballast-274552/",
+      "https://www.iphone-ticker.de/beliebte-kalorien-app-intake-naehrstofftracking-und-intervallfasten-276388",
     logoSrc: iphoneTickerLogo,
     visibleLabel: "iPhone-Ticker",
   },
