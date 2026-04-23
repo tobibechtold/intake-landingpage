@@ -1,5 +1,6 @@
 import iphoneTickerLogo from "@/assets/press/image-icon-256-01-small.png";
 import iTopnewsLogo from "@/assets/press/cropped-cropped-201504_10_iTN-Logo801.png";
+import macweltLogo from "@/assets/press/macwelt-logo.svg";
 import stadtBremerhavenLogo from "@/assets/press/caschy-logo.svg";
 import { Language } from "@/i18n/translations";
 
@@ -12,6 +13,13 @@ export interface PressMention {
 }
 
 export const PRESS_MENTIONS: PressMention[] = [
+  {
+    name: "Macwelt",
+    articleTitle: 'iPhone-Kalorienzähler "Intake" – mein persönliches Experiment',
+    articleUrl:
+      "https://www.macwelt.de/article/3108243/iphone-kalorienzahler-intake-mein-personliches-experiment.html",
+    logoSrc: macweltLogo,
+  },
   {
     name: "iPhone-Ticker",
     articleTitle: "Beliebte Kalorien-App Intake: Nährstofftracking und Intervallfasten",
