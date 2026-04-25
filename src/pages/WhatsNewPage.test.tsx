@@ -23,11 +23,11 @@ describe("What's New pages", () => {
   it("renders the German overview page with the latest release card", () => {
     const view = renderWithRoute("/whats-new", <WhatsNewIndex />);
 
-    const latestEntryHeading = screen.getByRole("heading", { name: "Was ist neu in Intake 2.1.3" });
+    const latestEntryHeading = screen.getByRole("heading", { name: "Was ist neu in Intake 2.3.0" });
     const overviewGrid = view.container.querySelector(".grid");
 
     expect(latestEntryHeading).toBeInTheDocument();
-    expect(latestEntryHeading.closest("a")).toHaveAttribute("href", "/whats-new/2.1.3");
+    expect(latestEntryHeading.closest("a")).toHaveAttribute("href", "/whats-new/2.3.0");
     expect(overviewGrid?.className).toContain("md:grid-cols-2");
     expect(overviewGrid?.className).toContain("xl:grid-cols-3");
     expect(screen.getByRole("link", { name: "Changelog öffnen" })).toHaveAttribute(
