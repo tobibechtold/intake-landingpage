@@ -32,6 +32,11 @@ You can also duplicate a recipe from the overview by long-pressing it.
 
 ![duplicate recipes](assets/duplicate.mp4)
 
+## Submit products without a barcode
+
+Products without a barcode (local bakery goods, HelloFresh etc.) can now be submitted for review. Just tap on the button
+"Product has no barcode"
+
 ## Convert steps into calories
 
 This setting is meant for users who track steps with their phone instead of a smartwatch. In some cases, only the steps

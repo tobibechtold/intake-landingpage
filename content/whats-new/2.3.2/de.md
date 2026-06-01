@@ -31,6 +31,11 @@ drückt. Zum Duplizieren könnt ihr auch in der Übersicht lange auf ein Rezept 
 
 ![duplicate recipes](assets/duplicate.mp4)
 
+## Produkte ohne Barcode einreichen
+
+Auch Produkte ohne Barcode (z.B. von lokalen Bäckereien, HelloFresh etc) können jetzt zur Prüfung eingereicht werden. Tippt dazu
+einfach auf den Button "Produkt hat keinen Barcode"
+
 ## Schritte in Kalorien umrechnen
 
 Diese Einstellung ist für Nutzer gedacht, die Schritte ohne eine Smart Watch nur mithilfe ihres Smartphones tracken. Oftmals werden
