@@ -16,7 +16,7 @@ describe("whatsNewContent", () => {
     const entries = getWhatsNewEntries("en");
 
     expect(entries.length).toBeGreaterThan(0);
-    expect(entries[0]?.version).toBe("2.3.1");
+    expect(entries[0]?.version).toBe("2.3.2");
     expect(entries[0]?.locale).toBe("en");
   });
 
