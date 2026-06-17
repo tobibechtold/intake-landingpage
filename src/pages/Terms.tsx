@@ -11,7 +11,7 @@ const Terms = () => {
         <SeoHead />
         <LegalLayout title="Nutzungsbedingungen">
           <div className="space-y-6 text-muted-foreground">
-          <p className="text-foreground font-medium">Stand: Januar 2026</p>
+          <p className="text-foreground font-medium">Stand: Juni 2026</p>
 
           <section className="space-y-3">
             <h2 className="text-xl font-semibold text-foreground">1. Anbieter</h2>
@@ -76,7 +76,27 @@ const Terms = () => {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-semibold text-foreground">7. Verantwortlichkeiten der Nutzer:innen</h2>
+            <h2 className="text-xl font-semibold text-foreground">7. Intake AI</h2>
+            <p>
+              Intake AI ist eine optionale, abo-basierte Funktion, die aus Texten, Fotos und Nährwertlabels
+              bearbeitbare Mahlzeitenvorschläge und Nährwertschätzungen erzeugt.
+            </p>
+            <p>
+              KI-Ergebnisse sind Schätzungen und können falsch oder unvollständig sein. Du musst KI-Vorschläge vor dem Speichern prüfen und bist dafür verantwortlich, was du in dein Ernährungstagebuch übernimmst.
+            </p>
+            <p>
+              Lade möglichst keine Fotos hoch, auf denen unbeteiligte Personen, Dokumente oder sensible persönliche Informationen zu sehen sind.
+            </p>
+            <p>
+              Die gehostete Intake-AI-Funktion setzt eine aktive Subscription voraus und kann von der Verfügbarkeit unseres Backends, der App-Store-Prüfung und externer KI-Anbieter abhängen.
+            </p>
+            <p>
+              Wenn du einen eigenen API-Schlüssel nutzt, werden deine Anfragen an den selbst ausgewählten Anbieter gesendet. Für diesen Anbieter gelten dessen Bedingungen und Datenschutzregeln.
+            </p>
+          </section>
+
+          <section className="space-y-3">
+            <h2 className="text-xl font-semibold text-foreground">8. Verantwortlichkeiten der Nutzer:innen</h2>
             <p>
               Du bist dafür verantwortlich, die App nur im Rahmen der geltenden Gesetze und dieser Bedingungen zu
               nutzen. Wenn du gesundheitliche Einschränkungen hast oder zu Essstörungen neigst, nutze die App bitte nur
@@ -85,7 +105,7 @@ const Terms = () => {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-semibold text-foreground">8. Verfügbarkeit</h2>
+            <h2 className="text-xl font-semibold text-foreground">9. Verfügbarkeit</h2>
             <p>
               Der Anbieter bemüht sich um eine hohe Verfügbarkeit, kann jedoch keine unterbrechungsfreie Nutzung
               garantieren. Wartungen oder technische Störungen können auftreten.
@@ -93,7 +113,7 @@ const Terms = () => {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-semibold text-foreground">9. Haftung</h2>
+            <h2 className="text-xl font-semibold text-foreground">10. Haftung</h2>
             <p>
               Soweit gesetzlich zulässig, haftet der Anbieter nicht für Schäden, die aus der Nutzung oder
               Nichtverfügbarkeit der App entstehen, insbesondere nicht für mittelbare Schäden, entgangenen Gewinn oder
@@ -102,7 +122,7 @@ const Terms = () => {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-semibold text-foreground">10. Änderungen</h2>
+            <h2 className="text-xl font-semibold text-foreground">11. Änderungen</h2>
             <p>
               Der Anbieter kann diese Nutzungsbedingungen anpassen. Wesentliche Änderungen werden in der App oder über
               die jeweiligen Stores (App Store / Google Play) angezeigt.
@@ -110,7 +130,7 @@ const Terms = () => {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-semibold text-foreground">11. Kontakt</h2>
+            <h2 className="text-xl font-semibold text-foreground">12. Kontakt</h2>
             <p>
               Bei Fragen:{" "}
               <a href="mailto:support@tobibechtold.dev" className="text-primary hover:underline">
@@ -129,7 +149,7 @@ const Terms = () => {
       <SeoHead />
       <LegalLayout title="Terms of Use">
         <div className="space-y-6 text-muted-foreground">
-        <p className="text-foreground font-medium">Last updated: January 2026</p>
+        <p className="text-foreground font-medium">Last updated: June 2026</p>
 
         <section className="space-y-3">
           <h2 className="text-xl font-semibold text-foreground">1. Provider</h2>
@@ -191,12 +211,31 @@ const Terms = () => {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-foreground">7. Availability</h2>
+          <h2 className="text-xl font-semibold text-foreground">7. Intake AI</h2>
+          <p>
+            Intake AI is an optional, subscription-based feature that turns text, photos, and nutrition labels into editable meal suggestions and nutrition estimates.
+          </p>
+          <p>
+            AI results are estimates and may be inaccurate or incomplete. You must review AI suggestions before logging them and remain responsible for what you save to your food diary.
+          </p>
+          <p>
+            Avoid uploading photos that include unrelated people, documents, or sensitive personal information.
+          </p>
+          <p>
+            Hosted Intake AI requires an active subscription and may depend on the availability of our backend, App Store entitlement verification, and external AI providers.
+          </p>
+          <p>
+            If you use your own API key, requests are sent to your user-selected provider. That provider's terms and privacy rules apply to those requests.
+          </p>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="text-xl font-semibold text-foreground">8. Availability</h2>
           <p>We aim for high availability but cannot guarantee uninterrupted service.</p>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-foreground">8. Liability</h2>
+          <h2 className="text-xl font-semibold text-foreground">9. Liability</h2>
           <p>
             To the maximum extent permitted by law, we are not liable for damages resulting from your use or inability
             to use the app.
@@ -204,12 +243,12 @@ const Terms = () => {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-foreground">9. Changes</h2>
+          <h2 className="text-xl font-semibold text-foreground">10. Changes</h2>
           <p>We may update these Terms from time to time.</p>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-foreground">10. Contact</h2>
+          <h2 className="text-xl font-semibold text-foreground">11. Contact</h2>
           <p>
             Support:{" "}
             <a href="mailto:support@tobibechtold.dev" className="text-primary hover:underline">
