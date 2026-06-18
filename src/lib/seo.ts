@@ -21,6 +21,7 @@ interface SeoByLocale {
   noSubscription: PageSeo;
   noAccount: PageSeo;
   comparisons: PageSeo;
+  intakeAI: PageSeo;
   help: PageSeo;
   comparisonDetail: PageSeo;
   privacy: PageSeo;
@@ -55,6 +56,11 @@ const SEO_COPY: Record<Language, SeoByLocale> = {
       title: "Intake Comparisons and Alternatives",
       description:
         "Compare Intake with subscription-led calorie trackers and see how it differs from Yazio and FDDB on pricing, feature gating, account logic, and product focus.",
+    },
+    intakeAI: {
+      title: "Intake AI - Optional AI Food Logging With Text and Photos",
+      description:
+        "Intake AI is an optional add-on for faster meal logging. Describe food, analyze photos, scan nutrition labels, or use your own OpenAI or Claude API key.",
     },
     help: {
       title: "Help & FAQ | Intake",
@@ -111,6 +117,11 @@ const SEO_COPY: Record<Language, SeoByLocale> = {
       title: "Intake Vergleiche und Alternativen",
       description:
         "Vergleiche Intake mit Abo-Trackern und sieh dir Alternativen zu Yazio und FDDB an, mit Fokus auf Preis, Premium-Walls, Kontosysteme und Produktstil.",
+    },
+    intakeAI: {
+      title: "Intake AI - Optionales KI-Food-Logging mit Text und Fotos",
+      description:
+        "Intake AI ist ein optionales Add-on für schnelleres KI-Food-Logging. Beschreibe Essen, analysiere Fotos, scanne Nährwertlabels oder nutze deinen eigenen API-Schlüssel.",
     },
     help: {
       title: "Hilfe & FAQ | Intake",

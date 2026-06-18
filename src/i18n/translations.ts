@@ -7,6 +7,7 @@ export const translations = {
     homeNav: "Home",
     featuresNav: "Features",
     comparisonsNav: "Comparisons",
+    intakeAINav: "Intake AI",
     helpNav: "Help",
     updatesNav: "Updates",
     featureVotingNav: "Feature Voting",
@@ -159,6 +160,13 @@ export const translations = {
       "See the roadmap, vote on features, and help steer Intake without the noise of a big subscription platform.",
     featureVotingButton: "View Roadmap & Vote",
 
+    // Intake AI teaser
+    intakeAITeaserKicker: "New: Intake AI",
+    intakeAITeaserTitle: "Log meals by describing them.",
+    intakeAITeaserDescription:
+      "Intake AI is an optional add-on for faster food logging with text, photos, and nutrition-label scans. The core app stays a one-time purchase.",
+    intakeAITeaserButton: "See Intake AI",
+
     // CTA
     ctaTitle: "Switch to a calmer calorie tracker.",
     ctaDescription:
@@ -182,6 +190,7 @@ export const translations = {
     homeNav: "Start",
     featuresNav: "Funktionen",
     comparisonsNav: "Vergleiche",
+    intakeAINav: "Intake AI",
     helpNav: "Hilfe",
     updatesNav: "Updates",
     featureVotingNav: "Feature Voting",
@@ -333,6 +342,13 @@ export const translations = {
     featureVotingDescription:
       "Schau dir die Roadmap an, stimme für Features ab und hilf dabei, Intake Schritt für Schritt besser zu machen.",
     featureVotingButton: "Roadmap & Abstimmung",
+
+    // Intake AI teaser
+    intakeAITeaserKicker: "Neu: Intake AI",
+    intakeAITeaserTitle: "Mahlzeiten per Beschreibung loggen.",
+    intakeAITeaserDescription:
+      "Intake AI ist ein optionales Add-on für schnelleres Food-Logging mit Text, Fotos und Nährwertlabel-Scans. Die Core-App bleibt ein Einmalkauf.",
+    intakeAITeaserButton: "Intake AI ansehen",
 
     // CTA
     ctaTitle: "Wechsle zu einem Kalorientracker ohne Abo.",

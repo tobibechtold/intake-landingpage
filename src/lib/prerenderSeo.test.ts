@@ -51,6 +51,21 @@ describe("prerender-seo", () => {
     expect(englishHtml).toContain(`hreflang="de" href="${origin}/funktionen"`);
   });
 
+  it("injects metadata for localized Intake AI pages", () => {
+    const germanHtml = buildPrerenderedHtml(template, "/intake-ai");
+    const englishHtml = buildPrerenderedHtml(template, "/en/intake-ai");
+
+    expect(germanHtml).toContain('<html lang="de">');
+    expect(germanHtml).toContain(`${origin}/intake-ai`);
+    expect(germanHtml).toContain(`hreflang="en" href="${origin}/en/intake-ai"`);
+    expect(germanHtml).toMatch(/Intake AI|KI-Food-Logging|API-Schlüssel/);
+
+    expect(englishHtml).toContain('<html lang="en">');
+    expect(englishHtml).toContain(`${origin}/en/intake-ai`);
+    expect(englishHtml).toContain(`hreflang="de" href="${origin}/intake-ai"`);
+    expect(englishHtml).toMatch(/Intake AI|AI Food Logging|API key/);
+  });
+
   it("uses updated cross-platform SEO copy in prerendered home HTML", () => {
     const html = buildPrerenderedHtml(template, "/en");
 
@@ -78,6 +93,7 @@ describe("prerender-seo", () => {
         "/kalorienzaehler-ohne-abo",
         "/kalorien-tracker-ohne-konto",
         "/vergleiche",
+        "/intake-ai",
         "/vergleiche/yazio-alternative",
         "/vergleiche/fddb-alternative",
         "/hilfe",
@@ -93,6 +109,7 @@ describe("prerender-seo", () => {
         "/en/calorie-counter-no-subscription",
         "/en/calorie-tracker-no-account",
         "/en/comparisons",
+        "/en/intake-ai",
         "/en/comparisons/yazio-alternative",
         "/en/comparisons/fddb-alternative",
         "/en/help",

@@ -12,6 +12,7 @@ import ProductUpdatesPreview from "@/components/ProductUpdatesPreview";
 import WhySwitch from "@/components/WhySwitch";
 import ProofStories from "@/components/ProofStories";
 import TopicPages from "@/components/TopicPages";
+import IntakeAITeaser from "@/components/IntakeAITeaser";
 
 const Index = () => {
   return (
@@ -24,6 +25,7 @@ const Index = () => {
         <WhySwitch />
         <TopicPages />
         <ProofStories />
+        <IntakeAITeaser />
         <Reviews />
         <ScreenshotGallery />
         <Features />

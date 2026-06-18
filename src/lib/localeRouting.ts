@@ -6,6 +6,7 @@ export type SitePage =
   | "noSubscription"
   | "noAccount"
   | "comparisons"
+  | "intakeAI"
   | "help"
   | "comparisonDetail"
   | "privacy"
@@ -33,6 +34,10 @@ const PAGE_SEGMENT_BY_PAGE: Record<
   comparisons: {
     de: "vergleiche",
     en: "comparisons",
+  },
+  intakeAI: {
+    de: "intake-ai",
+    en: "intake-ai",
   },
   help: {
     de: "hilfe",
@@ -110,6 +115,10 @@ export const getPageFromPathname = (pathname: string): SitePage => {
 
   if (noLocale === `/${localizedSegments.help}`) {
     return "help";
+  }
+
+  if (noLocale === `/${localizedSegments.intakeAI}`) {
+    return "intakeAI";
   }
 
   if (noLocale.startsWith(`/${localizedSegments.comparisons}/`)) {

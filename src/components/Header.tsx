@@ -27,6 +27,7 @@ const Header = () => {
   const isDownloadExternal = /^https?:\/\//.test(downloadHref);
   const navItems = [
     { label: t("featuresNav"), href: buildLocalizedPath("features", language) },
+    { label: t("intakeAINav"), href: buildLocalizedPath("intakeAI", language) },
     { label: t("comparisonsNav"), href: buildLocalizedPath("comparisons", language) },
     { label: t("helpNav"), href: buildLocalizedPath("help", language) },
     { label: t("updatesNav"), href: buildLocalizedPath("whatsNewIndex", language) },

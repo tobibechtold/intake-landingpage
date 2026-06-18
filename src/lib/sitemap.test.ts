@@ -9,6 +9,7 @@ describe("sitemap", () => {
     expect(xml).toContain("<loc>https://www.getintake.de/kalorienzaehler-ohne-abo</loc>");
     expect(xml).toContain("<loc>https://www.getintake.de/kalorien-tracker-ohne-konto</loc>");
     expect(xml).toContain("<loc>https://www.getintake.de/vergleiche</loc>");
+    expect(xml).toContain("<loc>https://www.getintake.de/intake-ai</loc>");
     expect(xml).toContain("<loc>https://www.getintake.de/vergleiche/yazio-alternative</loc>");
     expect(xml).toContain("<loc>https://www.getintake.de/vergleiche/fddb-alternative</loc>");
     expect(xml).toContain("<loc>https://www.getintake.de/hilfe</loc>");
@@ -18,6 +19,7 @@ describe("sitemap", () => {
     );
     expect(xml).toContain("<loc>https://www.getintake.de/en/calorie-tracker-no-account</loc>");
     expect(xml).toContain("<loc>https://www.getintake.de/en/comparisons</loc>");
+    expect(xml).toContain("<loc>https://www.getintake.de/en/intake-ai</loc>");
     expect(xml).toContain("<loc>https://www.getintake.de/en/help</loc>");
   });
 

@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import FeaturesPage from "./pages/FeaturesPage";
 import NoSubscriptionPage from "./pages/NoSubscriptionPage";
 import NoAccountPage from "./pages/NoAccountPage";
+import IntakeAIPage from "./pages/IntakeAIPage";
 import ComparisonsIndexPage from "./pages/ComparisonsIndexPage";
 import ComparisonDetailPage from "./pages/ComparisonDetailPage";
 import HelpPage from "./pages/HelpPage";
@@ -45,6 +46,7 @@ const App = () => (
             <Route path="/funktionen" element={<FeaturesPage />} />
             <Route path="/kalorienzaehler-ohne-abo" element={<NoSubscriptionPage />} />
             <Route path="/kalorien-tracker-ohne-konto" element={<NoAccountPage />} />
+            <Route path="/intake-ai" element={<IntakeAIPage />} />
             <Route path="/vergleiche" element={<ComparisonsIndexPage />} />
             <Route path="/vergleiche/:slug" element={<ComparisonDetailPage />} />
             <Route path="/hilfe" element={<HelpPage />} />
@@ -56,6 +58,7 @@ const App = () => (
             <Route path="/en/features" element={<FeaturesPage />} />
             <Route path="/en/calorie-counter-no-subscription" element={<NoSubscriptionPage />} />
             <Route path="/en/calorie-tracker-no-account" element={<NoAccountPage />} />
+            <Route path="/en/intake-ai" element={<IntakeAIPage />} />
             <Route path="/en/comparisons" element={<ComparisonsIndexPage />} />
             <Route path="/en/comparisons/:slug" element={<ComparisonDetailPage />} />
             <Route path="/en/help" element={<HelpPage />} />

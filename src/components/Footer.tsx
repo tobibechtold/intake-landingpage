@@ -41,6 +41,12 @@ const Footer = () => {
                 {t("noAccountNav")}
               </Link>
               <Link
+                to={buildLocalizedPath("intakeAI", language)}
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                {t("intakeAINav")}
+              </Link>
+              <Link
                 to={buildLocalizedPath("comparisons", language)}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >

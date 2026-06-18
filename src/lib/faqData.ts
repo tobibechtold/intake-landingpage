@@ -9,7 +9,7 @@ export const FAQ_BY_LANGUAGE: Record<Language, FaqItem[]> = {
   en: [
     {
       question: "Is Intake a subscription-based app?",
-      answer: "No. Intake is a one-time purchase with no recurring subscription fees. And it will stay that way. Promise.",
+      answer: "No. The core Intake app is a one-time purchase with no recurring subscription fees. Intake AI is a separate optional add-on if you want hosted AI food logging.",
     },
     {
       question: "Is there a trial period?",
@@ -57,8 +57,28 @@ export const FAQ_BY_LANGUAGE: Record<Language, FaqItem[]> = {
       answer: "Yes. At the bottom of the Today page, you can edit your Today page, show or hide tiles and meals, and create your own meals.",
     },
     {
-      question: "Can Intake recognize foods with AI?",
-      answer: "Not yet. This feature has intentionally not been implemented yet for privacy and cost reasons. However, it will come once models such as the Apple Foundation Models are strong enough to do this on-device without using third-party servers.",
+      question: "Is Intake AI mandatory?",
+      answer: "No. Intake AI is an optional add-on. You can keep using Intake with search, barcode scanning, custom foods, recipes, and all core tracking without enabling AI.",
+    },
+    {
+      question: "What does the hosted Intake AI subscription include?",
+      answer: "Hosted Intake AI lets you describe meals with text, analyze meal photos, scan nutrition labels, correct results in chat, and review editable calorie and macro estimates before logging. It costs 3.99 € per month or 39.99 € per year, each with a 3-day free trial.",
+    },
+    {
+      question: "Can I use Intake AI with my own API key?",
+      answer: "Yes. You can add your own OpenAI or Claude API key in Settings and use Intake AI without paying for the hosted Intake AI subscription. Your chosen provider's terms and usage costs still apply.",
+    },
+    {
+      question: "How do I get an OpenAI or Anthropic API key?",
+      answer: "Create or sign in to an account in the OpenAI dashboard or the Anthropic Console, create an API key there, then paste it into Intake's Intake AI settings. Keep the key private and delete it if you no longer want to use it.",
+    },
+    {
+      question: "Are Intake AI nutrition values exact?",
+      answer: "No. AI results are estimates and can be wrong, especially with unclear portions or hidden ingredients. Intake AI shows editable suggestions so you can review values before saving them.",
+    },
+    {
+      question: "What data is sent when I use hosted Intake AI?",
+      answer: "Hosted Intake AI sends food descriptions, photos, captions, and recent chat context through Intake's backend and AI providers to generate nutrition estimates. Intake does not sell your data or use it for advertising.",
     },
     {
       question: "Is Intake privacy-first?",
@@ -68,7 +88,7 @@ export const FAQ_BY_LANGUAGE: Record<Language, FaqItem[]> = {
   de: [
     {
       question: "Ist Intake ein Abo-Modell?",
-      answer: "Nein. Intake ist ein Einmalkauf ohne laufende Abo-Gebühren. Das wird auch so bleiben. Versprochen.",
+      answer: "Nein. Die Core-App von Intake ist ein Einmalkauf ohne laufende Abo-Gebühren. Intake AI ist ein separates optionales Add-on, wenn du gehostetes KI-Food-Logging nutzen möchtest.",
     },
     {
       question: "Gibt es eine Testphase?",
@@ -116,8 +136,28 @@ export const FAQ_BY_LANGUAGE: Record<Language, FaqItem[]> = {
       answer: "Ja. Du kannst am Ende der Heute Seite deine Heute Seite bearbeiten, Kacheln und Mahlzeiten ein/ausblenden und eigene Mahlzeiten anlegen.",
     },
     {
-      question: "Kann Intake per KI Lebensmittel erkennen?",
-      answer: "Nein aktuell noch nicht. Dieses Feature wurde bewusst aus datenschutz- und kostengründen noch nicht umgesetzt. Allerdings wird das Feature kommen, sobald z.B. die Apple Foundation Modelle stark genug sind, um soetwas auf dem Gerät (ohne Server von Drittanbietern) zu machen.",
+      question: "Ist Intake AI verpflichtend?",
+      answer: "Nein. Intake AI ist ein optionales Add-on. Du kannst Intake weiterhin mit Suche, Barcode-Scan, eigenen Lebensmitteln, Rezepten und allen Kernfunktionen nutzen, ohne KI zu aktivieren.",
+    },
+    {
+      question: "Was ist im gehosteten Intake-AI-Abo enthalten?",
+      answer: "Mit dem gehosteten Intake AI kannst du Mahlzeiten per Text beschreiben, Fotos analysieren, Nährwertlabels scannen, Ergebnisse im Chat korrigieren und bearbeitbare Kalorien- und Makro-Schätzungen vor dem Speichern prüfen. Es kostet 3,99 € pro Monat oder 39,99 € pro Jahr, jeweils mit 3 Tagen kostenloser Testphase.",
+    },
+    {
+      question: "Kann ich Intake AI mit eigenem API-Schlüssel nutzen?",
+      answer: "Ja. Du kannst in den Einstellungen deinen eigenen OpenAI- oder Claude-API-Schlüssel hinterlegen und Intake AI ohne gehostetes Intake-AI-Abo nutzen. Die Bedingungen und eventuelle Nutzungskosten deines gewählten Anbieters gelten trotzdem.",
+    },
+    {
+      question: "Wie bekomme ich einen OpenAI- oder Anthropic-API-Schlüssel?",
+      answer: "Erstelle oder öffne dein Konto im OpenAI-Dashboard oder in der Anthropic Console, erstelle dort einen API-Schlüssel und füge ihn in den Intake-AI-Einstellungen ein. Behandle den Schlüssel vertraulich und lösche ihn, wenn du ihn nicht mehr nutzen möchtest.",
+    },
+    {
+      question: "Sind die Nährwerte von Intake AI exakt?",
+      answer: "Nein. KI-Ergebnisse sind Schätzungen und können falsch sein, besonders bei unklaren Portionsgrößen oder versteckten Zutaten. Intake AI zeigt bearbeitbare Vorschläge, die du vor dem Speichern prüfen kannst.",
+    },
+    {
+      question: "Welche Daten werden bei gehostetem Intake AI gesendet?",
+      answer: "Gehostetes Intake AI sendet Essensbeschreibungen, Fotos, Bildunterschriften und den letzten Chat-Kontext über das Intake-Backend und KI-Anbieter, um Nährwertschätzungen zu erstellen. Intake verkauft deine Daten nicht und nutzt sie nicht für Werbung.",
     },
     {
       question: "Ist Intake datenschutzfreundlich?",

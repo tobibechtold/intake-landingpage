@@ -44,6 +44,14 @@ const STATIC_PAGE_SEO = {
     canonical: `${SITE_ORIGIN}/vergleiche`,
     ogLocale: "de_DE",
   },
+  "/intake-ai": {
+    lang: "de",
+    title: "Intake AI - Optionales KI-Food-Logging mit Text und Fotos",
+    description:
+      "Intake AI ist ein optionales Add-on für schnelleres KI-Food-Logging. Beschreibe Essen, analysiere Fotos, scanne Nährwertlabels oder nutze deinen eigenen API-Schlüssel.",
+    canonical: `${SITE_ORIGIN}/intake-ai`,
+    ogLocale: "de_DE",
+  },
   "/hilfe": {
     lang: "de",
     title: "Hilfe & FAQ | Intake",
@@ -124,6 +132,14 @@ const STATIC_PAGE_SEO = {
     canonical: `${SITE_ORIGIN}/en/comparisons`,
     ogLocale: "en_US",
   },
+  "/en/intake-ai": {
+    lang: "en",
+    title: "Intake AI - Optional AI Food Logging With Text and Photos",
+    description:
+      "Intake AI is an optional add-on for faster meal logging. Describe food, analyze photos, scan nutrition labels, or use your own OpenAI or Claude API key.",
+    canonical: `${SITE_ORIGIN}/en/intake-ai`,
+    ogLocale: "en_US",
+  },
   "/en/help": {
     lang: "en",
     title: "Help & FAQ | Intake",
@@ -197,6 +213,7 @@ const STATIC_ROUTE_ALTERNATES = {
     en: "/en/calorie-tracker-no-account",
   },
   "/vergleiche": { de: "/vergleiche", en: "/en/comparisons" },
+  "/intake-ai": { de: "/intake-ai", en: "/en/intake-ai" },
   "/hilfe": { de: "/hilfe", en: "/en/help" },
   "/vergleiche/yazio-alternative": {
     de: "/vergleiche/yazio-alternative",
@@ -220,6 +237,7 @@ const STATIC_ROUTE_ALTERNATES = {
     en: "/en/calorie-tracker-no-account",
   },
   "/en/comparisons": { de: "/vergleiche", en: "/en/comparisons" },
+  "/en/intake-ai": { de: "/intake-ai", en: "/en/intake-ai" },
   "/en/help": { de: "/hilfe", en: "/en/help" },
   "/en/comparisons/yazio-alternative": {
     de: "/vergleiche/yazio-alternative",
@@ -258,6 +276,7 @@ export const PRERENDER_ROUTES = [
   "/kalorienzaehler-ohne-abo",
   "/kalorien-tracker-ohne-konto",
   "/vergleiche",
+  "/intake-ai",
   "/hilfe",
   "/vergleiche/yazio-alternative",
   "/vergleiche/fddb-alternative",
@@ -269,6 +288,7 @@ export const PRERENDER_ROUTES = [
   "/en/calorie-counter-no-subscription",
   "/en/calorie-tracker-no-account",
   "/en/comparisons",
+  "/en/intake-ai",
   "/en/help",
   "/en/comparisons/yazio-alternative",
   "/en/comparisons/fddb-alternative",

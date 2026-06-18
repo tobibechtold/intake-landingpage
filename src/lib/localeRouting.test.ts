@@ -25,11 +25,13 @@ describe("localeRouting", () => {
     expect(getPageFromPathname("/kalorien-tracker-ohne-konto")).toBe("noAccount");
     expect(getPageFromPathname("/vergleiche")).toBe("comparisons");
     expect(getPageFromPathname("/vergleiche/yazio-alternative")).toBe("comparisonDetail");
+    expect(getPageFromPathname("/intake-ai")).toBe("intakeAI");
     expect(getPageFromPathname("/hilfe")).toBe("help");
     expect(getPageFromPathname("/privacy")).toBe("privacy");
     expect(getPageFromPathname("/terms")).toBe("terms");
     expect(getPageFromPathname("/whats-new")).toBe("whatsNewIndex");
     expect(getPageFromPathname("/en/features")).toBe("features");
+    expect(getPageFromPathname("/en/intake-ai")).toBe("intakeAI");
     expect(getPageFromPathname("/en/help")).toBe("help");
     expect(getPageFromPathname("/en/comparisons/yazio-alternative")).toBe("comparisonDetail");
     expect(getPageFromPathname("/en/whats-new")).toBe("whatsNewIndex");
@@ -48,6 +50,8 @@ describe("localeRouting", () => {
     expect(buildLocalizedPath("noSubscription", "en")).toBe("/en/calorie-counter-no-subscription");
     expect(buildLocalizedPath("comparisons", "de")).toBe("/vergleiche");
     expect(buildLocalizedPath("comparisons", "en")).toBe("/en/comparisons");
+    expect(buildLocalizedPath("intakeAI", "de")).toBe("/intake-ai");
+    expect(buildLocalizedPath("intakeAI", "en")).toBe("/en/intake-ai");
     expect(buildLocalizedPath("help", "de")).toBe("/hilfe");
     expect(buildLocalizedPath("help", "en")).toBe("/en/help");
     expect(buildLocalizedPath("privacy", "de")).toBe("/privacy");
@@ -70,6 +74,13 @@ describe("localeRouting", () => {
       canonical: "https://www.getintake.de/terms",
       en: "https://www.getintake.de/en/terms",
       de: "https://www.getintake.de/terms",
+      xDefault: "https://www.getintake.de/",
+    });
+
+    expect(buildAlternateUrls("/intake-ai", origin)).toEqual({
+      canonical: "https://www.getintake.de/intake-ai",
+      en: "https://www.getintake.de/en/intake-ai",
+      de: "https://www.getintake.de/intake-ai",
       xDefault: "https://www.getintake.de/",
     });
 

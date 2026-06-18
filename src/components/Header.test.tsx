@@ -17,6 +17,7 @@ describe("Header", () => {
     fireEvent.click(screen.getByRole("button", { name: /navigation öffnen|open navigation/i }));
 
     expect(screen.getAllByRole("link", { name: /funktionen|features/i }).length).toBeGreaterThan(0);
+    expect(screen.getAllByRole("link", { name: /intake ai/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: /vergleiche|comparisons/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: /hilfe|help/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: /updates/i }).length).toBeGreaterThan(0);
@@ -41,6 +42,7 @@ describe("Header", () => {
     expect(desktopFeaturesLink.className).toContain("px-2");
     expect(document.querySelector("[data-header-desktop-nav]")?.className).toContain("gap-4");
     expect(screen.getAllByRole("link", { name: /vergleiche|comparisons/i }).length).toBeGreaterThan(0);
+    expect(screen.getAllByRole("link", { name: /intake ai/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: /hilfe|help/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: /updates/i }).length).toBeGreaterThan(0);
     expect(screen.queryByRole("link", { name: /warum wechseln|why switch/i })).not.toBeInTheDocument();

@@ -91,6 +91,26 @@ describe("getSeoContent", () => {
     expect(seo.title).toContain("Was ist neu");
   });
 
+  it("returns localized metadata for the Intake AI landing page", () => {
+    const german = getSeoContent("/intake-ai", origin);
+    const english = getSeoContent("/en/intake-ai", origin);
+
+    expect(german.locale).toBe("de");
+    expect(german.page).toBe("intakeAI");
+    expect(german.canonical).toBe("https://www.getintake.de/intake-ai");
+    expect(german.alternates.en).toBe("https://www.getintake.de/en/intake-ai");
+    expect(german.title).toMatch(/Intake AI/i);
+    expect(german.description).toMatch(/optional|KI|Foto|API-Schlüssel/i);
+    expect(german.homeSchema).toBeNull();
+
+    expect(english.locale).toBe("en");
+    expect(english.page).toBe("intakeAI");
+    expect(english.canonical).toBe("https://www.getintake.de/en/intake-ai");
+    expect(english.alternates.de).toBe("https://www.getintake.de/intake-ai");
+    expect(english.title).toMatch(/Intake AI/i);
+    expect(english.description).toMatch(/optional|photo|API key/i);
+  });
+
   it("returns release metadata for localized what's new detail pages", () => {
     const seo = getSeoContent("/en/whats-new/2.1.1", origin);
 
