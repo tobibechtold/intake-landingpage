@@ -16,8 +16,18 @@ describe("whatsNewContent", () => {
     const entries = getWhatsNewEntries("en");
 
     expect(entries.length).toBeGreaterThan(0);
-    expect(entries[0]?.version).toBe("2.3.2");
+    expect(entries[0]?.version).toBe("2.4.0");
     expect(entries[0]?.locale).toBe("en");
+  });
+
+  it("renders the Intake AI BYOK clarification in the 2.4.0 release", () => {
+    const entry = getWhatsNewEntry("2.4.0", "en");
+
+    expect(entry?.title).toBe("What's new in Intake 2.4.0");
+    expect(entry?.publishedAt).toBe("2026-06-21");
+    expect(entry?.bodyHtml).toContain("Bring your own API key");
+    expect(entry?.bodyHtml).toContain("ChatGPT Plus, ChatGPT Pro, Claude Pro, or Claude Max");
+    expect(entry?.bodyHtml).toContain("does not include an API key");
   });
 
   it("renders embedded mp4 markdown media as a video block", () => {
