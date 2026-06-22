@@ -16,8 +16,24 @@ describe("whatsNewContent", () => {
     const entries = getWhatsNewEntries("en");
 
     expect(entries.length).toBeGreaterThan(0);
-    expect(entries[0]?.version).toBe("2.4.0");
+    expect(entries[0]?.version).toBe("2.4.1");
     expect(entries[0]?.locale).toBe("en");
+  });
+
+  it("renders the 2.4.1 AI chat improvements in both locales", () => {
+    const englishEntry = getWhatsNewEntry("2.4.1", "en");
+    const germanEntry = getWhatsNewEntry("2.4.1", "de");
+
+    expect(englishEntry?.title).toBe("What's new in Intake 2.4.1");
+    expect(englishEntry?.publishedAt).toBe("2026-06-22");
+    expect(englishEntry?.bodyHtml).toContain("Speech to text");
+    expect(englishEntry?.bodyHtml).toContain("Gemini");
+    expect(englishEntry?.bodyHtml).toContain("Terms of Service");
+
+    expect(germanEntry?.title).toBe("Was ist neu in Intake 2.4.1");
+    expect(germanEntry?.bodyHtml).toContain("Spracheingabe");
+    expect(germanEntry?.bodyHtml).toContain("Gemini");
+    expect(germanEntry?.bodyHtml).toContain("Nutzungsbedingungen");
   });
 
   it("renders the Intake AI BYOK clarification in the 2.4.0 release", () => {
