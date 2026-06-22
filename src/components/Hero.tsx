@@ -25,7 +25,7 @@ const RatingComponent = ({ label }: { label: string }) => (
 
 const Hero = () => {
   const { t, language } = useLanguage();
-  const [videoSrc, setVideoSrc] = useState(PROMO_VIDEO_SOURCES.mp4);
+  const [videoSrc, setVideoSrc] = useState(PROMO_VIDEO_SOURCES.webm);
   const trustChips = [
     t("oneTimePurchase"),
     t("noAccountRequired"),
