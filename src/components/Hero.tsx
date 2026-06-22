@@ -6,7 +6,10 @@ import { useEffect, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Button } from "@/components/ui/button";
 import PhoneFrame from "./PhoneFrame";
-import { getPromoVideoSourceForCapabilities, PROMO_VIDEO_SOURCES } from "@/lib/videoSupport";
+import {
+  getPromoVideoSourceForCapabilities,
+  PROMO_VIDEO_SOURCES_BY_LANGUAGE,
+} from "@/lib/videoSupport";
 import { getAppStoreUrl, getGooglePlayUrl } from "@/lib/storeLinks";
 
 const RatingComponent = ({ label }: { label: string }) => (
@@ -25,7 +28,7 @@ const RatingComponent = ({ label }: { label: string }) => (
 
 const Hero = () => {
   const { t, language } = useLanguage();
-  const [videoSrc, setVideoSrc] = useState(PROMO_VIDEO_SOURCES.mp4);
+  const [videoSrc, setVideoSrc] = useState(PROMO_VIDEO_SOURCES_BY_LANGUAGE[language].mp4);
   const trustChips = [
     t("oneTimePurchase"),
     t("noAccountRequired"),
@@ -35,8 +38,8 @@ const Hero = () => {
 
   useEffect(() => {
     const video = document.createElement("video");
-    setVideoSrc(getPromoVideoSourceForCapabilities((type) => video.canPlayType(type)));
-  }, []);
+    setVideoSrc(getPromoVideoSourceForCapabilities((type) => video.canPlayType(type), language));
+  }, [language]);
 
   return (
     <section id="hero" className="hero-gradient relative min-h-screen overflow-hidden pt-20">

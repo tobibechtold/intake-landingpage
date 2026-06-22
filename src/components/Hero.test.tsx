@@ -30,6 +30,7 @@ describe("Hero", () => {
     expect(screen.getByText(/100% on-device/i)).toBeInTheDocument();
     expect(container.querySelector("#hero")).toBeInTheDocument();
     expect(container.querySelector("video")).toBeInTheDocument();
+    expect(container.querySelector("video source")).toHaveAttribute("src", "/promo-video-en.mp4");
     expect(container.querySelector(".hero-device-shell")).not.toBeInTheDocument();
     expect(container.querySelector(".h-\\[28rem\\]")).not.toBeInTheDocument();
   });
