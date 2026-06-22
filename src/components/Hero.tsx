@@ -2,12 +2,13 @@ import logo from "@/assets/logo-hero.webp";
 import appStoreBadge from "@/assets/app-store-badge.svg";
 import googlePlayBadge from "@/assets/google-play-badge.png";
 import { Star } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Button } from "@/components/ui/button";
 import PhoneFrame from "./PhoneFrame";
 import {
-  getPromoVideoSourceForCapabilities,
+  getPromoVideoFormatForCapabilities,
+  PromoVideoFormat,
   PROMO_VIDEO_SOURCES_BY_LANGUAGE,
 } from "@/lib/videoSupport";
 import { getAppStoreUrl, getGooglePlayUrl } from "@/lib/storeLinks";
@@ -28,7 +29,9 @@ const RatingComponent = ({ label }: { label: string }) => (
 
 const Hero = () => {
   const { t, language } = useLanguage();
-  const [videoSrc, setVideoSrc] = useState(PROMO_VIDEO_SOURCES_BY_LANGUAGE[language].mp4);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoFormat, setVideoFormat] = useState<PromoVideoFormat>("mp4");
+  const videoSrc = PROMO_VIDEO_SOURCES_BY_LANGUAGE[language][videoFormat];
   const trustChips = [
     t("oneTimePurchase"),
     t("noAccountRequired"),
@@ -38,8 +41,12 @@ const Hero = () => {
 
   useEffect(() => {
     const video = document.createElement("video");
-    setVideoSrc(getPromoVideoSourceForCapabilities((type) => video.canPlayType(type), language));
-  }, [language]);
+    setVideoFormat(getPromoVideoFormatForCapabilities((type) => video.canPlayType(type)));
+  }, []);
+
+  useEffect(() => {
+    videoRef.current?.load();
+  }, [videoSrc]);
 
   return (
     <section id="hero" className="hero-gradient relative min-h-screen overflow-hidden pt-20">
@@ -151,7 +158,8 @@ const Hero = () => {
           >
             <PhoneFrame className="max-w-[280px] md:max-w-[320px]">
               <video
-                key={language}
+                key={videoSrc}
+                ref={videoRef}
                 autoPlay
                 muted
                 loop

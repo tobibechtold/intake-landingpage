@@ -14,6 +14,11 @@ Object.defineProperty(window, "matchMedia", {
   }),
 });
 
+Object.defineProperty(HTMLMediaElement.prototype, "load", {
+  configurable: true,
+  value: () => {},
+});
+
 class MockIntersectionObserver {
   observe() {}
   unobserve() {}
