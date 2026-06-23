@@ -16,8 +16,23 @@ describe("whatsNewContent", () => {
     const entries = getWhatsNewEntries("en");
 
     expect(entries.length).toBeGreaterThan(0);
-    expect(entries[0]?.version).toBe("2.4.1");
+    expect(entries[0]?.version).toBe("2.4.2");
     expect(entries[0]?.locale).toBe("en");
+  });
+
+  it("renders the 2.4.2 maintenance fixes in both locales", () => {
+    const englishEntry = getWhatsNewEntry("2.4.2", "en");
+    const germanEntry = getWhatsNewEntry("2.4.2", "de");
+
+    expect(englishEntry?.title).toBe("What's new in Intake 2.4.2");
+    expect(englishEntry?.publishedAt).toBe("2026-06-24");
+    expect(englishEntry?.summary).toBe("Gemini BYOK and Health Connect fixes");
+    expect(englishEntry?.bodyHtml).toContain("Gemini BYOK");
+    expect(englishEntry?.bodyHtml).toContain("Health Connect");
+
+    expect(germanEntry?.title).toBe("Was ist neu in Intake 2.4.2");
+    expect(germanEntry?.bodyHtml).toContain("Gemini-BYOK");
+    expect(germanEntry?.bodyHtml).toContain("Health Connect");
   });
 
   it("renders the 2.4.1 AI chat improvements in both locales", () => {
