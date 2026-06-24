@@ -29,7 +29,8 @@ describe("Index", () => {
       screen.getByRole("heading", { name: /warum intake im alltag besser funktioniert/i })
     ).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /neu: intake ai/i })).toBeInTheDocument();
-    expect(screen.getByText(/bald verfügbar/i)).toBeInTheDocument();
+    expect(screen.getByText(/jetzt verfügbar/i)).toBeInTheDocument();
+    expect(screen.queryByText(/bald verfügbar/i)).not.toBeInTheDocument();
     expect(screen.getByText(/optionales add-on/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /intake ai ansehen/i })).toHaveAttribute("href", "/intake-ai");
     expect(screen.getByRole("heading", { name: /die wichtigsten seiten auf einen blick/i })).toBeInTheDocument();
@@ -64,7 +65,8 @@ describe("Index", () => {
       screen.getByRole("heading", { name: /the most useful pages in one place/i })
     ).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /new: intake ai/i })).toBeInTheDocument();
-    expect(screen.getByText(/coming soon/i)).toBeInTheDocument();
+    expect(screen.getByText(/available now/i)).toBeInTheDocument();
+    expect(screen.queryByText(/coming soon/i)).not.toBeInTheDocument();
     expect(screen.getByText(/optional add-on/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /see intake ai/i })).toHaveAttribute("href", "/en/intake-ai");
     expect(

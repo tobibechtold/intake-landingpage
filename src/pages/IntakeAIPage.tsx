@@ -154,7 +154,7 @@ const IntakeAIPage = () => {
                 <div className="flex flex-wrap items-center gap-3">
                   <p className="section-kicker">{content.kicker}</p>
                   <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                    {t("comingSoonBadge")}
+                    {t("intakeAIBadge")}
                   </span>
                 </div>
                 <h1 className="mt-4 text-5xl font-bold leading-tight text-foreground md:text-7xl">

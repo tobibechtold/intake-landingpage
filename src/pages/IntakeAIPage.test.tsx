@@ -22,7 +22,8 @@ describe("IntakeAIPage", () => {
     renderIntakeAIPage("/intake-ai");
 
     expect(screen.getByRole("heading", { level: 1, name: /^intake ai$/i })).toBeInTheDocument();
-    expect(screen.getByText(/bald verfügbar/i)).toBeInTheDocument();
+    expect(screen.getByText(/jetzt verfügbar/i)).toBeInTheDocument();
+    expect(screen.queryByText(/bald verfügbar/i)).not.toBeInTheDocument();
     expect(screen.getByText(/optionales add-on/i)).toBeInTheDocument();
     expect(screen.getByText(/core-app bleibt ein einmalkauf/i)).toBeInTheDocument();
     expect(screen.getByText(/3,99 € pro monat/i)).toBeInTheDocument();
@@ -37,7 +38,8 @@ describe("IntakeAIPage", () => {
     renderIntakeAIPage("/en/intake-ai");
 
     expect(screen.getByRole("heading", { level: 1, name: /^intake ai$/i })).toBeInTheDocument();
-    expect(screen.getByText(/coming soon/i)).toBeInTheDocument();
+    expect(screen.getByText(/available now/i)).toBeInTheDocument();
+    expect(screen.queryByText(/coming soon/i)).not.toBeInTheDocument();
     expect(screen.getByText(/optional add-on/i)).toBeInTheDocument();
     expect(screen.getByText(/core app stays a one-time purchase/i)).toBeInTheDocument();
     expect(screen.getByText(/describe a meal in a sentence/i)).toBeInTheDocument();
