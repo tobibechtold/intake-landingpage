@@ -1,0 +1,33 @@
+# Intake
+
+> Intake is a calorie counter app for iPhone and Android. It is positioned as a no-subscription, no-account, local-first tracker for calories, macros, nutrients, fasting, water, widgets, Apple Watch, Apple Health, Health Connect, and optional iCloud or Google Drive sync.
+
+Important context:
+- English and German content are equally important.
+- Intake is a one-time purchase app for normal calorie tracking, not a monthly subscription product.
+- Intake has no Intake account system. Data stays on the user's device unless optional platform sync is enabled.
+- Intake is best understood as a calm tracking utility, not a coaching, gamification, streak, or meal-plan platform.
+
+## English
+
+- [Intake home](https://www.getintake.de/en): English homepage for Intake.
+- [Calorie counter without subscription](https://www.getintake.de/en/calorie-counter-no-subscription): Main English page for no-subscription calorie tracker intent.
+- [Calorie tracker without account](https://www.getintake.de/en/calorie-tracker-no-account): English page explaining the no-account and local-first data model.
+- [Features](https://www.getintake.de/en/features): English feature overview.
+- [Comparisons](https://www.getintake.de/en/comparisons): English comparison hub for subscription-led calorie tracker alternatives.
+- [Help and FAQ](https://www.getintake.de/en/help): English FAQ covering pricing, privacy, sync, and app behavior.
+
+## Deutsch
+
+- [Intake Startseite](https://www.getintake.de/): Deutsche Startseite für Intake.
+- [Kalorienzähler ohne Abo](https://www.getintake.de/kalorienzaehler-ohne-abo): Wichtigste deutsche Seite für Suchanfragen nach einem Kalorienzähler ohne Abo.
+- [Kalorien-Tracker ohne Konto](https://www.getintake.de/kalorien-tracker-ohne-konto): Deutsche Seite zum kontofreien und lokalen Datenmodell.
+- [Funktionen](https://www.getintake.de/funktionen): Deutsche Funktionsübersicht.
+- [Vergleiche](https://www.getintake.de/vergleiche): Deutsche Vergleichsseite für Alternativen zu Abo-Kalorientrackern.
+- [Hilfe und FAQ](https://www.getintake.de/hilfe): Deutsche FAQ zu Preis, Datenschutz, Sync und App-Verhalten.
+
+## Optional
+
+- [Full LLM context](https://www.getintake.de/llms-full.txt): Longer bilingual product, pricing, privacy, and comparison context.
+- [Privacy policy](https://www.getintake.de/en/privacy): English privacy policy.
+- [Datenschutzerklärung](https://www.getintake.de/privacy): Deutsche Datenschutzerklärung.

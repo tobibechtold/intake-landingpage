@@ -37,6 +37,49 @@ describe("prerender-seo", () => {
     expect(html).toContain(`<link rel="alternate" hreflang="x-default" href="${origin}/" />`);
   });
 
+  it("injects crawlable static body content for no-subscription intent pages", () => {
+    const englishHtml = buildPrerenderedHtml(template, "/en/calorie-counter-no-subscription");
+    const germanHtml = buildPrerenderedHtml(template, "/kalorienzaehler-ohne-abo");
+
+    expect(englishHtml).toContain('<main id="static-prerender-content"');
+    expect(englishHtml).toContain("A calorie counter without a subscription");
+    expect(englishHtml).toContain("One-time purchase");
+    expect(englishHtml).toContain('href="/en/features"');
+
+    expect(germanHtml).toContain('<main id="static-prerender-content"');
+    expect(germanHtml).toContain("Kalorienzähler ohne Abo");
+    expect(germanHtml).toContain("Einmalkauf");
+    expect(germanHtml).toContain('href="/funktionen"');
+  });
+
+  it("injects route-specific static body content for every major page family", () => {
+    const featuresHtml = buildPrerenderedHtml(template, "/en/features");
+    const comparisonHtml = buildPrerenderedHtml(template, "/en/comparisons/yazio-alternative");
+    const helpHtml = buildPrerenderedHtml(template, "/en/help");
+    const whatsNewHtml = buildPrerenderedHtml(template, "/en/whats-new/2.1.1");
+
+    expect(featuresHtml).toContain("Calorie tracking with a large food database");
+    expect(featuresHtml).toContain("Barcode scanner");
+
+    expect(comparisonHtml).toContain("Business model");
+    expect(comparisonHtml).toContain("Intake:");
+
+    expect(helpHtml).toContain("Is Intake a subscription-based app?");
+    expect(helpHtml).toContain("No account is required");
+
+    expect(whatsNewHtml).toContain("Release");
+    expect(whatsNewHtml).toContain("2.1.1");
+  });
+
+  it("emits section-level static body content for every prerendered route", () => {
+    PRERENDER_ROUTES.forEach((route) => {
+      const html = buildPrerenderedHtml(template, route);
+
+      expect(html, route).toContain('<main id="static-prerender-content"');
+      expect(html, route).toContain("<section>");
+    });
+  });
+
   it("injects metadata for the new feature overview routes", () => {
     const germanHtml = buildPrerenderedHtml(template, "/funktionen");
     const englishHtml = buildPrerenderedHtml(template, "/en/features");
