@@ -16,13 +16,17 @@ highlights:
 Intake AI just got more flexible, especially when an estimate contains several ingredients.
 
 You can now choose whether you want to log an estimate as one meal or save each ingredient separately. Use one meal when you want a clean diary entry, or split the ingredients when you want more control over the details.
+
 ![sharing](assets/meal-card-components-en.png)
+
 ## Better editing before you save
 
 AI estimates are still suggestions, and this update gives you more ways to correct them before they reach your diary.
 
 You can add missing ingredients, remove anything that does not belong, edit an ingredient name, and adjust the amount. You can also tell Intake AI to use a larger or smaller portion, or manually set the calories you think the meal should have.
+
 ![sharing](assets/correction-sheet-en.png)
+
 ## Beverages in the right place
 
 Intake AI now recognizes beverages automatically.

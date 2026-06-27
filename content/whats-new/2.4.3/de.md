@@ -16,13 +16,17 @@ highlights:
 Intake AI kann jetzt besser mit Schätzungen umgehen, die aus mehreren Zutaten bestehen.
 
 Du entscheidest beim Speichern, ob daraus ein gemeinsamer Mahlzeiteneintrag werden soll oder ob Intake jede Zutat einzeln ins Tagebuch übernimmt. So bleibt ein einfaches Gericht kompakt, während du bei detaillierteren Schätzungen trotzdem jede einzelne Zutat sauber nachbearbeiten kannst.
+
 ![sharing](assets/meal-card-components-de.png)
+
 ## Korrekturen ohne Umwege
 
 Wenn eine KI-Schätzung nicht ganz passt, musst du nicht mehr von vorn anfangen.
 
 Du kannst Zutaten hinzufügen, entfernen oder umbenennen und Mengen direkt ändern. Auch die Portion lässt sich nachträglich größer oder kleiner setzen. Wenn du schon weißt, wie viele Kalorien die Mahlzeit ungefähr haben sollte, kannst du den Kalorienwert jetzt ebenfalls manuell korrigieren.
+
 ![sharing](assets/correction-sheet-de.png)
+
 ## Getränke werden besser erkannt
 
 Intake AI erkennt Getränke jetzt automatisch und behandelt sie passend.
