@@ -16,8 +16,25 @@ describe("whatsNewContent", () => {
     const entries = getWhatsNewEntries("en");
 
     expect(entries.length).toBeGreaterThan(0);
-    expect(entries[0]?.version).toBe("2.4.2");
+    expect(entries[0]?.version).toBe("2.4.3");
     expect(entries[0]?.locale).toBe("en");
+  });
+
+  it("renders the 2.4.3 Intake AI logging improvements in both locales", () => {
+    const englishEntry = getWhatsNewEntry("2.4.3", "en");
+    const germanEntry = getWhatsNewEntry("2.4.3", "de");
+
+    expect(englishEntry?.title).toBe("What's new in Intake 2.4.3");
+    expect(englishEntry?.publishedAt).toBe("2026-06-28");
+    expect(englishEntry?.summary).toBe("Smarter Intake AI estimates and faster local food search");
+    expect(englishEntry?.bodyHtml).toContain("log an estimate as one meal");
+    expect(englishEntry?.bodyHtml).toContain("beverages automatically");
+    expect(englishEntry?.bodyHtml).toContain("large local food database");
+
+    expect(germanEntry?.title).toBe("Was ist neu in Intake 2.4.3");
+    expect(germanEntry?.bodyHtml).toContain("gemeinsamer Mahlzeiteneintrag");
+    expect(germanEntry?.bodyHtml).toContain("Getränke jetzt automatisch");
+    expect(germanEntry?.bodyHtml).toContain("große lokale Lebensmitteldatenbanken");
   });
 
   it("renders the 2.4.2 maintenance fixes in both locales", () => {
