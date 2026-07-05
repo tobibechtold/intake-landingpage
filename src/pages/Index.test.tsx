@@ -31,7 +31,7 @@ describe("Index", () => {
     expect(screen.getByRole("heading", { name: /neu: intake ai/i })).toBeInTheDocument();
     expect(screen.getByText(/jetzt verfügbar/i)).toBeInTheDocument();
     expect(screen.queryByText(/bald verfügbar/i)).not.toBeInTheDocument();
-    expect(screen.getByText(/optionales add-on/i)).toBeInTheDocument();
+    expect(screen.getByText(/basic-ki-logging mit eigenem api-schlüssel \(byok\)/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /intake ai ansehen/i })).toHaveAttribute("href", "/intake-ai");
     expect(screen.getByRole("heading", { name: /die wichtigsten seiten auf einen blick/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /produktupdates/i })).toBeInTheDocument();
@@ -67,7 +67,7 @@ describe("Index", () => {
     expect(screen.getByRole("heading", { name: /new: intake ai/i })).toBeInTheDocument();
     expect(screen.getByText(/available now/i)).toBeInTheDocument();
     expect(screen.queryByText(/coming soon/i)).not.toBeInTheDocument();
-    expect(screen.getByText(/optional add-on/i)).toBeInTheDocument();
+    expect(screen.getByText(/basic AI logging with your own API key \(BYOK\)/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /see intake ai/i })).toHaveAttribute("href", "/en/intake-ai");
     expect(
       screen.getByRole("heading", { name: /product updates/i })

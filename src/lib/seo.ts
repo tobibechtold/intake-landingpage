@@ -60,7 +60,7 @@ const SEO_COPY: Record<Language, SeoByLocale> = {
     intakeAI: {
       title: "Intake AI - Optional AI Food Logging With Text and Photos",
       description:
-        "Intake AI is an optional add-on for faster meal logging. Describe food, analyze photos, scan nutrition labels, or use your own OpenAI or Claude API key.",
+        "Intake AI adds richer AI food logging with text, photos, label scans, and editable ingredients. Or use basic AI logging with your own API key (BYOK).",
     },
     help: {
       title: "Help & FAQ | Intake",
@@ -121,7 +121,7 @@ const SEO_COPY: Record<Language, SeoByLocale> = {
     intakeAI: {
       title: "Intake AI - Optionales KI-Food-Logging mit Text und Fotos",
       description:
-        "Intake AI ist ein optionales Add-on für schnelleres KI-Food-Logging. Beschreibe Essen, analysiere Fotos, scanne Nährwertlabels oder nutze deinen eigenen API-Schlüssel.",
+        "Intake AI bietet KI-Food-Logging mit Text, Fotos, Labels und bearbeitbaren Zutaten. Oder nutze Basic-KI-Logging mit eigenem API-Schlüssel (BYOK).",
     },
     help: {
       title: "Hilfe & FAQ | Intake",

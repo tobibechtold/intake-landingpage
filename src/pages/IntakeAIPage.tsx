@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import {
   BadgeCheck,
   Camera,
+  Check,
   ClipboardCheck,
   KeyRound,
   MessageCircle,
+  Minus,
   ScanLine,
   Sparkles,
 } from "lucide-react";
@@ -55,22 +57,93 @@ const CONTENT = {
     ],
     pricingTitle: "Choose how you want to use it",
     pricingDescription:
-      "Hosted Intake AI is paid because model calls cost money. Bringing your own key is free of Intake AI subscription charges.",
-    hostedTitle: "Hosted Intake AI",
-    hostedBody: "Use Intake's hosted AI provider with food-specific prompts and automatic improvements.",
+      "Intake AI is paid because model calls cost money. Using your own API key (BYOK) is free of Intake AI subscription charges.",
+    hostedTitle: "Intake AI",
+    hostedBody: "Use Intake AI with food-specific prompts, richer logging controls, and automatic improvements.",
     monthly: "3.99 € per month",
     yearly: "39.99 € per year",
     trial: "3 days free trial",
-    byokTitle: "Bring your own key",
+    byokTitle: "Own API key (BYOK)",
     byokBody:
-      "Add your own OpenAI or Claude API key in Settings and use supported models without an Intake AI subscription.",
+      "Add your own OpenAI, Claude, or Gemini API key in Settings and use basic AI food logging without an Intake AI subscription.",
     providerNote: "Provider terms and any provider-side usage costs still apply.",
+    comparisonKicker: "Feature comparison",
+    comparisonTitle: "Intake AI vs. own API key (BYOK)",
+    comparisonDescription:
+      "Own API key (BYOK) is the basic free AI logging chat with your provider key. Intake AI adds the richer food-logging workflow and is improved continuously.",
+    comparisonColumns: {
+      feature: "Feature",
+      hosted: "Intake AI",
+      byok: "Own API key (BYOK)",
+    },
+    proofTitle: "More control before logging",
+    proofDescription:
+      "Only Intake AI lets you review recognized ingredients separately, adjust amounts, and correct estimates before saving them.",
+    proofItems: [
+      {
+        title: "Review ingredients separately",
+        body: "Switch from one meal to components, review each recognized ingredient, and log them separately.",
+        imageSrc: "/intake-ai/meal-card-components-en.jpg",
+        imageAlt: "Intake AI shows recognized ingredients separately with component logging controls.",
+      },
+      {
+        title: "Correct estimates in place",
+        body: "Edit ingredients, change amounts, pick smaller or larger portions, and adjust calories before logging.",
+        imageSrc: "/intake-ai/correction-sheet-en.jpg",
+        imageAlt: "Intake AI correction view with ingredients, portion controls, and manual calorie adjustment.",
+      },
+    ],
+    comparisonRows: [
+      {
+        feature: "Text chat and meal photos",
+        hosted:
+          "Describe meals or send photos, then review editable suggestions before logging.",
+        byok:
+          "Send text or images to the supported AI provider of your choice with your own API key (BYOK).",
+        hostedLevel: "full",
+        byokLevel: "full",
+      },
+      {
+        feature: "Recognized ingredient handling",
+        hosted:
+          "Log the result as one meal, or show ingredients separately and log them separately.",
+        byok:
+          'The provider returns a single product or meal item containing the ingredients it recognized.',
+        hostedLevel: "full",
+        byokLevel: "basic",
+      },
+      {
+        feature: "Estimate corrections before logging",
+        hosted:
+          "Correct estimates in place, choose larger or smaller portions, remove, edit, or add ingredients and amounts, and manually adjust the calories of an estimate before logging.",
+        byok:
+          "Basic single-item estimate from your chosen provider. Corrections only work by sending a chat message to the provider.",
+        hostedLevel: "full",
+        byokLevel: "basic",
+      },
+      {
+        feature: "Nutrition-label product creation",
+        hosted:
+          "Scan a nutrition label while creating a new product and Intake AI fills out the create-product form with values from the photo.",
+        byok: "Not available",
+        hostedLevel: "full",
+        byokLevel: "none",
+      },
+      {
+        feature: "Ongoing feature work",
+        hosted:
+          "Continuously improved as Intake AI evolves.",
+        byok: "Basic AI food logging chat with your own API key (BYOK) and your provider's terms and costs.",
+        hostedLevel: "full",
+        byokLevel: "basic",
+      },
+    ],
     disclaimerTitle: "Review before logging",
     disclaimer:
       "AI results are estimates and can be wrong. Intake AI creates editable suggestions; you decide what gets saved to your diary.",
     privacyTitle: "Clear data flow",
     privacy:
-      "Hosted analysis sends food descriptions, photos, captions, and recent chat context through Intake's backend and AI providers to generate nutrition estimates.",
+      "Intake AI analysis sends food descriptions, photos, captions, and recent chat context through Intake's backend and AI providers to generate nutrition estimates.",
   },
   de: {
     breadcrumbs: "Intake AI",
@@ -109,24 +182,120 @@ const CONTENT = {
     ],
     pricingTitle: "Wähle, wie du Intake AI nutzen möchtest",
     pricingDescription:
-      "Gehostete KI ist kostenpflichtig, weil Modellanfragen Geld kosten. Ein eigener Schlüssel verursacht keine Intake-AI-Abo-Kosten.",
-    hostedTitle: "Gehostetes Intake AI",
-    hostedBody: "Nutze unseren gehosteten KI-Anbieter mit Food-spezifischen Prompts und laufenden Verbesserungen.",
+      "Intake AI ist kostenpflichtig, weil Modellanfragen Geld kosten. Ein eigener API-Schlüssel (BYOK) verursacht keine Intake-AI-Abo-Kosten.",
+    hostedTitle: "Intake AI",
+    hostedBody: "Nutze Intake AI mit Food-spezifischen Prompts, mehr Logging-Bedienelementen und laufenden Verbesserungen.",
     monthly: "3,99 € pro Monat",
     yearly: "39,99 € pro Jahr",
     trial: "3 Tage kostenlos testen",
-    byokTitle: "Eigener API-Schlüssel",
+    byokTitle: "Eigener API-Schlüssel (BYOK)",
     byokBody:
-      "Hinterlege deinen eigenen OpenAI- oder Claude-API-Schlüssel in den Einstellungen und nutze unterstützte Modelle ohne Intake-AI-Abo.",
+      "Hinterlege deinen eigenen OpenAI-, Claude- oder Gemini-API-Schlüssel in den Einstellungen und nutze grundlegendes KI-Food-Logging ohne Intake-AI-Abo.",
     providerNote: "Die Bedingungen und eventuelle Nutzungskosten des jeweiligen Anbieters gelten trotzdem.",
+    comparisonKicker: "Funktionsvergleich",
+    comparisonTitle: "Intake AI vs. eigener API-Schlüssel (BYOK)",
+    comparisonDescription:
+      "Eigener API-Schlüssel (BYOK) ist der kostenlose Basic-KI-Food-Logging-Chat mit deinem Anbieter-Schlüssel. Intake AI ergänzt den umfangreicheren Food-Logging-Ablauf und wird kontinuierlich verbessert.",
+    comparisonColumns: {
+      feature: "Funktion",
+      hosted: "Intake AI",
+      byok: "Eigener API-Schlüssel (BYOK)",
+    },
+    proofTitle: "Mehr Kontrolle vor dem Loggen",
+    proofDescription:
+      "Nur mit Intake AI kannst du erkannte Zutaten einzeln prüfen, Mengen anpassen und Schätzungen korrigieren, bevor du sie speicherst.",
+    proofItems: [
+      {
+        title: "Zutaten getrennt prüfen",
+        body: "Wechsle von einer Mahlzeit zu Komponenten, prüfe jede erkannte Zutat und logge sie einzeln.",
+        imageSrc: "/intake-ai/meal-card-components-de.jpg",
+        imageAlt: "Intake AI zeigt erkannte Zutaten einzeln mit Bedienelementen zum Komponenten-Logging.",
+      },
+      {
+        title: "Schätzungen direkt korrigieren",
+        body: "Bearbeite Zutaten, ändere Mengen, wähle kleinere oder größere Portionen und passe Kalorien vor dem Loggen an.",
+        imageSrc: "/intake-ai/correction-sheet-de.jpg",
+        imageAlt: "Intake AI Korrekturansicht mit Zutaten, Portionssteuerung und manueller Kalorienanpassung.",
+      },
+    ],
+    comparisonRows: [
+      {
+        feature: "Textchat und Mahlzeitenfotos",
+        hosted:
+          "Beschreibe Mahlzeiten oder sende Fotos und prüfe bearbeitbare Vorschläge vor dem Loggen.",
+        byok:
+          "Sende Text oder Bilder mit deinem eigenen API-Schlüssel (BYOK) an den unterstützten KI-Anbieter deiner Wahl.",
+        hostedLevel: "full",
+        byokLevel: "full",
+      },
+      {
+        feature: "Umgang mit erkannten Zutaten",
+        hosted:
+          "Logge das Ergebnis als eine Mahlzeit oder lass Zutaten einzeln anzeigen und einzeln loggen.",
+        byok:
+          "Der Anbieter liefert ein einziges Produkt oder eine Mahlzeit mit allen Zutaten, die er erkannt hat.",
+        hostedLevel: "full",
+        byokLevel: "basic",
+      },
+      {
+        feature: "Schätzungen vor dem Loggen korrigieren",
+        hosted:
+          "Korrigiere Schätzungen direkt: Du kannst größere oder kleinere Portionen wählen, Zutaten und Mengen entfernen, bearbeiten oder ergänzen und die Kalorien einer Schätzung vor dem Loggen manuell anpassen.",
+        byok:
+          "Einfache Schätzung als einzelner Eintrag von deinem gewählten Anbieter. Korrekturen funktionieren nur per Chatnachricht an den Anbieter.",
+        hostedLevel: "full",
+        byokLevel: "basic",
+      },
+      {
+        feature: "Produkte per Nährwertlabel erstellen",
+        hosted:
+          "Scanne beim Erstellen eines neuen Produkts ein Nährwertlabel. Intake AI füllt das Formular zum Erstellen eines Produkts automatisch mit den Nährwerten aus dem Foto.",
+        byok: "Nicht verfügbar",
+        hostedLevel: "full",
+        byokLevel: "none",
+      },
+      {
+        feature: "Laufende Weiterentwicklung",
+        hosted:
+          "Wird kontinuierlich verbessert, während der Chat mit eigenem API-Schlüssel (BYOK) der Basic-KI-Food-Logging-Chat bleibt.",
+        byok:
+          "Grundlegendes kostenloses KI-Logging mit deinem eigenen API-Schlüssel (BYOK) und den Bedingungen und Kosten deines Anbieters.",
+        hostedLevel: "full",
+        byokLevel: "basic",
+      },
+    ],
     disclaimerTitle: "Vor dem Speichern prüfen",
     disclaimer:
       "KI-Ergebnisse sind Schätzungen und können falsch sein. Intake AI erstellt bearbeitbare Vorschläge; du entscheidest, was gespeichert wird.",
     privacyTitle: "Klare Datenverarbeitung",
     privacy:
-      "Die gehostete Analyse sendet Essensbeschreibungen, Fotos, Bildunterschriften und den letzten Chat-Kontext über das Intake-Backend und KI-Anbieter, um Nährwertschätzungen zu erstellen.",
+      "Die Intake-AI-Analyse sendet Essensbeschreibungen, Fotos, Bildunterschriften und den letzten Chat-Kontext über das Intake-Backend und KI-Anbieter, um Nährwertschätzungen zu erstellen.",
   },
 } as const;
+
+const ComparisonValue = ({
+  level,
+  children,
+}: {
+  level: "full" | "basic" | "none";
+  children: string;
+}) => {
+  const isFull = level === "full";
+
+  return (
+    <div className="flex gap-3 text-sm leading-6 text-muted-foreground">
+      <span
+        className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full ${
+          isFull ? "bg-primary/15 text-primary" : "bg-muted text-muted-foreground"
+        }`}
+        aria-hidden="true"
+      >
+        {isFull ? <Check className="h-4 w-4" /> : <Minus className="h-4 w-4" />}
+      </span>
+      <span>{children}</span>
+    </div>
+  );
+};
 
 const IntakeAIPage = () => {
   const { language, t } = useLanguage();
@@ -265,6 +434,89 @@ const IntakeAIPage = () => {
                   {content.providerNote}
                 </p>
               </article>
+            </div>
+
+            <div className="mt-12">
+              <div className="mx-auto max-w-3xl text-center">
+                <p className="section-kicker">{content.comparisonKicker}</p>
+                <h3 className="mt-3 text-3xl font-bold text-foreground md:text-4xl">
+                  {content.comparisonTitle}
+                </h3>
+                <p className="mt-4 text-base leading-7 text-muted-foreground md:text-lg">
+                  {content.comparisonDescription}
+                </p>
+              </div>
+
+              <div className="mt-8 overflow-x-auto rounded-[2rem] border border-border/70 bg-card/70 shadow-[0_30px_90px_-60px_rgba(255,76,145,0.7)]">
+                <table className="min-w-[760px] border-collapse">
+                  <caption className="sr-only">{content.comparisonTitle}</caption>
+                  <thead>
+                    <tr className="border-b border-border/70 text-left">
+                      <th className="w-[24%] px-5 py-4 text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                        {content.comparisonColumns.feature}
+                      </th>
+                      <th className="w-[40%] bg-primary/10 px-5 py-4 text-sm font-semibold text-foreground">
+                        {content.comparisonColumns.hosted}
+                      </th>
+                      <th className="w-[36%] px-5 py-4 text-sm font-semibold text-foreground/80">
+                        {content.comparisonColumns.byok}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {content.comparisonRows.map((row) => (
+                      <tr key={row.feature} className="border-b border-border/60 last:border-0">
+                        <th className="px-5 py-5 text-left text-sm font-semibold leading-6 text-foreground">
+                          {row.feature}
+                        </th>
+                        <td className="bg-primary/5 px-5 py-5 align-top">
+                          <ComparisonValue level={row.hostedLevel}>{row.hosted}</ComparisonValue>
+                        </td>
+                        <td className="px-5 py-5 align-top">
+                          <ComparisonValue level={row.byokLevel}>{row.byok}</ComparisonValue>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="mt-10">
+                <div className="mx-auto max-w-3xl text-center">
+                  <h4 className="text-2xl font-bold text-foreground md:text-3xl">
+                    {content.proofTitle}
+                  </h4>
+                  <p className="mt-3 text-sm leading-6 text-muted-foreground md:text-base">
+                    {content.proofDescription}
+                  </p>
+                </div>
+                <div className="mt-8 grid gap-6 md:grid-cols-2">
+                  {content.proofItems.map((item) => (
+                    <article
+                      key={item.title}
+                      className="glass-card overflow-hidden border border-border/70"
+                    >
+                      <div className="aspect-[4/3] overflow-hidden bg-muted/40">
+                        <img
+                          src={item.imageSrc}
+                          alt={item.imageAlt}
+                          width={1200}
+                          height={1200}
+                          loading="lazy"
+                          decoding="async"
+                          className="h-full w-full object-cover object-top"
+                        />
+                      </div>
+                      <div className="p-6">
+                        <h5 className="text-lg font-semibold text-foreground">{item.title}</h5>
+                        <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                          {item.body}
+                        </p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>

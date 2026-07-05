@@ -5,6 +5,7 @@
 Important context:
 - English and German content are equally important.
 - Intake is a one-time purchase app for normal calorie tracking, not a monthly subscription product.
+- Intake AI is an optional subscription add-on with richer AI food logging controls. Basic AI logging with your own API key (BYOK) is available without an Intake AI subscription, but provider terms and usage costs still apply.
 - Intake has no Intake account system. Data stays on the user's device unless optional platform sync is enabled.
 - Intake is best understood as a calm tracking utility, not a coaching, gamification, streak, or meal-plan platform.
 
@@ -16,6 +17,7 @@ Important context:
 - [Features](https://www.getintake.de/en/features): English feature overview.
 - [Comparisons](https://www.getintake.de/en/comparisons): English comparison hub for subscription-led calorie tracker alternatives.
 - [Help and FAQ](https://www.getintake.de/en/help): English FAQ covering pricing, privacy, sync, and app behavior.
+- [Intake AI](https://www.getintake.de/en/intake-ai): English page comparing Intake AI with own API key (BYOK) logging.
 
 ## Deutsch
 
@@ -25,6 +27,7 @@ Important context:
 - [Funktionen](https://www.getintake.de/funktionen): Deutsche Funktionsübersicht.
 - [Vergleiche](https://www.getintake.de/vergleiche): Deutsche Vergleichsseite für Alternativen zu Abo-Kalorientrackern.
 - [Hilfe und FAQ](https://www.getintake.de/hilfe): Deutsche FAQ zu Preis, Datenschutz, Sync und App-Verhalten.
+- [Intake AI](https://www.getintake.de/intake-ai): Deutsche Seite zum Vergleich von Intake AI mit Logging per eigenem API-Schlüssel (BYOK).
 
 ## Optional
 

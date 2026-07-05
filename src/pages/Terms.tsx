@@ -88,10 +88,10 @@ const Terms = () => {
               Lade möglichst keine Fotos hoch, auf denen unbeteiligte Personen, Dokumente oder sensible persönliche Informationen zu sehen sind.
             </p>
             <p>
-              Die gehostete Intake-AI-Funktion setzt eine aktive Subscription voraus und kann von der Verfügbarkeit unseres Backends, der App-Store-Prüfung und externer KI-Anbieter abhängen.
+              Die Intake-AI-Abo-Funktion setzt eine aktive Subscription voraus und kann von der Verfügbarkeit unseres Backends, der App-Store-Prüfung und externer KI-Anbieter abhängen.
             </p>
             <p>
-              Wenn du einen eigenen API-Schlüssel nutzt, werden deine Anfragen an den selbst ausgewählten Anbieter gesendet. Für diesen Anbieter gelten dessen Bedingungen und Datenschutzregeln.
+              Wenn du einen eigenen API-Schlüssel (BYOK) nutzt, werden deine Anfragen an den selbst ausgewählten Anbieter gesendet. Für diesen Anbieter gelten dessen Bedingungen und Datenschutzregeln.
             </p>
           </section>
 
@@ -222,10 +222,10 @@ const Terms = () => {
             Avoid uploading photos that include unrelated people, documents, or sensitive personal information.
           </p>
           <p>
-            Hosted Intake AI requires an active subscription and may depend on the availability of our backend, App Store entitlement verification, and external AI providers.
+            The Intake AI subscription feature requires an active subscription and may depend on the availability of our backend, App Store entitlement verification, and external AI providers.
           </p>
           <p>
-            If you use your own API key, requests are sent to your user-selected provider. That provider's terms and privacy rules apply to those requests.
+            If you use your own API key (BYOK), requests are sent to your user-selected provider. That provider's terms and privacy rules apply to those requests.
           </p>
         </section>
 

@@ -51,7 +51,7 @@ const Privacy = () => {
               Wenn du Intake AI nutzt, verarbeitet Intake AI Essensbeschreibungen, Fotos, Bildunterschriften und den letzten Chat-Kontext, damit daraus Nährwertschätzungen und bearbeitbare Mahlzeitenvorschläge erstellt werden können.
             </p>
             <p>
-              Für die gehostete Version verarbeitet Intake außerdem technische Metadaten wie App-Version, Sprache, Land, Zeitzone, Installations-ID, Anfrage-ID und deine Abo-Berechtigung, um die Funktion bereitzustellen, Missbrauch zu verhindern und Nutzungslimits abzurechnen.
+              Für die Intake-AI-Abo-Funktion verarbeitet Intake außerdem technische Metadaten wie App-Version, Sprache, Land, Zeitzone, Installations-ID, Anfrage-ID und deine Abo-Berechtigung, um die Funktion bereitzustellen, Missbrauch zu verhindern und Nutzungslimits abzurechnen.
             </p>
           </section>
 
@@ -72,7 +72,7 @@ const Privacy = () => {
               <li>Standardmäßig lokal auf deinem Gerät</li>
               <li>Optional in iCloud (iOS) oder Google Drive (Android), wenn du Sync aktivierst</li>
               <li>Falls du Health-Integrationen nutzt: Daten in Apple Health (iOS) oder Health Connect (Android) werden nur nach Berechtigung verarbeitet</li>
-              <li>Bei gehosteter Intake-AI-Nutzung über unser Backend und die jeweils eingesetzten KI-Anbieter</li>
+              <li>Bei Nutzung der Intake-AI-Abo-Funktion über unser Backend und die jeweils eingesetzten KI-Anbieter</li>
             </ul>
           </section>
 
@@ -82,7 +82,7 @@ const Privacy = () => {
               Intake gibt keine personenbezogenen Daten an Dritte weiter, außer wenn dies für die Funktion erforderlich ist (z.B. Apple iCloud, Google Drive oder Health-Plattformen) oder gesetzlich vorgeschrieben ist.
             </p>
             <p>
-              Für die gehostete Intake-AI-Funktion werden Anfragen über unser Supabase-Backend verarbeitet und können an OpenAI und/oder Google Gemini weitergegeben werden, damit die Analyse erstellt werden kann.
+              Für die Intake-AI-Abo-Funktion werden Anfragen über unser Supabase-Backend verarbeitet und können an OpenAI und/oder Google Gemini weitergegeben werden, damit die Analyse erstellt werden kann.
             </p>
             <p>
               Unser Backend speichert technische Nutzungsdaten für Betrieb, Sicherheit und Abrechnung, aber keine Roh-Prompts oder Fotos im Nutzungsprotokoll.
@@ -165,7 +165,7 @@ const Privacy = () => {
             If you use Intake AI, Intake AI processes food descriptions, photos, captions, and recent chat context to generate nutrition estimates and editable meal suggestions.
           </p>
           <p>
-            For hosted Intake AI, we also process technical metadata such as app version, language, country, timezone, installation ID, request ID, and your subscription entitlement to provide the feature, prevent abuse, and account for usage.
+            For the Intake AI subscription feature, we also process technical metadata such as app version, language, country, timezone, installation ID, request ID, and your subscription entitlement to provide the feature, prevent abuse, and account for usage.
           </p>
         </section>
 
@@ -182,7 +182,7 @@ const Privacy = () => {
             <li>Locally on your device by default</li>
             <li>Optionally in iCloud (iOS) or Google Drive (Android) if enabled</li>
             <li>Health integration data is managed by Apple Health (iOS) or Health Connect (Android) and accessed only as permitted</li>
-            <li>For hosted Intake AI usage, through our backend and the AI providers used for analysis</li>
+            <li>For Intake AI subscription feature usage, through our backend and the AI providers used for analysis</li>
           </ul>
         </section>
 
@@ -192,7 +192,7 @@ const Privacy = () => {
             We do not share personal data with third parties except where required to provide the service (e.g. Apple iCloud, Google Drive, or health platform providers) or required by law.
           </p>
           <p>
-            For hosted Intake AI, requests are processed through our Supabase backend and may be sent to OpenAI and/or Google Gemini so the analysis can be generated.
+            For the Intake AI subscription feature, requests are processed through our Supabase backend and may be sent to OpenAI and/or Google Gemini so the analysis can be generated.
           </p>
           <p>
             Our backend stores technical usage data for operations, security, and billing, but does not store raw prompts or photos in the usage ledger.

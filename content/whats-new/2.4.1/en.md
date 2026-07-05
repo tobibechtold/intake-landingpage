@@ -6,8 +6,8 @@ summary: "Voice input, Gemini, and fixes"
 coverImage: "./assets/cover.svg"
 highlights:
   - Speech to text for Intake AI
-  - Voice input for BYOK chats
-  - Gemini as a BYOK provider
+  - Voice input for own API key (BYOK) chats
+  - Gemini as an own API key (BYOK) provider
   - Claude nutrient fixes
   - Intake AI subscription fix
 ---
@@ -16,21 +16,21 @@ highlights:
 
 Intake 2.4.1 makes AI chats faster when typing is not the best option.
 
-You can now use speech to text in Intake AI and in chats that use your own API key. Dictate a meal, add a correction, or continue a conversation with the AI without typing everything by hand.
+You can now use speech to text in Intake AI and in chats that use your own API key (BYOK). Dictate a meal, add a correction, or continue a conversation with the AI without typing everything by hand.
 
 This is especially useful for quick meal descriptions, follow-up messages, and small corrections such as portion sizes or missing ingredients.
 
-## Gemini for your own API key
+## Gemini for your own API key (BYOK)
 
-Gemini is now available as another provider for BYOK chats.
+Gemini is now available as another provider for own API key (BYOK) chats.
 
-If you prefer using your own API key, you now have three provider options in Intake: OpenAI, Anthropic, and Gemini. Add your key in settings, choose a supported model, and Intake sends requests through that provider.
+If you prefer using your own API key (BYOK), you now have three provider options in Intake: OpenAI, Anthropic, and Gemini. Add your key in settings, choose a supported model, and Intake sends requests through that provider.
 
-As with the other BYOK providers, provider terms and provider-side usage costs still apply.
+As with the other own API key (BYOK) providers, provider terms and provider-side usage costs still apply.
 
 ## Bug fixes
 
-This update also fixes a few issues around Intake AI and BYOK chats.
+This update also fixes a few issues around Intake AI and own API key (BYOK) chats.
 
 Some Claude models were not sending nutrient values correctly. Those models should now return nutrients as expected again.
 

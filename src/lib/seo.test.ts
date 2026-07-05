@@ -100,7 +100,7 @@ describe("getSeoContent", () => {
     expect(german.canonical).toBe("https://www.getintake.de/intake-ai");
     expect(german.alternates.en).toBe("https://www.getintake.de/en/intake-ai");
     expect(german.title).toMatch(/Intake AI/i);
-    expect(german.description).toMatch(/optional|KI|Foto|API-Schlüssel/i);
+    expect(german.description).toMatch(/KI|bearbeitbaren Zutaten|API-Schlüssel|BYOK/i);
     expect(german.homeSchema).toBeNull();
 
     expect(english.locale).toBe("en");
@@ -108,7 +108,7 @@ describe("getSeoContent", () => {
     expect(english.canonical).toBe("https://www.getintake.de/en/intake-ai");
     expect(english.alternates.de).toBe("https://www.getintake.de/intake-ai");
     expect(english.title).toMatch(/Intake AI/i);
-    expect(english.description).toMatch(/optional|photo|API key/i);
+    expect(english.description).toMatch(/richer|photo|API key|BYOK/i);
   });
 
   it("returns release metadata for localized what's new detail pages", () => {

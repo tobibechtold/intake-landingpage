@@ -2,19 +2,19 @@
 version: "2.4.2"
 publishedAt: "2026-06-24"
 title: "Was ist neu in Intake 2.4.2"
-summary: "Gemini-BYOK und Health-Connect-Bugfixes"
+summary: "Gemini mit eigenem API-Schlüssel (BYOK) und Health-Connect-Bugfixes"
 coverImage: "./assets/cover.svg"
 highlights:
-  - Gemini-BYOK-Bugfixes
+  - Gemini mit eigenem API-Schlüssel (BYOK)
   - Health-Connect-Zuverlässigkeit verbessert
   - Kleine Wartungsverbesserungen
 ---
 
-## Gemini-BYOK-Bugfixes
+## Gemini mit eigenem API-Schlüssel (BYOK)
 
 Intake 2.4.2 ist ein kleines Wartungsupdate für Gemini-Chats und Health Connect.
 
-Gemini-Chats mit eigenem API-Schlüssel sollten jetzt zuverlässiger funktionieren. Dieses Update behebt Probleme im Gemini-BYOK-Ablauf, damit Mahlzeiten, Korrekturen und Folgefragen seltener aus anbieterspezifischen Gründen hängen bleiben.
+Gemini-Chats mit eigenem API-Schlüssel (BYOK) sollten jetzt zuverlässiger funktionieren. Dieses Update behebt Probleme im Gemini-Ablauf mit eigenem API-Schlüssel (BYOK), damit Mahlzeiten, Korrekturen und Folgefragen seltener aus anbieterspezifischen Gründen hängen bleiben.
 
 ## Health-Connect-Bugfixes
 

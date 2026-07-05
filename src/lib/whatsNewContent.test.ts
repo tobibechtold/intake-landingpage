@@ -43,12 +43,12 @@ describe("whatsNewContent", () => {
 
     expect(englishEntry?.title).toBe("What's new in Intake 2.4.2");
     expect(englishEntry?.publishedAt).toBe("2026-06-24");
-    expect(englishEntry?.summary).toBe("Gemini BYOK and Health Connect fixes");
-    expect(englishEntry?.bodyHtml).toContain("Gemini BYOK");
+    expect(englishEntry?.summary).toBe("Gemini own API key (BYOK) and Health Connect fixes");
+    expect(englishEntry?.bodyHtml).toContain("Gemini own API key (BYOK)");
     expect(englishEntry?.bodyHtml).toContain("Health Connect");
 
     expect(germanEntry?.title).toBe("Was ist neu in Intake 2.4.2");
-    expect(germanEntry?.bodyHtml).toContain("Gemini-BYOK");
+    expect(germanEntry?.bodyHtml).toContain("Gemini mit eigenem API-Schlüssel (BYOK)");
     expect(germanEntry?.bodyHtml).toContain("Health Connect");
   });
 
@@ -73,7 +73,8 @@ describe("whatsNewContent", () => {
 
     expect(entry?.title).toBe("What's new in Intake 2.4.0");
     expect(entry?.publishedAt).toBe("2026-06-21");
-    expect(entry?.bodyHtml).toContain("Bring your own API key");
+    expect(entry?.bodyHtml).toContain("Own API key (BYOK)");
+    expect(entry?.bodyHtml).toContain("basic AI chat flow");
     expect(entry?.bodyHtml).toContain("ChatGPT Plus, ChatGPT Pro, Claude Pro, or Claude Max");
     expect(entry?.bodyHtml).toContain("does not include an API key");
   });

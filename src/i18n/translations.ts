@@ -164,7 +164,7 @@ export const translations = {
     intakeAITeaserKicker: "New: Intake AI",
     intakeAITeaserTitle: "Log meals by describing them.",
     intakeAITeaserDescription:
-      "Intake AI is an optional add-on for faster food logging with text, photos, and nutrition-label scans. The core app stays a one-time purchase.",
+      "Intake AI adds richer food logging with text, photos, label scans, and editable ingredients. Basic AI logging with your own API key (BYOK) works without an Intake AI subscription.",
     intakeAITeaserButton: "See Intake AI",
 
     // CTA
@@ -347,7 +347,7 @@ export const translations = {
     intakeAITeaserKicker: "Neu: Intake AI",
     intakeAITeaserTitle: "Mahlzeiten per Beschreibung loggen.",
     intakeAITeaserDescription:
-      "Intake AI ist ein optionales Add-on für schnelleres Food-Logging mit Text, Fotos und Nährwertlabel-Scans. Die Core-App bleibt ein Einmalkauf.",
+      "Intake AI ergänzt umfangreicheres Food-Logging mit Text, Fotos, Label-Scans und bearbeitbaren Zutaten. Basic-KI-Logging mit eigenem API-Schlüssel (BYOK) funktioniert ohne Intake-AI-Abo.",
     intakeAITeaserButton: "Intake AI ansehen",
 
     // CTA

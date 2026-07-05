@@ -1,9 +1,15 @@
 import { useLanguage } from "@/i18n/LanguageContext";
-import { FAQ_BY_LANGUAGE } from "@/lib/faqData";
+import { FAQ_SECTIONS_BY_LANGUAGE } from "@/lib/faqData";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Faq = () => {
   const { language, t } = useLanguage();
-  const faqItems = FAQ_BY_LANGUAGE[language];
+  const faqSections = FAQ_SECTIONS_BY_LANGUAGE[language];
 
   return (
     <section className="section-gradient py-24">
@@ -17,14 +23,33 @@ const Faq = () => {
           </p>
         </div>
 
-        <div className="grid gap-4">
-          {faqItems.map((item) => (
-            <article key={item.question} className="feature-card">
-              <h3 className="text-lg font-semibold text-foreground mb-2">{item.question}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{item.answer}</p>
-            </article>
+        <Accordion type="multiple" className="space-y-4">
+          {faqSections.map((section) => (
+            <AccordionItem
+              key={section.title}
+              value={section.title}
+              className="rounded-2xl border border-border/60 bg-card/55 px-5 shadow-[0_24px_80px_-60px_rgba(255,76,145,0.45)]"
+            >
+              <AccordionTrigger className="py-5 text-left text-lg font-semibold text-foreground hover:no-underline">
+                <span>{section.title}</span>
+              </AccordionTrigger>
+              <AccordionContent className="pb-5">
+                <Accordion type="single" collapsible className="divide-y divide-border/60">
+                  {section.items.map((item) => (
+                    <AccordionItem key={item.question} value={item.question} className="border-0">
+                      <AccordionTrigger className="py-4 text-left text-sm font-semibold text-foreground hover:no-underline">
+                        {item.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="pb-4 text-sm leading-relaxed text-muted-foreground">
+                        {item.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </div>
     </section>
   );

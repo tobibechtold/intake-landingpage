@@ -9,7 +9,7 @@ highlights:
   - Mahlzeiten natürlich beschreiben
   - Mahlzeitenfotos analysieren
   - Nährwertlabels scannen
-  - Eigenen API-Schlüssel nutzen
+  - Eigenen API-Schlüssel (BYOK) nutzen
 ---
 
 ## Intake AI ist da
@@ -43,19 +43,21 @@ die sich nur über einen monatlichen oder jährlichen Betrag gegenfinanzieren la
 Für die Core-Funktionalität von Intake gilt weiterhin: einmal bezahlen, für immer nutzen. Ich hoffe, ihr versteht, dass ich kein Feature
 bauen kann, bei dem ich am Ende Geld drauflegen muss, damit ihr es nutzen könnt.
 
-## Eigenen API-Schlüssel nutzen
+## Eigenen API-Schlüssel (BYOK) nutzen
 
-Du kannst Intake AI auch mit deinem eigenen OpenAI- oder Claude-API-Schlüssel verwenden. Hinterlege den Schlüssel in den Intake-Einstellungen, wähle ein unterstütztes Modell, und Intake sendet KI-Anfragen über diesen Anbieter, ohne dass du ein Intake-AI-Abo brauchst.
+Du kannst grundlegendes KI-Food-Logging auch mit deinem eigenen OpenAI-, Claude- oder Gemini-API-Schlüssel nutzen. Hinterlege den Schlüssel in den Intake-Einstellungen, wähle ein unterstütztes Modell, und Intake sendet KI-Anfragen über diesen Anbieter, ohne dass du ein Intake-AI-Abo brauchst.
+
+Eigener API-Schlüssel (BYOK) ist der grundlegende KI-Chat. Intake AI ergänzt die umfangreicheren Bedienelemente, einzelne Zutatenprüfung, direkte Korrekturen, Produkterstellung per Nährwertlabel und laufende Verbesserungen.
 
 Die Bedingungen und nutzungsabhängigen Kosten des jeweiligen Anbieters gelten trotzdem. Intake kontrolliert diese Preise oder Abrechnungsregeln nicht.
 
-Wichtig: Ein normales ChatGPT-Plus-, ChatGPT-Pro-, Claude-Pro- oder Claude-Max-Abo enthält keinen API-Schlüssel und kein API-Guthaben. API-Zugriff ist separat und benötigt einen Entwickler- beziehungsweise API-Account bei OpenAI oder Anthropic.
+Wichtig: Ein normales ChatGPT-Plus-, ChatGPT-Pro-, Claude-Pro- oder Claude-Max-Abo enthält keinen API-Schlüssel und kein API-Guthaben. API-Zugriff ist separat und benötigt einen Entwickler- beziehungsweise API-Account beim Anbieter.
 
 ## Ein Feature, sauber umgesetzt
 
 Dieses Update konzentriert sich nur auf Intake AI. Die Core-App funktioniert weiterhin ohne KI und ohne Abo, und Intake AI soll das Loggen beschleunigen, während die finale Entscheidung bei dir bleibt.
 Intake AI ist ein optionales Add-on, gedacht für alle, die sich das Feature schon lange gewünscht haben. Zum Start kannst du entscheiden, ob
-du Intake AI, einen eigenen API-Schlüssel oder gar keine KI nutzen möchtest. Wie immer liegt die Entscheidung vollständig bei dir. Keine KI zu nutzen, bedeutet keinerlei Einbußen bei anderen Features der App.
+du Intake AI, einen eigenen API-Schlüssel (BYOK) oder gar keine KI nutzen möchtest. Wie immer liegt die Entscheidung vollständig bei dir. Keine KI zu nutzen, bedeutet keinerlei Einbußen bei anderen Features der App.
 
 Das komplette Changelog findest du wie immer [hier](https://featurevoting.tobibechtold.dev/app/intake/changelog).
 
