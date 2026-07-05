@@ -13,6 +13,7 @@ import WhySwitch from "@/components/WhySwitch";
 import ProofStories from "@/components/ProofStories";
 import TopicPages from "@/components/TopicPages";
 import IntakeAITeaser from "@/components/IntakeAITeaser";
+import MobileIntakeAIBanner from "@/components/MobileIntakeAIBanner";
 
 const Index = () => {
   return (
@@ -21,6 +22,7 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        <MobileIntakeAIBanner />
         <PressMentions />
         <WhySwitch />
         <TopicPages />

@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
@@ -30,17 +30,17 @@ describe("IntakeAIPage", () => {
     expect(screen.getByText(/39,99 € pro jahr/i)).toBeInTheDocument();
     expect(screen.getAllByText(/3 tage kostenlos testen/i).length).toBeGreaterThan(0);
     expect(screen.getByText(/eigenen openai-, claude- oder gemini-api-schlüssel/i)).toBeInTheDocument();
-    expect(screen.getByText(/grundlegendes kostenloses KI-Logging/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/grundlegendes kostenloses KI-Logging/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/basic-ki-food-logging-chat/i).length).toBeGreaterThan(0);
     expect(screen.getByRole("heading", { name: /Intake AI vs\. eigener API-Schlüssel \(BYOK\)/i })).toBeInTheDocument();
     expect(screen.queryByText(/Gehostetes Intake AI/i)).not.toBeInTheDocument();
-    expect(screen.getByText(/ein einziges Produkt oder eine Mahlzeit/i)).toBeInTheDocument();
-    expect(screen.getByText(/zutaten einzeln anzeigen und einzeln loggen/i)).toBeInTheDocument();
-    expect(screen.getByText(/größere oder kleinere Portionen wählen/i)).toBeInTheDocument();
-    expect(screen.getByText(/kalorien einer schätzung vor dem loggen manuell anpassen/i)).toBeInTheDocument();
-    expect(screen.getByText(/korrekturen funktionieren nur per chatnachricht/i)).toBeInTheDocument();
-    expect(screen.getByText(/formular zum Erstellen eines Produkts automatisch/i)).toBeInTheDocument();
-    expect(screen.getByText(/^nicht verfügbar$/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/ein einziges Produkt oder eine Mahlzeit/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/zutaten einzeln anzeigen und einzeln loggen/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/größere oder kleinere Portionen wählen/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/kalorien einer schätzung vor dem loggen manuell anpassen/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/korrekturen funktionieren nur per chatnachricht/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/formular zum Erstellen eines Produkts automatisch/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/^nicht verfügbar$/i).length).toBeGreaterThan(0);
     expect(screen.getByText(/mehr kontrolle vor dem loggen/i)).toBeInTheDocument();
     expect(screen.getByText(/nur mit intake ai kannst du erkannte zutaten einzeln prüfen/i)).toBeInTheDocument();
     expect(screen.getByText(/zutaten getrennt prüfen/i)).toBeInTheDocument();
@@ -75,16 +75,16 @@ describe("IntakeAIPage", () => {
     expect(screen.getByText(/39\.99 € per year/i)).toBeInTheDocument();
     expect(screen.getByText(/own openai, claude, or gemini api key/i)).toBeInTheDocument();
     expect(screen.getAllByText(/basic free AI logging/i).length).toBeGreaterThan(0);
-    expect(screen.getByText(/basic AI food logging chat/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/basic AI food logging chat/i).length).toBeGreaterThan(0);
     expect(screen.getByRole("heading", { name: /Intake AI vs\. own API key \(BYOK\)/i })).toBeInTheDocument();
     expect(screen.queryByText(/Hosted Intake AI/i)).not.toBeInTheDocument();
-    expect(screen.getByText(/single product or meal item/i)).toBeInTheDocument();
-    expect(screen.getByText(/show ingredients separately and log them separately/i)).toBeInTheDocument();
-    expect(screen.getByText(/choose larger or smaller portions/i)).toBeInTheDocument();
-    expect(screen.getByText(/manually adjust the calories of an estimate before logging/i)).toBeInTheDocument();
-    expect(screen.getByText(/corrections only work by sending a chat message/i)).toBeInTheDocument();
-    expect(screen.getByText(/fills out the create-product form/i)).toBeInTheDocument();
-    expect(screen.getByText(/^not available$/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/single product or meal item/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/show ingredients separately and log them separately/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/choose larger or smaller portions/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/manually adjust the calories of an estimate before logging/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/corrections only work by sending a chat message/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/fills out the create-product form/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/^not available$/i).length).toBeGreaterThan(0);
     expect(screen.getByText(/more control before logging/i)).toBeInTheDocument();
     expect(screen.getByText(/only intake ai lets you review recognized ingredients separately/i)).toBeInTheDocument();
     expect(screen.getByText(/Review ingredients separately/i)).toBeInTheDocument();
@@ -101,5 +101,21 @@ describe("IntakeAIPage", () => {
     expect(screen.queryByText(/every other update/i)).not.toBeInTheDocument();
     expect(screen.getByText(/ai results are estimates/i)).toBeInTheDocument();
     expect(screen.getByTestId("intake-ai-demo-video")).toHaveAttribute("src", "/intake-ai-demo-en.mp4");
+  });
+
+  it("renders a stacked mobile comparison instead of relying only on the wide desktop table", () => {
+    renderIntakeAIPage("/en/intake-ai");
+
+    const mobileComparison = screen.getByTestId("intake-ai-mobile-comparison");
+    expect(mobileComparison).toHaveClass("md:hidden");
+    expect(within(mobileComparison).getByText(/text chat and meal photos/i)).toBeInTheDocument();
+    expect(within(mobileComparison).getAllByText(/Intake AI/i).length).toBeGreaterThan(0);
+    expect(within(mobileComparison).getAllByText(/Own API key \(BYOK\)/i).length).toBeGreaterThan(0);
+    expect(
+      within(mobileComparison).getByText(/correct estimates in place, choose larger or smaller portions/i),
+    ).toBeInTheDocument();
+    expect(within(mobileComparison).getByText(/^not available$/i)).toBeInTheDocument();
+
+    expect(screen.getByTestId("intake-ai-desktop-comparison")).toHaveClass("hidden", "md:block");
   });
 });

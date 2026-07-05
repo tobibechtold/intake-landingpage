@@ -447,7 +447,44 @@ const IntakeAIPage = () => {
                 </p>
               </div>
 
-              <div className="mt-8 overflow-x-auto rounded-[2rem] border border-border/70 bg-card/70 shadow-[0_30px_90px_-60px_rgba(255,76,145,0.7)]">
+              <div
+                data-testid="intake-ai-mobile-comparison"
+                className="mt-8 space-y-4 md:hidden"
+              >
+                {content.comparisonRows.map((row) => (
+                  <article
+                    key={row.feature}
+                    className="rounded-3xl border border-border/70 bg-card/70 p-5 shadow-[0_24px_80px_-60px_rgba(255,76,145,0.55)]"
+                  >
+                    <h4 className="text-base font-semibold leading-6 text-foreground">
+                      {row.feature}
+                    </h4>
+                    <div className="mt-4 space-y-3">
+                      <div className="rounded-2xl border border-primary/20 bg-primary/5 p-4">
+                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+                          {content.comparisonColumns.hosted}
+                        </p>
+                        <div className="mt-3">
+                          <ComparisonValue level={row.hostedLevel}>{row.hosted}</ComparisonValue>
+                        </div>
+                      </div>
+                      <div className="rounded-2xl border border-border/70 bg-background/45 p-4">
+                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                          {content.comparisonColumns.byok}
+                        </p>
+                        <div className="mt-3">
+                          <ComparisonValue level={row.byokLevel}>{row.byok}</ComparisonValue>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+
+              <div
+                data-testid="intake-ai-desktop-comparison"
+                className="mt-8 hidden overflow-x-auto rounded-[2rem] border border-border/70 bg-card/70 shadow-[0_30px_90px_-60px_rgba(255,76,145,0.7)] md:block"
+              >
                 <table className="min-w-[760px] border-collapse">
                   <caption className="sr-only">{content.comparisonTitle}</caption>
                   <thead>
