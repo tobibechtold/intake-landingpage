@@ -16,8 +16,29 @@ describe("whatsNewContent", () => {
     const entries = getWhatsNewEntries("en");
 
     expect(entries.length).toBeGreaterThan(0);
-    expect(entries[0]?.version).toBe("2.4.3");
+    expect(entries[0]?.version).toBe("2.4.4");
     expect(entries[0]?.locale).toBe("en");
+  });
+
+  it("renders the 2.4.4 meal, health, and stability improvements in both locales", () => {
+    const englishEntry = getWhatsNewEntry("2.4.4", "en");
+    const germanEntry = getWhatsNewEntry("2.4.4", "de");
+
+    expect(englishEntry?.title).toBe("What's new in Intake 2.4.4");
+    expect(englishEntry?.publishedAt).toBe("2026-07-08");
+    expect(englishEntry?.summary).toBe("Faster meal actions, better Health data, and many everyday fixes");
+    expect(englishEntry?.bodyHtml).toContain("today's date is now selected by default");
+    expect(englishEntry?.bodyHtml).toContain("resting calories calculated by Apple Health");
+    expect(englishEntry?.bodyHtml).toContain("activity calories are not included in that base");
+    expect(englishEntry?.bodyHtml).toContain("keep the setting that adds activity calories");
+    expect(englishEntry?.bodyHtml).toContain("Health Connect integration");
+
+    expect(germanEntry?.title).toBe("Was ist neu in Intake 2.4.4");
+    expect(germanEntry?.bodyHtml).toContain("das heutige Datum vorausgewählt");
+    expect(germanEntry?.bodyHtml).toContain("Ruhekalorien aus Apple Health");
+    expect(germanEntry?.bodyHtml).toContain("Aktivitätskalorien darin nicht enthalten");
+    expect(germanEntry?.bodyHtml).toContain("Hinzufügen von Aktivitätskalorien zum Ziel aktiviert lassen");
+    expect(germanEntry?.bodyHtml).toContain("Health Connect Integration");
   });
 
   it("renders the 2.4.3 Intake AI logging improvements in both locales", () => {

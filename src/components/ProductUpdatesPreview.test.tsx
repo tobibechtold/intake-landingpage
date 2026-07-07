@@ -15,10 +15,10 @@ describe("ProductUpdatesPreview", () => {
     );
 
     expect(screen.getByRole("heading", { name: "Produktupdates" })).toBeInTheDocument();
-    const latestEntryHeading = screen.getByRole("heading", { name: "Was ist neu in Intake 2.4.3" });
+    const latestEntryHeading = screen.getByRole("heading", { name: "Was ist neu in Intake 2.4.4" });
 
     expect(latestEntryHeading).toBeInTheDocument();
-    expect(latestEntryHeading.closest("a")).toHaveAttribute("href", "/whats-new/2.4.3");
+    expect(latestEntryHeading.closest("a")).toHaveAttribute("href", "/whats-new/2.4.4");
     expect(screen.getByRole("link", { name: /alle updates ansehen/i })).toHaveAttribute(
       "href",
       "/whats-new"
