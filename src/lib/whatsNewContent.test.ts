@@ -16,8 +16,34 @@ describe("whatsNewContent", () => {
     const entries = getWhatsNewEntries("en");
 
     expect(entries.length).toBeGreaterThan(0);
-    expect(entries[0]?.version).toBe("2.4.5");
+    expect(entries[0]?.version).toBe("2.4.6");
     expect(entries[0]?.locale).toBe("en");
+  });
+
+  it("renders the 2.4.6 tracking and workout improvements in both locales", () => {
+    const englishEntry = getWhatsNewEntry("2.4.6", "en");
+    const germanEntry = getWhatsNewEntry("2.4.6", "de");
+
+    expect(englishEntry?.title).toBe("What's new in Intake 2.4.6");
+    expect(englishEntry?.publishedAt).toBe("2026-07-21");
+    expect(englishEntry?.summary).toBe(
+      "Smarter favorites, more precise portions, and a better workout workflow"
+    );
+    expect(englishEntry?.bodyHtml).toContain("AI meals now appear in your history");
+    expect(englishEntry?.bodyHtml).toContain("alphabetically, by date, or by log count");
+    expect(englishEntry?.bodyHtml).toContain("decimal gram amounts");
+    expect(englishEntry?.bodyHtml).toContain("enter calories manually");
+    expect(englishEntry?.bodyHtml).toContain("sync workouts from previous days");
+    expect(englishEntry?.bodyHtml).toContain("Samsung Galaxy A23");
+
+    expect(germanEntry?.title).toBe("Was ist neu in Intake 2.4.6");
+    expect(germanEntry?.publishedAt).toBe("2026-07-21");
+    expect(germanEntry?.bodyHtml).toContain("KI-Mahlzeiten erscheinen jetzt in deinem Verlauf");
+    expect(germanEntry?.bodyHtml).toContain("alphabetisch, nach Datum oder nach Anzahl der Logs");
+    expect(germanEntry?.bodyHtml).toContain("Grammwerte mit Nachkommastellen");
+    expect(germanEntry?.bodyHtml).toContain("Kalorien manuell eingeben");
+    expect(germanEntry?.bodyHtml).toContain("Workouts von vergangenen Tagen manuell synchronisieren");
+    expect(germanEntry?.bodyHtml).toContain("Samsung Galaxy A23");
   });
 
   it("renders the 2.4.4 meal, health, and stability improvements in both locales", () => {
