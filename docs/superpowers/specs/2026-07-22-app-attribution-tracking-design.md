@@ -41,7 +41,7 @@ Vercel serverless function `api/go.ts`, public URL `https://getintake.de/go/<slu
 
 Config: `APPLE_PROVIDER_TOKEN` (pt) and `POSTHOG_API_KEY` / `POSTHOG_HOST` (EU) as Vercel env vars.
 
-**Manual prerequisite (owner):** generate the provider token once in App Store Connect → App Analytics → Acquisition → Campaigns (campaign link generator shows `pt=`).
+**Provider token (obtained 2026-07-22):** `pt=128030281` (from the App Store Connect campaign link generator; not secret — it appears in public URLs). `ct=` is free-form: any new slug used in traffic shows up automatically as its own campaign in App Analytics, so no per-campaign link generation in App Store Connect is needed.
 
 These `/go/<slug>` links are what goes into the Threads bio and into Meta/TikTok ad destinations.
 
