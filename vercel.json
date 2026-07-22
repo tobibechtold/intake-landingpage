@@ -1,5 +1,7 @@
 {
   "routes": [
+    { "src": "^/go/([^/]+)/?$", "dest": "/api/go?slug=$1" },
+    { "src": "^/go/?$", "dest": "/api/go" },
     { "handle": "filesystem" },
     { "src": "/.*", "dest": "/index.html" }
   ]
