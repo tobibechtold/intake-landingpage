@@ -12,6 +12,7 @@ import {
   PROMO_VIDEO_SOURCES_BY_LANGUAGE,
 } from "@/lib/videoSupport";
 import { getAppStoreUrl, getGooglePlayUrl } from "@/lib/storeLinks";
+import { trackStoreCtaClick } from "@/lib/analytics";
 
 const RatingComponent = ({ label }: { label: string }) => (
   <div className="inline-flex flex-col items-center px-5 py-1">
@@ -106,6 +107,7 @@ const Hero = () => {
                   href={getAppStoreUrl(language)}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackStoreCtaClick("ios", "hero")}
                   className="rounded-2xl transition-transform duration-200 hover:-translate-y-0.5"
                 >
                   <img
@@ -119,6 +121,7 @@ const Hero = () => {
                   href={getGooglePlayUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackStoreCtaClick("android", "hero")}
                   className="rounded-2xl transition-transform duration-200 hover:-translate-y-0.5"
                 >
                   <img

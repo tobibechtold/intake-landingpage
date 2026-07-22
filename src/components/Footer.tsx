@@ -3,6 +3,7 @@ import logo from "@/assets/logo.png";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { buildLocalizedPath } from "@/lib/localeRouting";
 import { getAppStoreUrl, getGooglePlayUrl } from "@/lib/storeLinks";
+import { trackStoreCtaClick } from "@/lib/analytics";
 
 const FEATURE_VOTING_URL = "https://featurevoting.tobibechtold.dev/app/intake";
 const CHANGELOG_URL = "https://featurevoting.tobibechtold.dev/app/intake/changelog";
@@ -96,6 +97,7 @@ const Footer = () => {
                 href={getAppStoreUrl(language)}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackStoreCtaClick("ios", "footer")}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 {t("appStore")}
@@ -104,6 +106,7 @@ const Footer = () => {
                 href={getGooglePlayUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackStoreCtaClick("android", "footer")}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 {t("googlePlay")}

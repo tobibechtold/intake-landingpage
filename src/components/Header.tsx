@@ -3,7 +3,8 @@ import logo from "@/assets/logo-hero.webp";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { buildLocalizedPath } from "@/lib/localeRouting";
-import { getNavbarDownloadUrl } from "@/lib/storeLinks";
+import { detectClientPlatform, getNavbarDownloadUrl } from "@/lib/storeLinks";
+import { trackStoreCtaClick } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -25,6 +26,9 @@ const Header = () => {
     `${homePath}#hero`,
   );
   const isDownloadExternal = /^https?:\/\//.test(downloadHref);
+  const downloadPlatform = detectClientPlatform(
+    typeof navigator === "undefined" ? "" : navigator.userAgent,
+  );
   const navItems = [
     { label: t("featuresNav"), href: buildLocalizedPath("features", language) },
     { label: t("intakeAINav"), href: buildLocalizedPath("intakeAI", language) },
@@ -118,6 +122,7 @@ const Header = () => {
                       href={downloadHref}
                       target={isDownloadExternal ? "_blank" : undefined}
                       rel={isDownloadExternal ? "noopener noreferrer" : undefined}
+                      onClick={() => trackStoreCtaClick(downloadPlatform, "navbar")}
                     >
                       {t("download")}
                     </a>
@@ -132,6 +137,7 @@ const Header = () => {
               href={downloadHref}
               target={isDownloadExternal ? "_blank" : undefined}
               rel={isDownloadExternal ? "noopener noreferrer" : undefined}
+              onClick={() => trackStoreCtaClick(downloadPlatform, "navbar")}
             >
               {t("download")}
             </a>

@@ -3,6 +3,7 @@ import appStoreBadge from "@/assets/app-store-badge.svg";
 import googlePlayBadge from "@/assets/google-play-badge.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { getAppStoreUrl, getGooglePlayUrl } from "@/lib/storeLinks";
+import { trackStoreCtaClick } from "@/lib/analytics";
 
 const CTA = () => {
   const { t, language } = useLanguage();
@@ -24,10 +25,11 @@ const CTA = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a 
-              href={getAppStoreUrl(language)} 
-              target="_blank" 
+            <a
+              href={getAppStoreUrl(language)}
+              target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackStoreCtaClick("ios", "cta")}
               className="inline-block hover:opacity-80 transition-opacity"
             >
               <img
@@ -41,6 +43,7 @@ const CTA = () => {
               href={getGooglePlayUrl()}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackStoreCtaClick("android", "cta")}
               className="inline-block hover:opacity-80 transition-opacity"
             >
               <img
