@@ -39,7 +39,7 @@ Vercel serverless function `api/go.ts`, public URL `https://getintake.de/go/<slu
 - Fires a server-side PostHog capture (`smartlink_click`: slug, platform, country from Vercel geo headers) — fire-and-forget, must never delay or fail the redirect. Cookieless, no consent implications.
 - 302 redirect; `cache-control: no-store`.
 
-Config: `APPLE_PROVIDER_TOKEN` (pt) and `POSTHOG_API_KEY` / `POSTHOG_HOST` (EU) as Vercel env vars.
+Config: `POSTHOG_KEY` as a Vercel env var (PostHog host is a constant, `eu.i.posthog.com`). The Apple provider token is hardcoded as a shared constant — it is public (appears in every campaign URL), so env-var indirection adds friction without benefit.
 
 **Provider token (obtained 2026-07-22):** `pt=128030281` (from the App Store Connect campaign link generator; not secret — it appears in public URLs). `ct=` is free-form: any new slug used in traffic shows up automatically as its own campaign in App Analytics, so no per-campaign link generation in App Store Connect is needed.
 
@@ -51,7 +51,7 @@ These `/go/<slug>` links are what goes into the Threads bio and into Meta/TikTok
 - **UTM capture:** on app load, read `utm_source|medium|campaign` from the URL and persist to `sessionStorage`. Helper module e.g. `src/lib/attribution.ts`.
 - **Dynamic store links:** extend `src/lib/storeLinks.ts` so `getAppStoreUrl`, `getGooglePlayUrl`, and `getNavbarDownloadUrl` append attribution:
   - captured campaign slug when present; otherwise `website`.
-  - App Store: `?pt=<PT>&ct=<slug>&mt=8` (PT exposed via `VITE_APPLE_PROVIDER_TOKEN`; if unset, omit `pt`/`ct` rather than emit broken params).
+  - App Store: `?pt=128030281&ct=<slug>&mt=8` (provider token hardcoded in `storeLinks.ts` — it is public).
   - Play: `&referrer=` URL-encoded utms (`utm_medium=website` for organic).
   - Callers: `Hero.tsx`, `CTA.tsx`, `Footer.tsx`, Navbar. Links must be computed at click/render time in the browser, not baked in at prerender time.
 - **CTA events:** `store_cta_click` PostHog event (platform: `ios|android`, location: `hero|cta|footer|navbar`, campaign slug) on every store button.
@@ -63,7 +63,7 @@ Result: per-source funnels (visit → CTA click) in PostHog; every store handoff
 - Add `com.android.installreferrer:installreferrer` to intake-android.
 - On first launch (one-shot, guarded by a local flag): connect to the Install Referrer client, read `installReferrer` (contains the utm string from §2/§3), parse `utm_source/medium/campaign`, persist locally.
 - Upload to Supabase once a user identity exists (retry until success, then never again): new table `user_attribution` in intake-backend (standard timestamped migration in `supabase/migrations/`):
-  - `user_id (uuid, pk/fk auth.users)`, `platform ('android')`, `source`, `medium`, `campaign`, `referrer_raw`, `installed_at`, `created_at`. RLS: user can insert/read own row.
+  - `auth_user_id (uuid, pk)`, `platform ('android'|'ios')`, `source`, `medium`, `campaign`, `referrer_raw`, `installed_at`, `created_at` — column naming matches `intake_ai_usage_events`, no FK (consistent with that table). RLS: user can insert/read own row; write-once (no update/delete grants).
 - Reporting: join `user_attribution` against existing subscription/entitlement data → "paying subscribers per campaign", per individual buyer. Organic Play installs yield referrer `utm_source=google-play` or empty → recorded as `organic`.
 
 ## 5. iOS aggregate attribution
