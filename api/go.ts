@@ -1,5 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { buildSmartLinkRedirect, LANDING_PAGE_URL } from "../src/lib/smartlink";
+// Explicit .js extension: this function is deployed as unbundled ESM, where
+// extensionless relative specifiers do not resolve at runtime.
+import { buildSmartLinkRedirect, LANDING_PAGE_URL } from "../src/lib/smartlink.js";
 
 const POSTHOG_HOST = "https://eu.i.posthog.com";
 

@@ -1,5 +1,5 @@
 import type { Language } from "@/i18n/translations";
-import { sourceFromSlug } from "./attribution";
+import { sourceFromSlug } from "./attribution.js";
 import {
   APP_STORE_URLS,
   appendAppStoreAttribution,
@@ -7,7 +7,7 @@ import {
   detectClientPlatform,
   GOOGLE_PLAY_URL,
   type ClientPlatform,
-} from "./storeLinks";
+} from "./storeLinks.js";
 
 export const SLUG_PATTERN = /^[a-z0-9][a-z0-9-]{0,63}$/;
 export const LANDING_PAGE_URL = "https://www.getintake.de/";

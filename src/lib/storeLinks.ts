@@ -1,5 +1,5 @@
 import type { Language } from "@/i18n/translations";
-import { getStoredAttribution, type StoredAttribution } from "./attribution";
+import { getStoredAttribution, type StoredAttribution } from "./attribution.js";
 
 export const APP_STORE_URLS: Record<Language, string> = {
   en: "https://apps.apple.com/us/app/intake-kalorienz%C3%A4hler/id6757768955",
