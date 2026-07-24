@@ -111,6 +111,32 @@ describe("getSeoContent", () => {
     expect(english.description).toMatch(/richer|photo|API key|BYOK/i);
   });
 
+  it("returns localized metadata for the BYOK setup guide", () => {
+    const german = getSeoContent("/hilfe/eigener-api-schluessel", origin);
+    const english = getSeoContent("/en/help/own-api-key", origin);
+
+    expect(german.page).toBe("byokGuide");
+    expect(german.canonical).toBe(
+      "https://www.getintake.de/hilfe/eigener-api-schluessel"
+    );
+    expect(german.alternates.en).toBe(
+      "https://www.getintake.de/en/help/own-api-key"
+    );
+    expect(german.title).toMatch(/API-Schlüssel|BYOK/i);
+    expect(german.description).toMatch(/OpenAI|Claude|Gemini/i);
+    expect(german.noIndex).toBe(false);
+
+    expect(english.page).toBe("byokGuide");
+    expect(english.canonical).toBe(
+      "https://www.getintake.de/en/help/own-api-key"
+    );
+    expect(english.alternates.de).toBe(
+      "https://www.getintake.de/hilfe/eigener-api-schluessel"
+    );
+    expect(english.title).toMatch(/API Key|BYOK/i);
+    expect(english.description).toMatch(/OpenAI|Claude|Gemini/i);
+  });
+
   it("returns release metadata for localized what's new detail pages", () => {
     const seo = getSeoContent("/en/whats-new/2.1.1", origin);
 

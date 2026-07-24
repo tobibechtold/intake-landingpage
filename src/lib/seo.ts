@@ -23,6 +23,7 @@ interface SeoByLocale {
   comparisons: PageSeo;
   intakeAI: PageSeo;
   help: PageSeo;
+  byokGuide: PageSeo;
   comparisonDetail: PageSeo;
   privacy: PageSeo;
   terms: PageSeo;
@@ -66,6 +67,11 @@ const SEO_COPY: Record<Language, SeoByLocale> = {
       title: "Help & FAQ | Intake",
       description:
         "Answers about pricing, privacy, sync, Apple Health, Health Connect, food data, and the most important Intake features.",
+    },
+    byokGuide: {
+      title: "Set Up Your Own API Key (BYOK) for Intake AI",
+      description:
+        "Learn how to create and securely add an OpenAI, Claude, or Gemini API key to Intake AI, choose a provider, and optionally select a model.",
     },
     comparisonDetail: {
       title: "Intake Alternative Comparison",
@@ -127,6 +133,11 @@ const SEO_COPY: Record<Language, SeoByLocale> = {
       title: "Hilfe & FAQ | Intake",
       description:
         "Antworten zu Preis, Datenschutz, Sync, Apple Health, Health Connect, Lebensmitteldaten und den wichtigsten Intake-Funktionen.",
+    },
+    byokGuide: {
+      title: "Eigenen API-Schlüssel (BYOK) für Intake AI einrichten",
+      description:
+        "Erfahre, wie du einen API-Schlüssel von OpenAI, Claude oder Gemini sicher in Intake AI hinterlegst, den Anbieter wählst und optional ein Modell einträgst.",
     },
     comparisonDetail: {
       title: "Intake Alternative im Vergleich",

@@ -21,6 +21,12 @@ const STATIC_URLS = [
   { path: "/intake-ai", lastmod: "2026-06-18", changefreq: "weekly", priority: "0.8" },
   { path: "/hilfe", lastmod: "2026-04-13", changefreq: "weekly", priority: "0.7" },
   {
+    path: "/hilfe/eigener-api-schluessel",
+    lastmod: "2026-07-24",
+    changefreq: "monthly",
+    priority: "0.7",
+  },
+  {
     path: "/vergleiche/yazio-alternative",
     lastmod: "2026-04-12",
     changefreq: "weekly",
@@ -51,6 +57,12 @@ const STATIC_URLS = [
   { path: "/en/comparisons", lastmod: "2026-04-12", changefreq: "weekly", priority: "0.7" },
   { path: "/en/intake-ai", lastmod: "2026-06-18", changefreq: "weekly", priority: "0.7" },
   { path: "/en/help", lastmod: "2026-04-13", changefreq: "weekly", priority: "0.7" },
+  {
+    path: "/en/help/own-api-key",
+    lastmod: "2026-07-24",
+    changefreq: "monthly",
+    priority: "0.7",
+  },
   {
     path: "/en/comparisons/yazio-alternative",
     lastmod: "2026-04-12",

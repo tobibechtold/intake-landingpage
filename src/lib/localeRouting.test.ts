@@ -27,12 +27,14 @@ describe("localeRouting", () => {
     expect(getPageFromPathname("/vergleiche/yazio-alternative")).toBe("comparisonDetail");
     expect(getPageFromPathname("/intake-ai")).toBe("intakeAI");
     expect(getPageFromPathname("/hilfe")).toBe("help");
+    expect(getPageFromPathname("/hilfe/eigener-api-schluessel")).toBe("byokGuide");
     expect(getPageFromPathname("/privacy")).toBe("privacy");
     expect(getPageFromPathname("/terms")).toBe("terms");
     expect(getPageFromPathname("/whats-new")).toBe("whatsNewIndex");
     expect(getPageFromPathname("/en/features")).toBe("features");
     expect(getPageFromPathname("/en/intake-ai")).toBe("intakeAI");
     expect(getPageFromPathname("/en/help")).toBe("help");
+    expect(getPageFromPathname("/en/help/own-api-key")).toBe("byokGuide");
     expect(getPageFromPathname("/en/comparisons/yazio-alternative")).toBe("comparisonDetail");
     expect(getPageFromPathname("/en/whats-new")).toBe("whatsNewIndex");
     expect(getPageFromPathname("/en/whats-new/2.1.1")).toBe("whatsNewEntry");
@@ -54,6 +56,8 @@ describe("localeRouting", () => {
     expect(buildLocalizedPath("intakeAI", "en")).toBe("/en/intake-ai");
     expect(buildLocalizedPath("help", "de")).toBe("/hilfe");
     expect(buildLocalizedPath("help", "en")).toBe("/en/help");
+    expect(buildLocalizedPath("byokGuide", "de")).toBe("/hilfe/eigener-api-schluessel");
+    expect(buildLocalizedPath("byokGuide", "en")).toBe("/en/help/own-api-key");
     expect(buildLocalizedPath("privacy", "de")).toBe("/privacy");
     expect(buildLocalizedPath("privacy", "en")).toBe("/en/privacy");
     expect(buildLocalizedPath("whatsNewIndex", "de")).toBe("/whats-new");
@@ -81,6 +85,13 @@ describe("localeRouting", () => {
       canonical: "https://www.getintake.de/intake-ai",
       en: "https://www.getintake.de/en/intake-ai",
       de: "https://www.getintake.de/intake-ai",
+      xDefault: "https://www.getintake.de/",
+    });
+
+    expect(buildAlternateUrls("/hilfe/eigener-api-schluessel", origin)).toEqual({
+      canonical: "https://www.getintake.de/hilfe/eigener-api-schluessel",
+      en: "https://www.getintake.de/en/help/own-api-key",
+      de: "https://www.getintake.de/hilfe/eigener-api-schluessel",
       xDefault: "https://www.getintake.de/",
     });
 

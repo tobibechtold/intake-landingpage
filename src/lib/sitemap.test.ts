@@ -13,6 +13,9 @@ describe("sitemap", () => {
     expect(xml).toContain("<loc>https://www.getintake.de/vergleiche/yazio-alternative</loc>");
     expect(xml).toContain("<loc>https://www.getintake.de/vergleiche/fddb-alternative</loc>");
     expect(xml).toContain("<loc>https://www.getintake.de/hilfe</loc>");
+    expect(xml).toContain(
+      "<loc>https://www.getintake.de/hilfe/eigener-api-schluessel</loc>"
+    );
     expect(xml).toContain("<loc>https://www.getintake.de/en/features</loc>");
     expect(xml).toContain(
       "<loc>https://www.getintake.de/en/calorie-counter-no-subscription</loc>"
@@ -21,6 +24,9 @@ describe("sitemap", () => {
     expect(xml).toContain("<loc>https://www.getintake.de/en/comparisons</loc>");
     expect(xml).toContain("<loc>https://www.getintake.de/en/intake-ai</loc>");
     expect(xml).toContain("<loc>https://www.getintake.de/en/help</loc>");
+    expect(xml).toContain(
+      "<loc>https://www.getintake.de/en/help/own-api-key</loc>"
+    );
   });
 
   it("includes localized what's new overview and detail URLs", () => {

@@ -21,6 +21,9 @@ describe("HelpPage", () => {
     expect(screen.getByRole("button", { name: /^preis$/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^intake ai$/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /eigener api-schlüssel \(byok\)/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /anleitung zur byok-einrichtung öffnen/i })
+    ).toHaveAttribute("href", "/hilfe/eigener-api-schluessel");
 
     fireEvent.click(screen.getByRole("button", { name: /^intake ai$/i }));
     fireEvent.click(screen.getByRole("button", { name: /was ist der unterschied zwischen intake ai/i }));
@@ -51,6 +54,9 @@ describe("HelpPage", () => {
     expect(screen.getByRole("button", { name: /^pricing$/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^intake ai$/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /own api key \(byok\)/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /open the byok setup guide/i })
+    ).toHaveAttribute("href", "/en/help/own-api-key");
 
     fireEvent.click(screen.getByRole("button", { name: /^intake ai$/i }));
     fireEvent.click(screen.getByRole("button", { name: /what is the difference between intake ai/i }));

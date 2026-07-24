@@ -14,6 +14,7 @@ import IntakeAIPage from "./pages/IntakeAIPage";
 import ComparisonsIndexPage from "./pages/ComparisonsIndexPage";
 import ComparisonDetailPage from "./pages/ComparisonDetailPage";
 import HelpPage from "./pages/HelpPage";
+import ByokGuidePage from "./pages/ByokGuidePage";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
@@ -49,6 +50,7 @@ const App = () => (
             <Route path="/intake-ai" element={<IntakeAIPage />} />
             <Route path="/vergleiche" element={<ComparisonsIndexPage />} />
             <Route path="/vergleiche/:slug" element={<ComparisonDetailPage />} />
+            <Route path="/hilfe/eigener-api-schluessel" element={<ByokGuidePage />} />
             <Route path="/hilfe" element={<HelpPage />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
@@ -61,6 +63,7 @@ const App = () => (
             <Route path="/en/intake-ai" element={<IntakeAIPage />} />
             <Route path="/en/comparisons" element={<ComparisonsIndexPage />} />
             <Route path="/en/comparisons/:slug" element={<ComparisonDetailPage />} />
+            <Route path="/en/help/own-api-key" element={<ByokGuidePage />} />
             <Route path="/en/help" element={<HelpPage />} />
             <Route path="/en/privacy" element={<Privacy />} />
             <Route path="/en/terms" element={<Terms />} />

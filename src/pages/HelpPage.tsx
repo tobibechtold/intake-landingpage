@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Search, X } from "lucide-react";
+import { ArrowRight, KeyRound, Search, X } from "lucide-react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import SeoHead from "@/components/SeoHead";
@@ -22,6 +22,11 @@ const HELP_FAQ_COPY = {
     noResultsTitle: "No matching questions",
     noResultsBody: "Try a different search term or clear the search.",
     clearSearch: "Clear search",
+    guideKicker: "Setup guide",
+    guideTitle: "Use your own API key with Intake AI",
+    guideBody:
+      "New to API keys? Learn how to create one with OpenAI, Claude, or Gemini and add it securely in Intake.",
+    guideCta: "Open the BYOK setup guide",
   },
   de: {
     searchLabel: "FAQ durchsuchen",
@@ -29,6 +34,11 @@ const HELP_FAQ_COPY = {
     noResultsTitle: "Keine passenden Fragen",
     noResultsBody: "Versuche einen anderen Suchbegriff oder lösche die Suche.",
     clearSearch: "Suche löschen",
+    guideKicker: "Einrichtungsanleitung",
+    guideTitle: "Eigenen API-Schlüssel mit Intake AI nutzen",
+    guideBody:
+      "Noch nie einen API-Schlüssel verwendet? Erfahre, wie du ihn bei OpenAI, Claude oder Gemini erstellst und sicher in Intake hinterlegst.",
+    guideCta: "Anleitung zur BYOK-Einrichtung öffnen",
   },
 };
 
@@ -37,6 +47,7 @@ const HelpPage = () => {
   const faqSections = FAQ_SECTIONS_BY_LANGUAGE[language];
   const faqCopy = HELP_FAQ_COPY[language];
   const homePath = buildLocalizedPath("home", language);
+  const guidePath = buildLocalizedPath("byokGuide", language);
   const [query, setQuery] = useState("");
   const normalizedQuery = query.trim().toLowerCase();
   const filteredSections = useMemo(() => {
@@ -80,6 +91,31 @@ const HelpPage = () => {
                 {t("helpSubtitle")}
               </p>
             </div>
+
+            <Link
+              to={guidePath}
+              className="group mx-auto mt-10 flex max-w-3xl items-start gap-4 rounded-[2rem] border border-primary/25 bg-card/70 p-6 text-left shadow-[0_24px_80px_-56px_rgba(255,76,145,0.65)] transition-colors hover:border-primary/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            >
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <KeyRound className="h-6 w-6" aria-hidden="true" />
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="section-kicker">{faqCopy.guideKicker}</span>
+                <span className="mt-2 block text-xl font-semibold text-foreground">
+                  {faqCopy.guideTitle}
+                </span>
+                <span className="mt-2 block text-sm leading-6 text-muted-foreground">
+                  {faqCopy.guideBody}
+                </span>
+                <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                  {faqCopy.guideCta}
+                  <ArrowRight
+                    className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                    aria-hidden="true"
+                  />
+                </span>
+              </span>
+            </Link>
 
             <div className="mx-auto mt-10 max-w-3xl">
               <label htmlFor="faq-search" className="sr-only">

@@ -30,6 +30,9 @@ describe("IntakeAIPage", () => {
     expect(screen.getByText(/39,99 € pro jahr/i)).toBeInTheDocument();
     expect(screen.getAllByText(/3 tage kostenlos testen/i).length).toBeGreaterThan(0);
     expect(screen.getByText(/eigenen openai-, claude- oder gemini-api-schlüssel/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /byok einrichten/i })
+    ).toHaveAttribute("href", "/hilfe/eigener-api-schluessel");
     expect(screen.getAllByText(/grundlegendes kostenloses KI-Logging/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/basic-ki-food-logging-chat/i).length).toBeGreaterThan(0);
     expect(screen.getByRole("heading", { name: /Intake AI vs\. eigener API-Schlüssel \(BYOK\)/i })).toBeInTheDocument();
@@ -74,6 +77,9 @@ describe("IntakeAIPage", () => {
     expect(screen.getByText(/3\.99 € per month/i)).toBeInTheDocument();
     expect(screen.getByText(/39\.99 € per year/i)).toBeInTheDocument();
     expect(screen.getByText(/own openai, claude, or gemini api key/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /set up byok/i })
+    ).toHaveAttribute("href", "/en/help/own-api-key");
     expect(screen.getAllByText(/basic free AI logging/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/basic AI food logging chat/i).length).toBeGreaterThan(0);
     expect(screen.getByRole("heading", { name: /Intake AI vs\. own API key \(BYOK\)/i })).toBeInTheDocument();

@@ -109,6 +109,27 @@ describe("prerender-seo", () => {
     expect(englishHtml).toMatch(/Intake AI|AI Food Logging|API key/);
   });
 
+  it("injects metadata and crawlable content for localized BYOK guides", () => {
+    const germanHtml = buildPrerenderedHtml(template, "/hilfe/eigener-api-schluessel");
+    const englishHtml = buildPrerenderedHtml(template, "/en/help/own-api-key");
+
+    expect(germanHtml).toContain('<html lang="de">');
+    expect(germanHtml).toContain(`${origin}/hilfe/eigener-api-schluessel`);
+    expect(germanHtml).toContain(
+      `hreflang="en" href="${origin}/en/help/own-api-key"`
+    );
+    expect(germanHtml).toContain("Was ist ein API-Schlüssel?");
+    expect(germanHtml).toContain('href="/intake-ai"');
+
+    expect(englishHtml).toContain('<html lang="en">');
+    expect(englishHtml).toContain(`${origin}/en/help/own-api-key`);
+    expect(englishHtml).toContain(
+      `hreflang="de" href="${origin}/hilfe/eigener-api-schluessel"`
+    );
+    expect(englishHtml).toContain("What is an API key?");
+    expect(englishHtml).toContain('href="/en/intake-ai"');
+  });
+
   it("uses updated cross-platform SEO copy in prerendered home HTML", () => {
     const html = buildPrerenderedHtml(template, "/en");
 
@@ -140,6 +161,7 @@ describe("prerender-seo", () => {
         "/vergleiche/yazio-alternative",
         "/vergleiche/fddb-alternative",
         "/hilfe",
+        "/hilfe/eigener-api-schluessel",
         "/privacy",
         "/terms",
         "/whats-new",
@@ -156,6 +178,7 @@ describe("prerender-seo", () => {
         "/en/comparisons/yazio-alternative",
         "/en/comparisons/fddb-alternative",
         "/en/help",
+        "/en/help/own-api-key",
         "/en/privacy",
         "/en/terms",
         "/en/whats-new",

@@ -67,6 +67,7 @@ const CONTENT = {
     byokBody:
       "Add your own OpenAI, Claude, or Gemini API key in Settings and use basic AI food logging without an Intake AI subscription.",
     providerNote: "Provider terms and any provider-side usage costs still apply.",
+    byokCta: "Set up BYOK",
     comparisonKicker: "Feature comparison",
     comparisonTitle: "Intake AI vs. own API key (BYOK)",
     comparisonDescription:
@@ -192,6 +193,7 @@ const CONTENT = {
     byokBody:
       "Hinterlege deinen eigenen OpenAI-, Claude- oder Gemini-API-Schlüssel in den Einstellungen und nutze grundlegendes KI-Food-Logging ohne Intake-AI-Abo.",
     providerNote: "Die Bedingungen und eventuelle Nutzungskosten des jeweiligen Anbieters gelten trotzdem.",
+    byokCta: "BYOK einrichten",
     comparisonKicker: "Funktionsvergleich",
     comparisonTitle: "Intake AI vs. eigener API-Schlüssel (BYOK)",
     comparisonDescription:
@@ -302,6 +304,7 @@ const IntakeAIPage = () => {
   const content = CONTENT[language];
   const homePath = buildLocalizedPath("home", language);
   const helpPath = buildLocalizedPath("help", language);
+  const byokGuidePath = buildLocalizedPath("byokGuide", language);
   const demoVideoSrc =
     language === "de" ? "/intake-ai-demo-de.mp4" : "/intake-ai-demo-en.mp4";
 
@@ -433,6 +436,9 @@ const IntakeAIPage = () => {
                 <p className="mt-5 rounded-2xl border border-border/70 bg-background/55 px-4 py-3 text-sm leading-6 text-muted-foreground">
                   {content.providerNote}
                 </p>
+                <Link to={byokGuidePath} className="trust-chip-link mt-5 w-fit">
+                  {content.byokCta}
+                </Link>
               </article>
             </div>
 

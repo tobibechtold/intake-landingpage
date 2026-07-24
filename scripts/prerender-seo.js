@@ -60,6 +60,14 @@ const STATIC_PAGE_SEO = {
     canonical: `${SITE_ORIGIN}/hilfe`,
     ogLocale: "de_DE",
   },
+  "/hilfe/eigener-api-schluessel": {
+    lang: "de",
+    title: "Eigenen API-Schlüssel (BYOK) für Intake AI einrichten",
+    description:
+      "Erfahre, wie du einen API-Schlüssel von OpenAI, Claude oder Gemini sicher in Intake AI hinterlegst, den Anbieter wählst und optional ein Modell einträgst.",
+    canonical: `${SITE_ORIGIN}/hilfe/eigener-api-schluessel`,
+    ogLocale: "de_DE",
+  },
   "/vergleiche/yazio-alternative": {
     lang: "de",
     title: "Yazio Alternative - Intake vs. Yazio",
@@ -146,6 +154,14 @@ const STATIC_PAGE_SEO = {
     description:
       "Answers about pricing, privacy, sync, Apple Health, Health Connect, food data, and the most important Intake features.",
     canonical: `${SITE_ORIGIN}/en/help`,
+    ogLocale: "en_US",
+  },
+  "/en/help/own-api-key": {
+    lang: "en",
+    title: "Set Up Your Own API Key (BYOK) for Intake AI",
+    description:
+      "Learn how to create and securely add an OpenAI, Claude, or Gemini API key to Intake AI, choose a provider, and optionally select a model.",
+    canonical: `${SITE_ORIGIN}/en/help/own-api-key`,
     ogLocale: "en_US",
   },
   "/en/comparisons/yazio-alternative": {
@@ -554,7 +570,7 @@ const STATIC_BODY_CONTENT = {
       {
         title: "Gehostet oder eigener API-Schlüssel",
         body:
-          "Nutze gehostetes Intake AI oder hinterlege deinen eigenen OpenAI- oder Claude-API-Schlüssel.",
+          "Nutze gehostetes Intake AI oder hinterlege deinen eigenen OpenAI-, Claude- oder Gemini-API-Schlüssel.",
         bullets: ["Optionales Add-on", "Bring your own key", "Schätzungen vor dem Speichern prüfen"],
       },
     ],
@@ -574,7 +590,7 @@ const STATIC_BODY_CONTENT = {
       {
         title: "Hosted or bring your own API key",
         body:
-          "Use hosted Intake AI or add your own OpenAI or Claude API key.",
+          "Use hosted Intake AI or add your own OpenAI, Claude, or Gemini API key.",
         bullets: ["Optional add-on", "Bring your own key", "Review estimates before logging"],
       },
     ],
@@ -619,6 +635,64 @@ const STATIC_BODY_CONTENT = {
       },
     ],
     links: [{ label: "Privacy policy", href: "/en/privacy" }],
+  },
+  "/hilfe/eigener-api-schluessel": {
+    title: "Eigenen API-Schlüssel für Intake AI einrichten",
+    description:
+      "Eine einfache Anleitung für BYOK mit OpenAI, Claude oder Gemini – von der Schlüsselerstellung bis zum ersten Test in Intake.",
+    sections: [
+      {
+        title: "Was ist ein API-Schlüssel?",
+        body:
+          "Ein API-Schlüssel ist wie ein privates Passwort zwischen Intake und deinem gewählten KI-Anbieter. Tokens sind kleine Textbausteine, anhand derer Anbieter die Nutzung messen.",
+        bullets: ["Privater Schlüssel", "OpenAI, Claude oder Gemini", "Anbieter-Konto"],
+      },
+      {
+        title: "Anbieter wählen und Schlüssel hinterlegen",
+        body:
+          "Erstelle den Schlüssel beim Anbieter, wähle ihn in Intake aus, behalte das passende Standardmodell oder trage optional ein anderes ein und füge den Schlüssel ein.",
+        bullets: ["Anbieter wählen", "Modell optional", "Schlüssel sicher auf dem Gerät"],
+      },
+      {
+        title: "Kosten und Sicherheit",
+        body:
+          "Für BYOK fällt kein Intake-AI-Abo an. Der Schlüssel bleibt auf deinem Gerät; mögliche API-Kosten und Limits richten sich nach dem Anbieter.",
+        bullets: ["Kein Intake-AI-Abo", "Lokale Schlüsselspeicherung", "Gemini mit begrenzter kostenloser Stufe"],
+      },
+    ],
+    links: [
+      { label: "Hilfe & FAQ", href: "/hilfe" },
+      { label: "Intake AI", href: "/intake-ai" },
+    ],
+  },
+  "/en/help/own-api-key": {
+    title: "Set up your own API key for Intake AI",
+    description:
+      "A beginner-friendly BYOK guide for OpenAI, Claude, or Gemini, from creating a key to testing it in Intake.",
+    sections: [
+      {
+        title: "What is an API key?",
+        body:
+          "An API key is like a private password between Intake and your chosen AI provider. Tokens are small pieces of text that providers use to measure API usage.",
+        bullets: ["Private key", "OpenAI, Claude, or Gemini", "Provider account"],
+      },
+      {
+        title: "Choose a provider and add the key",
+        body:
+          "Create the key with the provider, select that provider in Intake, keep the suitable default model or optionally enter another, and paste the key.",
+        bullets: ["Choose provider", "Model is optional", "Key stored securely on device"],
+      },
+      {
+        title: "Costs and security",
+        body:
+          "BYOK has no Intake AI subscription charge. The key stays on your device; API costs and usage limits follow the provider’s current terms.",
+        bullets: ["No Intake AI subscription", "On-device key storage", "Gemini has a limited free tier"],
+      },
+    ],
+    links: [
+      { label: "Help & FAQ", href: "/en/help" },
+      { label: "Intake AI", href: "/en/intake-ai" },
+    ],
   },
   "/privacy": {
     title: "Datenschutzerklärung",
@@ -716,6 +790,10 @@ const STATIC_ROUTE_ALTERNATES = {
   "/vergleiche": { de: "/vergleiche", en: "/en/comparisons" },
   "/intake-ai": { de: "/intake-ai", en: "/en/intake-ai" },
   "/hilfe": { de: "/hilfe", en: "/en/help" },
+  "/hilfe/eigener-api-schluessel": {
+    de: "/hilfe/eigener-api-schluessel",
+    en: "/en/help/own-api-key",
+  },
   "/vergleiche/yazio-alternative": {
     de: "/vergleiche/yazio-alternative",
     en: "/en/comparisons/yazio-alternative",
@@ -740,6 +818,10 @@ const STATIC_ROUTE_ALTERNATES = {
   "/en/comparisons": { de: "/vergleiche", en: "/en/comparisons" },
   "/en/intake-ai": { de: "/intake-ai", en: "/en/intake-ai" },
   "/en/help": { de: "/hilfe", en: "/en/help" },
+  "/en/help/own-api-key": {
+    de: "/hilfe/eigener-api-schluessel",
+    en: "/en/help/own-api-key",
+  },
   "/en/comparisons/yazio-alternative": {
     de: "/vergleiche/yazio-alternative",
     en: "/en/comparisons/yazio-alternative",
@@ -779,6 +861,7 @@ export const PRERENDER_ROUTES = [
   "/vergleiche",
   "/intake-ai",
   "/hilfe",
+  "/hilfe/eigener-api-schluessel",
   "/vergleiche/yazio-alternative",
   "/vergleiche/fddb-alternative",
   "/privacy",
@@ -791,6 +874,7 @@ export const PRERENDER_ROUTES = [
   "/en/comparisons",
   "/en/intake-ai",
   "/en/help",
+  "/en/help/own-api-key",
   "/en/comparisons/yazio-alternative",
   "/en/comparisons/fddb-alternative",
   "/en/privacy",
