@@ -16,8 +16,37 @@ describe("whatsNewContent", () => {
     const entries = getWhatsNewEntries("en");
 
     expect(entries.length).toBeGreaterThan(0);
-    expect(entries[0]?.version).toBe("2.4.6");
+    expect(entries[0]?.version).toBe("2.4.7");
     expect(entries[0]?.locale).toBe("en");
+
+    const germanEntries = getWhatsNewEntries("de");
+    expect(germanEntries[0]?.version).toBe("2.4.7");
+    expect(germanEntries[0]?.locale).toBe("de");
+  });
+
+  it("renders the 2.4.7 Intake AI onboarding and performance improvements in both locales", () => {
+    const englishEntry = getWhatsNewEntry("2.4.7", "en");
+    const germanEntry = getWhatsNewEntry("2.4.7", "de");
+
+    expect(englishEntry?.title).toBe("What's new in Intake 2.4.7");
+    expect(englishEntry?.publishedAt).toBe("2026-07-25");
+    expect(englishEntry?.summary).toBe(
+      "A clearer Intake AI setup and smoother performance"
+    );
+    expect(englishEntry?.bodyHtml).toContain("story-based onboarding");
+    expect(englishEntry?.bodyHtml).toContain("Intake AI subscription");
+    expect(englishEntry?.bodyHtml).toContain("own API key (BYOK)");
+    expect(englishEntry?.bodyHtml).toContain("performance issues");
+
+    expect(germanEntry?.title).toBe("Was ist neu in Intake 2.4.7");
+    expect(germanEntry?.publishedAt).toBe("2026-07-25");
+    expect(germanEntry?.summary).toBe(
+      "Eine klarere Intake-AI-Einrichtung und bessere Performance"
+    );
+    expect(germanEntry?.bodyHtml).toContain("Story-basierten Onboarding");
+    expect(germanEntry?.bodyHtml).toContain("Intake-AI-Abo");
+    expect(germanEntry?.bodyHtml).toContain("eigenen API-Schlüssel (BYOK)");
+    expect(germanEntry?.bodyHtml).toContain("Performance-Probleme");
   });
 
   it("renders the 2.4.6 tracking and workout improvements in both locales", () => {

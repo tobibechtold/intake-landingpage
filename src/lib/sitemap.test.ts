@@ -34,6 +34,8 @@ describe("sitemap", () => {
 
     expect(xml).toContain("<loc>https://www.getintake.de/whats-new</loc>");
     expect(xml).toContain("<loc>https://www.getintake.de/en/whats-new</loc>");
+    expect(xml).toContain("<loc>https://www.getintake.de/whats-new/2.4.7</loc>");
+    expect(xml).toContain("<loc>https://www.getintake.de/en/whats-new/2.4.7</loc>");
     expect(xml).toContain("<loc>https://www.getintake.de/whats-new/2.1.1</loc>");
     expect(xml).toContain("<loc>https://www.getintake.de/en/whats-new/2.1.1</loc>");
   });
