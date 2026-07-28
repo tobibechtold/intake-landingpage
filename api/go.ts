@@ -1,45 +1,35 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { waitUntil } from "@vercel/functions";
 // Explicit .js extension: this function is deployed as unbundled ESM, where
 // extensionless relative specifiers do not resolve at runtime.
-import { isBotOrPrefetch } from "../src/lib/botDetection.js";
+import { buildClickRow, type ClickRow } from "../src/lib/clickTracking.js";
 import { buildSmartLinkRedirect, LANDING_PAGE_URL } from "../src/lib/smartlink.js";
 
-const POSTHOG_HOST = "https://eu.i.posthog.com";
-
-const captureSmartlinkClick = async (
-  slug: string,
-  platform: string,
-  country: string,
-  userAgent: string,
-): Promise<void> => {
-  const key = process.env.POSTHOG_KEY;
-  if (!key) {
+const recordClick = async (row: ClickRow): Promise<void> => {
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!supabaseUrl || !serviceKey) {
     return;
   }
   try {
-    await fetch(`${POSTHOG_HOST}/capture/`, {
+    await fetch(`${supabaseUrl}/rest/v1/smartlink_clicks`, {
       method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        api_key: key,
-        event: "smartlink_click",
-        distinct_id: crypto.randomUUID(),
-        properties: {
-          slug,
-          platform,
-          country,
-          user_agent: userAgent,
-          $process_person_profile: false,
-        },
-      }),
-      signal: AbortSignal.timeout(800),
+      headers: {
+        "content-type": "application/json",
+        apikey: serviceKey,
+        authorization: `Bearer ${serviceKey}`,
+        prefer: "return=minimal",
+      },
+      body: JSON.stringify(row),
+      signal: AbortSignal.timeout(2000),
     });
   } catch {
-    // Analytics must never break or noticeably delay the redirect.
+    // Analytics must never break the redirect. A dropped click is preferable
+    // to a delayed or failed hand-off to the store.
   }
 };
 
-export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
+export default function handler(req: VercelRequest, res: VercelResponse): void {
   const slug = (typeof req.query.slug === "string" ? req.query.slug : "").toLowerCase();
   const userAgent = typeof req.headers["user-agent"] === "string" ? req.headers["user-agent"] : "";
   const acceptLanguage =
@@ -56,17 +46,24 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   const header = (name: string): string | undefined =>
     typeof req.headers[name] === "string" ? (req.headers[name] as string) : undefined;
 
-  // Crawlers and speculative prefetches still get redirected (Meta's ad review
-  // must be able to fetch the URL), but they must not count as clicks.
-  if (
-    !isBotOrPrefetch(userAgent, {
+  // Crawlers and prefetches are stored with is_bot set rather than dropped, so
+  // the history can be re-filtered when the heuristic improves.
+  const row = buildClickRow({
+    slug,
+    userAgent,
+    country: header("x-vercel-ip-country"),
+    ip: header("x-forwarded-for")?.split(",")[0]?.trim(),
+    prefetch: {
       secPurpose: header("sec-purpose"),
       xPurpose: header("x-purpose"),
       xMoz: header("x-moz"),
-    })
-  ) {
-    const country = header("x-vercel-ip-country") ?? "unknown";
-    await captureSmartlinkClick(slug, redirect.platform, country, userAgent);
-  }
+    },
+    query: req.query as Record<string, string | string[] | undefined>,
+    now: new Date(),
+    secret: process.env.SMARTLINK_HASH_SECRET,
+  });
+
+  // The 302 is sent first; the insert runs after the response is flushed.
+  waitUntil(recordClick(row));
   res.redirect(302, redirect.url);
 }
