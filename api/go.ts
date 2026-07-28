@@ -1,41 +1,11 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { waitUntil } from "@vercel/functions";
-// Explicit .js extension: this function is deployed as unbundled ESM, where
+// Explicit .js extensions: this function is deployed as unbundled ESM, where
 // extensionless relative specifiers do not resolve at runtime.
-import { buildClickRow, type ClickInput } from "../src/lib/clickTracking.js";
+import type { ClickInput } from "../src/lib/clickTracking.js";
+import { deferOrAwait, recordClick } from "../src/lib/clickWriter.js";
 import { buildSmartLinkRedirect, LANDING_PAGE_URL } from "../src/lib/smartlink.js";
 
-const recordClick = async (input: ClickInput): Promise<void> => {
-  const supabaseUrl = process.env.SUPABASE_URL;
-  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  if (!supabaseUrl || !serviceKey) {
-    return;
-  }
-  try {
-    const row = buildClickRow(input);
-    const response = await fetch(`${supabaseUrl}/rest/v1/smartlink_clicks`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        apikey: serviceKey,
-        authorization: `Bearer ${serviceKey}`,
-        prefer: "return=minimal",
-      },
-      body: JSON.stringify(row),
-      signal: AbortSignal.timeout(2000),
-    });
-    if (!response.ok) {
-      const body = await response.text().catch(() => "(unreadable)");
-      const truncated = body.length > 200 ? body.slice(0, 200) + "..." : body;
-      console.error(`Supabase insert failed: ${response.status} ${truncated}`);
-    }
-  } catch (error) {
-    // Network errors, timeout, or other issues; analytics must never break the redirect.
-    console.error(`Supabase insert error: ${error instanceof Error ? error.message : String(error)}`);
-  }
-};
-
-export default function handler(req: VercelRequest, res: VercelResponse): void {
+export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
   const slug = (typeof req.query.slug === "string" ? req.query.slug : "").toLowerCase();
   const userAgent = typeof req.headers["user-agent"] === "string" ? req.headers["user-agent"] : "";
   const acceptLanguage =
@@ -69,7 +39,11 @@ export default function handler(req: VercelRequest, res: VercelResponse): void {
     secret: process.env.SMARTLINK_HASH_SECRET,
   };
 
-  // The insert is never awaited — the redirect is sent immediately.
-  waitUntil(recordClick(input));
+  // With a platform request context the insert is deferred and the redirect is
+  // sent immediately; without one it is awaited instead — bounded by the
+  // insert's own 2s timeout — because a promise left in flight after the
+  // response is sent is not guaranteed to run. deferOrAwait never rejects, so
+  // the redirect below is reached either way.
+  await deferOrAwait(() => recordClick(input));
   res.redirect(302, redirect.url);
 }

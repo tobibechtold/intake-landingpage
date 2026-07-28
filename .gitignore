@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Secrets. `*.local` above already covers .env.local; this covers a plain .env,
+# which now holds SUPABASE_SERVICE_ROLE_KEY (full RLS bypass on production).
+.env
+.env.*
+!.env.example
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
