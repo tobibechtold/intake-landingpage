@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isBotOrPrefetch } from "./botDetection";
+import { classifyBotReason, isBotOrPrefetch } from "./botDetection";
 
 const IPHONE_UA =
   "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1";
@@ -60,5 +60,36 @@ describe("isBotOrPrefetch", () => {
 
   it("passes real browsers with empty prefetch headers", () => {
     expect(isBotOrPrefetch(IPHONE_UA, { secPurpose: "", xPurpose: "", xMoz: "" })).toBe(false);
+  });
+});
+
+describe("classifyBotReason", () => {
+  const HUMAN_UA =
+    "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148";
+
+  it("returns empty-ua for a blank user agent", () => {
+    expect(classifyBotReason("   ")).toBe("empty-ua");
+  });
+
+  it("returns ua for a known crawler", () => {
+    expect(classifyBotReason("facebookexternalhit/1.1")).toBe("ua");
+  });
+
+  it("returns prefetch for a speculative navigation header", () => {
+    expect(classifyBotReason(HUMAN_UA, { secPurpose: "prefetch;prerender" })).toBe("prefetch");
+  });
+
+  it("returns null for a real mobile browser", () => {
+    expect(classifyBotReason(HUMAN_UA)).toBeNull();
+  });
+
+  it("prefers the user-agent reason over the prefetch header", () => {
+    expect(classifyBotReason("Bytespider", { secPurpose: "prefetch" })).toBe("ua");
+  });
+
+  it("keeps isBotOrPrefetch consistent with classifyBotReason", () => {
+    expect(isBotOrPrefetch(HUMAN_UA)).toBe(false);
+    expect(isBotOrPrefetch("Googlebot/2.1")).toBe(true);
+    expect(isBotOrPrefetch(HUMAN_UA, { xMoz: "prefetch" })).toBe(true);
   });
 });

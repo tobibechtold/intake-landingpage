@@ -12,14 +12,23 @@ const BOT_UA_PATTERN =
 
 const PREFETCH_PATTERN = /prefetch|prerender|preview/i;
 
-export const isBotOrPrefetch = (userAgent: string, prefetch: PrefetchHeaders = {}): boolean => {
+export type BotReason = "empty-ua" | "ua" | "prefetch";
+
+export const classifyBotReason = (
+  userAgent: string,
+  prefetch: PrefetchHeaders = {},
+): BotReason | null => {
   if (!userAgent.trim()) {
-    return true;
+    return "empty-ua";
   }
   if (BOT_UA_PATTERN.test(userAgent)) {
-    return true;
+    return "ua";
   }
-  return [prefetch.secPurpose, prefetch.xPurpose, prefetch.xMoz].some(
+  const isPrefetch = [prefetch.secPurpose, prefetch.xPurpose, prefetch.xMoz].some(
     (value) => typeof value === "string" && PREFETCH_PATTERN.test(value),
   );
+  return isPrefetch ? "prefetch" : null;
 };
+
+export const isBotOrPrefetch = (userAgent: string, prefetch: PrefetchHeaders = {}): boolean =>
+  classifyBotReason(userAgent, prefetch) !== null;
