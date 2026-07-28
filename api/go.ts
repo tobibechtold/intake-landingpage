@@ -2,17 +2,18 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { waitUntil } from "@vercel/functions";
 // Explicit .js extension: this function is deployed as unbundled ESM, where
 // extensionless relative specifiers do not resolve at runtime.
-import { buildClickRow, type ClickRow } from "../src/lib/clickTracking.js";
+import { buildClickRow, type ClickInput } from "../src/lib/clickTracking.js";
 import { buildSmartLinkRedirect, LANDING_PAGE_URL } from "../src/lib/smartlink.js";
 
-const recordClick = async (row: ClickRow): Promise<void> => {
+const recordClick = async (input: ClickInput): Promise<void> => {
   const supabaseUrl = process.env.SUPABASE_URL;
   const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!supabaseUrl || !serviceKey) {
     return;
   }
   try {
-    await fetch(`${supabaseUrl}/rest/v1/smartlink_clicks`, {
+    const row = buildClickRow(input);
+    const response = await fetch(`${supabaseUrl}/rest/v1/smartlink_clicks`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -23,9 +24,14 @@ const recordClick = async (row: ClickRow): Promise<void> => {
       body: JSON.stringify(row),
       signal: AbortSignal.timeout(2000),
     });
-  } catch {
-    // Analytics must never break the redirect. A dropped click is preferable
-    // to a delayed or failed hand-off to the store.
+    if (!response.ok) {
+      const body = await response.text().catch(() => "(unreadable)");
+      const truncated = body.length > 200 ? body.slice(0, 200) + "..." : body;
+      console.error(`Supabase insert failed: ${response.status} ${truncated}`);
+    }
+  } catch (error) {
+    // Network errors, timeout, or other issues; analytics must never break the redirect.
+    console.error(`Supabase insert error: ${error instanceof Error ? error.message : String(error)}`);
   }
 };
 
@@ -48,11 +54,11 @@ export default function handler(req: VercelRequest, res: VercelResponse): void {
 
   // Crawlers and prefetches are stored with is_bot set rather than dropped, so
   // the history can be re-filtered when the heuristic improves.
-  const row = buildClickRow({
+  const input: ClickInput = {
     slug,
     userAgent,
     country: header("x-vercel-ip-country"),
-    ip: header("x-forwarded-for")?.split(",")[0]?.trim(),
+    ip: header("x-real-ip") ?? header("x-forwarded-for")?.split(",")[0]?.trim(),
     prefetch: {
       secPurpose: header("sec-purpose"),
       xPurpose: header("x-purpose"),
@@ -61,9 +67,9 @@ export default function handler(req: VercelRequest, res: VercelResponse): void {
     query: req.query as Record<string, string | string[] | undefined>,
     now: new Date(),
     secret: process.env.SMARTLINK_HASH_SECRET,
-  });
+  };
 
-  // The 302 is sent first; the insert runs after the response is flushed.
-  waitUntil(recordClick(row));
+  // The insert is never awaited — the redirect is sent immediately.
+  waitUntil(recordClick(input));
   res.redirect(302, redirect.url);
 }
