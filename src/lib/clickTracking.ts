@@ -86,15 +86,20 @@ export const buildClickRow = (input: ClickInput): ClickRow => {
   const classification = classifyBot(input.userAgent, input.prefetch ?? {});
   const clickId = extractClickId(query);
 
-  // A hit carrying a platform click id is a real click. TikTok's iOS in-app
-  // browser sends a preview header on the *genuine* navigation, and ttclid is
-  // minted at tap time, so the prefetch rule was excluding humans. Measured
-  // 2026-07-29: 10 distinct ttclids against 8 TikTok-reported clicks, of which
-  // the prefetch rule had excluded 9 — one creative read zero all day.
-  // Only the prefetch rule is overridden. Crawlers stay flagged because "ua"
-  // is checked first, so Meta's review bot cannot slip through on its fbclid.
-  const clickIdOverridesPrefetch = classification?.reason === "prefetch" && clickId !== null;
-
+  // A prefetch header means "not a click", full stop — carrying a platform
+  // click id does not redeem it.
+  //
+  // An earlier version of this file overrode the prefetch rule whenever a
+  // ttclid or fbclid was present, on the theory that TikTok's in-app browser
+  // sends a preview header on the genuine navigation. That was inferred from
+  // six rows (10 distinct ttclids against 8 TikTok-reported clicks) and it was
+  // wrong. Measured over the first 10.8 hours of real traffic: 1,764 of 1,996
+  // counted hits carried `x-moz=prefetch`, against 239 plain clicks — a 7:1
+  // ratio the other way. The override implied a CPC of €0.009; excluding
+  // prefetches gives €0.075, which is the plausible figure.
+  //
+  // Prefetchers mint a fresh click id per request, so a click id proves only
+  // that the ad platform issued the URL, never that a person tapped it.
   return {
     slug: input.slug,
     platform: detectClientPlatform(input.userAgent),
@@ -103,10 +108,11 @@ export const buildClickRow = (input: ClickInput): ClickRow => {
     visitor_hash: hashVisitor(input.ip, input.userAgent, input.now, input.secret),
     click_id: clickId,
     query_params: extractQueryParams(query),
-    is_bot: classification !== null && !clickIdOverridesPrefetch,
-    bot_reason: clickIdOverridesPrefetch ? null : (classification?.reason ?? null),
-    // Retained even when the click id overrides the flag, so the override is
-    // visible in the data rather than silently erasing why the rule fired.
+    is_bot: classification !== null,
+    bot_reason: classification?.reason ?? null,
+    // Which rule fired and on what input. Kept so a future shift in this ratio
+    // is answerable from the stored rows rather than by re-deriving it against
+    // ad-platform dashboards, which is what this correction took.
     bot_detail: classification?.detail ?? null,
   };
 };

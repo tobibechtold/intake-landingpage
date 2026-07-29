@@ -86,35 +86,48 @@ describe("buildClickRow", () => {
   });
 });
 
-describe("buildClickRow prefetch override", () => {
+describe("buildClickRow prefetch classification", () => {
   const PREFETCH = { secPurpose: "prefetch;prerender" };
 
-  it("treats a prefetch-headed hit carrying a ttclid as a real click", () => {
+  // The rule this file exists to pin. An earlier version overrode the prefetch
+  // classification whenever a click id was present, inferred from six rows. Over
+  // the first 10.8 hours of real traffic that override let 1,764 prefetches
+  // through against 239 genuine clicks, implying a €0.009 CPC. Prefetchers mint
+  // a fresh click id per request, so a click id proves the platform issued the
+  // URL, never that a person tapped it.
+  it("flags a prefetch-headed hit carrying a ttclid as a bot", () => {
     const row = buildClickRow({ ...base, prefetch: PREFETCH, query: { ttclid: "E_C_P_abc" } });
-    expect(row.is_bot).toBe(false);
-    expect(row.bot_reason).toBeNull();
+    expect(row.is_bot).toBe(true);
+    expect(row.bot_reason).toBe("prefetch");
     expect(row.click_id).toBe("E_C_P_abc");
   });
 
-  it("treats a prefetch-headed hit carrying an fbclid as a real click", () => {
+  it("flags a prefetch-headed hit carrying an fbclid as a bot", () => {
     const row = buildClickRow({ ...base, prefetch: PREFETCH, query: { fbclid: "fb-123" } });
-    expect(row.is_bot).toBe(false);
-    expect(row.bot_reason).toBeNull();
+    expect(row.is_bot).toBe(true);
+    expect(row.bot_reason).toBe("prefetch");
   });
 
-  it("still records why the rule fired, so the override is visible in the data", () => {
+  it("records which header and value triggered the classification", () => {
     const row = buildClickRow({ ...base, prefetch: PREFETCH, query: { ttclid: "E_C_P_abc" } });
     expect(row.bot_detail).toBe("sec-purpose=prefetch;prerender");
+  });
+
+  // x-moz=prefetch is what the real inflation arrived as: a Gecko prefetch
+  // header alongside an iPhone user-agent, 1,764 times in 10.8 hours.
+  it("flags an x-moz prefetch hit, which is how this reached production", () => {
+    const row = buildClickRow({ ...base, prefetch: { xMoz: "prefetch" }, query: { ttclid: "x" } });
+    expect(row.is_bot).toBe(true);
+    expect(row.bot_detail).toBe("x-moz=prefetch");
   });
 
   it("keeps flagging a prefetch-headed hit with no click id", () => {
     const row = buildClickRow({ ...base, prefetch: PREFETCH });
     expect(row.is_bot).toBe(true);
     expect(row.bot_reason).toBe("prefetch");
-    expect(row.bot_detail).toBe("sec-purpose=prefetch;prerender");
   });
 
-  it("does NOT let a click id rescue a user-agent-detected crawler", () => {
+  it("reports a user-agent crawler as ua, not prefetch", () => {
     const row = buildClickRow({
       ...base,
       userAgent: "facebookexternalhit/1.1",
@@ -126,7 +139,7 @@ describe("buildClickRow prefetch override", () => {
     expect(row.bot_detail).toBe("user-agent~facebookexternalhit");
   });
 
-  it("leaves bot_detail null for ordinary human traffic", () => {
+  it("leaves a plain click with a ttclid unflagged", () => {
     const row = buildClickRow({ ...base, query: { ttclid: "E_C_P_abc" } });
     expect(row.is_bot).toBe(false);
     expect(row.bot_reason).toBeNull();
