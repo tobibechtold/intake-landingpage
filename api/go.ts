@@ -1,43 +1,9 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-// Explicit .js extension: this function is deployed as unbundled ESM, where
+// Explicit .js extensions: this function is deployed as unbundled ESM, where
 // extensionless relative specifiers do not resolve at runtime.
-import { isBotOrPrefetch } from "../src/lib/botDetection.js";
+import type { ClickInput } from "../src/lib/clickTracking.js";
+import { deferOrAwait, recordClick } from "../src/lib/clickWriter.js";
 import { buildSmartLinkRedirect, LANDING_PAGE_URL } from "../src/lib/smartlink.js";
-
-const POSTHOG_HOST = "https://eu.i.posthog.com";
-
-const captureSmartlinkClick = async (
-  slug: string,
-  platform: string,
-  country: string,
-  userAgent: string,
-): Promise<void> => {
-  const key = process.env.POSTHOG_KEY;
-  if (!key) {
-    return;
-  }
-  try {
-    await fetch(`${POSTHOG_HOST}/capture/`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        api_key: key,
-        event: "smartlink_click",
-        distinct_id: crypto.randomUUID(),
-        properties: {
-          slug,
-          platform,
-          country,
-          user_agent: userAgent,
-          $process_person_profile: false,
-        },
-      }),
-      signal: AbortSignal.timeout(800),
-    });
-  } catch {
-    // Analytics must never break or noticeably delay the redirect.
-  }
-};
 
 export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
   const slug = (typeof req.query.slug === "string" ? req.query.slug : "").toLowerCase();
@@ -56,17 +22,28 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   const header = (name: string): string | undefined =>
     typeof req.headers[name] === "string" ? (req.headers[name] as string) : undefined;
 
-  // Crawlers and speculative prefetches still get redirected (Meta's ad review
-  // must be able to fetch the URL), but they must not count as clicks.
-  if (
-    !isBotOrPrefetch(userAgent, {
+  // Crawlers and prefetches are stored with is_bot set rather than dropped, so
+  // the history can be re-filtered when the heuristic improves.
+  const input: ClickInput = {
+    slug,
+    userAgent,
+    country: header("x-vercel-ip-country"),
+    ip: header("x-real-ip") ?? header("x-forwarded-for")?.split(",")[0]?.trim(),
+    prefetch: {
       secPurpose: header("sec-purpose"),
       xPurpose: header("x-purpose"),
       xMoz: header("x-moz"),
-    })
-  ) {
-    const country = header("x-vercel-ip-country") ?? "unknown";
-    await captureSmartlinkClick(slug, redirect.platform, country, userAgent);
-  }
+    },
+    query: req.query as Record<string, string | string[] | undefined>,
+    now: new Date(),
+    secret: process.env.SMARTLINK_HASH_SECRET,
+  };
+
+  // With a platform request context the insert is deferred and the redirect is
+  // sent immediately; without one it is awaited instead — bounded by the
+  // insert's own 2s timeout — because a promise left in flight after the
+  // response is sent is not guaranteed to run. deferOrAwait never rejects, so
+  // the redirect below is reached either way.
+  await deferOrAwait(() => recordClick(input));
   res.redirect(302, redirect.url);
 }

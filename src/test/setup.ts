@@ -1,5 +1,19 @@
 import "@testing-library/jest-dom";
 
+// jsdom's AbortSignal predates AbortSignal.timeout, which the Node runtime the
+// /go function actually runs on has had since Node 17.3.
+if (typeof AbortSignal.timeout !== "function") {
+  Object.defineProperty(AbortSignal, "timeout", {
+    configurable: true,
+    writable: true,
+    value: (ms: number) => {
+      const controller = new AbortController();
+      setTimeout(() => controller.abort(new Error("TimeoutError")), ms);
+      return controller.signal;
+    },
+  });
+}
+
 Object.defineProperty(window, "matchMedia", {
   writable: true,
   value: (query: string) => ({
