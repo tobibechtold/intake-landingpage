@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { classifyBotReason, isBotOrPrefetch } from "./botDetection";
+import { classifyBot, classifyBotReason, isBotOrPrefetch } from "./botDetection";
 
 const IPHONE_UA =
   "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1";
@@ -91,5 +91,43 @@ describe("classifyBotReason", () => {
     expect(isBotOrPrefetch(HUMAN_UA)).toBe(false);
     expect(isBotOrPrefetch("Googlebot/2.1")).toBe(true);
     expect(isBotOrPrefetch(HUMAN_UA, { xMoz: "prefetch" })).toBe(true);
+  });
+});
+
+describe("classifyBot detail", () => {
+  const HUMAN_UA =
+    "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148";
+
+  it("names the header and value that triggered a prefetch classification", () => {
+    expect(classifyBot(HUMAN_UA, { secPurpose: "prefetch;prerender" })).toEqual({
+      reason: "prefetch",
+      detail: "sec-purpose=prefetch;prerender",
+    });
+  });
+
+  it("names the non-matching headers correctly when a later one matches", () => {
+    expect(classifyBot(HUMAN_UA, { xMoz: "prefetch" })?.detail).toBe("x-moz=prefetch");
+    expect(classifyBot(HUMAN_UA, { xPurpose: "preview" })?.detail).toBe("x-purpose=preview");
+  });
+
+  it("reports which user-agent token matched", () => {
+    expect(classifyBot("facebookexternalhit/1.1")).toEqual({
+      reason: "ua",
+      detail: "user-agent~facebookexternalhit",
+    });
+  });
+
+  it("reports an empty user agent", () => {
+    expect(classifyBot("  ")).toEqual({ reason: "empty-ua", detail: "empty user-agent" });
+  });
+
+  it("returns null for a real mobile browser", () => {
+    expect(classifyBot(HUMAN_UA)).toBeNull();
+  });
+
+  it("truncates an overlong header value so detail stays a diagnostic", () => {
+    const detail = classifyBot(HUMAN_UA, { secPurpose: `prefetch${"x".repeat(500)}` })?.detail ?? "";
+    expect(detail.length).toBeLessThanOrEqual(201);
+    expect(detail.endsWith("…")).toBe(true);
   });
 });

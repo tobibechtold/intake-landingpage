@@ -14,21 +14,51 @@ const PREFETCH_PATTERN = /prefetch|prerender|preview/i;
 
 export type BotReason = "empty-ua" | "ua" | "prefetch";
 
+export interface BotClassification {
+  reason: BotReason;
+  // Which rule fired and on what input, so an over-broad heuristic can be
+  // diagnosed from the stored rows instead of by cross-referencing ad-platform
+  // dashboards. Kept short — this is a diagnostic, not a log.
+  detail: string;
+}
+
+const DETAIL_MAX_LENGTH = 200;
+
+// Header names as they arrive on the wire, so `detail` names the real header
+// rather than our camelCase field.
+const PREFETCH_HEADER_NAMES: ReadonlyArray<[keyof PrefetchHeaders, string]> = [
+  ["secPurpose", "sec-purpose"],
+  ["xPurpose", "x-purpose"],
+  ["xMoz", "x-moz"],
+];
+
+const truncate = (value: string): string =>
+  value.length > DETAIL_MAX_LENGTH ? `${value.slice(0, DETAIL_MAX_LENGTH)}…` : value;
+
+export const classifyBot = (
+  userAgent: string,
+  prefetch: PrefetchHeaders = {},
+): BotClassification | null => {
+  if (!userAgent.trim()) {
+    return { reason: "empty-ua", detail: "empty user-agent" };
+  }
+  const uaMatch = BOT_UA_PATTERN.exec(userAgent);
+  if (uaMatch) {
+    return { reason: "ua", detail: truncate(`user-agent~${uaMatch[0].toLowerCase()}`) };
+  }
+  for (const [field, headerName] of PREFETCH_HEADER_NAMES) {
+    const value = prefetch[field];
+    if (typeof value === "string" && PREFETCH_PATTERN.test(value)) {
+      return { reason: "prefetch", detail: truncate(`${headerName}=${value}`) };
+    }
+  }
+  return null;
+};
+
 export const classifyBotReason = (
   userAgent: string,
   prefetch: PrefetchHeaders = {},
-): BotReason | null => {
-  if (!userAgent.trim()) {
-    return "empty-ua";
-  }
-  if (BOT_UA_PATTERN.test(userAgent)) {
-    return "ua";
-  }
-  const isPrefetch = [prefetch.secPurpose, prefetch.xPurpose, prefetch.xMoz].some(
-    (value) => typeof value === "string" && PREFETCH_PATTERN.test(value),
-  );
-  return isPrefetch ? "prefetch" : null;
-};
+): BotReason | null => classifyBot(userAgent, prefetch)?.reason ?? null;
 
 export const isBotOrPrefetch = (userAgent: string, prefetch: PrefetchHeaders = {}): boolean =>
-  classifyBotReason(userAgent, prefetch) !== null;
+  classifyBot(userAgent, prefetch) !== null;

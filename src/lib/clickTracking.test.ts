@@ -85,3 +85,51 @@ describe("buildClickRow", () => {
     expect(buildClickRow({ ...base, country: "" }).country).toBeNull();
   });
 });
+
+describe("buildClickRow prefetch override", () => {
+  const PREFETCH = { secPurpose: "prefetch;prerender" };
+
+  it("treats a prefetch-headed hit carrying a ttclid as a real click", () => {
+    const row = buildClickRow({ ...base, prefetch: PREFETCH, query: { ttclid: "E_C_P_abc" } });
+    expect(row.is_bot).toBe(false);
+    expect(row.bot_reason).toBeNull();
+    expect(row.click_id).toBe("E_C_P_abc");
+  });
+
+  it("treats a prefetch-headed hit carrying an fbclid as a real click", () => {
+    const row = buildClickRow({ ...base, prefetch: PREFETCH, query: { fbclid: "fb-123" } });
+    expect(row.is_bot).toBe(false);
+    expect(row.bot_reason).toBeNull();
+  });
+
+  it("still records why the rule fired, so the override is visible in the data", () => {
+    const row = buildClickRow({ ...base, prefetch: PREFETCH, query: { ttclid: "E_C_P_abc" } });
+    expect(row.bot_detail).toBe("sec-purpose=prefetch;prerender");
+  });
+
+  it("keeps flagging a prefetch-headed hit with no click id", () => {
+    const row = buildClickRow({ ...base, prefetch: PREFETCH });
+    expect(row.is_bot).toBe(true);
+    expect(row.bot_reason).toBe("prefetch");
+    expect(row.bot_detail).toBe("sec-purpose=prefetch;prerender");
+  });
+
+  it("does NOT let a click id rescue a user-agent-detected crawler", () => {
+    const row = buildClickRow({
+      ...base,
+      userAgent: "facebookexternalhit/1.1",
+      prefetch: PREFETCH,
+      query: { fbclid: "fb-123" },
+    });
+    expect(row.is_bot).toBe(true);
+    expect(row.bot_reason).toBe("ua");
+    expect(row.bot_detail).toBe("user-agent~facebookexternalhit");
+  });
+
+  it("leaves bot_detail null for ordinary human traffic", () => {
+    const row = buildClickRow({ ...base, query: { ttclid: "E_C_P_abc" } });
+    expect(row.is_bot).toBe(false);
+    expect(row.bot_reason).toBeNull();
+    expect(row.bot_detail).toBeNull();
+  });
+});
