@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>In-App-Browser Test v5</title>
+<title>In-App-Browser Test v6</title>
 <style>
   :root { color-scheme: light dark; }
   body { font: 16px/1.5 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
@@ -33,8 +33,8 @@
 </head>
 <body>
 
-<h1>In-App-Browser Test v5 — window.open</h1>
-<p class="sub"><strong>Tap 17 first.</strong> It alone answers the question: it opens a harmless page that tells you which browser it landed in. If that page says “🟢 Real Safari”, <code>window.open</code> escapes and we're done. If it says “🟠 Still inside Instagram”, no <code>window.open</code> variant can work and 18–20 are a formality.</p>
+<h1>In-App-Browser Test v6 — last round</h1>
+<p class="sub">21 and 22 are your <code>x-safari</code> idea, tested two ways. 23 and 24 aren't about escaping — they decide what the fallback UI can rely on, so please do those even if 21/22 fail.</p>
 
 <h3 class="sec">Event log</h3>
 <div id="log"></div>
@@ -43,35 +43,38 @@
   <button onclick="dumpUA()">Add UA to log</button>
 </div>
 
+<h3 class="sec">Your x-safari idea</h3>
+
 <div class="v key">
-  <h2>17 — THE CONTROL: does window.open escape?</h2>
-  <p><code>window.open(page, "_blank")</code> to a normal page. Read what the opened page says about which browser it's in.</p>
-  <button class="btn" data-log="17-open-control" id="c17">Try 17</button>
+  <h2>21 — window.open("x-safari-https://…", "_blank")</h2>
+  <p>Exactly what you read about. If it escapes, the opened page will say “🟢 Real Safari”.</p>
+  <button class="btn" data-log="21-open-xsafari" id="c21">Try 21</button>
+</div>
+
+<div class="v key">
+  <h2>22 — location.href = "x-safari-https://…"</h2>
+  <p>Same scheme via script navigation rather than a link tap. Variant 8 was an <code>&lt;a&gt;</code>; this path can be handled differently.</p>
+  <button class="btn" data-log="22-loc-xsafari" id="c22">Try 22</button>
+</div>
+
+<h3 class="sec">Fallback design — needed either way</h3>
+
+<div class="v">
+  <h2>23 — sms: with the link prefilled</h2>
+  <p>Should open Messages with the store link in the body. <strong>Don't send it.</strong></p>
+  <a class="btn" data-log="23-sms" href="sms:&body=https://apps.apple.com/de/app/id6757768955">Try 23</a>
 </div>
 
 <div class="v">
-  <h2>18 — window.open to the App Store</h2>
-  <p><code>window.open(store, "_blank")</code>. The actual thing you read about.</p>
-  <button class="btn" data-log="18-open-store" id="c18">Try 18</button>
-</div>
-
-<div class="v">
-  <h2>19 — anchor with target="_blank"</h2>
-  <p>A real link tap, not scripted. Sometimes routed differently than <code>window.open</code>.</p>
-  <a class="btn" data-log="19-target-blank" target="_blank" rel="noopener"
-     href="https://apps.apple.com/de/app/id6757768955">Try 19</a>
-</div>
-
-<div class="v">
-  <h2>20 — window.open with "_system"</h2>
-  <p>The Cordova idiom. Included only to rule it out.</p>
-  <button class="btn" data-log="20-open-system" id="c20">Try 20</button>
+  <h2>24 — clipboard</h2>
+  <p>Copies the store link. Paste it somewhere afterwards to confirm it actually landed.</p>
+  <button class="btn" data-log="24-clipboard" id="c24">Try 24</button>
 </div>
 
 <script>
   var KEY = "iabtest-log";
   var STORE = "https://apps.apple.com/de/app/id6757768955";
-  var PAGE = "https://www.getintake.de/iab-test-landed.html";
+  var XSAFARI = "x-safari-https://www.getintake.de/iab-test-landed.html";
 
   function read() { try { return JSON.parse(localStorage.getItem(KEY) || "[]"); } catch (e) { return []; } }
   function write(entries) { try { localStorage.setItem(KEY, JSON.stringify(entries.slice(-60))); } catch (e) {} }
@@ -100,22 +103,28 @@
     el.addEventListener("click", function () { add("TAP  " + el.dataset.log); });
   });
 
-  // Called synchronously inside the gesture handler — deferring it would get the
-  // popup blocked and we'd misread that as the webview refusing to escape.
-  function tryOpen(url, target, label) {
+  document.getElementById("c21").addEventListener("click", function () {
     var w;
-    try {
-      w = target ? window.open(url, target) : window.open(url);
-    } catch (e) {
-      add("     " + label + " THREW: " + e);
-      return;
-    }
-    add("     " + label + " returned " + (w ? "a window handle" : "null (popup blocked / refused)"));
-  }
+    try { w = window.open(XSAFARI, "_blank"); }
+    catch (e) { add("     open(x-safari) THREW: " + e); return; }
+    add("     open(x-safari) returned " + (w ? "a window handle" : "null"));
+  });
 
-  document.getElementById("c17").addEventListener("click", function () { tryOpen(PAGE, "_blank", "open(_blank) control"); });
-  document.getElementById("c18").addEventListener("click", function () { tryOpen(STORE, "_blank", "open(_blank) store"); });
-  document.getElementById("c20").addEventListener("click", function () { tryOpen(STORE, "_system", "open(_system) store"); });
+  document.getElementById("c22").addEventListener("click", function () {
+    add("     setting location.href to x-safari…");
+    location.href = XSAFARI;
+  });
+
+  document.getElementById("c24").addEventListener("click", function () {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(STORE).then(
+        function () { add("     clipboard OK — now paste somewhere to confirm"); },
+        function (e) { add("     clipboard REJECTED: " + e); }
+      );
+    } else {
+      add("     clipboard API unavailable");
+    }
+  });
 
   window.addEventListener("pagehide", function () { add("     pagehide (navigation started)"); });
   document.addEventListener("visibilitychange", function () {
