@@ -17,7 +17,7 @@ export interface SmartLinkRedirect {
   platform: ClientPlatform;
 }
 
-const languageFromAcceptLanguage = (acceptLanguage: string): Language =>
+export const languageFromAcceptLanguage = (acceptLanguage: string): Language =>
   /^de\b/i.test(acceptLanguage.trim()) ? "de" : "en";
 
 export const buildSmartLinkRedirect = (

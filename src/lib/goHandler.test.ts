@@ -14,6 +14,17 @@ const globalWithContext = globalThis as unknown as GlobalWithContext;
 
 const ANDROID_UA =
   "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Mobile Safari/537.36";
+const INSTAGRAM_IOS_UA =
+  "Mozilla/5.0 (iPhone; CPU iPhone OS 26_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) " +
+  "Mobile/23G71 Instagram 440.0.0.30.81 (iPhone17,5; iOS 26_6; de_DE; de; IABMV/1) NW/3 Safari/604.1";
+const INSTAGRAM_ANDROID_UA =
+  "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 " +
+  "Mobile Safari/537.36 Instagram 440.0.0.30.81 Android";
+const FACEBOOK_IOS_UA =
+  "Mozilla/5.0 (iPhone; CPU iPhone OS 26_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) " +
+  "Mobile/23G71 [FBAN/FBIOS;FBDV/iPhone17,5;FBSV/26.6]";
+const DESKTOP_UA =
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36";
 
 type HandlerArgs = Parameters<typeof handler>;
 
@@ -23,10 +34,21 @@ const makeReq = (slug: string, userAgent = ANDROID_UA): HandlerArgs[0] =>
     headers: { "user-agent": userAgent, "accept-language": "de-DE" },
   }) as unknown as HandlerArgs[0];
 
-const makeRes = (): { res: HandlerArgs[1]; redirect: ReturnType<typeof vi.fn> } => {
+interface ResHarness {
+  res: HandlerArgs[1];
+  redirect: ReturnType<typeof vi.fn>;
+  send: ReturnType<typeof vi.fn>;
+  status: ReturnType<typeof vi.fn>;
+  setHeader: ReturnType<typeof vi.fn>;
+}
+
+const makeRes = (): ResHarness => {
   const redirect = vi.fn();
-  const res = { setHeader: vi.fn(), redirect } as unknown as HandlerArgs[1];
-  return { res, redirect };
+  const send = vi.fn();
+  const setHeader = vi.fn();
+  const status = vi.fn(() => ({ send }));
+  const res = { setHeader, redirect, status, send } as unknown as HandlerArgs[1];
+  return { res, redirect, send, status, setHeader };
 };
 
 const deferred = <T,>(): { promise: Promise<T>; resolve: (value: T) => void } => {
@@ -130,6 +152,66 @@ describe("/go handler", () => {
     expect(fetchMock).not.toHaveBeenCalled();
     expect(warn).toHaveBeenCalledTimes(1);
     expect(redirect).toHaveBeenCalledTimes(1);
+  });
+
+  // Instagram's in-app browser drops App Store navigations, so a 302 there is a
+  // silent dead end. See src/lib/inAppBrowser.ts for the evidence.
+  describe("Instagram in-app browser", () => {
+    beforeEach(() => {
+      vi.stubGlobal("fetch", vi.fn(async () => ({ ok: true, status: 201 })));
+    });
+
+    it("serves the interstitial instead of redirecting iOS visitors to the App Store", async () => {
+      const { res, redirect, status, send, setHeader } = makeRes();
+      await handler(makeReq("ugc-lisa-1", INSTAGRAM_IOS_UA), res);
+
+      expect(redirect).not.toHaveBeenCalled();
+      expect(status).toHaveBeenCalledWith(200);
+      expect(setHeader).toHaveBeenCalledWith("content-type", "text/html; charset=utf-8");
+
+      const html = send.mock.calls[0][0] as string;
+      expect(html).toContain("apps.apple.com");
+      expect(html).toContain("ct=ugc-lisa-1");
+    });
+
+    it("still records the click when it serves the interstitial", async () => {
+      const fetchMock = vi.fn(async () => ({ ok: true, status: 201 }));
+      vi.stubGlobal("fetch", fetchMock);
+
+      const { res } = makeRes();
+      await handler(makeReq("ugc-lisa-1", INSTAGRAM_IOS_UA), res);
+
+      expect(fetchMock).toHaveBeenCalledTimes(1);
+    });
+
+    // Play Store links are ordinary web pages needing no app handoff, and they
+    // open normally in that browser — an interstitial would be pure friction.
+    it("leaves Android visitors on the fast Play Store redirect", async () => {
+      const { res, redirect, send } = makeRes();
+      await handler(makeReq("ugc-lisa-1", INSTAGRAM_ANDROID_UA), res);
+
+      expect(send).not.toHaveBeenCalled();
+      expect(redirect).toHaveBeenCalledTimes(1);
+      expect(redirect.mock.calls[0][1]).toContain("play.google.com");
+    });
+
+    it("leaves the Facebook in-app browser on the fast App Store redirect", async () => {
+      const { res, redirect, send } = makeRes();
+      await handler(makeReq("ugc-lisa-1", FACEBOOK_IOS_UA), res);
+
+      expect(send).not.toHaveBeenCalled();
+      expect(redirect).toHaveBeenCalledTimes(1);
+      expect(redirect.mock.calls[0][1]).toContain("apps.apple.com");
+    });
+
+    it("leaves desktop visitors on the landing page redirect", async () => {
+      const { res, redirect, send } = makeRes();
+      await handler(makeReq("ugc-lisa-1", DESKTOP_UA), res);
+
+      expect(send).not.toHaveBeenCalled();
+      expect(redirect).toHaveBeenCalledTimes(1);
+      expect(redirect.mock.calls[0][1]).toContain("utm_medium=smartlink");
+    });
   });
 
   it("redirects unknown slugs to the landing page without recording a click", async () => {

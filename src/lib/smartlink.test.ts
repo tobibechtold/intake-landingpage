@@ -21,7 +21,7 @@ describe("buildSmartLinkRedirect", () => {
   it("sends German iOS users to the DE App Store with the campaign token", () => {
     const redirect = buildSmartLinkRedirect("tiktok-ugc1", IPHONE_UA, "de-DE,de;q=0.9");
     expect(redirect?.url).toBe(
-      "https://apps.apple.com/de/app/intake-kalorienz%C3%A4hler/id6757768955?pt=128030281&ct=tiktok-ugc1&mt=8",
+      "https://apps.apple.com/de/app/id6757768955?pt=128030281&ct=tiktok-ugc1&mt=8",
     );
   });
 
