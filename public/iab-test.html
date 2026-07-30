@@ -1,69 +1,135 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>In-App-Browser Test</title>
+<title>In-App-Browser Test v2</title>
 <style>
   :root { color-scheme: light dark; }
-  body {
-    font: 16px/1.5 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-    margin: 0; padding: 20px 16px 64px; max-width: 34rem; margin-inline: auto;
-  }
-  h1 { font-size: 1.25rem; margin: 0 0 4px; }
-  p.sub { margin: 0 0 24px; opacity: .7; font-size: .875rem; }
-  .v { border: 1px solid rgba(128,128,128,.35); border-radius: 12px; padding: 14px; margin-bottom: 14px; }
-  .v h2 { font-size: .8125rem; text-transform: uppercase; letter-spacing: .04em; margin: 0 0 2px; opacity: .6; }
-  .v p { margin: 0 0 12px; font-size: .875rem; }
-  a.btn, button.btn {
-    display: block; width: 100%; box-sizing: border-box; text-align: center;
-    padding: 14px; border-radius: 10px; border: 0; cursor: pointer;
-    background: #0071e3; color: #fff; font: inherit; font-weight: 600; text-decoration: none;
-  }
-  code { font-family: ui-monospace, Menlo, monospace; font-size: .8125em; word-break: break-all; }
-  #ua { border: 1px solid rgba(128,128,128,.35); border-radius: 10px; padding: 12px; background: rgba(128,128,128,.08); }
-  .note { font-size: .8125rem; opacity: .7; margin-top: 20px; }
+  body { font: 16px/1.5 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+         margin: 0; padding: 18px 16px 80px; max-width: 34rem; margin-inline: auto; }
+  h1 { font-size: 1.2rem; margin: 0 0 2px; }
+  p.sub { margin: 0 0 18px; opacity: .7; font-size: .85rem; }
+  .v { border: 1px solid rgba(128,128,128,.35); border-radius: 12px; padding: 13px; margin-bottom: 12px; }
+  .v.ctl { border-color: rgba(52,199,89,.5); }
+  .v h2 { font-size: .75rem; text-transform: uppercase; letter-spacing: .04em; margin: 0 0 2px; opacity: .6; }
+  .v p { margin: 0 0 11px; font-size: .84rem; }
+  a.btn, button.btn { display: block; width: 100%; box-sizing: border-box; text-align: center;
+    padding: 14px; border-radius: 10px; border: 0; cursor: pointer; -webkit-appearance: none;
+    background: #0071e3; color: #fff; font: inherit; font-weight: 600; text-decoration: none; }
+  .v.ctl a.btn, .v.ctl button.btn { background: #34a853; }
+  code { font-family: ui-monospace, Menlo, monospace; font-size: .8em; word-break: break-all; }
+  #log { border: 1px solid rgba(128,128,128,.35); border-radius: 10px; padding: 11px;
+         background: rgba(128,128,128,.08); font-family: ui-monospace, Menlo, monospace;
+         font-size: .72rem; white-space: pre-wrap; word-break: break-all;
+         min-height: 3em; max-height: 15em; overflow: auto; -webkit-user-select: text; user-select: text; }
+  .row { display: flex; gap: 8px; margin-top: 8px; }
+  .row button { flex: 1; padding: 9px; font-size: .8rem; border-radius: 8px;
+                border: 1px solid rgba(128,128,128,.4); background: transparent; color: inherit; }
 </style>
 </head>
 <body>
 
-<h1>In-App-Browser Test</h1>
-<p class="sub">Open this page <strong>inside Instagram</strong>. Try one variant at a time. After each one, come back here (re-open the link if the screen goes blank) and note whether the App&nbsp;Store actually opened.</p>
+<h1>In-App-Browser Test v2</h1>
+<p class="sub">Open inside Instagram. Tap the <strong>green controls first</strong>, in order, then the blue ones. Every tap is written to the log below and the log survives navigation — so come back here after each tap and read it.</p>
 
-<div class="v">
-  <h2>A — server 302 (what we do today)</h2>
-  <p>Goes to <code>/go/iabtest-a</code>, which 302s to apps.apple.com, which 301s to <code>itms-appss://</code>. This is the one we expect to fail.</p>
-  <a class="btn" href="/go/iabtest-a">Try A</a>
+<h2 style="font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;opacity:.6;margin:0 0 6px">Event log</h2>
+<div id="log"></div>
+<div class="row">
+  <button onclick="clearLog()">Clear log</button>
+  <button onclick="dumpUA()">Add UA to log</button>
+</div>
+
+<div class="v ctl">
+  <h2>0 — control: does a tap register at all?</h2>
+  <p>No navigation. Just writes to the log. If this does nothing, taps aren't reaching the page.</p>
+  <button class="btn" data-log="0-tap-only">Try 0</button>
+</div>
+
+<div class="v ctl">
+  <h2>1 — control: same-origin navigation</h2>
+  <p>Ordinary link to another page on this site. If this does nothing, the webview is blocking <em>all</em> navigation.</p>
+  <a class="btn" data-log="1-same-origin" href="/iab-test-landed.html">Try 1</a>
+</div>
+
+<div class="v ctl">
+  <h2>2 — control: cross-origin navigation</h2>
+  <p>Ordinary link to an unrelated external site.</p>
+  <a class="btn" data-log="2-cross-origin" href="https://example.com/">Try 2</a>
+</div>
+
+<div class="v ctl">
+  <h2>3 — control: a DIFFERENT app's store page</h2>
+  <p>WhatsApp's App Store listing. If this opens but ours doesn't, the problem is our listing/URL — not Instagram.</p>
+  <a class="btn" data-log="3-other-app" href="https://apps.apple.com/de/app/id310633997">Try 3</a>
 </div>
 
 <div class="v">
-  <h2>B — JS navigation to https store URL</h2>
-  <p>Runs <code>location.href = "https://apps.apple.com/…"</code> on tap.</p>
-  <button class="btn" id="b">Try B</button>
+  <h2>4 — our store page, plain link</h2>
+  <p>Same shape as control 3, our app id.</p>
+  <a class="btn" data-log="4-our-app" href="https://apps.apple.com/de/app/id6757768955">Try 4</a>
 </div>
 
 <div class="v">
-  <h2>C — plain link tap to https store URL</h2>
-  <p>An ordinary <code>&lt;a href&gt;</code>. Instagram normally intercepts these.</p>
-  <a class="btn" href="https://apps.apple.com/de/app/intake-kalorienz%C3%A4hler/id6757768955?pt=128030281&ct=iabtest-c&mt=8">Try C</a>
+  <h2>5 — our store page, full campaign URL</h2>
+  <p>Exactly what <code>/go</code> redirects to, including <code>pt</code>/<code>ct</code>/<code>mt</code>.</p>
+  <a class="btn" data-log="5-our-app-campaign" href="https://apps.apple.com/de/app/intake-kalorienz%C3%A4hler/id6757768955?pt=128030281&ct=iabtest-5&mt=8">Try 5</a>
 </div>
 
 <div class="v">
-  <h2>D — plain link tap to itms-apps:// scheme</h2>
-  <p>Skips the http hop entirely and hands iOS the scheme directly.</p>
-  <a class="btn" href="itms-apps://apps.apple.com/de/app/intake-kalorienz%C3%A4hler/id6757768955?pt=128030281&ct=iabtest-d&mt=8">Try D</a>
+  <h2>6 — server 302 (what the ad does today)</h2>
+  <p>Our <code>/go</code> function.</p>
+  <a class="btn" data-log="6-server-302" href="/go/iabtest-f">Try 6</a>
 </div>
 
-<h2 style="font-size:.8125rem;text-transform:uppercase;letter-spacing:.04em;opacity:.6;margin:28px 0 6px">User agent</h2>
-<div id="ua"><code></code></div>
-<p class="note">Copy the user-agent string above and paste it back — it's what the detection in <code>api/go.ts</code> has to match on.</p>
+<div class="v">
+  <h2>7 — itms-apps:// scheme</h2>
+  <p>Hands iOS the custom scheme directly.</p>
+  <a class="btn" data-log="7-itms-scheme" href="itms-apps://apps.apple.com/de/app/id6757768955">Try 7</a>
+</div>
 
 <script>
-  document.querySelector("#ua code").textContent = navigator.userAgent;
-  document.getElementById("b").addEventListener("click", function () {
-    location.href = "https://apps.apple.com/de/app/intake-kalorienz%C3%A4hler/id6757768955?pt=128030281&ct=iabtest-b&mt=8";
+  var KEY = "iabtest-log";
+
+  function read() { try { return JSON.parse(localStorage.getItem(KEY) || "[]"); } catch (e) { return []; } }
+  function write(entries) { try { localStorage.setItem(KEY, JSON.stringify(entries.slice(-60))); } catch (e) {} }
+
+  function add(what) {
+    var entries = read();
+    var d = new Date();
+    var stamp = String(d.getHours()).padStart(2, "0") + ":" +
+                String(d.getMinutes()).padStart(2, "0") + ":" +
+                String(d.getSeconds()).padStart(2, "0");
+    entries.push(stamp + "  " + what);
+    write(entries);
+    render();
+  }
+
+  function render() {
+    var entries = read();
+    document.getElementById("log").textContent =
+      entries.length ? entries.join("\n") : "(empty — tap something)";
+  }
+
+  function clearLog() { write([]); render(); }
+  function dumpUA() { add("UA " + navigator.userAgent); }
+
+  // Log every button/link tap before the navigation is allowed to proceed.
+  document.querySelectorAll("[data-log]").forEach(function (el) {
+    el.addEventListener("click", function () { add("TAP  " + el.dataset.log); });
   });
+
+  // If these fire, the webview actually began tearing the page down — meaning the
+  // navigation was attempted rather than silently swallowed at the tap.
+  window.addEventListener("pagehide", function () { add("     pagehide (navigation started)"); });
+  window.addEventListener("beforeunload", function () { add("     beforeunload"); });
+  document.addEventListener("visibilitychange", function () {
+    add("     visibility=" + document.visibilityState);
+  });
+
+  add("--- page loaded ---");
+  render();
 </script>
 
 </body>
