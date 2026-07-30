@@ -1,9 +1,15 @@
 import type { Language } from "@/i18n/translations";
 import { getStoredAttribution, type StoredAttribution } from "./attribution.js";
 
+// Deliberately id-only, with no name slug in the path. The slug belongs to
+// Apple: renaming the app in App Store Connect invalidates it without warning,
+// and the two storefronts diverge anyway (the US listing is "Intake: Calorie
+// Counter & Log"). A stale slug is not harmless — desktop browsers recover via
+// a 301 to the canonical URL, but iOS copies it verbatim into the
+// itms-appss:// handoff and hands the App Store a path that no longer exists.
 export const APP_STORE_URLS: Record<Language, string> = {
-  en: "https://apps.apple.com/us/app/intake-kalorienz%C3%A4hler/id6757768955",
-  de: "https://apps.apple.com/de/app/intake-kalorienz%C3%A4hler/id6757768955",
+  en: "https://apps.apple.com/us/app/id6757768955",
+  de: "https://apps.apple.com/de/app/id6757768955",
 };
 
 export const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=de.bechtoldit.intake";

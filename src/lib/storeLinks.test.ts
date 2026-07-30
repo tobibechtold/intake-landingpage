@@ -20,15 +20,23 @@ describe("store links with attribution", () => {
 
   it("appends the website fallback campaign to the App Store URL", () => {
     expect(getAppStoreUrl("de")).toBe(
-      "https://apps.apple.com/de/app/intake-kalorienz%C3%A4hler/id6757768955?pt=128030281&ct=website&mt=8",
+      "https://apps.apple.com/de/app/id6757768955?pt=128030281&ct=website&mt=8",
     );
   });
 
   it("appends the stored campaign to the App Store URL", () => {
     captureUtmParams("?utm_source=tiktok&utm_medium=smartlink&utm_campaign=tiktok-ugc1");
     expect(getAppStoreUrl("en")).toBe(
-      "https://apps.apple.com/us/app/intake-kalorienz%C3%A4hler/id6757768955?pt=128030281&ct=tiktok-ugc1&mt=8",
+      "https://apps.apple.com/us/app/id6757768955?pt=128030281&ct=tiktok-ugc1&mt=8",
     );
+  });
+
+  // The path slug is Apple's, not ours: renaming the app in App Store Connect
+  // silently invalidates it. Desktop clients recover via a 301 to the canonical
+  // slug, but iOS passes the dead slug straight into the itms-appss:// handoff.
+  // The id-only form is the one Apple canonicalises itself, so it cannot rot.
+  it.each(["de", "en"] as const)("uses the slug-free App Store URL for %s", (language) => {
+    expect(new URL(getAppStoreUrl(language)).pathname).toMatch(/^\/(de|us)\/app\/id6757768955$/);
   });
 
   it("single-encodes the Google Play referrer with the website fallback", () => {
@@ -64,7 +72,7 @@ describe("store links with attribution", () => {
 
   it("returns the localized App Store URL with attribution for iOS visitors in the navbar", () => {
     expect(getNavbarDownloadUrl("en", IPHONE_UA, "/en#hero")).toBe(
-      "https://apps.apple.com/us/app/intake-kalorienz%C3%A4hler/id6757768955?pt=128030281&ct=website&mt=8",
+      "https://apps.apple.com/us/app/id6757768955?pt=128030281&ct=website&mt=8",
     );
   });
 
