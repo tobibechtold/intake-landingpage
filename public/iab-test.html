@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>In-App-Browser Test</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font: 16px/1.5 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    margin: 0; padding: 20px 16px 64px; max-width: 34rem; margin-inline: auto;
+  }
+  h1 { font-size: 1.25rem; margin: 0 0 4px; }
+  p.sub { margin: 0 0 24px; opacity: .7; font-size: .875rem; }
+  .v { border: 1px solid rgba(128,128,128,.35); border-radius: 12px; padding: 14px; margin-bottom: 14px; }
+  .v h2 { font-size: .8125rem; text-transform: uppercase; letter-spacing: .04em; margin: 0 0 2px; opacity: .6; }
+  .v p { margin: 0 0 12px; font-size: .875rem; }
+  a.btn, button.btn {
+    display: block; width: 100%; box-sizing: border-box; text-align: center;
+    padding: 14px; border-radius: 10px; border: 0; cursor: pointer;
+    background: #0071e3; color: #fff; font: inherit; font-weight: 600; text-decoration: none;
+  }
+  code { font-family: ui-monospace, Menlo, monospace; font-size: .8125em; word-break: break-all; }
+  #ua { border: 1px solid rgba(128,128,128,.35); border-radius: 10px; padding: 12px; background: rgba(128,128,128,.08); }
+  .note { font-size: .8125rem; opacity: .7; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<h1>In-App-Browser Test</h1>
+<p class="sub">Open this page <strong>inside Instagram</strong>. Try one variant at a time. After each one, come back here (re-open the link if the screen goes blank) and note whether the App&nbsp;Store actually opened.</p>
+
+<div class="v">
+  <h2>A — server 302 (what we do today)</h2>
+  <p>Goes to <code>/go/iabtest-a</code>, which 302s to apps.apple.com, which 301s to <code>itms-appss://</code>. This is the one we expect to fail.</p>
+  <a class="btn" href="/go/iabtest-a">Try A</a>
+</div>
+
+<div class="v">
+  <h2>B — JS navigation to https store URL</h2>
+  <p>Runs <code>location.href = "https://apps.apple.com/…"</code> on tap.</p>
+  <button class="btn" id="b">Try B</button>
+</div>
+
+<div class="v">
+  <h2>C — plain link tap to https store URL</h2>
+  <p>An ordinary <code>&lt;a href&gt;</code>. Instagram normally intercepts these.</p>
+  <a class="btn" href="https://apps.apple.com/de/app/intake-kalorienz%C3%A4hler/id6757768955?pt=128030281&ct=iabtest-c&mt=8">Try C</a>
+</div>
+
+<div class="v">
+  <h2>D — plain link tap to itms-apps:// scheme</h2>
+  <p>Skips the http hop entirely and hands iOS the scheme directly.</p>
+  <a class="btn" href="itms-apps://apps.apple.com/de/app/intake-kalorienz%C3%A4hler/id6757768955?pt=128030281&ct=iabtest-d&mt=8">Try D</a>
+</div>
+
+<h2 style="font-size:.8125rem;text-transform:uppercase;letter-spacing:.04em;opacity:.6;margin:28px 0 6px">User agent</h2>
+<div id="ua"><code></code></div>
+<p class="note">Copy the user-agent string above and paste it back — it's what the detection in <code>api/go.ts</code> has to match on.</p>
+
+<script>
+  document.querySelector("#ua code").textContent = navigator.userAgent;
+  document.getElementById("b").addEventListener("click", function () {
+    location.href = "https://apps.apple.com/de/app/intake-kalorienz%C3%A4hler/id6757768955?pt=128030281&ct=iabtest-b&mt=8";
+  });
+</script>
+
+</body>
+</html>
