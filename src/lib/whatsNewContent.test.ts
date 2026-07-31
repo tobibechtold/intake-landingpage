@@ -16,12 +16,39 @@ describe("whatsNewContent", () => {
     const entries = getWhatsNewEntries("en");
 
     expect(entries.length).toBeGreaterThan(0);
-    expect(entries[0]?.version).toBe("2.4.7");
+    expect(entries[0]?.version).toBe("2.5.0");
     expect(entries[0]?.locale).toBe("en");
 
     const germanEntries = getWhatsNewEntries("de");
-    expect(germanEntries[0]?.version).toBe("2.4.7");
+    expect(germanEntries[0]?.version).toBe("2.5.0");
     expect(germanEntries[0]?.locale).toBe("de");
+  });
+
+  it("renders the 2.5.0 ingredient logging and BYOK improvements in both locales", () => {
+    const englishEntry = getWhatsNewEntry("2.5.0", "en");
+    const germanEntry = getWhatsNewEntry("2.5.0", "de");
+
+    expect(englishEntry?.title).toBe("What's new in Intake 2.5.0");
+    expect(englishEntry?.publishedAt).toBe("2026-07-31");
+    expect(englishEntry?.summary).toBe(
+      "Log single ingredients, sort your recipes, and enjoy a much better BYOK experience"
+    );
+    expect(englishEntry?.bodyHtml).toContain("break a photo or a text down into its individual ingredients");
+    expect(englishEntry?.bodyHtml).toContain("every ingredient is logged separately");
+    expect(englishEntry?.bodyHtml).toContain("name, date modified, or calories per portion");
+    expect(englishEntry?.bodyHtml).toContain("no longer truncated");
+    expect(englishEntry?.bodyHtml).toContain("switch to a different one right inside the chat");
+
+    expect(germanEntry?.title).toBe("Was ist neu in Intake 2.5.0");
+    expect(germanEntry?.publishedAt).toBe("2026-07-31");
+    expect(germanEntry?.summary).toBe(
+      "Zutaten einzeln loggen, Rezepte sortieren und ein deutlich besseres BYOK-Erlebnis"
+    );
+    expect(germanEntry?.bodyHtml).toContain("in die einzelnen Zutaten");
+    expect(germanEntry?.bodyHtml).toContain("jede Zutat wird einzeln eingetragen");
+    expect(germanEntry?.bodyHtml).toContain("Name, Änderungsdatum oder Kalorien pro Portion");
+    expect(germanEntry?.bodyHtml).toContain("nicht mehr abgeschnitten");
+    expect(germanEntry?.bodyHtml).toContain("auf ein anderes Modell wechseln");
   });
 
   it("renders the 2.4.7 Intake AI onboarding and performance improvements in both locales", () => {
