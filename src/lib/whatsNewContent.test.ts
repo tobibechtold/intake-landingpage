@@ -16,11 +16,11 @@ describe("whatsNewContent", () => {
     const entries = getWhatsNewEntries("en");
 
     expect(entries.length).toBeGreaterThan(0);
-    expect(entries[0]?.version).toBe("2.5.0");
+    expect(entries[0]?.version).toBe("2.5.1");
     expect(entries[0]?.locale).toBe("en");
 
     const germanEntries = getWhatsNewEntries("de");
-    expect(germanEntries[0]?.version).toBe("2.5.0");
+    expect(germanEntries[0]?.version).toBe("2.5.1");
     expect(germanEntries[0]?.locale).toBe("de");
   });
 
