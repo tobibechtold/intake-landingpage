@@ -1,0 +1,29 @@
+---
+import { Check, Minus } from 'lucide-astro';
+
+/**
+ * A single support level in the Intake AI comparison table. Extracted from
+ * IntakeAIPage, where it was a nested React sub-component.
+ *
+ * Pink is deliberate here and not decoration: it distinguishes full support from
+ * partial, so the colour carries the meaning.
+ */
+interface Props {
+  level: 'full' | 'basic' | 'none';
+}
+
+const { level } = Astro.props;
+const isFull = level === 'full';
+---
+<div class="flex gap-3 text-sm leading-6 text-foreground/50">
+  <span
+    class:list={[
+      'mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full',
+      isFull ? 'bg-primary/15 text-primary' : 'bg-muted text-foreground/50',
+    ]}
+    aria-hidden="true"
+  >
+    {isFull ? <Check class="h-4 w-4" /> : <Minus class="h-4 w-4" />}
+  </span>
+  <span><slot /></span>
+</div>

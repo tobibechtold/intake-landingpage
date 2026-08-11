@@ -1,0 +1,59 @@
+---
+import WhatsNewList from '@/components/astro/WhatsNewList.astro';
+import type { ReleaseSummary } from "@/lib/releases";
+
+const CHANGELOG_URL = "https://featurevoting.tobibechtold.dev/app/intake/changelog";
+import { useT } from '@/i18n/t';
+import type { Language } from '@/i18n/translations';
+
+interface Props {
+  lang: Language;
+  releases: ReleaseSummary[];
+}
+
+const { lang, releases } = Astro.props;
+const t = useT(lang);
+
+---
+<div class="min-h-screen">
+      <main class="section-gradient min-h-screen pt-28 pb-20">
+        <div class="container space-y-10">
+          <div class="max-w-3xl space-y-4">
+            <p class="section-kicker">
+              {lang === "de" ? "Produktupdates" : "Product updates"}
+            </p>
+            <h1 class="text-4xl text-foreground md:text-6xl">
+              {lang === "de" ? "Was ist neu" : "What's New"}
+            </h1>
+            <p class="text-base text-muted-foreground md:text-lg">
+              {lang === "de"
+                ? "Neue Funktionen, Verbesserungen und kleine Details zu jeder Version ab 2.1.1."
+                : "New features, improvements, and release notes for every version starting with 2.1.1."}
+            </p>
+          </div>
+
+          <section class="glass-card flex flex-col gap-4 rounded-xl border border-white/[0.08] p-6 md:flex-row md:items-center md:justify-between">
+            <div class="max-w-2xl space-y-2">
+              <h2 class="text-xl font-semibold text-foreground">
+                {lang === "de" ? "Vollständigen Changelog ansehen" : "View the full changelog"}
+              </h2>
+              <p class="text-sm text-muted-foreground md:text-base">
+                {lang === "de"
+                  ? "Diese Seite hebt größere Produktupdates hervor. Den vollständigen chronologischen Changelog findest du im Feature-Voting-Tool."
+                  : "This page highlights bigger product updates. The full chronological changelog lives in the feature voting tool."}
+              </p>
+            </div>
+            <a
+              href={CHANGELOG_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary"
+            >
+              {lang === "de" ? "Changelog öffnen" : "Open changelog"}
+            </a>
+          </section>
+
+          <WhatsNewList entries={releases} lang={lang} />
+        </div>
+      </main>
+    </div>

@@ -1,4 +1,4 @@
-import { Language } from "@/i18n/translations";
+import { type Language } from "@/i18n/translations";
 
 export const PROMO_VIDEO_SOURCES_BY_LANGUAGE: Record<Language, { webm: string; mp4: string }> = {
   de: {

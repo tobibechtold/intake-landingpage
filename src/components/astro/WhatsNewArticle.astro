@@ -1,0 +1,35 @@
+---
+import { buildLocalizedPath } from '@/lib/localeRouting';
+import type { ReleaseSummary } from '@/lib/releases';
+import type { Language } from '@/i18n/translations';
+
+interface Props {
+  entry: ReleaseSummary;
+  lang: Language;
+}
+
+const { entry, lang } = Astro.props;
+---
+<article class="space-y-8">
+  <div class="space-y-4">
+    <a href={buildLocalizedPath('whatsNewIndex', lang)} class="btn-ghost">
+      {lang === 'de' ? 'Zur Übersicht' : 'Back to overview'}
+    </a>
+    <p class="section-kicker">Version {entry.version}</p>
+    <h1 class="text-3xl text-foreground md:text-5xl">{entry.title}</h1>
+    <p class="max-w-2xl text-base text-foreground/50 md:text-lg">{entry.summary}</p>
+  </div>
+
+  <img
+    src={entry.coverImage}
+    alt={entry.title}
+    class="w-full rounded-xl border border-white/[0.08] bg-white/[0.02] object-cover"
+  />
+
+  {/* The markdown body arrives as a slot from the route, rendered by Astro. */}
+  <div
+    class="prose prose-invert max-w-none prose-headings:text-foreground prose-h2:mt-12 prose-h2:text-3xl prose-h2:font-semibold prose-h2:tracking-tight prose-p:text-base prose-p:text-foreground/50 prose-a:text-primary prose-strong:text-foreground prose-li:text-foreground/50 prose-img:rounded-xl prose-img:border prose-img:border-white/[0.08] [&_figure]:my-8 [&_video]:block [&_video]:w-full md:[&_video]:max-w-[34rem] [&_video]:rounded-xl [&_video]:border [&_video]:border-white/[0.08]"
+  >
+    <slot />
+  </div>
+</article>

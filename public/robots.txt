@@ -16,4 +16,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://www.getintake.de/sitemap.xml
+Sitemap: https://www.getintake.de/sitemap-index.xml

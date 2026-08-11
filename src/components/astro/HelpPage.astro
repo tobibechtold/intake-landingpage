@@ -1,0 +1,124 @@
+---
+import { ArrowRight, KeyRound, Search, X, ChevronDown } from 'lucide-astro';
+import { FAQ_SECTIONS_BY_LANGUAGE } from '@/lib/faqData';
+import { HELP_FAQ_COPY } from '@/lib/helpCopy';
+import { buildLocalizedPath } from '@/lib/localeRouting';
+import { useT } from '@/i18n/t';
+import type { Language } from '@/i18n/translations';
+
+/**
+ * The FAQ is native <details> now rather than a Radix Accordion driven by React state.
+ * Two consequences worth keeping:
+ *   - every answer is in the DOM, so the 26 long-tail Q&A are always crawlable without
+ *     the forceMount workaround the Radix version needed;
+ *   - the page works with JavaScript disabled, just unfiltered.
+ */
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+const t = useT(lang);
+const faqSections = FAQ_SECTIONS_BY_LANGUAGE[lang];
+const copy = HELP_FAQ_COPY[lang];
+const homePath = buildLocalizedPath('home', lang);
+const guidePath = buildLocalizedPath('byokGuide', lang);
+---
+<main class="pb-24 pt-32 md:pt-36">
+  <section class="section-gradient py-20">
+    <div class="container max-w-5xl">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="section-kicker justify-center">{t('helpNav')}</p>
+        <h1 class="mt-4 text-4xl text-foreground md:text-6xl">{t('helpTitle')}</h1>
+        <p class="mt-4 text-base text-foreground/50 md:text-lg">{t('helpSubtitle')}</p>
+      </div>
+
+      <a
+        href={guidePath}
+        class="group mx-auto mt-10 flex max-w-3xl items-start gap-4 rounded-xl border border-white/[0.08] bg-white/[0.025] p-6 text-left transition-colors hover:border-white/[0.16] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55"
+      >
+        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-white/[0.05] text-foreground/70">
+          <KeyRound class="h-6 w-6" aria-hidden="true" />
+        </span>
+        <span class="min-w-0 flex-1">
+          <span class="section-kicker">{copy.guideKicker}</span>
+          <span class="mt-2 block text-xl font-semibold text-foreground">{copy.guideTitle}</span>
+          <span class="mt-2 block text-sm leading-6 text-foreground/50">{copy.guideBody}</span>
+          <span class="btn-secondary mt-4 w-fit">
+            {copy.guideCta}
+            <ArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+          </span>
+        </span>
+      </a>
+
+      <div class="mx-auto mt-10 max-w-3xl">
+        <label for="faq-search" class="sr-only">{copy.searchLabel}</label>
+        <div class="relative">
+          <Search class="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-foreground/40" />
+          <input
+            id="faq-search"
+            data-faq-search
+            type="search"
+            placeholder={copy.searchPlaceholder}
+            class="h-12 w-full rounded-lg border border-white/[0.08] bg-white/[0.02] pl-11 pr-12 text-sm text-foreground placeholder:text-foreground/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55"
+          />
+          <button
+            type="button"
+            data-faq-clear
+            hidden
+            aria-label={copy.clearSearch}
+            class="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-lg text-foreground/50 transition-colors hover:bg-white/[0.06] hover:text-foreground"
+          >
+            <X class="h-4 w-4" />
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-10 space-y-4">
+        {faqSections.map((section) => (
+          <details data-faq-section data-faq-title={section.title} class="group rounded-xl border border-white/[0.08] bg-white/[0.02] px-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between py-5 text-left text-lg font-semibold text-foreground [&::-webkit-details-marker]:hidden">
+              <span>{section.title}</span>
+              <ChevronDown class="h-5 w-5 shrink-0 text-foreground/40 transition-transform group-open:rotate-180" />
+            </summary>
+            <div class="pb-5">
+              {section.items.map((item) => (
+                <details data-faq-item class="group/item border-t border-white/[0.06]">
+                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 text-left text-sm font-semibold text-foreground [&::-webkit-details-marker]:hidden">
+                    <span>{item.question}</span>
+                    <ChevronDown class="h-4 w-4 shrink-0 text-foreground/40 transition-transform group-open/item:rotate-180" />
+                  </summary>
+                  <p class="pb-4 text-sm leading-relaxed text-foreground/50">{item.answer}</p>
+                </details>
+              ))}
+            </div>
+          </details>
+        ))}
+
+        <div
+          data-faq-empty
+          hidden
+          class="rounded-xl border border-dashed border-white/[0.08] bg-white/[0.02] p-8 text-center"
+        >
+          <h2 class="text-xl font-semibold text-foreground">{copy.noResultsTitle}</h2>
+          <p class="mt-2 text-sm leading-relaxed text-foreground/50">{copy.noResultsBody}</p>
+        </div>
+      </div>
+
+      <div class="mt-12 rounded-xl border border-white/[0.08] bg-white/[0.025] p-8 text-center">
+        <p class="section-kicker justify-center">{t('download')}</p>
+        <h2 class="mt-3 text-2xl font-semibold text-foreground md:text-3xl">{t('helpCtaTitle')}</h2>
+        <p class="mt-3 text-sm leading-6 text-foreground/50 md:text-base">{t('helpCtaDescription')}</p>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <a href={`${homePath}#hero`} class="trust-chip-link">{t('helpCtaButton')}</a>
+          <a href={buildLocalizedPath('features', lang)} class="trust-chip-link">{t('featuresNav')}</a>
+          <a href={buildLocalizedPath('comparisons', lang)} class="trust-chip-link">{t('comparisonsNav')}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+  import '@/scripts/faqSearch';
+</script>

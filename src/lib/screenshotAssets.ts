@@ -1,4 +1,4 @@
-import { Language } from "@/i18n/translations";
+import { type Language } from "@/i18n/translations";
 
 export type ScreenshotAssetKey =
   | "onboarding"

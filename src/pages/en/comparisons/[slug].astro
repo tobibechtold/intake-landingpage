@@ -1,0 +1,22 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SiteShell from '@/components/astro/SiteShell.astro';
+import ComparisonDetailPage from '@/components/astro/ComparisonDetailPage.astro';
+import { pageProps } from '@/lib/pageSeo';
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'yazio-alternative' } },
+    { params: { slug: 'fddb-alternative' } },
+  ];
+}
+
+const { slug } = Astro.params;
+const route = `/en/comparisons/${slug}`;
+const { lang } = pageProps(route);
+---
+<BaseLayout route={route}>
+  <SiteShell route={route}>
+    <ComparisonDetailPage lang={lang} slug={slug!} />
+  </SiteShell>
+</BaseLayout>

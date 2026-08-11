@@ -1,0 +1,37 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import StructuredData from '@/components/astro/StructuredData.astro';
+import { releaseArticle } from '@/lib/structuredData';
+import SiteShell from '@/components/astro/SiteShell.astro';
+import WhatsNewEntry from '@/components/astro/WhatsNewEntry.astro';
+import { pageProps } from '@/lib/pageSeo';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('whatsNew', (entry) => entry.id.endsWith('/en'));
+  return entries.map((entry) => ({ params: { version: entry.data.version }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const route = `/en/whats-new/${entry.data.version}`;
+const { lang } = pageProps(route);
+
+const summary = {
+  version: entry.data.version,
+  publishedAt: entry.data.publishedAt,
+  title: entry.data.title,
+  summary: entry.data.summary,
+  coverImage: entry.data.coverImage.src,
+  highlights: entry.data.highlights,
+  href: route,
+};
+---
+<BaseLayout route={route} title={`${entry.data.title} | Intake`} description={entry.data.summary}>
+  <StructuredData schema={releaseArticle(lang, { ...summary, url: route })} />
+  <SiteShell route={route}>
+    <WhatsNewEntry lang={lang} entry={summary}>
+      <Content />
+    </WhatsNewEntry>
+  </SiteShell>
+</BaseLayout>

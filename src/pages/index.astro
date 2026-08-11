@@ -1,0 +1,51 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import StructuredData from '@/components/astro/StructuredData.astro';
+import { softwareApplication, organization } from '@/lib/structuredData';
+import { pageProps } from '@/lib/pageSeo';
+import { loadReleases } from '@/lib/loadReleases';
+
+// Static sections — rendered to HTML at build time, zero JS.
+import MobileIntakeAIBanner from '@/components/astro/MobileIntakeAIBanner.astro';
+import PressMentions from '@/components/astro/PressMentions.astro';
+import WhySwitch from '@/components/astro/WhySwitch.astro';
+import TopicPages from '@/components/astro/TopicPages.astro';
+import ProofStories from '@/components/astro/ProofStories.astro';
+import IntakeAITeaser from '@/components/astro/IntakeAITeaser.astro';
+import Features from '@/components/astro/Features.astro';
+import ProductUpdatesPreview from '@/components/astro/ProductUpdatesPreview.astro';
+import FeatureVoting from '@/components/astro/FeatureVoting.astro';
+import CTA from '@/components/astro/CTA.astro';
+import Footer from '@/components/astro/Footer.astro';
+
+import Header from '@/components/astro/Header.astro';
+import Hero from '@/components/astro/Hero.astro';
+import Reviews from '@/components/astro/Reviews.astro';
+import ScreenshotGallery from '@/components/astro/ScreenshotGallery.astro';
+
+const route = '/';
+const { lang, alternateHref } = pageProps(route);
+const releases = await loadReleases(lang);
+---
+<BaseLayout route={route}>
+  <StructuredData schema={[softwareApplication(lang, route), organization(lang)]} />
+  <div class="min-h-screen">
+    <Header lang={lang} alternateHref={alternateHref} />
+    <main>
+      <Hero lang={lang} />
+      <MobileIntakeAIBanner lang={lang} />
+      <PressMentions lang={lang} />
+      <WhySwitch lang={lang} />
+      <TopicPages lang={lang} />
+      <ProofStories lang={lang} />
+      <IntakeAITeaser lang={lang} />
+      <Reviews lang={lang} />
+      <ScreenshotGallery lang={lang} />
+      <Features lang={lang} />
+      <ProductUpdatesPreview lang={lang} releases={releases} />
+      <FeatureVoting lang={lang} />
+      <CTA lang={lang} />
+    </main>
+    <Footer lang={lang} />
+  </div>
+</BaseLayout>

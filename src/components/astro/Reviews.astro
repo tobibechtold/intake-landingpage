@@ -1,0 +1,85 @@
+---
+import { Star } from 'lucide-astro';
+import { REVIEWS, REVIEW_CLAMP_THRESHOLD } from '@/lib/reviews';
+import { formatRating, ratingLabel } from '@/lib/appFacts';
+import { useT } from '@/i18n/t';
+import type { Language } from '@/i18n/translations';
+
+/**
+ * The only interactive part was a per-card "show more" toggle backed by useState. A
+ * <details> does the same with no JavaScript: the clamped paragraph lives inside the
+ * <summary> so it is always visible, and `group-open:` lifts the clamp when expanded.
+ */
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+const t = useT(lang);
+---
+<section class="section-gradient py-24">
+  <div class="container">
+    <div class="mb-16 text-center">
+      <h2 class="reveal mb-4 text-3xl text-foreground md:text-4xl">{t('reviewsTitle')}</h2>
+      <p class="reveal mx-auto max-w-xl text-lg text-foreground/50">{t('reviewsSubtitle')}</p>
+    </div>
+
+    <div class="mx-auto mb-12 max-w-3xl rounded-xl border border-white/[0.08] bg-white/[0.025] px-6 py-6 text-left md:px-8">
+      <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div>
+          <p class="section-kicker">{ratingLabel(lang)}</p>
+          <h3 class="mt-2 text-2xl font-semibold text-foreground">{t('reviewsSummaryTitle')}</h3>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg border border-white/[0.08] bg-white/[0.02] px-4 py-2">
+          <Star class="h-5 w-5 fill-primary text-primary" />
+          <span class="text-lg font-semibold text-foreground">{formatRating(lang)}</span>
+          <span class="text-sm text-foreground/50">App Store</span>
+        </div>
+      </div>
+      <p class="mt-4 text-sm leading-6 text-foreground/50">{t('reviewsSummaryBody')}</p>
+    </div>
+
+    <div class="reveal grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      {REVIEWS.map((review) => {
+        const isLong = review.text.length > REVIEW_CLAMP_THRESHOLD;
+        return (
+          <div class="feature-card flex h-full flex-col">
+            <div class="flex gap-0.5">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star
+                  class:list={[
+                    'h-4 w-4',
+                    i < review.rating
+                      ? 'fill-primary text-primary'
+                      : 'fill-transparent text-foreground/30',
+                  ]}
+                />
+              ))}
+            </div>
+            <h3 class="mb-2 mt-3 text-lg font-semibold text-foreground">{review.title}</h3>
+
+            {isLong ? (
+              <details class="group mb-2">
+                <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                  <p class="text-sm leading-relaxed text-foreground/50 line-clamp-4 group-open:line-clamp-none">
+                    {review.text}
+                  </p>
+                  <span class="btn-ghost mt-2 group-open:hidden">{t('showMore')}</span>
+                  <span class="btn-ghost mt-2 hidden group-open:inline-flex">{t('showLess')}</span>
+                </summary>
+              </details>
+            ) : (
+              <p class="mb-2 text-sm leading-relaxed text-foreground/50">{review.text}</p>
+            )}
+
+            <div class="mt-auto text-xs text-foreground/40">
+              <span class="font-medium">{review.author}</span>
+              <span class="mx-2">•</span>
+              <span>{review.date}</span>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

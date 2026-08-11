@@ -7,48 +7,56 @@
     --background: 240 16% 5%;
     --foreground: 0 0% 96%;
 
-    --card: 240 11% 10%;
+    --card: 240 10% 7%;
     --card-foreground: 0 0% 96%;
 
-    --popover: 240 11% 10%;
+    --popover: 240 10% 7%;
     --popover-foreground: 0 0% 96%;
 
     --primary: 338 92% 63%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 24 95% 59%;
-    --secondary-foreground: 0 0% 100%;
+    /* shadcn treats `secondary` as a neutral surface (progress tracks, slider rails,
+       badge backgrounds), but this theme had it set to brand orange — so those
+       controls rendered orange. Refined Dark drops the orange entirely. */
+    --secondary: 240 8% 11%;
+    --secondary-foreground: 0 0% 96%;
 
-    --muted: 240 8% 16%;
-    --muted-foreground: 240 5% 68%;
+    --muted: 240 8% 11%;
+    --muted-foreground: 240 5% 58%;
 
-    --accent: 240 8% 16%;
+    --accent: 240 8% 11%;
     --accent-foreground: 0 0% 96%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 7% 22%;
-    --input: 240 7% 22%;
+    --border: 240 7% 13%;
+    --input: 240 7% 13%;
     --ring: 338 92% 63%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
-    --glass-bg: 240 11% 10%;
-    --glass-border: 338 92% 63% / 0.18;
-    --glow-primary: 338 92% 63%;
+    /* Refined Dark token retune. These carry the redesign to the 209 existing uses of
+       text-muted-foreground / border-border / bg-card across all 12 pages without
+       touching their markup:
+         card/popover 10% -> 7%   quieter surfaces
+         muted        16% -> 11%
+         muted-fg     68% -> 58%  lower contrast body copy, still 6.4:1 (passes AA)
+         border       22% -> 13%  hairline instead of a visible frame
+       muted-foreground was deliberately not taken lower: 50% is 4.9:1 and 45% fails AA. */
 
-    --text-primary: 0 0% 100%;
-    --text-secondary: 0 0% 70%;
-    --text-tertiary: 0 0% 45%;
+    /* --glass-bg, --glass-border, --glow-primary and the --text-* trio were removed:
+       nothing referenced them, and the glow tokens described an effect Refined Dark
+       does not use. The sidebar tokens below are read by tailwind.config.ts. */
 
-    --sidebar-background: 240 11% 10%;
+    --sidebar-background: 240 10% 7%;
     --sidebar-foreground: 0 0% 96%;
     --sidebar-primary: 338 92% 63%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 8% 16%;
+    --sidebar-accent: 240 8% 11%;
     --sidebar-accent-foreground: 0 0% 96%;
-    --sidebar-border: 240 7% 22%;
+    --sidebar-border: 240 7% 13%;
     --sidebar-ring: 338 92% 63%;
   }
 
@@ -62,88 +70,228 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* Refined Dark: headings are semibold with tight tracking rather than bold at
+     default tracking. Set once here so every h1-h3 inherits it and component
+     markup does not need per-heading utility classes. Components may still
+     override font-weight where a specific heading needs it. */
+  h1,
+  h2,
+  h3 {
+    @apply font-semibold tracking-[-0.035em];
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
 }
 
+/* ---------------------------------------------------------------------------
+   Refined Dark
+   ---------------------------------------------------------------------------
+   Same near-black + pink identity, with the volume turned down. The rules:
+
+   1. No glow. Shadows are black and describe elevation, never colour.
+   2. Surfaces are white-alpha over the background, not tinted cards with pink
+      borders. Depth comes from a hairline border, not a halo.
+   3. Pink is an accent, not a surface treatment — reserved for small marks and
+      one focal element per view. The primary button is white.
+   4. Headings are semibold with tight tracking, not bold at default tracking.
+
+   These primitives carry the redesign across 13 pages; prefer changing them over
+   restyling component markup.
+   --------------------------------------------------------------------------- */
 @layer components {
   .glass-card {
-    @apply rounded-[2rem] border border-primary/15 bg-card/80 backdrop-blur-xl;
-    box-shadow:
-      0 0 30px -12px hsl(var(--primary) / 0.18),
-      0 25px 50px -16px rgb(0 0 0 / 0.4);
-  }
-
-  .text-glow {
-    text-shadow: 0 0 40px hsl(var(--primary) / 0.5);
+    @apply rounded-xl border border-white/[0.08] bg-white/[0.025] backdrop-blur-xl;
+    box-shadow: 0 18px 40px -28px rgb(0 0 0 / 0.7);
   }
 
   .feature-card {
-    @apply glass-card p-6 transition-all duration-300;
+    @apply glass-card p-6 transition-colors duration-200;
   }
 
   .feature-card:hover {
-    @apply -translate-y-1 border-primary/30;
-    box-shadow:
-      0 0 40px -12px hsl(var(--primary) / 0.22),
-      0 25px 60px -22px rgb(0 0 0 / 0.45);
+    @apply border-white/[0.16] bg-white/[0.04];
   }
 
+  /* Kept as a class because 3 files use it, but it is a flat accent now — the
+     pink-to-orange clip gradient was the single loudest thing on the page. */
   .gradient-text {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(24 95% 65%) 100%);
+    @apply text-primary;
   }
 
   .hero-gradient {
     background:
-      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(var(--primary) / 0.16) 0%, transparent 60%),
-      radial-gradient(circle at 85% 20%, hsl(24 95% 59% / 0.12), transparent 30%),
+      radial-gradient(ellipse 70% 45% at 50% -25%, hsl(var(--primary) / 0.09) 0%, transparent 62%),
       hsl(var(--background));
   }
 
+  /* Sections are separated by a hairline, not a coloured wash. 15 files use this,
+     so the per-section pink radials were stacking up down the page. */
   .section-gradient {
-    background:
-      radial-gradient(ellipse 60% 40% at 50% 100%, hsl(var(--primary) / 0.08) 0%, transparent 50%),
-      hsl(var(--background));
+    @apply border-t border-white/[0.06];
+    background: hsl(var(--background));
+  }
+
+  /* These live in @layer components, not @layer utilities, on purpose. Tailwind emits
+     components before utilities, so an atomic class at a call site (px-0, w-9, px-6)
+     overrides them. Defined as utilities they won instead, and every call-site override
+     was silently ignored — that is why the icon-only download button collapsed to 0px
+     wide: its px-0 lost to .btn-primary's px-5. */
+  .section-kicker {
+    @apply inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/45;
+  }
+  .section-kicker::before {
+    content: "";
+    @apply inline-block h-1 w-1 shrink-0 rounded-full bg-primary;
+  }
+  /* Responsive comparison table.
+     Below md the rows reflow into stacked cards from a single copy of the markup: the
+     header row is hidden and each cell announces its column through data-label. This
+     keeps the comparison prose in the HTML once, rather than shipping a separate mobile
+     card list alongside the table and repeating every point. */
+  .comparison-table th[scope='row'] {
+    @apply font-semibold;
+  }
+
+  @media (max-width: 767px) {
+    .comparison-table thead {
+      @apply sr-only;
+    }
+
+    .comparison-table tbody,
+    .comparison-table tr,
+    .comparison-table th[scope='row'],
+    .comparison-table td {
+      @apply block;
+    }
+
+    .comparison-table tr {
+      @apply mb-4 rounded-xl border border-white/[0.08] bg-white/[0.025] p-5;
+    }
+
+    .comparison-table tr:last-child {
+      @apply mb-0;
+    }
+
+    .comparison-table th[scope='row'] {
+      @apply px-0 pb-0 pt-0 text-base leading-6 text-foreground;
+    }
+
+    .comparison-table td {
+      @apply mt-3 rounded-lg border border-white/[0.08] bg-white/[0.02] px-4 py-3 text-foreground/70;
+    }
+
+    .comparison-table td.is-emphasis {
+      @apply border-primary/20 bg-primary/[0.06] text-foreground;
+    }
+
+    .comparison-table td::before {
+      content: attr(data-label);
+      @apply mb-2 block text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/45;
+    }
+
+    .comparison-table td.is-emphasis::before {
+      @apply text-primary;
+    }
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition-colors hover:bg-foreground/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+  .btn-secondary {
+    @apply btn-primary;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+  .badge-accent {
+    @apply inline-flex items-center rounded-md border border-primary/20 bg-primary/[0.08] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-primary;
+  }
+  .trust-chip {
+    @apply inline-flex items-center rounded-lg border border-white/[0.08] bg-white/[0.03] px-3.5 py-1.5 text-[13px] font-medium text-foreground/80;
+  }
+  .trust-chip-link {
+    @apply inline-flex items-center rounded-lg border border-white/[0.08] bg-white/[0.03] px-3.5 py-1.5 text-[13px] font-medium text-foreground/80 transition-colors duration-200 hover:border-white/[0.18] hover:bg-white/[0.06] hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+  .proof-story-card {
+    @apply grid items-center gap-8 rounded-xl border border-white/[0.08] bg-white/[0.025] p-6 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1fr)] md:p-8;
+  }
+  .proof-story-card--text-only {
+    @apply md:grid-cols-1;
+  }
+  .proof-story-media {
+    @apply mx-auto w-full max-w-[320px];
+  }
+  .proof-story-copy {
+    @apply max-w-2xl;
+  }
+  .proof-story-copy--full {
+    max-width: none;
+  }
+}
+
+/* Scroll reveal, without JavaScript.
+   The previous implementation paired a permanent `opacity-0` with an
+   IntersectionObserver, so every section using it was invisible until React
+   hydrated — and stayed blank entirely if the bundle failed or was slow. That
+   shipped: the homepage CTA and four other sections rendered as whitespace.
+   Content is visible by default here; the animation is pure enhancement for
+   browsers with scroll-driven timelines, and is skipped for reduced-motion. */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 
 @layer utilities {
+  .reveal {
+    opacity: 1;
+  }
+
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal {
+        animation: reveal-up linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 60%;
+      }
+    }
+  }
+
   .text-balance {
     text-wrap: balance;
   }
 
-  .section-kicker {
-    @apply text-sm font-medium uppercase tracking-[0.28em] text-primary;
-  }
+  /* Quieter and smaller: a label, not a headline. The pink survives as the dot
+     rendered by ::before, which is the only accent most sections now carry. */
 
-  .trust-chip {
-    @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-foreground;
-  }
 
-  .trust-chip-link {
-    @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/45 hover:bg-primary/10 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
-  }
+  /* Refined Dark: the primary action is white, not pink. Pink stays an accent so
+     that when it does appear it means something. */
 
-  .proof-story-card {
-    @apply grid items-center gap-8 rounded-[2rem] border border-border/60 bg-card/70 p-6 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1fr)] md:p-8;
-  }
+  /* Deliberately identical to .btn-primary. The previous hairline-outline treatment was
+     indistinguishable from the cards it usually sat on, so there is one filled button
+     style now. Kept as a separate name so call sites can still express intent, and so a
+     distinct secondary treatment can be reintroduced in one place if ever wanted. */
 
-  .proof-story-card--text-only {
-    @apply md:grid-cols-1;
-  }
+  /* Tertiary: an inline affordance inside a card or block, not a standalone action.
+     Used for "Update lesen", "Zur Übersicht" and similar. The arrow is supplied by
+     the markup so it can be omitted where it would be noise. */
 
-  .proof-story-media {
-    @apply mx-auto w-full max-w-[320px];
-  }
+  /* Pink is reserved for meaning, and a badge is meaning: "new", "included", "now
+     available". Everything decorative went neutral. */
 
-  .proof-story-copy {
-    @apply max-w-2xl;
-  }
 
-  .proof-story-copy--full {
-    max-width: none;
-  }
+
+
+
+
+
 }

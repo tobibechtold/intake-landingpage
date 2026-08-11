@@ -1,0 +1,135 @@
+---
+import logo from '@/assets/logo-hero.webp';
+import { Download, Menu, X } from 'lucide-astro';
+import { buildLocalizedPath } from '@/lib/localeRouting';
+import { useT } from '@/i18n/t';
+import type { Language } from '@/i18n/translations';
+
+/**
+ * Pure-HTML header. The mobile menu was a Radix Sheet, which pulled react-dom onto every
+ * page for a drawer; it is a native <dialog> now, driven by src/scripts/nav.ts.
+ *
+ * The download link renders its safe fallback (#hero) and is upgraded to the store URL
+ * by that script once the user agent is known, so it is never broken before hydration.
+ */
+interface Props {
+  lang: Language;
+  alternateHref: string | null;
+}
+
+const { lang, alternateHref } = Astro.props;
+const t = useT(lang);
+
+const homePath = buildLocalizedPath('home', lang);
+const downloadFallback = `${homePath}#hero`;
+
+const navItems = [
+  { label: t('featuresNav'), href: buildLocalizedPath('features', lang) },
+  { label: t('intakeAINav'), href: buildLocalizedPath('intakeAI', lang) },
+  { label: t('comparisonsNav'), href: buildLocalizedPath('comparisons', lang) },
+  { label: t('helpNav'), href: buildLocalizedPath('help', lang) },
+  { label: t('updatesNav'), href: buildLocalizedPath('whatsNewIndex', lang) },
+];
+
+const desktopNavClass =
+  'px-2 text-sm font-medium text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background';
+const mobileNavClass =
+  'rounded-lg border border-white/[0.08] bg-white/[0.02] px-4 py-3 text-base font-medium text-foreground transition-colors hover:border-white/[0.16]';
+---
+<header class="fixed left-0 right-0 top-0 z-50">
+  <div
+    data-site-header-shell
+    class="container mt-4 flex h-16 items-center justify-between rounded-full border border-white/[0.08] bg-background/80 px-5 backdrop-blur-xl"
+  >
+    <div data-header-left-cluster class="flex min-w-0 items-center gap-6 lg:gap-8">
+      <a href={homePath} class="flex items-center gap-3">
+        <img src={logo.src} alt="Intake" class="h-8 w-8" />
+        <span class="text-lg font-semibold text-foreground">Intake</span>
+      </a>
+      <div data-header-desktop-nav class="hidden items-center gap-4 lg:flex">
+        {navItems.map((item) => (
+          <div class="flex items-center">
+            <a href={item.href} class={desktopNavClass}>{item.label}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div data-header-right-cluster class="flex items-center gap-3">
+      {alternateHref && (
+        <a
+          href={alternateHref}
+          class="inline-flex items-center gap-1.5 rounded-lg border border-white/[0.08] px-2.5 py-1.5 text-[13px] font-medium transition-colors hover:border-white/[0.18]"
+          aria-label={`Switch to ${lang === 'en' ? 'German' : 'English'}`}
+          data-language-switch={lang === 'en' ? 'de' : 'en'}
+        >
+          <span class={lang === 'en' ? 'text-foreground' : 'text-muted-foreground'}>EN</span>
+          <span class="text-muted-foreground/50">/</span>
+          <span class={lang === 'de' ? 'text-foreground' : 'text-muted-foreground'}>DE</span>
+        </a>
+      )}
+
+      {/* Icon-only until the label has room: below lg the EN/DE toggle and the menu
+          button are also competing for the bar, and the labelled version squeezed them.
+          The drawer still offers a full-width labelled download. */}
+      <a
+        href={downloadFallback}
+        data-download-link
+        data-lang={lang}
+        data-cta-location="navbar"
+        aria-label={t('download')}
+        class="btn-primary h-9 w-9 px-0 lg:w-auto lg:px-4"
+      >
+        <Download class="h-4 w-4 lg:hidden" aria-hidden="true" />
+        <span class="hidden lg:inline">{t('download')}</span>
+      </a>
+
+      <button
+        type="button"
+        data-nav-open
+        class="-mr-1.5 inline-flex h-10 w-10 items-center justify-center rounded-lg text-foreground/70 transition-colors hover:bg-white/[0.06] hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 lg:hidden"
+        aria-label={lang === 'de' ? 'Navigation öffnen' : 'Open navigation'}
+      >
+        <Menu class="h-5 w-5" />
+      </button>
+    </div>
+  </div>
+</header>
+
+<dialog
+  data-nav-dialog
+  class="m-0 ml-auto h-full max-h-none w-[85vw] max-w-sm border-l border-white/[0.08] bg-background/95 p-6 text-foreground backdrop:bg-black/60 backdrop:backdrop-blur-sm"
+  aria-label={lang === 'de' ? 'Navigation' : 'Navigation'}
+>
+  <div class="flex items-center justify-between">
+    <a href={homePath} class="flex items-center gap-3">
+      <img src={logo.src} alt="Intake" class="h-8 w-8" />
+      <span class="text-lg font-semibold text-foreground">Intake</span>
+    </a>
+    <button
+      type="button"
+      data-nav-close
+      class="-mr-2 inline-flex h-10 w-10 items-center justify-center rounded-lg text-foreground/70 transition-colors hover:bg-white/[0.06] hover:text-foreground"
+      aria-label={lang === 'de' ? 'Navigation schließen' : 'Close navigation'}
+    >
+      <X class="h-5 w-5" />
+    </button>
+  </div>
+
+  <nav class="mt-8 flex flex-col gap-3">
+    {navItems.map((item) => <a href={item.href} class={mobileNavClass}>{item.label}</a>)}
+    <a
+      href={downloadFallback}
+      data-download-link
+      data-lang={lang}
+      data-cta-location="navbar"
+      class="btn-primary mt-2 w-full"
+    >
+      {t('download')}
+    </a>
+  </nav>
+</dialog>
+
+<script>
+  import '@/scripts/nav';
+</script>

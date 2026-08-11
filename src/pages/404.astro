@@ -1,0 +1,14 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SiteShell from '@/components/astro/SiteShell.astro';
+import NotFound from '@/components/astro/NotFound.astro';
+import { pageProps } from '@/lib/pageSeo';
+
+const route = '/404';
+const { lang } = pageProps(route);
+---
+<BaseLayout route={route}>
+  <SiteShell route={route}>
+    <NotFound lang={lang} />
+  </SiteShell>
+</BaseLayout>

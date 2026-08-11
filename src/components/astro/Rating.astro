@@ -1,0 +1,23 @@
+---
+import { Star } from 'lucide-astro';
+import { formatRating } from '@/lib/appFacts';
+import type { Language } from '@/i18n/translations';
+
+interface Props {
+  label: string;
+  lang: Language;
+}
+
+const { label, lang } = Astro.props;
+---
+<div class="inline-flex flex-col items-center px-5 py-1">
+  <div class="mb-1.5 flex items-center gap-0.5">
+    {Array.from({ length: 5 }).map(() => (
+      <Star class="h-3 w-3 fill-foreground text-foreground" />
+    ))}
+  </div>
+  <div class="flex items-center">
+    <span class="mx-1 text-3xl font-bold text-foreground">{formatRating(lang)}</span>
+  </div>
+  <span class="mt-1 text-[10px] uppercase tracking-wider text-foreground">{label}</span>
+</div>

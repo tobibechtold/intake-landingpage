@@ -1,0 +1,41 @@
+---
+import { buildLocalizedPath } from '@/lib/localeRouting';
+import type { ReleaseSummary } from '@/lib/releases';
+import type { Language } from '@/i18n/translations';
+
+interface Props {
+  entries: ReleaseSummary[];
+  lang: Language;
+}
+
+const { entries, lang } = Astro.props;
+---
+<div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+  {entries.map((entry) => (
+    <a
+      href={buildLocalizedPath('whatsNewEntry', lang, entry.version)}
+      class="group block rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-4 focus-visible:ring-offset-background"
+    >
+      <article class="glass-card overflow-hidden border border-transparent transition-colors group-hover:border-white/[0.16] group-focus-visible:border-white/[0.16]">
+        <img src={entry.coverImage} alt={entry.title} class="h-56 w-full object-cover" />
+        <div class="space-y-5 p-6">
+          <div class="space-y-2">
+            <p class="section-kicker">Version {entry.version}</p>
+            <h2 class="text-2xl font-semibold text-foreground">{entry.title}</h2>
+            <p class="text-sm text-foreground/50">{entry.summary}</p>
+          </div>
+
+          {entry.highlights.length > 0 && (
+            <ul class="list-disc space-y-1.5 pl-5 text-sm leading-6 text-foreground/50 marker:text-primary/60">
+              {entry.highlights.map((highlight) => <li>{highlight}</li>)}
+            </ul>
+          )}
+
+          <span class="btn-secondary w-fit">
+            {lang === 'de' ? 'Mehr erfahren' : 'Learn more'}
+          </span>
+        </div>
+      </article>
+    </a>
+  ))}
+</div>

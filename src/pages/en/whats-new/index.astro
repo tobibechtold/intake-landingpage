@@ -1,0 +1,16 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SiteShell from '@/components/astro/SiteShell.astro';
+import WhatsNewIndex from '@/components/astro/WhatsNewIndex.astro';
+import { pageProps } from '@/lib/pageSeo';
+import { loadReleases } from '@/lib/loadReleases';
+
+const route = '/en/whats-new';
+const { lang } = pageProps(route);
+const releases = await loadReleases(lang);
+---
+<BaseLayout route={route}>
+  <SiteShell route={route}>
+    <WhatsNewIndex lang={lang} releases={releases} />
+  </SiteShell>
+</BaseLayout>

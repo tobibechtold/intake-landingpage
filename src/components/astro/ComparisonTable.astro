@@ -1,0 +1,84 @@
+---
+import ComparisonValue from '@/components/astro/ComparisonValue.astro';
+
+/**
+ * One comparison table for the whole site, in one copy of the markup.
+ *
+ * A three-column table of prose is unreadable on a phone, so below `md` the rows reflow
+ * into stacked cards via CSS (see .comparison-table in index.css) — each cell labelled
+ * by its column through `data-label`. The alternative, rendering a separate mobile card
+ * list beside the table, duplicates every comparison point in the HTML; on pages that
+ * exist to rank, printing the same prose twice is not worth it.
+ *
+ * Cells may carry a support `level`, which renders the check/dash marker; without one
+ * the cell is plain prose.
+ */
+export interface ComparisonColumn {
+  label: string;
+  /** The "our product" column — tinted so the reader can find it at a glance. */
+  emphasis?: boolean;
+}
+
+export interface ComparisonCell {
+  text: string;
+  level?: 'full' | 'basic' | 'none';
+}
+
+export interface ComparisonRow {
+  feature: string;
+  cells: ComparisonCell[];
+}
+
+interface Props {
+  title: string;
+  featureLabel: string;
+  columns: ComparisonColumn[];
+  rows: ComparisonRow[];
+}
+
+const { title, featureLabel, columns, rows } = Astro.props;
+---
+<div class="comparison-table-wrap md:overflow-x-auto md:rounded-xl md:border md:border-white/[0.08] md:bg-white/[0.025]">
+  <table class="comparison-table w-full border-collapse">
+    <caption class="sr-only">{title}</caption>
+    <thead>
+      <tr class="border-b border-white/[0.08] text-left">
+        <th class="w-[24%] px-5 py-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/45">
+          {featureLabel}
+        </th>
+        {columns.map((col) => (
+          <th
+            class:list={[
+              'px-5 py-4 text-sm font-semibold',
+              col.emphasis ? 'bg-primary/[0.06] text-foreground' : 'text-foreground/70',
+            ]}
+          >
+            {col.label}
+          </th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map((row) => (
+        <tr class="border-b border-white/[0.08] last:border-0">
+          <th scope="row" class="px-5 py-4 text-left text-sm font-medium text-foreground">
+            {row.feature}
+          </th>
+          {row.cells.map((cell, i) => (
+            <td
+              data-label={columns[i]?.label}
+              class:list={[
+                'px-5 py-4 text-sm leading-6',
+                columns[i]?.emphasis
+                  ? 'is-emphasis bg-primary/[0.06] text-foreground'
+                  : 'text-foreground/50',
+              ]}
+            >
+              {cell.level ? <ComparisonValue level={cell.level}>{cell.text}</ComparisonValue> : cell.text}
+            </td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

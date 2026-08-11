@@ -1,0 +1,121 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SiteShell from '@/components/astro/SiteShell.astro';
+import PageBreadcrumbs, { type BreadcrumbItem } from '@/components/astro/PageBreadcrumbs.astro';
+import StructuredData from '@/components/astro/StructuredData.astro';
+import { breadcrumbList } from '@/lib/structuredData';
+import CTA from '@/components/astro/CTA.astro';
+import { getScreenshotAsset } from '@/lib/screenshotAssets';
+import { buildLocalizedPath, type SitePage } from '@/lib/localeRouting';
+import { getMarketingPageContent, type MarketingPageKey, type RelatedLink } from '@/lib/marketingPages';
+import { pageProps } from '@/lib/pageSeo';
+import { useT } from '@/i18n/t';
+import type { Language } from '@/i18n/translations';
+
+/**
+ * The shared shell for the four content marketing pages. Content comes from
+ * src/lib/marketingPages.ts, so a page route is just a key plus its breadcrumb.
+ */
+interface Props {
+  route: string;
+  page: MarketingPageKey;
+  breadcrumbLabelKey: Parameters<ReturnType<typeof useT>>[0];
+}
+
+const { route, page, breadcrumbLabelKey } = Astro.props;
+const { lang } = pageProps(route);
+const t = useT(lang as Language);
+const content = getMarketingPageContent(page, lang as Language);
+
+const breadcrumbs: BreadcrumbItem[] = [
+  { label: t('homeNav'), href: buildLocalizedPath('home', lang as Language) },
+  { label: t(breadcrumbLabelKey) },
+];
+
+const relatedHref = (link: RelatedLink) =>
+  link.detail
+    ? buildLocalizedPath('comparisonDetail', lang as Language, link.detail)
+    : buildLocalizedPath(link.page as SitePage, lang as Language);
+---
+<BaseLayout route={route}>
+  <StructuredData schema={breadcrumbList(breadcrumbs)} />
+  <SiteShell route={route}>
+  <section class="hero-gradient overflow-hidden pb-14 pt-8 md:pb-20">
+    <div class="container">
+      <PageBreadcrumbs items={breadcrumbs} />
+      <div class="mx-auto max-w-4xl text-left">
+        <p class="section-kicker">{content.kicker}</p>
+        <h1 class="mt-4 max-w-3xl text-4xl leading-tight text-foreground md:text-6xl">
+          {content.title}
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-foreground/50 md:text-xl">
+          {content.description}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-16 md:pb-20">
+    <div class="container space-y-10">
+      {content.sections.map((section, index) => {
+        const screenshot = section.screenshot
+          ? getScreenshotAsset(lang as Language, section.screenshot)
+          : null;
+        return (
+          <article class:list={['proof-story-card reveal', !screenshot && 'proof-story-card--text-only']}>
+            {screenshot && (
+              <div class:list={[index % 2 === 1 && 'md:order-2', 'proof-story-media']}>
+                <figure class="mx-auto w-full max-w-[340px]">
+                  <img
+                    src={screenshot.src}
+                    alt={screenshot.alt}
+                    loading="lazy"
+                    decoding="async"
+                    class="h-auto w-full rounded-xl border border-white/[0.08]"
+                  />
+                  <figcaption class="mt-3 text-sm text-foreground/45">
+                    {screenshot.caption}
+                  </figcaption>
+                </figure>
+              </div>
+            )}
+
+            <div
+              class:list={[
+                index % 2 === 1 && 'md:order-1',
+                'proof-story-copy',
+                !screenshot && 'proof-story-copy--full',
+              ]}
+            >
+              <h2 class="text-2xl font-semibold text-foreground md:text-3xl">{section.title}</h2>
+              <p class="mt-4 text-base leading-7 text-foreground/50">{section.body}</p>
+              {section.bullets?.length ? (
+                <ul class="mt-5 flex flex-wrap gap-3">
+                  {section.bullets.map((bullet) => <li class="trust-chip">{bullet}</li>)}
+                </ul>
+              ) : null}
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+
+  <section class="pb-12">
+    <div class="container">
+      <div class="glass-card p-8 md:p-10">
+        <h2 class="text-2xl font-semibold text-foreground md:text-3xl">
+          {lang === 'de' ? 'Weiterführende Seiten' : 'Related pages'}
+        </h2>
+        <div class="mt-6 flex flex-wrap gap-3">
+          {content.relatedLinks.map((link) => (
+            <a href={relatedHref(link)} class="btn-primary">{link.label}</a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA lang={lang as Language} />
+  </SiteShell>
+</BaseLayout>

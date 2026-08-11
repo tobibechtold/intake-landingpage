@@ -1,0 +1,116 @@
+---
+import logo from '@/assets/logo-hero.webp';
+import appStoreBadge from '@/assets/app-store-badge.svg';
+import googlePlayBadge from '@/assets/google-play-badge.png';
+import PhoneFrame from '@/components/astro/PhoneFrame.astro';
+import Rating from '@/components/astro/Rating.astro';
+import { PROMO_VIDEO_SOURCES_BY_LANGUAGE } from '@/lib/videoSupport';
+import { getAppStoreUrl, getGooglePlayUrl } from '@/lib/storeLinks';
+import { formatAppPrice, ratingLabel } from '@/lib/appFacts';
+import { useT } from '@/i18n/t';
+import type { Language } from '@/i18n/translations';
+
+/**
+ * The React version existed almost entirely to run video.canPlayType() and pick between
+ * webm and mp4, then force a reload when the choice changed. Two <source> elements do
+ * exactly that natively, better: the browser picks the first it can play, with no JS, no
+ * reload and no flash of the wrong format.
+ */
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+const t = useT(lang);
+const sources = PROMO_VIDEO_SOURCES_BY_LANGUAGE[lang];
+
+const trustChips = [
+  // The price is shown here so the JSON-LD `offers` node has something on the page to
+  // match — structured data must reflect visible content.
+  `${t('oneTimePurchase')} · ${formatAppPrice(lang)}`,
+  t('noAccountRequired'),
+  t('onDevicePrivacy'),
+  ratingLabel(lang),
+];
+---
+<section id="hero" class="hero-gradient relative min-h-screen overflow-hidden pt-20">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_55%_at_50%_0%,hsl(338_90%_62%_/_0.14),transparent_70%)]"></div>
+  <div class="container relative py-16 md:py-24">
+    <div class="items-center md:grid md:grid-cols-[minmax(0,1.1fr)_minmax(280px,0.9fr)] md:gap-12">
+      <div class="flex flex-col items-center text-center md:items-start md:text-left">
+        <div class="mb-6 flex flex-col items-center gap-4 md:flex-row md:items-center">
+          <div class="relative h-20 w-20 shrink-0">
+            <img
+              src={logo.src}
+              alt="Intake"
+              class="relative z-10 h-full w-full"
+              loading="eager"
+              decoding="async"
+              width="80"
+              height="80"
+            />
+            <div
+              class="absolute inset-0 -z-10 scale-[1.8]"
+              style="background:radial-gradient(circle at center, hsl(338 92% 63% / 0.35) 0%, transparent 72%);filter:blur(40px)"
+            ></div>
+          </div>
+
+          <div class="hidden md:block">
+            <Rating label={t('heroRating')} lang={lang} />
+          </div>
+        </div>
+
+        <h1 class="max-w-2xl text-4xl leading-tight text-foreground md:text-6xl">
+          {t('heroTitle')} <span class="gradient-text">{t('heroTitleHighlight')}</span>
+        </h1>
+
+        <p class="mt-5 max-w-xl text-lg text-foreground/50 md:text-xl">{t('heroDescription')}</p>
+
+        <div class="mt-8 flex w-full flex-col items-center gap-5 md:items-start">
+          <div class="flex flex-col items-center gap-4 sm:flex-row">
+            <a
+              href={getAppStoreUrl(lang)}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-store-cta="ios"
+              data-cta-location="hero"
+              class="rounded-xl transition-transform duration-200 hover:-translate-y-0.5"
+            >
+              <img src={appStoreBadge.src} alt="Download on the App Store" class="h-12 md:h-14" />
+            </a>
+
+            <a
+              href={getGooglePlayUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-store-cta="android"
+              data-cta-location="hero"
+              class="rounded-xl transition-transform duration-200 hover:-translate-y-0.5"
+            >
+              <img src={googlePlayBadge.src} alt="Get it on Google Play" class="h-12 md:h-14" />
+            </a>
+          </div>
+
+          <div class="md:hidden">
+            <Rating label={t('heroRating')} lang={lang} />
+          </div>
+
+          <div class="flex flex-wrap items-center justify-center gap-3 md:justify-start">
+            {trustChips.map((chip) => <span class="trust-chip">{chip}</span>)}
+          </div>
+
+          <a href="#why-switch" class="btn-primary h-11 px-6">{t('heroSecondaryCta')}</a>
+        </div>
+      </div>
+
+      <div class="mt-12 flex justify-center md:mt-0">
+        <PhoneFrame class="max-w-[280px] md:max-w-[320px]">
+          <video autoplay muted loop playsinline class="h-full w-full object-cover">
+            <source src={sources.webm} type="video/webm" />
+            <source src={sources.mp4} type="video/mp4" />
+          </video>
+        </PhoneFrame>
+      </div>
+    </div>
+  </div>
+</section>
