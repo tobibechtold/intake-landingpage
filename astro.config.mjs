@@ -1,14 +1,28 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
-import vercel from '@astrojs/vercel';
 import { unified } from '@astrojs/markdown-remark';
 import { remarkVideo } from './src/lib/remarkVideo.mjs';
 
+// ---------------------------------------------------------------------------
+// DO NOT ADD @astrojs/vercel HERE.
+//
+// The adapter switches the build to Vercel's Build Output API, where
+// .vercel/output *is* the entire deployment. `api/go.ts` lives outside it, so it
+// stops being deployed and the generated route table ends in a catch-all 404 —
+// every /go/<slug> smart link, and therefore every paid ad click and its
+// attribution, dead-ends.
+//
+// Without an adapter Astro emits a plain dist/, Vercel zero-config serves it and
+// separately auto-detects api/go.ts as a function, exactly as it did before this
+// migration. Nothing currently in use depends on adapter-only features.
+//
+// If you ever need on-demand rendering here, port api/go.ts to
+// src/pages/go/[slug].ts first and verify a real /go click end to end.
+// ---------------------------------------------------------------------------
 export default defineConfig({
   site: 'https://www.getintake.de',
   output: 'static',
-  adapter: vercel(),
   trailingSlash: 'never',
   build: { format: 'directory' },
   // NOTE: sitemap() is deliberately configured without its `i18n` option.

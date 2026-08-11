@@ -23,6 +23,13 @@
 - **`astro.config.mjs` must set `trailingSlash: 'never'`** — otherwise Astro emits `/en/` and the locale redirect chains.
 - **`output: 'static'`.** Never `'server'`. No page may set `export const prerender = false` in this plan.
 - **Do not modify `api/go.ts`** or the `/go/*` rewrite in `vercel.json`. The attribution chain is cross-repo.
+- **No Astro adapter.** *(Changed during execution — the plan originally specified `@astrojs/vercel`.)*
+  The adapter switches the build to the Build Output API, where `.vercel/output` is the whole
+  deployment; `api/go.ts` falls outside it and the generated route table ends in
+  `{"src": "^/.*$", "dest": "/404.html", "status": 404}`, so every `/go/<slug>` smart link 404s and
+  all paid-click attribution dies. Adapterless, Astro emits a plain `dist/`, and Vercel zero-config
+  serves it while auto-detecting `api/` — the same deployment shape as before the migration.
+  A guard comment sits at the top of `astro.config.mjs`.
 - **Do not use `@astrojs/tailwind`** — it caps at `astro: ^5`. Tailwind 3 is driven by the existing `postcss.config.js`, which Astro loads through Vite automatically.
 - **Pin Astro exactly** (`"astro": "7.2.0"`, no caret). The Container API used in Task 10 is experimental and Astro's docs warn it is "subject to breaking changes, even in minor or patch releases".
 - **Locale copy is never invented.** German and English strings come from `src/i18n/translations.ts` or `scripts/prerender-seo.js`; never hand-write new marketing copy.

@@ -15,7 +15,6 @@
     "@astrojs/markdown-remark": "^7.2.2",
     "@astrojs/react": "^6.0.2",
     "@astrojs/sitemap": "^3.7.3",
-    "@astrojs/vercel": "^11.0.5",
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-alert-dialog": "^1.1.14",
