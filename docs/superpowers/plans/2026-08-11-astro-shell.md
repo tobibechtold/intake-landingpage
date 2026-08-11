@@ -747,6 +747,31 @@ grep -rn "useParams\|useLocation\|useNavigate\|react-router" src/pages-react/ sr
 
 Expected after this step: no results.
 
+- [ ] **Step 1b: Fix asset imports — they no longer resolve to strings**
+
+Astro treats imports from `src/assets/` as `ImageMetadata` objects (`{ src, width, height, format }`),
+not URL strings the way the old Vite setup did. Any component doing `<img src={logo} />` now emits
+`src="[object Object]"`. This was caught by `PressMentions.test.tsx` failing with
+`expected [ '[object Object]', …(3) ]`.
+
+```tsx
+// before
+import macweltLogo from '@/assets/press/macwelt-logo.svg';
+<img src={macweltLogo} />
+
+// after
+<img src={macweltLogo.src} />
+```
+
+Find every affected import:
+
+```bash
+grep -rn "from '@/assets/\|from \"@/assets/" src/components/ src/pages-react/ src/lib/
+```
+
+Check each usage site. Update `PressMentions.test.tsx`'s expectation to read `.src` too — the
+assertion itself is still correct, only the shape changed.
+
 - [ ] **Step 2: Create the static route files**
 
 One file per row, each following the Task 6 pattern exactly. Read the component for each path from `src/App.tsx:45-75`. Worked example for the first row — every other row differs only in the three parameterised values:
@@ -878,6 +903,50 @@ The payoff task. Everything removed here is now redundant.
 **Files:**
 - Delete: `scripts/prerender-seo.js`, `scripts/prerender.mjs`, `scripts/sitemap.js`, `scripts/whats-new-content.js`, `scripts/freeze-urls.mjs`, `src/lib/whatsNewContent.ts`, `src/lib/prerenderSeo.test.ts`, `src/lib/sitemap.test.ts`, `src/lib/whatsNewContent.test.ts`, `src/App.tsx`, `src/main.tsx`, `src/components/SeoHead.tsx`, `src/components/LocaleRedirect.tsx`, `src/components/ScrollToTop.tsx`, `src/lib/localeRedirect.ts`, `src/lib/localeRedirect.test.ts`
 - Modify: `package.json` (drop dead dependencies)
+
+- [ ] **Step 0: Port `src/lib/favicon.test.ts` before deleting its subject**
+
+This file is **not** on the deletion list, despite reading the deleted `index.html`. Its four
+assertions guard the German shell language, the favicon set, the `apple-itunes-app` Smart App
+Banner, and the `robots.txt` sitemap host — precisely the tags rescued into `BaseLayout` in Task 4.
+Deleting it would leave that carryover unguarded.
+
+Rewrite it to assert against the **built output** instead of the source template, which is strictly
+stronger — it tests what is actually served:
+
+```ts
+import { readFileSync } from 'node:fs';
+import { describe, expect, it } from 'vitest';
+
+const home = () => readFileSync('dist/index.html', 'utf8');
+
+describe('favicon and crawl hints', () => {
+  it('serves German as the default shell language and homepage metadata', () => {
+    const html = home();
+    expect(html).toContain('<html lang="de"');
+    expect(html).toContain('Kalorienzähler ohne Abo');
+  });
+
+  it('declares conventional favicon assets', () => {
+    const html = home();
+    expect(html).toContain('href="/favicon.ico"');
+    expect(html).toContain('href="/favicon-32x32.png"');
+    expect(html).toContain('href="/apple-touch-icon.png"');
+  });
+
+  it('declares the iOS Smart App Banner', () => {
+    expect(home()).toContain('<meta name="apple-itunes-app" content="app-id=6757768955">');
+  });
+
+  it('points robots.txt at the canonical sitemap host', () => {
+    const robots = readFileSync('public/robots.txt', 'utf8');
+    expect(robots).toContain('Sitemap: https://www.getintake.de/sitemap-index.xml');
+    expect(robots).not.toContain('intake.tobibechtold.dev');
+  });
+});
+```
+
+Note the sitemap assertion now expects `sitemap-index.xml`, matching the change in Step 5.
 
 - [ ] **Step 1: Confirm nothing still imports the doomed modules**
 
