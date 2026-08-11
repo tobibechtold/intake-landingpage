@@ -84,3 +84,34 @@ describe('Refined Dark design system', () => {
     expect(Number(match![1])).toBeGreaterThanOrEqual(52);
   });
 });
+
+/**
+ * Layer ordering.
+ *
+ * .btn-primary and friends were originally declared in @layer utilities, which meant
+ * they were emitted AFTER the atomic utilities and silently beat every call-site
+ * override. The visible symptom was the icon-only download button rendering as a blank
+ * white square: its `px-0` lost to .btn-primary's `px-5`, so a 36px button carried 40px
+ * of horizontal padding and the icon was squeezed to 0px wide.
+ *
+ * Tailwind emits components before utilities, so these must live in @layer components.
+ */
+describe('CSS layer ordering', () => {
+  const css = () => {
+    const dir = 'dist/_astro';
+    const file = readdirSync(dir).find((f) => f.endsWith('.css'))!;
+    return readFileSync(join(dir, file), 'utf8');
+  };
+
+  it.each(['.px-0', '.px-4', '.px-6', '.w-9', '.w-full'])(
+    '%s overrides .btn-primary rather than losing to it',
+    (util) => {
+      const sheet = css();
+      const component = sheet.indexOf('.btn-primary{');
+      const utility = sheet.indexOf(`${util}{`);
+      expect(component).toBeGreaterThan(-1);
+      expect(utility).toBeGreaterThan(-1);
+      expect(utility).toBeGreaterThan(component);
+    },
+  );
+});
