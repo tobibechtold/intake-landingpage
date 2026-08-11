@@ -1,5 +1,5 @@
 ---
-import HeaderIsland from '@/components/islands/HeaderIsland';
+import Header from '@/components/astro/Header.astro';
 import Footer from '@/components/astro/Footer.astro';
 import { pageProps } from '@/lib/pageSeo';
 import type { Language } from '@/i18n/translations';
@@ -7,9 +7,8 @@ import type { Language } from '@/i18n/translations';
 /**
  * Header + footer chrome shared by every page.
  *
- * The header's mobile menu is a Radix Sheet, so it is the one piece of chrome that
- * needs hydrating — and it is hoisted here precisely so the page body beneath it can
- * stay a *static* React render with no client: directive and therefore zero JS.
+ * The header is pure HTML: its mobile menu is a native <dialog>, so no page needs to
+ * hydrate anything for the chrome. Page bodies beneath it are static renders too.
  *
  * No <main> is rendered here: page bodies supply their own, and nesting them would be
  * invalid HTML.
@@ -22,7 +21,7 @@ const { route } = Astro.props;
 const { lang, alternateHref } = pageProps(route);
 ---
 <div class="flex min-h-screen flex-col">
-  <HeaderIsland client:load lang={lang as Language} alternateHref={alternateHref} />
+  <Header lang={lang as Language} alternateHref={alternateHref} />
   <slot />
   <Footer lang={lang as Language} />
 </div>
