@@ -1,0 +1,60 @@
+---
+import { getHreflangPair, getPageSeo, SITE_ORIGIN } from '@/lib/pageSeo';
+import '@/index.css';
+
+interface Props {
+  route: string;
+  /** Overrides for routes whose metadata is per-entry, e.g. /whats-new/2.5.1. */
+  title?: string;
+  description?: string;
+}
+
+const { route, title, description } = Astro.props;
+const seo = getPageSeo(route);
+const pair = getHreflangPair(route);
+
+const pageTitle = title ?? seo.title;
+const pageDescription = description ?? seo.description;
+const ogImage = new URL('/og-image.png', SITE_ORIGIN).href;
+---
+<!doctype html>
+<html lang={seo.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={seo.canonical} />
+    {pair && (
+      <>
+        <link rel="alternate" hreflang="de" href={new URL(pair.de, SITE_ORIGIN).href} />
+        <link rel="alternate" hreflang="en" href={new URL(pair.en, SITE_ORIGIN).href} />
+        <link rel="alternate" hreflang="x-default" href={new URL(pair.de, SITE_ORIGIN).href} />
+      </>
+    )}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={seo.canonical} />
+    <meta property="og:locale" content={seo.ogLocale} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Carried over verbatim from the deleted index.html. Every tag below was live
+         in production; dropping any of them is a silent regression. -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <!-- iOS Safari Smart App Banner: a direct install path on an app landing page. -->
+    <meta name="apple-itunes-app" content="app-id=6757768955" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Intake" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

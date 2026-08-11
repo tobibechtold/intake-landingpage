@@ -378,7 +378,11 @@ git push
 
 **Interfaces:**
 - Consumes: `getPageSeo`, `getHreflangPair`, `SITE_ORIGIN` from Task 3.
-- Produces: `BaseLayout` accepting `Props { route: string }`, used by every route file in Task 7. It derives all metadata from `route` alone — callers pass no title or description.
+- Produces: `BaseLayout` accepting `Props { route: string; title?: string; description?: string }`,
+  used by every route file in Task 7. Metadata is derived from `route` alone for all 26 static
+  routes; the two optional overrides exist solely for the 40 What's New entry routes, whose title
+  and description come from the collection entry rather than a static table. Every other route file
+  passes `route` only.
 
 - [ ] **Step 1: Write `src/layouts/BaseLayout.astro`**
 
