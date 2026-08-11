@@ -1112,7 +1112,27 @@ curl -s -A 'Mozilla/5.0 (compatible; Googlebot/2.1)' $P/ | grep -o '<title>[^<]*
 # expect: the German title containing "Kalorienzähler ohne Abo"
 ```
 
-- [ ] **Step 5: If regex in `value` does not work, fall back**
+> **VERIFIED 2026-08-11** against preview `intake-landingpage-fveqvsa7x-bechtold-it.vercel.app`.
+> Regex in `value` **does** work in `vercel.json` — the middleware fallback in Step 5 was not needed.
+>
+> | check | result |
+> |---|---|
+> | English speaker on `/` | `307` → `/en` |
+> | **Googlebot on `/`** | **`200`, serves `<html lang="de">` + German title** |
+> | GPTBot / ClaudeBot / PerplexityBot / bingbot | `200`, unredirected |
+> | German speaker on `/` | `200` |
+> | English speaker with `intake_lang=de` | `200` |
+> | `/kalorienzaehler-ohne-abo` (deep DE page) | `200`, never redirected |
+> | `/go/ugc-lisa-1` on iOS | `302` → `apps.apple.com/...?pt=128030281&ct=ugc-lisa-1&mt=8` |
+> | `/go/ugc-lisa-1` on Android | `302` → Play Store with referrer UTMs |
+>
+> Preview deployments sit behind Vercel Deployment Protection; the gate was run with an
+> `x-vercel-protection-bypass` header. The header form was chosen deliberately over the
+> cookie form so it could not disturb the `missing: cookie intake_lang` condition.
+> **Still outstanding:** GSC URL Inspection → "View crawled page" on `/` after this reaches
+> production, which is the check that would have caught the original incident.
+
+- [ ] **Step 5: If regex in `value` does not work, fall back** *(not needed — see above)*
 
 If step 3 shows the redirect never firing (all four return 200), Vercel is treating `value` as an exact match. Fallback per spec: remove the redirect from `vercel.json` and implement it in `src/middleware.ts` with `export const prerender = false` on `src/pages/index.astro` only, accepting that `/` becomes on-demand. Re-run the same four curl checks.
 
