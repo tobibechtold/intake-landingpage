@@ -7,7 +7,7 @@ describe("HelpPage", () => {
   it("renders the German help hub with faq content and a download next step", () => {
     render(
         <LanguageProvider lang="de" alternateHref="/">
-          <HelpPage />
+          <HelpPage lang="de" alternateHref="/" />
         </LanguageProvider>
     );
 
@@ -17,7 +17,7 @@ describe("HelpPage", () => {
     ).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^preis$/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^intake ai$/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /eigener api-schlüssel \(byok\)/i })).toBeInTheDocument();
+    expect(screen.getAllByRole("button", { name: /eigener api-schlüssel \(byok\)/i })[0]).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /anleitung zur byok-einrichtung öffnen/i })
     ).toHaveAttribute("href", "/hilfe/eigener-api-schluessel");
@@ -38,7 +38,7 @@ describe("HelpPage", () => {
   it("renders the English help hub with faq content and a download next step", () => {
     render(
         <LanguageProvider lang="en" alternateHref="/">
-          <HelpPage />
+          <HelpPage lang="en" alternateHref="/" />
         </LanguageProvider>
     );
 
@@ -48,7 +48,7 @@ describe("HelpPage", () => {
     ).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^pricing$/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /^intake ai$/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /own api key \(byok\)/i })).toBeInTheDocument();
+    expect(screen.getAllByRole("button", { name: /own api key \(byok\)/i })[0]).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /open the byok setup guide/i })
     ).toHaveAttribute("href", "/en/help/own-api-key");

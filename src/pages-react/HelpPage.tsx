@@ -3,8 +3,6 @@ import type { LocalePageProps } from "./localePage";
 import { useEffect, useMemo, useState } from "react";
 
 import { ArrowRight, KeyRound, Search, X } from "lucide-react";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import {
   Accordion,
   AccordionContent,
@@ -78,7 +76,6 @@ const HelpPageInner = () => {
 
   return (
     <div className="min-h-screen">
-      <Header />
       <main className="pb-24 pt-32 md:pt-36">
         <section className="section-gradient border-y border-border/50 py-20">
           <div className="container max-w-5xl">
@@ -219,7 +216,6 @@ const HelpPageInner = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };

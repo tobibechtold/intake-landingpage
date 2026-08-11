@@ -46,12 +46,15 @@ export function remarkVideo() {
       node.children = node.children.map((child) => {
         if (child.type === 'image' && VIDEO_EXT.test(child.url)) {
           const src = resolveVideoUrl(child.url, version);
+          // Matches what the deleted whatsNewContent.ts renderer produced: these are
+          // silent, auto-looping demo clips standing in for GIFs, not click-to-play
+          // media. The aria-label is the one addition — the original had none.
           return {
             type: 'html',
             value:
-              '<video controls playsinline preload="metadata" ' +
+              '<figure><video autoplay loop muted playsinline preload="metadata" ' +
               `aria-label="${escapeAttr(child.alt ?? '')}" ` +
-              `src="${escapeAttr(src)}"></video>`,
+              `src="${escapeAttr(src)}"></video></figure>`,
           };
         }
 

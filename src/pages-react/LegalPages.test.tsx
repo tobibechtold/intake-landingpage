@@ -4,17 +4,20 @@ import { LanguageProvider } from "@/i18n/LanguageContext";
 import Privacy from "./Privacy";
 import Terms from "./Terms";
 
-function renderLegalPage(path: string, element: React.ReactElement) {
+// Locale is a prop now rather than something derived from a router location, so the
+// helper maps the path it is given onto that prop.
+function renderLegalPage(path: string, Component: React.ComponentType<{ lang: "de" | "en"; alternateHref: string | null }>) {
+  const lang = path.startsWith("/en") ? "en" : "de";
   render(
-      <LanguageProvider lang="de" alternateHref="/">
-        {element}
-      </LanguageProvider>
+    <LanguageProvider lang={lang} alternateHref="/">
+      <Component lang={lang} alternateHref="/" />
+    </LanguageProvider>,
   );
 }
 
 describe("legal pages", () => {
   it("discloses hosted Intake AI processing and providers in the English privacy policy", () => {
-    renderLegalPage("/en/privacy", <Privacy />);
+    renderLegalPage("/en/privacy", Privacy);
 
     expect(screen.getByText(/Last updated: June 2026/i)).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /Intake AI/i })).toBeInTheDocument();
@@ -26,7 +29,7 @@ describe("legal pages", () => {
   });
 
   it("discloses hosted Intake AI processing and providers in the German privacy policy", () => {
-    renderLegalPage("/privacy", <Privacy />);
+    renderLegalPage("/privacy", Privacy);
 
     expect(screen.getByText(/Stand: Juni 2026/i)).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /Intake AI/i })).toBeInTheDocument();
@@ -38,7 +41,7 @@ describe("legal pages", () => {
   });
 
   it("states Intake AI estimate, upload, provider, and BYOK responsibilities in the English terms", () => {
-    renderLegalPage("/en/terms", <Terms />);
+    renderLegalPage("/en/terms", Terms);
 
     expect(screen.getByText(/Last updated: June 2026/i)).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /Intake AI/i })).toBeInTheDocument();
@@ -49,7 +52,7 @@ describe("legal pages", () => {
   });
 
   it("states Intake AI estimate, upload, provider, and BYOK responsibilities in the German terms", () => {
-    renderLegalPage("/terms", <Terms />);
+    renderLegalPage("/terms", Terms);
 
     expect(screen.getByText(/Stand: Juni 2026/i)).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /Intake AI/i })).toBeInTheDocument();

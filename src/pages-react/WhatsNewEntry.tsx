@@ -1,7 +1,5 @@
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import type { LocalePageProps } from "./localePage";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import WhatsNewArticle from "@/components/WhatsNewArticle";
 import { useLanguage } from "@/i18n/LanguageContext";
 import type { ReleaseSummary } from "@/lib/releases";
@@ -18,13 +16,11 @@ const WhatsNewEntryInner = ({
 
   return (
     <div className="min-h-screen">
-      <Header />
       <main className="section-gradient min-h-screen pt-28 pb-20">
         <div className="container max-w-4xl">
           <WhatsNewArticle entry={entry} language={language}>{children}</WhatsNewArticle>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

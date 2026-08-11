@@ -1,10 +1,6 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import { pageProps } from '@/lib/pageSeo';
-import FeaturesPage from '@/pages-react/FeaturesPage';
+import MarketingPageLayout from '@/components/astro/MarketingPageLayout.astro';
 
 const route = '/funktionen';
 ---
-<BaseLayout route={route}>
-  <FeaturesPage client:load {...pageProps(route)} />
-</BaseLayout>
+<MarketingPageLayout route={route} page="features" breadcrumbLabelKey="featuresNav" />

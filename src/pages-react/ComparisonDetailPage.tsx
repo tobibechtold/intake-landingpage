@@ -1,8 +1,6 @@
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import type { LocalePageProps } from "./localePage";
 import CTA from "@/components/CTA";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { getComparisonPageContent, isComparisonSlug } from "@/lib/marketingPages";
@@ -15,7 +13,6 @@ const ComparisonDetailPageInner = ({ slug }: { slug: string }) => {
 
   return (
     <div className="min-h-screen">
-      <Header />
       <main className="pt-28">
         <section className="hero-gradient overflow-hidden pb-14 pt-8 md:pb-20">
           <div className="container">
@@ -121,7 +118,6 @@ const ComparisonDetailPageInner = ({ slug }: { slug: string }) => {
 
         <CTA />
       </main>
-      <Footer />
     </div>
   );
 };

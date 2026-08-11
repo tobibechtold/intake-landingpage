@@ -3,11 +3,14 @@ import { describe, expect, it } from "vitest";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import IntakeAIPage from "./IntakeAIPage";
 
+// Locale is a prop now rather than something read from a router location, so the
+// helper maps the path each test passes onto that prop.
 function renderIntakeAIPage(path: string) {
+  const lang = path.startsWith("/en") ? "en" : "de";
   render(
-      <LanguageProvider lang="de" alternateHref="/">
-        <IntakeAIPage lang="de" alternateHref="/" />
-      </LanguageProvider>
+    <LanguageProvider lang={lang} alternateHref="/">
+      <IntakeAIPage lang={lang} alternateHref="/" />
+    </LanguageProvider>,
   );
 }
 

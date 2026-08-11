@@ -1,7 +1,5 @@
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import type { LocalePageProps } from "./localePage";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import WhatsNewList from "@/components/WhatsNewList";
 import { useLanguage } from "@/i18n/LanguageContext";
 import type { ReleaseSummary } from "@/lib/releases";
@@ -13,7 +11,6 @@ const WhatsNewIndexInner = ({ entries }: { entries: ReleaseSummary[] }) => {
 
   return (
     <div className="min-h-screen">
-      <Header />
       <main className="section-gradient min-h-screen pt-28 pb-20">
         <div className="container space-y-10">
           <div className="max-w-3xl space-y-4">
@@ -54,7 +51,6 @@ const WhatsNewIndexInner = ({ entries }: { entries: ReleaseSummary[] }) => {
           <WhatsNewList entries={entries} language={language} />
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

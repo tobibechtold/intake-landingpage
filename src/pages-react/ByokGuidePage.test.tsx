@@ -3,11 +3,14 @@ import { describe, expect, it } from "vitest";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import ByokGuidePage from "./ByokGuidePage";
 
+// Locale is a prop now rather than something read from a router location, so the
+// helper maps the path each test passes onto that prop.
 function renderGuide(path: string) {
+  const lang = path.startsWith("/en") ? "en" : "de";
   render(
-      <LanguageProvider lang="de" alternateHref="/">
-        <ByokGuidePage lang="de" alternateHref="/" />
-      </LanguageProvider>
+    <LanguageProvider lang={lang} alternateHref="/">
+      <ByokGuidePage lang={lang} alternateHref="/" />
+    </LanguageProvider>,
   );
 }
 

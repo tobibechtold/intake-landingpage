@@ -1,10 +1,15 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import SiteShell from '@/components/astro/SiteShell.astro';
 import { pageProps } from '@/lib/pageSeo';
 import HelpPage from '@/pages-react/HelpPage';
 
 const route = '/hilfe';
 ---
 <BaseLayout route={route}>
-  <HelpPage client:load {...pageProps(route)} />
+  <SiteShell route={route}>
+    {/* The only page body that hydrates: it has a live FAQ search box and Radix
+        accordions. Everything else on the site renders statically. */}
+    <HelpPage client:load {...pageProps(route)} />
+  </SiteShell>
 </BaseLayout>

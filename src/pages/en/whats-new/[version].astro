@@ -1,23 +1,19 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import SiteShell from '@/components/astro/SiteShell.astro';
 import { pageProps } from '@/lib/pageSeo';
 import WhatsNewEntry from '@/pages-react/WhatsNewEntry';
 
 export async function getStaticPaths() {
   const entries = await getCollection('whatsNew', (entry) => entry.id.endsWith('/en'));
-  return entries.map((entry) => ({
-    params: { version: entry.data.version },
-    props: { entry },
-  }));
+  return entries.map((entry) => ({ params: { version: entry.data.version }, props: { entry } }));
 }
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const route = `/en/whats-new/${entry.data.version}`;
 
-// Per-entry title and description override the static table, which only carries
-// the What's New index metadata.
 const summary = {
   version: entry.data.version,
   publishedAt: entry.data.publishedAt,
@@ -33,7 +29,9 @@ const summary = {
   title={`${entry.data.title} | Intake`}
   description={entry.data.summary}
 >
-  <WhatsNewEntry client:load {...pageProps(route)} entry={summary}>
-    <Content />
-  </WhatsNewEntry>
+  <SiteShell route={route}>
+    <WhatsNewEntry {...pageProps(route)} entry={summary}>
+      <Content />
+    </WhatsNewEntry>
+  </SiteShell>
 </BaseLayout>

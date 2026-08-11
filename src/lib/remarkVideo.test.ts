@@ -60,6 +60,9 @@ describe('remarkVideo', () => {
     const node = run(tree).children[0].children[0];
     expect(node.type).toBe('html');
     expect(node.value).toContain('<video');
+    // Silent auto-looping demo clips, as the original renderer produced.
+    expect(node.value).toContain('autoplay loop muted playsinline');
+    expect(node.value).toContain('<figure>');
     expect(node.value).toContain('/whats-new-assets/2.2.0/nutrients.mp4');
     expect(node.value).toContain('New Nutrients');
   });

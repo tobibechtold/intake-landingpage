@@ -1,10 +1,6 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import { pageProps } from '@/lib/pageSeo';
-import ComparisonsIndexPage from '@/pages-react/ComparisonsIndexPage';
+import MarketingPageLayout from '@/components/astro/MarketingPageLayout.astro';
 
 const route = '/en/comparisons';
 ---
-<BaseLayout route={route}>
-  <ComparisonsIndexPage client:load {...pageProps(route)} />
-</BaseLayout>
+<MarketingPageLayout route={route} page="comparisons" breadcrumbLabelKey="comparisonsNav" />

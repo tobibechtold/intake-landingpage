@@ -8,8 +8,6 @@ import {
   KeyRound,
   ShieldCheck,
 } from "lucide-react";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { buildLocalizedPath } from "@/lib/localeRouting";
@@ -245,7 +243,6 @@ const ByokGuidePageInner = () => {
 
   return (
     <div className="min-h-screen">
-      <Header />
       <main className="pb-24 pt-28">
         <section className="hero-gradient border-b border-border/50 pb-16 pt-8 md:pb-24">
           <div className="container max-w-6xl">
@@ -464,7 +461,6 @@ const ByokGuidePageInner = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };

@@ -12,8 +12,6 @@ import {
   Sparkles,
 } from "lucide-react";
 import CTA from "@/components/CTA";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import PhoneFrame from "@/components/PhoneFrame";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -310,7 +308,6 @@ const IntakeAIPageInner = () => {
 
   return (
     <div className="min-h-screen">
-      <Header />
       <main className="pt-28">
         <section className="hero-gradient overflow-hidden pb-16 pt-8 md:pb-24">
           <div className="container">
@@ -582,7 +579,6 @@ const IntakeAIPageInner = () => {
 
         <CTA />
       </main>
-      <Footer />
     </div>
   );
 };

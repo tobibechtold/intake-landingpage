@@ -1,10 +1,6 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import { pageProps } from '@/lib/pageSeo';
-import NoSubscriptionPage from '@/pages-react/NoSubscriptionPage';
+import MarketingPageLayout from '@/components/astro/MarketingPageLayout.astro';
 
 const route = '/kalorienzaehler-ohne-abo';
 ---
-<BaseLayout route={route}>
-  <NoSubscriptionPage client:load {...pageProps(route)} />
-</BaseLayout>
+<MarketingPageLayout route={route} page="noSubscription" breadcrumbLabelKey="noSubscriptionNav" />

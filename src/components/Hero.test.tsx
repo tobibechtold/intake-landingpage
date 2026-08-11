@@ -1,14 +1,7 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { useNavigate } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import Hero from "./Hero";
-
-const SwitchToEnglishButton = () => {
-  const navigate = useNavigate();
-
-  return <button onClick={() => navigate("/en")}>Switch to English</button>;
-};
 
 describe("Hero", () => {
   let loadSpy: ReturnType<typeof vi.spyOn>;
@@ -49,22 +42,16 @@ describe("Hero", () => {
     expect(container.querySelector(".h-\\[28rem\\]")).not.toBeInTheDocument();
   });
 
-  it("reloads the locale-specific demo video when switching languages without a page reload", async () => {
+  // The former "switch language without a page reload" case is gone: locale is a static
+  // property of the route now, so changing it is a full navigation. What still matters is
+  // that each locale renders its own video source.
+  it("renders the German demo video on a German page", () => {
     const { container } = render(
-        <LanguageProvider lang="de" alternateHref="/">
-          <SwitchToEnglishButton />
-          <Hero />
-        </LanguageProvider>
+      <LanguageProvider lang="de" alternateHref="/en">
+        <Hero />
+      </LanguageProvider>,
     );
 
     expect(container.querySelector("video source")).toHaveAttribute("src", "/promo-video.mp4");
-    loadSpy.mockClear();
-
-    fireEvent.click(screen.getByRole("button", { name: /switch to english/i }));
-
-    await waitFor(() => {
-      expect(container.querySelector("video source")).toHaveAttribute("src", "/promo-video-en.mp4");
-    });
-    expect(loadSpy).toHaveBeenCalled();
   });
 });
