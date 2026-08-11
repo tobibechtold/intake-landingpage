@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Star } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface Review {
   id: number;
@@ -62,9 +61,7 @@ const ReviewCard = ({ review }: { review: Review }) => {
       <StarRating rating={review.rating} />
       <h3 className="mt-3 mb-2 text-lg font-semibold text-foreground">{review.title}</h3>
       <p
-        className={`mb-2 text-sm leading-relaxed text-muted-foreground ${
-          !isExpanded && isLongReview ? "line-clamp-4" : ""
-        }`}
+        className={`mb-2 text-sm leading-relaxed text-muted-foreground ${ !isExpanded && isLongReview ? "line-clamp-4" : "" }`}
       >
         {review.text}
       </p>
@@ -87,23 +84,18 @@ const ReviewCard = ({ review }: { review: Review }) => {
 
 const Reviews = () => {
   const { t } = useLanguage();
-  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
 
   return (
-    <section ref={ref} className="section-gradient py-24">
+    <section className="section-gradient py-24">
       <div className="container">
         <div className="mb-16 text-center">
           <h2
-            className={`mb-4 text-3xl font-bold text-foreground opacity-0 md:text-4xl ${
-              isVisible ? "animate-fade-up" : ""
-            }`}
+            className="mb-4 text-3xl font-bold text-foreground reveal md:text-4xl"
           >
             {t("reviewsTitle")}
           </h2>
           <p
-            className={`mx-auto max-w-xl text-lg text-muted-foreground opacity-0 ${
-              isVisible ? "animate-fade-up" : ""
-            }`}
+            className="mx-auto max-w-xl text-lg text-muted-foreground reveal"
             style={{ animationDelay: "0.1s" }}
           >
             {t("reviewsSubtitle")}
@@ -129,7 +121,7 @@ const Reviews = () => {
           {reviews.map((review, index) => (
             <div
               key={review.id}
-              className={`opacity-0 ${isVisible ? "animate-fade-scale" : ""}`}
+              className="reveal"
               style={{ animationDelay: `${0.12 * index}s` }}
             >
               <ReviewCard review={review} />

@@ -1,11 +1,9 @@
 import { Shield, Barcode, Heart, Database, Cloud, Target, Droplets, Clock3, BarChart3 } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { type TranslationKey } from "@/i18n/translations";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Features = () => {
   const { t } = useLanguage();
-  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
   
   const features = [
     {
@@ -56,21 +54,17 @@ const Features = () => {
   ];
 
   return (
-    <section ref={ref} className="section-gradient py-24">
+    <section className="section-gradient py-24">
       <div className="container">
         <div className="text-center mb-16">
           <h2 
-            className={`text-3xl md:text-4xl font-bold text-foreground mb-4 opacity-0 ${
-              isVisible ? 'animate-fade-up' : ''
-            }`}
+            className="text-3xl md:text-4xl font-bold text-foreground mb-4 reveal"
           >
             {t("featuresTitle")}{" "}
             <span className="gradient-text">{t("featuresTitleHighlight")}</span>
           </h2>
           <p 
-            className={`text-muted-foreground text-lg max-w-xl mx-auto opacity-0 ${
-              isVisible ? 'animate-fade-up' : ''
-            }`}
+            className="text-muted-foreground text-lg max-w-xl mx-auto reveal"
             style={{ animationDelay: '0.1s' }}
           >
             {t("featuresSubtitle")}
@@ -81,7 +75,7 @@ const Features = () => {
           {features.map((feature, index) => (
             <div 
               key={feature.titleKey} 
-              className={`feature-card opacity-0 ${isVisible ? 'animate-fade-scale' : ''}`}
+              className="feature-card reveal"
               style={{ animationDelay: `${0.15 + 0.08 * index}s` }}
             >
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">

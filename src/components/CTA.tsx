@@ -1,21 +1,17 @@
 import { useLanguage } from "@/i18n/LanguageContext";
 import appStoreBadge from "@/assets/app-store-badge.svg";
 import googlePlayBadge from "@/assets/google-play-badge.png";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { getAppStoreUrl, getGooglePlayUrl } from "@/lib/storeLinks";
 import { trackStoreCtaClick } from "@/lib/analytics";
 
 const CTA = () => {
   const { t, language } = useLanguage();
-  const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
   
   return (
-    <section id="cta" ref={ref} className="py-24">
+    <section id="cta" className="py-24">
       <div className="container">
         <div 
-          className={`glass-card p-12 md:p-16 text-center max-w-3xl mx-auto opacity-0 ${
-            isVisible ? 'animate-fade-scale' : ''
-          }`}
+          className="glass-card p-12 md:p-16 text-center max-w-3xl mx-auto reveal"
         >
           <h2 className="text-3xl md:text-4xl text-foreground mb-4">
             {t("ctaTitle")}
