@@ -7,32 +7,44 @@
     --background: 240 16% 5%;
     --foreground: 0 0% 96%;
 
-    --card: 240 11% 10%;
+    --card: 240 10% 7%;
     --card-foreground: 0 0% 96%;
 
-    --popover: 240 11% 10%;
+    --popover: 240 10% 7%;
     --popover-foreground: 0 0% 96%;
 
     --primary: 338 92% 63%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 24 95% 59%;
-    --secondary-foreground: 0 0% 100%;
+    /* shadcn treats `secondary` as a neutral surface (progress tracks, slider rails,
+       badge backgrounds), but this theme had it set to brand orange — so those
+       controls rendered orange. Refined Dark drops the orange entirely. */
+    --secondary: 240 8% 11%;
+    --secondary-foreground: 0 0% 96%;
 
-    --muted: 240 8% 16%;
-    --muted-foreground: 240 5% 68%;
+    --muted: 240 8% 11%;
+    --muted-foreground: 240 5% 58%;
 
-    --accent: 240 8% 16%;
+    --accent: 240 8% 11%;
     --accent-foreground: 0 0% 96%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 7% 22%;
-    --input: 240 7% 22%;
+    --border: 240 7% 13%;
+    --input: 240 7% 13%;
     --ring: 338 92% 63%;
 
     --radius: 0.75rem;
+
+    /* Refined Dark token retune. These carry the redesign to the 209 existing uses of
+       text-muted-foreground / border-border / bg-card across all 12 pages without
+       touching their markup:
+         card/popover 10% -> 7%   quieter surfaces
+         muted        16% -> 11%
+         muted-fg     68% -> 58%  lower contrast body copy, still 6.4:1 (passes AA)
+         border       22% -> 13%  hairline instead of a visible frame
+       muted-foreground was deliberately not taken lower: 50% is 4.9:1 and 45% fails AA. */
 
     --glass-bg: 240 11% 10%;
     --glass-border: 338 92% 63% / 0.18;
