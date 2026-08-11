@@ -45,10 +45,25 @@ content/whats-new/2.1.1/
     demo.mp4
 ```
 
-Routes are generated automatically:
-- English overview: `/whats-new`
-- German overview: `/de/whats-new`
-- English detail: `/whats-new/<version>`
-- German detail: `/de/whats-new/<version>`
+Routes are generated automatically. German is the default locale and is served
+unprefixed; English lives under `/en`:
 
-Prerendering and sitemap generation read the release content folder directly, so adding a new version entry is enough to publish a new localized page pair.
+- German overview: `/whats-new`
+- English overview: `/en/whats-new`
+- German detail: `/whats-new/<version>`
+- English detail: `/en/whats-new/<version>`
+
+Release notes are an Astro content collection (`src/content.config.ts`) loaded from
+`content/whats-new/*/{de,en}.md`. Adding a version directory with `de.md` and `en.md`
+is enough to publish a new localized page pair, its sitemap entries and its hreflang
+pair. A malformed release note fails the build rather than shipping blank.
+
+## Astro version pin
+
+`astro` is pinned to an exact version (no caret) because the test suite uses
+`experimental_AstroContainer`, which Astro documents as "subject to breaking changes,
+even in minor or patch releases". Read the Astro CHANGELOG before bumping, and expect
+`test/astro-container.test.ts` to be the first thing to break.
+
+Note also that `astro.config.mjs` deliberately has **no adapter** — see the comment at
+the top of that file before adding one.
