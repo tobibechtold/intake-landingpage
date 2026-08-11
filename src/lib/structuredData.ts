@@ -1,6 +1,7 @@
 import { FAQ_SECTIONS_BY_LANGUAGE } from './faqData';
 import { SITE_ORIGIN, getPageSeo } from './pageSeo';
 import { translations, type Language } from '@/i18n/translations';
+import { APP_PRICE, APP_RATING } from './appFacts';
 
 /**
  * JSON-LD builders.
@@ -9,31 +10,14 @@ import { translations, type Language } from '@/i18n/translations';
  * structured data that misrepresents visible content as spam, and the penalty is a
  * manual action on the whole property — a bad trade for a rich result.
  *
- * That rule is why `aggregateRating` and the app price are behind APP_FACTS below and
- * currently omitted: the site displays "4,9 App-Store-Bewertung" with no rating count,
- * and never shows the app's own price. Both are required to be real and verifiable.
+ * The rating and price therefore come from appFacts.ts — the same module the hero chip,
+ * the hero rating and the reviews summary render from. There is deliberately no second
+ * copy of either number here to drift out of sync with the page.
  */
 
 /** iOS app id, as used by the Smart App Banner in BaseLayout. */
 const APP_STORE_ID = '6757768955';
 const PLAY_ID = 'de.bechtoldit.intake';
-
-export const APP_FACTS = {
-  /**
-   * Fill both in from App Store Connect to enable the rating rich result. `ratingValue`
-   * must match what the page displays (4.9) and `ratingCount` must be the real number of
-   * ratings — Google requires a count and validates it against the visible page.
-   */
-  ratingValue: 4.9 as number | null,
-  ratingCount: null as number | null,
-
-  /**
-   * The one-time purchase price. Left null because no page currently renders it; if the
-   * site starts showing it, set it here and it will appear in `offers`.
-   */
-  price: null as number | null,
-  priceCurrency: 'EUR',
-};
 
 const appName = 'Intake';
 
@@ -56,25 +40,24 @@ export const softwareApplication = (lang: Language, route: string) => {
     ],
   };
 
-  // Only emitted when both the value and a real count are known.
-  if (APP_FACTS.ratingValue != null && APP_FACTS.ratingCount != null) {
+  // Google requires a count alongside the value, so a missing count omits the whole node.
+  if (APP_RATING.count != null) {
     node.aggregateRating = {
       '@type': 'AggregateRating',
-      ratingValue: APP_FACTS.ratingValue,
-      ratingCount: APP_FACTS.ratingCount,
+      ratingValue: APP_RATING.value,
+      ratingCount: APP_RATING.count,
       bestRating: 5,
       worstRating: 1,
     };
   }
 
-  if (APP_FACTS.price != null) {
-    node.offers = {
-      '@type': 'Offer',
-      price: APP_FACTS.price,
-      priceCurrency: APP_FACTS.priceCurrency,
-      availability: 'https://schema.org/InStock',
-    };
-  }
+  // The price in this page's own currency — the one its hero chip shows.
+  node.offers = {
+    '@type': 'Offer',
+    price: APP_PRICE[lang].amount,
+    priceCurrency: APP_PRICE[lang].currency,
+    availability: 'https://schema.org/InStock',
+  };
 
   return node;
 };

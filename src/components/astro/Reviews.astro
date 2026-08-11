@@ -1,6 +1,7 @@
 ---
 import { Star } from 'lucide-astro';
 import { REVIEWS, REVIEW_CLAMP_THRESHOLD } from '@/lib/reviews';
+import { formatRating, ratingLabel } from '@/lib/appFacts';
 import { useT } from '@/i18n/t';
 import type { Language } from '@/i18n/translations';
 
@@ -26,12 +27,12 @@ const t = useT(lang);
     <div class="mx-auto mb-12 max-w-3xl rounded-xl border border-white/[0.08] bg-white/[0.025] px-6 py-6 text-left md:px-8">
       <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div>
-          <p class="section-kicker">{t('heroTrustRating')}</p>
+          <p class="section-kicker">{ratingLabel(lang)}</p>
           <h3 class="mt-2 text-2xl font-semibold text-foreground">{t('reviewsSummaryTitle')}</h3>
         </div>
         <div class="flex items-center gap-3 rounded-lg border border-white/[0.08] bg-white/[0.02] px-4 py-2">
           <Star class="h-5 w-5 fill-primary text-primary" />
-          <span class="text-lg font-semibold text-foreground">4.9</span>
+          <span class="text-lg font-semibold text-foreground">{formatRating(lang)}</span>
           <span class="text-sm text-foreground/50">App Store</span>
         </div>
       </div>
