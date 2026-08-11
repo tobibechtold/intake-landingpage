@@ -94,9 +94,9 @@ const HelpPageInner = () => {
 
             <a
               href={guidePath}
-              className="group mx-auto mt-10 flex max-w-3xl items-start gap-4 rounded-xl border border-primary/25 bg-card/70 p-6 text-left transition-colors hover:border-primary/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              className="group mx-auto mt-10 flex max-w-3xl items-start gap-4 rounded-xl border border-white/[0.12] bg-card/70 p-6 text-left transition-colors hover:border-white/[0.12] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/[0.05] text-foreground/70">
                 <KeyRound className="h-6 w-6" aria-hidden="true" />
               </span>
               <span className="min-w-0 flex-1">

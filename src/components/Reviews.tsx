@@ -102,7 +102,7 @@ const Reviews = () => {
           </p>
         </div>
 
-        <div className="mx-auto mb-12 max-w-3xl rounded-xl border border-primary/15 bg-card/70 px-6 py-6 text-left md:px-8">
+        <div className="mx-auto mb-12 max-w-3xl rounded-xl border border-white/[0.12] bg-card/70 px-6 py-6 text-left md:px-8">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
               <p className="text-sm uppercase tracking-[0.2em] text-primary">{t("heroTrustRating")}</p>

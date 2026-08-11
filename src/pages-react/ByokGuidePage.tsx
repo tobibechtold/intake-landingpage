@@ -257,7 +257,7 @@ const ByokGuidePageInner = () => {
               ]}
             />
             <div className="max-w-4xl">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/[0.05] text-foreground/70">
                 <KeyRound className="h-7 w-7" aria-hidden="true" />
               </div>
               <p className="section-kicker mt-6">{content.kicker}</p>
@@ -267,7 +267,7 @@ const ByokGuidePageInner = () => {
               <p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground md:text-xl">
                 {content.intro}
               </p>
-              <p className="mt-5 inline-flex rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-sm font-semibold text-foreground">
+              <p className="badge-accent mt-5">
                 {content.summary}
               </p>
             </div>
@@ -400,7 +400,7 @@ const ByokGuidePageInner = () => {
         <section className="py-16 md:py-20">
           <div className="container max-w-6xl">
             <div className="grid gap-6 lg:grid-cols-2">
-              <article className="rounded-xl border border-primary/25 bg-primary/[0.06] p-7 md:p-9">
+              <article className="rounded-xl border border-white/[0.12] bg-primary/[0.06] p-7 md:p-9">
                 <ShieldCheck className="h-8 w-8 text-primary" aria-hidden="true" />
                 <h2 className="mt-5 text-2xl text-foreground">
                   {content.securityTitle}
@@ -444,7 +444,7 @@ const ByokGuidePageInner = () => {
               ))}
             </div>
 
-            <div className="mt-12 rounded-xl border border-primary/20 bg-card/70 p-8 text-center">
+            <div className="mt-12 rounded-xl border border-white/[0.12] bg-card/70 p-8 text-center">
               <h2 className="text-2xl text-foreground md:text-3xl">
                 {content.finishTitle}
               </h2>

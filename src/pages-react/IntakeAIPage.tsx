@@ -324,7 +324,7 @@ const IntakeAIPageInner = () => {
               <div>
                 <div className="flex flex-wrap items-center gap-3">
                   <p className="section-kicker">{content.kicker}</p>
-                  <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                  <span className="badge-accent">
                     {t("intakeAIBadge")}
                   </span>
                 </div>
@@ -381,7 +381,7 @@ const IntakeAIPageInner = () => {
             <div className="mt-12 grid gap-5 md:grid-cols-2">
               {content.features.map((feature) => (
                 <article key={feature.title} className="feature-card">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.05] text-foreground/70">
                     <feature.icon className="h-6 w-6" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">{feature.title}</h3>
@@ -405,8 +405,8 @@ const IntakeAIPageInner = () => {
             </div>
 
             <div className="mt-12 grid gap-6 md:grid-cols-2">
-              <article className="glass-card border border-primary/20 p-7">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <article className="glass-card border border-white/[0.12] p-7">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.05] text-foreground/70">
                   <Sparkles className="h-6 w-6" />
                 </div>
                 <h3 className="text-2xl font-semibold text-foreground">{content.hostedTitle}</h3>
@@ -427,7 +427,7 @@ const IntakeAIPageInner = () => {
               </article>
 
               <article className="glass-card border border-border/70 p-7">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.05] text-foreground/70">
                   <KeyRound className="h-6 w-6" />
                 </div>
                 <h3 className="text-2xl font-semibold text-foreground">{content.byokTitle}</h3>
@@ -465,7 +465,7 @@ const IntakeAIPageInner = () => {
                       {row.feature}
                     </h4>
                     <div className="mt-4 space-y-3">
-                      <div className="rounded-2xl border border-primary/20 bg-primary/5 p-4">
+                      <div className="rounded-2xl border border-white/[0.12] bg-primary/5 p-4">
                         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
                           {content.comparisonColumns.hosted}
                         </p>
@@ -497,7 +497,7 @@ const IntakeAIPageInner = () => {
                       <th className="w-[24%] px-5 py-4 text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">
                         {content.comparisonColumns.feature}
                       </th>
-                      <th className="w-[40%] bg-primary/10 px-5 py-4 text-sm font-semibold text-foreground">
+                      <th className="w-[40%] bg-white/[0.04] px-5 py-4 text-sm font-semibold text-foreground">
                         {content.comparisonColumns.hosted}
                       </th>
                       <th className="w-[36%] px-5 py-4 text-sm font-semibold text-foreground/80">

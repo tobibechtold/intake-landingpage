@@ -47,7 +47,7 @@ const ComparisonDetailPageInner = ({ slug }: { slug: string }) => {
                     <th className="px-5 py-4 text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">
                       {language === "de" ? "Kriterium" : "Criteria"}
                     </th>
-                    <th className="bg-primary/10 px-5 py-4 text-sm font-semibold text-foreground">
+                    <th className="bg-white/[0.04] px-5 py-4 text-sm font-semibold text-foreground">
                       Intake
                     </th>
                     <th className="px-5 py-4 text-sm font-semibold text-foreground/80">

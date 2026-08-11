@@ -38,7 +38,7 @@ const Header = () => {
   const desktopNavItemClassName =
     "px-2 text-sm font-medium text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background";
   const mobileNavItemClassName =
-    "rounded-full border border-border/60 bg-background/70 px-4 py-3 text-base font-medium text-foreground transition-colors hover:border-primary/40 hover:bg-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+    "rounded-full border border-border/60 bg-background/70 px-4 py-3 text-base font-medium text-foreground transition-colors hover:border-white/[0.12] hover:bg-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
   const renderNavItem = (
     item: { label: string; href: string; external?: boolean },
