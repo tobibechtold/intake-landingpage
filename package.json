@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node -e \"require('node:fs').rmSync('node_modules/.astro',{recursive:true,force:true})\" && astro build",
     "preview": "astro preview",
     "lint": "eslint .",
     "test": "vitest run",

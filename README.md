@@ -61,15 +61,16 @@ pair. A malformed release note fails the build rather than shipping blank.
 ### Gotcha: the content collection cache
 
 Astro caches rendered markdown in **`node_modules/.astro/data-store.json`**, which
-`rm -rf .astro` does *not* clear. If you change `src/lib/remarkVideo.mjs` or anything else
-in the markdown pipeline and the output looks unchanged, the transformer is not being run —
-the cached render is being reused. Clear it with:
+`rm -rf .astro` does *not* clear. The cache invalidates when content changes but **not** when
+the markdown pipeline changes — so editing `src/lib/remarkVideo.mjs` appears to do nothing,
+because the cached render is reused and the transformer never runs.
 
-```bash
-rm -rf node_modules/.astro .astro dist && npm run build
-```
+This is not only a local problem: Vercel restores `node_modules` between builds, so a stale
+content store shipped to production once already (videos kept their pre-fix relative URLs even
+though the deploy was otherwise current).
 
-CI and Vercel install fresh, so this only bites local iteration.
+`npm run build` therefore deletes `node_modules/.astro` before every build. Re-rendering all 40
+release notes costs milliseconds, and correctness beats the saving. Do not "optimise" that away.
 
 ### Release-note videos
 
