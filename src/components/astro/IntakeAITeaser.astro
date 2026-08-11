@@ -1,0 +1,56 @@
+---
+import { Sparkles, Camera, MessageCircle } from 'lucide-astro';
+import { buildLocalizedPath } from '@/lib/localeRouting';
+import { useT } from '@/i18n/t';
+import type { Language } from '@/i18n/translations';
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+const t = useT(lang);
+
+const highlights =
+  lang === 'de'
+    ? ['Text beschreiben', 'Foto analysieren', 'Vor dem Speichern prüfen']
+    : ['Describe with text', 'Analyze a photo', 'Review before logging'];
+
+const icons = [MessageCircle, Camera, Sparkles];
+---
+<section class="section-gradient py-20">
+  <div class="container">
+    <div class="grid items-center gap-8 rounded-xl border border-white/[0.08] bg-white/[0.025] p-8 md:grid-cols-[minmax(0,1fr)_minmax(260px,0.8fr)] md:p-10">
+      <div>
+        <div class="flex flex-wrap items-center gap-3">
+          <h2 class="section-kicker">{t('intakeAITeaserKicker')}</h2>
+          <span class="rounded-md border border-primary/25 bg-primary/[0.08] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-primary">
+            {t('intakeAIBadge')}
+          </span>
+        </div>
+        <p class="mt-4 max-w-2xl text-3xl font-semibold tracking-[-0.035em] text-foreground md:text-4xl">
+          {t('intakeAITeaserTitle')}
+        </p>
+        <p class="mt-4 max-w-2xl text-base leading-7 text-foreground/50 md:text-lg">
+          {t('intakeAITeaserDescription')}
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href={buildLocalizedPath('intakeAI', lang)} class="trust-chip-link">
+            {t('intakeAITeaserButton')}
+          </a>
+        </div>
+      </div>
+
+      <div class="grid gap-3">
+        {icons.map((Icon, index) => (
+          <div class="flex items-center gap-3 rounded-lg border border-white/[0.08] bg-white/[0.02] px-4 py-3">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/[0.05] text-foreground/70">
+              <Icon class="h-5 w-5" />
+            </span>
+            <span class="text-sm font-medium text-foreground/85">{highlights[index]}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

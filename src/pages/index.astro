@@ -2,12 +2,49 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { pageProps } from '@/lib/pageSeo';
 import { loadReleases } from '@/lib/loadReleases';
-import Index from '@/pages-react/Index';
+
+// Static sections — rendered to HTML at build time, zero JS.
+import MobileIntakeAIBanner from '@/components/astro/MobileIntakeAIBanner.astro';
+import PressMentions from '@/components/astro/PressMentions.astro';
+import WhySwitch from '@/components/astro/WhySwitch.astro';
+import TopicPages from '@/components/astro/TopicPages.astro';
+import ProofStories from '@/components/astro/ProofStories.astro';
+import IntakeAITeaser from '@/components/astro/IntakeAITeaser.astro';
+import Features from '@/components/astro/Features.astro';
+import ProductUpdatesPreview from '@/components/astro/ProductUpdatesPreview.astro';
+import FeatureVoting from '@/components/astro/FeatureVoting.astro';
+import CTA from '@/components/astro/CTA.astro';
+import Footer from '@/components/astro/Footer.astro';
+
+// The only four sections that genuinely need JS: a Radix Sheet, video-format
+// detection, and two carousels.
+import HeaderIsland from '@/components/islands/HeaderIsland';
+import HeroIsland from '@/components/islands/HeroIsland';
+import ReviewsIsland from '@/components/islands/ReviewsIsland';
+import ScreenshotGalleryIsland from '@/components/islands/ScreenshotGalleryIsland';
 
 const route = '/';
-const props = pageProps(route);
-const releases = await loadReleases(props.lang);
+const { lang, alternateHref } = pageProps(route);
+const releases = await loadReleases(lang);
 ---
 <BaseLayout route={route}>
-  <Index client:load {...props} releases={releases} />
+  <div class="min-h-screen">
+    <HeaderIsland client:load lang={lang} alternateHref={alternateHref} />
+    <main>
+      <HeroIsland client:load lang={lang} alternateHref={alternateHref} />
+      <MobileIntakeAIBanner lang={lang} />
+      <PressMentions lang={lang} />
+      <WhySwitch lang={lang} />
+      <TopicPages lang={lang} />
+      <ProofStories lang={lang} />
+      <IntakeAITeaser lang={lang} />
+      <ReviewsIsland client:visible lang={lang} alternateHref={alternateHref} />
+      <ScreenshotGalleryIsland client:visible lang={lang} alternateHref={alternateHref} />
+      <Features lang={lang} />
+      <ProductUpdatesPreview lang={lang} releases={releases} />
+      <FeatureVoting lang={lang} />
+      <CTA lang={lang} />
+    </main>
+    <Footer lang={lang} />
+  </div>
 </BaseLayout>

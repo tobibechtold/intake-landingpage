@@ -1,0 +1,39 @@
+---
+import { Megaphone, ArrowRight } from 'lucide-astro';
+import { useT } from '@/i18n/t';
+import type { Language } from '@/i18n/translations';
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+const t = useT(lang);
+---
+<section class="section-gradient py-24">
+  <div class="container">
+    <div class="glass-card reveal mx-auto max-w-3xl p-12 text-center md:p-16">
+      <div class="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-white/[0.05]">
+        <Megaphone class="h-7 w-7 text-foreground/70" />
+      </div>
+
+      <h2 class="mb-4 text-3xl text-foreground md:text-4xl">
+        {t('featureVotingTitle')} <span class="gradient-text">{t('featureVotingTitleHighlight')}</span>
+      </h2>
+
+      <p class="mx-auto mb-8 max-w-lg text-lg text-foreground/50">
+        {t('featureVotingDescription')}
+      </p>
+
+      <a
+        href="https://featurevoting.tobibechtold.dev"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-primary"
+      >
+        {t('featureVotingButton')}
+        <ArrowRight class="h-4 w-4" />
+      </a>
+    </div>
+  </div>
+</section>

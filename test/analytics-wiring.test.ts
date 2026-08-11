@@ -43,6 +43,15 @@ describe('analytics and attribution wiring', () => {
     expect(config).toMatch(/envPrefix:\s*\[[^\]]*'VITE_'/);
   });
 
+  // posthog-js is ~217 KB, larger than react-dom. It must stay behind a dynamic
+  // import() so it never blocks first paint; a plain top-level import would silently
+  // put it back in the critical path.
+  it('keeps posthog out of the statically imported graph', () => {
+    const src = readFileSync('src/lib/analytics.ts', 'utf8');
+    expect(src).toContain('import("posthog-js")');
+    expect(src).not.toMatch(/^import posthog from ["']posthog-js["']/m);
+  });
+
   it('bundles posthog so initAnalytics has something to call', () => {
     const chunks = readdirSync('dist/_astro').filter((f) => f.endsWith('.js'));
     const anyHasPosthog = chunks.some((f) =>
