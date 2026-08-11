@@ -133,6 +133,52 @@
     @apply border-t border-white/[0.06];
     background: hsl(var(--background));
   }
+
+  /* These live in @layer components, not @layer utilities, on purpose. Tailwind emits
+     components before utilities, so an atomic class at a call site (px-0, w-9, px-6)
+     overrides them. Defined as utilities they won instead, and every call-site override
+     was silently ignored — that is why the icon-only download button collapsed to 0px
+     wide: its px-0 lost to .btn-primary's px-5. */
+  .section-kicker {
+    @apply inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/45;
+  }
+  .section-kicker::before {
+    content: "";
+    @apply inline-block h-1 w-1 shrink-0 rounded-full bg-primary;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition-colors hover:bg-foreground/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+  .btn-secondary {
+    @apply btn-primary;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+  .badge-accent {
+    @apply inline-flex items-center rounded-md border border-primary/20 bg-primary/[0.08] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-primary;
+  }
+  .trust-chip {
+    @apply inline-flex items-center rounded-lg border border-white/[0.08] bg-white/[0.03] px-3.5 py-1.5 text-[13px] font-medium text-foreground/80;
+  }
+  .trust-chip-link {
+    @apply inline-flex items-center rounded-lg border border-white/[0.08] bg-white/[0.03] px-3.5 py-1.5 text-[13px] font-medium text-foreground/80 transition-colors duration-200 hover:border-white/[0.18] hover:bg-white/[0.06] hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+  .proof-story-card {
+    @apply grid items-center gap-8 rounded-xl border border-white/[0.08] bg-white/[0.025] p-6 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1fr)] md:p-8;
+  }
+  .proof-story-card--text-only {
+    @apply md:grid-cols-1;
+  }
+  .proof-story-media {
+    @apply mx-auto w-full max-w-[320px];
+  }
+  .proof-story-copy {
+    @apply max-w-2xl;
+  }
+  .proof-story-copy--full {
+    max-width: none;
+  }
 }
 
 /* Scroll reveal, without JavaScript.
@@ -174,67 +220,27 @@
 
   /* Quieter and smaller: a label, not a headline. The pink survives as the dot
      rendered by ::before, which is the only accent most sections now carry. */
-  .section-kicker {
-    @apply inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/45;
-  }
 
-  .section-kicker::before {
-    content: "";
-    @apply inline-block h-1 w-1 shrink-0 rounded-full bg-primary;
-  }
 
   /* Refined Dark: the primary action is white, not pink. Pink stays an accent so
      that when it does appear it means something. */
-  .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition-colors hover:bg-foreground/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
-  }
 
   /* Deliberately identical to .btn-primary. The previous hairline-outline treatment was
      indistinguishable from the cards it usually sat on, so there is one filled button
      style now. Kept as a separate name so call sites can still express intent, and so a
      distinct secondary treatment can be reintroduced in one place if ever wanted. */
-  .btn-secondary {
-    @apply btn-primary;
-  }
 
   /* Tertiary: an inline affordance inside a card or block, not a standalone action.
      Used for "Update lesen", "Zur Übersicht" and similar. The arrow is supplied by
      the markup so it can be omitted where it would be noise. */
-  .btn-ghost {
-    @apply inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
-  }
 
   /* Pink is reserved for meaning, and a badge is meaning: "new", "included", "now
      available". Everything decorative went neutral. */
-  .badge-accent {
-    @apply inline-flex items-center rounded-md border border-primary/20 bg-primary/[0.08] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-primary;
-  }
 
-  .trust-chip {
-    @apply inline-flex items-center rounded-lg border border-white/[0.08] bg-white/[0.03] px-3.5 py-1.5 text-[13px] font-medium text-foreground/80;
-  }
 
-  .trust-chip-link {
-    @apply inline-flex items-center rounded-lg border border-white/[0.08] bg-white/[0.03] px-3.5 py-1.5 text-[13px] font-medium text-foreground/80 transition-colors duration-200 hover:border-white/[0.18] hover:bg-white/[0.06] hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
-  }
 
-  .proof-story-card {
-    @apply grid items-center gap-8 rounded-xl border border-white/[0.08] bg-white/[0.025] p-6 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1fr)] md:p-8;
-  }
 
-  .proof-story-card--text-only {
-    @apply md:grid-cols-1;
-  }
 
-  .proof-story-media {
-    @apply mx-auto w-full max-w-[320px];
-  }
 
-  .proof-story-copy {
-    @apply max-w-2xl;
-  }
 
-  .proof-story-copy--full {
-    max-width: none;
-  }
 }

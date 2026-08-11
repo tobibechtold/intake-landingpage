@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import StructuredData from '@/components/astro/StructuredData.astro';
+import { softwareApplication } from '@/lib/structuredData';
 import SiteShell from '@/components/astro/SiteShell.astro';
 import IntakeAIPage from '@/components/astro/IntakeAIPage.astro';
 import { pageProps } from '@/lib/pageSeo';
@@ -8,6 +10,7 @@ const route = '/intake-ai';
 const { lang } = pageProps(route);
 ---
 <BaseLayout route={route}>
+  <StructuredData schema={softwareApplication(lang, route)} />
   <SiteShell route={route}>
     <IntakeAIPage lang={lang} />
   </SiteShell>

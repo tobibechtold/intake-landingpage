@@ -2,6 +2,8 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SiteShell from '@/components/astro/SiteShell.astro';
 import PageBreadcrumbs, { type BreadcrumbItem } from '@/components/astro/PageBreadcrumbs.astro';
+import StructuredData from '@/components/astro/StructuredData.astro';
+import { breadcrumbList } from '@/lib/structuredData';
 import CTA from '@/components/astro/CTA.astro';
 import { getScreenshotAsset } from '@/lib/screenshotAssets';
 import { buildLocalizedPath, type SitePage } from '@/lib/localeRouting';
@@ -36,6 +38,7 @@ const relatedHref = (link: RelatedLink) =>
     : buildLocalizedPath(link.page as SitePage, lang as Language);
 ---
 <BaseLayout route={route}>
+  <StructuredData schema={breadcrumbList(breadcrumbs)} />
   <SiteShell route={route}>
   <section class="hero-gradient overflow-hidden pb-14 pt-8 md:pb-20">
     <div class="container">

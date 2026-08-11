@@ -8,6 +8,8 @@ import {
   ShieldCheck,
 } from 'lucide-astro';
 import PageBreadcrumbs from '@/components/astro/PageBreadcrumbs.astro';
+import StructuredData from '@/components/astro/StructuredData.astro';
+import { breadcrumbList } from '@/lib/structuredData';
 import { buildLocalizedPath } from "@/lib/localeRouting";
 
 const PROVIDER_LINKS = {
@@ -244,18 +246,17 @@ const t = useT(lang);
 const content = CONTENT[lang];
   const helpPath = buildLocalizedPath("help", lang);
   const intakeAIPath = buildLocalizedPath("intakeAI", lang);
+const breadcrumbs = [
+                { label: t("homeNav"), href: buildLocalizedPath("home", lang) },
+                { label: t("helpNav"), href: helpPath },
+                { label: content.breadcrumb },
+              ];
 ---
 <div class="min-h-screen">
       <main class="pb-24 pt-28">
         <section class="hero-gradient border-b border-white/[0.08] pb-16 pt-8 md:pb-24">
           <div class="container max-w-6xl">
-            <PageBreadcrumbs
-              items={[
-                { label: t("homeNav"), href: buildLocalizedPath("home", lang) },
-                { label: t("helpNav"), href: helpPath },
-                { label: content.breadcrumb },
-              ]}
-            />
+            <PageBreadcrumbs items={breadcrumbs} />
             <div class="max-w-4xl">
               <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/[0.05] text-foreground/70">
                 <KeyRound class="h-7 w-7" aria-hidden="true" />

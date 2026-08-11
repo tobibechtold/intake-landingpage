@@ -1,0 +1,21 @@
+---
+/**
+ * Emits one JSON-LD block per schema node.
+ *
+ * `set:html` with JSON.stringify is correct here rather than dangerous: the content is
+ * serialised JSON, not user input, and Astro would otherwise HTML-escape the quotes and
+ * break the script. The `<\/` guard prevents a string containing "</script>" from
+ * terminating the block early.
+ */
+interface Props {
+  schema: Record<string, unknown> | Array<Record<string, unknown>>;
+}
+
+const { schema } = Astro.props;
+const nodes = Array.isArray(schema) ? schema : [schema];
+const serialise = (node: Record<string, unknown>) =>
+  JSON.stringify(node).replace(/<\//g, '<\\/');
+---
+{nodes.map((node) => (
+  <script type="application/ld+json" set:html={serialise(node)} />
+))}

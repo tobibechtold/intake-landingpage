@@ -1,6 +1,8 @@
 ---
 import CTA from '@/components/astro/CTA.astro';
 import PageBreadcrumbs from '@/components/astro/PageBreadcrumbs.astro';
+import StructuredData from '@/components/astro/StructuredData.astro';
+import { breadcrumbList } from '@/lib/structuredData';
 import { getComparisonPageContent, isComparisonSlug } from "@/lib/marketingPages";
 import { buildLocalizedPath } from "@/lib/localeRouting";
 import { useT } from '@/i18n/t';
@@ -15,18 +17,17 @@ const { lang, slug } = Astro.props;
 const t = useT(lang);
 const comparisonSlug = isComparisonSlug(slug) ? slug : "yazio-alternative";
   const content = getComparisonPageContent(comparisonSlug, lang);
+const breadcrumbs = [
+                { label: t("homeNav"), href: buildLocalizedPath("home", lang) },
+                { label: t("comparisonsNav"), href: buildLocalizedPath("comparisons", lang) },
+                { label: content.kicker },
+              ];
 ---
 <div class="min-h-screen">
       <main class="pt-28">
         <section class="hero-gradient overflow-hidden pb-14 pt-8 md:pb-20">
           <div class="container">
-            <PageBreadcrumbs
-              items={[
-                { label: t("homeNav"), href: buildLocalizedPath("home", lang) },
-                { label: t("comparisonsNav"), href: buildLocalizedPath("comparisons", lang) },
-                { label: content.kicker },
-              ]}
-            />
+            <PageBreadcrumbs items={breadcrumbs} />
             <div class="mx-auto max-w-4xl text-left">
               <p class="section-kicker">{content.kicker}</p>
               <h1 class="mt-4 text-4xl leading-tight text-foreground md:text-6xl">

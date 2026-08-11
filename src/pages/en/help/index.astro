@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import StructuredData from '@/components/astro/StructuredData.astro';
+import { faqPage } from '@/lib/structuredData';
 import SiteShell from '@/components/astro/SiteShell.astro';
 import HelpPage from '@/components/astro/HelpPage.astro';
 import { pageProps } from '@/lib/pageSeo';
@@ -8,6 +10,7 @@ const route = '/en/help';
 const { lang } = pageProps(route);
 ---
 <BaseLayout route={route}>
+  <StructuredData schema={faqPage(lang)} />
   <SiteShell route={route}>
     <HelpPage lang={lang} />
   </SiteShell>
