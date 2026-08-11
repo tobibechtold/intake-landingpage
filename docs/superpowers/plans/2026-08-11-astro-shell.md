@@ -905,10 +905,29 @@ Radix and the other UI packages are pruned in the follow-up plan, once page conv
 Run: `npm run build && npm test`
 Expected: build exits 0; all tests pass including `test/build-output.test.ts`.
 
-- [ ] **Step 5: Verify the sitemap replaced the hand-rolled one**
+- [ ] **Step 5: Resolve the sitemap collision and verify**
+
+`public/sitemap.xml` is a tracked static file (last touched in `22b4950`) that used to be
+overwritten at build time by `scripts/prerender.mjs`. Astro copies `public/` verbatim, so it would
+now sit alongside `@astrojs/sitemap`'s generated `sitemap-index.xml` as a second, stale sitemap.
+`public/robots.txt` still advertises the old path.
 
 ```bash
-test -f dist/sitemap-index.xml && echo "SITEMAP OK"
+git rm public/sitemap.xml
+```
+
+Then update the last line of `public/robots.txt`:
+
+```
+Sitemap: https://www.getintake.de/sitemap-index.xml
+```
+
+Verify only the generated sitemap survives, and that it lists all 66 URLs:
+
+```bash
+npm run build
+test -f dist/sitemap-index.xml && test ! -f dist/sitemap.xml && echo "SITEMAP OK"
+grep -c "<loc>" dist/sitemap-0.xml   # expect 66
 ```
 
 - [ ] **Step 6: Commit**
