@@ -1,0 +1,270 @@
+{
+  "/": {
+    "words": 1117,
+    "sha": "640358d2458ca8a1"
+  },
+  "/404": {
+    "words": 60,
+    "sha": "5b20fa4630cdd58c"
+  },
+  "/en": {
+    "words": 1202,
+    "sha": "c66d3027b768881d"
+  },
+  "/en/calorie-counter-no-subscription": {
+    "words": 290,
+    "sha": "4a40c26a9ab03a92"
+  },
+  "/en/calorie-tracker-no-account": {
+    "words": 293,
+    "sha": "96eae7fcdd35b0bc"
+  },
+  "/en/comparisons": {
+    "words": 247,
+    "sha": "43db824e4c39691f"
+  },
+  "/en/comparisons/fddb-alternative": {
+    "words": 448,
+    "sha": "d5e4a8e537979def"
+  },
+  "/en/comparisons/yazio-alternative": {
+    "words": 464,
+    "sha": "8b07a7e84067de17"
+  },
+  "/en/features": {
+    "words": 563,
+    "sha": "cf03c74126d2aa73"
+  },
+  "/en/help": {
+    "words": 1167,
+    "sha": "056003f6fdd9ce03"
+  },
+  "/en/help/own-api-key": {
+    "words": 813,
+    "sha": "59b9323810dbff49"
+  },
+  "/en/intake-ai": {
+    "words": 866,
+    "sha": "9fa718e1a62494b2"
+  },
+  "/en/privacy": {
+    "words": 410,
+    "sha": "4729e12e5ba936aa"
+  },
+  "/en/terms": {
+    "words": 417,
+    "sha": "1034ed77e27144f4"
+  },
+  "/en/whats-new": {
+    "words": 979,
+    "sha": "176547019eb13669"
+  },
+  "/en/whats-new/2.1.1": {
+    "words": 428,
+    "sha": "b5bd16d42078f7ad"
+  },
+  "/en/whats-new/2.1.2": {
+    "words": 104,
+    "sha": "0887d4d9fad84101"
+  },
+  "/en/whats-new/2.1.3": {
+    "words": 311,
+    "sha": "a0b54cab04c5ee10"
+  },
+  "/en/whats-new/2.1.4": {
+    "words": 474,
+    "sha": "79a2319b925d22b1"
+  },
+  "/en/whats-new/2.2.0": {
+    "words": 557,
+    "sha": "187d5a0612b2c0da"
+  },
+  "/en/whats-new/2.2.1": {
+    "words": 205,
+    "sha": "e9f59439d09c2bb7"
+  },
+  "/en/whats-new/2.2.2": {
+    "words": 362,
+    "sha": "7b025c236691d009"
+  },
+  "/en/whats-new/2.3.0": {
+    "words": 425,
+    "sha": "983f8dc94b9bf41c"
+  },
+  "/en/whats-new/2.3.1": {
+    "words": 363,
+    "sha": "008d9bfcb3831969"
+  },
+  "/en/whats-new/2.3.2": {
+    "words": 366,
+    "sha": "b80365598fa71342"
+  },
+  "/en/whats-new/2.4.0": {
+    "words": 572,
+    "sha": "0e6997dae0b2a818"
+  },
+  "/en/whats-new/2.4.1": {
+    "words": 328,
+    "sha": "1c2ae7e7f92b2c71"
+  },
+  "/en/whats-new/2.4.2": {
+    "words": 228,
+    "sha": "1462c9221ef6fa2f"
+  },
+  "/en/whats-new/2.4.3": {
+    "words": 319,
+    "sha": "0ce8a8355025a34b"
+  },
+  "/en/whats-new/2.4.4": {
+    "words": 351,
+    "sha": "4420cb3db4c9a597"
+  },
+  "/en/whats-new/2.4.5": {
+    "words": 351,
+    "sha": "274573a2b60225c5"
+  },
+  "/en/whats-new/2.4.6": {
+    "words": 326,
+    "sha": "ad71fbcb0dc1132e"
+  },
+  "/en/whats-new/2.4.7": {
+    "words": 241,
+    "sha": "97d6fb704a76248f"
+  },
+  "/en/whats-new/2.5.0": {
+    "words": 380,
+    "sha": "0ee10bf8ce5b4ef4"
+  },
+  "/en/whats-new/2.5.1": {
+    "words": 1215,
+    "sha": "a970354c63fa5e6b"
+  },
+  "/funktionen": {
+    "words": 502,
+    "sha": "201d62f61898d71b"
+  },
+  "/hilfe": {
+    "words": 1044,
+    "sha": "04cae40007cce2c8"
+  },
+  "/hilfe/eigener-api-schluessel": {
+    "words": 706,
+    "sha": "3eca5090fad1008d"
+  },
+  "/intake-ai": {
+    "words": 820,
+    "sha": "d2467eadfa57b6f9"
+  },
+  "/kalorien-tracker-ohne-konto": {
+    "words": 282,
+    "sha": "9984f78d0939da2c"
+  },
+  "/kalorienzaehler-ohne-abo": {
+    "words": 267,
+    "sha": "6de9a637951cb477"
+  },
+  "/privacy": {
+    "words": 468,
+    "sha": "f5427e518ef09cbe"
+  },
+  "/terms": {
+    "words": 500,
+    "sha": "81dba074aae9efea"
+  },
+  "/vergleiche": {
+    "words": 242,
+    "sha": "5544695711772808"
+  },
+  "/vergleiche/fddb-alternative": {
+    "words": 414,
+    "sha": "feb4cf34cb35e0cb"
+  },
+  "/vergleiche/yazio-alternative": {
+    "words": 399,
+    "sha": "6ef8f470072db413"
+  },
+  "/whats-new": {
+    "words": 848,
+    "sha": "047b3e9d1073d420"
+  },
+  "/whats-new/2.1.1": {
+    "words": 447,
+    "sha": "a306e4d3a442ea7b"
+  },
+  "/whats-new/2.1.2": {
+    "words": 117,
+    "sha": "9cfea44b8874ad44"
+  },
+  "/whats-new/2.1.3": {
+    "words": 316,
+    "sha": "79d7b80f7a74e4cb"
+  },
+  "/whats-new/2.1.4": {
+    "words": 461,
+    "sha": "65c0fa37435a8b3a"
+  },
+  "/whats-new/2.2.0": {
+    "words": 607,
+    "sha": "e405199e041cef8a"
+  },
+  "/whats-new/2.2.1": {
+    "words": 190,
+    "sha": "ea233d8a94baa998"
+  },
+  "/whats-new/2.2.2": {
+    "words": 415,
+    "sha": "4b4bff72a6bef078"
+  },
+  "/whats-new/2.3.0": {
+    "words": 437,
+    "sha": "9084beb9c0bae5ee"
+  },
+  "/whats-new/2.3.1": {
+    "words": 359,
+    "sha": "702cd20efd772aee"
+  },
+  "/whats-new/2.3.2": {
+    "words": 363,
+    "sha": "acc1d42d4193f5f8"
+  },
+  "/whats-new/2.4.0": {
+    "words": 544,
+    "sha": "9f66a5536e8b816e"
+  },
+  "/whats-new/2.4.1": {
+    "words": 313,
+    "sha": "42dd8628fe37255f"
+  },
+  "/whats-new/2.4.2": {
+    "words": 207,
+    "sha": "5d1f7cb1abb80c85"
+  },
+  "/whats-new/2.4.3": {
+    "words": 311,
+    "sha": "10217778688f95f4"
+  },
+  "/whats-new/2.4.4": {
+    "words": 341,
+    "sha": "f910980c8425ec80"
+  },
+  "/whats-new/2.4.5": {
+    "words": 341,
+    "sha": "920a6cdb71a4c88b"
+  },
+  "/whats-new/2.4.6": {
+    "words": 330,
+    "sha": "0a814f82932139f8"
+  },
+  "/whats-new/2.4.7": {
+    "words": 234,
+    "sha": "9eb15c682f9945a2"
+  },
+  "/whats-new/2.5.0": {
+    "words": 375,
+    "sha": "55018ba2a50eda73"
+  },
+  "/whats-new/2.5.1": {
+    "words": 1139,
+    "sha": "0d629b49ace167e1"
+  }
+}
