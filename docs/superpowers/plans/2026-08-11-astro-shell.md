@@ -1014,7 +1014,8 @@ Verify only the generated sitemap survives, and that it lists all 66 URLs:
 ```bash
 npm run build
 test -f dist/sitemap-index.xml && test ! -f dist/sitemap.xml && echo "SITEMAP OK"
-grep -c "<loc>" dist/sitemap-0.xml   # expect 66
+# NB: the sitemap is a single line, so `grep -c` counts lines (always 1). Count matches:
+grep -o "<loc>" dist/sitemap-0.xml | wc -l   # expect 66
 ```
 
 - [ ] **Step 6: Commit**

@@ -1,17 +1,14 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { MemoryRouter } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import Header from "./Header";
 
 describe("Header", () => {
   it("renders a mobile navigation trigger and opens the sheet with nav links", () => {
     render(
-      <MemoryRouter initialEntries={["/"]}>
-        <LanguageProvider>
+        <LanguageProvider lang="de" alternateHref="/">
           <Header />
         </LanguageProvider>
-      </MemoryRouter>
     );
 
     fireEvent.click(screen.getByRole("button", { name: /navigation öffnen|open navigation/i }));
@@ -26,11 +23,9 @@ describe("Header", () => {
 
   it("keeps the desktop nav focused on the main destination pages", () => {
     render(
-      <MemoryRouter initialEntries={["/"]}>
-        <LanguageProvider>
+        <LanguageProvider lang="de" alternateHref="/">
           <Header />
         </LanguageProvider>
-      </MemoryRouter>
     );
 
     const desktopFeaturesLink = screen.getAllByRole("link", { name: /funktionen|features/i })[0];
@@ -52,11 +47,9 @@ describe("Header", () => {
 
   it("groups the logo and nav on the left side of the header", () => {
     render(
-      <MemoryRouter initialEntries={["/"]}>
-        <LanguageProvider>
+        <LanguageProvider lang="de" alternateHref="/">
           <Header />
         </LanguageProvider>
-      </MemoryRouter>
     );
 
     const headerShell = document.querySelector("[data-site-header-shell]");
@@ -77,11 +70,9 @@ describe("Header", () => {
 
   it("falls back to the hero anchor for the download button when the platform is unknown", () => {
     render(
-      <MemoryRouter initialEntries={["/"]}>
-        <LanguageProvider>
+        <LanguageProvider lang="de" alternateHref="/">
           <Header />
         </LanguageProvider>
-      </MemoryRouter>
     );
 
     const downloadLinks = screen.getAllByRole("link", { name: /herunterladen|download/i });

@@ -1,17 +1,14 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { MemoryRouter } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import HelpPage from "./HelpPage";
 
 describe("HelpPage", () => {
   it("renders the German help hub with faq content and a download next step", () => {
     render(
-      <MemoryRouter initialEntries={["/hilfe"]}>
-        <LanguageProvider>
+        <LanguageProvider lang="de" alternateHref="/">
           <HelpPage />
         </LanguageProvider>
-      </MemoryRouter>
     );
 
     expect(screen.getByRole("heading", { name: /hilfe & faq/i })).toBeInTheDocument();
@@ -40,11 +37,9 @@ describe("HelpPage", () => {
 
   it("renders the English help hub with faq content and a download next step", () => {
     render(
-      <MemoryRouter initialEntries={["/en/help"]}>
-        <LanguageProvider>
+        <LanguageProvider lang="en" alternateHref="/">
           <HelpPage />
         </LanguageProvider>
-      </MemoryRouter>
     );
 
     expect(screen.getByRole("heading", { name: /help & faq/i })).toBeInTheDocument();

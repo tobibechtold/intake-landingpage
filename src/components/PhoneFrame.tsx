@@ -22,7 +22,7 @@ const PhoneFrame = ({ children, className }: PhoneFrameProps) => {
         {children}
       </div>
       <img
-        src={iphoneBezel}
+        src={iphoneBezel.src}
         alt=""
         aria-hidden="true"
         className="pointer-events-none relative z-10 h-auto w-full select-none"

@@ -33,7 +33,7 @@ const CTA = () => {
               className="inline-block hover:opacity-80 transition-opacity"
             >
               <img
-                src={appStoreBadge}
+                src={appStoreBadge.src}
                 alt="Download on the App Store"
                 className="h-12 md:h-14"
               />
@@ -47,7 +47,7 @@ const CTA = () => {
               className="inline-block hover:opacity-80 transition-opacity"
             >
               <img
-                src={googlePlayBadge}
+                src={googlePlayBadge.src}
                 alt="Get it on Google Play"
                 className="h-12 md:h-14"
               />

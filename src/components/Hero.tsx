@@ -61,7 +61,7 @@ const Hero = () => {
             >
               <div className="relative h-20 w-20 shrink-0">
                 <img
-                  src={logo}
+                  src={logo.src}
                   alt="Intake"
                   className="relative z-10 h-full w-full"
                   loading="eager"
@@ -111,7 +111,7 @@ const Hero = () => {
                   className="rounded-2xl transition-transform duration-200 hover:-translate-y-0.5"
                 >
                   <img
-                    src={appStoreBadge}
+                    src={appStoreBadge.src}
                     alt="Download on the App Store"
                     className="h-12 md:h-14"
                   />
@@ -125,7 +125,7 @@ const Hero = () => {
                   className="rounded-2xl transition-transform duration-200 hover:-translate-y-0.5"
                 >
                   <img
-                    src={googlePlayBadge}
+                    src={googlePlayBadge.src}
                     alt="Get it on Google Play"
                     className="h-12 md:h-14"
                   />

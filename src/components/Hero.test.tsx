@@ -1,6 +1,6 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { MemoryRouter, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import Hero from "./Hero";
 
@@ -23,11 +23,9 @@ describe("Hero", () => {
 
   it("renders switch-focused messaging, trust chips, and the demo video", () => {
     const { container } = render(
-      <MemoryRouter initialEntries={["/en"]}>
-        <LanguageProvider>
+        <LanguageProvider lang="en" alternateHref="/">
           <Hero />
         </LanguageProvider>
-      </MemoryRouter>
     );
 
     expect(
@@ -53,12 +51,10 @@ describe("Hero", () => {
 
   it("reloads the locale-specific demo video when switching languages without a page reload", async () => {
     const { container } = render(
-      <MemoryRouter initialEntries={["/"]}>
-        <LanguageProvider>
+        <LanguageProvider lang="de" alternateHref="/">
           <SwitchToEnglishButton />
           <Hero />
         </LanguageProvider>
-      </MemoryRouter>
     );
 
     expect(container.querySelector("video source")).toHaveAttribute("src", "/promo-video.mp4");

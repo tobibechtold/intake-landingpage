@@ -1,22 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import NoSubscriptionPage from "./NoSubscriptionPage";
 import NoAccountPage from "./NoAccountPage";
 
 const renderRoute = (initialEntry: string, element: React.ReactElement) =>
   render(
-    <MemoryRouter initialEntries={[initialEntry]}>
-      <LanguageProvider>
-        <Routes>
-          <Route path="/kalorienzaehler-ohne-abo" element={<NoSubscriptionPage />} />
-          <Route path="/kalorien-tracker-ohne-konto" element={<NoAccountPage />} />
-          <Route path="/en/calorie-counter-no-subscription" element={<NoSubscriptionPage />} />
-          <Route path="/en/calorie-tracker-no-account" element={element} />
-        </Routes>
+      <LanguageProvider lang="de" alternateHref="/">
+        <NoSubscriptionPage lang="de" alternateHref="/" />
       </LanguageProvider>
-    </MemoryRouter>
   );
 
 describe("Intent pages", () => {

@@ -1,17 +1,14 @@
 import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { MemoryRouter } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import Index from "./Index";
 
 describe("Index", () => {
   it("places a mobile-only Intake AI banner directly after the hero", () => {
     render(
-      <MemoryRouter initialEntries={["/en"]}>
-        <LanguageProvider>
+        <LanguageProvider lang="en" alternateHref="/">
           <Index />
         </LanguageProvider>
-      </MemoryRouter>
     );
 
     const banner = screen.getByTestId("mobile-intake-ai-banner");
@@ -34,11 +31,9 @@ describe("Index", () => {
 
   it("renders the revised German conversion copy on the default homepage", () => {
     render(
-      <MemoryRouter initialEntries={["/"]}>
-        <LanguageProvider>
+        <LanguageProvider lang="de" alternateHref="/">
           <Index />
         </LanguageProvider>
-      </MemoryRouter>
     );
 
     expect(
@@ -77,11 +72,9 @@ describe("Index", () => {
 
   it("renders the English conversion-focused home page structure on /en", () => {
     render(
-      <MemoryRouter initialEntries={["/en"]}>
-        <LanguageProvider>
+        <LanguageProvider lang="en" alternateHref="/">
           <Index />
         </LanguageProvider>
-      </MemoryRouter>
     );
 
     expect(screen.getAllByRole("link", { name: /download on the app store/i }).length).toBeGreaterThan(0);

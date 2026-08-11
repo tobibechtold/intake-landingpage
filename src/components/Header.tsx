@@ -72,7 +72,7 @@ const Header = () => {
       >
         <div data-header-left-cluster className="flex min-w-0 items-center gap-6 lg:gap-8">
           <a href={homePath} className="flex items-center gap-3">
-            <img src={logo} alt="Intake" className="h-8 w-8" />
+            <img src={logo.src} alt="Intake" className="h-8 w-8" />
             <span className="text-lg font-semibold text-foreground">Intake</span>
           </a>
           <div data-header-desktop-nav className="hidden items-center gap-4 lg:flex">
@@ -107,7 +107,7 @@ const Header = () => {
               </SheetHeader>
               <div className="mt-8 flex flex-col gap-3">
                 <a href={homePath} className="mb-4 flex items-center gap-3">
-                  <img src={logo} alt="Intake" className="h-8 w-8" />
+                  <img src={logo.src} alt="Intake" className="h-8 w-8" />
                   <span className="text-lg font-semibold text-foreground">Intake</span>
                 </a>
                 {navItems.map((item) => (

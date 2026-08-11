@@ -1,19 +1,13 @@
 import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import IntakeAIPage from "./IntakeAIPage";
 
 function renderIntakeAIPage(path: string) {
   render(
-    <MemoryRouter initialEntries={[path]}>
-      <LanguageProvider>
-        <Routes>
-          <Route path="/intake-ai" element={<IntakeAIPage />} />
-          <Route path="/en/intake-ai" element={<IntakeAIPage />} />
-        </Routes>
+      <LanguageProvider lang="de" alternateHref="/">
+        <IntakeAIPage lang="de" alternateHref="/" />
       </LanguageProvider>
-    </MemoryRouter>
   );
 }
 

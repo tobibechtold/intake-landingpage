@@ -1,16 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { MemoryRouter } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import PressMentions from "./PressMentions";
 
 const renderPressMentions = (initialEntry: string) =>
   render(
-    <MemoryRouter initialEntries={[initialEntry]}>
-      <LanguageProvider>
+      <LanguageProvider lang="de" alternateHref="/">
         <PressMentions />
       </LanguageProvider>
-    </MemoryRouter>
   );
 
 describe("PressMentions", () => {

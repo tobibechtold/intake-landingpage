@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="container py-12">
         <div className="flex flex-col md:flex-row items-start justify-between gap-8">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="Intake" className="w-8 h-8" />
+            <img src={logo.src} alt="Intake" className="w-8 h-8" />
             <span className="text-lg font-semibold text-foreground">Intake</span>
           </div>
 

@@ -1,17 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { MemoryRouter } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import Privacy from "./Privacy";
 import Terms from "./Terms";
 
 function renderLegalPage(path: string, element: React.ReactElement) {
   render(
-    <MemoryRouter initialEntries={[path]}>
-      <LanguageProvider>
+      <LanguageProvider lang="de" alternateHref="/">
         {element}
       </LanguageProvider>
-    </MemoryRouter>
   );
 }
 

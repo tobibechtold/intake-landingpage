@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import ComparisonsIndexPage from "./ComparisonsIndexPage";
 import ComparisonDetailPage from "./ComparisonDetailPage";
@@ -8,13 +7,9 @@ import ComparisonDetailPage from "./ComparisonDetailPage";
 describe("Comparison pages", () => {
   it("renders the german comparison hub with links to competitor pages", () => {
     render(
-      <MemoryRouter initialEntries={["/vergleiche"]}>
-        <LanguageProvider>
-          <Routes>
-            <Route path="/vergleiche" element={<ComparisonsIndexPage />} />
-          </Routes>
+        <LanguageProvider lang="de" alternateHref="/">
+          <ComparisonsIndexPage lang="de" alternateHref="/" />
         </LanguageProvider>
-      </MemoryRouter>
     );
 
     expect(
@@ -37,13 +32,9 @@ describe("Comparison pages", () => {
 
   it("renders the german comparison detail page with more natural copy", () => {
     render(
-      <MemoryRouter initialEntries={["/vergleiche/yazio-alternative"]}>
-        <LanguageProvider>
-          <Routes>
-            <Route path="/vergleiche/:slug" element={<ComparisonDetailPage />} />
-          </Routes>
+        <LanguageProvider lang="de" alternateHref="/">
+          <ComparisonDetailPage lang="de" alternateHref="/" />
         </LanguageProvider>
-      </MemoryRouter>
     );
 
     expect(screen.getByRole("heading", { name: /Yazio Alternative/i })).toBeInTheDocument();
@@ -62,13 +53,9 @@ describe("Comparison pages", () => {
 
   it("renders the english comparison detail page with factual criteria", () => {
     render(
-      <MemoryRouter initialEntries={["/en/comparisons/yazio-alternative"]}>
-        <LanguageProvider>
-          <Routes>
-            <Route path="/en/comparisons/:slug" element={<ComparisonDetailPage />} />
-          </Routes>
+        <LanguageProvider lang="en" alternateHref="/">
+          <ComparisonDetailPage lang="de" alternateHref="/" />
         </LanguageProvider>
-      </MemoryRouter>
     );
 
     expect(screen.getByRole("heading", { name: /Yazio Alternative/i })).toBeInTheDocument();

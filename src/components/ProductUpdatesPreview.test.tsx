@@ -1,17 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { MemoryRouter } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import ProductUpdatesPreview from "./ProductUpdatesPreview";
 
 describe("ProductUpdatesPreview", () => {
   it("renders the recent product updates preview with archive and entry links", () => {
     render(
-      <MemoryRouter initialEntries={["/"]}>
-        <LanguageProvider>
+        <LanguageProvider lang="de" alternateHref="/">
           <ProductUpdatesPreview />
         </LanguageProvider>
-      </MemoryRouter>
     );
 
     expect(screen.getByRole("heading", { name: "Produktupdates" })).toBeInTheDocument();

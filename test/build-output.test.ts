@@ -42,6 +42,16 @@ describe('build output', () => {
     expect(read('/en/help')).toContain('Is Intake a subscription-based app?');
   });
 
+  // Astro resolves src/assets imports to ImageMetadata objects, not URL strings the
+  // way the old Vite setup did. `<img src={logo} />` silently emits "[object Object]",
+  // which broke the logo, both store badges and the phone bezel on the homepage.
+  it('resolves every image src to a real URL, never "[object Object]"', () => {
+    for (const route of ['/', '/en', '/funktionen', '/whats-new/2.5.1']) {
+      expect(read(route)).not.toContain('[object Object]');
+    }
+    expect(read('/')).toMatch(/src="\/_astro\/app-store-badge\.[\w-]+\.svg"/);
+  });
+
   it('pairs translated slugs with reciprocal hreflang', () => {
     for (const route of ['/funktionen', '/en/features']) {
       const html = read(route);

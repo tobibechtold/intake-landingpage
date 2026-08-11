@@ -1,19 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import FeaturesPage from "./FeaturesPage";
 
 describe("FeaturesPage", () => {
   it("renders the german feature overview with nutrient and fasting content", () => {
     render(
-      <MemoryRouter initialEntries={["/funktionen"]}>
-        <LanguageProvider>
-          <Routes>
-            <Route path="/funktionen" element={<FeaturesPage />} />
-          </Routes>
+        <LanguageProvider lang="de" alternateHref="/">
+          <FeaturesPage lang="de" alternateHref="/" />
         </LanguageProvider>
-      </MemoryRouter>
     );
 
     expect(

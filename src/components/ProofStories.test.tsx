@@ -1,17 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { MemoryRouter } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import ProofStories from "./ProofStories";
 
 describe("ProofStories", () => {
   it("uses the current localized landing screenshots instead of the legacy numbered files", () => {
     render(
-      <MemoryRouter initialEntries={["/"]}>
-        <LanguageProvider>
+        <LanguageProvider lang="de" alternateHref="/">
           <ProofStories />
         </LanguageProvider>
-      </MemoryRouter>
     );
 
     const imageSources = screen

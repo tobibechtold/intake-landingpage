@@ -1,22 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import WhatsNewEntry from "./WhatsNewEntry";
 import WhatsNewIndex from "./WhatsNewIndex";
 
 const renderWithRoute = (initialEntry: string, element: React.ReactElement) =>
   render(
-    <MemoryRouter initialEntries={[initialEntry]}>
-      <LanguageProvider>
-        <Routes>
-          <Route path="/whats-new" element={<WhatsNewIndex />} />
-          <Route path="/whats-new/:version" element={<WhatsNewEntry />} />
-          <Route path="/en/whats-new" element={<WhatsNewIndex />} />
-          <Route path="/en/whats-new/:version" element={element} />
-        </Routes>
+      <LanguageProvider lang="de" alternateHref="/">
+        <WhatsNewIndex lang="de" alternateHref="/" />
       </LanguageProvider>
-    </MemoryRouter>
   );
 
 describe("What's New pages", () => {

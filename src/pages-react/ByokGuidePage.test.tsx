@@ -1,19 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import ByokGuidePage from "./ByokGuidePage";
 
 function renderGuide(path: string) {
   render(
-    <MemoryRouter initialEntries={[path]}>
-      <LanguageProvider>
-        <Routes>
-          <Route path="/hilfe/eigener-api-schluessel" element={<ByokGuidePage />} />
-          <Route path="/en/help/own-api-key" element={<ByokGuidePage />} />
-        </Routes>
+      <LanguageProvider lang="de" alternateHref="/">
+        <ByokGuidePage lang="de" alternateHref="/" />
       </LanguageProvider>
-    </MemoryRouter>
   );
 }
 
