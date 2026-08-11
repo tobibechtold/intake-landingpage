@@ -36,7 +36,7 @@ const ProductUpdatesPreview = ({ releases }: { releases: ReleaseSummary[] }) => 
 
           <a
             href={buildLocalizedPath("whatsNewIndex", language)}
-            className="inline-flex items-center rounded-full border border-primary/40 px-4 py-2 text-sm font-medium text-primary transition-colors hover:border-primary hover:bg-primary/10"
+            className="btn-secondary"
           >
             {language === "de" ? "Alle Updates ansehen" : "View all updates"}
           </a>
@@ -76,7 +76,7 @@ const ProductUpdatesPreview = ({ releases }: { releases: ReleaseSummary[] }) => 
                     </ul>
                   ) : null}
 
-                  <span className="inline-flex items-center text-sm font-medium text-primary transition-colors group-hover:text-primary/80 group-focus-visible:text-primary/80">
+                  <span className="btn-ghost">
                     {language === "de" ? "Update lesen" : "Read update"}
                   </span>
                 </div>

@@ -185,6 +185,13 @@
     @apply inline-flex items-center justify-center gap-2 rounded-lg border border-white/[0.16] px-5 py-2.5 text-sm font-medium text-foreground/85 transition-colors hover:border-white/[0.28] hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
 
+  /* Tertiary: an inline affordance inside a card or block, not a standalone action.
+     Used for "Update lesen", "Zur Übersicht" and similar. The arrow is supplied by
+     the markup so it can be omitted where it would be noise. */
+  .btn-ghost {
+    @apply inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
   .trust-chip {
     @apply inline-flex items-center rounded-lg border border-white/[0.08] bg-white/[0.03] px-3.5 py-1.5 text-[13px] font-medium text-foreground/80;
   }

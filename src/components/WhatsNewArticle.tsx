@@ -15,7 +15,7 @@ const WhatsNewArticle = ({ entry, language, children }: WhatsNewArticleProps) =>
     <div className="space-y-4">
       <a
         href={buildLocalizedPath("whatsNewIndex", language)}
-        className="inline-flex text-sm text-primary transition-colors hover:text-primary/80"
+        className="btn-ghost"
       >
         {language === "de" ? "Zur Übersicht" : "Back to overview"}
       </a>

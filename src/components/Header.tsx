@@ -90,7 +90,7 @@ const Header = () => {
                 type="button"
                 variant="ghost"
                 size="icon"
-                className="rounded-full lg:hidden"
+                className="lg:hidden"
                 aria-label={language === "de" ? "Navigation öffnen" : "Open navigation"}
               >
                 <Menu className="h-5 w-5" />
@@ -116,7 +116,7 @@ const Header = () => {
                   </SheetClose>
                 ))}
                 <div className="mt-2">
-                  <Button asChild className="w-full rounded-full">
+                  <Button asChild className="w-full">
                     <a
                       href={downloadHref}
                       target={isDownloadExternal ? "_blank" : undefined}
@@ -131,7 +131,7 @@ const Header = () => {
             </SheetContent>
           </Sheet>
           <LanguageSwitcher />
-          <Button asChild size="sm" className="hidden rounded-full px-4 sm:inline-flex">
+          <Button asChild size="sm" className="hidden px-4 sm:inline-flex">
             <a
               href={downloadHref}
               target={isDownloadExternal ? "_blank" : undefined}

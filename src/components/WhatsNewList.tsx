@@ -43,7 +43,7 @@ const WhatsNewList = ({ entries, language }: WhatsNewListProps) => (
               </ul>
             ) : null}
 
-            <span className="inline-flex items-center rounded-full border border-primary/40 px-4 py-2 text-sm font-medium text-primary transition-colors group-hover:border-primary group-hover:bg-primary/10 group-focus-visible:border-primary group-focus-visible:bg-primary/10">
+            <span className="btn-secondary">
               {language === "de" ? "Mehr erfahren" : "Learn more"}
             </span>
           </div>

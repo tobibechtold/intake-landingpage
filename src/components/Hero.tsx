@@ -148,7 +148,6 @@ const Hero = () => {
                 asChild
                 size="lg"
                 variant="outline"
-                className="rounded-full border-primary/30 bg-card/60 px-6 text-foreground hover:bg-card/90"
               >
                 <a href="#why-switch">{t("heroSecondaryCta")}</a>
               </Button>
