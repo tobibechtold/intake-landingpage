@@ -271,7 +271,7 @@ const CONTENT = {
   },
 } as const;
 
-import ComparisonValue from '@/components/astro/ComparisonValue.astro';
+import ComparisonTable from '@/components/astro/ComparisonTable.astro';
 import { useT } from '@/i18n/t';
 import type { Language } from '@/i18n/translations';
 
@@ -425,74 +425,22 @@ const content = CONTENT[lang];
                 </p>
               </div>
 
-              <div
-                data-testid="intake-ai-mobile-comparison"
-                class="mt-8 space-y-4 md:hidden"
-              >
-                {content.comparisonRows.map((row) => (
-                  <article
-                    class="rounded-3xl border border-white/[0.08] bg-card/70 p-5"
-                  >
-                    <h4 class="text-base font-semibold leading-6 text-foreground">
-                      {row.feature}
-                    </h4>
-                    <div class="mt-4 space-y-3">
-                      <div class="rounded-2xl border border-white/[0.12] bg-primary/5 p-4">
-                        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-                          {content.comparisonColumns.hosted}
-                        </p>
-                        <div class="mt-3">
-                          <ComparisonValue level={row.hostedLevel}>{row.hosted}</ComparisonValue>
-                        </div>
-                      </div>
-                      <div class="rounded-2xl border border-white/[0.08] bg-background/45 p-4">
-                        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-                          {content.comparisonColumns.byok}
-                        </p>
-                        <div class="mt-3">
-                          <ComparisonValue level={row.byokLevel}>{row.byok}</ComparisonValue>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                ))}
-              </div>
-
-              <div
-                data-testid="intake-ai-desktop-comparison"
-                class="mt-8 hidden overflow-x-auto rounded-xl border border-white/[0.08] bg-card/70 md:block"
-              >
-                <table class="min-w-[760px] border-collapse">
-                  <caption class="sr-only">{content.comparisonTitle}</caption>
-                  <thead>
-                    <tr class="border-b border-white/[0.08] text-left">
-                      <th class="w-[24%] px-5 py-4 text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                        {content.comparisonColumns.feature}
-                      </th>
-                      <th class="w-[40%] bg-white/[0.04] px-5 py-4 text-sm font-semibold text-foreground">
-                        {content.comparisonColumns.hosted}
-                      </th>
-                      <th class="w-[36%] px-5 py-4 text-sm font-semibold text-foreground/80">
-                        {content.comparisonColumns.byok}
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {content.comparisonRows.map((row) => (
-                      <tr class="border-b border-white/[0.08] last:border-0">
-                        <th class="px-5 py-5 text-left text-sm font-semibold leading-6 text-foreground">
-                          {row.feature}
-                        </th>
-                        <td class="bg-primary/5 px-5 py-5 align-top">
-                          <ComparisonValue level={row.hostedLevel}>{row.hosted}</ComparisonValue>
-                        </td>
-                        <td class="px-5 py-5 align-top">
-                          <ComparisonValue level={row.byokLevel}>{row.byok}</ComparisonValue>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              <div class="mt-8">
+                <ComparisonTable
+                  title={content.comparisonTitle}
+                  featureLabel={content.comparisonColumns.feature}
+                  columns={[
+                    { label: content.comparisonColumns.hosted, emphasis: true },
+                    { label: content.comparisonColumns.byok },
+                  ]}
+                  rows={content.comparisonRows.map((row) => ({
+                    feature: row.feature,
+                    cells: [
+                      { text: row.hosted, level: row.hostedLevel },
+                      { text: row.byok, level: row.byokLevel },
+                    ],
+                  }))}
+                />
               </div>
 
               <div class="mt-10">

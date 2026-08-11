@@ -115,3 +115,38 @@ describe('CSS layer ordering', () => {
     },
   );
 });
+
+/**
+ * Every comparison table must be readable on a phone.
+ *
+ * Three columns of prose either overflow or squeeze to unreadable widths, so the rows
+ * reflow into stacked cards below md. Both the Yazio/FDDB comparisons and the Intake AI
+ * vs BYOK table share one component, so they cannot drift apart again.
+ */
+describe('comparison tables', () => {
+  const pages = [
+    'dist/vergleiche/yazio-alternative/index.html',
+    'dist/vergleiche/fddb-alternative/index.html',
+    'dist/en/comparisons/yazio-alternative/index.html',
+    'dist/intake-ai/index.html',
+    'dist/en/intake-ai/index.html',
+  ];
+
+  it.each(pages)('%s uses the shared responsive table', (page) => {
+    const html = readFileSync(page, 'utf8');
+    expect(html).toContain('class="comparison-table');
+  });
+
+  it.each(pages)('%s labels each cell for the stacked mobile layout', (page) => {
+    const html = readFileSync(page, 'utf8');
+    // data-label drives the ::before column heading when the table reflows
+    expect(html).toMatch(/<td[^>]+data-label="[^"]+"/);
+  });
+
+  it('reflows rather than duplicating the comparison prose', () => {
+    const html = readFileSync('dist/vergleiche/yazio-alternative/index.html', 'utf8');
+    // a separate mobile card list would repeat every comparison point in the HTML
+    expect(html).not.toContain('data-comparison-mobile');
+    expect((html.match(/Einmalkauf\. Kein Modell/g) ?? []).length).toBe(1);
+  });
+});

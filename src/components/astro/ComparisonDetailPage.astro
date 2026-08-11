@@ -2,6 +2,7 @@
 import CTA from '@/components/astro/CTA.astro';
 import PageBreadcrumbs from '@/components/astro/PageBreadcrumbs.astro';
 import StructuredData from '@/components/astro/StructuredData.astro';
+import ComparisonTable from '@/components/astro/ComparisonTable.astro';
 import { breadcrumbList } from '@/lib/structuredData';
 import { getComparisonPageContent, isComparisonSlug } from "@/lib/marketingPages";
 import { buildLocalizedPath } from "@/lib/localeRouting";
@@ -42,36 +43,18 @@ const breadcrumbs = [
 
         <section class="pb-12">
           <div class="container">
-            <div class="glass-card overflow-hidden">
-              <table class="min-w-full border-collapse">
-                <thead>
-                  <tr class="border-b border-white/[0.08] text-left">
-                    <th class="px-5 py-4 text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                      {lang === "de" ? "Kriterium" : "Criteria"}
-                    </th>
-                    <th class="bg-white/[0.04] px-5 py-4 text-sm font-semibold text-foreground">
-                      Intake
-                    </th>
-                    <th class="px-5 py-4 text-sm font-semibold text-foreground/80">
-                      {content.kicker.replace(/ Alternative.*/, "")}
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {content.criteria.map((criterion) => (
-                    <tr class="border-b border-white/[0.08] last:border-0">
-                      <th class="px-5 py-4 text-left text-sm font-medium text-foreground">
-                        {criterion.label}
-                      </th>
-                      <td class="bg-primary/5 px-5 py-4 text-sm text-foreground">
-                        {criterion.intake}
-                      </td>
-                      <td class="px-5 py-4 text-sm text-muted-foreground">{criterion.other}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            <ComparisonTable
+              title={content.title}
+              featureLabel={lang === "de" ? "Kriterium" : "Criteria"}
+              columns={[
+                { label: "Intake", emphasis: true },
+                { label: content.kicker.replace(/ Alternative.*/, "") },
+              ]}
+              rows={content.criteria.map((criterion) => ({
+                feature: criterion.label,
+                cells: [{ text: criterion.intake }, { text: criterion.other }],
+              }))}
+            />
 
             <div class="mt-8 grid gap-6 md:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
               <article class="glass-card p-8">
@@ -105,14 +88,14 @@ const breadcrumbs = [
                 <div class="mt-5 flex flex-wrap gap-3">
                   <a
                     href={buildLocalizedPath("comparisons", lang)}
-                    class="trust-chip-link"
+                    class="btn-primary"
                   >
                     {lang === "de" ? "Alle Vergleiche" : "All comparisons"}
                   </a>
-                  <a href={buildLocalizedPath("features", lang)} class="trust-chip-link">
+                  <a href={buildLocalizedPath("features", lang)} class="btn-primary">
                     {lang === "de" ? "Alle Funktionen" : "Features"}
                   </a>
-                  <a href={buildLocalizedPath("home", lang)} class="trust-chip-link">
+                  <a href={buildLocalizedPath("home", lang)} class="btn-primary">
                     {t("homeNav")}
                   </a>
                 </div>

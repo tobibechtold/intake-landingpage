@@ -1,15 +1,15 @@
 {
   "/": {
-    "words": 1125,
-    "sha": "5a4193cefad90111"
+    "words": 1123,
+    "sha": "ef52886677557a1a"
   },
   "/404": {
     "words": 68,
     "sha": "dca7036af091d26f"
   },
   "/en": {
-    "words": 1210,
-    "sha": "3b2fd771e6cdf515"
+    "words": 1208,
+    "sha": "a514f6199ca15a9d"
   },
   "/en/calorie-counter-no-subscription": {
     "words": 298,
@@ -24,12 +24,12 @@
     "sha": "6a0f4f0f1a68327f"
   },
   "/en/comparisons/fddb-alternative": {
-    "words": 456,
-    "sha": "3a0a56d2a6063a7f"
+    "words": 461,
+    "sha": "30267b45ac31b113"
   },
   "/en/comparisons/yazio-alternative": {
-    "words": 472,
-    "sha": "0317da33ce8c8a7c"
+    "words": 477,
+    "sha": "103543dbc8c34c6e"
   },
   "/en/features": {
     "words": 571,
@@ -44,8 +44,8 @@
     "sha": "3c4e12557d788743"
   },
   "/en/intake-ai": {
-    "words": 874,
-    "sha": "79fc427efc5eff76"
+    "words": 678,
+    "sha": "6081753a49b04957"
   },
   "/en/privacy": {
     "words": 418,
@@ -152,8 +152,8 @@
     "sha": "3d527df5f9647f75"
   },
   "/intake-ai": {
-    "words": 828,
-    "sha": "10fc232d9ed3c084"
+    "words": 630,
+    "sha": "d7acae1c771db928"
   },
   "/kalorien-tracker-ohne-konto": {
     "words": 290,
@@ -176,12 +176,12 @@
     "sha": "3ace377617aeaf02"
   },
   "/vergleiche/fddb-alternative": {
-    "words": 422,
-    "sha": "f254ed545f7354a0"
+    "words": 427,
+    "sha": "87335bd40a926cc8"
   },
   "/vergleiche/yazio-alternative": {
-    "words": 407,
-    "sha": "cdcf45d6d45cc937"
+    "words": 412,
+    "sha": "f4870aa2738c18ad"
   },
   "/whats-new": {
     "words": 856,
