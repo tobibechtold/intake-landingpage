@@ -1,14 +1,15 @@
+import { LanguageProvider } from "@/i18n/LanguageContext";
+import type { LocalePageProps } from "./localePage";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import WhatsNewList from "@/components/WhatsNewList";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { getWhatsNewEntries } from "@/lib/whatsNewContent";
+import type { ReleaseSummary } from "@/lib/releases";
 
 const CHANGELOG_URL = "https://featurevoting.tobibechtold.dev/app/intake/changelog";
 
-const WhatsNewIndex = () => {
+const WhatsNewIndexInner = ({ entries }: { entries: ReleaseSummary[] }) => {
   const { language } = useLanguage();
-  const entries = getWhatsNewEntries(language);
 
   return (
     <div className="min-h-screen">
@@ -57,5 +58,15 @@ const WhatsNewIndex = () => {
     </div>
   );
 };
+
+const WhatsNewIndex = ({
+  lang,
+  alternateHref,
+  releases,
+}: LocalePageProps & { releases: ReleaseSummary[] }) => (
+  <LanguageProvider lang={lang} alternateHref={alternateHref}>
+    <WhatsNewIndexInner entries={releases} />
+  </LanguageProvider>
+);
 
 export default WhatsNewIndex;

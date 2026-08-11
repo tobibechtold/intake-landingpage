@@ -1,0 +1,10 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { pageProps } from '@/lib/pageSeo';
+import NoAccountPage from '@/pages-react/NoAccountPage';
+
+const route = '/kalorien-tracker-ohne-konto';
+---
+<BaseLayout route={route}>
+  <NoAccountPage {...pageProps(route)} />
+</BaseLayout>

@@ -1,3 +1,5 @@
+import { LanguageProvider } from "@/i18n/LanguageContext";
+import type { LocalePageProps } from "./localePage";
 import {
   BadgeCheck,
   Camera,
@@ -297,7 +299,7 @@ const ComparisonValue = ({
   );
 };
 
-const IntakeAIPage = () => {
+const IntakeAIPageInner = () => {
   const { language, t } = useLanguage();
   const content = CONTENT[language];
   const homePath = buildLocalizedPath("home", language);
@@ -584,5 +586,11 @@ const IntakeAIPage = () => {
     </div>
   );
 };
+
+const IntakeAIPage = ({ lang, alternateHref }: LocalePageProps) => (
+  <LanguageProvider lang={lang} alternateHref={alternateHref}>
+    <IntakeAIPageInner />
+  </LanguageProvider>
+);
 
 export default IntakeAIPage;

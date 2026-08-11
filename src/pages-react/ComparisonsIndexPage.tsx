@@ -1,9 +1,11 @@
+import { LanguageProvider } from "@/i18n/LanguageContext";
+import type { LocalePageProps } from "./localePage";
 import MarketingPageLayout from "@/components/MarketingPageLayout";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { getMarketingPageContent } from "@/lib/marketingPages";
 import { buildLocalizedPath } from "@/lib/localeRouting";
 
-const ComparisonsIndexPage = () => {
+const ComparisonsIndexPageInner = () => {
   const { language, t } = useLanguage();
   const content = getMarketingPageContent("comparisons", language);
 
@@ -22,5 +24,11 @@ const ComparisonsIndexPage = () => {
     />
   );
 };
+
+const ComparisonsIndexPage = ({ lang, alternateHref }: LocalePageProps) => (
+  <LanguageProvider lang={lang} alternateHref={alternateHref}>
+    <ComparisonsIndexPageInner />
+  </LanguageProvider>
+);
 
 export default ComparisonsIndexPage;

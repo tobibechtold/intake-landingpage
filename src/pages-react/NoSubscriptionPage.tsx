@@ -1,9 +1,11 @@
+import { LanguageProvider } from "@/i18n/LanguageContext";
+import type { LocalePageProps } from "./localePage";
 import MarketingPageLayout from "@/components/MarketingPageLayout";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { getMarketingPageContent } from "@/lib/marketingPages";
 import { buildLocalizedPath } from "@/lib/localeRouting";
 
-const NoSubscriptionPage = () => {
+const NoSubscriptionPageInner = () => {
   const { language, t } = useLanguage();
   const content = getMarketingPageContent("noSubscription", language);
 
@@ -22,5 +24,11 @@ const NoSubscriptionPage = () => {
     />
   );
 };
+
+const NoSubscriptionPage = ({ lang, alternateHref }: LocalePageProps) => (
+  <LanguageProvider lang={lang} alternateHref={alternateHref}>
+    <NoSubscriptionPageInner />
+  </LanguageProvider>
+);
 
 export default NoSubscriptionPage;

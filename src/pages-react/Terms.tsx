@@ -1,7 +1,9 @@
+import { LanguageProvider } from "@/i18n/LanguageContext";
+import type { LocalePageProps } from "./localePage";
 import LegalLayout from "@/components/LegalLayout";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-const Terms = () => {
+const TermsInner = () => {
   const { language } = useLanguage();
 
   if (language === "de") {
@@ -258,5 +260,11 @@ const Terms = () => {
     </>
   );
 };
+
+const Terms = ({ lang, alternateHref }: LocalePageProps) => (
+  <LanguageProvider lang={lang} alternateHref={alternateHref}>
+    <TermsInner />
+  </LanguageProvider>
+);
 
 export default Terms;

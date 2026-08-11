@@ -1,13 +1,16 @@
 import { type Language } from "@/i18n/translations";
 import { buildLocalizedPath } from "@/lib/localeRouting";
-import { type WhatsNewEntry } from "@/lib/whatsNewContent";
+import type { ReleaseSummary } from "@/lib/releases";
+import type { ReactNode } from "react";
 
 interface WhatsNewArticleProps {
-  entry: WhatsNewEntry;
+  entry: ReleaseSummary;
   language: Language;
+  /** Rendered markdown body, passed down as an Astro slot. */
+  children?: ReactNode;
 }
 
-const WhatsNewArticle = ({ entry, language }: WhatsNewArticleProps) => (
+const WhatsNewArticle = ({ entry, language, children }: WhatsNewArticleProps) => (
   <article className="space-y-8">
     <div className="space-y-4">
       <a
@@ -29,18 +32,11 @@ const WhatsNewArticle = ({ entry, language }: WhatsNewArticleProps) => (
       className="w-full rounded-[2rem] border border-border/70 bg-card/80 object-cover"
     />
 
-    {entry.video ? (
-      <video
-        controls
-        className="w-full rounded-[2rem] border border-border/70 bg-card/80"
-        src={entry.video}
-      />
-    ) : null}
-
-    <div
+        <div
       className="prose prose-invert max-w-none prose-headings:text-foreground prose-h2:mt-12 prose-h2:text-3xl prose-h2:font-semibold prose-h2:tracking-tight prose-p:text-base prose-p:text-muted-foreground prose-a:text-primary prose-strong:text-foreground prose-li:text-muted-foreground prose-img:rounded-[1.5rem] prose-img:border prose-img:border-border/70 [&_figure]:my-8 [&_video]:block [&_video]:w-full md:[&_video]:max-w-[34rem] [&_video]:rounded-[1.5rem] [&_video]:border [&_video]:border-border/70 [&_video]:bg-card/80"
-      dangerouslySetInnerHTML={{ __html: entry.bodyHtml }}
-    />
+    >
+      {children}
+    </div>
   </article>
 );
 

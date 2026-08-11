@@ -1,3 +1,5 @@
+import { LanguageProvider } from "@/i18n/LanguageContext";
+import type { LocalePageProps } from "./localePage";
 import {
   ArrowRight,
   CheckCircle2,
@@ -235,7 +237,7 @@ const CONTENT = {
   },
 } as const;
 
-const ByokGuidePage = () => {
+const ByokGuidePageInner = () => {
   const { language, t } = useLanguage();
   const content = CONTENT[language];
   const helpPath = buildLocalizedPath("help", language);
@@ -466,5 +468,11 @@ const ByokGuidePage = () => {
     </div>
   );
 };
+
+const ByokGuidePage = ({ lang, alternateHref }: LocalePageProps) => (
+  <LanguageProvider lang={lang} alternateHref={alternateHref}>
+    <ByokGuidePageInner />
+  </LanguageProvider>
+);
 
 export default ByokGuidePage;

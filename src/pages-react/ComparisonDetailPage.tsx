@@ -1,3 +1,5 @@
+import { LanguageProvider } from "@/i18n/LanguageContext";
+import type { LocalePageProps } from "./localePage";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -6,7 +8,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { getComparisonPageContent, isComparisonSlug } from "@/lib/marketingPages";
 import { buildLocalizedPath } from "@/lib/localeRouting";
 
-const ComparisonDetailPage = ({ slug }: { slug: string }) => {
+const ComparisonDetailPageInner = ({ slug }: { slug: string }) => {
   const { language, t } = useLanguage();
   const comparisonSlug = isComparisonSlug(slug) ? slug : "yazio-alternative";
   const content = getComparisonPageContent(comparisonSlug, language);
@@ -123,5 +125,11 @@ const ComparisonDetailPage = ({ slug }: { slug: string }) => {
     </div>
   );
 };
+
+const ComparisonDetailPage = ({ lang, alternateHref, slug }: LocalePageProps & { slug: string }) => (
+  <LanguageProvider lang={lang} alternateHref={alternateHref}>
+    <ComparisonDetailPageInner slug={slug} />
+  </LanguageProvider>
+);
 
 export default ComparisonDetailPage;

@@ -1,0 +1,10 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { pageProps } from '@/lib/pageSeo';
+import ByokGuidePage from '@/pages-react/ByokGuidePage';
+
+const route = '/hilfe/eigener-api-schluessel';
+---
+<BaseLayout route={route}>
+  <ByokGuidePage {...pageProps(route)} />
+</BaseLayout>

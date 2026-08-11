@@ -1,0 +1,10 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { pageProps } from '@/lib/pageSeo';
+import Terms from '@/pages-react/Terms';
+
+const route = '/en/terms';
+---
+<BaseLayout route={route}>
+  <Terms {...pageProps(route)} />
+</BaseLayout>

@@ -1,9 +1,9 @@
 import { type Language } from "@/i18n/translations";
 import { buildLocalizedPath } from "@/lib/localeRouting";
-import { type WhatsNewEntry } from "@/lib/whatsNewContent";
+import type { ReleaseSummary } from "@/lib/releases";
 
 interface WhatsNewListProps {
-  entries: WhatsNewEntry[];
+  entries: ReleaseSummary[];
   language: Language;
 }
 
@@ -11,7 +11,7 @@ const WhatsNewList = ({ entries, language }: WhatsNewListProps) => (
   <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
     {entries.map((entry) => (
       <a
-        key={`${entry.locale}-${entry.version}`}
+        key={entry.version}
         href={buildLocalizedPath("whatsNewEntry", language, entry.version)}
         className="group block rounded-[2rem] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-4 focus-visible:ring-offset-background"
       >

@@ -1,0 +1,19 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { pageProps } from '@/lib/pageSeo';
+import ComparisonDetailPage from '@/pages-react/ComparisonDetailPage';
+
+// The complete set, matching PRERENDER_ROUTES in the deleted prerender-seo.js.
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'yazio-alternative' } },
+    { params: { slug: 'fddb-alternative' } },
+  ];
+}
+
+const { slug } = Astro.params;
+const route = `/vergleiche/${slug}`;
+---
+<BaseLayout route={route}>
+  <ComparisonDetailPage {...pageProps(route)} slug={slug!} />
+</BaseLayout>

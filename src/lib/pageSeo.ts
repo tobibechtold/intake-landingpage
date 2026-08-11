@@ -25,6 +25,13 @@ const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     "canonical": "https://www.getintake.de/",
     "ogLocale": "de_DE"
   },
+  "/404": {
+    "lang": "de",
+    "title": "Seite nicht gefunden | Intake",
+    "description": "Diese Seite existiert nicht. Zurück zur Intake Startseite.",
+    "canonical": "https://www.getintake.de/404",
+    "ogLocale": "de_DE"
+  },
   "/en": {
     "lang": "en",
     "title": "Intake App - Calorie Counter for iPhone & Android | No Subscription",

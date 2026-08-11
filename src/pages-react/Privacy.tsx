@@ -1,7 +1,9 @@
+import { LanguageProvider } from "@/i18n/LanguageContext";
+import type { LocalePageProps } from "./localePage";
 import LegalLayout from "@/components/LegalLayout";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-const Privacy = () => {
+const PrivacyInner = () => {
   const { language } = useLanguage();
 
   if (language === "de") {
@@ -215,5 +217,11 @@ const Privacy = () => {
     </>
   );
 };
+
+const Privacy = ({ lang, alternateHref }: LocalePageProps) => (
+  <LanguageProvider lang={lang} alternateHref={alternateHref}>
+    <PrivacyInner />
+  </LanguageProvider>
+);
 
 export default Privacy;

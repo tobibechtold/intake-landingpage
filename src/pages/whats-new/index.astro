@@ -1,0 +1,13 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { pageProps } from '@/lib/pageSeo';
+import { loadReleases } from '@/lib/loadReleases';
+import WhatsNewIndex from '@/pages-react/WhatsNewIndex';
+
+const route = '/whats-new';
+const props = pageProps(route);
+const releases = await loadReleases(props.lang);
+---
+<BaseLayout route={route}>
+  <WhatsNewIndex {...props} releases={releases} />
+</BaseLayout>

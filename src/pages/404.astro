@@ -1,0 +1,10 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { pageProps } from '@/lib/pageSeo';
+import NotFound from '@/pages-react/NotFound';
+
+const route = '/404';
+---
+<BaseLayout route={route}>
+  <NotFound {...pageProps(route)} />
+</BaseLayout>

@@ -1,8 +1,10 @@
+import { LanguageProvider } from "@/i18n/LanguageContext";
+import type { LocalePageProps } from "./localePage";
 import { useEffect } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { buildLocalizedPath } from "@/lib/localeRouting";
 
-const NotFound = () => {
+const NotFoundInner = () => {
   const { language } = useLanguage();
 
   useEffect(() => {
@@ -28,5 +30,11 @@ const NotFound = () => {
     </>
   );
 };
+
+const NotFound = ({ lang, alternateHref }: LocalePageProps) => (
+  <LanguageProvider lang={lang} alternateHref={alternateHref}>
+    <NotFoundInner />
+  </LanguageProvider>
+);
 
 export default NotFound;

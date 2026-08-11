@@ -1,0 +1,10 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { pageProps } from '@/lib/pageSeo';
+import Privacy from '@/pages-react/Privacy';
+
+const route = '/privacy';
+---
+<BaseLayout route={route}>
+  <Privacy {...pageProps(route)} />
+</BaseLayout>

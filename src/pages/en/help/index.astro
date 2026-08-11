@@ -1,0 +1,10 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { pageProps } from '@/lib/pageSeo';
+import HelpPage from '@/pages-react/HelpPage';
+
+const route = '/en/help';
+---
+<BaseLayout route={route}>
+  <HelpPage {...pageProps(route)} />
+</BaseLayout>

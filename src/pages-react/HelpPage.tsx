@@ -1,3 +1,5 @@
+import { LanguageProvider } from "@/i18n/LanguageContext";
+import type { LocalePageProps } from "./localePage";
 import { useEffect, useMemo, useState } from "react";
 
 import { ArrowRight, KeyRound, Search, X } from "lucide-react";
@@ -41,7 +43,7 @@ const HELP_FAQ_COPY = {
   },
 };
 
-const HelpPage = () => {
+const HelpPageInner = () => {
   const { language, t } = useLanguage();
   const faqSections = FAQ_SECTIONS_BY_LANGUAGE[language];
   const faqCopy = HELP_FAQ_COPY[language];
@@ -221,5 +223,11 @@ const HelpPage = () => {
     </div>
   );
 };
+
+const HelpPage = ({ lang, alternateHref }: LocalePageProps) => (
+  <LanguageProvider lang={lang} alternateHref={alternateHref}>
+    <HelpPageInner />
+  </LanguageProvider>
+);
 
 export default HelpPage;

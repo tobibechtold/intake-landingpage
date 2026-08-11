@@ -1,0 +1,10 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { pageProps } from '@/lib/pageSeo';
+import IntakeAIPage from '@/pages-react/IntakeAIPage';
+
+const route = '/intake-ai';
+---
+<BaseLayout route={route}>
+  <IntakeAIPage {...pageProps(route)} />
+</BaseLayout>

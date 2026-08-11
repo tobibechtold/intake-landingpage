@@ -1,0 +1,10 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { pageProps } from '@/lib/pageSeo';
+import FeaturesPage from '@/pages-react/FeaturesPage';
+
+const route = '/funktionen';
+---
+<BaseLayout route={route}>
+  <FeaturesPage {...pageProps(route)} />
+</BaseLayout>
