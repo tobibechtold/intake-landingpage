@@ -56,15 +56,6 @@ const mobileNavClass =
     </div>
 
     <div data-header-right-cluster class="flex items-center gap-3">
-      <button
-        type="button"
-        data-nav-open
-        class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-foreground/70 transition-colors hover:bg-white/[0.06] hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 lg:hidden"
-        aria-label={lang === 'de' ? 'Navigation öffnen' : 'Open navigation'}
-      >
-        <Menu class="h-5 w-5" />
-      </button>
-
       {alternateHref && (
         <a
           href={alternateHref}
@@ -87,6 +78,15 @@ const mobileNavClass =
       >
         {t('download')}
       </a>
+
+      <button
+        type="button"
+        data-nav-open
+        class="-mr-1.5 inline-flex h-10 w-10 items-center justify-center rounded-lg text-foreground/70 transition-colors hover:bg-white/[0.06] hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 lg:hidden"
+        aria-label={lang === 'de' ? 'Navigation öffnen' : 'Open navigation'}
+      >
+        <Menu class="h-5 w-5" />
+      </button>
     </div>
   </div>
 </header>
@@ -104,7 +104,7 @@ const mobileNavClass =
     <button
       type="button"
       data-nav-close
-      class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-foreground/70 transition-colors hover:bg-white/[0.06] hover:text-foreground"
+      class="-mr-2 inline-flex h-10 w-10 items-center justify-center rounded-lg text-foreground/70 transition-colors hover:bg-white/[0.06] hover:text-foreground"
       aria-label={lang === 'de' ? 'Navigation schließen' : 'Close navigation'}
     >
       <X class="h-5 w-5" />
