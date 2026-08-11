@@ -1,5 +1,5 @@
 ---
-import { ArrowRight, Sparkles } from 'lucide-astro';
+import { Sparkles } from 'lucide-astro';
 import { buildLocalizedPath } from '@/lib/localeRouting';
 import { useT } from '@/i18n/t';
 import type { Language } from '@/i18n/translations';
@@ -27,9 +27,8 @@ const t = useT(lang);
         <span class="mt-1 block text-sm font-semibold leading-5 text-foreground">
           {t('intakeAITeaserDescription')}
         </span>
-        <span class="mt-2 inline-flex items-center gap-1 text-sm font-medium text-primary">
+        <span class="btn-secondary mt-3 w-fit">
           {t('intakeAITeaserButton')}
-          <ArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
         </span>
       </span>
     </a>

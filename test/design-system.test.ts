@@ -38,7 +38,8 @@ describe('Refined Dark design system', () => {
     const offenders = sourceFiles()
       .map(read)
       .filter(({ text }) =>
-        /(?:className|class)="[^"]*\bmt-\d+ text-sm font-medium text-primary"/.test(text),
+        // a <span> styled as pink text sitting inside an <a> — an action, not prose
+        /<a[^>]*>[\s\S]{0,600}?<span[^>]*(?:className|class)="[^"]*text-primary"[^>]*>/.test(text),
       )
       .map(({ file }) => file);
     expect(offenders).toEqual([]);
