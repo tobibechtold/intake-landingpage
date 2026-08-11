@@ -1,0 +1,24 @@
+---
+import iphoneBezel from '@/assets/iphone-bezel.png';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+<div class:list={['relative inline-block', className]}>
+  <div
+    class="absolute overflow-hidden rounded-[8%]"
+    style="top:2.4%;left:5.1%;right:5.1%;bottom:2.08%"
+  >
+    <slot />
+  </div>
+  <img
+    src={iphoneBezel.src}
+    alt=""
+    aria-hidden="true"
+    class="pointer-events-none relative z-10 h-auto w-full select-none"
+    draggable="false"
+  />
+</div>

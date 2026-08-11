@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 
@@ -16,7 +16,7 @@ const islandCount = (html: string) => (html.match(/<astro-island/g) ?? []).lengt
  * directions: the static pages must stay static, and the interactive ones must still work.
  */
 describe('hydration', () => {
-  it.each(['/funktionen', '/privacy', '/terms', '/whats-new', '/vergleiche/yazio-alternative'])(
+  it.each(['/', '/funktionen', '/privacy', '/terms', '/whats-new', '/hilfe', '/vergleiche/yazio-alternative'])(
     '%s ships no framework JavaScript',
     (route) => {
       const html = read(route);
@@ -25,18 +25,29 @@ describe('hydration', () => {
     },
   );
 
-  it('the homepage hydrates only its genuinely interactive sections', () => {
+  // No page hydrates any more. Hero's webm/mp4 choice is two <source> elements, the
+  // gallery is CSS scroll-snap, Reviews' "show more" is a <details>, and the FAQ is
+  // <details> plus a small vanilla filter. react-dom is not in the build at all.
+  it('the homepage ships no framework JavaScript either', () => {
     const html = read('/');
-    // Hero (video format detection), Reviews, ScreenshotGallery (carousel).
-    expect(islandCount(html)).toBeGreaterThan(0);
-    const urls = [...html.matchAll(/component-url="([^"]+)"/g)].map((m) => m[1]);
-    for (const u of urls) {
-      expect(existsSync(join('dist', u.replace(/^\//, '')))).toBe(true);
-    }
+    expect(islandCount(html)).toBe(0);
+    expect(html).toContain('<source');          // native video format selection
+    expect(html).toContain('snap-mandatory');   // CSS carousel
+    expect(html).toContain('<details');         // review show-more
   });
 
-  it('the help page hydrates for its FAQ search and accordions', () => {
-    expect(islandCount(read('/hilfe'))).toBeGreaterThan(0);
+  it('the help page keeps its FAQ interactive without React', () => {
+    const html = read('/hilfe');
+    expect(islandCount(html)).toBe(0);
+    expect(html).toContain('data-faq-search');
+    expect(html).toContain('data-faq-section');
+    // Every answer must stay in the DOM so the long-tail Q&A remain crawlable.
+    expect(html).toContain('Ist Intake ein Abo-Modell?');
+  });
+
+  it('ships no react-dom anywhere in the build', () => {
+    const chunks = readdirSync('dist/_astro').filter((f) => f.endsWith('.js'));
+    expect(chunks.filter((f) => f.includes('react'))).toEqual([]);
   });
 
   // The mobile menu must work without React, and its contents must be in the HTML

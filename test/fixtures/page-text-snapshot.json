@@ -1,7 +1,7 @@
 {
   "/": {
     "words": 1125,
-    "sha": "495fce56eff0af7c"
+    "sha": "2ec928680384a2e1"
   },
   "/404": {
     "words": 68,
@@ -9,7 +9,7 @@
   },
   "/en": {
     "words": 1210,
-    "sha": "73175f518cbb71f7"
+    "sha": "74ccbf7e346dbe4b"
   },
   "/en/calorie-counter-no-subscription": {
     "words": 298,
@@ -36,8 +36,8 @@
     "sha": "0723ffa5095ff7da"
   },
   "/en/help": {
-    "words": 1175,
-    "sha": "e76ade626e390014"
+    "words": 1187,
+    "sha": "1337ef712757a128"
   },
   "/en/help/own-api-key": {
     "words": 821,
@@ -144,8 +144,8 @@
     "sha": "64b17cc6c6ce977f"
   },
   "/hilfe": {
-    "words": 1052,
-    "sha": "f0c203e5a578541e"
+    "words": 1063,
+    "sha": "9fb6fd76b0b671eb"
   },
   "/hilfe/eigener-api-schluessel": {
     "words": 714,

@@ -16,12 +16,10 @@ import FeatureVoting from '@/components/astro/FeatureVoting.astro';
 import CTA from '@/components/astro/CTA.astro';
 import Footer from '@/components/astro/Footer.astro';
 
-// The only four sections that genuinely need JS: a Radix Sheet, video-format
-// detection, and two carousels.
 import Header from '@/components/astro/Header.astro';
-import HeroIsland from '@/components/islands/HeroIsland';
-import ReviewsIsland from '@/components/islands/ReviewsIsland';
-import ScreenshotGalleryIsland from '@/components/islands/ScreenshotGalleryIsland';
+import Hero from '@/components/astro/Hero.astro';
+import Reviews from '@/components/astro/Reviews.astro';
+import ScreenshotGallery from '@/components/astro/ScreenshotGallery.astro';
 
 const route = '/';
 const { lang, alternateHref } = pageProps(route);
@@ -31,15 +29,15 @@ const releases = await loadReleases(lang);
   <div class="min-h-screen">
     <Header lang={lang} alternateHref={alternateHref} />
     <main>
-      <HeroIsland client:load lang={lang} alternateHref={alternateHref} />
+      <Hero lang={lang} />
       <MobileIntakeAIBanner lang={lang} />
       <PressMentions lang={lang} />
       <WhySwitch lang={lang} />
       <TopicPages lang={lang} />
       <ProofStories lang={lang} />
       <IntakeAITeaser lang={lang} />
-      <ReviewsIsland client:visible lang={lang} alternateHref={alternateHref} />
-      <ScreenshotGalleryIsland client:visible lang={lang} alternateHref={alternateHref} />
+      <Reviews lang={lang} />
+      <ScreenshotGallery lang={lang} />
       <Features lang={lang} />
       <ProductUpdatesPreview lang={lang} releases={releases} />
       <FeatureVoting lang={lang} />
