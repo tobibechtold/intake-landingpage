@@ -6,7 +6,13 @@
 
 **Architecture:** Astro takes over routing, `<head>`, layouts and the sitemap. Existing React page components mount as build-time-rendered islands, so crawlers get the full real page before any component is rewritten. Route files stay thin; page content lives once in shared components. No page markup is rewritten in this plan — that is the follow-up plan.
 
-**Tech Stack:** Astro 7.2.0 (static output), `@astrojs/vercel` 11, `@astrojs/react` 6, `@astrojs/sitemap` 3, React 18.3.1, Tailwind 3.4.17 via plain PostCSS, vitest 3, npm.
+**Tech Stack:** Astro 7.2.0 (static output), `@astrojs/vercel` 11, `@astrojs/react` 6, `@astrojs/sitemap` 3, React 18.3.1, Tailwind 3.4.17 via plain PostCSS, **vitest 4**, npm.
+
+> **Forced during execution:** vitest was bumped 3.2.4 → 4.1.10 and the stale top-level `vite@5.4.19`
+> removed. Astro 7 needs Vite ^8; vitest 3 peers Vite 6, and `getViteConfig()` crashed with
+> `TypeError: Cannot read properties of undefined (reading 'ssr')` until vitest 4 (peers `^6 || ^7 || ^8`).
+> `vite@5.4.19` still resolves transitively via `@vitejs/plugin-react-swc` and `lovable-tagger`;
+> both are removed in Task 8, which clears it.
 
 **Spec:** `docs/superpowers/specs/2026-08-11-astro-migration-design.md`
 
@@ -1051,7 +1057,13 @@ Proves the testing approach the follow-up plan depends on, on one real component
 
 - [ ] **Step 1: Write the failing test**
 
+The `@vitest-environment node` docblock is **mandatory**, not stylistic. Astro 6 removed the ability
+to render Astro components in client environments: *"tests that render Astro components must now run
+in a server environment like `node`."* The suite's global environment stays `jsdom` for the React
+component tests; this file overrides it per-file.
+
 ```ts
+// @vitest-environment node
 import { experimental_AstroContainer as AstroContainer } from 'astro/container';
 import { describe, expect, it } from 'vitest';
 import BaseLayout from '../src/layouts/BaseLayout.astro';
