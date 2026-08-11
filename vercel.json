@@ -3,7 +3,8 @@
   "trailingSlash": false,
   "rewrites": [
     { "source": "/go/:slug", "destination": "/api/go?slug=:slug" },
-    { "source": "/go", "destination": "/api/go" }
+    { "source": "/go", "destination": "/api/go" },
+    { "source": "/sitemap.xml", "destination": "/sitemap-index.xml" }
   ],
   "redirects": [
     {
