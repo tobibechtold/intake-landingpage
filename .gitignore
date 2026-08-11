@@ -18,6 +18,9 @@ dist-ssr
 .env.*
 !.env.example
 
+# Brainstorming mockups (superpowers visual companion)
+.superpowers/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
