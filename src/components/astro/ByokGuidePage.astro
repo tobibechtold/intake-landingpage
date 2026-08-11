@@ -1,5 +1,4 @@
-import { LanguageProvider } from "@/i18n/LanguageContext";
-import type { LocalePageProps } from "./localePage";
+---
 import {
   ArrowRight,
   CheckCircle2,
@@ -7,9 +6,8 @@ import {
   ExternalLink,
   KeyRound,
   ShieldCheck,
-} from "lucide-react";
-import PageBreadcrumbs from "@/components/PageBreadcrumbs";
-import { useLanguage } from "@/i18n/LanguageContext";
+} from 'lucide-astro';
+import PageBreadcrumbs from '@/components/astro/PageBreadcrumbs.astro';
 import { buildLocalizedPath } from "@/lib/localeRouting";
 
 const PROVIDER_LINKS = {
@@ -234,103 +232,108 @@ const CONTENT = {
     intakeAI: "Mehr über Intake AI",
   },
 } as const;
+import { useT } from '@/i18n/t';
+import type { Language } from '@/i18n/translations';
 
-const ByokGuidePageInner = () => {
-  const { language, t } = useLanguage();
-  const content = CONTENT[language];
-  const helpPath = buildLocalizedPath("help", language);
-  const intakeAIPath = buildLocalizedPath("intakeAI", language);
+interface Props {
+  lang: Language;
+}
 
-  return (
-    <div className="min-h-screen">
-      <main className="pb-24 pt-28">
-        <section className="hero-gradient border-b border-white/[0.08] pb-16 pt-8 md:pb-24">
-          <div className="container max-w-6xl">
+const { lang } = Astro.props;
+const t = useT(lang);
+const content = CONTENT[lang];
+  const helpPath = buildLocalizedPath("help", lang);
+  const intakeAIPath = buildLocalizedPath("intakeAI", lang);
+---
+<div class="min-h-screen">
+      <main class="pb-24 pt-28">
+        <section class="hero-gradient border-b border-white/[0.08] pb-16 pt-8 md:pb-24">
+          <div class="container max-w-6xl">
             <PageBreadcrumbs
               items={[
-                { label: t("homeNav"), href: buildLocalizedPath("home", language) },
+                { label: t("homeNav"), href: buildLocalizedPath("home", lang) },
                 { label: t("helpNav"), href: helpPath },
                 { label: content.breadcrumb },
               ]}
             />
-            <div className="max-w-4xl">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/[0.05] text-foreground/70">
-                <KeyRound className="h-7 w-7" aria-hidden="true" />
+            <div class="max-w-4xl">
+              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/[0.05] text-foreground/70">
+                <KeyRound class="h-7 w-7" aria-hidden="true" />
               </div>
-              <p className="section-kicker mt-6">{content.kicker}</p>
-              <h1 className="mt-3 text-4xl leading-tight text-foreground md:text-6xl">
+              <p class="section-kicker mt-6">{content.kicker}</p>
+              <h1 class="mt-3 text-4xl leading-tight text-foreground md:text-6xl">
                 {content.title}
               </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground md:text-xl">
+              <p class="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground md:text-xl">
                 {content.intro}
               </p>
-              <p className="badge-accent mt-5">
+              <p class="badge-accent mt-5">
                 {content.summary}
               </p>
             </div>
           </div>
         </section>
 
-        <section className="section-gradient py-16 md:py-20">
-          <div className="container max-w-6xl">
-            <div className="mx-auto max-w-3xl text-center">
-              <h2 className="text-3xl text-foreground md:text-4xl">
+        <section class="section-gradient py-16 md:py-20">
+          <div class="container max-w-6xl">
+            <div class="mx-auto max-w-3xl text-center">
+              <h2 class="text-3xl text-foreground md:text-4xl">
                 {content.primerTitle}
               </h2>
             </div>
-            <div className="mt-10 grid gap-6 md:grid-cols-2">
-              <article className="feature-card">
-                <KeyRound className="h-7 w-7 text-primary" aria-hidden="true" />
-                <h3 className="mt-5 text-xl font-semibold text-foreground">
+            <div class="mt-10 grid gap-6 md:grid-cols-2">
+              <article class="feature-card">
+                <KeyRound class="h-7 w-7 text-primary" aria-hidden="true" />
+                <h3 class="mt-5 text-xl font-semibold text-foreground">
                   {content.apiKeyTitle}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                <p class="mt-3 text-sm leading-7 text-muted-foreground">
                   {content.apiKeyBody}
                 </p>
               </article>
-              <article className="feature-card">
-                <Coins className="h-7 w-7 text-primary" aria-hidden="true" />
-                <h3 className="mt-5 text-xl font-semibold text-foreground">
+              <article class="feature-card">
+                <Coins class="h-7 w-7 text-primary" aria-hidden="true" />
+                <h3 class="mt-5 text-xl font-semibold text-foreground">
                   {content.tokenTitle}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                <p class="mt-3 text-sm leading-7 text-muted-foreground">
                   {content.tokenBody}
                 </p>
               </article>
             </div>
-            <p className="mx-auto mt-6 max-w-3xl rounded-2xl border border-white/[0.08] bg-background/70 p-5 text-sm leading-7 text-muted-foreground">
+            <p class="mx-auto mt-6 max-w-3xl rounded-2xl border border-white/[0.08] bg-background/70 p-5 text-sm leading-7 text-muted-foreground">
               {content.accountNote}
             </p>
           </div>
         </section>
 
-        <section className="py-16 md:py-20">
-          <div className="container max-w-6xl">
-            <div className="max-w-3xl">
-              <p className="section-kicker">{content.providersKicker}</p>
-              <h2 className="mt-3 text-3xl text-foreground md:text-4xl">
+        <section class="py-16 md:py-20">
+          <div class="container max-w-6xl">
+            <div class="max-w-3xl">
+              <p class="section-kicker">{content.providersKicker}</p>
+              <h2 class="mt-3 text-3xl text-foreground md:text-4xl">
                 {content.providersTitle}
               </h2>
-              <p className="mt-4 text-base leading-7 text-muted-foreground">
+              <p class="mt-4 text-base leading-7 text-muted-foreground">
                 {content.providersDescription}
               </p>
             </div>
-            <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            <div class="mt-10 grid gap-5 lg:grid-cols-3">
               {(Object.keys(PROVIDER_LINKS) as Array<keyof typeof PROVIDER_LINKS>).map(
                 (provider) => (
-                  <article key={provider} className="glass-card flex h-full flex-col p-6">
-                    <h3 className="text-2xl font-semibold text-foreground">{provider}</h3>
-                    <p className="mt-3 flex-1 text-sm leading-6 text-muted-foreground">
+                  <article class="glass-card flex h-full flex-col p-6">
+                    <h3 class="text-2xl font-semibold text-foreground">{provider}</h3>
+                    <p class="mt-3 flex-1 text-sm leading-6 text-muted-foreground">
                       {content.providerNotes[provider]}
                     </p>
                     <a
                       href={PROVIDER_LINKS[provider]}
                       target="_blank"
                       rel="noreferrer"
-                      className="trust-chip-link mt-6 w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                      class="trust-chip-link mt-6 w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                     >
                       {content.providerCta(provider)}
-                      <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                      <ExternalLink class="h-4 w-4" aria-hidden="true" />
                     </a>
                   </article>
                 )
@@ -339,38 +342,37 @@ const ByokGuidePageInner = () => {
           </div>
         </section>
 
-        <section className="section-gradient py-16 md:py-20">
-          <div className="container max-w-6xl">
-            <div className="max-w-3xl">
-              <p className="section-kicker">{content.setupKicker}</p>
-              <h2 className="mt-3 text-3xl text-foreground md:text-4xl">
+        <section class="section-gradient py-16 md:py-20">
+          <div class="container max-w-6xl">
+            <div class="max-w-3xl">
+              <p class="section-kicker">{content.setupKicker}</p>
+              <h2 class="mt-3 text-3xl text-foreground md:text-4xl">
                 {content.setupTitle}
               </h2>
-              <p className="mt-4 text-base leading-7 text-muted-foreground">
+              <p class="mt-4 text-base leading-7 text-muted-foreground">
                 {content.setupDescription}
               </p>
             </div>
-            <ol className="mt-10 grid gap-5 md:grid-cols-2">
+            <ol class="mt-10 grid gap-5 md:grid-cols-2">
               {content.steps.map((step, index) => (
-                <li key={step.title} className="feature-card">
-                  <div className="flex items-start gap-4">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+                <li class="feature-card">
+                  <div class="flex items-start gap-4">
+                    <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
                       {index + 2}
                     </span>
                     <div>
-                      <h3 className="text-lg font-semibold text-foreground">{step.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-muted-foreground">{step.body}</p>
+                      <h3 class="text-lg font-semibold text-foreground">{step.title}</h3>
+                      <p class="mt-2 text-sm leading-6 text-muted-foreground">{step.body}</p>
                     </div>
                   </div>
                 </li>
               ))}
             </ol>
 
-            <div className="mt-12 grid gap-6 lg:grid-cols-3">
+            <div class="mt-12 grid gap-6 lg:grid-cols-3">
               {content.screenshots.map((screenshot) => (
                 <figure
-                  key={screenshot.label}
-                  className="overflow-hidden rounded-xl border border-white/[0.08] bg-background/75"
+                  class="overflow-hidden rounded-xl border border-white/[0.08] bg-background/75"
                 >
                   <img
                     data-testid="byok-guide-screenshot"
@@ -379,14 +381,14 @@ const ByokGuidePageInner = () => {
                     width={1600}
                     height={1280}
                     loading="lazy"
-                    className="aspect-[5/4] w-full bg-[#e8eaed] object-cover"
+                    class="aspect-[5/4] w-full bg-[#e8eaed] object-cover"
                   />
-                  <figcaption className="border-t border-white/[0.08] p-5">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                  <figcaption class="border-t border-white/[0.08] p-5">
+                    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
                       {screenshot.label}
                     </p>
-                    <h3 className="mt-2 font-semibold text-foreground">{screenshot.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-muted-foreground">{screenshot.body}</p>
+                    <h3 class="mt-2 font-semibold text-foreground">{screenshot.title}</h3>
+                    <p class="mt-2 text-sm leading-6 text-muted-foreground">{screenshot.body}</p>
                   </figcaption>
                 </figure>
               ))}
@@ -394,24 +396,24 @@ const ByokGuidePageInner = () => {
           </div>
         </section>
 
-        <section className="py-16 md:py-20">
-          <div className="container max-w-6xl">
-            <div className="grid gap-6 lg:grid-cols-2">
-              <article className="rounded-xl border border-white/[0.12] bg-primary/[0.06] p-7 md:p-9">
-                <ShieldCheck className="h-8 w-8 text-primary" aria-hidden="true" />
-                <h2 className="mt-5 text-2xl text-foreground">
+        <section class="py-16 md:py-20">
+          <div class="container max-w-6xl">
+            <div class="grid gap-6 lg:grid-cols-2">
+              <article class="rounded-xl border border-white/[0.12] bg-primary/[0.06] p-7 md:p-9">
+                <ShieldCheck class="h-8 w-8 text-primary" aria-hidden="true" />
+                <h2 class="mt-5 text-2xl text-foreground">
                   {content.securityTitle}
                 </h2>
-                <p className="mt-4 text-base leading-7 text-foreground">{content.securityBody}</p>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                <p class="mt-4 text-base leading-7 text-foreground">{content.securityBody}</p>
+                <p class="mt-3 text-sm leading-6 text-muted-foreground">
                   {content.securityDetail}
                 </p>
               </article>
-              <article className="rounded-xl border border-white/[0.08] bg-card/60 p-7 md:p-9">
-                <Coins className="h-8 w-8 text-primary" aria-hidden="true" />
-                <h2 className="mt-5 text-2xl text-foreground">{content.costTitle}</h2>
-                <p className="mt-4 text-sm leading-7 text-muted-foreground">{content.costBody}</p>
-                <p className="mt-4 rounded-2xl border border-white/[0.08] bg-background/70 p-4 text-sm leading-6 text-foreground">
+              <article class="rounded-xl border border-white/[0.08] bg-card/60 p-7 md:p-9">
+                <Coins class="h-8 w-8 text-primary" aria-hidden="true" />
+                <h2 class="mt-5 text-2xl text-foreground">{content.costTitle}</h2>
+                <p class="mt-4 text-sm leading-7 text-muted-foreground">{content.costBody}</p>
+                <p class="mt-4 rounded-2xl border border-white/[0.08] bg-background/70 p-4 text-sm leading-6 text-foreground">
                   {content.geminiNote}
                 </p>
               </article>
@@ -419,42 +421,41 @@ const ByokGuidePageInner = () => {
           </div>
         </section>
 
-        <section className="section-gradient py-16 md:py-20">
-          <div className="container max-w-4xl">
-            <h2 className="text-3xl text-foreground md:text-4xl">
+        <section class="section-gradient py-16 md:py-20">
+          <div class="container max-w-4xl">
+            <h2 class="text-3xl text-foreground md:text-4xl">
               {content.troubleshootingTitle}
             </h2>
-            <div className="mt-8 space-y-4">
+            <div class="mt-8 space-y-4">
               {content.troubleshooting.map((item) => (
                 <article
-                  key={item.title}
-                  className="rounded-2xl border border-white/[0.08] bg-card/60 p-5"
+                  class="rounded-2xl border border-white/[0.08] bg-card/60 p-5"
                 >
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+                  <div class="flex items-start gap-3">
+                    <CheckCircle2 class="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
                     <div>
-                      <h3 className="font-semibold text-foreground">{item.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.body}</p>
+                      <h3 class="font-semibold text-foreground">{item.title}</h3>
+                      <p class="mt-2 text-sm leading-6 text-muted-foreground">{item.body}</p>
                     </div>
                   </div>
                 </article>
               ))}
             </div>
 
-            <div className="mt-12 rounded-xl border border-white/[0.12] bg-card/70 p-8 text-center">
-              <h2 className="text-2xl text-foreground md:text-3xl">
+            <div class="mt-12 rounded-xl border border-white/[0.12] bg-card/70 p-8 text-center">
+              <h2 class="text-2xl text-foreground md:text-3xl">
                 {content.finishTitle}
               </h2>
-              <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-muted-foreground md:text-base">
+              <p class="mx-auto mt-3 max-w-2xl text-sm leading-6 text-muted-foreground md:text-base">
                 {content.finishBody}
               </p>
-              <div className="mt-6 flex flex-wrap justify-center gap-3">
-                <a href={helpPath} className="trust-chip-link">
+              <div class="mt-6 flex flex-wrap justify-center gap-3">
+                <a href={helpPath} class="trust-chip-link">
                   {content.backToHelp}
                 </a>
-                <a href={intakeAIPath} className="trust-chip-link">
+                <a href={intakeAIPath} class="trust-chip-link">
                   {content.intakeAI}
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  <ArrowRight class="h-4 w-4" aria-hidden="true" />
                 </a>
               </div>
             </div>
@@ -462,13 +463,3 @@ const ByokGuidePageInner = () => {
         </section>
       </main>
     </div>
-  );
-};
-
-const ByokGuidePage = ({ lang, alternateHref }: LocalePageProps) => (
-  <LanguageProvider lang={lang} alternateHref={alternateHref}>
-    <ByokGuidePageInner />
-  </LanguageProvider>
-);
-
-export default ByokGuidePage;

@@ -1,0 +1,22 @@
+---
+import WhatsNewArticle from '@/components/astro/WhatsNewArticle.astro';
+import type { ReleaseSummary } from "@/lib/releases";
+import { useT } from '@/i18n/t';
+import type { Language } from '@/i18n/translations';
+
+interface Props {
+  lang: Language;
+  entry: ReleaseSummary;
+}
+
+const { lang, entry } = Astro.props;
+const t = useT(lang);
+
+---
+<div class="min-h-screen">
+      <main class="section-gradient min-h-screen pt-28 pb-20">
+        <div class="container max-w-4xl">
+          <WhatsNewArticle entry={entry} lang={lang}><slot /></WhatsNewArticle>
+        </div>
+      </main>
+    </div>

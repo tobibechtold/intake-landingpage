@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SiteShell from '@/components/astro/SiteShell.astro';
+import ByokGuidePage from '@/components/astro/ByokGuidePage.astro';
 import { pageProps } from '@/lib/pageSeo';
-import ByokGuidePage from '@/pages-react/ByokGuidePage';
 
 const route = '/en/help/own-api-key';
+const { lang } = pageProps(route);
 ---
 <BaseLayout route={route}>
   <SiteShell route={route}>
-    {/* No client: directive — this page is static, so it ships no JavaScript. */}
-    <ByokGuidePage {...pageProps(route)} />
+    <ByokGuidePage lang={lang} />
   </SiteShell>
 </BaseLayout>

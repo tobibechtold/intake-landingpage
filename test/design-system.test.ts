@@ -13,10 +13,8 @@ const walk = (dir: string, out: string[] = []): string[] => {
 
 // src/components/ui/* is vendored shadcn; its variants are the single place button
 // styling is defined for React, so it is exempt from the "no bespoke styles" rules.
-const sourceFiles = () =>
-  [...walk('src/components'), ...walk('src/pages-react'), ...walk('src/layouts')].filter(
-    (f) => !f.includes(`${'components'}/ui/`),
-  );
+// src/pages-react and src/components/ui are gone: the site has no React left.
+const sourceFiles = () => [...walk('src/components'), ...walk('src/layouts'), ...walk('src/pages')];
 
 const read = (f: string) => ({ file: f, text: readFileSync(f, 'utf8') });
 
@@ -68,12 +66,14 @@ describe('Refined Dark design system', () => {
     }
   });
 
-  it('keeps the React Button variants aligned with the CSS tiers', () => {
-    // Both must render a white primary; a pink fill means they have drifted apart.
-    expect(readFileSync('src/components/ui/button.tsx', 'utf8')).toContain(
-      'bg-foreground text-background',
-    );
+  // There is no React Button any more, so the CSS tiers are the single definition.
+  it('defines the primary button as a white fill', () => {
     expect(readFileSync('src/index.css', 'utf8')).toContain('bg-foreground');
+  });
+
+  it('has no React left in the source tree', () => {
+    const react = sourceFiles().filter((f) => f.endsWith('.tsx'));
+    expect(react).toEqual([]);
   });
 
   it('keeps muted body copy above the AA contrast threshold', () => {

@@ -1,5 +1,4 @@
-import { LanguageProvider } from "@/i18n/LanguageContext";
-import type { LocalePageProps } from "./localePage";
+---
 import {
   BadgeCheck,
   Camera,
@@ -10,11 +9,10 @@ import {
   Minus,
   ScanLine,
   Sparkles,
-} from "lucide-react";
-import CTA from "@/components/CTA";
-import PageBreadcrumbs from "@/components/PageBreadcrumbs";
-import PhoneFrame from "@/components/PhoneFrame";
-import { useLanguage } from "@/i18n/LanguageContext";
+} from 'lucide-astro';
+import CTA from '@/components/astro/CTA.astro';
+import PageBreadcrumbs from '@/components/astro/PageBreadcrumbs.astro';
+import PhoneFrame from '@/components/astro/PhoneFrame.astro';
 import { buildLocalizedPath } from "@/lib/localeRouting";
 
 const CONTENT = {
@@ -273,78 +271,61 @@ const CONTENT = {
   },
 } as const;
 
-const ComparisonValue = ({
-  level,
-  children,
-}: {
-  level: "full" | "basic" | "none";
-  children: string;
-}) => {
-  const isFull = level === "full";
+import ComparisonValue from '@/components/astro/ComparisonValue.astro';
+import { useT } from '@/i18n/t';
+import type { Language } from '@/i18n/translations';
 
-  return (
-    <div className="flex gap-3 text-sm leading-6 text-muted-foreground">
-      <span
-        className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full ${
-          isFull ? "bg-primary/15 text-primary" : "bg-muted text-muted-foreground"
-        }`}
-        aria-hidden="true"
-      >
-        {isFull ? <Check className="h-4 w-4" /> : <Minus className="h-4 w-4" />}
-      </span>
-      <span>{children}</span>
-    </div>
-  );
-};
+interface Props {
+  lang: Language;
+}
 
-const IntakeAIPageInner = () => {
-  const { language, t } = useLanguage();
-  const content = CONTENT[language];
-  const homePath = buildLocalizedPath("home", language);
-  const helpPath = buildLocalizedPath("help", language);
-  const byokGuidePath = buildLocalizedPath("byokGuide", language);
+const { lang } = Astro.props;
+const t = useT(lang);
+const content = CONTENT[lang];
+  const homePath = buildLocalizedPath("home", lang);
+  const helpPath = buildLocalizedPath("help", lang);
+  const byokGuidePath = buildLocalizedPath("byokGuide", lang);
   const demoVideoSrc =
-    language === "de" ? "/intake-ai-demo-de.mp4" : "/intake-ai-demo-en.mp4";
-
-  return (
-    <div className="min-h-screen">
-      <main className="pt-28">
-        <section className="hero-gradient overflow-hidden pb-16 pt-8 md:pb-24">
-          <div className="container">
+    lang === "de" ? "/intake-ai-demo-de.mp4" : "/intake-ai-demo-en.mp4";
+---
+<div class="min-h-screen">
+      <main class="pt-28">
+        <section class="hero-gradient overflow-hidden pb-16 pt-8 md:pb-24">
+          <div class="container">
             <PageBreadcrumbs
               items={[
                 { label: t("homeNav"), href: homePath },
                 { label: content.breadcrumbs },
               ]}
             />
-            <div className="grid items-center gap-12 md:grid-cols-[minmax(0,1fr)_minmax(260px,0.75fr)]">
+            <div class="grid items-center gap-12 md:grid-cols-[minmax(0,1fr)_minmax(260px,0.75fr)]">
               <div>
-                <div className="flex flex-wrap items-center gap-3">
-                  <p className="section-kicker">{content.kicker}</p>
-                  <span className="badge-accent">
+                <div class="flex flex-wrap items-center gap-3">
+                  <p class="section-kicker">{content.kicker}</p>
+                  <span class="badge-accent">
                     {t("intakeAIBadge")}
                   </span>
                 </div>
-                <h1 className="mt-4 text-5xl leading-tight text-foreground md:text-7xl">
+                <h1 class="mt-4 text-5xl leading-tight text-foreground md:text-7xl">
                   {content.title}
                 </h1>
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl">
+                <p class="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl">
                   {content.description}
                 </p>
-                <p className="mt-4 max-w-xl text-base font-medium text-foreground">
+                <p class="mt-4 max-w-xl text-base font-medium text-foreground">
                   {content.coreNote}
                 </p>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  <a href={`${homePath}#hero`} className="trust-chip-link">
+                <div class="mt-8 flex flex-wrap gap-3">
+                  <a href={`${homePath}#hero`} class="trust-chip-link">
                     {content.primaryCta}
                   </a>
-                  <a href={`${helpPath}#faq`} className="trust-chip-link">
+                  <a href={`${helpPath}#faq`} class="trust-chip-link">
                     {content.secondaryCta}
                   </a>
                 </div>
               </div>
 
-              <figure className="mx-auto w-full max-w-[300px]">
+              <figure class="mx-auto w-full max-w-[300px]">
                 <PhoneFrame>
                   <video
                     data-testid="intake-ai-demo-video"
@@ -353,10 +334,10 @@ const IntakeAIPageInner = () => {
                     muted
                     loop
                     playsInline
-                    className="h-full w-full bg-background object-cover"
+                    class="h-full w-full bg-background object-cover"
                   />
                 </PhoneFrame>
-                <figcaption className="mt-3 text-center text-xs leading-5 text-muted-foreground">
+                <figcaption class="mt-3 text-center text-xs leading-5 text-muted-foreground">
                   {content.videoCaption}
                 </figcaption>
               </figure>
@@ -364,58 +345,57 @@ const IntakeAIPageInner = () => {
           </div>
         </section>
 
-        <section className="section-gradient py-20 md:py-24">
-          <div className="container">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="section-kicker">{t("intakeAINav")}</p>
-              <h2 className="mt-3 text-3xl text-foreground md:text-4xl">
+        <section class="section-gradient py-20 md:py-24">
+          <div class="container">
+            <div class="mx-auto max-w-3xl text-center">
+              <p class="section-kicker">{t("intakeAINav")}</p>
+              <h2 class="mt-3 text-3xl text-foreground md:text-4xl">
                 {content.featureTitle}
               </h2>
-              <p className="mt-4 text-base leading-7 text-muted-foreground md:text-lg">
+              <p class="mt-4 text-base leading-7 text-muted-foreground md:text-lg">
                 {content.featureDescription}
               </p>
             </div>
-            <div className="mt-12 grid gap-5 md:grid-cols-2">
+            <div class="mt-12 grid gap-5 md:grid-cols-2">
               {content.features.map((feature) => (
-                <article key={feature.title} className="feature-card">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.05] text-foreground/70">
-                    <feature.icon className="h-6 w-6" />
+                <article class="feature-card">
+                  <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.05] text-foreground/70">
+                    <feature.icon class="h-6 w-6" />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground">{feature.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{feature.body}</p>
+                  <h3 class="text-lg font-semibold text-foreground">{feature.title}</h3>
+                  <p class="mt-2 text-sm leading-6 text-muted-foreground">{feature.body}</p>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="py-20 md:py-24">
-          <div className="container">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="section-kicker">{language === "de" ? "Preis" : "Pricing"}</p>
-              <h2 className="mt-3 text-3xl text-foreground md:text-4xl">
+        <section class="py-20 md:py-24">
+          <div class="container">
+            <div class="mx-auto max-w-3xl text-center">
+              <p class="section-kicker">{lang === "de" ? "Preis" : "Pricing"}</p>
+              <h2 class="mt-3 text-3xl text-foreground md:text-4xl">
                 {content.pricingTitle}
               </h2>
-              <p className="mt-4 text-base leading-7 text-muted-foreground md:text-lg">
+              <p class="mt-4 text-base leading-7 text-muted-foreground md:text-lg">
                 {content.pricingDescription}
               </p>
             </div>
 
-            <div className="mt-12 grid gap-6 md:grid-cols-2">
-              <article className="glass-card border border-white/[0.12] p-7">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.05] text-foreground/70">
-                  <Sparkles className="h-6 w-6" />
+            <div class="mt-12 grid gap-6 md:grid-cols-2">
+              <article class="glass-card border border-white/[0.12] p-7">
+                <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.05] text-foreground/70">
+                  <Sparkles class="h-6 w-6" />
                 </div>
-                <h3 className="text-2xl font-semibold text-foreground">{content.hostedTitle}</h3>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">{content.hostedBody}</p>
-                <div className="mt-6 grid gap-3">
+                <h3 class="text-2xl font-semibold text-foreground">{content.hostedTitle}</h3>
+                <p class="mt-3 text-sm leading-6 text-muted-foreground">{content.hostedBody}</p>
+                <div class="mt-6 grid gap-3">
                   {[content.monthly, content.yearly].map((price) => (
                     <div
-                      key={price}
-                      className="trust-chip"
+                      class="trust-chip"
                     >
-                      <p className="font-semibold text-foreground">{price}</p>
-                      <p className="mt-1 text-xs uppercase tracking-[0.2em] text-primary">
+                      <p class="font-semibold text-foreground">{price}</p>
+                      <p class="mt-1 text-xs uppercase tracking-[0.2em] text-primary">
                         {content.trial}
                       </p>
                     </div>
@@ -423,58 +403,57 @@ const IntakeAIPageInner = () => {
                 </div>
               </article>
 
-              <article className="glass-card border border-white/[0.08] p-7">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.05] text-foreground/70">
-                  <KeyRound className="h-6 w-6" />
+              <article class="glass-card border border-white/[0.08] p-7">
+                <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.05] text-foreground/70">
+                  <KeyRound class="h-6 w-6" />
                 </div>
-                <h3 className="text-2xl font-semibold text-foreground">{content.byokTitle}</h3>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">{content.byokBody}</p>
-                <p className="mt-5 rounded-2xl border border-white/[0.08] bg-background/55 px-4 py-3 text-sm leading-6 text-muted-foreground">
+                <h3 class="text-2xl font-semibold text-foreground">{content.byokTitle}</h3>
+                <p class="mt-3 text-sm leading-6 text-muted-foreground">{content.byokBody}</p>
+                <p class="mt-5 rounded-2xl border border-white/[0.08] bg-background/55 px-4 py-3 text-sm leading-6 text-muted-foreground">
                   {content.providerNote}
                 </p>
-                <a href={byokGuidePath} className="trust-chip-link mt-5 w-fit">
+                <a href={byokGuidePath} class="trust-chip-link mt-5 w-fit">
                   {content.byokCta}
                 </a>
               </article>
             </div>
 
-            <div className="mt-12">
-              <div className="mx-auto max-w-3xl text-center">
-                <p className="section-kicker">{content.comparisonKicker}</p>
-                <h3 className="mt-3 text-3xl text-foreground md:text-4xl">
+            <div class="mt-12">
+              <div class="mx-auto max-w-3xl text-center">
+                <p class="section-kicker">{content.comparisonKicker}</p>
+                <h3 class="mt-3 text-3xl text-foreground md:text-4xl">
                   {content.comparisonTitle}
                 </h3>
-                <p className="mt-4 text-base leading-7 text-muted-foreground md:text-lg">
+                <p class="mt-4 text-base leading-7 text-muted-foreground md:text-lg">
                   {content.comparisonDescription}
                 </p>
               </div>
 
               <div
                 data-testid="intake-ai-mobile-comparison"
-                className="mt-8 space-y-4 md:hidden"
+                class="mt-8 space-y-4 md:hidden"
               >
                 {content.comparisonRows.map((row) => (
                   <article
-                    key={row.feature}
-                    className="rounded-3xl border border-white/[0.08] bg-card/70 p-5"
+                    class="rounded-3xl border border-white/[0.08] bg-card/70 p-5"
                   >
-                    <h4 className="text-base font-semibold leading-6 text-foreground">
+                    <h4 class="text-base font-semibold leading-6 text-foreground">
                       {row.feature}
                     </h4>
-                    <div className="mt-4 space-y-3">
-                      <div className="rounded-2xl border border-white/[0.12] bg-primary/5 p-4">
-                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+                    <div class="mt-4 space-y-3">
+                      <div class="rounded-2xl border border-white/[0.12] bg-primary/5 p-4">
+                        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
                           {content.comparisonColumns.hosted}
                         </p>
-                        <div className="mt-3">
+                        <div class="mt-3">
                           <ComparisonValue level={row.hostedLevel}>{row.hosted}</ComparisonValue>
                         </div>
                       </div>
-                      <div className="rounded-2xl border border-white/[0.08] bg-background/45 p-4">
-                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                      <div class="rounded-2xl border border-white/[0.08] bg-background/45 p-4">
+                        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                           {content.comparisonColumns.byok}
                         </p>
-                        <div className="mt-3">
+                        <div class="mt-3">
                           <ComparisonValue level={row.byokLevel}>{row.byok}</ComparisonValue>
                         </div>
                       </div>
@@ -485,33 +464,33 @@ const IntakeAIPageInner = () => {
 
               <div
                 data-testid="intake-ai-desktop-comparison"
-                className="mt-8 hidden overflow-x-auto rounded-xl border border-white/[0.08] bg-card/70 md:block"
+                class="mt-8 hidden overflow-x-auto rounded-xl border border-white/[0.08] bg-card/70 md:block"
               >
-                <table className="min-w-[760px] border-collapse">
-                  <caption className="sr-only">{content.comparisonTitle}</caption>
+                <table class="min-w-[760px] border-collapse">
+                  <caption class="sr-only">{content.comparisonTitle}</caption>
                   <thead>
-                    <tr className="border-b border-white/[0.08] text-left">
-                      <th className="w-[24%] px-5 py-4 text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                    <tr class="border-b border-white/[0.08] text-left">
+                      <th class="w-[24%] px-5 py-4 text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">
                         {content.comparisonColumns.feature}
                       </th>
-                      <th className="w-[40%] bg-white/[0.04] px-5 py-4 text-sm font-semibold text-foreground">
+                      <th class="w-[40%] bg-white/[0.04] px-5 py-4 text-sm font-semibold text-foreground">
                         {content.comparisonColumns.hosted}
                       </th>
-                      <th className="w-[36%] px-5 py-4 text-sm font-semibold text-foreground/80">
+                      <th class="w-[36%] px-5 py-4 text-sm font-semibold text-foreground/80">
                         {content.comparisonColumns.byok}
                       </th>
                     </tr>
                   </thead>
                   <tbody>
                     {content.comparisonRows.map((row) => (
-                      <tr key={row.feature} className="border-b border-white/[0.08] last:border-0">
-                        <th className="px-5 py-5 text-left text-sm font-semibold leading-6 text-foreground">
+                      <tr class="border-b border-white/[0.08] last:border-0">
+                        <th class="px-5 py-5 text-left text-sm font-semibold leading-6 text-foreground">
                           {row.feature}
                         </th>
-                        <td className="bg-primary/5 px-5 py-5 align-top">
+                        <td class="bg-primary/5 px-5 py-5 align-top">
                           <ComparisonValue level={row.hostedLevel}>{row.hosted}</ComparisonValue>
                         </td>
-                        <td className="px-5 py-5 align-top">
+                        <td class="px-5 py-5 align-top">
                           <ComparisonValue level={row.byokLevel}>{row.byok}</ComparisonValue>
                         </td>
                       </tr>
@@ -520,22 +499,21 @@ const IntakeAIPageInner = () => {
                 </table>
               </div>
 
-              <div className="mt-10">
-                <div className="mx-auto max-w-3xl text-center">
-                  <h4 className="text-2xl font-bold text-foreground md:text-3xl">
+              <div class="mt-10">
+                <div class="mx-auto max-w-3xl text-center">
+                  <h4 class="text-2xl font-bold text-foreground md:text-3xl">
                     {content.proofTitle}
                   </h4>
-                  <p className="mt-3 text-sm leading-6 text-muted-foreground md:text-base">
+                  <p class="mt-3 text-sm leading-6 text-muted-foreground md:text-base">
                     {content.proofDescription}
                   </p>
                 </div>
-                <div className="mt-8 grid gap-6 md:grid-cols-2">
+                <div class="mt-8 grid gap-6 md:grid-cols-2">
                   {content.proofItems.map((item) => (
                     <article
-                      key={item.title}
-                      className="glass-card overflow-hidden border border-white/[0.08]"
+                      class="glass-card overflow-hidden border border-white/[0.08]"
                     >
-                      <div className="aspect-[4/3] overflow-hidden bg-muted/40">
+                      <div class="aspect-[4/3] overflow-hidden bg-muted/40">
                         <img
                           src={item.imageSrc}
                           alt={item.imageAlt}
@@ -543,12 +521,12 @@ const IntakeAIPageInner = () => {
                           height={1200}
                           loading="lazy"
                           decoding="async"
-                          className="h-full w-full object-cover object-top"
+                          class="h-full w-full object-cover object-top"
                         />
                       </div>
-                      <div className="p-6">
-                        <h5 className="text-lg font-semibold text-foreground">{item.title}</h5>
-                        <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                      <div class="p-6">
+                        <h5 class="text-lg font-semibold text-foreground">{item.title}</h5>
+                        <p class="mt-2 text-sm leading-6 text-muted-foreground">
                           {item.body}
                         </p>
                       </div>
@@ -560,33 +538,23 @@ const IntakeAIPageInner = () => {
           </div>
         </section>
 
-        <section className="section-gradient border-y border-white/[0.08] py-20">
-          <div className="container">
-            <div className="grid gap-6 md:grid-cols-2">
-              <article className="feature-card">
-                <BadgeCheck className="mb-4 h-7 w-7 text-primary" />
-                <h2 className="text-2xl font-semibold text-foreground">{content.disclaimerTitle}</h2>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">{content.disclaimer}</p>
+        <section class="section-gradient border-y border-white/[0.08] py-20">
+          <div class="container">
+            <div class="grid gap-6 md:grid-cols-2">
+              <article class="feature-card">
+                <BadgeCheck class="mb-4 h-7 w-7 text-primary" />
+                <h2 class="text-2xl font-semibold text-foreground">{content.disclaimerTitle}</h2>
+                <p class="mt-3 text-sm leading-6 text-muted-foreground">{content.disclaimer}</p>
               </article>
-              <article className="feature-card">
-                <BadgeCheck className="mb-4 h-7 w-7 text-primary" />
-                <h2 className="text-2xl font-semibold text-foreground">{content.privacyTitle}</h2>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">{content.privacy}</p>
+              <article class="feature-card">
+                <BadgeCheck class="mb-4 h-7 w-7 text-primary" />
+                <h2 class="text-2xl font-semibold text-foreground">{content.privacyTitle}</h2>
+                <p class="mt-3 text-sm leading-6 text-muted-foreground">{content.privacy}</p>
               </article>
             </div>
           </div>
         </section>
 
-        <CTA />
+        <CTA lang={lang} />
       </main>
     </div>
-  );
-};
-
-const IntakeAIPage = ({ lang, alternateHref }: LocalePageProps) => (
-  <LanguageProvider lang={lang} alternateHref={alternateHref}>
-    <IntakeAIPageInner />
-  </LanguageProvider>
-);
-
-export default IntakeAIPage;

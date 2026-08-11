@@ -2,8 +2,8 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SiteShell from '@/components/astro/SiteShell.astro';
+import WhatsNewEntry from '@/components/astro/WhatsNewEntry.astro';
 import { pageProps } from '@/lib/pageSeo';
-import WhatsNewEntry from '@/pages-react/WhatsNewEntry';
 
 export async function getStaticPaths() {
   const entries = await getCollection('whatsNew', (entry) => entry.id.endsWith('/de'));
@@ -13,6 +13,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const route = `/whats-new/${entry.data.version}`;
+const { lang } = pageProps(route);
 
 const summary = {
   version: entry.data.version,
@@ -24,13 +25,9 @@ const summary = {
   href: route,
 };
 ---
-<BaseLayout
-  route={route}
-  title={`${entry.data.title} | Intake`}
-  description={entry.data.summary}
->
+<BaseLayout route={route} title={`${entry.data.title} | Intake`} description={entry.data.summary}>
   <SiteShell route={route}>
-    <WhatsNewEntry {...pageProps(route)} entry={summary}>
+    <WhatsNewEntry lang={lang} entry={summary}>
       <Content />
     </WhatsNewEntry>
   </SiteShell>

@@ -1,7 +1,7 @@
 {
   "/": {
     "words": 1125,
-    "sha": "2ec928680384a2e1"
+    "sha": "5a4193cefad90111"
   },
   "/404": {
     "words": 68,
@@ -9,135 +9,135 @@
   },
   "/en": {
     "words": 1210,
-    "sha": "74ccbf7e346dbe4b"
+    "sha": "3b2fd771e6cdf515"
   },
   "/en/calorie-counter-no-subscription": {
     "words": 298,
-    "sha": "03abe07daa0a2b25"
+    "sha": "b52ed8eb6ab403d7"
   },
   "/en/calorie-tracker-no-account": {
     "words": 301,
-    "sha": "ef7f958d1806380a"
+    "sha": "d68c1bd456191da3"
   },
   "/en/comparisons": {
     "words": 255,
-    "sha": "bbf57fc4cffaed0d"
+    "sha": "6a0f4f0f1a68327f"
   },
   "/en/comparisons/fddb-alternative": {
     "words": 456,
-    "sha": "562c6dee8c3281fb"
+    "sha": "3a0a56d2a6063a7f"
   },
   "/en/comparisons/yazio-alternative": {
     "words": 472,
-    "sha": "2b52bc53fc51e515"
+    "sha": "0317da33ce8c8a7c"
   },
   "/en/features": {
     "words": 571,
-    "sha": "0723ffa5095ff7da"
+    "sha": "05a51029b859ec43"
   },
   "/en/help": {
     "words": 1187,
-    "sha": "1337ef712757a128"
+    "sha": "31eecc089cb1d058"
   },
   "/en/help/own-api-key": {
     "words": 821,
-    "sha": "cd9807e504e1ca2f"
+    "sha": "3c4e12557d788743"
   },
   "/en/intake-ai": {
     "words": 874,
-    "sha": "9338eba61771003b"
+    "sha": "79fc427efc5eff76"
   },
   "/en/privacy": {
     "words": 418,
-    "sha": "0de9fa791aaf41f2"
+    "sha": "848bb3d57f6bdc2b"
   },
   "/en/terms": {
     "words": 425,
-    "sha": "155e17d609f264e8"
+    "sha": "35cfec030414387f"
   },
   "/en/whats-new": {
     "words": 987,
-    "sha": "e6c50d5b1ced5dc0"
+    "sha": "d0bccf8715ea2d2e"
   },
   "/en/whats-new/2.1.1": {
     "words": 436,
-    "sha": "276ea85a2cf682e7"
+    "sha": "0af70e7ea90cfa32"
   },
   "/en/whats-new/2.1.2": {
     "words": 112,
-    "sha": "b14b526e21b2a8c6"
+    "sha": "cf928824349f5b40"
   },
   "/en/whats-new/2.1.3": {
     "words": 319,
-    "sha": "044fe7357ab22c63"
+    "sha": "5a225b8ad673cd73"
   },
   "/en/whats-new/2.1.4": {
     "words": 482,
-    "sha": "d62cf6a13d53b52d"
+    "sha": "4e7826b2054f50c3"
   },
   "/en/whats-new/2.2.0": {
     "words": 565,
-    "sha": "330d1a29efdf3fb0"
+    "sha": "61c1e5a01cae543b"
   },
   "/en/whats-new/2.2.1": {
     "words": 213,
-    "sha": "087ab712a742615c"
+    "sha": "c9c51dc85543a96e"
   },
   "/en/whats-new/2.2.2": {
     "words": 370,
-    "sha": "2573509e32239459"
+    "sha": "3491555d1f265510"
   },
   "/en/whats-new/2.3.0": {
     "words": 433,
-    "sha": "6c4aa7e04e4187f0"
+    "sha": "bce322d625185ec1"
   },
   "/en/whats-new/2.3.1": {
     "words": 371,
-    "sha": "e039ab0eef11f4b2"
+    "sha": "2ef95e0c4a184a83"
   },
   "/en/whats-new/2.3.2": {
     "words": 374,
-    "sha": "8875f5f7d8b815ac"
+    "sha": "ade6cdb47de1ff3f"
   },
   "/en/whats-new/2.4.0": {
     "words": 580,
-    "sha": "36b7950672081707"
+    "sha": "89c38bb0bc01759b"
   },
   "/en/whats-new/2.4.1": {
     "words": 336,
-    "sha": "f343d14e6c3cd34f"
+    "sha": "3c6ff503bf7fe43f"
   },
   "/en/whats-new/2.4.2": {
     "words": 236,
-    "sha": "ea99ad587f4a4d2e"
+    "sha": "f3eb3c980c17a7cf"
   },
   "/en/whats-new/2.4.3": {
     "words": 327,
-    "sha": "6e8064ba07947929"
+    "sha": "9163a3b8745441c0"
   },
   "/en/whats-new/2.4.4": {
     "words": 359,
-    "sha": "1a549ebf5dc08ea1"
+    "sha": "d840595fe2f9128f"
   },
   "/en/whats-new/2.4.5": {
     "words": 359,
-    "sha": "cf2d2ad089b8ae1d"
+    "sha": "206fb48fc907d88c"
   },
   "/en/whats-new/2.4.6": {
     "words": 334,
-    "sha": "b742ff5efd71efea"
+    "sha": "60a046c3a56a417a"
   },
   "/en/whats-new/2.4.7": {
     "words": 249,
-    "sha": "f9776f7d7cfe1e2e"
+    "sha": "0cf29dec95c052a6"
   },
   "/en/whats-new/2.5.0": {
     "words": 388,
-    "sha": "9b2b3f98fb696907"
+    "sha": "76534b9c4f15bc67"
   },
   "/en/whats-new/2.5.1": {
     "words": 1223,
-    "sha": "a3556f9779e8a462"
+    "sha": "fc4a9b0b7ca70bd3"
   },
   "/funktionen": {
     "words": 510,
@@ -145,11 +145,11 @@
   },
   "/hilfe": {
     "words": 1063,
-    "sha": "9fb6fd76b0b671eb"
+    "sha": "dec247d42514365f"
   },
   "/hilfe/eigener-api-schluessel": {
     "words": 714,
-    "sha": "cca195d23bc51cc0"
+    "sha": "3d527df5f9647f75"
   },
   "/intake-ai": {
     "words": 828,
@@ -165,7 +165,7 @@
   },
   "/privacy": {
     "words": 476,
-    "sha": "00cdf29cded343b2"
+    "sha": "ae7d6171145bc5c4"
   },
   "/terms": {
     "words": 508,

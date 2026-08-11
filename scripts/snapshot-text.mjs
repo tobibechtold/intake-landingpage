@@ -21,13 +21,23 @@ export const routeFor = (file) => {
   return r === '/' ? '/' : r.replace(/\/$/, '');
 };
 
+const decodeEntities = (s) =>
+  s
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&nbsp;/g, ' ');
+
 export const visibleText = (html) =>
+  decodeEntities(
   html
     .replace(/<script[\s\S]*?<\/script>/g, '')
     .replace(/<style[\s\S]*?<\/style>/g, '')
     .replace(/<[^>]+>/g, ' ')
     .replace(/\s+/g, ' ')
-    .trim();
+    .trim());
 
 const snap = {};
 for (const f of walk('dist')) {

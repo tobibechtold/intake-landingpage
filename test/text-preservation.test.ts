@@ -14,13 +14,27 @@ import snapshot from './fixtures/page-text-snapshot.json';
  * If a change is intentional, re-record with:
  *   npm run build && node scripts/snapshot-text.mjs
  */
+// Entity encoding is not content: React escapes & in text nodes, Astro emits it raw.
+// Comparing what a reader sees means decoding first, or the conversion looks like a
+// text change when nothing changed.
+const decodeEntities = (s: string) =>
+  s
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&nbsp;/g, ' ');
+
 const visibleText = (html: string) =>
-  html
+  decodeEntities(
+    html
     .replace(/<script[\s\S]*?<\/script>/g, '')
     .replace(/<style[\s\S]*?<\/style>/g, '')
     .replace(/<[^>]+>/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
+      .replace(/\s+/g, ' ')
+      .trim(),
+  );
 
 const fileFor = (route: string) =>
   route === '/404' ? join('dist', '404.html')

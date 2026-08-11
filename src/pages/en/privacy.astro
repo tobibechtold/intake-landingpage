@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SiteShell from '@/components/astro/SiteShell.astro';
+import Privacy from '@/components/astro/Privacy.astro';
 import { pageProps } from '@/lib/pageSeo';
-import Privacy from '@/pages-react/Privacy';
 
 const route = '/en/privacy';
+const { lang } = pageProps(route);
 ---
 <BaseLayout route={route}>
   <SiteShell route={route}>
-    {/* No client: directive — this page is static, so it ships no JavaScript. */}
-    <Privacy {...pageProps(route)} />
+    <Privacy lang={lang} />
   </SiteShell>
 </BaseLayout>

@@ -1,0 +1,18 @@
+---
+import type { Language } from '@/i18n/translations';
+
+interface Props {
+  title: string;
+  lang?: Language;
+}
+
+const { title } = Astro.props;
+---
+<main class="flex-1 pb-16 pt-24">
+  <div class="container max-w-3xl">
+    <h1 class="mb-8 text-3xl text-foreground md:text-4xl">{title}</h1>
+    <div class="prose prose-invert prose-sm max-w-none">
+      <slot />
+    </div>
+  </div>
+</main>

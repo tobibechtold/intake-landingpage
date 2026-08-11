@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import { unified } from '@astrojs/markdown-remark';
 import { remarkVideo } from './src/lib/remarkVideo.mjs';
@@ -31,7 +30,7 @@ export default defineConfig({
   // uses translated slugs (/funktionen <-> /en/features), which it would pair
   // wrongly. hreflang is emitted from BaseLayout instead, which Google treats
   // as equivalent to sitemap-level hreflang.
-  integrations: [react(), sitemap(), whatsNewAssets()],
+  integrations: [sitemap(), whatsNewAssets()],
   vite: {
     // Astro's default envPrefix is PUBLIC_, but this project predates Astro and its
     // PostHog key is named VITE_POSTHOG_KEY (see .env.example, and the Vercel project

@@ -1,17 +1,16 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SiteShell from '@/components/astro/SiteShell.astro';
+import WhatsNewIndex from '@/components/astro/WhatsNewIndex.astro';
 import { pageProps } from '@/lib/pageSeo';
 import { loadReleases } from '@/lib/loadReleases';
-import WhatsNewIndex from '@/pages-react/WhatsNewIndex';
 
 const route = '/whats-new';
-const props = pageProps(route);
-const releases = await loadReleases(props.lang);
+const { lang } = pageProps(route);
+const releases = await loadReleases(lang);
 ---
 <BaseLayout route={route}>
   <SiteShell route={route}>
-    {/* Static render — no client: directive, no JavaScript. */}
-    <WhatsNewIndex {...props} releases={releases} />
+    <WhatsNewIndex lang={lang} releases={releases} />
   </SiteShell>
 </BaseLayout>

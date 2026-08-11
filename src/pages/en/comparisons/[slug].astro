@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SiteShell from '@/components/astro/SiteShell.astro';
+import ComparisonDetailPage from '@/components/astro/ComparisonDetailPage.astro';
 import { pageProps } from '@/lib/pageSeo';
-import ComparisonDetailPage from '@/pages-react/ComparisonDetailPage';
 
 export function getStaticPaths() {
   return [
@@ -13,9 +13,10 @@ export function getStaticPaths() {
 
 const { slug } = Astro.params;
 const route = `/en/comparisons/${slug}`;
+const { lang } = pageProps(route);
 ---
 <BaseLayout route={route}>
   <SiteShell route={route}>
-    <ComparisonDetailPage {...pageProps(route)} slug={slug!} />
+    <ComparisonDetailPage lang={lang} slug={slug!} />
   </SiteShell>
 </BaseLayout>

@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SiteShell from '@/components/astro/SiteShell.astro';
+import Terms from '@/components/astro/Terms.astro';
 import { pageProps } from '@/lib/pageSeo';
-import Terms from '@/pages-react/Terms';
 
 const route = '/en/terms';
+const { lang } = pageProps(route);
 ---
 <BaseLayout route={route}>
   <SiteShell route={route}>
-    {/* No client: directive — this page is static, so it ships no JavaScript. */}
-    <Terms {...pageProps(route)} />
+    <Terms lang={lang} />
   </SiteShell>
 </BaseLayout>

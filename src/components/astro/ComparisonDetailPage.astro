@@ -1,0 +1,125 @@
+---
+import CTA from '@/components/astro/CTA.astro';
+import PageBreadcrumbs from '@/components/astro/PageBreadcrumbs.astro';
+import { getComparisonPageContent, isComparisonSlug } from "@/lib/marketingPages";
+import { buildLocalizedPath } from "@/lib/localeRouting";
+import { useT } from '@/i18n/t';
+import type { Language } from '@/i18n/translations';
+
+interface Props {
+  lang: Language;
+  slug: string;
+}
+
+const { lang, slug } = Astro.props;
+const t = useT(lang);
+const comparisonSlug = isComparisonSlug(slug) ? slug : "yazio-alternative";
+  const content = getComparisonPageContent(comparisonSlug, lang);
+---
+<div class="min-h-screen">
+      <main class="pt-28">
+        <section class="hero-gradient overflow-hidden pb-14 pt-8 md:pb-20">
+          <div class="container">
+            <PageBreadcrumbs
+              items={[
+                { label: t("homeNav"), href: buildLocalizedPath("home", lang) },
+                { label: t("comparisonsNav"), href: buildLocalizedPath("comparisons", lang) },
+                { label: content.kicker },
+              ]}
+            />
+            <div class="mx-auto max-w-4xl text-left">
+              <p class="section-kicker">{content.kicker}</p>
+              <h1 class="mt-4 text-4xl leading-tight text-foreground md:text-6xl">
+                {content.title}
+              </h1>
+              <p class="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground md:text-xl">
+                {content.description}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="pb-12">
+          <div class="container">
+            <div class="glass-card overflow-hidden">
+              <table class="min-w-full border-collapse">
+                <thead>
+                  <tr class="border-b border-white/[0.08] text-left">
+                    <th class="px-5 py-4 text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                      {lang === "de" ? "Kriterium" : "Criteria"}
+                    </th>
+                    <th class="bg-white/[0.04] px-5 py-4 text-sm font-semibold text-foreground">
+                      Intake
+                    </th>
+                    <th class="px-5 py-4 text-sm font-semibold text-foreground/80">
+                      {content.kicker.replace(/ Alternative.*/, "")}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {content.criteria.map((criterion) => (
+                    <tr class="border-b border-white/[0.08] last:border-0">
+                      <th class="px-5 py-4 text-left text-sm font-medium text-foreground">
+                        {criterion.label}
+                      </th>
+                      <td class="bg-primary/5 px-5 py-4 text-sm text-foreground">
+                        {criterion.intake}
+                      </td>
+                      <td class="px-5 py-4 text-sm text-muted-foreground">{criterion.other}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div class="mt-8 grid gap-6 md:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
+              <article class="glass-card p-8">
+                <h2 class="text-2xl font-semibold text-foreground">
+                  {lang === "de" ? "Fazit" : "Summary"}
+                </h2>
+                <p class="mt-4 text-base leading-7 text-muted-foreground">
+                  {content.conclusion}
+                </p>
+              </article>
+
+              <aside class="glass-card p-8">
+                <h2 class="text-2xl font-semibold text-foreground">
+                  {lang === "de" ? "Worauf es ankommt" : "What matters here"}
+                </h2>
+                <ul class="mt-5 space-y-3">
+                  {content.takeaways.map((takeaway) => (
+                    <li class="text-sm leading-6 text-muted-foreground">
+                      {takeaway}
+                    </li>
+                  ))}
+                </ul>
+              </aside>
+            </div>
+
+            <div class="mt-6">
+              <aside class="glass-card p-8">
+                <h2 class="text-2xl font-semibold text-foreground">
+                  {lang === "de" ? "Nächste Schritte" : "Next steps"}
+                </h2>
+                <div class="mt-5 flex flex-wrap gap-3">
+                  <a
+                    href={buildLocalizedPath("comparisons", lang)}
+                    class="trust-chip-link"
+                  >
+                    {lang === "de" ? "Alle Vergleiche" : "All comparisons"}
+                  </a>
+                  <a href={buildLocalizedPath("features", lang)} class="trust-chip-link">
+                    {lang === "de" ? "Alle Funktionen" : "Features"}
+                  </a>
+                  <a href={buildLocalizedPath("home", lang)} class="trust-chip-link">
+                    {t("homeNav")}
+                  </a>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <CTA lang={lang} />
+      </main>
+    </div>
