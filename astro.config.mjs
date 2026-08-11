@@ -32,6 +32,15 @@ export default defineConfig({
   // wrongly. hreflang is emitted from BaseLayout instead, which Google treats
   // as equivalent to sitemap-level hreflang.
   integrations: [react(), sitemap(), whatsNewAssets()],
+  vite: {
+    // Astro's default envPrefix is PUBLIC_, but this project predates Astro and its
+    // PostHog key is named VITE_POSTHOG_KEY (see .env.example, and the Vercel project
+    // env). Without this, `import.meta.env.VITE_POSTHOG_KEY` compiles to undefined,
+    // initAnalytics()'s guard becomes dead code, Rollup drops the whole function, and
+    // analytics silently stops existing. Keep VITE_ here rather than renaming the var
+    // in Vercel, so the two cannot drift apart.
+    envPrefix: ['VITE_', 'PUBLIC_'],
+  },
   markdown: {
     // Astro 7 defaults to Sätteri, its Rust Markdown pipeline. We stay on the unified
     // processor because remarkVideo is an mdast/remark plugin and porting it to a

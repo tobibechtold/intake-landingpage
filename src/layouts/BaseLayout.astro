@@ -1,5 +1,7 @@
 ---
 import { getHreflangPair, getPageSeo, SITE_ORIGIN } from '@/lib/pageSeo';
+import Analytics from '@vercel/analytics/astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
 import '@/index.css';
 
 interface Props {
@@ -56,6 +58,15 @@ const ogImage = new URL('/og-image.png', SITE_ORIGIN).href;
   </head>
   <body>
     <slot />
+
+    {/* Formerly rendered from App.tsx / main.tsx, both deleted in the migration.
+        Without these there is no PostHog, no Vercel Analytics, no Speed Insights,
+        and — most importantly — no UTM capture feeding bio-link attribution. */}
+    <Analytics />
+    <SpeedInsights />
+    <script>
+      import '@/scripts/bootstrap';
+    </script>
 
     {/*
       Pins the visitor's language choice so the root locale redirect in vercel.json
