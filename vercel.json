@@ -1,8 +1,26 @@
 {
-  "routes": [
-    { "src": "^/go/([^/]+)/?$", "dest": "/api/go?slug=$1" },
-    { "src": "^/go/?$", "dest": "/api/go" },
-    { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/index.html" }
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/go/:slug", "destination": "/api/go?slug=:slug" },
+    { "source": "/go", "destination": "/api/go" }
+  ],
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        { "type": "header", "key": "accept-language", "value": "^en(-[A-Za-z]+)?\\b.*" }
+      ],
+      "missing": [
+        { "type": "cookie", "key": "intake_lang" },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(bot|crawler|spider|slurp|headless|preview).*"
+        }
+      ],
+      "destination": "/en",
+      "permanent": false
+    }
   ]
 }

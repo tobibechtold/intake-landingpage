@@ -56,5 +56,28 @@ const ogImage = new URL('/og-image.png', SITE_ORIGIN).href;
   </head>
   <body>
     <slot />
+
+    {/*
+      Pins the visitor's language choice so the root locale redirect in vercel.json
+      stops firing for them. The redirect is guarded by `missing: cookie intake_lang`,
+      so this is what makes an explicit switch stick. Delegated and inline so it works
+      without hydrating the language switcher, which is a plain anchor.
+    */}
+    <script is:inline>
+      document.addEventListener(
+        'click',
+        (event) => {
+          const target = event.target instanceof Element
+            ? event.target.closest('[data-language-switch]')
+            : null;
+          if (!target) return;
+          const next = target.getAttribute('data-language-switch');
+          if (next !== 'de' && next !== 'en') return;
+          document.cookie =
+            `intake_lang=${next};path=/;max-age=31536000;samesite=lax`;
+        },
+        { capture: true },
+      );
+    </script>
   </body>
 </html>
