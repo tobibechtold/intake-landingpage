@@ -112,7 +112,20 @@ The `@/*` alias must be preserved — roughly 150 files import through it.
 
 Note `build` no longer chains `node scripts/prerender.mjs`. That script is deleted in Task 8.
 
-- [ ] **Step 6: Create the placeholder `src/pages/index.astro`**
+- [ ] **Step 6: Teach Tailwind about `.astro` files**
+
+`tailwind.config.ts:7` currently globs only `{ts,tsx}`. Without this change every Tailwind class written in a `.astro` file is purged and pages build silently unstyled. Replace the `content` array with:
+
+```ts
+  content: [
+    "./src/**/*.{ts,tsx,astro,html,mdx}",
+    "./content/**/*.md",
+  ],
+```
+
+The `./pages/**`, `./components/**` and `./app/**` globs are dropped — those directories do not exist in this repo and never matched anything.
+
+- [ ] **Step 7: Create the placeholder `src/pages/index.astro`**
 
 ```astro
 ---
@@ -123,7 +136,7 @@ Note `build` no longer chains `node scripts/prerender.mjs`. That script is delet
 </html>
 ```
 
-- [ ] **Step 7: Delete the Vite SPA entry points**
+- [ ] **Step 8: Delete the Vite SPA entry points**
 
 ```bash
 git rm index.html vite.config.ts
@@ -131,7 +144,12 @@ git rm index.html vite.config.ts
 
 `src/main.tsx` and `src/App.tsx` stay for now — Task 7 harvests the route table from `App.tsx` before it is deleted in Task 8.
 
-- [ ] **Step 8: Verify the build**
+**Before deleting, note what `index.html` carries that must be re-homed in `BaseLayout` (Task 4):**
+the `robots` directive, `theme-color`, `color-scheme`, the 32×32 PNG favicon, the
+`apple-itunes-app` Smart App Banner (`app-id=6757768955`), and the three
+`apple-mobile-web-app-*` tags. These are captured in Task 4 Step 1 — do not lose them.
+
+- [ ] **Step 9: Verify the build**
 
 Run: `npm run build`
 Expected: exits 0, and `dist/index.html` contains `Astro shell online`.
@@ -140,7 +158,7 @@ Expected: exits 0, and `dist/index.html` contains `Astro shell online`.
 npm run build && grep -q "Astro shell online" dist/index.html && echo "PIPELINE OK"
 ```
 
-- [ ] **Step 9: Commit**
+- [ ] **Step 10: Commit**
 
 ```bash
 git add -A
@@ -391,8 +409,20 @@ const ogImage = new URL('/og-image.png', SITE_ORIGIN).href;
     <meta property="og:locale" content={seo.ogLocale} />
     <meta property="og:image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Carried over verbatim from the deleted index.html. Every tag below was
+         live in production; dropping any of them is a silent regression. -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="dark light" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <!-- iOS Safari Smart App Banner — a direct install path on an app landing page. -->
+    <meta name="apple-itunes-app" content="app-id=6757768955" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Intake" />
   </head>
   <body>
     <slot />
@@ -424,8 +454,13 @@ Expected: `dist/index.html` contains the German title and the canonical.
 npm run build
 grep -q 'hreflang="de"' dist/index.html && \
 grep -q 'rel="canonical" href="https://www.getintake.de/"' dist/index.html && \
+grep -q 'apple-itunes-app' dist/index.html && \
+grep -q 'max-image-preview:large' dist/index.html && \
 echo "HEAD OK"
 ```
+
+The last two assertions guard the tags rescued from `index.html` — the Smart App Banner and the
+`robots` directive. They are easy to lose and their absence is invisible in a browser.
 
 - [ ] **Step 4: Commit**
 
