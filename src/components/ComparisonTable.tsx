@@ -66,7 +66,7 @@ const ComparisonTable = () => {
       <div className="container">
         <div className="mx-auto max-w-3xl text-center">
           <p className="section-kicker">{t("comparisonIntake")}</p>
-          <h2 className="mt-3 text-3xl font-bold text-foreground md:text-5xl">
+          <h2 className="mt-3 text-3xl text-foreground md:text-5xl">
             {t("comparisonTitle")}
           </h2>
           <p className="mt-4 text-base text-muted-foreground md:text-lg">
@@ -74,7 +74,7 @@ const ComparisonTable = () => {
           </p>
         </div>
 
-        <div className="mt-12 overflow-x-auto rounded-[2rem] border border-border/70 bg-card/70 shadow-[0_30px_90px_-60px_rgba(255,76,145,0.7)]">
+        <div className="mt-12 overflow-x-auto rounded-xl border border-border/70 bg-card/70">
           <table className="min-w-full border-collapse">
             <thead>
               <tr className="border-b border-border/70 text-left">

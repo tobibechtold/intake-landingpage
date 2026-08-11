@@ -28,7 +28,7 @@ const ComparisonDetailPageInner = ({ slug }: { slug: string }) => {
             />
             <div className="mx-auto max-w-4xl text-left">
               <p className="section-kicker">{content.kicker}</p>
-              <h1 className="mt-4 text-4xl font-bold leading-tight text-foreground md:text-6xl">
+              <h1 className="mt-4 text-4xl leading-tight text-foreground md:text-6xl">
                 {content.title}
               </h1>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground md:text-xl">

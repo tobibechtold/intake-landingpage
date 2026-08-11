@@ -12,7 +12,7 @@ const LegalLayout = ({ title, children }: LegalLayoutProps) => {
       <Header />
       <main className="flex-1 pt-24 pb-16">
         <div className="container max-w-3xl">
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+          <h1 className="text-3xl md:text-4xl text-foreground mb-8">
             {title}
           </h1>
           <div className="prose prose-invert prose-sm max-w-none">

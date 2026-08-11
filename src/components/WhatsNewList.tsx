@@ -13,7 +13,7 @@ const WhatsNewList = ({ entries, language }: WhatsNewListProps) => (
       <a
         key={entry.version}
         href={buildLocalizedPath("whatsNewEntry", language, entry.version)}
-        className="group block rounded-[2rem] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-4 focus-visible:ring-offset-background"
+        className="group block rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-4 focus-visible:ring-offset-background"
       >
         <article className="glass-card overflow-hidden border border-transparent transition-colors group-hover:border-primary/40 group-focus-visible:border-primary/40">
           <img

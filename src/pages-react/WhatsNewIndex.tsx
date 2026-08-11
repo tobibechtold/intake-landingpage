@@ -20,7 +20,7 @@ const WhatsNewIndexInner = ({ entries }: { entries: ReleaseSummary[] }) => {
             <p className="text-sm uppercase tracking-[0.3em] text-primary">
               {language === "de" ? "Produktupdates" : "Product updates"}
             </p>
-            <h1 className="text-4xl font-bold text-foreground md:text-6xl">
+            <h1 className="text-4xl text-foreground md:text-6xl">
               {language === "de" ? "Was ist neu" : "What's New"}
             </h1>
             <p className="text-base text-muted-foreground md:text-lg">
@@ -30,7 +30,7 @@ const WhatsNewIndexInner = ({ entries }: { entries: ReleaseSummary[] }) => {
             </p>
           </div>
 
-          <section className="glass-card flex flex-col gap-4 rounded-[2rem] border border-border/70 p-6 md:flex-row md:items-center md:justify-between">
+          <section className="glass-card flex flex-col gap-4 rounded-xl border border-border/70 p-6 md:flex-row md:items-center md:justify-between">
             <div className="max-w-2xl space-y-2">
               <h2 className="text-xl font-semibold text-foreground">
                 {language === "de" ? "Vollständigen Changelog ansehen" : "View the full changelog"}

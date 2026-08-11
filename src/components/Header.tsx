@@ -68,7 +68,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50">
       <div
         data-site-header-shell
-        className="container mt-4 flex h-16 items-center justify-between rounded-full border border-border/60 bg-background/80 px-5 shadow-[0_20px_60px_-40px_rgba(255,76,145,0.6)] backdrop-blur-xl"
+        className="container mt-4 flex h-16 items-center justify-between rounded-full border border-border/60 bg-background/80 px-5 backdrop-blur-xl"
       >
         <div data-header-left-cluster className="flex min-w-0 items-center gap-6 lg:gap-8">
           <a href={homePath} className="flex items-center gap-3">

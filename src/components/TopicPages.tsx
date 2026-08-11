@@ -56,7 +56,7 @@ const TopicPages = () => {
       <div className="container">
         <div className="mx-auto max-w-3xl text-center">
           <p className="section-kicker">{language === "de" ? "Mehr zu Intake" : "More on Intake"}</p>
-          <h2 className="mt-3 text-3xl font-bold text-foreground md:text-5xl">
+          <h2 className="mt-3 text-3xl text-foreground md:text-5xl">
             {language === "de"
               ? "Die wichtigsten Seiten auf einen Blick"
               : "The most useful pages in one place"}

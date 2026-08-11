@@ -85,7 +85,7 @@ const Hero = () => {
             </div>
 
             <h1
-              className="max-w-2xl text-4xl font-bold leading-tight text-foreground opacity-0 animate-fade-up md:text-6xl"
+              className="max-w-2xl text-4xl leading-tight text-foreground opacity-0 animate-fade-up md:text-6xl"
               style={{ animationDelay: "0.2s" }}
             >
               {t("heroTitle")} <span className="gradient-text">{t("heroTitleHighlight")}</span>

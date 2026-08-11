@@ -32,7 +32,7 @@
     --input: 240 7% 22%;
     --ring: 338 92% 63%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
     --glass-bg: 240 11% 10%;
     --glass-border: 338 92% 63% / 0.18;
@@ -62,51 +62,68 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* Refined Dark: headings are semibold with tight tracking rather than bold at
+     default tracking. Set once here so every h1-h3 inherits it and component
+     markup does not need per-heading utility classes. Components may still
+     override font-weight where a specific heading needs it. */
+  h1,
+  h2,
+  h3 {
+    @apply font-semibold tracking-[-0.035em];
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
 }
 
+/* ---------------------------------------------------------------------------
+   Refined Dark
+   ---------------------------------------------------------------------------
+   Same near-black + pink identity, with the volume turned down. The rules:
+
+   1. No glow. Shadows are black and describe elevation, never colour.
+   2. Surfaces are white-alpha over the background, not tinted cards with pink
+      borders. Depth comes from a hairline border, not a halo.
+   3. Pink is an accent, not a surface treatment — reserved for small marks and
+      one focal element per view. The primary button is white.
+   4. Headings are semibold with tight tracking, not bold at default tracking.
+
+   These primitives carry the redesign across 13 pages; prefer changing them over
+   restyling component markup.
+   --------------------------------------------------------------------------- */
 @layer components {
   .glass-card {
-    @apply rounded-[2rem] border border-primary/15 bg-card/80 backdrop-blur-xl;
-    box-shadow:
-      0 0 30px -12px hsl(var(--primary) / 0.18),
-      0 25px 50px -16px rgb(0 0 0 / 0.4);
-  }
-
-  .text-glow {
-    text-shadow: 0 0 40px hsl(var(--primary) / 0.5);
+    @apply rounded-xl border border-white/[0.08] bg-white/[0.025] backdrop-blur-xl;
+    box-shadow: 0 18px 40px -28px rgb(0 0 0 / 0.7);
   }
 
   .feature-card {
-    @apply glass-card p-6 transition-all duration-300;
+    @apply glass-card p-6 transition-colors duration-200;
   }
 
   .feature-card:hover {
-    @apply -translate-y-1 border-primary/30;
-    box-shadow:
-      0 0 40px -12px hsl(var(--primary) / 0.22),
-      0 25px 60px -22px rgb(0 0 0 / 0.45);
+    @apply border-white/[0.16] bg-white/[0.04];
   }
 
+  /* Kept as a class because 3 files use it, but it is a flat accent now — the
+     pink-to-orange clip gradient was the single loudest thing on the page. */
   .gradient-text {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(24 95% 65%) 100%);
+    @apply text-primary;
   }
 
   .hero-gradient {
     background:
-      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(var(--primary) / 0.16) 0%, transparent 60%),
-      radial-gradient(circle at 85% 20%, hsl(24 95% 59% / 0.12), transparent 30%),
+      radial-gradient(ellipse 70% 45% at 50% -25%, hsl(var(--primary) / 0.09) 0%, transparent 62%),
       hsl(var(--background));
   }
 
+  /* Sections are separated by a hairline, not a coloured wash. 15 files use this,
+     so the per-section pink radials were stacking up down the page. */
   .section-gradient {
-    background:
-      radial-gradient(ellipse 60% 40% at 50% 100%, hsl(var(--primary) / 0.08) 0%, transparent 50%),
-      hsl(var(--background));
+    @apply border-t border-white/[0.06];
+    background: hsl(var(--background));
   }
 }
 
@@ -115,20 +132,27 @@
     text-wrap: balance;
   }
 
+  /* Quieter and smaller: a label, not a headline. The pink survives as the dot
+     rendered by ::before, which is the only accent most sections now carry. */
   .section-kicker {
-    @apply text-sm font-medium uppercase tracking-[0.28em] text-primary;
+    @apply inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/45;
+  }
+
+  .section-kicker::before {
+    content: "";
+    @apply inline-block h-1 w-1 shrink-0 rounded-full bg-primary;
   }
 
   .trust-chip {
-    @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-foreground;
+    @apply inline-flex items-center rounded-lg border border-white/[0.08] bg-white/[0.03] px-3.5 py-1.5 text-[13px] font-medium text-foreground/80;
   }
 
   .trust-chip-link {
-    @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/45 hover:bg-primary/10 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    @apply inline-flex items-center rounded-lg border border-white/[0.08] bg-white/[0.03] px-3.5 py-1.5 text-[13px] font-medium text-foreground/80 transition-colors duration-200 hover:border-white/[0.18] hover:bg-white/[0.06] hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
 
   .proof-story-card {
-    @apply grid items-center gap-8 rounded-[2rem] border border-border/60 bg-card/70 p-6 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1fr)] md:p-8;
+    @apply grid items-center gap-8 rounded-xl border border-white/[0.08] bg-white/[0.025] p-6 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1fr)] md:p-8;
   }
 
   .proof-story-card--text-only {

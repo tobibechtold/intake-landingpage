@@ -12,7 +12,7 @@ const IntakeAITeaser = () => {
   return (
     <section className="section-gradient border-y border-border/50 py-20">
       <div className="container">
-        <div className="grid items-center gap-8 rounded-[2rem] border border-border/70 bg-card/45 p-8 shadow-[0_28px_90px_-70px_rgba(255,76,145,0.75)] md:grid-cols-[minmax(0,1fr)_minmax(260px,0.8fr)] md:p-10">
+        <div className="grid items-center gap-8 rounded-xl border border-border/70 bg-card/45 p-8 md:grid-cols-[minmax(0,1fr)_minmax(260px,0.8fr)] md:p-10">
           <div>
             <div className="flex flex-wrap items-center gap-3">
               <h2 className="section-kicker">{t("intakeAITeaserKicker")}</h2>

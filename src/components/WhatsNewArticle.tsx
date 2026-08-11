@@ -22,14 +22,14 @@ const WhatsNewArticle = ({ entry, language, children }: WhatsNewArticleProps) =>
       <p className="text-sm uppercase tracking-[0.2em] text-primary">
         {language === "de" ? `Version ${entry.version}` : `Version ${entry.version}`}
       </p>
-      <h1 className="text-3xl font-bold text-foreground md:text-5xl">{entry.title}</h1>
+      <h1 className="text-3xl text-foreground md:text-5xl">{entry.title}</h1>
       <p className="max-w-2xl text-base text-muted-foreground md:text-lg">{entry.summary}</p>
     </div>
 
     <img
       src={entry.coverImage}
       alt={entry.title}
-      className="w-full rounded-[2rem] border border-border/70 bg-card/80 object-cover"
+      className="w-full rounded-xl border border-border/70 bg-card/80 object-cover"
     />
 
         <div

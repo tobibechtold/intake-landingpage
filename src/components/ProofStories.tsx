@@ -48,7 +48,7 @@ const ProofStories = () => {
       <div className="container">
         <div className="mx-auto max-w-3xl text-center">
           <p className="section-kicker">{t("comparisonIntake")}</p>
-          <h2 className="mt-3 text-3xl font-bold text-foreground md:text-5xl">
+          <h2 className="mt-3 text-3xl text-foreground md:text-5xl">
             {t("proofStoriesTitle")}
           </h2>
           <p className="mt-4 text-base text-muted-foreground md:text-lg">
@@ -68,7 +68,7 @@ const ProofStories = () => {
                   alt={story.alt}
                   loading="lazy"
                   decoding="async"
-                  className="w-full rounded-[1.75rem] border border-white/10 bg-black/20 object-cover shadow-[0_30px_80px_-50px_rgba(255,76,145,0.8)]"
+                  className="w-full rounded-[1.75rem] border border-white/10 bg-black/20 object-cover"
                 />
               </div>
               <div className="proof-story-copy">

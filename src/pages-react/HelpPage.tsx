@@ -84,7 +84,7 @@ const HelpPageInner = () => {
           <div className="container max-w-5xl">
             <div className="mx-auto max-w-3xl text-center">
               <p className="section-kicker">{t("helpNav")}</p>
-              <h1 className="mt-3 text-4xl font-bold text-foreground md:text-6xl">
+              <h1 className="mt-3 text-4xl text-foreground md:text-6xl">
                 {t("helpTitle")}
               </h1>
               <p className="mt-4 text-base text-muted-foreground md:text-lg">
@@ -94,7 +94,7 @@ const HelpPageInner = () => {
 
             <a
               href={guidePath}
-              className="group mx-auto mt-10 flex max-w-3xl items-start gap-4 rounded-[2rem] border border-primary/25 bg-card/70 p-6 text-left shadow-[0_24px_80px_-56px_rgba(255,76,145,0.65)] transition-colors hover:border-primary/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              className="group mx-auto mt-10 flex max-w-3xl items-start gap-4 rounded-xl border border-primary/25 bg-card/70 p-6 text-left transition-colors hover:border-primary/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <KeyRound className="h-6 w-6" aria-hidden="true" />
@@ -128,7 +128,7 @@ const HelpPageInner = () => {
                   value={query}
                   onChange={(event) => setQuery(event.target.value)}
                   placeholder={faqCopy.searchPlaceholder}
-                  className="h-12 rounded-full border-border/70 bg-background/85 pl-11 pr-12 shadow-[0_18px_60px_-42px_rgba(255,76,145,0.65)]"
+                  className="h-12 rounded-full border-border/70 bg-background/85 pl-11 pr-12"
                 />
                 {query ? (
                   <button
@@ -158,7 +158,7 @@ const HelpPageInner = () => {
                     <AccordionItem
                       key={section.title}
                       value={section.title}
-                      className="rounded-2xl border border-border/60 bg-card/55 px-5 shadow-[0_24px_80px_-60px_rgba(255,76,145,0.45)]"
+                      className="rounded-2xl border border-border/60 bg-card/55 px-5"
                     >
                       <AccordionTrigger className="py-5 text-left text-lg font-semibold text-foreground hover:no-underline">
                         <span>{section.title}</span>
@@ -190,7 +190,7 @@ const HelpPageInner = () => {
               )}
             </div>
 
-            <div className="mt-12 rounded-[2rem] border border-border/60 bg-card/50 p-8 text-center shadow-[0_24px_80px_-56px_rgba(255,76,145,0.65)]">
+            <div className="mt-12 rounded-xl border border-border/60 bg-card/50 p-8 text-center">
               <p className="section-kicker">{t("download")}</p>
               <h2 className="mt-3 text-2xl font-semibold text-foreground md:text-3xl">
                 {t("helpCtaTitle")}

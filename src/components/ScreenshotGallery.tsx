@@ -18,7 +18,7 @@ const ScreenshotGallery = () => {
   return (
     <section className="py-16 md:py-20">
       <div className="container mx-auto px-0 md:px-4">
-        <h2 className="mb-10 px-4 text-center text-2xl font-bold text-foreground animate-fade-in md:px-0 md:text-3xl">
+        <h2 className="mb-10 px-4 text-center text-2xl text-foreground animate-fade-in md:px-0 md:text-3xl">
           {t("screenshotGalleryHeading")}
         </h2>
 
@@ -42,7 +42,7 @@ const ScreenshotGallery = () => {
                       alt={screenshot.alt}
                       loading="lazy"
                       decoding="async"
-                      className="h-auto w-full rounded-[1.5rem] border border-white/10 shadow-[0_30px_80px_-60px_rgba(255,76,145,0.85)]"
+                      className="h-auto w-full rounded-[1.5rem] border border-white/10"
                     />
                     <figcaption className="mt-3 px-2 text-sm text-muted-foreground">
                       {screenshot.caption}

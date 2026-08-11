@@ -30,7 +30,7 @@ const WhySwitch = () => {
       <div className="container">
         <div id="why-switch" className="mx-auto max-w-3xl scroll-mt-28 text-center">
           <p className="section-kicker">{t("heroSecondaryCta")}</p>
-          <h2 className="mt-3 text-3xl font-bold text-foreground md:text-5xl">
+          <h2 className="mt-3 text-3xl text-foreground md:text-5xl">
             {t("whySwitchTitle")}
           </h2>
           <p className="mt-4 text-base text-muted-foreground md:text-lg">

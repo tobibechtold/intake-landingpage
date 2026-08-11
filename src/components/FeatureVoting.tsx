@@ -19,7 +19,7 @@ const FeatureVoting = () => {
             <Megaphone className="w-8 h-8 text-primary" />
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl text-foreground mb-4">
             {t("featureVotingTitle")}{" "}
             <span className="gradient-text">{t("featureVotingTitleHighlight")}</span>
           </h2>

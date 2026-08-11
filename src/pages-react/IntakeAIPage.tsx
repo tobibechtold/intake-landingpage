@@ -328,7 +328,7 @@ const IntakeAIPageInner = () => {
                     {t("intakeAIBadge")}
                   </span>
                 </div>
-                <h1 className="mt-4 text-5xl font-bold leading-tight text-foreground md:text-7xl">
+                <h1 className="mt-4 text-5xl leading-tight text-foreground md:text-7xl">
                   {content.title}
                 </h1>
                 <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl">
@@ -371,7 +371,7 @@ const IntakeAIPageInner = () => {
           <div className="container">
             <div className="mx-auto max-w-3xl text-center">
               <p className="section-kicker">{t("intakeAINav")}</p>
-              <h2 className="mt-3 text-3xl font-bold text-foreground md:text-4xl">
+              <h2 className="mt-3 text-3xl text-foreground md:text-4xl">
                 {content.featureTitle}
               </h2>
               <p className="mt-4 text-base leading-7 text-muted-foreground md:text-lg">
@@ -396,7 +396,7 @@ const IntakeAIPageInner = () => {
           <div className="container">
             <div className="mx-auto max-w-3xl text-center">
               <p className="section-kicker">{language === "de" ? "Preis" : "Pricing"}</p>
-              <h2 className="mt-3 text-3xl font-bold text-foreground md:text-4xl">
+              <h2 className="mt-3 text-3xl text-foreground md:text-4xl">
                 {content.pricingTitle}
               </h2>
               <p className="mt-4 text-base leading-7 text-muted-foreground md:text-lg">
@@ -444,7 +444,7 @@ const IntakeAIPageInner = () => {
             <div className="mt-12">
               <div className="mx-auto max-w-3xl text-center">
                 <p className="section-kicker">{content.comparisonKicker}</p>
-                <h3 className="mt-3 text-3xl font-bold text-foreground md:text-4xl">
+                <h3 className="mt-3 text-3xl text-foreground md:text-4xl">
                   {content.comparisonTitle}
                 </h3>
                 <p className="mt-4 text-base leading-7 text-muted-foreground md:text-lg">
@@ -459,7 +459,7 @@ const IntakeAIPageInner = () => {
                 {content.comparisonRows.map((row) => (
                   <article
                     key={row.feature}
-                    className="rounded-3xl border border-border/70 bg-card/70 p-5 shadow-[0_24px_80px_-60px_rgba(255,76,145,0.55)]"
+                    className="rounded-3xl border border-border/70 bg-card/70 p-5"
                   >
                     <h4 className="text-base font-semibold leading-6 text-foreground">
                       {row.feature}
@@ -488,7 +488,7 @@ const IntakeAIPageInner = () => {
 
               <div
                 data-testid="intake-ai-desktop-comparison"
-                className="mt-8 hidden overflow-x-auto rounded-[2rem] border border-border/70 bg-card/70 shadow-[0_30px_90px_-60px_rgba(255,76,145,0.7)] md:block"
+                className="mt-8 hidden overflow-x-auto rounded-xl border border-border/70 bg-card/70 md:block"
               >
                 <table className="min-w-[760px] border-collapse">
                   <caption className="sr-only">{content.comparisonTitle}</caption>

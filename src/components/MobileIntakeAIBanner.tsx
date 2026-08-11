@@ -14,7 +14,7 @@ const MobileIntakeAIBanner = () => {
       <div className="container">
         <a
           href={buildLocalizedPath("intakeAI", language)}
-          className="group flex items-center gap-4 rounded-3xl border border-primary/25 bg-card/75 p-4 shadow-[0_24px_80px_-58px_rgba(255,76,145,0.75)]"
+          className="group flex items-center gap-4 rounded-3xl border border-primary/25 bg-card/75 p-4"
         >
           <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
             <Sparkles className="h-5 w-5" />

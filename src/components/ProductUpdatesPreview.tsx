@@ -24,7 +24,7 @@ const ProductUpdatesPreview = ({ releases }: { releases: ReleaseSummary[] }) => 
             <p className="text-sm uppercase tracking-[0.3em] text-primary">
               {language === "de" ? "Neueste Releases" : "Latest releases"}
             </p>
-            <h2 className="text-3xl font-bold text-foreground md:text-5xl">
+            <h2 className="text-3xl text-foreground md:text-5xl">
               {language === "de" ? "Produktupdates" : "Product Updates"}
             </h2>
             <p className="text-base text-muted-foreground md:text-lg">
@@ -47,7 +47,7 @@ const ProductUpdatesPreview = ({ releases }: { releases: ReleaseSummary[] }) => 
             <a
               key={entry.version}
               href={entry.href}
-              className="group block rounded-[2rem] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-4 focus-visible:ring-offset-background"
+              className="group block rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-4 focus-visible:ring-offset-background"
             >
               <article className="glass-card h-full overflow-hidden border border-border/70 transition-colors group-hover:border-primary/40 group-focus-visible:border-primary/40">
                 <img src={entry.coverImage} alt={entry.title} className="h-48 w-full object-cover" />

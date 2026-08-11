@@ -261,7 +261,7 @@ const ByokGuidePageInner = () => {
                 <KeyRound className="h-7 w-7" aria-hidden="true" />
               </div>
               <p className="section-kicker mt-6">{content.kicker}</p>
-              <h1 className="mt-3 text-4xl font-bold leading-tight text-foreground md:text-6xl">
+              <h1 className="mt-3 text-4xl leading-tight text-foreground md:text-6xl">
                 {content.title}
               </h1>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground md:text-xl">
@@ -277,7 +277,7 @@ const ByokGuidePageInner = () => {
         <section className="section-gradient py-16 md:py-20">
           <div className="container max-w-6xl">
             <div className="mx-auto max-w-3xl text-center">
-              <h2 className="text-3xl font-bold text-foreground md:text-4xl">
+              <h2 className="text-3xl text-foreground md:text-4xl">
                 {content.primerTitle}
               </h2>
             </div>
@@ -311,7 +311,7 @@ const ByokGuidePageInner = () => {
           <div className="container max-w-6xl">
             <div className="max-w-3xl">
               <p className="section-kicker">{content.providersKicker}</p>
-              <h2 className="mt-3 text-3xl font-bold text-foreground md:text-4xl">
+              <h2 className="mt-3 text-3xl text-foreground md:text-4xl">
                 {content.providersTitle}
               </h2>
               <p className="mt-4 text-base leading-7 text-muted-foreground">
@@ -346,7 +346,7 @@ const ByokGuidePageInner = () => {
           <div className="container max-w-6xl">
             <div className="max-w-3xl">
               <p className="section-kicker">{content.setupKicker}</p>
-              <h2 className="mt-3 text-3xl font-bold text-foreground md:text-4xl">
+              <h2 className="mt-3 text-3xl text-foreground md:text-4xl">
                 {content.setupTitle}
               </h2>
               <p className="mt-4 text-base leading-7 text-muted-foreground">
@@ -373,7 +373,7 @@ const ByokGuidePageInner = () => {
               {content.screenshots.map((screenshot) => (
                 <figure
                   key={screenshot.label}
-                  className="overflow-hidden rounded-[2rem] border border-border/70 bg-background/75 shadow-[0_24px_80px_-60px_rgba(255,76,145,0.55)]"
+                  className="overflow-hidden rounded-xl border border-border/70 bg-background/75"
                 >
                   <img
                     data-testid="byok-guide-screenshot"
@@ -400,9 +400,9 @@ const ByokGuidePageInner = () => {
         <section className="py-16 md:py-20">
           <div className="container max-w-6xl">
             <div className="grid gap-6 lg:grid-cols-2">
-              <article className="rounded-[2rem] border border-primary/25 bg-primary/[0.06] p-7 md:p-9">
+              <article className="rounded-xl border border-primary/25 bg-primary/[0.06] p-7 md:p-9">
                 <ShieldCheck className="h-8 w-8 text-primary" aria-hidden="true" />
-                <h2 className="mt-5 text-2xl font-bold text-foreground">
+                <h2 className="mt-5 text-2xl text-foreground">
                   {content.securityTitle}
                 </h2>
                 <p className="mt-4 text-base leading-7 text-foreground">{content.securityBody}</p>
@@ -410,9 +410,9 @@ const ByokGuidePageInner = () => {
                   {content.securityDetail}
                 </p>
               </article>
-              <article className="rounded-[2rem] border border-border/70 bg-card/60 p-7 md:p-9">
+              <article className="rounded-xl border border-border/70 bg-card/60 p-7 md:p-9">
                 <Coins className="h-8 w-8 text-primary" aria-hidden="true" />
-                <h2 className="mt-5 text-2xl font-bold text-foreground">{content.costTitle}</h2>
+                <h2 className="mt-5 text-2xl text-foreground">{content.costTitle}</h2>
                 <p className="mt-4 text-sm leading-7 text-muted-foreground">{content.costBody}</p>
                 <p className="mt-4 rounded-2xl border border-border/70 bg-background/70 p-4 text-sm leading-6 text-foreground">
                   {content.geminiNote}
@@ -424,7 +424,7 @@ const ByokGuidePageInner = () => {
 
         <section className="section-gradient py-16 md:py-20">
           <div className="container max-w-4xl">
-            <h2 className="text-3xl font-bold text-foreground md:text-4xl">
+            <h2 className="text-3xl text-foreground md:text-4xl">
               {content.troubleshootingTitle}
             </h2>
             <div className="mt-8 space-y-4">
@@ -444,8 +444,8 @@ const ByokGuidePageInner = () => {
               ))}
             </div>
 
-            <div className="mt-12 rounded-[2rem] border border-primary/20 bg-card/70 p-8 text-center shadow-[0_24px_80px_-56px_rgba(255,76,145,0.65)]">
-              <h2 className="text-2xl font-bold text-foreground md:text-3xl">
+            <div className="mt-12 rounded-xl border border-primary/20 bg-card/70 p-8 text-center">
+              <h2 className="text-2xl text-foreground md:text-3xl">
                 {content.finishTitle}
               </h2>
               <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-muted-foreground md:text-base">
