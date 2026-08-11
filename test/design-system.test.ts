@@ -31,6 +31,19 @@ describe('Refined Dark design system', () => {
     expect(offenders).toEqual([]);
   });
 
+  // The audit that produced this system originally only scanned <a> and <button>, and
+  // missed "Seite ansehen" / "Update lesen" — CTAs rendered as <span> inside a card that
+  // is itself the link. Three components had three different treatments as a result.
+  it('has no bare pink-text CTAs masquerading as buttons', () => {
+    const offenders = sourceFiles()
+      .map(read)
+      .filter(({ text }) =>
+        /(?:className|class)="[^"]*\bmt-\d+ text-sm font-medium text-primary"/.test(text),
+      )
+      .map(({ file }) => file);
+    expect(offenders).toEqual([]);
+  });
+
   it('has no glow shadows', () => {
     const offenders = sourceFiles()
       .map(read)

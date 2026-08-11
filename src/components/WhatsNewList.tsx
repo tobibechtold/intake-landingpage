@@ -43,7 +43,7 @@ const WhatsNewList = ({ entries, language }: WhatsNewListProps) => (
               </ul>
             ) : null}
 
-            <span className="btn-secondary">
+            <span className="btn-secondary w-fit">
               {language === "de" ? "Mehr erfahren" : "Learn more"}
             </span>
           </div>
