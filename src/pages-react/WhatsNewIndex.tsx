@@ -1,6 +1,5 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import SeoHead from "@/components/SeoHead";
 import WhatsNewList from "@/components/WhatsNewList";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { getWhatsNewEntries } from "@/lib/whatsNewContent";
@@ -13,7 +12,6 @@ const WhatsNewIndex = () => {
 
   return (
     <div className="min-h-screen">
-      <SeoHead />
       <Header />
       <main className="section-gradient min-h-screen pt-28 pb-20">
         <div className="container space-y-10">

@@ -2,13 +2,12 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
-import SeoHead from "@/components/SeoHead";
-import { Language } from "@/i18n/translations";
-import { MarketingSection, RelatedLink } from "@/lib/marketingPages";
-import { buildLocalizedPath, SitePage } from "@/lib/localeRouting";
+import { type Language } from "@/i18n/translations";
+import { type MarketingSection, type RelatedLink } from "@/lib/marketingPages";
+import { buildLocalizedPath, type SitePage } from "@/lib/localeRouting";
 import { getScreenshotAsset } from "@/lib/screenshotAssets";
 import { cn } from "@/lib/utils";
-import { Link } from "react-router-dom";
+
 
 interface MarketingPageLayoutProps {
   language: Language;
@@ -38,7 +37,6 @@ const MarketingPageLayout = ({
   relatedLinks,
 }: MarketingPageLayoutProps) => (
   <div className="min-h-screen">
-    <SeoHead />
     <Header />
     <main className="pt-28">
       <section className="hero-gradient overflow-hidden pb-14 pt-8 md:pb-20">
@@ -123,13 +121,13 @@ const MarketingPageLayout = ({
             </h2>
             <div className="mt-6 flex flex-wrap gap-3">
               {relatedLinks.map((link) => (
-                <Link
+                <a
                   key={link.label}
-                  to={getRelatedHref(language, link)}
+                  href={getRelatedHref(language, link)}
                   className="trust-chip-link"
                 >
                   {link.label}
-                </Link>
+                </a>
               ))}
             </div>
           </div>

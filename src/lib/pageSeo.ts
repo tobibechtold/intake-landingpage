@@ -245,6 +245,24 @@ export const getPageSeo = (route: string): PageSeo => {
   throw new Error(`No SEO metadata for route: ${route}`);
 };
 
+/**
+ * The props every React page component needs, derived from its route alone.
+ *
+ * Deliberately returns plain values rather than letting the React tree import this
+ * module: page components are rendered at build time, but hydrated islands beneath
+ * them (FeatureVoting, ScreenshotGallery) would otherwise pull this whole metadata
+ * table into the client bundle.
+ */
+export const pageProps = (route: string): { lang: Locale; alternateHref: string | null } => {
+  const lang = getPageSeo(route).lang;
+  const pair = getHreflangPair(route);
+
+  return {
+    lang,
+    alternateHref: pair ? (lang === 'de' ? pair.en : pair.de) : null,
+  };
+};
+
 export const getHreflangPair = (route: string): { de: string; en: string } | null => {
   const direct = ROUTE_PAIRS.find(([de, en]) => de === route || en === route);
   if (direct) {

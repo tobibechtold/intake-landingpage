@@ -1,5 +1,4 @@
 import LegalLayout from "@/components/LegalLayout";
-import SeoHead from "@/components/SeoHead";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const Terms = () => {
@@ -8,7 +7,6 @@ const Terms = () => {
   if (language === "de") {
     return (
       <>
-        <SeoHead />
         <LegalLayout title="Nutzungsbedingungen">
           <div className="space-y-6 text-muted-foreground">
           <p className="text-foreground font-medium">Stand: Juni 2026</p>
@@ -146,7 +144,6 @@ const Terms = () => {
 
   return (
     <>
-      <SeoHead />
       <LegalLayout title="Terms of Use">
         <div className="space-y-6 text-muted-foreground">
         <p className="text-foreground font-medium">Last updated: June 2026</p>

@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
-import { Language } from "@/i18n/translations";
+import { type Language } from "@/i18n/translations";
 import { buildLocalizedPath } from "@/lib/localeRouting";
-import { WhatsNewEntry } from "@/lib/whatsNewContent";
+import { type WhatsNewEntry } from "@/lib/whatsNewContent";
 
 interface WhatsNewListProps {
   entries: WhatsNewEntry[];
@@ -11,9 +10,9 @@ interface WhatsNewListProps {
 const WhatsNewList = ({ entries, language }: WhatsNewListProps) => (
   <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
     {entries.map((entry) => (
-      <Link
+      <a
         key={`${entry.locale}-${entry.version}`}
-        to={buildLocalizedPath("whatsNewEntry", language, entry.version)}
+        href={buildLocalizedPath("whatsNewEntry", language, entry.version)}
         className="group block rounded-[2rem] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-4 focus-visible:ring-offset-background"
       >
         <article className="glass-card overflow-hidden border border-transparent transition-colors group-hover:border-primary/40 group-focus-visible:border-primary/40">
@@ -49,7 +48,7 @@ const WhatsNewList = ({ entries, language }: WhatsNewListProps) => (
             </span>
           </div>
         </article>
-      </Link>
+      </a>
     ))}
   </div>
 );

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import logo from "@/assets/logo-hero.webp";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -59,9 +58,9 @@ const Header = () => {
     }
 
     return (
-      <Link to={item.href} className={className}>
+      <a href={item.href} className={className}>
         {item.label}
-      </Link>
+      </a>
     );
   };
 
@@ -72,10 +71,10 @@ const Header = () => {
         className="container mt-4 flex h-16 items-center justify-between rounded-full border border-border/60 bg-background/80 px-5 shadow-[0_20px_60px_-40px_rgba(255,76,145,0.6)] backdrop-blur-xl"
       >
         <div data-header-left-cluster className="flex min-w-0 items-center gap-6 lg:gap-8">
-          <Link to={homePath} className="flex items-center gap-3">
+          <a href={homePath} className="flex items-center gap-3">
             <img src={logo} alt="Intake" className="h-8 w-8" />
             <span className="text-lg font-semibold text-foreground">Intake</span>
-          </Link>
+          </a>
           <div data-header-desktop-nav className="hidden items-center gap-4 lg:flex">
             {navItems.map((item) => (
               <div key={item.label} className="flex items-center">
@@ -107,10 +106,10 @@ const Header = () => {
                 </SheetDescription>
               </SheetHeader>
               <div className="mt-8 flex flex-col gap-3">
-                <Link to={homePath} className="mb-4 flex items-center gap-3">
+                <a href={homePath} className="mb-4 flex items-center gap-3">
                   <img src={logo} alt="Intake" className="h-8 w-8" />
                   <span className="text-lg font-semibold text-foreground">Intake</span>
-                </Link>
+                </a>
                 {navItems.map((item) => (
                   <SheetClose asChild key={item.label}>
                     {renderNavItem(item, mobileNavItemClassName)}

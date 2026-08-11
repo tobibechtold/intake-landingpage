@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 
 interface BreadcrumbItem {
   label: string;
@@ -12,9 +12,9 @@ const PageBreadcrumbs = ({ items }: { items: BreadcrumbItem[] }) => (
         <li key={`${item.label}-${index}`} className="flex items-center gap-2">
           {index > 0 ? <span aria-hidden="true">/</span> : null}
           {item.href ? (
-            <Link to={item.href} className="transition-colors hover:text-foreground">
+            <a href={item.href} className="transition-colors hover:text-foreground">
               {item.label}
-            </Link>
+            </a>
           ) : (
             <span className="text-foreground">{item.label}</span>
           )}

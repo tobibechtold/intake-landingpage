@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import PhoneFrame from "./PhoneFrame";
 import {
   getPromoVideoFormatForCapabilities,
-  PromoVideoFormat,
+  type PromoVideoFormat,
   PROMO_VIDEO_SOURCES_BY_LANGUAGE,
 } from "@/lib/videoSupport";
 import { getAppStoreUrl, getGooglePlayUrl } from "@/lib/storeLinks";

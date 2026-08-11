@@ -1,44 +1,36 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
-import { Language, translations, TranslationKey } from "./translations";
-import { useLocation } from "react-router-dom";
-import { getLocaleFromPathname } from "@/lib/localeRouting";
+import { createContext, useContext, ReactNode } from "react";
+import { type Language, translations, type TranslationKey } from "./translations";
 
 interface LanguageContextType {
   language: Language;
+  /** URL of this same page in the other locale, or null if it has no counterpart. */
+  alternateHref: string | null;
   setLanguage: (lang: Language) => void;
   t: (key: TranslationKey) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const location = useLocation();
-  const [language, setLanguageState] = useState<Language>(() =>
-    getLocaleFromPathname(location.pathname)
-  );
+interface LanguageProviderProps {
+  lang: Language;
+  alternateHref: string | null;
+  children: ReactNode;
+}
 
-  const setLanguage = (lang: Language) => {
-    setLanguageState(lang);
-    localStorage.setItem("language", lang);
+/**
+ * Locale is now a static property of the route, resolved at build time, rather than
+ * something derived from the router at runtime. Each Astro route file passes the
+ * values in via pageProps(); there is no useLocation and no locale state to sync.
+ */
+export const LanguageProvider = ({ lang, alternateHref, children }: LanguageProviderProps) => {
+  const setLanguage = (next: Language) => {
+    localStorage.setItem("language", next);
   };
 
-  const t = (key: TranslationKey): string => {
-    return translations[language][key];
-  };
-
-  useEffect(() => {
-    document.documentElement.lang = language;
-  }, [language]);
-
-  useEffect(() => {
-    const pathLanguage = getLocaleFromPathname(location.pathname);
-    if (pathLanguage !== language) {
-      setLanguageState(pathLanguage);
-    }
-  }, [location.pathname, language]);
+  const t = (key: TranslationKey): string => translations[lang][key];
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language: lang, alternateHref, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );

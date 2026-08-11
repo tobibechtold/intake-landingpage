@@ -1,6 +1,6 @@
 import { Shield, Barcode, Heart, Database, Cloud, Target, Droplets, Clock3, BarChart3 } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { TranslationKey } from "@/i18n/translations";
+import { type TranslationKey } from "@/i18n/translations";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Features = () => {

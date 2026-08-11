@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Sparkles, Camera, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { buildLocalizedPath } from "@/lib/localeRouting";
@@ -28,9 +27,9 @@ const IntakeAITeaser = () => {
               {t("intakeAITeaserDescription")}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link to={buildLocalizedPath("intakeAI", language)} className="trust-chip-link">
+              <a href={buildLocalizedPath("intakeAI", language)} className="trust-chip-link">
                 {t("intakeAITeaserButton")}
-              </Link>
+              </a>
             </div>
           </div>
 

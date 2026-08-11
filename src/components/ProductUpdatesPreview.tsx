@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { buildLocalizedPath } from "@/lib/localeRouting";
-import { getWhatsNewEntries } from "@/lib/whatsNewContent";
+import type { ReleaseSummary } from "@/lib/releases";
 
-const ProductUpdatesPreview = () => {
+// Releases arrive as props from the Astro route, which owns the content collection.
+const ProductUpdatesPreview = ({ releases }: { releases: ReleaseSummary[] }) => {
   const { language } = useLanguage();
-  const entries = getWhatsNewEntries(language).slice(0, 3);
+  const entries = releases.slice(0, 3);
   const dateFormatter = new Intl.DateTimeFormat(language === "de" ? "de-DE" : "en-US", {
     year: "numeric",
     month: "short",
@@ -34,19 +34,19 @@ const ProductUpdatesPreview = () => {
             </p>
           </div>
 
-          <Link
-            to={buildLocalizedPath("whatsNewIndex", language)}
+          <a
+            href={buildLocalizedPath("whatsNewIndex", language)}
             className="inline-flex items-center rounded-full border border-primary/40 px-4 py-2 text-sm font-medium text-primary transition-colors hover:border-primary hover:bg-primary/10"
           >
             {language === "de" ? "Alle Updates ansehen" : "View all updates"}
-          </Link>
+          </a>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-3">
           {entries.map((entry) => (
-            <Link
-              key={`${entry.locale}-${entry.version}`}
-              to={buildLocalizedPath("whatsNewEntry", language, entry.version)}
+            <a
+              key={entry.version}
+              href={entry.href}
               className="group block rounded-[2rem] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-4 focus-visible:ring-offset-background"
             >
               <article className="glass-card h-full overflow-hidden border border-border/70 transition-colors group-hover:border-primary/40 group-focus-visible:border-primary/40">
@@ -81,7 +81,7 @@ const ProductUpdatesPreview = () => {
                   </span>
                 </div>
               </article>
-            </Link>
+            </a>
           ))}
         </div>
       </div>

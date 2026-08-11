@@ -1,5 +1,4 @@
 import LegalLayout from "@/components/LegalLayout";
-import SeoHead from "@/components/SeoHead";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const Privacy = () => {
@@ -8,7 +7,6 @@ const Privacy = () => {
   if (language === "de") {
     return (
       <>
-        <SeoHead />
         <LegalLayout title="Datenschutzerklärung">
           <div className="space-y-6 text-muted-foreground">
           <p className="text-foreground font-medium">Stand: Juni 2026</p>
@@ -126,7 +124,6 @@ const Privacy = () => {
 
   return (
     <>
-      <SeoHead />
       <LegalLayout title="Privacy Policy">
         <div className="space-y-6 text-muted-foreground">
         <p className="text-foreground font-medium">Last updated: June 2026</p>

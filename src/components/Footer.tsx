@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { buildLocalizedPath } from "@/lib/localeRouting";
@@ -23,64 +22,64 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row gap-6 md:gap-12">
             <div className="flex flex-col gap-3">
               <span className="text-sm font-semibold text-foreground">{t("discover")}</span>
-              <Link
-                to={buildLocalizedPath("features", language)}
+              <a
+                href={buildLocalizedPath("features", language)}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 {t("featuresNav")}
-              </Link>
-              <Link
-                to={buildLocalizedPath("noSubscription", language)}
+              </a>
+              <a
+                href={buildLocalizedPath("noSubscription", language)}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 {t("noSubscriptionNav")}
-              </Link>
-              <Link
-                to={buildLocalizedPath("noAccount", language)}
+              </a>
+              <a
+                href={buildLocalizedPath("noAccount", language)}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 {t("noAccountNav")}
-              </Link>
-              <Link
-                to={buildLocalizedPath("intakeAI", language)}
+              </a>
+              <a
+                href={buildLocalizedPath("intakeAI", language)}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 {t("intakeAINav")}
-              </Link>
-              <Link
-                to={buildLocalizedPath("comparisons", language)}
+              </a>
+              <a
+                href={buildLocalizedPath("comparisons", language)}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 {t("comparisonsNav")}
-              </Link>
-              <Link
-                to={buildLocalizedPath("help", language)}
+              </a>
+              <a
+                href={buildLocalizedPath("help", language)}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 {t("helpNav")}
-              </Link>
-              <Link
-                to={buildLocalizedPath("comparisonDetail", language, "yazio-alternative")}
+              </a>
+              <a
+                href={buildLocalizedPath("comparisonDetail", language, "yazio-alternative")}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 {t("yazioAlternative")}
-              </Link>
-              <Link
-                to={buildLocalizedPath("comparisonDetail", language, "fddb-alternative")}
+              </a>
+              <a
+                href={buildLocalizedPath("comparisonDetail", language, "fddb-alternative")}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 {t("fddbAlternative")}
-              </Link>
+              </a>
             </div>
 
             <div className="flex flex-col gap-3">
               <span className="text-sm font-semibold text-foreground">{t("legal")}</span>
-              <Link to={buildLocalizedPath("privacy", language)} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href={buildLocalizedPath("privacy", language)} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 {t("privacyPolicy")}
-              </Link>
-              <Link to={buildLocalizedPath("terms", language)} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              </a>
+              <a href={buildLocalizedPath("terms", language)} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 {t("termsOfUse")}
-              </Link>
+              </a>
               <a
                 href="https://tobibechtold.dev/impressum"
                 target="_blank"
@@ -111,12 +110,12 @@ const Footer = () => {
               >
                 {t("googlePlay")}
               </a>
-              <Link
-                to={buildLocalizedPath("whatsNewIndex", language)}
+              <a
+                href={buildLocalizedPath("whatsNewIndex", language)}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 {t("whatsNew")}
-              </Link>
+              </a>
               <a
                 href={FEATURE_VOTING_URL}
                 target="_blank"

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import {
   ArrowRight,
   CheckCircle2,
@@ -10,7 +9,6 @@ import {
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
-import SeoHead from "@/components/SeoHead";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { buildLocalizedPath } from "@/lib/localeRouting";
 
@@ -245,7 +243,6 @@ const ByokGuidePage = () => {
 
   return (
     <div className="min-h-screen">
-      <SeoHead />
       <Header />
       <main className="pb-24 pt-28">
         <section className="hero-gradient border-b border-border/50 pb-16 pt-8 md:pb-24">
@@ -453,13 +450,13 @@ const ByokGuidePage = () => {
                 {content.finishBody}
               </p>
               <div className="mt-6 flex flex-wrap justify-center gap-3">
-                <Link to={helpPath} className="trust-chip-link">
+                <a href={helpPath} className="trust-chip-link">
                   {content.backToHelp}
-                </Link>
-                <Link to={intakeAIPath} className="trust-chip-link">
+                </a>
+                <a href={intakeAIPath} className="trust-chip-link">
                   {content.intakeAI}
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
+                </a>
               </div>
             </div>
           </div>

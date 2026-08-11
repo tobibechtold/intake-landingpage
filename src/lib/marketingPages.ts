@@ -1,5 +1,5 @@
-import { Language } from "@/i18n/translations";
-import { ScreenshotAssetKey } from "@/lib/screenshotAssets";
+import { type Language } from "@/i18n/translations";
+import { type ScreenshotAssetKey } from "@/lib/screenshotAssets";
 
 export type MarketingPageKey = "features" | "noSubscription" | "noAccount" | "comparisons";
 export type ComparisonSlug = "yazio-alternative" | "fddb-alternative";

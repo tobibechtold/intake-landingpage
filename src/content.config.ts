@@ -15,14 +15,17 @@ const whatsNew = defineCollection({
     // "251/de" and making ids unreadable. Keep the version verbatim.
     generateId: ({ entry }) => entry.replace(/\.md$/, ''),
   }),
-  schema: z.object({
-    version: z.string(),
-    publishedAt: z.string(),
-    title: z.string(),
-    summary: z.string(),
-    coverImage: z.string(),
-    highlights: z.array(z.string()),
-  }),
+  // `image()` resolves ./assets/cover.svg to a hashed, emitted asset with .src,
+  // replacing the import.meta.glob lookup the old whatsNewContent.ts did by hand.
+  schema: ({ image }) =>
+    z.object({
+      version: z.string(),
+      publishedAt: z.string(),
+      title: z.string(),
+      summary: z.string(),
+      coverImage: image(),
+      highlights: z.array(z.string()),
+    }),
 });
 
 export const collections = { whatsNew };

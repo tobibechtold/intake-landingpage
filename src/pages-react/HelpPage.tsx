@@ -1,9 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+
 import { ArrowRight, KeyRound, Search, X } from "lucide-react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import SeoHead from "@/components/SeoHead";
 import {
   Accordion,
   AccordionContent,
@@ -77,7 +76,6 @@ const HelpPage = () => {
 
   return (
     <div className="min-h-screen">
-      <SeoHead />
       <Header />
       <main className="pb-24 pt-32 md:pt-36">
         <section className="section-gradient border-y border-border/50 py-20">
@@ -92,8 +90,8 @@ const HelpPage = () => {
               </p>
             </div>
 
-            <Link
-              to={guidePath}
+            <a
+              href={guidePath}
               className="group mx-auto mt-10 flex max-w-3xl items-start gap-4 rounded-[2rem] border border-primary/25 bg-card/70 p-6 text-left shadow-[0_24px_80px_-56px_rgba(255,76,145,0.65)] transition-colors hover:border-primary/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
@@ -115,7 +113,7 @@ const HelpPage = () => {
                   />
                 </span>
               </span>
-            </Link>
+            </a>
 
             <div className="mx-auto mt-10 max-w-3xl">
               <label htmlFor="faq-search" className="sr-only">
@@ -199,21 +197,21 @@ const HelpPage = () => {
                 {t("helpCtaDescription")}
               </p>
               <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-                <Link to={`${homePath}#hero`} className="trust-chip-link">
+                <a href={`${homePath}#hero`} className="trust-chip-link">
                   {t("helpCtaButton")}
-                </Link>
-                <Link
-                  to={buildLocalizedPath("features", language)}
+                </a>
+                <a
+                  href={buildLocalizedPath("features", language)}
                   className="trust-chip-link"
                 >
                   {t("featuresNav")}
-                </Link>
-                <Link
-                  to={buildLocalizedPath("comparisons", language)}
+                </a>
+                <a
+                  href={buildLocalizedPath("comparisons", language)}
                   className="trust-chip-link"
                 >
                   {t("comparisonsNav")}
-                </Link>
+                </a>
               </div>
             </div>
           </div>

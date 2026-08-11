@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import {
   BadgeCheck,
   Camera,
@@ -15,7 +14,6 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import PhoneFrame from "@/components/PhoneFrame";
-import SeoHead from "@/components/SeoHead";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { buildLocalizedPath } from "@/lib/localeRouting";
 
@@ -310,7 +308,6 @@ const IntakeAIPage = () => {
 
   return (
     <div className="min-h-screen">
-      <SeoHead />
       <Header />
       <main className="pt-28">
         <section className="hero-gradient overflow-hidden pb-16 pt-8 md:pb-24">
@@ -339,12 +336,12 @@ const IntakeAIPage = () => {
                   {content.coreNote}
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
-                  <Link to={`${homePath}#hero`} className="trust-chip-link">
+                  <a href={`${homePath}#hero`} className="trust-chip-link">
                     {content.primaryCta}
-                  </Link>
-                  <Link to={`${helpPath}#faq`} className="trust-chip-link">
+                  </a>
+                  <a href={`${helpPath}#faq`} className="trust-chip-link">
                     {content.secondaryCta}
-                  </Link>
+                  </a>
                 </div>
               </div>
 
@@ -436,9 +433,9 @@ const IntakeAIPage = () => {
                 <p className="mt-5 rounded-2xl border border-border/70 bg-background/55 px-4 py-3 text-sm leading-6 text-muted-foreground">
                   {content.providerNote}
                 </p>
-                <Link to={byokGuidePath} className="trust-chip-link mt-5 w-fit">
+                <a href={byokGuidePath} className="trust-chip-link mt-5 w-fit">
                   {content.byokCta}
-                </Link>
+                </a>
               </article>
             </div>
 

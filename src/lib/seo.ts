@@ -1,7 +1,7 @@
-import { Language } from "@/i18n/translations";
+import { type Language } from "@/i18n/translations";
 import { FAQ_BY_LANGUAGE } from "@/lib/faqData";
 import {
-  SitePage,
+  type SitePage,
   buildAlternateUrls,
   getLocaleFromPathname,
   getPageFromPathname,

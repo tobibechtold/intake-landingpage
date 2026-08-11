@@ -2,7 +2,7 @@ import iphoneTickerLogo from "@/assets/press/image-icon-256-01-small.png";
 import iTopnewsLogo from "@/assets/press/cropped-cropped-201504_10_iTN-Logo801.png";
 import macweltLogo from "@/assets/press/macwelt-logo.svg";
 import stadtBremerhavenLogo from "@/assets/press/caschy-logo.svg";
-import { Language } from "@/i18n/translations";
+import { type Language } from "@/i18n/translations";
 
 export interface PressMention {
   name: string;

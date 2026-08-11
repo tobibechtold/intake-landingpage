@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
-import { Language } from "@/i18n/translations";
+import { type Language } from "@/i18n/translations";
 import { buildLocalizedPath } from "@/lib/localeRouting";
-import { WhatsNewEntry } from "@/lib/whatsNewContent";
+import { type WhatsNewEntry } from "@/lib/whatsNewContent";
 
 interface WhatsNewArticleProps {
   entry: WhatsNewEntry;
@@ -11,12 +10,12 @@ interface WhatsNewArticleProps {
 const WhatsNewArticle = ({ entry, language }: WhatsNewArticleProps) => (
   <article className="space-y-8">
     <div className="space-y-4">
-      <Link
-        to={buildLocalizedPath("whatsNewIndex", language)}
+      <a
+        href={buildLocalizedPath("whatsNewIndex", language)}
         className="inline-flex text-sm text-primary transition-colors hover:text-primary/80"
       >
         {language === "de" ? "Zur Übersicht" : "Back to overview"}
-      </Link>
+      </a>
       <p className="text-sm uppercase tracking-[0.2em] text-primary">
         {language === "de" ? `Version ${entry.version}` : `Version ${entry.version}`}
       </p>

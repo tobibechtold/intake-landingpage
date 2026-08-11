@@ -7,7 +7,6 @@ import Features from "@/components/Features";
 import FeatureVoting from "@/components/FeatureVoting";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
-import SeoHead from "@/components/SeoHead";
 import ProductUpdatesPreview from "@/components/ProductUpdatesPreview";
 import WhySwitch from "@/components/WhySwitch";
 import ProofStories from "@/components/ProofStories";
@@ -15,10 +14,22 @@ import TopicPages from "@/components/TopicPages";
 import IntakeAITeaser from "@/components/IntakeAITeaser";
 import MobileIntakeAIBanner from "@/components/MobileIntakeAIBanner";
 
-const Index = () => {
+import { LanguageProvider } from "@/i18n/LanguageContext";
+import type { Language } from "@/i18n/translations";
+
+import type { ReleaseSummary } from "@/lib/releases";
+
+interface PageProps {
+  lang: Language;
+  alternateHref: string | null;
+  releases: ReleaseSummary[];
+}
+
+// The <head> is owned by BaseLayout.astro now, so SeoHead is gone from here.
+const Index = ({ lang, alternateHref, releases }: PageProps) => {
   return (
+    <LanguageProvider lang={lang} alternateHref={alternateHref}>
     <div className="min-h-screen">
-      <SeoHead />
       <Header />
       <main>
         <Hero />
@@ -31,12 +42,13 @@ const Index = () => {
         <Reviews />
         <ScreenshotGallery />
         <Features />
-        <ProductUpdatesPreview />
+        <ProductUpdatesPreview releases={releases} />
         <FeatureVoting />
         <CTA />
       </main>
       <Footer />
     </div>
+    </LanguageProvider>
   );
 };
 

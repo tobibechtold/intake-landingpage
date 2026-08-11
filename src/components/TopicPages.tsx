@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { buildLocalizedPath } from "@/lib/localeRouting";
 
@@ -71,13 +70,13 @@ const TopicPages = () => {
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {items.map((item) => (
-            <Link key={item.title} to={item.href} className="feature-card flex h-full flex-col p-7">
+            <a key={item.title} href={item.href} className="feature-card flex h-full flex-col p-7">
               <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
               <p className="mt-3 text-sm leading-6 text-muted-foreground">{item.body}</p>
               <span className="mt-5 text-sm font-medium text-primary">
                 {language === "de" ? "Seite ansehen" : "View page"}
               </span>
-            </Link>
+            </a>
           ))}
         </div>
       </div>

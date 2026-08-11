@@ -624,6 +624,14 @@ git push
 
 Establishes the one-page-two-URLs pattern before it is applied 26 times. A reviewer can reject the pattern here cheaply.
 
+> **Merged during execution: Task 7 steps 1 and 1b happen here.** The original task boundary was
+> wrong. `/` cannot render at all until `react-router-dom` is out of the component tree —
+> `<Link>` outside a Router throws `Cannot destructure property 'basename'`, and
+> `ProductUpdatesPreview` → `whatsNewContent.ts` throws `value.replaceAll is not a function` because
+> Astro hands `import.meta.glob` markdown modules rather than raw strings. Both had to be fixed to
+> get a single page building, so the react-router strip, the asset-import fix, and the
+> collection-driven release data all landed in Task 6. Task 7 is now purely route-file creation.
+
 **Files:**
 - Create: `src/components/pages/HomePage.tsx` (thin wrapper), `src/pages/en/index.astro`
 - Modify: `src/pages/index.astro`

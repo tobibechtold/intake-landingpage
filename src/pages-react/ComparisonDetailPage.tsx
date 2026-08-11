@@ -2,21 +2,17 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
-import SeoHead from "@/components/SeoHead";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { getComparisonPageContent, isComparisonSlug } from "@/lib/marketingPages";
 import { buildLocalizedPath } from "@/lib/localeRouting";
-import { Link, useParams } from "react-router-dom";
 
-const ComparisonDetailPage = () => {
+const ComparisonDetailPage = ({ slug }: { slug: string }) => {
   const { language, t } = useLanguage();
-  const { slug } = useParams();
   const comparisonSlug = isComparisonSlug(slug) ? slug : "yazio-alternative";
   const content = getComparisonPageContent(comparisonSlug, language);
 
   return (
     <div className="min-h-screen">
-      <SeoHead />
       <Header />
       <main className="pt-28">
         <section className="hero-gradient overflow-hidden pb-14 pt-8 md:pb-20">
@@ -103,18 +99,18 @@ const ComparisonDetailPage = () => {
                   {language === "de" ? "Nächste Schritte" : "Next steps"}
                 </h2>
                 <div className="mt-5 flex flex-wrap gap-3">
-                  <Link
-                    to={buildLocalizedPath("comparisons", language)}
+                  <a
+                    href={buildLocalizedPath("comparisons", language)}
                     className="trust-chip-link"
                   >
                     {language === "de" ? "Alle Vergleiche" : "All comparisons"}
-                  </Link>
-                  <Link to={buildLocalizedPath("features", language)} className="trust-chip-link">
+                  </a>
+                  <a href={buildLocalizedPath("features", language)} className="trust-chip-link">
                     {language === "de" ? "Alle Funktionen" : "Features"}
-                  </Link>
-                  <Link to={buildLocalizedPath("home", language)} className="trust-chip-link">
+                  </a>
+                  <a href={buildLocalizedPath("home", language)} className="trust-chip-link">
                     {t("homeNav")}
-                  </Link>
+                  </a>
                 </div>
               </aside>
             </div>
