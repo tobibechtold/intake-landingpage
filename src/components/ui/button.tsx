@@ -14,10 +14,9 @@ const buttonVariants = cva(
       variant: {
         default: "bg-foreground text-background hover:bg-foreground/90",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline:
-          "border border-white/[0.16] text-foreground/85 hover:border-white/[0.28] hover:text-foreground",
-        secondary:
-          "border border-white/[0.16] text-foreground/85 hover:border-white/[0.28] hover:text-foreground",
+        // Same fill as default: an outline button was not discernible from a card.
+        outline: "bg-foreground text-background hover:bg-foreground/90",
+        secondary: "bg-foreground text-background hover:bg-foreground/90",
         ghost: "text-foreground/70 hover:bg-white/[0.06] hover:text-foreground",
         link: "text-primary underline-offset-4 hover:underline",
       },

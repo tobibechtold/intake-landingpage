@@ -412,7 +412,7 @@ const IntakeAIPageInner = () => {
                   {[content.monthly, content.yearly].map((price) => (
                     <div
                       key={price}
-                      className="rounded-2xl border border-border/70 bg-background/55 px-4 py-3"
+                      className="trust-chip"
                     >
                       <p className="font-semibold text-foreground">{price}</p>
                       <p className="mt-1 text-xs uppercase tracking-[0.2em] text-primary">
@@ -423,13 +423,13 @@ const IntakeAIPageInner = () => {
                 </div>
               </article>
 
-              <article className="glass-card border border-border/70 p-7">
+              <article className="glass-card border border-white/[0.08] p-7">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.05] text-foreground/70">
                   <KeyRound className="h-6 w-6" />
                 </div>
                 <h3 className="text-2xl font-semibold text-foreground">{content.byokTitle}</h3>
                 <p className="mt-3 text-sm leading-6 text-muted-foreground">{content.byokBody}</p>
-                <p className="mt-5 rounded-2xl border border-border/70 bg-background/55 px-4 py-3 text-sm leading-6 text-muted-foreground">
+                <p className="mt-5 rounded-2xl border border-white/[0.08] bg-background/55 px-4 py-3 text-sm leading-6 text-muted-foreground">
                   {content.providerNote}
                 </p>
                 <a href={byokGuidePath} className="trust-chip-link mt-5 w-fit">
@@ -456,7 +456,7 @@ const IntakeAIPageInner = () => {
                 {content.comparisonRows.map((row) => (
                   <article
                     key={row.feature}
-                    className="rounded-3xl border border-border/70 bg-card/70 p-5"
+                    className="rounded-3xl border border-white/[0.08] bg-card/70 p-5"
                   >
                     <h4 className="text-base font-semibold leading-6 text-foreground">
                       {row.feature}
@@ -470,7 +470,7 @@ const IntakeAIPageInner = () => {
                           <ComparisonValue level={row.hostedLevel}>{row.hosted}</ComparisonValue>
                         </div>
                       </div>
-                      <div className="rounded-2xl border border-border/70 bg-background/45 p-4">
+                      <div className="rounded-2xl border border-white/[0.08] bg-background/45 p-4">
                         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                           {content.comparisonColumns.byok}
                         </p>
@@ -485,12 +485,12 @@ const IntakeAIPageInner = () => {
 
               <div
                 data-testid="intake-ai-desktop-comparison"
-                className="mt-8 hidden overflow-x-auto rounded-xl border border-border/70 bg-card/70 md:block"
+                className="mt-8 hidden overflow-x-auto rounded-xl border border-white/[0.08] bg-card/70 md:block"
               >
                 <table className="min-w-[760px] border-collapse">
                   <caption className="sr-only">{content.comparisonTitle}</caption>
                   <thead>
-                    <tr className="border-b border-border/70 text-left">
+                    <tr className="border-b border-white/[0.08] text-left">
                       <th className="w-[24%] px-5 py-4 text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">
                         {content.comparisonColumns.feature}
                       </th>
@@ -504,7 +504,7 @@ const IntakeAIPageInner = () => {
                   </thead>
                   <tbody>
                     {content.comparisonRows.map((row) => (
-                      <tr key={row.feature} className="border-b border-border/60 last:border-0">
+                      <tr key={row.feature} className="border-b border-white/[0.08] last:border-0">
                         <th className="px-5 py-5 text-left text-sm font-semibold leading-6 text-foreground">
                           {row.feature}
                         </th>
@@ -533,7 +533,7 @@ const IntakeAIPageInner = () => {
                   {content.proofItems.map((item) => (
                     <article
                       key={item.title}
-                      className="glass-card overflow-hidden border border-border/70"
+                      className="glass-card overflow-hidden border border-white/[0.08]"
                     >
                       <div className="aspect-[4/3] overflow-hidden bg-muted/40">
                         <img
@@ -560,7 +560,7 @@ const IntakeAIPageInner = () => {
           </div>
         </section>
 
-        <section className="section-gradient border-y border-border/50 py-20">
+        <section className="section-gradient border-y border-white/[0.08] py-20">
           <div className="container">
             <div className="grid gap-6 md:grid-cols-2">
               <article className="feature-card">

@@ -46,21 +46,17 @@
          border       22% -> 13%  hairline instead of a visible frame
        muted-foreground was deliberately not taken lower: 50% is 4.9:1 and 45% fails AA. */
 
-    --glass-bg: 240 11% 10%;
-    --glass-border: 338 92% 63% / 0.18;
-    --glow-primary: 338 92% 63%;
+    /* --glass-bg, --glass-border, --glow-primary and the --text-* trio were removed:
+       nothing referenced them, and the glow tokens described an effect Refined Dark
+       does not use. The sidebar tokens below are read by tailwind.config.ts. */
 
-    --text-primary: 0 0% 100%;
-    --text-secondary: 0 0% 70%;
-    --text-tertiary: 0 0% 45%;
-
-    --sidebar-background: 240 11% 10%;
+    --sidebar-background: 240 10% 7%;
     --sidebar-foreground: 0 0% 96%;
     --sidebar-primary: 338 92% 63%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 8% 16%;
+    --sidebar-accent: 240 8% 11%;
     --sidebar-accent-foreground: 0 0% 96%;
-    --sidebar-border: 240 7% 22%;
+    --sidebar-border: 240 7% 13%;
     --sidebar-ring: 338 92% 63%;
   }
 
@@ -193,8 +189,12 @@
     @apply inline-flex items-center justify-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition-colors hover:bg-foreground/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
 
+  /* Deliberately identical to .btn-primary. The previous hairline-outline treatment was
+     indistinguishable from the cards it usually sat on, so there is one filled button
+     style now. Kept as a separate name so call sites can still express intent, and so a
+     distinct secondary treatment can be reintroduced in one place if ever wanted. */
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-white/[0.16] px-5 py-2.5 text-sm font-medium text-foreground/85 transition-colors hover:border-white/[0.28] hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    @apply btn-primary;
   }
 
   /* Tertiary: an inline affordance inside a card or block, not a standalone action.

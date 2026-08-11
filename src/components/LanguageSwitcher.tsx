@@ -15,7 +15,7 @@ const LanguageSwitcher = () => {
   return (
     <a
       href={alternateHref}
-      className="flex items-center gap-1.5 px-2 py-1 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-colors"
+      className="inline-flex items-center gap-1.5 rounded-lg border border-white/[0.08] px-2.5 py-1.5 text-[13px] font-medium transition-colors hover:border-white/[0.18]"
       aria-label={`Switch to ${language === "en" ? "German" : "English"}`}
       data-language-switch={language === "en" ? "de" : "en"}
     >

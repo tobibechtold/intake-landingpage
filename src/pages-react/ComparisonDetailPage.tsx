@@ -40,7 +40,7 @@ const ComparisonDetailPageInner = ({ slug }: { slug: string }) => {
             <div className="glass-card overflow-hidden">
               <table className="min-w-full border-collapse">
                 <thead>
-                  <tr className="border-b border-border/60 text-left">
+                  <tr className="border-b border-white/[0.08] text-left">
                     <th className="px-5 py-4 text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">
                       {language === "de" ? "Kriterium" : "Criteria"}
                     </th>
@@ -54,7 +54,7 @@ const ComparisonDetailPageInner = ({ slug }: { slug: string }) => {
                 </thead>
                 <tbody>
                   {content.criteria.map((criterion) => (
-                    <tr key={criterion.label} className="border-b border-border/50 last:border-0">
+                    <tr key={criterion.label} className="border-b border-white/[0.08] last:border-0">
                       <th className="px-5 py-4 text-left text-sm font-medium text-foreground">
                         {criterion.label}
                       </th>

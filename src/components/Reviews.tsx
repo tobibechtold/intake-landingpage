@@ -105,10 +105,10 @@ const Reviews = () => {
         <div className="mx-auto mb-12 max-w-3xl rounded-xl border border-white/[0.12] bg-card/70 px-6 py-6 text-left md:px-8">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="text-sm uppercase tracking-[0.2em] text-primary">{t("heroTrustRating")}</p>
+              <p className="section-kicker">{t("heroTrustRating")}</p>
               <h3 className="mt-2 text-2xl font-semibold text-foreground">{t("reviewsSummaryTitle")}</h3>
             </div>
-            <div className="flex items-center gap-3 rounded-full border border-border/70 bg-background/70 px-4 py-2">
+            <div className="flex items-center gap-3 rounded-full border border-white/[0.08] bg-background/70 px-4 py-2">
               <Star className="h-5 w-5 fill-primary text-primary" />
               <span className="text-lg font-semibold text-foreground">4.9</span>
               <span className="text-sm text-muted-foreground">App Store</span>

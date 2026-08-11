@@ -77,7 +77,7 @@ const HelpPageInner = () => {
   return (
     <div className="min-h-screen">
       <main className="pb-24 pt-32 md:pt-36">
-        <section className="section-gradient border-y border-border/50 py-20">
+        <section className="section-gradient border-y border-white/[0.08] py-20">
           <div className="container max-w-5xl">
             <div className="mx-auto max-w-3xl text-center">
               <p className="section-kicker">{t("helpNav")}</p>
@@ -125,7 +125,7 @@ const HelpPageInner = () => {
                   value={query}
                   onChange={(event) => setQuery(event.target.value)}
                   placeholder={faqCopy.searchPlaceholder}
-                  className="h-12 rounded-full border-border/70 bg-background/85 pl-11 pr-12"
+                  className="h-12 rounded-full border-white/[0.08] bg-background/85 pl-11 pr-12"
                 />
                 {query ? (
                   <button
@@ -155,7 +155,7 @@ const HelpPageInner = () => {
                     <AccordionItem
                       key={section.title}
                       value={section.title}
-                      className="rounded-2xl border border-border/60 bg-card/55 px-5"
+                      className="rounded-2xl border border-white/[0.08] bg-card/55 px-5"
                     >
                       <AccordionTrigger className="py-5 text-left text-lg font-semibold text-foreground hover:no-underline">
                         <span>{section.title}</span>
@@ -178,7 +178,7 @@ const HelpPageInner = () => {
                   ))}
                 </Accordion>
               ) : (
-                <div className="rounded-2xl border border-dashed border-border/70 bg-card/45 p-8 text-center">
+                <div className="rounded-2xl border border-dashed border-white/[0.08] bg-card/45 p-8 text-center">
                   <h2 className="text-xl font-semibold text-foreground">{faqCopy.noResultsTitle}</h2>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                     {faqCopy.noResultsBody}
@@ -187,7 +187,7 @@ const HelpPageInner = () => {
               )}
             </div>
 
-            <div className="mt-12 rounded-xl border border-border/60 bg-card/50 p-8 text-center">
+            <div className="mt-12 rounded-xl border border-white/[0.08] bg-card/50 p-8 text-center">
               <p className="section-kicker">{t("download")}</p>
               <h2 className="mt-3 text-2xl font-semibold text-foreground md:text-3xl">
                 {t("helpCtaTitle")}

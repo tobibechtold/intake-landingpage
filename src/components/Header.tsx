@@ -38,7 +38,7 @@ const Header = () => {
   const desktopNavItemClassName =
     "px-2 text-sm font-medium text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background";
   const mobileNavItemClassName =
-    "rounded-full border border-border/60 bg-background/70 px-4 py-3 text-base font-medium text-foreground transition-colors hover:border-white/[0.12] hover:bg-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+    "rounded-full border border-white/[0.08] bg-background/70 px-4 py-3 text-base font-medium text-foreground transition-colors hover:border-white/[0.12] hover:bg-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55 focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
   const renderNavItem = (
     item: { label: string; href: string; external?: boolean },
@@ -68,7 +68,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50">
       <div
         data-site-header-shell
-        className="container mt-4 flex h-16 items-center justify-between rounded-full border border-border/60 bg-background/80 px-5 backdrop-blur-xl"
+        className="container mt-4 flex h-16 items-center justify-between rounded-full border border-white/[0.08] bg-background/80 px-5 backdrop-blur-xl"
       >
         <div data-header-left-cluster className="flex min-w-0 items-center gap-6 lg:gap-8">
           <a href={homePath} className="flex items-center gap-3">
@@ -96,7 +96,7 @@ const Header = () => {
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[85vw] max-w-sm border-border/60 bg-background/95">
+            <SheetContent side="right" className="w-[85vw] max-w-sm border-white/[0.08] bg-background/95">
               <SheetHeader className="sr-only">
                 <SheetTitle>{language === "de" ? "Navigation" : "Navigation"}</SheetTitle>
                 <SheetDescription>

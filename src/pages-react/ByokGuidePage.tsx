@@ -244,7 +244,7 @@ const ByokGuidePageInner = () => {
   return (
     <div className="min-h-screen">
       <main className="pb-24 pt-28">
-        <section className="hero-gradient border-b border-border/50 pb-16 pt-8 md:pb-24">
+        <section className="hero-gradient border-b border-white/[0.08] pb-16 pt-8 md:pb-24">
           <div className="container max-w-6xl">
             <PageBreadcrumbs
               items={[
@@ -298,7 +298,7 @@ const ByokGuidePageInner = () => {
                 </p>
               </article>
             </div>
-            <p className="mx-auto mt-6 max-w-3xl rounded-2xl border border-border/70 bg-background/70 p-5 text-sm leading-7 text-muted-foreground">
+            <p className="mx-auto mt-6 max-w-3xl rounded-2xl border border-white/[0.08] bg-background/70 p-5 text-sm leading-7 text-muted-foreground">
               {content.accountNote}
             </p>
           </div>
@@ -370,7 +370,7 @@ const ByokGuidePageInner = () => {
               {content.screenshots.map((screenshot) => (
                 <figure
                   key={screenshot.label}
-                  className="overflow-hidden rounded-xl border border-border/70 bg-background/75"
+                  className="overflow-hidden rounded-xl border border-white/[0.08] bg-background/75"
                 >
                   <img
                     data-testid="byok-guide-screenshot"
@@ -381,7 +381,7 @@ const ByokGuidePageInner = () => {
                     loading="lazy"
                     className="aspect-[5/4] w-full bg-[#e8eaed] object-cover"
                   />
-                  <figcaption className="border-t border-border/60 p-5">
+                  <figcaption className="border-t border-white/[0.08] p-5">
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
                       {screenshot.label}
                     </p>
@@ -407,11 +407,11 @@ const ByokGuidePageInner = () => {
                   {content.securityDetail}
                 </p>
               </article>
-              <article className="rounded-xl border border-border/70 bg-card/60 p-7 md:p-9">
+              <article className="rounded-xl border border-white/[0.08] bg-card/60 p-7 md:p-9">
                 <Coins className="h-8 w-8 text-primary" aria-hidden="true" />
                 <h2 className="mt-5 text-2xl text-foreground">{content.costTitle}</h2>
                 <p className="mt-4 text-sm leading-7 text-muted-foreground">{content.costBody}</p>
-                <p className="mt-4 rounded-2xl border border-border/70 bg-background/70 p-4 text-sm leading-6 text-foreground">
+                <p className="mt-4 rounded-2xl border border-white/[0.08] bg-background/70 p-4 text-sm leading-6 text-foreground">
                   {content.geminiNote}
                 </p>
               </article>
@@ -428,7 +428,7 @@ const ByokGuidePageInner = () => {
               {content.troubleshooting.map((item) => (
                 <article
                   key={item.title}
-                  className="rounded-2xl border border-border/70 bg-card/60 p-5"
+                  className="rounded-2xl border border-white/[0.08] bg-card/60 p-5"
                 >
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />

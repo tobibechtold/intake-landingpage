@@ -14,7 +14,7 @@ const WhatsNewIndexInner = ({ entries }: { entries: ReleaseSummary[] }) => {
       <main className="section-gradient min-h-screen pt-28 pb-20">
         <div className="container space-y-10">
           <div className="max-w-3xl space-y-4">
-            <p className="text-sm uppercase tracking-[0.3em] text-primary">
+            <p className="section-kicker">
               {language === "de" ? "Produktupdates" : "Product updates"}
             </p>
             <h1 className="text-4xl text-foreground md:text-6xl">
@@ -27,7 +27,7 @@ const WhatsNewIndexInner = ({ entries }: { entries: ReleaseSummary[] }) => {
             </p>
           </div>
 
-          <section className="glass-card flex flex-col gap-4 rounded-xl border border-border/70 p-6 md:flex-row md:items-center md:justify-between">
+          <section className="glass-card flex flex-col gap-4 rounded-xl border border-white/[0.08] p-6 md:flex-row md:items-center md:justify-between">
             <div className="max-w-2xl space-y-2">
               <h2 className="text-xl font-semibold text-foreground">
                 {language === "de" ? "Vollständigen Changelog ansehen" : "View the full changelog"}
