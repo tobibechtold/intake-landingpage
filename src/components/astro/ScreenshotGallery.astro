@@ -1,16 +1,17 @@
 ---
+import { ChevronLeft, ChevronRight } from 'lucide-astro';
 import { getScreenshotGalleryAssets } from '@/lib/screenshotAssets';
 import { useT } from '@/i18n/t';
 import type { Language } from '@/i18n/translations';
 
 /**
- * Was an embla carousel — 23 KB of JS to scroll a row of screenshots sideways. CSS
- * scroll-snap does the same natively: touch, trackpad and shift+wheel all work, and it
- * degrades to a plain scrollable row if scroll-snap is unsupported.
+ * Was an embla carousel — 23 KB of JS to scroll a row of screenshots sideways. The row
+ * is CSS scroll-snap now: touch, trackpad and shift+wheel all work natively, and it
+ * degrades to a plain scrollable row anywhere scroll-snap is unsupported.
  *
- * The embla prev/next arrows are gone, so the scrollbar is deliberately left visible
- * (styled thin) rather than hidden: without arrows it is the only affordance telling a
- * desktop user the row scrolls at all.
+ * The desktop prev/next buttons are driven by src/scripts/carousel.ts. They start
+ * hidden and are revealed by that script, so they never render as dead controls if it
+ * fails to load — the row still scrolls either way.
  */
 interface Props {
   lang: Language;
@@ -19,6 +20,9 @@ interface Props {
 const { lang } = Astro.props;
 const t = useT(lang);
 const screenshots = getScreenshotGalleryAssets(lang);
+
+const arrowClass =
+  'absolute top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/[0.12] bg-background/80 text-foreground/70 backdrop-blur-sm transition-colors hover:border-white/[0.24] hover:text-foreground disabled:pointer-events-none disabled:opacity-0 md:flex';
 ---
 <section class="py-16 md:py-20">
   <div class="container mx-auto px-0 md:px-4">
@@ -26,8 +30,19 @@ const screenshots = getScreenshotGalleryAssets(lang);
       {t('screenshotGalleryHeading')}
     </h2>
 
-    <div class="reveal relative px-0 md:px-4">
+    <div data-carousel class="reveal relative px-0 md:px-12">
+      <button
+        type="button"
+        data-carousel-prev
+        hidden
+        class:list={[arrowClass, 'left-0']}
+        aria-label={lang === 'de' ? 'Vorherige Screenshots' : 'Previous screenshots'}
+      >
+        <ChevronLeft class="h-5 w-5" />
+      </button>
+
       <ul
+        data-carousel-track
         class="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-4 pb-4 md:px-0 [scrollbar-color:hsl(var(--muted-foreground)/0.35)_transparent] [scrollbar-width:thin]"
       >
         {screenshots.map((screenshot) => (
@@ -47,6 +62,20 @@ const screenshots = getScreenshotGalleryAssets(lang);
           </li>
         ))}
       </ul>
+
+      <button
+        type="button"
+        data-carousel-next
+        hidden
+        class:list={[arrowClass, 'right-0']}
+        aria-label={lang === 'de' ? 'Weitere Screenshots' : 'More screenshots'}
+      >
+        <ChevronRight class="h-5 w-5" />
+      </button>
     </div>
   </div>
 </section>
+
+<script>
+  import '@/scripts/carousel';
+</script>

@@ -391,13 +391,9 @@ const content = CONTENT[lang];
                 <p class="mt-3 text-sm leading-6 text-muted-foreground">{content.hostedBody}</p>
                 <div class="mt-6 grid gap-3">
                   {[content.monthly, content.yearly].map((price) => (
-                    <div
-                      class="trust-chip"
-                    >
+                    <div class="rounded-lg border border-white/[0.08] bg-white/[0.02] px-4 py-3">
                       <p class="font-semibold text-foreground">{price}</p>
-                      <p class="mt-1 text-xs uppercase tracking-[0.2em] text-primary">
-                        {content.trial}
-                      </p>
+                      <p class="mt-1 text-xs font-medium text-primary">{content.trial}</p>
                     </div>
                   ))}
                 </div>

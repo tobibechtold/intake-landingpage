@@ -69,11 +69,9 @@ const copy = {
                 </div>
 
                 {entry.highlights.length > 0 && (
-                  <ul class="grid gap-2 text-sm text-foreground/80">
+                  <ul class="list-disc space-y-1.5 pl-5 text-sm leading-6 text-foreground/50 marker:text-primary/60">
                     {entry.highlights.slice(0, 2).map((highlight) => (
-                      <li class="rounded-lg border border-white/[0.08] bg-white/[0.02] px-4 py-3">
-                        {highlight}
-                      </li>
+                      <li>{highlight}</li>
                     ))}
                   </ul>
                 )}

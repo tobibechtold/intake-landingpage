@@ -26,8 +26,8 @@ const { entries, lang } = Astro.props;
           </div>
 
           {entry.highlights.length > 0 && (
-            <ul class="grid gap-2 text-sm text-foreground/80 md:grid-cols-2">
-              {entry.highlights.map((highlight) => <li class="trust-chip">{highlight}</li>)}
+            <ul class="list-disc space-y-1.5 pl-5 text-sm leading-6 text-foreground/50 marker:text-primary/60">
+              {entry.highlights.map((highlight) => <li>{highlight}</li>)}
             </ul>
           )}
 
