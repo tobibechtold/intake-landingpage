@@ -6,5 +6,5 @@ import ComparisonsIndexPage from '@/pages-react/ComparisonsIndexPage';
 const route = '/vergleiche';
 ---
 <BaseLayout route={route}>
-  <ComparisonsIndexPage {...pageProps(route)} />
+  <ComparisonsIndexPage client:load {...pageProps(route)} />
 </BaseLayout>

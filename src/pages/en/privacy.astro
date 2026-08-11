@@ -6,5 +6,5 @@ import Privacy from '@/pages-react/Privacy';
 const route = '/en/privacy';
 ---
 <BaseLayout route={route}>
-  <Privacy {...pageProps(route)} />
+  <Privacy client:load {...pageProps(route)} />
 </BaseLayout>

@@ -6,5 +6,5 @@ import FeaturesPage from '@/pages-react/FeaturesPage';
 const route = '/en/features';
 ---
 <BaseLayout route={route}>
-  <FeaturesPage {...pageProps(route)} />
+  <FeaturesPage client:load {...pageProps(route)} />
 </BaseLayout>

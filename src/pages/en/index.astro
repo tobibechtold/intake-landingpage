@@ -9,5 +9,5 @@ const props = pageProps(route);
 const releases = await loadReleases(props.lang);
 ---
 <BaseLayout route={route}>
-  <Index {...props} releases={releases} />
+  <Index client:load {...props} releases={releases} />
 </BaseLayout>

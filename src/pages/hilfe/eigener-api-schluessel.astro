@@ -6,5 +6,5 @@ import ByokGuidePage from '@/pages-react/ByokGuidePage';
 const route = '/hilfe/eigener-api-schluessel';
 ---
 <BaseLayout route={route}>
-  <ByokGuidePage {...pageProps(route)} />
+  <ByokGuidePage client:load {...pageProps(route)} />
 </BaseLayout>

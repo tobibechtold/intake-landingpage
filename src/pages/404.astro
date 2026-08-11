@@ -6,5 +6,5 @@ import NotFound from '@/pages-react/NotFound';
 const route = '/404';
 ---
 <BaseLayout route={route}>
-  <NotFound {...pageProps(route)} />
+  <NotFound client:load {...pageProps(route)} />
 </BaseLayout>

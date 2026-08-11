@@ -6,5 +6,5 @@ import HelpPage from '@/pages-react/HelpPage';
 const route = '/en/help';
 ---
 <BaseLayout route={route}>
-  <HelpPage {...pageProps(route)} />
+  <HelpPage client:load {...pageProps(route)} />
 </BaseLayout>

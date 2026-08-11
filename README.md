@@ -58,6 +58,26 @@ Release notes are an Astro content collection (`src/content.config.ts`) loaded f
 is enough to publish a new localized page pair, its sitemap entries and its hreflang
 pair. A malformed release note fails the build rather than shipping blank.
 
+### Gotcha: the content collection cache
+
+Astro caches rendered markdown in **`node_modules/.astro/data-store.json`**, which
+`rm -rf .astro` does *not* clear. If you change `src/lib/remarkVideo.mjs` or anything else
+in the markdown pipeline and the output looks unchanged, the transformer is not being run —
+the cached render is being reused. Clear it with:
+
+```bash
+rm -rf node_modules/.astro .astro dist && npm run build
+```
+
+CI and Vercel install fresh, so this only bites local iteration.
+
+### Release-note videos
+
+`content/whats-new/<version>/assets/*.{mp4,webm}` live outside both `src/` and `public/`, so
+Astro's asset pipeline never sees them. The `whatsNewAssets` integration
+(`src/lib/whatsNewAssets.mjs`) serves them in dev and copies them into the build at
+`/whats-new-assets/<version>/`, matching the URLs `remarkVideo` writes.
+
 ## Astro version pin
 
 `astro` is pinned to an exact version (no caret) because the test suite uses

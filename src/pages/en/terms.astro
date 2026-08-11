@@ -6,5 +6,5 @@ import Terms from '@/pages-react/Terms';
 const route = '/en/terms';
 ---
 <BaseLayout route={route}>
-  <Terms {...pageProps(route)} />
+  <Terms client:load {...pageProps(route)} />
 </BaseLayout>

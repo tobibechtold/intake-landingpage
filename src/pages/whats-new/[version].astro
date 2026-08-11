@@ -33,7 +33,7 @@ const summary = {
   title={`${entry.data.title} | Intake`}
   description={entry.data.summary}
 >
-  <WhatsNewEntry {...pageProps(route)} entry={summary}>
+  <WhatsNewEntry client:load {...pageProps(route)} entry={summary}>
     <Content />
   </WhatsNewEntry>
 </BaseLayout>

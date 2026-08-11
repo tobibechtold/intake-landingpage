@@ -15,5 +15,5 @@ const { slug } = Astro.params;
 const route = `/vergleiche/${slug}`;
 ---
 <BaseLayout route={route}>
-  <ComparisonDetailPage {...pageProps(route)} slug={slug!} />
+  <ComparisonDetailPage client:load {...pageProps(route)} slug={slug!} />
 </BaseLayout>

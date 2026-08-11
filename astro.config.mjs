@@ -3,6 +3,7 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import { unified } from '@astrojs/markdown-remark';
 import { remarkVideo } from './src/lib/remarkVideo.mjs';
+import { whatsNewAssets } from './src/lib/whatsNewAssets.mjs';
 
 // ---------------------------------------------------------------------------
 // DO NOT ADD @astrojs/vercel HERE.
@@ -30,7 +31,7 @@ export default defineConfig({
   // uses translated slugs (/funktionen <-> /en/features), which it would pair
   // wrongly. hreflang is emitted from BaseLayout instead, which Google treats
   // as equivalent to sitemap-level hreflang.
-  integrations: [react(), sitemap()],
+  integrations: [react(), sitemap(), whatsNewAssets()],
   markdown: {
     // Astro 7 defaults to Sätteri, its Rust Markdown pipeline. We stay on the unified
     // processor because remarkVideo is an mdast/remark plugin and porting it to a

@@ -6,5 +6,5 @@ import NoAccountPage from '@/pages-react/NoAccountPage';
 const route = '/kalorien-tracker-ohne-konto';
 ---
 <BaseLayout route={route}>
-  <NoAccountPage {...pageProps(route)} />
+  <NoAccountPage client:load {...pageProps(route)} />
 </BaseLayout>
