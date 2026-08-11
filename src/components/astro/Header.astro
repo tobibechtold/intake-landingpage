@@ -1,6 +1,6 @@
 ---
 import logo from '@/assets/logo-hero.webp';
-import { Menu, X } from 'lucide-astro';
+import { Download, Menu, X } from 'lucide-astro';
 import { buildLocalizedPath } from '@/lib/localeRouting';
 import { useT } from '@/i18n/t';
 import type { Language } from '@/i18n/translations';
@@ -69,14 +69,19 @@ const mobileNavClass =
         </a>
       )}
 
+      {/* Icon-only until the label has room: below lg the EN/DE toggle and the menu
+          button are also competing for the bar, and the labelled version squeezed them.
+          The drawer still offers a full-width labelled download. */}
       <a
         href={downloadFallback}
         data-download-link
         data-lang={lang}
         data-cta-location="navbar"
-        class="btn-primary hidden h-9 px-4 sm:inline-flex"
+        aria-label={t('download')}
+        class="btn-primary h-9 w-9 px-0 lg:w-auto lg:px-4"
       >
-        {t('download')}
+        <Download class="h-4 w-4 lg:hidden" aria-hidden="true" />
+        <span class="hidden lg:inline">{t('download')}</span>
       </a>
 
       <button

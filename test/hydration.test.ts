@@ -59,6 +59,16 @@ describe('hydration', () => {
     expect(html).toContain('data-nav-open');
   });
 
+  // Below lg the navbar has to fit the EN/DE toggle and the menu button too, so the
+  // download CTA is icon-only there and needs an accessible name of its own.
+  it('renders the navbar download as an icon with a label until there is room', () => {
+    const header = /<header[\s\S]*?<\/header>/.exec(read('/'))![0];
+    const cta = /<a[^>]*data-download-link[\s\S]*?<\/a>/.exec(header)![0];
+    expect(cta).toMatch(/aria-label="[^"]+"/);
+    expect(cta).toContain('<svg');
+    expect(cta).toContain('hidden lg:inline');
+  });
+
   // The download link is user-agent dependent. It must ship a working fallback so it is
   // never broken before the upgrade script runs, or if it never runs at all.
   it('ships a working download link before any JS runs', () => {
