@@ -165,7 +165,7 @@ export const translations = {
     intakeAITeaserTitle: "Log meals by describing them.",
     intakeAITeaserDescription:
       "Intake AI adds richer food logging with text, photos, label scans, and editable ingredients. Basic AI logging with your own API key (BYOK) works without an Intake AI subscription.",
-    intakeAITeaserButton: "See Intake AI",
+    intakeAITeaserButton: "Learn more",
 
     // CTA
     ctaTitle: "Switch to a calmer calorie tracker.",
@@ -348,7 +348,7 @@ export const translations = {
     intakeAITeaserTitle: "Mahlzeiten per Beschreibung loggen.",
     intakeAITeaserDescription:
       "Intake AI ergänzt umfangreicheres Food-Logging mit Text, Fotos, Label-Scans und bearbeitbaren Zutaten. Basic-KI-Logging mit eigenem API-Schlüssel (BYOK) funktioniert ohne Intake-AI-Abo.",
-    intakeAITeaserButton: "Intake AI ansehen",
+    intakeAITeaserButton: "Mehr erfahren",
 
     // CTA
     ctaTitle: "Wechsle zu einem Kalorientracker ohne Abo.",
