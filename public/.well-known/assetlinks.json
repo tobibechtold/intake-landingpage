@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "de.bechtoldit.intake",
+      "sha256_cert_fingerprints": [
+        "52:31:4B:B8:AB:1A:A1:29:97:A4:BD:3A:AB:4F:74:9C:A1:4A:7C:08:F7:CD:D0:44:BF:F7:A4:F8:47:DE:A6:FD"
+      ]
+    }
+  }
+]
