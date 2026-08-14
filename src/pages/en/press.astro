@@ -1,0 +1,14 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SiteShell from '@/components/astro/SiteShell.astro';
+import PressKitPage from '@/components/astro/PressKitPage.astro';
+import { pageProps } from '@/lib/pageSeo';
+
+const route = '/en/press';
+const { lang } = pageProps(route);
+---
+<BaseLayout route={route}>
+  <SiteShell route={route}>
+    <PressKitPage lang={lang} />
+  </SiteShell>
+</BaseLayout>

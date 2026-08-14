@@ -207,6 +207,20 @@ const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     "canonical": "https://www.getintake.de/whats-new",
     "ogLocale": "de_DE"
   },
+  "/presse": {
+    "lang": "de",
+    "title": "Presse | Intake",
+    "description": "Pressematerial zu Intake: Fakten, Zitate, Screenshots und Kontakt. Kalorienzähler ohne Abo und ohne Account, nativ für iOS und Android, KI wahlweise mit eigenem API-Key.",
+    "canonical": "https://www.getintake.de/presse",
+    "ogLocale": "de_DE"
+  },
+  "/en/press": {
+    "lang": "en",
+    "title": "Press | Intake",
+    "description": "Press resources for Intake: facts, quotes, screenshots and contact. A calorie counter without a subscription or account, native on iOS and Android, with AI you can run on your own API key.",
+    "canonical": "https://www.getintake.de/en/press",
+    "ogLocale": "en_US"
+  },
 };
 
 // The DE <-> EN slug map, previously implicit in the route table of src/App.tsx.
@@ -222,6 +236,7 @@ const ROUTE_PAIRS: ReadonlyArray<readonly [string, string]> = [
   ['/privacy', '/en/privacy'],
   ['/terms', '/en/terms'],
   ['/whats-new', '/en/whats-new'],
+  ['/presse', '/en/press'],
 ];
 
 const WHATS_NEW_ENTRY = /^\/(en\/)?whats-new\/([^/]+)$/;
