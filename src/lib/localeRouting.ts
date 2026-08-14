@@ -10,6 +10,7 @@ export type SitePage =
   | "help"
   | "byokGuide"
   | "comparisonDetail"
+  | "press"
   | "privacy"
   | "terms"
   | "whatsNewIndex"
@@ -47,6 +48,10 @@ const PAGE_SEGMENT_BY_PAGE: Record<
   byokGuide: {
     de: "hilfe/eigener-api-schluessel",
     en: "help/own-api-key",
+  },
+  press: {
+    de: "presse",
+    en: "press",
   },
   privacy: {
     de: "privacy",
