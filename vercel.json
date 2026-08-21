@@ -22,6 +22,8 @@
       ],
       "destination": "/en",
       "permanent": false
-    }
+    },
+    { "source": "/de", "destination": "/", "permanent": false },
+    { "source": "/de/:path*", "destination": "/:path*", "permanent": false }
   ]
 }

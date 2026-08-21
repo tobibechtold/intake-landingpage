@@ -55,3 +55,33 @@ describe('root locale redirect', () => {
     expect(new RegExp(rule.value).test('de-DE,de;q=0.9')).toBe(false);
   });
 });
+
+describe('/de locale alias', () => {
+  /**
+   * German is served unprefixed (/whats-new), but shipped iOS builds link the
+   * /de/whats-new variant, so every one of those links 404'd. Old app versions stay
+   * installed forever, so this alias is permanent even though the redirect is a 307 —
+   * temporary keeps it reversible if the site ever adopts real /de/ prefixes, and no
+   * browser caches the mapping past that point.
+   */
+  const redirect = (source: string) =>
+    config.redirects.find((r: { source: string }) => r.source === source);
+
+  it('maps /de/:path* onto the unprefixed German routes', () => {
+    expect(redirect('/de/:path*')?.destination).toBe('/:path*');
+  });
+
+  it('maps bare /de onto the German home page', () => {
+    expect(redirect('/de')?.destination).toBe('/');
+  });
+
+  it('stays temporary, so the alias can be withdrawn later', () => {
+    expect(redirect('/de')?.permanent).toBe(false);
+    expect(redirect('/de/:path*')?.permanent).toBe(false);
+  });
+
+  it('is ordered after the root locale redirect, which must win on /', () => {
+    const sources = config.redirects.map((r: { source: string }) => r.source);
+    expect(sources.indexOf('/')).toBeLessThan(sources.indexOf('/de'));
+  });
+});
