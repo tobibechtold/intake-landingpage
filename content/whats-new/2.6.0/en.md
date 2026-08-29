@@ -48,7 +48,7 @@ Food search has moved to the bottom of the screen, within reach of your thumb. Y
 
 ## Spoons, cups and glasses
 
-Grams are no longer the only option. For any food you can enter the amount in teaspoons, tablespoons, cups, glasses or millilitres, right in the custom amount field.
+Grams are no longer the only option. For any food you can enter the amount in teaspoons, tablespoons, cups, glasses or millilitres, right in the custom amount field. With imperial units selected in settings, the field counts in ounces and offers fluid ounces instead of millilitres.
 
 ![units](assets/units-en.png)
 
