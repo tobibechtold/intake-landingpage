@@ -28,7 +28,7 @@ const t = useT(lang);
               src={mention.logoSrc}
               alt=""
               aria-hidden="true"
-              class="h-5 w-auto text-foreground md:h-6"
+              class:list={['w-auto text-foreground', mention.logoClass ?? 'h-5 md:h-6']}
             />
             {mention.visibleLabel && (
               <span class="text-[13px] font-medium text-foreground/60">{mention.visibleLabel}</span>

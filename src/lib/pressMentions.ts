@@ -1,6 +1,7 @@
 import iphoneTickerLogo from "@/assets/press/image-icon-256-01-small.png";
 import iTopnewsLogo from "@/assets/press/cropped-cropped-201504_10_iTN-Logo801.png";
 import macweltLogo from "@/assets/press/macwelt-logo.svg";
+import androidUserLogo from "@/assets/press/androiduser-logo.svg";
 import stadtBremerhavenLogo from "@/assets/press/caschy-logo.svg";
 import { type Language } from "@/i18n/translations";
 
@@ -10,6 +11,8 @@ export interface PressMention {
   articleUrl: string;
   logoSrc: string;
   visibleLabel?: string;
+  /** Tailwind height classes for the homepage strip. Stacked marks need more than the wordmark default. */
+  logoClass?: string;
 }
 
 export const PRESS_MENTIONS: PressMention[] = [
@@ -43,6 +46,13 @@ export const PRESS_MENTIONS: PressMention[] = [
     articleUrl:
       "https://stadt-bremerhaven.de/intake-schlanke-alternative-zum-foodtracking-ohne-gamification-und-abonnements/",
     logoSrc: stadtBremerhavenLogo.src,
+  },
+  {
+    name: "Android User",
+    articleTitle: "Intake: Kalorienzähler, ohne Abo mit optionaler KI",
+    articleUrl: "https://www.android-user.de/intake-kalorienzaehler-ohne-abo/",
+    logoSrc: androidUserLogo.src,
+    logoClass: "h-7 md:h-8",
   },
 ];
 
