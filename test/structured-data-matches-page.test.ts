@@ -10,7 +10,7 @@ import { describe, expect, it } from 'vitest';
  */
 const PAGES = [
   { file: 'dist/index.html', lang: 'de', rating: '4,8', price: '6,99', currency: 'EUR' },
-  { file: 'dist/en/index.html', lang: 'en', rating: '4.8', price: '5.99', currency: 'USD' },
+  { file: 'dist/en/index.html', lang: 'en', rating: '4.8', price: '9.99', currency: 'USD' },
 ];
 
 const visibleText = (html: string) =>

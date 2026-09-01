@@ -18,7 +18,7 @@ import type { Language } from '@/i18n/translations';
  */
 export const APP_PRICE = {
   de: { amount: 6.99, currency: 'EUR' },
-  en: { amount: 5.99, currency: 'USD' },
+  en: { amount: 9.99, currency: 'USD' },
 } as const;
 
 export const APP_RATING = {
@@ -30,7 +30,7 @@ export const APP_RATING = {
 
 const locale = (lang: Language) => (lang === 'de' ? 'de-DE' : 'en-US');
 
-/** "6,99 €" in German, "$5.99" in English. */
+/** "6,99 €" in German, "$9.99" in English. */
 export const formatAppPrice = (lang: Language): string =>
   new Intl.NumberFormat(locale(lang), {
     style: 'currency',
