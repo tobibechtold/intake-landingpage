@@ -60,8 +60,8 @@
     "sha": "66be445714e65d2c"
   },
   "/en/whats-new": {
-    "words": 1279,
-    "sha": "b313228e1aa1ced5"
+    "words": 1293,
+    "sha": "f62c81846aaa867f"
   },
   "/en/whats-new/2.1.1": {
     "words": 437,
@@ -152,8 +152,8 @@
     "sha": "f85f89c59b63d532"
   },
   "/en/whats-new/2.6.1": {
-    "words": 545,
-    "sha": "6d7d6918e0c6e77d"
+    "words": 582,
+    "sha": "de1c17d948e12964"
   },
   "/funktionen": {
     "words": 511,
@@ -204,8 +204,8 @@
     "sha": "b377aba42b6113db"
   },
   "/whats-new": {
-    "words": 1128,
-    "sha": "a069d18489cb5f4a"
+    "words": 1142,
+    "sha": "af1d38ede2686f7e"
   },
   "/whats-new/2.1.1": {
     "words": 456,
@@ -296,7 +296,7 @@
     "sha": "5aaa18c107f2d145"
   },
   "/whats-new/2.6.1": {
-    "words": 511,
-    "sha": "d3b72aa070289d9f"
+    "words": 543,
+    "sha": "6e927557c9b935b4"
   }
 }
