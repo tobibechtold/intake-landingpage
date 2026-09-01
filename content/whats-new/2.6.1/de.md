@@ -14,6 +14,7 @@ highlights:
   - "Android: Zum Prüfen einreichen bei Meine Produkte funktioniert wieder"
   - "Android: Getränke stehen im PDF-Export in Millilitern"
   - "Android: Das Suchfeld beim Essen hinzufügen ist im Dark Mode wieder gut sichtbar"
+  - "Android: Das Plus bei Meine Produkte öffnet direkt das Produktformular"
 ---
 
 ## Falls du 2.6.0 verpasst hast
@@ -42,6 +43,7 @@ Ein Redesign dieser Größe hat ein paar Ecken, die erst im Alltag auffallen. Da
 - „Zum Prüfen einreichen“ bei Meine Produkte funktioniert wieder. Das Produkt öffnet sich ausgefüllt im Formular, mit eingeschalteter Einreichung, statt auf einem leeren Bildschirm zu landen.
 - Im PDF-Export stehen als Getränk markierte Einträge jetzt in Millilitern statt in Gramm.
 - Das Suchfeld unten auf dem Bildschirm Essen hinzufügen hebt sich im Dark Mode wieder deutlich vom Hintergrund ab.
+- Das Plus bei Meine Produkte öffnet direkt das Produktformular statt des Bildschirms Essen hinzufügen. Speichern legt das Produkt an und bringt dich zurück zur Liste, ohne einen Tagebucheintrag.
 
 Das komplette Changelog findest du wie immer [hier](https://featurevoting.tobibechtold.dev/app/intake/changelog).
 

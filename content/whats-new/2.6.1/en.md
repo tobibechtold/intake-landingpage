@@ -14,6 +14,7 @@ highlights:
   - "Android: Submit for review on My Products works again"
   - "Android: Drinks are listed in millilitres in the PDF export"
   - "Android: The add food search field is clearly visible in dark mode again"
+  - "Android: The plus on My Products opens the product form directly"
 ---
 
 ## In case you missed 2.6.0
@@ -42,6 +43,7 @@ A redesign this size has a few corners that only show up in daily use. Thank you
 - "Submit for review" on My Products works again. The product opens prefilled in the form with submission switched on, instead of landing on an empty screen.
 - In the PDF export, entries marked as drinks are now listed in millilitres instead of grams.
 - The search field at the bottom of the add food screen stands out from the background in dark mode again.
+- The plus on My Products opens the product form directly instead of the add food screen. Saving creates the product and returns you to the list, without a diary entry.
 
 You can find the full changelog [here](https://featurevoting.tobibechtold.dev/app/intake/changelog).
 
