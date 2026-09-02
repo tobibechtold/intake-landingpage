@@ -2,7 +2,7 @@
 version: "2.6.2"
 publishedAt: "2026-09-02"
 title: "What's new in Intake 2.6.2"
-summary: "A new button deletes your Intake data in iCloud. Also: tags survive the daily library refresh, Health fills in your birthday, and no more freezes after switching to Health"
+summary: "A new button deletes your Intake data in iCloud. Also: tags survive the daily library refresh, Health fills in your birthday, and no more freezes after switching to Health. On Android: a readable water widget, honest submissions, and PDF boxes that fit"
 coverImage: "./assets/cover.svg"
 highlights:
   - "iOS: New: Delete iCloud data, a button in the iCloud settings"
@@ -12,6 +12,9 @@ highlights:
   - "iOS: No more freezes when switching between Intake and Health"
   - "iOS: The reset confirmation says that iCloud data stays, and where to delete it"
   - "iOS: Includes every fix from 2.6.1"
+  - "Android: The water widget stays readable at every fill level"
+  - "Android: Sent submissions read “Pending”, not “not sent”"
+  - "Android: The macro boxes in the PDF export fit on days with workouts"
 ---
 
 ## New: Delete iCloud data
@@ -40,6 +43,16 @@ Another user spent a few days testing Intake thoroughly with Apple Health and se
 - Onboarding asked Health for your date of birth and sex but never had permission to read them, so the form stayed on a default birth year. Intake now asks for both permissions, and the values arrive.
 - Switching to Health and back could start a second refresh on top of the one still running. With many diary days, the app then froze for seconds. One refresh runs at a time now.
 - The reset confirmation promised to delete your data in iCloud too. The app never did that, and the data came back with the next sync. The confirmation now says what really happens: this device is cleared, iCloud data stays, and it points to the new button in the iCloud settings.
+
+## Android: water widget, submissions and PDF export
+
+Three reports from the feature voting, all three from 2.6.1 and all three fixed here. Thanks for reporting them.
+
+### Android
+
+- The water widget is readable again. The water was so bright and the surface line so white that the "3/7" line vanished into it as soon as the level reached it. The water is now a deeper blue gradient with a subtle surface, like on iOS, and the white text stays readable at every level. The preview when adding the widget also no longer shows placeholder bars under the text, and the Quick Log preview has dark tiles in dark mode now instead of white ones with invisible labels.
+- Under Library › Submissions, a submission you had sent read "Kept on this device only; not sent". The catalogue calls a received submission "submitted", and the app only knew its own "pending" and treated everything else as not sent. Sent submissions now read "Pending".
+- In the PDF export, the macro boxes were too short on days with workouts, and the values spilled out of them. The overview now grows with the workout box, which lists up to three workouts instead of silently showing only the first. Going through the whole report turned up three small things that came along: long notes no longer run out of their box, the "kg" in the weight overview no longer overlaps the top value, and the date column is labelled "Date" instead of "Date range". A day without meals now says exactly that, instead of "no data in range".
 
 ## In case you missed 2.6.1 or 2.6.0
 

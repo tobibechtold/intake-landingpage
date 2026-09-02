@@ -2,7 +2,7 @@
 version: "2.6.2"
 publishedAt: "2026-09-02"
 title: "Was ist neu in Intake 2.6.2"
-summary: "Ein neuer Button löscht deine Intake-Daten in iCloud. Dazu: Schlagwörter überstehen die tägliche Aktualisierung der Bibliothek, Health füllt den Geburtstag aus, keine Freezes mehr nach dem Wechsel zu Health"
+summary: "Ein neuer Button löscht deine Intake-Daten in iCloud. Dazu: Schlagwörter überstehen die tägliche Aktualisierung der Bibliothek, Health füllt den Geburtstag aus, keine Freezes mehr nach dem Wechsel zu Health. Auf Android: lesbares Wasser-Widget, ehrliche Einreichungen, passende PDF-Felder"
 coverImage: "./assets/cover.svg"
 highlights:
   - "iOS: Neu: iCloud-Daten löschen, ein Button in den iCloud-Einstellungen"
@@ -12,6 +12,9 @@ highlights:
   - "iOS: Keine Freezes mehr beim Wechsel zwischen Intake und Health"
   - "iOS: Die Abfrage beim Zurücksetzen sagt, dass iCloud-Daten bleiben, und wo du sie löschst"
   - "iOS: Enthält alle Fehlerbehebungen aus 2.6.1"
+  - "Android: Das Wasser-Widget bleibt bei jedem Füllstand lesbar"
+  - "Android: Gesendete Einreichungen stehen als „In Prüfung“, nicht als „nicht gesendet“"
+  - "Android: Die Makro-Felder im PDF-Export passen auch an Tagen mit Workouts"
 ---
 
 ## Neu: iCloud-Daten löschen
@@ -40,6 +43,16 @@ Ein anderer Nutzer hat Intake ein paar Tage lang gründlich mit Apple Health get
 - Das Onboarding fragte Health nach Geburtsdatum und Geschlecht, hatte aber nie die Berechtigung, sie zu lesen. Das Formular blieb deshalb bei einem Standard-Geburtsjahr. Jetzt fragt Intake beide Berechtigungen ab, und die Werte kommen an.
 - Ein Wechsel zu Health und zurück konnte eine zweite Aktualisierung über die noch laufende erste legen. Bei vielen Tagebuchtagen fror die App dann für Sekunden ein. Jetzt läuft eine Aktualisierung nach der anderen.
 - Die Abfrage beim Zurücksetzen versprach, auch die Daten in iCloud zu löschen. Das hat die App nie getan, die Daten kamen mit der nächsten Synchronisierung zurück. Die Abfrage sagt jetzt, was wirklich passiert: Dieses Gerät wird geleert, iCloud-Daten bleiben, und sie verweist auf den neuen Button in den iCloud-Einstellungen.
+
+## Android: Wasser-Widget, Einreichungen und PDF-Export
+
+Drei Meldungen aus dem Feature-Voting, alle drei aus 2.6.1 und alle drei hier behoben. Danke fürs Melden.
+
+### Android
+
+- Das Wasser-Widget ist wieder lesbar. Das Wasser war so hell und die Linie an der Oberfläche so weiß, dass die Zeile „3/7“ darin verschwand, sobald der Füllstand sie erreichte. Das Wasser ist jetzt ein kräftigerer Blauverlauf mit einer dezenten Oberfläche, wie auf iOS, und der weiße Text bleibt bei jedem Füllstand lesbar. Die Vorschau beim Hinzufügen zeigt außerdem keine Platzhalter mehr unter dem Text, und die Vorschau von „Mahlzeit schnell erfassen“ hat im Dark Mode jetzt dunkle Kacheln statt weißer mit unsichtbarer Schrift.
+- Unter Bibliothek › Einreichungen stand eine gesendete Einreichung als „Nur auf diesem Gerät; nicht gesendet“. Der Katalog nennt eine eingegangene Einreichung „submitted“, die App kannte nur ihr eigenes „pending“ und hielt alles andere für nicht gesendet. Gesendete Einreichungen stehen jetzt als „In Prüfung“.
+- Im PDF-Export waren die Makro-Felder an Tagen mit Aktivitäten zu niedrig, und die Werte ragten aus den Feldern. Die Übersicht wächst jetzt mit dem Workout-Feld, das bis zu drei Workouts zeigt statt stumm nur das erste. Beim Durchsehen des ganzen Berichts sind noch drei Kleinigkeiten mitgegangen: Lange Notizen laufen nicht mehr aus ihrem Feld, in der Gewichtsübersicht überlappt das „kg“ nicht mehr den obersten Wert, und die Datumsspalte heißt „Datum“ statt „Zeitraum“. Ein Tag ohne Mahlzeiten sagt jetzt genau das, statt „keine Daten im Zeitraum“.
 
 ## Falls du 2.6.1 oder 2.6.0 verpasst hast
 
