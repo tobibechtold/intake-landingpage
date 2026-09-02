@@ -2,10 +2,13 @@
 version: "2.6.2"
 publishedAt: "2026-09-02"
 title: "Was ist neu in Intake 2.6.2"
-summary: "Ein neuer Button löscht deine Intake-Daten in iCloud. Dazu: Schlagwörter überstehen die tägliche Aktualisierung der Bibliothek, Health füllt den Geburtstag aus, keine Freezes mehr nach dem Wechsel zu Health. Auf Android: lesbares Wasser-Widget, ehrliche Einreichungen, passende PDF-Felder"
+summary: "Ein neuer Button löscht deine Intake-Daten in iCloud, und das Einreichen zur Prüfung funktioniert wieder, auch aus der Bibliothek. Dazu: keine Freezes mehr beim Scannen mehrerer Produkte nacheinander, Schlagwörter überstehen die tägliche Aktualisierung der Bibliothek, Health füllt den Geburtstag aus. Auf Android: lesbares Wasser-Widget, ehrliche Einreichungen, passende PDF-Felder"
 coverImage: "./assets/cover.svg"
 highlights:
   - "iOS: Neu: iCloud-Daten löschen, ein Button in den iCloud-Einstellungen"
+  - "iOS: Mehrere Produkte nacheinander zu scannen friert den Produktbildschirm nicht mehr ein"
+  - "iOS: Zur Prüfung einreichen geht aus der Bibliothek, mit Label-Scanner, Option ohne Barcode und einer Liste, was noch fehlt"
+  - "iOS: Ein eigenes Produkt einzureichen verdoppelt es nicht mehr, und es steht unter Einreichungen"
   - "iOS: Schlagwörter verschwinden nicht mehr nach der täglichen Aktualisierung der Bibliothek"
   - "iOS: Ausgeblendete häufige Lebensmittel und entfernte Favoriten kommen nicht mehr zurück"
   - "iOS: Das Onboarding übernimmt Geburtsdatum und Geschlecht wirklich aus Health"
@@ -23,6 +26,29 @@ highlights:
 In den iCloud-Einstellungen gibt es jetzt einen Button „iCloud-Daten löschen“. Er entfernt alles, was Intake in iCloud gespeichert hat: Profil, Tagebuch, Bibliothek, Rezepte, Produkte und Körpermaße. Die Daten auf deinem Gerät bleiben, und die iCloud-Synchronisierung wird ausgeschaltet, damit nichts erneut hochgeladen wird. Andere Geräte behalten ihre eigenen Kopien; wenn dort die Synchronisierung an ist, laden sie ihre Daten wieder hoch.
 
 Der Button ist bewusst vom Zurücksetzen getrennt: Zurücksetzen leert nur dieses Gerät und sagt das jetzt auch so. Wer beides will, tippt zweimal.
+
+## Mehrere Produkte nacheinander scannen
+
+Ein Nutzer schrieb: Seit 2.6.1 blieben nach dem Scannen mehrerer Zutaten hintereinander die Buttons auf dem Produktbildschirm tot. Die Menge ließ sich nicht ändern, der Haken tat nichts, und nach ein paar Sekunden schloss sich der Bildschirm von selbst. Ich konnte es nach vier oder fünf Scans desselben Produkts nachstellen.
+
+Die Ursache war nicht der Scanner. Jedes Speichern nach einem Scan schrieb die Bibliothek mehrmals auf dem Hauptthread, und ab dem dritten oder vierten Produkt stauten sich diese Schreibvorgänge, bis der Bildschirm auf keinen Tipp mehr reagieren konnte. Das Speichern läuft jetzt im Hintergrund, ein Schreibvorgang nach dem anderen, und der Bildschirm bleibt bedienbar, egal wie viele Produkte du scannst.
+
+### iOS
+
+- Mehrere Produkte nacheinander zu scannen konnte den Produktbildschirm sekundenlang einfrieren oder von selbst schließen. Das Speichern läuft jetzt im Hintergrund, der Bildschirm bleibt bedienbar.
+
+## Zur Prüfung einreichen, neu gebaut
+
+Das Einreichen eines Produkts zur Prüfung war gleich an mehreren Stellen kaputt, und aufgefallen ist es mir beim Testen genau dieser Version. Ein Produkt aus der Bibliothek anzulegen hatte keinen Nährwertlabel-Scanner, keinen Weg zum Einreichen und keine Option „ohne Barcode“. Ein eigenes Produkt mit einem Barcode einzureichen, den es schon gibt, hinterließ eine zweite Kopie in Meine Produkte und nichts unter Einreichungen. Und der Haken war einfach grau, ohne zu sagen, was fehlt.
+
+All das ist behoben. Das Produktformular ist jetzt überall dasselbe und sagt dir direkt unter dem Feld, was eine Einreichung noch braucht.
+
+### iOS
+
+- Lege ein Produkt in der Bibliothek an und reiche es aus demselben Formular ein, mit Nährwertlabel-Scanner und einer Option „ohne Barcode“.
+- Das Formular listet vor dem Senden auf, was noch fehlt, Name, Barcode oder Marke, direkt dort, wo du es ausfüllst, statt eines grauen Hakens.
+- Ein Barcode, der schon in der Datenbank ist, erzeugt kein Duplikat mehr. Die App sagt es dir und öffnet stattdessen dieses Produkt zum Eintragen.
+- Ein eigenes Produkt einzureichen hinterließ bisher eine zweite Kopie in Meine Produkte und nichts unter Einreichungen. Jetzt bleibt es ein Produkt, steht mit Status unter Einreichungen, und das Formular sagt dir, wenn das Senden fehlschlägt.
 
 ## Schlagwörter bleiben
 

@@ -2,10 +2,13 @@
 version: "2.6.2"
 publishedAt: "2026-09-02"
 title: "What's new in Intake 2.6.2"
-summary: "A new button deletes your Intake data in iCloud. Also: tags survive the daily library refresh, Health fills in your birthday, and no more freezes after switching to Health. On Android: a readable water widget, honest submissions, and PDF boxes that fit"
+summary: "A new button deletes your Intake data in iCloud, and submitting a product for review works again, from the Library too. Also: no more freezes when scanning several products in a row, tags survive the daily library refresh, and Health fills in your birthday. On Android: a readable water widget, honest submissions, and PDF boxes that fit"
 coverImage: "./assets/cover.svg"
 highlights:
   - "iOS: New: Delete iCloud data, a button in the iCloud settings"
+  - "iOS: Scanning several products in a row no longer freezes the product screen"
+  - "iOS: Submit for review works from the Library, with label scanner, no-barcode option and a list of what is missing"
+  - "iOS: Submitting your own product no longer duplicates it, and it shows up under Submissions"
   - "iOS: Tags no longer vanish after the daily library refresh"
   - "iOS: Hidden frequent foods and removed favourites no longer come back"
   - "iOS: Onboarding really takes your date of birth and sex from Health now"
@@ -23,6 +26,29 @@ highlights:
 The iCloud settings now have a "Delete iCloud data" button. It removes everything Intake stored in iCloud: profile, diary, library, recipes, products and body measurements. The data on your device stays, and iCloud sync is switched off so nothing is uploaded again. Other devices keep their own copies; if their sync is on, they upload their data again.
 
 The button is deliberately separate from the reset: the reset clears only this device and now says so. If you want both, that is two taps.
+
+## Scanning several products in a row
+
+A user wrote in: since 2.6.1, scanning several ingredients one after another left the product screen with dead buttons. The amount could not be changed, the checkmark did nothing, and after a few seconds the screen closed on its own. I could reproduce it after four or five scans of the same product.
+
+The cause was not the scanner. Every save after a scan wrote the library several times on the main thread, and by the third or fourth product those writes piled up until the screen could no longer react to a tap. Saving now runs in the background, one write at a time, and the screen stays usable however many products you scan.
+
+### iOS
+
+- Scanning several products in a row could leave the product screen frozen for seconds or close it on its own. Saving now runs in the background, and the screen stays responsive.
+
+## Submit for review, rebuilt
+
+Submitting a product for review was broken in more ways than one, and I found out while testing this very version. Creating a product from the Library had no nutrition label scanner, no way to send it in, and no "no barcode" option. Submitting one of your own products with a barcode that already exists left a second copy in My Products and nothing under Submissions. And the checkmark just greyed out without saying what was missing.
+
+All of that is fixed. The product form is the same everywhere now, and it tells you what a submission still needs, right under the field.
+
+### iOS
+
+- Create a product in the Library and send it in from the same form, with the nutrition label scanner and a "no barcode" option.
+- The form lists what is still missing before sending, name, barcode or brand, right where you fill it in, instead of a greyed-out checkmark.
+- A barcode that is already in the database no longer creates a duplicate. The app tells you and opens that product for logging instead.
+- Submitting one of your own products used to leave a second copy in My Products and nothing under Submissions. It now stays one product, appears under Submissions with its status, and the form says so if sending failed.
 
 ## Your tags stay
 
