@@ -2,16 +2,23 @@
 version: "2.6.2"
 publishedAt: "2026-09-02"
 title: "What's new in Intake 2.6.2"
-summary: "Tags survive the daily library refresh, Health fills in your birthday, no more freezes after switching to Health, and the reset says what it does"
+summary: "A new button deletes your Intake data in iCloud. Also: tags survive the daily library refresh, Health fills in your birthday, and no more freezes after switching to Health"
 coverImage: "./assets/cover.svg"
 highlights:
+  - "iOS: New: Delete iCloud data, a button in the iCloud settings"
   - "iOS: Tags no longer vanish after the daily library refresh"
   - "iOS: Hidden frequent foods and removed favourites no longer come back"
   - "iOS: Onboarding really takes your date of birth and sex from Health now"
   - "iOS: No more freezes when switching between Intake and Health"
-  - "iOS: The reset confirmation says that iCloud data stays"
+  - "iOS: The reset confirmation says that iCloud data stays, and where to delete it"
   - "iOS: Includes every fix from 2.6.1"
 ---
+
+## New: Delete iCloud data
+
+The iCloud settings now have a "Delete iCloud data" button. It removes everything Intake stored in iCloud: profile, diary, library, recipes, products and body measurements. The data on your device stays, and iCloud sync is switched off so nothing is uploaded again. Other devices keep their own copies; if their sync is on, they upload their data again.
+
+The button is deliberately separate from the reset: the reset clears only this device and now says so. If you want both, that is two taps.
 
 ## Your tags stay
 
@@ -32,7 +39,7 @@ Another user spent a few days testing Intake thoroughly with Apple Health and se
 
 - Onboarding asked Health for your date of birth and sex but never had permission to read them, so the form stayed on a default birth year. Intake now asks for both permissions, and the values arrive.
 - Switching to Health and back could start a second refresh on top of the one still running. With many diary days, the app then froze for seconds. One refresh runs at a time now.
-- The reset confirmation promised to delete your data in iCloud too. The app never did that, and the data came back with the next sync. The confirmation now says what really happens: this device is cleared, iCloud data stays. Real deletion in iCloud is in the works.
+- The reset confirmation promised to delete your data in iCloud too. The app never did that, and the data came back with the next sync. The confirmation now says what really happens: this device is cleared, iCloud data stays, and it points to the new button in the iCloud settings.
 
 ## In case you missed 2.6.1 or 2.6.0
 

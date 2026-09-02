@@ -2,16 +2,23 @@
 version: "2.6.2"
 publishedAt: "2026-09-02"
 title: "Was ist neu in Intake 2.6.2"
-summary: "Schlagwörter überstehen die tägliche Aktualisierung der Bibliothek, Health füllt den Geburtstag aus, keine Freezes mehr nach dem Wechsel zu Health, und Zurücksetzen sagt, was es tut"
+summary: "Ein neuer Button löscht deine Intake-Daten in iCloud. Dazu: Schlagwörter überstehen die tägliche Aktualisierung der Bibliothek, Health füllt den Geburtstag aus, keine Freezes mehr nach dem Wechsel zu Health"
 coverImage: "./assets/cover.svg"
 highlights:
+  - "iOS: Neu: iCloud-Daten löschen, ein Button in den iCloud-Einstellungen"
   - "iOS: Schlagwörter verschwinden nicht mehr nach der täglichen Aktualisierung der Bibliothek"
   - "iOS: Ausgeblendete häufige Lebensmittel und entfernte Favoriten kommen nicht mehr zurück"
   - "iOS: Das Onboarding übernimmt Geburtsdatum und Geschlecht wirklich aus Health"
   - "iOS: Keine Freezes mehr beim Wechsel zwischen Intake und Health"
-  - "iOS: Die Abfrage beim Zurücksetzen sagt, dass iCloud-Daten bleiben"
+  - "iOS: Die Abfrage beim Zurücksetzen sagt, dass iCloud-Daten bleiben, und wo du sie löschst"
   - "iOS: Enthält alle Fehlerbehebungen aus 2.6.1"
 ---
+
+## Neu: iCloud-Daten löschen
+
+In den iCloud-Einstellungen gibt es jetzt einen Button „iCloud-Daten löschen“. Er entfernt alles, was Intake in iCloud gespeichert hat: Profil, Tagebuch, Bibliothek, Rezepte, Produkte und Körpermaße. Die Daten auf deinem Gerät bleiben, und die iCloud-Synchronisierung wird ausgeschaltet, damit nichts erneut hochgeladen wird. Andere Geräte behalten ihre eigenen Kopien; wenn dort die Synchronisierung an ist, laden sie ihre Daten wieder hoch.
+
+Der Button ist bewusst vom Zurücksetzen getrennt: Zurücksetzen leert nur dieses Gerät und sagt das jetzt auch so. Wer beides will, tippt zweimal.
 
 ## Schlagwörter bleiben
 
@@ -32,7 +39,7 @@ Ein anderer Nutzer hat Intake ein paar Tage lang gründlich mit Apple Health get
 
 - Das Onboarding fragte Health nach Geburtsdatum und Geschlecht, hatte aber nie die Berechtigung, sie zu lesen. Das Formular blieb deshalb bei einem Standard-Geburtsjahr. Jetzt fragt Intake beide Berechtigungen ab, und die Werte kommen an.
 - Ein Wechsel zu Health und zurück konnte eine zweite Aktualisierung über die noch laufende erste legen. Bei vielen Tagebuchtagen fror die App dann für Sekunden ein. Jetzt läuft eine Aktualisierung nach der anderen.
-- Die Abfrage beim Zurücksetzen versprach, auch die Daten in iCloud zu löschen. Das hat die App nie getan, die Daten kamen mit der nächsten Synchronisierung zurück. Die Abfrage sagt jetzt, was wirklich passiert: Dieses Gerät wird geleert, iCloud-Daten bleiben. Ein echtes Löschen in iCloud ist in Arbeit.
+- Die Abfrage beim Zurücksetzen versprach, auch die Daten in iCloud zu löschen. Das hat die App nie getan, die Daten kamen mit der nächsten Synchronisierung zurück. Die Abfrage sagt jetzt, was wirklich passiert: Dieses Gerät wird geleert, iCloud-Daten bleiben, und sie verweist auf den neuen Button in den iCloud-Einstellungen.
 
 ## Falls du 2.6.1 oder 2.6.0 verpasst hast
 
