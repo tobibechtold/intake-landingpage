@@ -1,0 +1,34 @@
+---
+version: "2.6.2"
+publishedAt: "2026-09-02"
+title: "What's new in Intake 2.6.2"
+summary: "Tags, hidden frequent foods and removed favourites now survive the daily library refresh"
+coverImage: "./assets/cover.svg"
+highlights:
+  - "iOS: Tags no longer vanish after the daily library refresh"
+  - "iOS: Hidden frequent foods and removed favourites no longer come back"
+  - "iOS: Includes every fix from 2.6.1"
+---
+
+## Your tags stay
+
+A user reported that all of their tags vanished twice within two days. Their debug log showed the cause: once a day, Intake checks your saved foods against the database so corrected nutrition values reach you. While doing that, the app rewrote the list and left the tags behind. The same happened to frequent foods you had hidden and to removed favourites: after the refresh, they were back.
+
+All three now survive the refresh. If this hit you, I am sorry. The app cannot restore lost tags, as they live only on your device.
+
+### iOS
+
+- Tags on your foods could vanish after the daily library refresh. They now stay.
+- Hidden frequent foods and removed favourites came back after the same refresh. They now stay the way you set them.
+
+## In case you missed 2.6.1 or 2.6.0
+
+On iOS, 2.6.2 also includes every fix from 2.6.1: the empty screen after a barcode scan, shifting search results, the switch between barcode and Meal Scan, unknown barcodes opening as a new product, and tenths of a gram in weight fields. The details are in [What's new in Intake 2.6.1](/en/whats-new/2.6.1).
+
+And if you are coming straight from 2.5: 2.6.0 was the biggest release in a long time, with the new Library, the rebuilt add food screen, and spoons, cups and glasses as units. The whole story with screenshots is in [What's new in Intake 2.6.0](/en/whats-new/2.6.0).
+
+You can find the full changelog [here](https://featurevoting.tobibechtold.dev/app/intake/changelog).
+
+Thank you for using Intake.
+
+Tobi
