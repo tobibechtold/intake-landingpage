@@ -2,11 +2,14 @@
 version: "2.6.2"
 publishedAt: "2026-09-02"
 title: "What's new in Intake 2.6.2"
-summary: "Tags, hidden frequent foods and removed favourites now survive the daily library refresh"
+summary: "Tags survive the daily library refresh, Health fills in your birthday, no more freezes after switching to Health, and the reset says what it does"
 coverImage: "./assets/cover.svg"
 highlights:
   - "iOS: Tags no longer vanish after the daily library refresh"
   - "iOS: Hidden frequent foods and removed favourites no longer come back"
+  - "iOS: Onboarding really takes your date of birth and sex from Health now"
+  - "iOS: No more freezes when switching between Intake and Health"
+  - "iOS: The reset confirmation says that iCloud data stays"
   - "iOS: Includes every fix from 2.6.1"
 ---
 
@@ -20,6 +23,16 @@ All three now survive the refresh. If this hit you, I am sorry. The app cannot r
 
 - Tags on your foods could vanish after the daily library refresh. They now stay.
 - Hidden frequent foods and removed favourites came back after the same refresh. They now stay the way you set them.
+
+## Three more bugs from a test report
+
+Another user spent a few days testing Intake thoroughly with Apple Health and sent a list. Three items from it are fixed here; the bigger ones get an update of their own.
+
+### iOS
+
+- Onboarding asked Health for your date of birth and sex but never had permission to read them, so the form stayed on a default birth year. Intake now asks for both permissions, and the values arrive.
+- Switching to Health and back could start a second refresh on top of the one still running. With many diary days, the app then froze for seconds. One refresh runs at a time now.
+- The reset confirmation promised to delete your data in iCloud too. The app never did that, and the data came back with the next sync. The confirmation now says what really happens: this device is cleared, iCloud data stays. Real deletion in iCloud is in the works.
 
 ## In case you missed 2.6.1 or 2.6.0
 
