@@ -15,6 +15,7 @@ highlights:
   - "Android: Das Wasser-Widget bleibt bei jedem Füllstand lesbar"
   - "Android: Gesendete Einreichungen stehen als „In Prüfung“, nicht als „nicht gesendet“"
   - "Android: Die Makro-Felder im PDF-Export passen auch an Tagen mit Workouts"
+  - "Android: Zum Prüfen einreichen bei Meine Produkte schließt sich nach dem Senden und lässt sich abbrechen"
 ---
 
 ## Neu: iCloud-Daten löschen
@@ -52,6 +53,7 @@ Drei Meldungen aus dem Feature-Voting, alle drei aus 2.6.1 und alle drei hier be
 
 - Das Wasser-Widget ist wieder lesbar. Das Wasser war so hell und die Linie an der Oberfläche so weiß, dass die Zeile „3/7“ darin verschwand, sobald der Füllstand sie erreichte. Das Wasser ist jetzt ein kräftigerer Blauverlauf mit einer dezenten Oberfläche, wie auf iOS, und der weiße Text bleibt bei jedem Füllstand lesbar. Die Vorschau beim Hinzufügen zeigt außerdem keine Platzhalter mehr unter dem Text, und die Vorschau von „Mahlzeit schnell erfassen“ hat im Dark Mode jetzt dunkle Kacheln statt weißer mit unsichtbarer Schrift.
 - Unter Bibliothek › Einreichungen stand eine gesendete Einreichung als „Nur auf diesem Gerät; nicht gesendet“. Der Katalog nennt eine eingegangene Einreichung „submitted“, die App kannte nur ihr eigenes „pending“ und hielt alles andere für nicht gesendet. Gesendete Einreichungen stehen jetzt als „In Prüfung“.
+- „Zum Prüfen einreichen“ bei Meine Produkte öffnete ein Formular ohne Rückweg: Der Pfeil zurück tat nichts, und nach dem Senden blieb das Formular einfach stehen, obwohl die Einreichung längst unterwegs war. Das Formular hatte beim Öffnen den Bildschirm darunter entfernt, statt sich darüber zu legen. Jetzt führt der Pfeil zurück zur Liste, nach dem Senden schließt sich das Formular von selbst, und die Liste bestätigt, dass die Einreichung gesendet wurde, oder sagt, dass sie nur auf diesem Gerät geblieben ist. Solange eine Einreichung in Prüfung ist, steht das Produkt als „In Prüfung“ in der Liste und lässt sich nicht ein zweites Mal einreichen.
 - Im PDF-Export waren die Makro-Felder an Tagen mit Aktivitäten zu niedrig, und die Werte ragten aus den Feldern. Die Übersicht wächst jetzt mit dem Workout-Feld, das bis zu drei Workouts zeigt statt stumm nur das erste. Beim Durchsehen des ganzen Berichts sind noch drei Kleinigkeiten mitgegangen: Lange Notizen laufen nicht mehr aus ihrem Feld, in der Gewichtsübersicht überlappt das „kg“ nicht mehr den obersten Wert, und die Datumsspalte heißt „Datum“ statt „Zeitraum“. Ein Tag ohne Mahlzeiten sagt jetzt genau das, statt „keine Daten im Zeitraum“.
 
 ## Falls du 2.6.1 oder 2.6.0 verpasst hast

@@ -15,6 +15,7 @@ highlights:
   - "Android: The water widget stays readable at every fill level"
   - "Android: Sent submissions read “Pending”, not “not sent”"
   - "Android: The macro boxes in the PDF export fit on days with workouts"
+  - "Android: Submit for review on My products closes after sending and can be cancelled"
 ---
 
 ## New: Delete iCloud data
@@ -52,6 +53,7 @@ Three reports from the feature voting, all three from 2.6.1 and all three fixed 
 
 - The water widget is readable again. The water was so bright and the surface line so white that the "3/7" line vanished into it as soon as the level reached it. The water is now a deeper blue gradient with a subtle surface, like on iOS, and the white text stays readable at every level. The preview when adding the widget also no longer shows placeholder bars under the text, and the Quick Log preview has dark tiles in dark mode now instead of white ones with invisible labels.
 - Under Library › Submissions, a submission you had sent read "Kept on this device only; not sent". The catalogue calls a received submission "submitted", and the app only knew its own "pending" and treated everything else as not sent. Sent submissions now read "Pending".
+- "Submit for review" on My products opened a form with no way back: the back arrow did nothing, and after sending, the form just stayed put even though the submission had long gone out. Opening the form had removed the screen underneath instead of stacking on top of it. The back arrow now returns to the list, the form closes by itself after sending, and the list confirms that the submission was sent, or says that it stayed on this device. While a submission is in review, the product reads "Pending" in the list and cannot be submitted a second time.
 - In the PDF export, the macro boxes were too short on days with workouts, and the values spilled out of them. The overview now grows with the workout box, which lists up to three workouts instead of silently showing only the first. Going through the whole report turned up three small things that came along: long notes no longer run out of their box, the "kg" in the weight overview no longer overlaps the top value, and the date column is labelled "Date" instead of "Date range". A day without meals now says exactly that, instead of "no data in range".
 
 ## In case you missed 2.6.1 or 2.6.0
