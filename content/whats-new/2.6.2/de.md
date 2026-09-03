@@ -49,6 +49,8 @@ All das ist behoben. Das Produktformular ist jetzt überall dasselbe und sagt di
 - Das Formular listet vor dem Senden auf, was noch fehlt, Name, Barcode oder Marke, direkt dort, wo du es ausfüllst, statt eines grauen Hakens.
 - Ein Barcode, der schon in der Datenbank ist, erzeugt kein Duplikat mehr. Die App sagt es dir und öffnet stattdessen dieses Produkt zum Eintragen.
 - Ein eigenes Produkt einzureichen hinterließ bisher eine zweite Kopie in Meine Produkte und nichts unter Einreichungen. Jetzt bleibt es ein Produkt, steht mit Status unter Einreichungen, und das Formular sagt dir, wenn das Senden fehlschlägt.
+- Ein Produkt, das schon in Prüfung ist, lässt sich nicht ein zweites Mal einreichen. Das Formular zeigt „Prüfung ausstehend“ statt des Schalters, und das Menü in Meine Produkte lässt „Zur Prüfung einreichen“ weg, bis die Prüfung abgeschlossen ist.
+- „Erstellen“ im Essen-hinzufügen-Sheet trug das Produkt ein, leerte das Formular und blieb dann stehen. Jetzt geht es nach dem Eintragen zurück zum Essen-hinzufügen-Bildschirm.
 
 ## Schlagwörter bleiben
 

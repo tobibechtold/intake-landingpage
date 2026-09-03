@@ -49,6 +49,8 @@ All of that is fixed. The product form is the same everywhere now, and it tells 
 - The form lists what is still missing before sending, name, barcode or brand, right where you fill it in, instead of a greyed-out checkmark.
 - A barcode that is already in the database no longer creates a duplicate. The app tells you and opens that product for logging instead.
 - Submitting one of your own products used to leave a second copy in My Products and nothing under Submissions. It now stays one product, appears under Submissions with its status, and the form says so if sending failed.
+- A product that is already in review cannot be sent in a second time. The form shows "Pending review" instead of the toggle, and the menu in My Products drops "Submit for review" until the review is done.
+- "Create" on the add food sheet logged the product, emptied the form and then stayed there. It now returns to the add food screen after the add.
 
 ## Your tags stay
 
