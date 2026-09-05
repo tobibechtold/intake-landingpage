@@ -9,6 +9,7 @@ highlights:
   - "iOS: A rejected product no longer sits under Submissions as in review for days"
   - "iOS: Submissions refresh when you open them and when you pull down"
   - "iOS: Finished reviews in their own section, with the reason for a rejection"
+  - "iOS: The week strip sits right on iOS 27 with day swiping switched off"
   - "Android: A rejected product no longer sits under Submissions as in review for days"
   - "Android: Submissions refresh when you open them and when you pull down"
   - "Android: Finished reviews in their own section, with the reason for a rejection"
@@ -29,6 +30,8 @@ Library › Submissions has a new "Finished reviews" section. It lists every rev
 - A product you sent in for review could stay listed as in review for days after it had been rejected. The verdict never reached the product because its id was compared case-sensitively. It lands now.
 - Submissions refresh when you open the screen, if the last check is older than five minutes, and any time you pull the list down. When the status cannot be checked, the list says so instead of pretending nothing changed.
 - A rejected product keeps the reviewer's reason and shows it under "Reason".
+- The Submissions row in the Library counts only what is still in review. Six finished reviews used to read as six things waiting.
+- On iOS 27, with swiping between days switched off, the week strip could open a couple of days off and drift further after a visit to Settings. It lands on the current week every time now.
 
 ### Android
 

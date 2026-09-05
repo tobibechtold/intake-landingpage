@@ -9,6 +9,7 @@ highlights:
   - "iOS: Ein abgelehntes Produkt steht nicht mehr tagelang als in Prüfung unter Einreichungen"
   - "iOS: Einreichungen aktualisieren sich beim Öffnen und beim Herunterziehen"
   - "iOS: Abgeschlossene Prüfungen in einem eigenen Abschnitt, mit Begründung bei Ablehnung"
+  - "iOS: Das Kalenderband sitzt auf iOS 27 richtig, auch mit ausgeschaltetem Wischen zwischen Tagen"
   - "Android: Ein abgelehntes Produkt steht nicht mehr tagelang als in Prüfung unter Einreichungen"
   - "Android: Einreichungen aktualisieren sich beim Öffnen und beim Herunterziehen"
   - "Android: Abgeschlossene Prüfungen in einem eigenen Abschnitt, mit Begründung bei Ablehnung"
@@ -29,6 +30,8 @@ Bibliothek › Einreichungen hat einen neuen Abschnitt „Abgeschlossene Prüfun
 - Ein zur Prüfung eingereichtes Produkt konnte tagelang als in Prüfung stehen, obwohl es abgelehnt war. Das Ergebnis erreichte das Produkt nie, weil seine ID unter Beachtung der Groß- und Kleinschreibung verglichen wurde. Jetzt kommt es an.
 - Einreichungen aktualisieren sich beim Öffnen, wenn die letzte Abfrage älter als fünf Minuten ist, und jederzeit beim Herunterziehen der Liste. Kann der Status nicht abgefragt werden, sagt die Liste das, statt so zu tun, als hätte sich nichts geändert.
 - Ein abgelehntes Produkt behält die Begründung der Prüfung und zeigt sie unter „Begründung“.
+- Die Zeile Einreichungen in der Bibliothek zählt nur noch, was noch in Prüfung ist. Sechs abgeschlossene Prüfungen sahen bisher aus wie sechs offene.
+- Auf iOS 27 konnte das Kalenderband bei ausgeschaltetem Wischen zwischen Tagen um ein paar Tage verschoben erscheinen und nach einem Besuch der Einstellungen weiter wandern. Jetzt landet es jedes Mal auf der aktuellen Woche.
 
 ### Android
 
