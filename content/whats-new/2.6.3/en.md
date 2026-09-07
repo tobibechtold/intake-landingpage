@@ -2,9 +2,10 @@
 version: "2.6.3"
 publishedAt: "2026-09-06"
 title: "What's new in Intake 2.6.3"
-summary: "Sending a product in for review asks for less: name, brand, barcode and the four core macros. Submissions refresh when you open them and on a pull, finished reviews sit in their own section, and a rejection comes with the reviewer's reason. On both platforms"
+summary: "Share what you eat: one sheet for the day, a meal, a food, an Intake AI estimate or a body trend, as stickers on your photo or finished pictures. Sending a product in for review asks for less: name, brand, barcode and the four core macros. Submissions refresh when you open them and on a pull, finished reviews sit in their own section, and a rejection comes with the reviewer's reason. On both platforms"
 coverImage: "./assets/cover.svg"
 highlights:
+  - "Both: Share what you eat as a sticker on your photo or a finished picture, from one sheet"
   - "Both: Submitting a product for review needs only name, brand, barcode and the four core macros"
   - "iOS: A rejected product no longer sits under Submissions as in review for days"
   - "iOS: Submissions refresh when you open them and when you pull down"
@@ -14,6 +15,16 @@ highlights:
   - "Android: Submissions refresh when you open them and when you pull down"
   - "Android: Finished reviews in their own section, with the reason for a rejection"
 ---
+
+## Share what you eat
+
+**One place to share.** The picture button on the day, a meal, a food, an Intake AI estimate or a body measurement opens the same sheet. Pick what to share, then the card.
+
+**Story stickers, on your photo.** Every card has a transparent version for your Instagram story, and a 4:5 one for carousels on Instagram and TikTok. Pick or take the photo in Intake and the sticker lands on it. An Intake AI photo estimate brings your food photo along.
+
+**Day, meal or food.** The whole day with target and burned calories, a meal with its foods, or a single food, as 4:5 pictures. The same picture on iPhone and Android.
+
+**Your trend, one number.** Share how your weight or any body measurement moved over the last week, month, three months or year, as one big number and one line.
 
 ## Simpler review submissions
 

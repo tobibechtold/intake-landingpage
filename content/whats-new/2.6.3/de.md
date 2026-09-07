@@ -2,9 +2,10 @@
 version: "2.6.3"
 publishedAt: "2026-09-06"
 title: "Was ist neu in Intake 2.6.3"
-summary: "Ein Produkt zur Prüfung einzureichen verlangt weniger: Name, Marke, Barcode und die vier Kern-Makros. Einreichungen aktualisieren sich beim Öffnen und beim Herunterziehen, abgeschlossene Prüfungen stehen in einem eigenen Abschnitt, und eine Ablehnung kommt mit Begründung. Auf beiden Plattformen"
+summary: "Teile, was du isst: ein Blatt für den Tag, eine Mahlzeit, ein Lebensmittel, eine Intake AI-Schätzung oder einen Körpertrend, als Sticker auf deinem Foto oder als fertiges Bild. Ein Produkt zur Prüfung einzureichen verlangt weniger: Name, Marke, Barcode und die vier Kern-Makros. Einreichungen aktualisieren sich beim Öffnen und beim Herunterziehen, abgeschlossene Prüfungen stehen in einem eigenen Abschnitt, und eine Ablehnung kommt mit Begründung. Auf beiden Plattformen"
 coverImage: "./assets/cover.svg"
 highlights:
+  - "Beide: Teile, was du isst, als Sticker auf deinem Foto oder als fertiges Bild, aus einem Blatt"
   - "Beide: Ein Produkt zur Prüfung einzureichen braucht nur Name, Marke, Barcode und die vier Kern-Makros"
   - "iOS: Ein abgelehntes Produkt steht nicht mehr tagelang als in Prüfung unter Einreichungen"
   - "iOS: Einreichungen aktualisieren sich beim Öffnen und beim Herunterziehen"
@@ -14,6 +15,16 @@ highlights:
   - "Android: Einreichungen aktualisieren sich beim Öffnen und beim Herunterziehen"
   - "Android: Abgeschlossene Prüfungen in einem eigenen Abschnitt, mit Begründung bei Ablehnung"
 ---
+
+## Teile, was du isst
+
+**Ein Ort zum Teilen.** Der Bild-Button beim Tag, bei einer Mahlzeit, einem Lebensmittel, einer Intake AI-Schätzung oder einem Körpermaß öffnet dasselbe Blatt. Wähle, was du teilst, dann die Karte.
+
+**Story-Sticker, auf deinem Foto.** Jede Karte gibt es als transparente Version für deine Instagram-Story und als 4:5-Version für Karussells auf Instagram und TikTok. Wähle oder mache das Foto in Intake, der Sticker landet darauf. Eine Intake AI-Fotoschätzung bringt dein Essensfoto gleich mit.
+
+**Tag, Mahlzeit oder Lebensmittel.** Der ganze Tag mit Ziel und verbrannten Kalorien, eine Mahlzeit mit ihren Lebensmitteln oder ein einzelnes Lebensmittel, als 4:5-Bilder. Dasselbe Bild auf iPhone und Android.
+
+**Dein Trend, eine Zahl.** Teile, wie sich dein Gewicht oder ein anderes Körpermaß in der letzten Woche, im letzten Monat, in drei Monaten oder im Jahr verändert hat, als eine große Zahl und eine Linie.
 
 ## Einfachere Einreichungen
 
