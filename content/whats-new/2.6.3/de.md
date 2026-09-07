@@ -10,7 +10,8 @@ highlights:
   - "iOS: Ein abgelehntes Produkt steht nicht mehr tagelang als in Prüfung unter Einreichungen"
   - "iOS: Einreichungen aktualisieren sich beim Öffnen und beim Herunterziehen"
   - "iOS: Abgeschlossene Prüfungen in einem eigenen Abschnitt, mit Begründung bei Ablehnung"
-  - "iOS: Das Kalenderband sitzt auf iOS 27 richtig, auch mit ausgeschaltetem Wischen zwischen Tagen"
+  - "iOS: Der Barcode-Scanner startet schneller"
+  - "iOS: Das Kalenderband sitzt richtig und rückt sich selbst zurecht"
   - "Android: Ein abgelehntes Produkt steht nicht mehr tagelang als in Prüfung unter Einreichungen"
   - "Android: Einreichungen aktualisieren sich beim Öffnen und beim Herunterziehen"
   - "Android: Abgeschlossene Prüfungen in einem eigenen Abschnitt, mit Begründung bei Ablehnung"
@@ -20,7 +21,11 @@ highlights:
 
 **Ein Ort zum Teilen.** Der Bild-Button beim Tag, bei einer Mahlzeit, einem Lebensmittel, einer Intake AI-Schätzung oder einem Körpermaß öffnet dasselbe Blatt. Wähle, was du teilst, dann die Karte.
 
+![Das Teilen-Blatt](assets/share-sheet-de.mp4)
+
 **Story-Sticker, auf deinem Foto.** Jede Karte gibt es als transparente Version für deine Instagram-Story und als 4:5-Version für Karussells auf Instagram und TikTok. Wähle oder mache das Foto in Intake, der Sticker landet darauf. Eine Intake AI-Fotoschätzung bringt dein Essensfoto gleich mit.
+
+![Ein Story-Sticker auf einem Foto](assets/share-sticker-de.jpg)
 
 **Tag, Mahlzeit oder Lebensmittel.** Der ganze Tag mit Ziel und verbrannten Kalorien, eine Mahlzeit mit ihren Lebensmitteln oder ein einzelnes Lebensmittel, als 4:5-Bilder. Dasselbe Bild auf iPhone und Android.
 
@@ -34,6 +39,10 @@ Die beiden Apps verlangten Unterschiedliches, bevor ein Produkt zur Prüfung geh
 
 Bibliothek › Einreichungen hat einen neuen Abschnitt „Abgeschlossene Prüfungen“. Er listet jede entschiedene Prüfung, neueste zuerst, mit dem Ergebnis, dem Datum der Entscheidung und bei einer Ablehnung mit der Begründung der Prüfung. Offene Einreichungen bleiben oben. Ein Tipp auf eine abgeschlossene Prüfung tut nichts; sie ist ein Protokoll, kein Weg zurück ins Produkt.
 
+## Der Scanner startet schneller
+
+Die Kameravorschau hielt die App beim Start des Barcode-Scanners etwa eine Sekunde lang an. Jetzt wird sie angelegt, bevor die Kamera konfiguriert wird, und der Scanner steht sofort.
+
 ## Fehlerbehebungen
 
 ### iOS
@@ -42,7 +51,7 @@ Bibliothek › Einreichungen hat einen neuen Abschnitt „Abgeschlossene Prüfun
 - Einreichungen aktualisieren sich beim Öffnen, wenn die letzte Abfrage älter als fünf Minuten ist, und jederzeit beim Herunterziehen der Liste. Kann der Status nicht abgefragt werden, sagt die Liste das, statt so zu tun, als hätte sich nichts geändert.
 - Ein abgelehntes Produkt behält die Begründung der Prüfung und zeigt sie unter „Begründung“.
 - Die Zeile Einreichungen in der Bibliothek zählt nur noch, was noch in Prüfung ist. Sechs abgeschlossene Prüfungen sahen bisher aus wie sechs offene.
-- Auf iOS 27 konnte das Kalenderband bei ausgeschaltetem Wischen zwischen Tagen um ein paar Tage verschoben erscheinen und nach einem Besuch der Einstellungen weiter wandern. Jetzt landet es jedes Mal auf der aktuellen Woche.
+- Das Kalenderband konnte um ein paar Tage verschoben erscheinen, sodass die Woche mitten in der Woche begann, und nach einem Besuch der Einstellungen weiter wandern. Jetzt landet es jedes Mal auf der aktuellen Woche und rückt sich selbst zurecht.
 
 ### Android
 

@@ -10,7 +10,8 @@ highlights:
   - "iOS: A rejected product no longer sits under Submissions as in review for days"
   - "iOS: Submissions refresh when you open them and when you pull down"
   - "iOS: Finished reviews in their own section, with the reason for a rejection"
-  - "iOS: The week strip sits right on iOS 27 with day swiping switched off"
+  - "iOS: The barcode scanner opens faster"
+  - "iOS: The week strip sits right and straightens itself out"
   - "Android: A rejected product no longer sits under Submissions as in review for days"
   - "Android: Submissions refresh when you open them and when you pull down"
   - "Android: Finished reviews in their own section, with the reason for a rejection"
@@ -20,7 +21,11 @@ highlights:
 
 **One place to share.** The picture button on the day, a meal, a food, an Intake AI estimate or a body measurement opens the same sheet. Pick what to share, then the card.
 
+![The share sheet](assets/share-sheet-en.mp4)
+
 **Story stickers, on your photo.** Every card has a transparent version for your Instagram story, and a 4:5 one for carousels on Instagram and TikTok. Pick or take the photo in Intake and the sticker lands on it. An Intake AI photo estimate brings your food photo along.
+
+![A story sticker on a photo](assets/share-sticker-en.jpg)
 
 **Day, meal or food.** The whole day with target and burned calories, a meal with its foods, or a single food, as 4:5 pictures. The same picture on iPhone and Android.
 
@@ -34,6 +39,10 @@ The two apps asked for different things before a product could go in for review:
 
 Library › Submissions has a new "Finished reviews" section. It lists every review that has been decided, newest first, with the verdict, the decision date and, for a rejection, the reviewer's reason. Open submissions stay at the top. Tapping a finished review does nothing; it is a record, not a way back into the product.
 
+## The scanner opens faster
+
+The camera preview held up the app for about a second while the barcode scanner started. It is now created before the camera is configured, and the scanner is ready at once.
+
 ## Bug fixes
 
 ### iOS
@@ -42,7 +51,7 @@ Library › Submissions has a new "Finished reviews" section. It lists every rev
 - Submissions refresh when you open the screen, if the last check is older than five minutes, and any time you pull the list down. When the status cannot be checked, the list says so instead of pretending nothing changed.
 - A rejected product keeps the reviewer's reason and shows it under "Reason".
 - The Submissions row in the Library counts only what is still in review. Six finished reviews used to read as six things waiting.
-- On iOS 27, with swiping between days switched off, the week strip could open a couple of days off and drift further after a visit to Settings. It lands on the current week every time now.
+- The week strip could open a couple of days off, so the week seemed to start midweek, and drift further after a visit to Settings. It lands on the current week every time now and straightens itself out.
 
 ### Android
 
