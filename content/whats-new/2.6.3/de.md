@@ -2,10 +2,10 @@
 version: "2.6.3"
 publishedAt: "2026-09-06"
 title: "Was ist neu in Intake 2.6.3"
-summary: "Teile, was du isst: ein Blatt für den Tag, eine Mahlzeit, ein Lebensmittel, eine Intake AI-Schätzung oder einen Körpertrend, als Sticker auf deinem Foto oder als fertiges Bild. Ein Produkt zur Prüfung einzureichen verlangt weniger: Name, Marke, Barcode und die vier Kern-Makros. Einreichungen aktualisieren sich beim Öffnen und beim Herunterziehen, abgeschlossene Prüfungen stehen in einem eigenen Abschnitt, und eine Ablehnung kommt mit Begründung. Auf beiden Plattformen"
+summary: "Teile, was du isst: eine Ansicht für den Tag, eine Mahlzeit, ein Lebensmittel, eine Intake AI-Schätzung oder einen Körpertrend, als Sticker auf deinem Foto oder als fertiges Bild. Ein Produkt zur Prüfung einzureichen verlangt weniger: Name, Marke, Barcode und die vier Kern-Makros. Einreichungen aktualisieren sich beim Öffnen und beim Herunterziehen, abgeschlossene Prüfungen stehen in einem eigenen Abschnitt, und eine Ablehnung kommt mit Begründung. Auf beiden Plattformen"
 coverImage: "./assets/cover.svg"
 highlights:
-  - "Beide: Teile, was du isst, als Sticker auf deinem Foto oder als fertiges Bild, aus einem Blatt"
+  - "Beide: Teile, was du isst, als Sticker auf deinem Foto oder als fertiges Bild, aus einer Ansicht"
   - "Beide: Ein Produkt zur Prüfung einzureichen braucht nur Name, Marke, Barcode und die vier Kern-Makros"
   - "iOS: Ein abgelehntes Produkt steht nicht mehr tagelang als in Prüfung unter Einreichungen"
   - "iOS: Einreichungen aktualisieren sich beim Öffnen und beim Herunterziehen"
@@ -19,9 +19,9 @@ highlights:
 
 ## Teile, was du isst
 
-**Ein Ort zum Teilen.** Der Bild-Button beim Tag, bei einer Mahlzeit, einem Lebensmittel, einer Intake AI-Schätzung oder einem Körpermaß öffnet dasselbe Blatt. Wähle, was du teilst, dann die Karte.
+**Ein Ort zum Teilen.** Der Teilen-Button beim Tag, bei einer Mahlzeit, einem Lebensmittel, einer Intake AI-Schätzung oder einem Körpermaß öffnet dieselbe Ansicht. Wähle, was du teilst, dann die Karte.
 
-![Das Teilen-Blatt](assets/share-sheet-de.mp4)
+![Die Teilen-Ansicht](assets/share-sheet-de.mp4)
 
 **Story-Sticker, auf deinem Foto.** Jede Karte gibt es als transparente Version für deine Instagram-Story und als 4:5-Version für Karussells auf Instagram und TikTok. Wähle oder mache das Foto in Intake, der Sticker landet darauf. Eine Intake AI-Fotoschätzung bringt dein Essensfoto gleich mit.
 
