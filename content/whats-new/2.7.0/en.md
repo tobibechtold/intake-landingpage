@@ -15,11 +15,11 @@ highlights:
 
 ## Siri logs for you
 
-Say "Log 100 g oats in Intake" and the oats are in your diary without opening the app. "Log water in Intake", "Log my weight in Intake" and "How many calories do I have left in Intake" work the same way. Start and end your fast just as easily.
+Say "Log food in Intake". Siri asks which food, you say "oats", and the oats are in your diary without opening the app. "Log water in Intake", "Log my weight in Intake", "How many calories do I have left in Intake", "Start a fast in Intake" and "End my fast in Intake" work the same way.
 
-**Your foods, your device.** Siri searches your own foods: favourites, own products and what you logged recently. Everything runs on the iPhone; nothing goes to a server. Leave out the amount and Intake takes 100 g. Leave out the meal and the food lands in the one that fits the time of day. Water without an amount is 250 ml.
+**Your foods, your device.** Siri searches your own foods: favourites, own products and what you logged recently. Everything runs on the iPhone; nothing goes to a server. By voice, Intake logs 100 g into the meal that fits the time of day, and water as 250 ml. Amount and meal are yours to set in the Shortcuts app.
 
-**A weight in your unit.** Say "74.5 kilos" or "164 pounds" and Intake logs the weight and reads it back in the unit you used.
+**A weight in your unit.** Siri asks for the weight. Say "74.5 kilos" or "164 pounds" and Intake logs it and reads it back in the unit you used.
 
 **In Shortcuts too.** All six actions sit in the Shortcuts app under Intake and can go into your own flows, for instance reading the morning weight off the scale and logging it. The Siri phrases come in English, German, Spanish, French, Italian, Japanese, Dutch and Portuguese.
 

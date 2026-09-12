@@ -15,11 +15,11 @@ highlights:
 
 ## Siri trägt für dich ein
 
-Sag „Trage 100 g Haferflocken in Intake ein“, und die Haferflocken stehen in deinem Tagebuch, ohne dass du die App öffnest. Genauso gehen „Trage Wasser in Intake ein“, „Trage mein Gewicht in Intake ein“ und „Wie viele Kalorien habe ich noch in Intake“. Dein Fasten startest und beendest du auf dieselbe Weise.
+Sag „Lebensmittel in Intake eintragen“. Siri fragt, welches, du sagst „Haferflocken“, und die Haferflocken stehen in deinem Tagebuch, ohne dass du die App öffnest. „Wasser in Intake eintragen“, „Mein Gewicht in Intake eintragen“, „Wie viele Kalorien habe ich noch in Intake“, „Fasten in Intake starten“ und „Mein Fasten in Intake beenden“ gehen genauso.
 
-**Deine Lebensmittel, dein Gerät.** Siri sucht in deinen eigenen Lebensmitteln: Favoriten, eigene Produkte und was du zuletzt geloggt hast. Alles läuft auf dem iPhone, nichts geht an einen Server. Nennst du keine Menge, nimmt Intake 100 g. Nennst du keine Mahlzeit, landet das Lebensmittel in der, die zur Uhrzeit passt. Wasser ohne Menge sind 250 ml.
+**Deine Lebensmittel, dein Gerät.** Siri sucht in deinen eigenen Lebensmitteln: Favoriten, eigene Produkte und was du zuletzt geloggt hast. Alles läuft auf dem iPhone, nichts geht an einen Server. Per Sprache trägt Intake 100 g in die Mahlzeit ein, die zur Uhrzeit passt, und Wasser als 250 ml. Menge und Mahlzeit stellst du in der Kurzbefehle-App ein.
 
-**Ein Gewicht in deiner Einheit.** Sagst du „74,5 Kilo“ oder „164 Pfund“, trägt Intake das Gewicht ein und liest es dir in der Einheit vor, die du genannt hast.
+**Ein Gewicht in deiner Einheit.** Siri fragt nach dem Gewicht. Sagst du „74,5 Kilo“ oder „164 Pfund“, trägt Intake es ein und liest es dir in der Einheit vor, die du genannt hast.
 
 **Auch in Kurzbefehlen.** Alle sechs Aktionen stehen in der Kurzbefehle-App unter Intake und lassen sich in eigene Abläufe einbauen, zum Beispiel morgens das Gewicht von der Waage abfragen und eintragen. Die Sätze für Siri gibt es auf Deutsch, Englisch, Spanisch, Französisch, Italienisch, Japanisch, Niederländisch und Portugiesisch.
 
