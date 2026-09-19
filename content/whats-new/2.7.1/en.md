@@ -2,9 +2,12 @@
 version: "2.7.1"
 publishedAt: "2026-09-19"
 title: "What's new in Intake 2.7.1"
-summary: "A bug-fix update. On Android: suggestions offer the same portions as your favourites, a failed Health Connect sync no longer asks for permissions you have already granted, and your age updates on your birthday"
+summary: "A bug-fix update. On iOS: the week strip above Today stays on the current week, workouts you deleted in Garmin or Health leave Intake too, and the scanner no longer sits sideways on an iPad in landscape. On Android: suggestions offer the same portions as your favourites, a failed Health Connect sync no longer asks for permissions you have already granted, and your age updates on your birthday"
 coverImage: "./assets/cover.svg"
 highlights:
+  - "iOS: The week strip above Today opens on the current week and puts itself right"
+  - "iOS: Workouts deleted in Garmin or Health disappear from Intake too"
+  - "iOS: On iPad the scanner follows the way you hold the device"
   - "Android: Suggestions offer the same portions as favourites and frequent foods"
   - "Android: Health Connect no longer asks for permissions you have already granted"
   - "Android: One unreadable Health Connect record no longer blocks steps and calories"
@@ -12,6 +15,13 @@ highlights:
 ---
 
 ## Bug fixes
+
+### iOS
+
+- **The week strip stays on this week.** The strip of days above Today could open a few days off, or straight on next week, and then stay that way. It mostly hit people who turned "Swipe between days" off. The strip now opens on the current week, and if it does slip, it puts itself right. The week only changes when you swipe it yourself or tap "Today".
+- **Deleted workouts disappear.** A workout you deleted in Garmin, Apple Health or another app stayed in Intake and kept counting towards your burned calories, in the statistics too. Intake now checks with Health which workouts still exist and removes the others. Workouts you entered in Intake yourself are left alone.
+- **Scanner in landscape on iPad.** With the iPad held sideways the barcode scanner's camera image was turned by 90 degrees. It now follows the way you hold the device, in Split View as well, and photos for Intake AI arrive upright.
+- After closing Settings, Intake no longer rebuilds the Today screen every time, only when you changed the accent colour or the appearance.
 
 ### Android
 

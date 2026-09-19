@@ -13,7 +13,7 @@
     <text x="120" y="220" font-family="Arial, sans-serif" font-size="44" opacity="0.72">Intake update</text>
     <text x="120" y="360" font-family="Arial, sans-serif" font-size="120" font-weight="700">Version 2.7.1</text>
     <text x="120" y="470" font-family="Arial, sans-serif" font-size="52" opacity="0.88">
-      The week strip, deleted workouts, the iPad scanner
+      Bug fixes on iOS and Android
     </text>
   </g>
 </svg>
