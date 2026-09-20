@@ -2,7 +2,7 @@
 version: "2.7.1"
 publishedAt: "2026-09-19"
 title: "Was ist neu in Intake 2.7.1"
-summary: "Ein Update nur mit Fehlerbehebungen. Auf iOS: Die Wochenleiste über Heute bleibt auf der aktuellen Woche, in Garmin oder Health gelöschte Workouts verschwinden auch aus Intake, und der Scanner steht auf dem iPad im Querformat nicht mehr auf der Seite. Auf Android: Vorschläge bieten dieselben Portionen wie deine Favoriten, eine fehlgeschlagene Health-Connect-Synchronisierung verlangt keine Berechtigungen mehr, die du längst erteilt hast, und dein Alter springt am Geburtstag um"
+summary: "Vor allem Fehlerbehebungen. Auf iOS: Die Wochenleiste über Heute bleibt auf der aktuellen Woche, in Garmin oder Health gelöschte Workouts verschwinden auch aus Intake, und der Scanner steht auf dem iPad im Querformat nicht mehr auf der Seite. Auf Android: Vorschläge bieten dieselben Portionen wie deine Favoriten, eine fehlgeschlagene Health-Connect-Synchronisierung verlangt keine Berechtigungen mehr, die du längst erteilt hast, dein Alter springt am Geburtstag um, Intake AI stürzt bei sehr großen Fotos nicht mehr ab, Portionen unter einem Gramm zählen richtig, und ein unfertiges neues Rezept bleibt als Entwurf erhalten"
 coverImage: "./assets/cover.svg"
 highlights:
   - "iOS: Die Wochenleiste über Heute startet auf der aktuellen Woche und rückt sich selbst zurecht"
@@ -12,7 +12,14 @@ highlights:
   - "Android: Health Connect verlangt keine Berechtigungen mehr, die längst erteilt sind"
   - "Android: Ein nicht lesbarer Health-Connect-Eintrag blockiert nicht mehr Schritte und Kalorien"
   - "Android: Dein Alter in den Einstellungen springt am Geburtstag um"
+  - "Android: Neu: Ein unfertiges neues Rezept bleibt als Entwurf erhalten"
+  - "Android: Intake AI stürzt bei sehr großen Fotos nicht mehr ab"
+  - "Android: Portionen unter einem Gramm, etwa Tabletten, zählen mit ihrem echten Gewicht"
 ---
+
+## Neu auf Android: Rezept-Entwürfe
+
+Ein neues Rezept, das du gerade anlegst, speichert Intake jetzt laufend auf deinem Gerät. Wird die App geschlossen, stürzt sie ab oder startet das Handy neu, steht beim nächsten Anlegen eines Rezepts alles wieder da: Name, Notizen, Portionen und Zutaten. Der Entwurf verschwindet, sobald du das Rezept speicherst oder das Verwerfen bestätigst. Beim Bearbeiten eines vorhandenen Rezepts gibt es keinen Entwurf, dort bleibt die gespeicherte Fassung bestehen.
 
 ## Fehlerbehebungen
 
@@ -30,6 +37,10 @@ highlights:
 - Health Connect: Ein einzelner Eintrag, den Intake nicht lesen kann, etwa ein Workout aus einer anderen App, hielt die gesamte Synchronisierung an. Schritte, Kalorien und alles andere werden jetzt trotzdem übernommen.
 - Hält das Problem an, enthält „Debug-Daten exportieren“ unter Health-Connect-Aktivität jetzt den letzten Fehler. Schick mir die Datei, dann sehe ich, woran es liegt.
 - Das Alter in der Übersicht der Einstellungen sprang an deinem Geburtstag nicht um. Es wird jetzt wie deine Kalorienziele aus dem Geburtsdatum berechnet.
+- Intake AI: Ein sehr großes Foto, etwa aus einem 50-Megapixel-Modus, oder ein Foto, das sich nicht lesen ließ, konnte die App ohne Meldung beenden. Fotos werden jetzt nur so groß geladen wie nötig, und ein unlesbares Foto zeigt eine Fehlermeldung im Chat.
+- Eine Portion unter einem Gramm, zum Beispiel eine Tablette mit 0,25 g, wurde als 1 g eingetragen, mit dem Vierfachen der Nährwerte. Sie zählt jetzt mit ihrem echten Gewicht, und das Produktformular nimmt beim Portionsgewicht zwei Nachkommastellen an.
+- Der Name eines schnell angelegten Eintrags ließ sich nur beim ersten Bearbeiten ändern. Er lässt sich jetzt jederzeit ändern.
+- Die Fasten-Benachrichtigung hat sich im Hintergrund jede Sekunde neu aufgebaut. Sie aktualisiert sich jetzt nur noch, wenn sich die angezeigte Minute ändert.
 
 Das komplette Changelog findest du wie immer [hier](https://featurevoting.tobibechtold.dev/app/intake/changelog).
 

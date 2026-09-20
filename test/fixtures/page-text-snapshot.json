@@ -1,15 +1,15 @@
 {
   "/": {
-    "words": 1320,
-    "sha": "4f6bbc2dd40a5097"
+    "words": 1342,
+    "sha": "50de38459e8d2d5c"
   },
   "/404": {
     "words": 69,
     "sha": "3de1c8238f230714"
   },
   "/en": {
-    "words": 1401,
-    "sha": "e00f5deb796c414b"
+    "words": 1425,
+    "sha": "5e1025f38087af86"
   },
   "/en/calorie-counter-no-subscription": {
     "words": 299,
@@ -60,8 +60,8 @@
     "sha": "66be445714e65d2c"
   },
   "/en/whats-new": {
-    "words": 1938,
-    "sha": "68124d01f4ae50d0"
+    "words": 1996,
+    "sha": "d6b2a11388970f73"
   },
   "/en/whats-new/2.1.1": {
     "words": 437,
@@ -168,8 +168,8 @@
     "sha": "7d0bb95544ad9d77"
   },
   "/en/whats-new/2.7.1": {
-    "words": 496,
-    "sha": "2585b8d31832e5d9"
+    "words": 721,
+    "sha": "022c98a8d6b56847"
   },
   "/funktionen": {
     "words": 511,
@@ -220,8 +220,8 @@
     "sha": "b377aba42b6113db"
   },
   "/whats-new": {
-    "words": 1754,
-    "sha": "b5cae13bb45278ab"
+    "words": 1809,
+    "sha": "304ebfc9c541fb47"
   },
   "/whats-new/2.1.1": {
     "words": 456,
@@ -328,7 +328,7 @@
     "sha": "52a6a9614055b7ac"
   },
   "/whats-new/2.7.1": {
-    "words": 503,
-    "sha": "d549a5e7188120ff"
+    "words": 717,
+    "sha": "290c85014698ea02"
   }
 }
