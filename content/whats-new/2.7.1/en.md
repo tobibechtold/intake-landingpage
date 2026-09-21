@@ -2,12 +2,17 @@
 version: "2.7.1"
 publishedAt: "2026-09-19"
 title: "What's new in Intake 2.7.1"
-summary: "Mostly bug fixes. On iOS: the week strip above Today stays on the current week, workouts you deleted in Garmin or Health leave Intake too, and the scanner no longer sits sideways on an iPad in landscape. On Android: suggestions offer the same portions as your favourites, a failed Health Connect sync no longer asks for permissions you have already granted, your age updates on your birthday, Intake AI no longer crashes on very large photos, portions under one gram count correctly, and an unfinished new recipe is kept as a draft"
+summary: "On iOS, Today has a new look: the calorie ring compact on the left, the macros as one bar, the plus inside the meal. Plus wide layouts for iPad and the open iPhone Duo, the iOS 27 system tab bar with its prominent plus, smoother moving between days and four fixes. On Android: suggestions offer the same portions as your favourites, a failed Health Connect sync no longer asks for permissions you have already granted, your age updates on your birthday, Intake AI no longer crashes on very large photos, portions under one gram count correctly, and an unfinished new recipe is kept as a draft"
 coverImage: "./assets/cover.svg"
 highlights:
-  - "iOS: The week strip above Today opens on the current week and puts itself right"
+  - "iOS: Today has a new look: a compact calorie ring, macros as one bar, the plus inside the meal"
+  - "iOS: iPad and wide screens: Today in two columns, Library and Stats laid out anew"
+  - "iOS: Ready for iPhone Duo"
+  - "iOS: On iOS 27 the system tab bar with its prominent plus takes over"
+  - "iOS: Moving between days runs smoother, and turning the device keeps the day"
+  - "iOS: The week strip above Today opens on the current week"
   - "iOS: Workouts deleted in Garmin or Health disappear from Intake too"
-  - "iOS: On iPad the scanner follows the way you hold the device"
+  - "iOS: On iPad the scanner follows the way you hold the device, and you get out of it again"
   - "Android: Suggestions offer the same portions as favourites and frequent foods"
   - "Android: Health Connect no longer asks for permissions you have already granted"
   - "Android: One unreadable Health Connect record no longer blocks steps and calories"
@@ -16,6 +21,34 @@ highlights:
   - "Android: Intake AI no longer crashes on very large photos"
   - "Android: Portions under one gram, such as tablets, count at their real weight"
 ---
+
+## New on iOS: Today has a new look
+
+Today is the screen you see most often, and over the years it had claimed a lot of room. This version lays it out again. The community picked the direction in a poll on Threads.
+
+![Today](assets/heute-en.png)
+
+**Your day at a glance.** The calorie ring sits compactly on the left, with Target, Eaten and Burned beside it, one under the other. Tapping Target still opens the adjustment for that day. Below them the macros are one bar with protein, carbs and fat, each with its target. More opens all seven and leads on to every single nutrient.
+
+**Your meals.** The plus now sits in the meal's header and works while the meal is folded up. The title opens the meal overview, the total folds the meal away. Every entry shows its name, brand and portion, and an Intake AI estimate carries its badge right in the row.
+
+**Around it.** The share button for the day has moved up into the toolbar, and the selection in the week strip slides over to the day you tap.
+
+## iPad and wide screens
+
+On wide screens Intake now really uses the room. Today stands in two columns, the day with the ring and the macros on the left, the meals on the right. The Library becomes a split view with its lists beside the sections, the way you know it from the system's own settings. Stats turns into a grid of cards, and Fasting keeps a readable width instead of stretching across the whole screen.
+
+## Ready for iPhone Duo
+
+Folded, Intake is the iPhone layout you know. Opened, Today, Library and Stats use the same wide layouts as on iPad.
+
+## The iOS 27 tab bar
+
+On iOS 27 the system's own tab bar with its prominent plus takes the place of the custom one. It behaves the way you know it from other apps, and the plus still opens the add screen. On iOS 26 nothing changes.
+
+## Moving between days
+
+Swiping between days runs smoother, turning the device keeps the day you were on, and tapping another day in the week strip gets you there faster. While you swipe, Intake no longer re-reads whole measurement histories and no longer rebuilds the day you are looking at after every swipe.
 
 ## New on Android: recipe drafts
 
@@ -28,7 +61,9 @@ A new recipe you are putting together is now saved to your device as you go. If 
 - **The week strip stays on this week.** The strip of days above Today could open a few days off, or straight on next week, and then stay that way. It mostly hit people who turned "Swipe between days" off. The strip now opens on the current week, and if it does slip, it puts itself right. The week only changes when you swipe it yourself or tap "Today".
 - **Deleted workouts disappear.** A workout you deleted in Garmin, Apple Health or another app stayed in Intake and kept counting towards your burned calories, in the statistics too. Intake now checks with Health which workouts still exist and removes the others. Workouts you entered in Intake yourself are left alone.
 - **Scanner in landscape on iPad.** With the iPad held sideways the barcode scanner's camera image was turned by 90 degrees. It now follows the way you hold the device, in Split View as well, and photos for Intake AI arrive upright.
-- After closing Settings, Intake no longer rebuilds the Today screen every time, only when you changed the accent colour or the appearance.
+- **Out of the scanner again.** Opened straight into the scanner, for instance from the Lock Screen or a widget, going back put you into the scanner again, over and over. The food view now opens its starting point once.
+- The rows in the share gallery had turned into the accent colour. Titles and values are back in the normal text colours.
+- English only: the water card said "+1 other beverages" for a single drink. It now says "+1 other beverage".
 
 ### Android
 
