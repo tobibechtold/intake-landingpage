@@ -2,12 +2,17 @@
 version: "2.7.1"
 publishedAt: "2026-09-19"
 title: "Was ist neu in Intake 2.7.1"
-summary: "Vor allem Fehlerbehebungen. Auf iOS: Die Wochenleiste über Heute bleibt auf der aktuellen Woche, in Garmin oder Health gelöschte Workouts verschwinden auch aus Intake, und der Scanner steht auf dem iPad im Querformat nicht mehr auf der Seite. Auf Android: Vorschläge bieten dieselben Portionen wie deine Favoriten, eine fehlgeschlagene Health-Connect-Synchronisierung verlangt keine Berechtigungen mehr, die du längst erteilt hast, dein Alter springt am Geburtstag um, Intake AI stürzt bei sehr großen Fotos nicht mehr ab, Portionen unter einem Gramm zählen richtig, und ein unfertiges neues Rezept bleibt als Entwurf erhalten"
+summary: "Auf iOS sieht Heute neu aus: der Kalorienring kompakt links, die Makros als ein Balken, das Plus in der Mahlzeit. Dazu breite Layouts für iPad und das aufgeklappte iPhone Duo, die Systemleiste von iOS 27 mit dem großen Plus, ein ruhigeres Wechseln zwischen Tagen und vier Fehlerbehebungen. Auf Android: Vorschläge bieten dieselben Portionen wie deine Favoriten, eine fehlgeschlagene Health-Connect-Synchronisierung verlangt keine Berechtigungen mehr, die du längst erteilt hast, dein Alter springt am Geburtstag um, Intake AI stürzt bei sehr großen Fotos nicht mehr ab, Portionen unter einem Gramm zählen richtig, und ein unfertiges neues Rezept bleibt als Entwurf erhalten"
 coverImage: "./assets/cover.svg"
 highlights:
-  - "iOS: Die Wochenleiste über Heute startet auf der aktuellen Woche und rückt sich selbst zurecht"
+  - "iOS: Heute sieht neu aus: kompakter Kalorienring, Makros als ein Balken, das Plus in der Mahlzeit"
+  - "iOS: iPad und breite Bildschirme: Heute in zwei Spalten, Bibliothek und Statistik neu aufgeteilt"
+  - "iOS: Bereit für das iPhone Duo"
+  - "iOS: Unter iOS 27 übernimmt die System-Leiste mit dem großen Plus"
+  - "iOS: Zwischen Tagen wechseln läuft ruhiger, und ein Drehen behält den Tag"
+  - "iOS: Die Wochenleiste über Heute startet auf der aktuellen Woche"
   - "iOS: In Garmin oder Health gelöschte Workouts verschwinden auch aus Intake"
-  - "iOS: Der Scanner folgt auf dem iPad der Haltung des Geräts"
+  - "iOS: Der Scanner folgt auf dem iPad der Haltung des Geräts, und du kommst wieder aus ihm heraus"
   - "Android: Vorschläge bieten dieselben Portionen wie Favoriten und häufige Lebensmittel"
   - "Android: Health Connect verlangt keine Berechtigungen mehr, die längst erteilt sind"
   - "Android: Ein nicht lesbarer Health-Connect-Eintrag blockiert nicht mehr Schritte und Kalorien"
@@ -16,6 +21,34 @@ highlights:
   - "Android: Intake AI stürzt bei sehr großen Fotos nicht mehr ab"
   - "Android: Portionen unter einem Gramm, etwa Tabletten, zählen mit ihrem echten Gewicht"
 ---
+
+## Neu auf iOS: Heute sieht neu aus
+
+Heute ist der Bildschirm, den du am häufigsten siehst, und er hatte über die Jahre viel Platz an sich gebunden. Diese Version ordnet ihn neu. Die Richtung habt ihr in einer Umfrage auf Threads ausgesucht.
+
+![Heute](assets/heute-de.png)
+
+**Der Tag auf einen Blick.** Der Kalorienring sitzt kompakt links, daneben stehen Ziel, Gegessen und Verbrannt untereinander. Ein Tipp auf Ziel öffnet weiterhin die Anpassung für diesen Tag. Darunter liegen die Makros als ein Balken mit Protein, Kohlenhydraten und Fett, jeweils mit ihrem Ziel. „Mehr“ klappt alle sieben auf und führt weiter zu jedem einzelnen Nährwert.
+
+**Die Mahlzeiten.** Das Plus liegt jetzt in der Überschrift der Mahlzeit und funktioniert auch, wenn die Mahlzeit zugeklappt ist. Der Titel öffnet die Übersicht der Mahlzeit, die Summe klappt sie zu. Jeder Eintrag zeigt Name, Marke und Portion, und eine Schätzung von Intake AI trägt ihr Kennzeichen direkt in der Zeile.
+
+**Drumherum.** Der Teilen-Button für den Tag ist nach oben in die Leiste gewandert, und die Auswahl in der Wochenleiste schiebt sich zu dem Tag, den du antippst.
+
+## iPad und breite Bildschirme
+
+Auf breiten Bildschirmen nutzt Intake den Platz jetzt wirklich. Heute steht in zwei Spalten, links der Tag mit Ring und Makros, rechts die Mahlzeiten. Die Bibliothek wird zu einer geteilten Ansicht, in der die Listen neben den Bereichen stehen, so wie du es von den Einstellungen des Systems kennst. Statistik wird zu einem Raster aus Karten, und Fasten bleibt in lesbarer Breite, statt sich über den ganzen Bildschirm zu ziehen.
+
+## Bereit für das iPhone Duo
+
+Zusammengeklappt ist Intake das gewohnte iPhone-Layout. Aufgeklappt nutzen Heute, Bibliothek und Statistik dieselben breiten Layouts wie auf dem iPad.
+
+## Die Leiste von iOS 27
+
+Unter iOS 27 übernimmt die Leiste des Systems mit dem großen Plus die Stelle der eigenen Leiste. Sie verhält sich so, wie du es aus anderen Apps kennst, und das Plus öffnet weiterhin das Hinzufügen. Unter iOS 26 bleibt alles, wie es ist.
+
+## Tage wechseln
+
+Das Wischen zwischen Tagen läuft ruhiger, ein Drehen des Geräts behält den Tag, auf dem du warst, und ein Tipp auf einen anderen Tag in der Wochenleiste ist schneller da. Intake liest dafür beim Wischen nicht mehr ganze Messreihen neu ein und baut den sichtbaren Tag nicht nach jedem Wisch neu auf.
 
 ## Neu auf Android: Rezept-Entwürfe
 
@@ -28,7 +61,8 @@ Ein neues Rezept, das du gerade anlegst, speichert Intake jetzt laufend auf dein
 - **Die Wochenleiste bleibt auf dieser Woche.** Die Tagesleiste über Heute konnte um ein paar Tage verschoben oder gleich auf der nächsten Woche starten und blieb dann so stehen. Betroffen war vor allem, wer „Zwischen Tagen wischen“ ausgeschaltet hat. Die Leiste startet jetzt auf der aktuellen Woche, und wenn sie doch einmal verrutscht, rückt sie sich selbst zurecht. Die Woche wechselt nur noch, wenn du selbst wischst oder auf „Heute“ tippst.
 - **Gelöschte Workouts verschwinden.** Ein Workout, das du in Garmin, Apple Health oder einer anderen App gelöscht hast, blieb in Intake stehen und zählte weiter zu deinen verbrannten Kalorien, auch in der Statistik. Intake gleicht jetzt mit Health ab, welche Workouts es noch gibt, und entfernt die anderen. Workouts, die du in Intake selbst eingetragen hast, bleiben unberührt.
 - **Scanner im Querformat auf dem iPad.** Im Querformat war das Kamerabild des Barcode-Scanners um 90 Grad gedreht. Es folgt jetzt der Haltung des Geräts, auch in Split View, und Fotos für Intake AI kommen aufrecht an.
-- Nach dem Schließen der Einstellungen baut Intake die Heute-Seite nicht mehr jedes Mal neu auf, sondern nur noch, wenn du Akzentfarbe oder Design geändert hast.
+- **Wieder raus aus dem Scanner.** Hast du den Scanner direkt geöffnet, etwa über den Sperrbildschirm oder ein Widget, landetest du nach dem Zurück wieder im Scanner, immer und immer wieder. Die Lebensmittelansicht öffnet ihren Start jetzt nur einmal.
+- Die Zeilen in der Teilen-Ansicht waren in der Akzentfarbe erschienen. Titel und Werte stehen wieder in den normalen Textfarben.
 
 ### Android
 
