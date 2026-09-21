@@ -19,7 +19,7 @@ interface ScreenshotAsset {
 }
 
 /**
- * The store screenshot set, currently the 2.5 export. Filenames keep the store
+ * The store screenshot set, currently the 2.7.1 export (all ten, 2026-09-21). Filenames keep the store
  * ordering prefix so a new export can be dropped in and diffed against the
  * previous one without renaming anything.
  */
