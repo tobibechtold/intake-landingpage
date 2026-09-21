@@ -2,7 +2,7 @@
 version: "2.7.1"
 publishedAt: "2026-09-19"
 title: "Was ist neu in Intake 2.7.1"
-summary: "Auf iOS sieht Heute neu aus: der Kalorienring kompakt links, die Makros als ein Balken, das Plus in der Mahlzeit. Dazu breite Layouts für iPad und das aufgeklappte iPhone Duo, die Systemleiste von iOS 27 mit dem großen Plus, ein ruhigeres Wechseln zwischen Tagen und vier Fehlerbehebungen. Auf Android: Vorschläge bieten dieselben Portionen wie deine Favoriten, eine fehlgeschlagene Health-Connect-Synchronisierung verlangt keine Berechtigungen mehr, die du längst erteilt hast, dein Alter springt am Geburtstag um, Intake AI stürzt bei sehr großen Fotos nicht mehr ab, Portionen unter einem Gramm zählen richtig, und ein unfertiges neues Rezept bleibt als Entwurf erhalten"
+summary: "Auf iOS sieht Heute neu aus: der Kalorienring kompakt links, die Makros als ein Balken, das Plus in der Mahlzeit. Dazu breite Layouts für iPad und das aufgeklappte iPhone Duo, die Systemleiste von iOS 27 mit dem großen Plus, ein ruhigeres Wechseln zwischen Tagen und vier Fehlerbehebungen. Auf Android sieht Heute genauso neu aus, dazu: Vorschläge bieten dieselben Portionen wie deine Favoriten, eine fehlgeschlagene Health-Connect-Synchronisierung verlangt keine Berechtigungen mehr, die du längst erteilt hast, dein Alter springt am Geburtstag um, Intake AI stürzt bei sehr großen Fotos nicht mehr ab, Portionen unter einem Gramm zählen richtig, und ein unfertiges neues Rezept bleibt als Entwurf erhalten"
 coverImage: "./assets/cover.svg"
 highlights:
   - "iOS: Heute sieht neu aus: kompakter Kalorienring, Makros als ein Balken, das Plus in der Mahlzeit"
@@ -13,6 +13,7 @@ highlights:
   - "iOS: Die Wochenleiste über Heute startet auf der aktuellen Woche"
   - "iOS: In Garmin oder Health gelöschte Workouts verschwinden auch aus Intake"
   - "iOS: Der Scanner folgt auf dem iPad der Haltung des Geräts, und du kommst wieder aus ihm heraus"
+  - "Android: Heute sieht neu aus: kompakter Kalorienring, Makros als ein Balken, das Plus in der Mahlzeit"
   - "Android: Vorschläge bieten dieselben Portionen wie Favoriten und häufige Lebensmittel"
   - "Android: Health Connect verlangt keine Berechtigungen mehr, die längst erteilt sind"
   - "Android: Ein nicht lesbarer Health-Connect-Eintrag blockiert nicht mehr Schritte und Kalorien"
@@ -33,6 +34,18 @@ Heute ist der Bildschirm, den du am häufigsten siehst, und er hatte über die J
 **Die Mahlzeiten.** Das Plus liegt jetzt in der Überschrift der Mahlzeit und funktioniert auch, wenn die Mahlzeit zugeklappt ist. Der Titel öffnet die Übersicht der Mahlzeit, die Summe klappt sie zu. Jeder Eintrag zeigt Name, Marke und Portion, und eine Schätzung von Intake AI trägt ihr Kennzeichen direkt in der Zeile.
 
 **Drumherum.** Der Teilen-Button für den Tag ist nach oben in die Leiste gewandert, und die Auswahl in der Wochenleiste schiebt sich zu dem Tag, den du antippst.
+
+## Neu auf Android: Heute sieht neu aus
+
+Das neue Heute ist auch auf Android da, mit demselben Aufbau wie auf iOS: der Kalorienring links, daneben Ziel, Gegessen und Verbrannt, darunter die Makros als ein Balken mit drei Spalten. „Mehr“ klappt alle sieben Makros auf und führt zu allen Nährstoffen.
+
+![Heute auf Android](assets/heute-android-de.png)
+
+**Was auf Android anders ist.** Ein Tipp auf Ziel öffnet die tagesabhängigen Ziele in den Einstellungen, dort passt du einen einzelnen Tag oder einen Wochentag an. Ist der Tag angepasst, steht das Plus oder Minus direkt vor dem Ziel. Der Teilen-Button sitzt oben neben Datum und Einstellungen.
+
+**Die Mahlzeiten.** Das runde Plus in der Überschrift trägt auch in eine zugeklappte Mahlzeit ein, der Titel öffnet die Übersicht, die Summe klappt zu. Eine Mahlzeit ohne Einträge zeigt das in ihrer Überschrift und nimmt keinen Platz darunter ein. Der große Hinzufügen-Button unter jeder Mahlzeit ist weg.
+
+**Große Schrift.** Bei sehr großer Schrift stehen Ring, Makrospalten und der Titel der Mahlzeit untereinander, und Zahlen werden nie abgeschnitten.
 
 ## iPad und breite Bildschirme
 
