@@ -2,13 +2,14 @@
 version: "2.7.1"
 publishedAt: "2026-09-19"
 title: "What's new in Intake 2.7.1"
-summary: "On iOS, Today has a new look: the calorie ring compact on the left, the macros as one bar, the plus inside the meal. Plus wide layouts for iPad and the open iPhone Duo, the iOS 27 system tab bar with its prominent plus, smoother moving between days and four fixes. On Android, Today has the same new look, plus: suggestions offer the same portions as your favourites, a failed Health Connect sync no longer asks for permissions you have already granted, your age updates on your birthday, Intake AI no longer crashes on very large photos, portions under one gram count correctly, and an unfinished new recipe is kept as a draft"
+summary: "On iOS, Today has a new look: the calorie ring compact on the left, the macros as one bar, the plus inside the meal. Plus wide layouts for iPad and the open iPhone Duo, the iOS 27 system tab bar with its prominent plus, Siri understanding decimals, smoother moving between days and six fixes. On Android, Today has the same new look, plus: suggestions offer the same portions as your favourites, a failed Health Connect sync no longer asks for permissions you have already granted, your age updates on your birthday, Intake AI no longer crashes on very large photos, portions under one gram count correctly, and an unfinished new recipe is kept as a draft"
 coverImage: "./assets/cover.svg"
 highlights:
   - "iOS: Today has a new look: a compact calorie ring, macros as one bar, the plus inside the meal"
   - "iOS: iPad and wide screens: Today in two columns, Library and Stats laid out anew"
   - "iOS: Ready for iPhone Duo"
   - "iOS: On iOS 27 the system tab bar with its prominent plus takes over"
+  - "iOS: Siri logs weight and food, decimals included"
   - "iOS: Moving between days runs smoother, and turning the device keeps the day"
   - "iOS: The week strip above Today opens on the current week"
   - "iOS: Workouts deleted in Garmin or Health disappear from Intake too"
@@ -59,6 +60,10 @@ Folded, Intake is the iPhone layout you know. Opened, Today, Library and Stats u
 
 On iOS 27 the system's own tab bar with its prominent plus takes the place of the custom one. It behaves the way you know it from other apps, and the plus still opens the add screen. On iOS 26 nothing changes.
 
+## Siri logs what you say
+
+Say "Log my weight in Intake" or "Log food in Intake", then say the number. Siri now understands a dictated decimal such as 84.3. Before, a comma or a point made her ask again, and she kept asking until you said the word "point". When you log food she also knows the hundred foods you used last from your library, and she asks for the amount instead of always taking 100 g.
+
 ## Moving between days
 
 Swiping between days runs smoother, turning the device keeps the day you were on, and tapping another day in the week strip gets you there faster. While you swipe, Intake no longer re-reads whole measurement histories and no longer rebuilds the day you are looking at after every swipe.
@@ -77,6 +82,8 @@ A new recipe you are putting together is now saved to your device as you go. If 
 - **Out of the scanner again.** Opened straight into the scanner, for instance from the Lock Screen or a widget, going back put you into the scanner again, over and over. The food view now opens its starting point once.
 - The rows in the share gallery had turned into the accent colour. Titles and values are back in the normal text colours.
 - English only: the water card said "+1 other beverages" for a single drink. It now says "+1 other beverage".
+- **A weight from Siri or the Watch shows at once.** Statistics had it immediately, while the card on Today still showed the old one until you closed and reopened Intake. It now updates as the weight arrives, even when you were not in the app while you spoke.
+- **Scanned products catch up with the database.** A product that was missing when you first scanned it stayed the copy from Open Food Facts for good, even once we had added it. Scanning it again now asks once more and picks up the checked values.
 
 ### Android
 

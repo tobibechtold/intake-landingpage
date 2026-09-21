@@ -2,13 +2,14 @@
 version: "2.7.1"
 publishedAt: "2026-09-19"
 title: "Was ist neu in Intake 2.7.1"
-summary: "Auf iOS sieht Heute neu aus: der Kalorienring kompakt links, die Makros als ein Balken, das Plus in der Mahlzeit. Dazu breite Layouts für iPad und das aufgeklappte iPhone Duo, die Systemleiste von iOS 27 mit dem großen Plus, ein ruhigeres Wechseln zwischen Tagen und vier Fehlerbehebungen. Auf Android sieht Heute genauso neu aus, dazu: Vorschläge bieten dieselben Portionen wie deine Favoriten, eine fehlgeschlagene Health-Connect-Synchronisierung verlangt keine Berechtigungen mehr, die du längst erteilt hast, dein Alter springt am Geburtstag um, Intake AI stürzt bei sehr großen Fotos nicht mehr ab, Portionen unter einem Gramm zählen richtig, und ein unfertiges neues Rezept bleibt als Entwurf erhalten"
+summary: "Auf iOS sieht Heute neu aus: der Kalorienring kompakt links, die Makros als ein Balken, das Plus in der Mahlzeit. Dazu breite Layouts für iPad und das aufgeklappte iPhone Duo, die Systemleiste von iOS 27 mit dem großen Plus, Siri, die auch Kommazahlen versteht, ein ruhigeres Wechseln zwischen Tagen und sechs Fehlerbehebungen. Auf Android sieht Heute genauso neu aus, dazu: Vorschläge bieten dieselben Portionen wie deine Favoriten, eine fehlgeschlagene Health-Connect-Synchronisierung verlangt keine Berechtigungen mehr, die du längst erteilt hast, dein Alter springt am Geburtstag um, Intake AI stürzt bei sehr großen Fotos nicht mehr ab, Portionen unter einem Gramm zählen richtig, und ein unfertiges neues Rezept bleibt als Entwurf erhalten"
 coverImage: "./assets/cover.svg"
 highlights:
   - "iOS: Heute sieht neu aus: kompakter Kalorienring, Makros als ein Balken, das Plus in der Mahlzeit"
   - "iOS: iPad und breite Bildschirme: Heute in zwei Spalten, Bibliothek und Statistik neu aufgeteilt"
   - "iOS: Bereit für das iPhone Duo"
   - "iOS: Unter iOS 27 übernimmt die System-Leiste mit dem großen Plus"
+  - "iOS: Siri trägt Gewicht und Lebensmittel ein, auch mit Kommazahlen"
   - "iOS: Zwischen Tagen wechseln läuft ruhiger, und ein Drehen behält den Tag"
   - "iOS: Die Wochenleiste über Heute startet auf der aktuellen Woche"
   - "iOS: In Garmin oder Health gelöschte Workouts verschwinden auch aus Intake"
@@ -59,6 +60,10 @@ Zusammengeklappt ist Intake das gewohnte iPhone-Layout. Aufgeklappt nutzen Heute
 
 Unter iOS 27 übernimmt die Leiste des Systems mit dem großen Plus die Stelle der eigenen Leiste. Sie verhält sich so, wie du es aus anderen Apps kennst, und das Plus öffnet weiterhin das Hinzufügen. Unter iOS 26 bleibt alles, wie es ist.
 
+## Siri trägt ein, was du sagst
+
+Sag „Mein Gewicht in Intake eintragen“ oder „Lebensmittel in Intake eintragen“ und danach die Zahl. Siri versteht jetzt auch eine diktierte Kommazahl wie 84,3. Vorher hat sie bei einem Komma noch einmal gefragt, und das ging so weiter, bis man „Punkt“ gesagt hat. Beim Eintragen von Lebensmitteln kennt Siri außerdem die hundert zuletzt benutzten Lebensmittel aus deiner Bibliothek und fragt nach der Menge, statt immer 100 g zu nehmen.
+
 ## Tage wechseln
 
 Das Wischen zwischen Tagen läuft ruhiger, ein Drehen des Geräts behält den Tag, auf dem du warst, und ein Tipp auf einen anderen Tag in der Wochenleiste ist schneller da. Intake liest dafür beim Wischen nicht mehr ganze Messreihen neu ein und baut den sichtbaren Tag nicht nach jedem Wisch neu auf.
@@ -76,6 +81,8 @@ Ein neues Rezept, das du gerade anlegst, speichert Intake jetzt laufend auf dein
 - **Scanner im Querformat auf dem iPad.** Im Querformat war das Kamerabild des Barcode-Scanners um 90 Grad gedreht. Es folgt jetzt der Haltung des Geräts, auch in Split View, und Fotos für Intake AI kommen aufrecht an.
 - **Wieder raus aus dem Scanner.** Hast du den Scanner direkt geöffnet, etwa über den Sperrbildschirm oder ein Widget, landetest du nach dem Zurück wieder im Scanner, immer und immer wieder. Die Lebensmittelansicht öffnet ihren Start jetzt nur einmal.
 - Die Zeilen in der Teilen-Ansicht waren in der Akzentfarbe erschienen. Titel und Werte stehen wieder in den normalen Textfarben.
+- **Ein Gewicht von Siri oder der Watch steht sofort da.** In der Statistik stand es sofort, die Karte auf Heute zeigte noch das alte, bis du Intake geschlossen und neu geöffnet hast. Sie aktualisiert sich jetzt, sobald das Gewicht ankommt, auch wenn du beim Sprechen gar nicht in der App warst.
+- **Gescannte Produkte holen die Datenbank ein.** Ein Produkt, das beim ersten Scannen noch fehlte, blieb für immer die Kopie von Open Food Facts, auch wenn wir es längst aufgenommen hatten. Ein erneuter Scan fragt jetzt noch einmal nach und übernimmt die geprüften Werte.
 
 ### Android
 
