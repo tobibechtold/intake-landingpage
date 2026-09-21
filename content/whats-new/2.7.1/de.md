@@ -14,6 +14,8 @@ highlights:
   - "iOS: In Garmin oder Health gelöschte Workouts verschwinden auch aus Intake"
   - "iOS: Der Scanner folgt auf dem iPad der Haltung des Geräts, und du kommst wieder aus ihm heraus"
   - "Android: Heute sieht neu aus: kompakter Kalorienring, Makros als ein Balken, das Plus in der Mahlzeit"
+  - "Android: Der Barcode-Scanner findet mehr Produkte, jetzt auch direkt über Open Food Facts"
+  - "Android: Eine Portionsgröße ist eine Portion, die eigene Menge startet bei 100 g"
   - "Android: Vorschläge bieten dieselben Portionen wie Favoriten und häufige Lebensmittel"
   - "Android: Health Connect verlangt keine Berechtigungen mehr, die längst erteilt sind"
   - "Android: Ein nicht lesbarer Health-Connect-Eintrag blockiert nicht mehr Schritte und Kalorien"
@@ -79,6 +81,9 @@ Ein neues Rezept, das du gerade anlegst, speichert Intake jetzt laufend auf dein
 
 ### Android
 
+- Barcode-Scanner: Ein Produkt, das in der Intake-Datenbank noch fehlt, endete nach dem Scannen im Nichts, obwohl der Barcode erkannt wurde. Intake fragt jetzt wie auf iOS zusätzlich direkt bei Open Food Facts nach und öffnet das Produkt. Solche Lücken werden anonym gemeldet, damit das Produkt in die Datenbank aufgenommen werden kann.
+- Kennt wirklich niemand den Barcode, öffnet sich das Formular für ein neues Produkt, der Barcode ist schon eingetragen. Bisher blieb die Kamera offen, zeigte eine kleine englische Zeile und reagierte auf denselben Barcode nicht mehr.
+- Portionen: Nennt ein Produkt eine Portionsgröße, zum Beispiel 15,4 g pro Riegel, bietet Intake sie jetzt als Portion an und wählt sie vor. Die eigene Menge startet bei 100 g, statt das Gewicht der Portion zu wiederholen. Hast du bei einem Produkt schon einmal eine eigene Menge eingetragen, bleibt diese gemerkt.
 - Ein Lebensmittel aus den Vorschlägen bot nur „Eigene Menge“ an, während dasselbe Lebensmittel aus den Favoriten oder unter Häufig seine Portionen zeigte. Vorschläge bieten jetzt dieselben Portionen, zum Beispiel einen kleinen, mittleren oder großen Apfel oder eine Scheibe Brot.
 - Health Connect: Schlug eine Synchronisierung fehl, stand in den Einstellungen „Health Connect-Berechtigungen sind erforderlich“, obwohl alle Berechtigungen erteilt waren. Sie erneut zu vergeben änderte nichts. Intake sagt jetzt, dass die Synchronisierung fehlgeschlagen ist.
 - Health Connect: Ein einzelner Eintrag, den Intake nicht lesen kann, etwa ein Workout aus einer anderen App, hielt die gesamte Synchronisierung an. Schritte, Kalorien und alles andere werden jetzt trotzdem übernommen.

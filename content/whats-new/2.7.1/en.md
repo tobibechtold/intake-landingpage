@@ -14,6 +14,8 @@ highlights:
   - "iOS: Workouts deleted in Garmin or Health disappear from Intake too"
   - "iOS: On iPad the scanner follows the way you hold the device, and you get out of it again"
   - "Android: Today has a new look: compact calorie ring, the macros as one bar, the plus inside the meal"
+  - "Android: The barcode scanner finds more products, now also straight from Open Food Facts"
+  - "Android: A serving size is a portion, and the custom amount starts at 100 g"
   - "Android: Suggestions offer the same portions as favourites and frequent foods"
   - "Android: Health Connect no longer asks for permissions you have already granted"
   - "Android: One unreadable Health Connect record no longer blocks steps and calories"
@@ -80,6 +82,9 @@ A new recipe you are putting together is now saved to your device as you go. If 
 
 ### Android
 
+- Barcode scanner: a product that is not in the Intake database yet led nowhere after scanning, although the barcode was read. Intake now also asks Open Food Facts directly, as on iOS, and opens the product. Such gaps are reported anonymously so the product can be added to the database.
+- If nobody knows the barcode at all, the form for a new product opens with the barcode already filled in. Until now the camera stayed open, showed one small English line and no longer reacted to that barcode.
+- Portions: when a product states a serving size, for example 15.4 g per bar, Intake now offers it as a portion and selects it. The custom amount starts at 100 g instead of repeating the weight of the portion. If you have entered a custom amount for a product before, that one is still remembered.
 - A food opened from Suggestions offered a custom amount only, while the same food from Favourites or Frequent showed its portions. Suggestions now offer the same portions, for example a small, medium or large apple, or a slice of bread.
 - Health Connect: when a sync failed, Settings said "Health Connect permissions are required" although every permission was granted, and granting them again changed nothing. Intake now says that the sync failed.
 - Health Connect: a single record Intake cannot read, such as a workout from another app, stopped the whole sync. Steps, calories and everything else now come through anyway.
