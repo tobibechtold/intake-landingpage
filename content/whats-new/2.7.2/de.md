@@ -18,6 +18,8 @@ highlights:
 
 Jeder Eintrag, jedes eigene Produkt und jedes Rezept kann jetzt ein Foto haben. Tippe auf das Feld mit dem Foto-Symbol neben dem Namen und nimm ein Foto auf oder wähle eins aus deiner Mediathek. Für die Auswahl braucht Intake keinen Zugriff auf deine Mediathek, die Auswahl des Systems gibt nur das eine Foto weiter.
 
+![Ein Rezept mit Foto](assets/photos-de.png)
+
 **Oben auf der Seite.** Öffnest du ein Lebensmittel mit Foto, steht das Foto oben über die ganze Breite, die Leiste liegt darüber. Ziehst du die Seite nach unten, wird das Foto größer, ein Tipp zeigt es im Vollbild. Über den Kamera-Button unten rechts auf dem Foto tauschst du es aus oder entfernst es.
 
 **Auf Heute.** Einträge mit Foto zeigen es als kleines Bild am Anfang der Zeile. Ein Eintrag zeigt sein eigenes Foto, sonst das Foto des Produkts oder Rezepts, aus dem er stammt. So reicht ein Foto am Produkt für jeden künftigen Eintrag.

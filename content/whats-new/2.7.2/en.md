@@ -18,6 +18,8 @@ highlights:
 
 Every entry, every product of your own and every recipe can now have a photo. Tap the square with the photo symbol next to the name and take a photo or choose one from your library. Choosing needs no access to your photo library: the system's picker hands over only the one photo.
 
+![A recipe with its photo](assets/photos-en.png)
+
 **At the top of the page.** Open a food with a photo and the photo spans the top of the page, with the toolbar floating over it. Pull the page down and the photo grows; a tap shows it full screen. The camera button at its bottom right changes or removes it.
 
 **On Today.** Entries with a photo show it as a small picture at the start of the row. An entry shows its own photo, otherwise the photo of the product or recipe it came from, so one photo on a product covers every future entry.
