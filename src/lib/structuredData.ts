@@ -104,7 +104,7 @@ export const organization = (lang: Language) => ({
   description: translations[lang].heroDescription,
   sameAs: [
     'https://www.instagram.com/getintake.app/',
-    'https://www.threads.com/@getintake.app',
+    'https://www.threads.com/@getintake.de',
   ],
 });
 
