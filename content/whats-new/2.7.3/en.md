@@ -2,7 +2,7 @@
 version: "2.7.3"
 publishedAt: "2026-10-04"
 title: "What's new in Intake 2.7.3"
-summary: "On iOS, recipes work with the weight of the finished dish, and you set the portions freely. The weight card on Today shows your total change since a start date, and Stats shows your weight across all years. Plus six fixes, among them for Apple Health and Stats"
+summary: "On iOS, recipes work with the weight of the finished dish, and you set the portions freely. The weight card on Today shows your total change since a start date, and Stats shows your weight across all years. Plus six fixes, among them for Apple Health and Stats. Android gets the same recipes, total change and all-years history, plus a switch for staples weighed raw or cooked and five fixes"
 coverImage: "./assets/cover.svg"
 highlights:
   - "iOS: Recipes with a finished weight, the nutrients are spread over the finished dish"
@@ -12,6 +12,10 @@ highlights:
   - "iOS: Apple Health gets everything it allows, even with single nutrients switched off"
   - "iOS: Correct year totals and averages up to today in Stats"
   - "iOS: The scanner starts on the main camera"
+  - "Android: Recipes with a finished weight and freely set portions"
+  - "Android: Your total weight change on Today and your weight history across all years"
+  - "Android: Weigh rice, pasta and lentils raw or cooked"
+  - "Android: Correct year totals and averages up to today in Stats"
 ---
 
 ## New on iOS: recipes by their finished weight
@@ -36,6 +40,14 @@ Choose the start date under Settings, Body Data, "Starting weight". Without a ch
 
 In Stats, weight now has "All" next to week, month and year. It shows your history across all years, one point per month, with your start, current weight, change, lowest and highest weight and the number of days logged. If your weights are already in Apple Health, bring them into Intake under Settings, Apple Health, "Import weight history".
 
+## New on Android
+
+**Recipes by their finished weight.** Recipes on Android work with the weight of the finished dish too, just as described above: switch off "Use calculated weight", enter the "Finished weight (total)", set the portions freely. The old "Weight per portion" field is gone. Recipes where you used it open with the total weight it gave as their finished weight, their values stay the same, and a note explains the new field.
+
+**Your total weight change and your whole history.** The weight card on Today shows the "Total" row, and you choose the start date under Settings, Body Data, "Starting weight". Without a choice, Intake starts at the first weight you logged or brought in from Health Connect. In Stats, weight now has "All", one point per month across all years.
+
+**Raw or cooked.** If you weigh rice, pasta, quinoa, millet, buckwheat or lentils after cooking while the pack lists the values for the dry product, switch to "Cooked" below the amount. Intake converts with a fixed swell factor, for example 1 g raw ≈ 3 g cooked for brown rice: 135 g of cooked brown rice then have 163 kcal instead of 490. The switch appears for these staples when you log a custom amount in grams or ounces. Intake remembers your choice per product, the entry on Today reads for example "135 g · cooked", and you can switch it back when you edit it. If the product already describes cooked rice, the switch converts the other way.
+
 ## Bug fixes
 
 ### iOS
@@ -46,6 +58,14 @@ In Stats, weight now has "All" next to week, month and year. It shows your histo
 - **Averages up to today.** Stats counts the days up to today. A Wednesday no longer counts the rest of the week, and meals you have already planned for later days do not change your averages.
 - **The scanner starts on the main camera.** The barcode scanner opens on the normal lens and still focuses at short distances.
 - **Deleting weights in Stats.** Delete a weight with a long press in the week or month view, where it hits exactly that day.
+
+### Android
+
+- **Correct totals for the year.** Totals in the year view of Stats add up every day instead of the monthly averages, and "Maximum" shows your highest single day.
+- **Averages up to today.** Days after today no longer count in Stats, neither their targets nor meals you have already planned ahead.
+- **Sharing recipes.** A shared recipe file carries the portions you set and the right amounts of fiber, sugar, saturated fat and salt.
+- **Quick add after a recipe change.** Change a recipe's finished weight or portions and "Quick add" logs the new portion, not the amount from last time.
+- **Nutrient breakdown for recipes.** The ingredients in the breakdown on Today add up exactly to what the recipe entry booked.
 
 As always, you can find the full changelog [here](https://featurevoting.tobibechtold.dev/app/intake/changelog).
 
