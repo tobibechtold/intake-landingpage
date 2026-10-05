@@ -2,9 +2,10 @@
 version: "2.7.3"
 publishedAt: "2026-10-04"
 title: "Was ist neu in Intake 2.7.3"
-summary: "Auf iOS rechnen Rezepte mit dem Gewicht des fertigen Gerichts, und die Portionen stellst du frei ein. Die Gewichtskarte auf Heute zeigt deine gesamte Veränderung seit einem Startdatum, und die Statistik zeigt deinen Gewichtsverlauf über alle Jahre. Dazu sechs Fehlerbehebungen, unter anderem für Apple Health und die Statistik. Auf Android kommen dieselben Rezepte, die Gesamtveränderung und der Verlauf über alle Jahre, dazu ein Schalter für roh oder gekocht gewogene Grundnahrungsmittel und fünf Fehlerbehebungen"
+summary: "Auf iOS und Android wiegst du Reis, Nudeln und Linsen jetzt roh oder gekocht ab. Auf iOS rechnen Rezepte mit dem Gewicht des fertigen Gerichts, und die Portionen stellst du frei ein. Die Gewichtskarte auf Heute zeigt deine gesamte Veränderung seit einem Startdatum, und die Statistik zeigt deinen Gewichtsverlauf über alle Jahre. Dazu sechs Fehlerbehebungen, unter anderem für Apple Health und die Statistik. Auf Android kommen dieselben Rezepte, die Gesamtveränderung und der Verlauf über alle Jahre, dazu fünf Fehlerbehebungen"
 coverImage: "./assets/cover.svg"
 highlights:
+  - "Reis, Nudeln und Linsen roh oder gekocht abwiegen, auf iOS und Android"
   - "iOS: Rezepte mit Fertiggewicht, die Nährwerte verteilen sich auf das fertige Gericht"
   - "iOS: Portionen bei eigenem Gewicht frei einstellbar"
   - "iOS: Deine gesamte Gewichtsveränderung auf Heute, ab einem Startdatum deiner Wahl"
@@ -14,7 +15,6 @@ highlights:
   - "iOS: Der Scanner startet mit der Hauptkamera"
   - "Android: Rezepte mit Fertiggewicht und frei einstellbaren Portionen"
   - "Android: Deine gesamte Gewichtsveränderung auf Heute und der Gewichtsverlauf über alle Jahre"
-  - "Android: Reis, Nudeln und Linsen roh oder gekocht abwiegen"
   - "Android: Richtige Jahressummen und Durchschnitte bis heute in der Statistik"
 ---
 
@@ -40,13 +40,15 @@ Das Startdatum legst du unter Einstellungen, Körperdaten, „Startgewicht“ fe
 
 In der Statistik hat das Gewicht neben Woche, Monat und Jahr jetzt „Alle“. Dort siehst du deinen Verlauf über alle Jahre, mit einem Punkt pro Monat, dazu Start, aktuelles Gewicht, Änderung, Tiefst- und Höchstwert und die Zahl der erfassten Tage. Liegen deine Gewichte schon in Apple Health, holst du sie unter Einstellungen, Apple Health, „Gewichtsverlauf importieren“ in Intake.
 
+## Neu auf iOS und Android: roh oder gekocht
+
+Wiegst du Reis, Nudeln, Quinoa, Hirse, Buchweizen oder Linsen nach dem Kochen ab, obwohl auf der Packung die Werte für das trockene Produkt stehen, stellst du unter der Menge auf „Gekocht“. Intake rechnet mit einem festen Quellfaktor um, zum Beispiel 1 g roh ≈ 3 g gekocht bei Vollkornreis: 135 g gekochter Vollkornreis haben dann 163 kcal statt 490. Der Schalter erscheint bei diesen Grundnahrungsmitteln, wenn du eine eigene Menge in Gramm oder Unzen einträgst. Intake merkt sich deine Wahl pro Produkt, der Eintrag auf Heute heißt dann zum Beispiel „135 g · gekocht“, und beim Bearbeiten stellst du ihn wieder um. Steht im Produkt schon gekochter Reis, rechnet der Schalter in die andere Richtung.
+
 ## Neu auf Android
 
 **Rezepte nach Fertiggewicht.** Auch auf Android rechnen Rezepte mit dem Gewicht des fertigen Gerichts, genau wie oben beschrieben: „Berechnetes Gewicht verwenden“ ausschalten, „Fertiggewicht (gesamt)“ eintragen, die Portionen frei einstellen. Das bisherige Feld „Gewicht pro Portion“ entfällt. Rezepte, bei denen du es genutzt hast, öffnen mit dem daraus berechneten Gesamtgewicht als Fertiggewicht, ihre Werte bleiben gleich, und ein Hinweis erklärt das neue Feld.
 
 **Deine gesamte Gewichtsveränderung und dein ganzer Verlauf.** Die Gewichtskarte auf Heute zeigt die Zeile „Gesamt“, das Startdatum legst du unter Einstellungen, Körperdaten, „Startgewicht“ fest. Ohne Auswahl beginnt Intake beim ersten Gewicht, das du eingetragen oder aus Health Connect übernommen hast. In der Statistik hat das Gewicht jetzt „Alle“, mit einem Punkt pro Monat über alle Jahre.
-
-**Roh oder gekocht.** Wiegst du Reis, Nudeln, Quinoa, Hirse, Buchweizen oder Linsen nach dem Kochen ab, obwohl auf der Packung die Werte für das trockene Produkt stehen, stellst du unter der Menge auf „Gekocht“. Intake rechnet mit einem festen Quellfaktor um, zum Beispiel 1 g roh ≈ 3 g gekocht bei Vollkornreis: 135 g gekochter Vollkornreis haben dann 163 kcal statt 490. Der Schalter erscheint bei diesen Grundnahrungsmitteln, wenn du eine eigene Menge in Gramm oder Unzen einträgst. Intake merkt sich deine Wahl pro Produkt, der Eintrag auf Heute heißt dann zum Beispiel „135 g · gekocht“, und beim Bearbeiten stellst du ihn wieder um. Steht im Produkt schon gekochter Reis, rechnet der Schalter in die andere Richtung.
 
 ## Fehlerbehebungen
 
