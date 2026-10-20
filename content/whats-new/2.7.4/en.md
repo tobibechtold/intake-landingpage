@@ -2,15 +2,17 @@
 version: "2.7.4"
 publishedAt: "2026-10-21"
 title: "What's new in Intake 2.7.4"
-summary: "On iOS, iCloud sync is rebuilt: changes from your other devices arrive by themselves within seconds, and your tags and meals now sync too. Recipes show their photos when you log, plus ten fixes, among them for Suggestions, water and large text."
+summary: "On iOS, iCloud sync is rebuilt: changes from your other devices arrive by themselves within seconds, and your tags and meals now sync too. Recipes show their photos when you log, plus ten fixes, among them for Suggestions, water and large text. On Android, recipes show their photos when you log too, plus nine improvements, among them for Health Connect, burned calories and the app icon."
 coverImage: "./assets/cover.svg"
 highlights:
   - "iOS: iCloud sync is rebuilt, changes arrive within seconds"
   - "iOS: Tags and meals sync between your devices"
-  - "iOS: Recipe photos when you add food"
+  - "Recipe photos when you add food, on iOS and Android"
   - "iOS: Suggestions log the right calories every time"
   - "iOS: Water from the widget, Apple Watch and Siri counts exactly once"
-  # ANDROID: add highlights here, prefixed with "Android: "
+  - "Android: Past days catch up on steps and calories when your watch syncs later"
+  - "Android: Burned calories use your tracker's full day"
+  - "Android: The app icon follows themed icons"
 ---
 
 ## New on iOS: iCloud sync
@@ -48,7 +50,15 @@ Your recipes now show their photos when you add food under "Recipes", just like 
 
 ### Android
 
-<!-- ANDROID: add rows here -->
+- **Past days catch up.** When your watch or fitness app syncs with Health Connect later, Intake updates the steps and calories of past days.
+- **Burned with your tracker.** Burned calories use your tracker's full day, Fitbit for example, even when another app reports only part of the day.
+- **Themed icons.** The app icon follows Android's themed icons.
+- **Back to Today after scanning.** Once you add a scanned product, you land straight back on Today.
+- **Search stays open.** When you delete your search word, the search stays open and you just keep typing.
+- **Drink recipes count as water.** A recipe marked as a drink counts toward your water goal when you log it.
+- **Burned in Stats.** The Burned tile shows what you burned, and below it how much of that counts toward your target.
+- **The smart water reminder checks first.** Before Intake reminds you to drink, it checks whether you've already had enough.
+- **Removed stays removed.** What you remove from Frequent or Recent no longer shows up in Suggestions.
 
 As always, you can find the full changelog [here](https://featurevoting.tobibechtold.dev/app/intake/changelog).
 

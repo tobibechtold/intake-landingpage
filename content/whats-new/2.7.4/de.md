@@ -2,15 +2,17 @@
 version: "2.7.4"
 publishedAt: "2026-10-21"
 title: "Was ist neu in Intake 2.7.4"
-summary: "Auf iOS ist der iCloud-Abgleich neu gebaut: Änderungen von deinen anderen Geräten kommen von selbst innerhalb weniger Sekunden an, und jetzt gleichen sich auch Tags und Mahlzeiten ab. Rezepte zeigen ihre Fotos auch beim Eintragen, dazu zehn Fehlerbehebungen, unter anderem für Vorschläge, Wasser und große Schrift."
+summary: "Auf iOS ist der iCloud-Abgleich neu gebaut: Änderungen von deinen anderen Geräten kommen von selbst innerhalb weniger Sekunden an, und jetzt gleichen sich auch Tags und Mahlzeiten ab. Rezepte zeigen ihre Fotos auch beim Eintragen, dazu zehn Fehlerbehebungen, unter anderem für Vorschläge, Wasser und große Schrift. Auf Android zeigen Rezepte ihre Fotos ebenfalls beim Eintragen, dazu neun Verbesserungen, unter anderem für Health Connect, verbrannte Kalorien und das App-Symbol."
 coverImage: "./assets/cover.svg"
 highlights:
   - "iOS: Der iCloud-Abgleich ist neu gebaut, Änderungen kommen innerhalb weniger Sekunden an"
   - "iOS: Tags und Mahlzeiten gleichen sich zwischen deinen Geräten ab"
-  - "iOS: Rezeptfotos auch beim Hinzufügen von Essen"
+  - "Rezeptfotos auch beim Hinzufügen von Essen, auf iOS und Android"
   - "iOS: Vorschläge tragen jedes Mal die passenden Kalorien ein"
   - "iOS: Wasser aus Widget, Apple Watch und Siri zählt genau einmal"
-  # ANDROID: highlights hier ergänzen, mit "Android: " davor
+  - "Android: Vergangene Tage holen Schritte und Kalorien nach, wenn deine Uhr später synchronisiert"
+  - "Android: Verbrannte Kalorien nutzen den ganzen Tag deines Trackers"
+  - "Android: Das App-Symbol passt sich an die Designsymbole an"
 ---
 
 ## Neu auf iOS: der iCloud-Abgleich
@@ -48,7 +50,15 @@ Deine Rezepte zeigen ihre Fotos jetzt auch beim Hinzufügen von Essen unter „R
 
 ### Android
 
-<!-- ANDROID: Zeilen hier ergänzen -->
+- **Vergangene Tage holen auf.** Synchronisiert deine Uhr oder Fitness-App erst später mit Health Connect, aktualisiert Intake Schritte und Kalorien der vergangenen Tage nachträglich.
+- **Verbrannt mit deinem Tracker.** Verbrannte Kalorien nutzen den ganzen Tag deines Trackers, zum Beispiel Fitbit, auch wenn eine andere App nur einen Teil des Tages meldet.
+- **Designsymbole.** Das App-Symbol passt sich an die Designsymbole von Android an.
+- **Nach dem Scannen zurück zu Heute.** Hast du ein gescanntes Produkt hinzugefügt, landest du direkt wieder bei Heute.
+- **Die Suche bleibt offen.** Wenn du dein Suchwort löschst, bleibt die Suche offen und du tippst einfach weiter.
+- **Getränke-Rezepte zählen zum Wasser.** Ein Rezept, das als Getränk markiert ist, zählt beim Eintragen zu deinem Wasserziel.
+- **Verbrannt in der Statistik.** Die Kachel „Verbrannt“ zeigt, was du verbrannt hast, und darunter, wie viel davon ins Ziel eingerechnet wird.
+- **Die smarte Trinkerinnerung schaut nach.** Bevor Intake dich ans Trinken erinnert, prüft es, ob du nicht schon genug getrunken hast.
+- **Entfernt bleibt entfernt.** Was du aus „Häufig“ oder „Verlauf“ entfernst, taucht auch in den Vorschlägen nicht mehr auf.
 
 Das komplette Changelog findest du wie immer [hier](https://featurevoting.tobibechtold.dev/app/intake/changelog).
 
