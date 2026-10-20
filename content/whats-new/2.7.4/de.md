@@ -2,7 +2,7 @@
 version: "2.7.4"
 publishedAt: "2026-10-21"
 title: "Was ist neu in Intake 2.7.4"
-summary: "Auf iOS ist der iCloud-Abgleich neu gebaut: Änderungen von deinen anderen Geräten kommen von selbst innerhalb weniger Sekunden an, und jetzt gleichen sich auch Tags und Mahlzeiten ab. Rezepte zeigen ihre Fotos auch beim Eintragen, dazu zehn Fehlerbehebungen, unter anderem für Vorschläge, Wasser und große Schrift. Auf Android zeigen Rezepte ihre Fotos ebenfalls beim Eintragen, dazu neun Verbesserungen, unter anderem für Health Connect, verbrannte Kalorien und das App-Symbol."
+summary: "Auf iOS ist der iCloud-Abgleich neu gebaut: Änderungen von deinen anderen Geräten kommen von selbst innerhalb weniger Sekunden an, und jetzt gleichen sich auch Tags und Mahlzeiten ab. Auf iOS und Android zeigen Rezepte ihre Fotos jetzt auch beim Eintragen. Dazu kommen auf iOS zehn Fehlerbehebungen, unter anderem für Vorschläge, Wasser und große Schrift, und auf Android neun, unter anderem für Health Connect, verbrannte Kalorien und das App-Symbol."
 coverImage: "./assets/cover.svg"
 highlights:
   - "iOS: Der iCloud-Abgleich ist neu gebaut, Änderungen kommen innerhalb weniger Sekunden an"

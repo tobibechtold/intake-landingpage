@@ -2,7 +2,7 @@
 version: "2.7.4"
 publishedAt: "2026-10-21"
 title: "What's new in Intake 2.7.4"
-summary: "On iOS, iCloud sync is rebuilt: changes from your other devices arrive by themselves within seconds, and your tags and meals now sync too. Recipes show their photos when you log, plus ten fixes, among them for Suggestions, water and large text. On Android, recipes show their photos when you log too, plus nine improvements, among them for Health Connect, burned calories and the app icon."
+summary: "On iOS, iCloud sync is rebuilt: changes from your other devices arrive by themselves within seconds, and your tags and meals now sync too. On iOS and Android, recipes now show their photos when you log. iOS also gets ten fixes, among them for Suggestions, water and large text, and Android nine, among them for Health Connect, burned calories and the app icon."
 coverImage: "./assets/cover.svg"
 highlights:
   - "iOS: iCloud sync is rebuilt, changes arrive within seconds"
