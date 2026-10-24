@@ -67,7 +67,7 @@ Areas (from the iOS inventory; Android maps onto the same areas): Heute, Essen e
 
 ## Content scope
 
-Every row of the iOS inventory (`2026-10-25-help-center/ios-inventory.md`, 257 rows in 11 areas) and of the Android inventory (requested from the Android session, to be added to the same folder) is covered by some topic. Topics group rows; a setting gets its own topic only when it needs explaining, otherwise it is covered on its screen's topic ("Einstellungen: Aktivität").
+Every row of the iOS inventory (`2026-10-25-help-center/ios-inventory.md`, 257 rows in 11 areas) and of the Android inventory (`2026-10-25-help-center/android-inventory.md`, about 285 rows, from the Android session) is covered by some topic. Pages describe the 2.8.0 apps on both platforms, since they go live with 2.8.0 (e.g. tapping "Ziel" on Heute opens the "Tagesziel anpassen" sheet on both). Topics group rows; a setting gets its own topic only when it needs explaining, otherwise it is covered on its screen's topic ("Einstellungen: Aktivität").
 
 The most asked topics (from `2026-10-25-help-center/feature-voting-recon.md`, all 721 posts, incl. closed) must exist at launch:
 1. Mahlzeit oder einzelne Einträge auf einen anderen Tag kopieren (about 14 posts)
