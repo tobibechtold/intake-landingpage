@@ -2,9 +2,11 @@
 import { getEntry, render, type CollectionEntry } from 'astro:content';
 import { Image } from 'astro:assets';
 import { ArrowRight } from 'lucide-astro';
+import HelpPlatformSwitch from '@/components/astro/HelpPlatformSwitch.astro';
 import PageBreadcrumbs from '@/components/astro/PageBreadcrumbs.astro';
 import { buildLocalizedPath } from '@/lib/localeRouting';
 import { findTopic, topicPath, type HelpPlatform } from '@/lib/helpTopics';
+import { platformOnlyNote } from '@/lib/helpPlatform';
 import { useT } from '@/i18n/t';
 import type { Language } from '@/i18n/translations';
 
@@ -33,14 +35,12 @@ const COPY = {
     steps: 'So geht es',
     related: 'Verwandte Themen',
     platform: { ios: 'iPhone', android: 'Android' },
-    only: { ios: 'Nur auf dem iPhone', android: 'Nur auf Android' },
   },
   en: {
     short: 'In short:',
     steps: 'How to',
     related: 'Related topics',
     platform: { ios: 'iPhone', android: 'Android' },
-    only: { ios: 'Only on iPhone', android: 'Only on Android' },
   },
 } as const;
 const copy = COPY[lang];
@@ -49,7 +49,7 @@ const platforms = (['ios', 'android'] as HelpPlatform[]).filter((platform) =>
   manifestTopic.platforms.includes(platform),
 );
 const platformNote =
-  platforms.length === 1 ? (topic.data.platformNote ?? copy.only[platforms[0]]) : undefined;
+  platforms.length === 1 ? platformOnlyNote(lang, platforms[0], topic.data.platformNote) : undefined;
 
 const steps = (topic.data.steps ?? []).map((step) => ({
   blocks: platforms.map((platform) => ({
@@ -77,6 +77,8 @@ const breadcrumbs = [
 <main class="section-gradient min-h-screen pb-20 pt-28">
   <div class="container max-w-3xl">
     <PageBreadcrumbs items={breadcrumbs} />
+
+    {platforms.length > 1 && <HelpPlatformSwitch lang={lang} />}
 
     <article class="space-y-10">
       <header class="space-y-4">
@@ -109,7 +111,7 @@ const breadcrumbs = [
                       {block.image && (
                         <Image
                           src={block.image}
-                          alt={block.text}
+                          alt=""
                           loading="lazy"
                           class="w-full max-w-sm rounded-xl border border-white/[0.08]"
                         />
@@ -151,3 +153,16 @@ const breadcrumbs = [
     </article>
   </div>
 </main>
+
+<style is:global>
+  /* Hide the block of the other platform, but only when this page has a block for the
+     chosen one: a one-platform topic keeps its blocks whatever the reader picked. */
+  html[data-help-platform='ios']:has([data-platform-block='ios']) [data-platform-block='android'],
+  html[data-help-platform='android']:has([data-platform-block='android']) [data-platform-block='ios'] {
+    display: none;
+  }
+  /* Once a platform is set the per-block labels are redundant. */
+  html[data-help-platform] [data-platform-label] {
+    display: none;
+  }
+</style>

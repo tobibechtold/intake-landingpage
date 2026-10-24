@@ -1,0 +1,69 @@
+---
+import { HELP_PLATFORM_STORAGE_KEY } from '@/lib/helpPlatform';
+import type { Language } from '@/i18n/translations';
+
+/**
+ * Sticky iPhone / Android segmented control. Only rendered for topics that exist on both
+ * platforms. The head script sets html[data-help-platform]; a click here stores the choice
+ * and flips the attribute without reloading. Hidden for app links via html[data-help-switch].
+ */
+interface Props {
+  lang: Language;
+}
+const { lang } = Astro.props;
+const label = lang === 'de' ? 'Plattform' : 'Platform';
+const options = [
+  { id: 'ios', text: 'iPhone' },
+  { id: 'android', text: 'Android' },
+];
+---
+<div class="sticky top-16 z-10 -mx-1 mb-6 px-1 py-2" data-platform-switch data-storage-key={HELP_PLATFORM_STORAGE_KEY}>
+  <div role="group" aria-label={label} class="inline-flex rounded-full border border-white/[0.12] bg-black/60 p-1 backdrop-blur">
+    {options.map((option) => (
+      <button
+        type="button"
+        data-platform-choice={option.id}
+        aria-pressed="false"
+        class="rounded-full px-4 py-1.5 text-sm font-semibold text-foreground/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55"
+      >
+        {option.text}
+      </button>
+    ))}
+  </div>
+</div>
+
+<style is:global>
+  html[data-help-switch='hidden'] [data-platform-switch] {
+    display: none;
+  }
+  html[data-help-platform='ios'] [data-platform-choice='ios'],
+  html[data-help-platform='android'] [data-platform-choice='android'] {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+</style>
+
+<script>
+  const root = document.documentElement;
+  const wrapper = document.querySelector<HTMLElement>('[data-platform-switch]');
+  const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-platform-choice]'));
+  const sync = () => {
+    for (const button of buttons) {
+      button.setAttribute('aria-pressed', String(button.dataset.platformChoice === root.dataset.helpPlatform));
+    }
+  };
+  sync();
+  for (const button of buttons) {
+    button.addEventListener('click', () => {
+      const platform = button.dataset.platformChoice;
+      if (!platform) return;
+      root.dataset.helpPlatform = platform;
+      try {
+        localStorage.setItem(wrapper?.dataset.storageKey ?? 'intake.help.platform', platform);
+      } catch {
+        // Storage blocked: the choice still applies to this page view.
+      }
+      sync();
+    });
+  }
+</script>

@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SiteShell from '@/components/astro/SiteShell.astro';
 import HelpTopicPage from '@/components/astro/HelpTopicPage.astro';
+import { HELP_PLATFORM_SCRIPT } from '@/lib/helpPlatform';
 import { findTopic } from '@/lib/helpTopics';
 import { pageProps } from '@/lib/pageSeo';
 
@@ -26,6 +27,7 @@ const route = `/en/help/${slug}`;
 const { lang } = pageProps(route);
 ---
 <BaseLayout route={route} title={`${topic.data.title} | Intake`} description={topic.data.short}>
+  <script slot="head" is:inline set:html={HELP_PLATFORM_SCRIPT} />
   <SiteShell route={route}>
     <HelpTopicPage lang={lang} topic={topic} />
   </SiteShell>

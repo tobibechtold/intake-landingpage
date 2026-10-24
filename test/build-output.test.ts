@@ -87,6 +87,51 @@ describe('build output', () => {
       }
     });
 
+    it('shows both platforms with visible labels and no hidden state without JavaScript', () => {
+      for (const html of [de, en]) {
+        const blocks = [...html.matchAll(/<div data-platform-block="(ios|android)"[^>]*>([\s\S]*?)<\/div>/g)];
+        expect(blocks).toHaveLength(2 * 1 * (html.match(/data-platform-block="ios"/g)?.length ?? 0));
+        for (const [, platform, inner] of blocks) {
+          const label = inner.match(/<p data-platform-label[^>]*>\s*([^<]*?)\s*<\/p>/)?.[1];
+          expect(label).toBe(platform === 'ios' ? 'iPhone' : 'Android');
+        }
+        expect(html).not.toMatch(/<html[^>]*data-help-platform/);
+      }
+    });
+
+    it('sets the platform attribute from an inline head script before first paint', () => {
+      const head = de.slice(0, de.indexOf('</head>'));
+      const script = head.match(/<script>(\(function\(\)\{[\s\S]*?)<\/script>/)?.[1] ?? '';
+      expect(script).toMatch(/documentElement;d\.dataset\.helpPlatform=/);
+      expect(script).toContain('intake.help.platform');
+      expect(Buffer.byteLength(script)).toBeLessThan(1024);
+      expect(head).not.toMatch(/<script[^>]*src=[^>]*help-?platform/i);
+    });
+
+    it('renders the switch on a two-platform topic', () => {
+      expect(de).toMatch(/<div[^>]*data-platform-switch/);
+      expect(de).toContain('data-platform-choice="ios"');
+      expect(de).toContain('data-platform-choice="android"');
+      expect(de).toMatch(/<style>[^<]*\[data-platform-label\]/);
+    });
+
+    it('has no switch and keeps its blocks on a one-platform topic', () => {
+      for (const route of ['/hilfe/ipad-iphone-duo', '/en/help/ipad-iphone-duo']) {
+        const html = read(route);
+        expect(html).not.toMatch(/<div[^>]*data-platform-switch/);
+        expect(html).not.toContain('data-platform-block="android"');
+      }
+      // The block-hiding CSS is guarded by :has(), so a page without a block for the chosen
+      // platform never hides its own.
+      expect(de).toContain(":has([data-platform-block=");
+    });
+
+    it('shows the platformNote override on wide-screen-layout', () => {
+      expect(read('/hilfe/ipad-iphone-duo')).toContain('data-platform-note>Nur auf iPhone Duo und iPad<');
+      expect(read('/en/help/ipad-iphone-duo')).toContain('data-platform-note>Only on iPhone Duo and iPad<');
+      expect(de).not.toContain('data-platform-note');
+    });
+
     it('uses the topic title per page', () => {
       expect(de).toContain('<title>Mahlzeit auf einen anderen Tag kopieren | Intake</title>');
     });
