@@ -1,0 +1,1187 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "id": "calorie-ring",
+      "area": "heute",
+      "slugs": {
+        "de": "kalorienring",
+        "en": "calorie-ring"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "edit-today-page",
+      "area": "heute",
+      "slugs": {
+        "de": "heute-seite-bearbeiten",
+        "en": "edit-today-page"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "custom-meals",
+      "area": "heute",
+      "slugs": {
+        "de": "eigene-mahlzeiten",
+        "en": "custom-meals"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "switch-days",
+      "area": "heute",
+      "slugs": {
+        "de": "tag-wechseln",
+        "en": "switch-days"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "month-calendar",
+      "area": "heute",
+      "slugs": {
+        "de": "monatskalender",
+        "en": "month-calendar"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "daily-nutrients",
+      "area": "heute",
+      "slugs": {
+        "de": "naehrstoffe-des-tages",
+        "en": "daily-nutrients"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "meal-summary",
+      "area": "heute",
+      "slugs": {
+        "de": "mahlzeit-uebersicht",
+        "en": "meal-summary"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "mood",
+      "area": "heute",
+      "slugs": {
+        "de": "stimmung",
+        "en": "mood"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "pull-to-refresh",
+      "area": "heute",
+      "slugs": {
+        "de": "zum-aktualisieren-ziehen",
+        "en": "pull-to-refresh"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "share-picture",
+      "area": "heute",
+      "slugs": {
+        "de": "bild-teilen",
+        "en": "share-picture"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "wide-screen-layout",
+      "area": "heute",
+      "slugs": {
+        "de": "ipad-iphone-duo",
+        "en": "ipad-iphone-duo"
+      },
+      "platforms": [
+        "ios"
+      ]
+    },
+    {
+      "id": "add-food",
+      "area": "logging",
+      "slugs": {
+        "de": "lebensmittel-hinzufuegen",
+        "en": "add-food"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "scan-barcode",
+      "area": "logging",
+      "slugs": {
+        "de": "barcode-scannen",
+        "en": "scan-barcode"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "quick-add-calories",
+      "area": "logging",
+      "slugs": {
+        "de": "nur-kalorien-erfassen",
+        "en": "quick-add-calories"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "create-product",
+      "area": "logging",
+      "slugs": {
+        "de": "eigenes-produkt-anlegen",
+        "en": "create-product"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "portions-units",
+      "area": "logging",
+      "slugs": {
+        "de": "portionen-einheiten",
+        "en": "portions-units"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "raw-or-cooked",
+      "area": "logging",
+      "slugs": {
+        "de": "roh-oder-gekocht",
+        "en": "raw-or-cooked"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "recent-frequent-favorites",
+      "area": "logging",
+      "slugs": {
+        "de": "verlauf-haeufig-favoriten",
+        "en": "recent-frequent-favorites"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "summary-capsule",
+      "area": "logging",
+      "slugs": {
+        "de": "uebersichts-kapsel",
+        "en": "summary-capsule"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "edit-entry",
+      "area": "logging",
+      "slugs": {
+        "de": "eintrag-bearbeiten",
+        "en": "edit-entry"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "move-entry",
+      "area": "logging",
+      "slugs": {
+        "de": "eintrag-verschieben",
+        "en": "move-entry"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "copy-meal",
+      "area": "logging",
+      "slugs": {
+        "de": "mahlzeit-kopieren",
+        "en": "copy-meal"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "share-meal",
+      "area": "logging",
+      "slugs": {
+        "de": "mahlzeit-teilen",
+        "en": "share-meal"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "food-photos",
+      "area": "logging",
+      "slugs": {
+        "de": "fotos-an-eintraegen",
+        "en": "food-photos"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "add-activity",
+      "area": "logging",
+      "slugs": {
+        "de": "aktivitaet-eintragen",
+        "en": "add-activity"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "library",
+      "area": "recipes-library",
+      "slugs": {
+        "de": "bibliothek",
+        "en": "library"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "my-products",
+      "area": "recipes-library",
+      "slugs": {
+        "de": "meine-produkte",
+        "en": "my-products"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "tags",
+      "area": "recipes-library",
+      "slugs": {
+        "de": "schlagwoerter",
+        "en": "tags"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "submit-product",
+      "area": "recipes-library",
+      "slugs": {
+        "de": "produkt-einreichen",
+        "en": "submit-product"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "create-recipe",
+      "area": "recipes-library",
+      "slugs": {
+        "de": "rezept-erstellen",
+        "en": "create-recipe"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "recipe-cooked-weight",
+      "area": "recipes-library",
+      "slugs": {
+        "de": "rezept-gargewicht",
+        "en": "recipe-cooked-weight"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "log-recipe",
+      "area": "recipes-library",
+      "slugs": {
+        "de": "rezept-loggen",
+        "en": "log-recipe"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "recipe-categories",
+      "area": "recipes-library",
+      "slugs": {
+        "de": "rezeptkategorien",
+        "en": "recipe-categories"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "share-recipe",
+      "area": "recipes-library",
+      "slugs": {
+        "de": "rezept-teilen",
+        "en": "share-recipe"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "routines",
+      "area": "recipes-library",
+      "slugs": {
+        "de": "routinen",
+        "en": "routines"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "calorie-goal",
+      "area": "goals-budget",
+      "slugs": {
+        "de": "kalorienziel",
+        "en": "calorie-goal"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "calorie-settings",
+      "area": "goals-budget",
+      "slugs": {
+        "de": "kalorien-einstellen",
+        "en": "calorie-settings"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "resting-energy",
+      "area": "goals-budget",
+      "slugs": {
+        "de": "ruheenergie",
+        "en": "resting-energy"
+      },
+      "platforms": [
+        "ios"
+      ]
+    },
+    {
+      "id": "body-data",
+      "area": "goals-budget",
+      "slugs": {
+        "de": "koerperdaten",
+        "en": "body-data"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "adjust-day-target",
+      "area": "goals-budget",
+      "slugs": {
+        "de": "tagesziel-anpassen",
+        "en": "adjust-day-target"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "weekday-targets",
+      "area": "goals-budget",
+      "slugs": {
+        "de": "ziele-je-wochentag",
+        "en": "weekday-targets"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "weekly-budget",
+      "area": "goals-budget",
+      "slugs": {
+        "de": "wochenbudget",
+        "en": "weekly-budget"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "weekly-overview",
+      "area": "goals-budget",
+      "slugs": {
+        "de": "wochenuebersicht",
+        "en": "weekly-overview"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "macro-goals",
+      "area": "goals-budget",
+      "slugs": {
+        "de": "makroziele",
+        "en": "macro-goals"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "nutrient-goals",
+      "area": "goals-budget",
+      "slugs": {
+        "de": "naehrstoffziele",
+        "en": "nutrient-goals"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "activity-to-target",
+      "area": "goals-budget",
+      "slugs": {
+        "de": "aktivitaet-zum-ziel",
+        "en": "activity-to-target"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "set-up-fasting",
+      "area": "fasting",
+      "slugs": {
+        "de": "fasten-einrichten",
+        "en": "set-up-fasting"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "start-end-fast",
+      "area": "fasting",
+      "slugs": {
+        "de": "fasten-starten-beenden",
+        "en": "start-end-fast"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "fasting-lock-screen",
+      "area": "fasting",
+      "slugs": {
+        "de": "fasten-sperrbildschirm",
+        "en": "fasting-lock-screen"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "fasting-notifications",
+      "area": "fasting",
+      "slugs": {
+        "de": "fasten-mitteilungen",
+        "en": "fasting-notifications"
+      },
+      "platforms": [
+        "ios"
+      ]
+    },
+    {
+      "id": "log-water",
+      "area": "water",
+      "slugs": {
+        "de": "wasser-eintragen",
+        "en": "log-water"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "water-goal",
+      "area": "water",
+      "slugs": {
+        "de": "wasserziel",
+        "en": "water-goal"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "drinks-water-goal",
+      "area": "water",
+      "slugs": {
+        "de": "getraenke-wasserziel",
+        "en": "drinks-water-goal"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "water-from-other-apps",
+      "area": "water",
+      "slugs": {
+        "de": "wasser-aus-anderen-apps",
+        "en": "water-from-other-apps"
+      },
+      "platforms": [
+        "ios"
+      ]
+    },
+    {
+      "id": "water-reminders",
+      "area": "water",
+      "slugs": {
+        "de": "trinkerinnerungen",
+        "en": "water-reminders"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "log-weight",
+      "area": "weight-body",
+      "slugs": {
+        "de": "gewicht-eintragen",
+        "en": "log-weight"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "starting-weight",
+      "area": "weight-body",
+      "slugs": {
+        "de": "startgewicht",
+        "en": "starting-weight"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "weight-trend",
+      "area": "weight-body",
+      "slugs": {
+        "de": "gewichtsverlauf",
+        "en": "weight-trend"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "body-measurements",
+      "area": "weight-body",
+      "slugs": {
+        "de": "koerpermasse",
+        "en": "body-measurements"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "stats",
+      "area": "stats",
+      "slugs": {
+        "de": "statistik",
+        "en": "stats"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "calorie-stats",
+      "area": "stats",
+      "slugs": {
+        "de": "statistik-kalorien",
+        "en": "calorie-stats"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "edit-stats",
+      "area": "stats",
+      "slugs": {
+        "de": "statistik-bearbeiten",
+        "en": "edit-stats"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "pdf-report",
+      "area": "stats",
+      "slugs": {
+        "de": "pdf-bericht",
+        "en": "pdf-report"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "connect-health",
+      "area": "health",
+      "slugs": {
+        "de": "health-verbinden",
+        "en": "connect-health"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "health-read-write",
+      "area": "health",
+      "slugs": {
+        "de": "health-lesen-schreiben",
+        "en": "health-read-write"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "steps-workouts",
+      "area": "health",
+      "slugs": {
+        "de": "schritte-workouts",
+        "en": "steps-workouts"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "workouts-without-double-counting",
+      "area": "health",
+      "slugs": {
+        "de": "workouts-ohne-doppelzaehlung",
+        "en": "workouts-without-double-counting"
+      },
+      "platforms": [
+        "ios"
+      ]
+    },
+    {
+      "id": "calories-from-steps",
+      "area": "health",
+      "slugs": {
+        "de": "kalorien-aus-schritten",
+        "en": "calories-from-steps"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "sync-weight",
+      "area": "health",
+      "slugs": {
+        "de": "gewicht-synchronisieren",
+        "en": "sync-weight"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "import-weight-history",
+      "area": "health",
+      "slugs": {
+        "de": "gewichtsverlauf-importieren",
+        "en": "import-weight-history"
+      },
+      "platforms": [
+        "ios"
+      ]
+    },
+    {
+      "id": "health-connect-estimate",
+      "area": "health",
+      "slugs": {
+        "de": "health-connect-schaetzung",
+        "en": "health-connect-estimate"
+      },
+      "platforms": [
+        "android"
+      ]
+    },
+    {
+      "id": "health-connect-activity",
+      "area": "health",
+      "slugs": {
+        "de": "health-connect-aktivitaet",
+        "en": "health-connect-activity"
+      },
+      "platforms": [
+        "android"
+      ]
+    },
+    {
+      "id": "health-connect-troubleshooting",
+      "area": "health",
+      "slugs": {
+        "de": "health-connect-diagnose",
+        "en": "health-connect-troubleshooting"
+      },
+      "platforms": [
+        "android"
+      ]
+    },
+    {
+      "id": "icloud-sync",
+      "area": "sync",
+      "slugs": {
+        "de": "icloud-sync",
+        "en": "icloud-sync"
+      },
+      "platforms": [
+        "ios"
+      ]
+    },
+    {
+      "id": "fix-icloud-sync",
+      "area": "sync",
+      "slugs": {
+        "de": "icloud-sync-reparieren",
+        "en": "fix-icloud-sync"
+      },
+      "platforms": [
+        "ios"
+      ]
+    },
+    {
+      "id": "delete-icloud-data",
+      "area": "sync",
+      "slugs": {
+        "de": "icloud-daten-loeschen",
+        "en": "delete-icloud-data"
+      },
+      "platforms": [
+        "ios"
+      ]
+    },
+    {
+      "id": "google-drive-backup",
+      "area": "sync",
+      "slugs": {
+        "de": "google-drive-backup",
+        "en": "google-drive-backup"
+      },
+      "platforms": [
+        "android"
+      ]
+    },
+    {
+      "id": "restore-backup",
+      "area": "sync",
+      "slugs": {
+        "de": "backup-wiederherstellen",
+        "en": "restore-backup"
+      },
+      "platforms": [
+        "android"
+      ]
+    },
+    {
+      "id": "sync-between-devices",
+      "area": "sync",
+      "slugs": {
+        "de": "geraete-synchronisieren",
+        "en": "sync-between-devices"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "widgets",
+      "area": "widgets-watch-shortcuts",
+      "slugs": {
+        "de": "widgets",
+        "en": "widgets"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "control-center",
+      "area": "widgets-watch-shortcuts",
+      "slugs": {
+        "de": "kontrollzentrum",
+        "en": "control-center"
+      },
+      "platforms": [
+        "ios"
+      ]
+    },
+    {
+      "id": "apple-watch",
+      "area": "widgets-watch-shortcuts",
+      "slugs": {
+        "de": "apple-watch",
+        "en": "apple-watch"
+      },
+      "platforms": [
+        "ios"
+      ]
+    },
+    {
+      "id": "siri-shortcuts",
+      "area": "widgets-watch-shortcuts",
+      "slugs": {
+        "de": "siri-kurzbefehle",
+        "en": "siri-shortcuts"
+      },
+      "platforms": [
+        "ios"
+      ]
+    },
+    {
+      "id": "home-screen-quick-actions",
+      "area": "widgets-watch-shortcuts",
+      "slugs": {
+        "de": "schnellaktionen",
+        "en": "quick-actions"
+      },
+      "platforms": [
+        "ios"
+      ]
+    },
+    {
+      "id": "set-up-intake-ai",
+      "area": "intake-ai",
+      "slugs": {
+        "de": "intake-ai-einrichten",
+        "en": "set-up-intake-ai"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "byok-guide",
+      "area": "intake-ai",
+      "slugs": {
+        "de": "eigener-api-schluessel",
+        "en": "own-api-key"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "intake-ai-text",
+      "area": "intake-ai",
+      "slugs": {
+        "de": "intake-ai-text",
+        "en": "intake-ai-text"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "photo-logging",
+      "area": "intake-ai",
+      "slugs": {
+        "de": "essen-fotografieren",
+        "en": "photo-logging"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "correct-ai-estimate",
+      "area": "intake-ai",
+      "slugs": {
+        "de": "intake-ai-korrigieren",
+        "en": "correct-ai-estimate"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "scan-nutrition-label",
+      "area": "intake-ai",
+      "slugs": {
+        "de": "naehrwertlabel-scannen",
+        "en": "scan-nutrition-label"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "intake-ai-subscription",
+      "area": "intake-ai",
+      "slugs": {
+        "de": "intake-ai-abo",
+        "en": "intake-ai-subscription"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "intake-ai-errors",
+      "area": "intake-ai",
+      "slugs": {
+        "de": "intake-ai-fehler",
+        "en": "intake-ai-errors"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "first-setup",
+      "area": "settings",
+      "slugs": {
+        "de": "ersteinrichtung",
+        "en": "first-setup"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "settings-appearance",
+      "area": "settings",
+      "slugs": {
+        "de": "einstellungen-darstellung",
+        "en": "settings-appearance"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "settings-region",
+      "area": "settings",
+      "slugs": {
+        "de": "einstellungen-region",
+        "en": "settings-region"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "settings-notifications",
+      "area": "settings",
+      "slugs": {
+        "de": "einstellungen-mitteilungen",
+        "en": "settings-notifications"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "export-data",
+      "area": "settings",
+      "slugs": {
+        "de": "daten-exportieren",
+        "en": "export-data"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "reset-app",
+      "area": "settings",
+      "slugs": {
+        "de": "app-zuruecksetzen",
+        "en": "reset-app"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "contact-support",
+      "area": "settings",
+      "slugs": {
+        "de": "support-kontaktieren",
+        "en": "contact-support"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "whats-new",
+      "area": "settings",
+      "slugs": {
+        "de": "neuigkeiten",
+        "en": "whats-new"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    }
+  ]
+}
