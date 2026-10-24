@@ -33,12 +33,22 @@ const whatsNew = defineCollection({
 // Entry ids take the form "<topic>/<lang>", e.g. "copy-meal/de". The topic ids and
 // slugs come from content/help/topics.json; validateTopicEntry fails the build for a
 // topic that is not in it, a too-long text, an em dash, or a platform step without
-// its own screenshot.
+// its own screenshot. The frontmatter id must equal the folder, or a copied file
+// would validate and render as the wrong topic.
 const helpTopics = defineCollection({
   loader: glob({
     pattern: '*/{de,en}.md',
     base: './content/help',
-    generateId: ({ entry }) => entry.replace(/\.md$/, ''),
+    generateId: ({ entry, data }) => {
+      const id = entry.replace(/\.md$/, '');
+      const folder = id.split('/')[0];
+      if (data.id !== folder) {
+        throw new Error(
+          `content/help/${entry}: frontmatter id "${String(data.id)}" must equal its folder "${folder}"`,
+        );
+      }
+      return id;
+    },
   }),
   schema: ({ image }) => {
     const platformStep = z

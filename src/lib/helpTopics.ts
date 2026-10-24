@@ -70,8 +70,12 @@ export const STEP_TEXT_MAX_LENGTH = 160;
 export const RELATED_MAX = 3;
 const EM_DASH = '—';
 const PLATFORMS: HelpPlatform[] = ['ios', 'android'];
+export const SLUG_PATTERN = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+export const BYOK_GUIDE_ID = 'byok-guide';
+export const BYOK_GUIDE_SLUGS: Record<Language, string> = { de: 'eigener-api-schluessel', en: 'own-api-key' };
 
-const assertManifest = (value: unknown): HelpManifest => {
+/** Throws on a malformed manifest. Runs on import, so `astro build` enforces it. */
+export const assertManifest = (value: unknown): HelpManifest => {
   const manifest = value as HelpManifest;
   if (manifest?.version !== 1 || !Array.isArray(manifest.topics)) {
     throw new Error('content/help/topics.json: expected { version: 1, topics: [...] }');
@@ -86,6 +90,28 @@ const assertManifest = (value: unknown): HelpManifest => {
     if (!topic.platforms?.length || topic.platforms.some((platform) => !PLATFORMS.includes(platform))) {
       throw new Error(`content/help/topics.json: "${topic.id}" has invalid platforms`);
     }
+  }
+
+  // Slugs are a public contract with both apps: unique, well-formed, and the BYOK
+  // guide keeps its pre-help-center URLs.
+  const duplicates = (values: string[]) => values.filter((value, index) => values.indexOf(value) !== index);
+  for (const id of duplicates(manifest.topics.map((topic) => topic.id))) {
+    throw new Error(`content/help/topics.json: duplicate id "${id}"`);
+  }
+  for (const lang of ['de', 'en'] as const) {
+    const slugs = manifest.topics.map((topic) => topic.slugs[lang]);
+    for (const slug of duplicates(slugs)) {
+      throw new Error(`content/help/topics.json: duplicate ${lang} slug "${slug}"`);
+    }
+    for (const slug of slugs) {
+      if (!SLUG_PATTERN.test(slug)) throw new Error(`content/help/topics.json: malformed ${lang} slug "${slug}"`);
+    }
+  }
+  const guide = manifest.topics.find((topic) => topic.id === BYOK_GUIDE_ID);
+  if (guide?.slugs.de !== BYOK_GUIDE_SLUGS.de || guide?.slugs.en !== BYOK_GUIDE_SLUGS.en) {
+    throw new Error(
+      `content/help/topics.json: "${BYOK_GUIDE_ID}" must keep the slugs ${BYOK_GUIDE_SLUGS.de} / ${BYOK_GUIDE_SLUGS.en}`,
+    );
   }
   return manifest;
 };
@@ -110,6 +136,14 @@ export const validateTopicEntry = (entry: HelpTopicEntryData, source: HelpManife
   const label = `help topic "${entry.id}"`;
 
   if (!topic) errors.push(`${label}: id is not in content/help/topics.json`);
+
+  // The BYOK guide renders from its own static pages; no other topic may claim that.
+  if (entry.id === BYOK_GUIDE_ID && entry.customPage !== 'byokGuide') {
+    errors.push(`${label}: needs customPage: byokGuide`);
+  }
+  if (entry.id !== BYOK_GUIDE_ID && entry.customPage !== undefined) {
+    errors.push(`${label}: customPage is only allowed on ${BYOK_GUIDE_ID}`);
+  }
 
   if (entry.title.includes(EM_DASH)) errors.push(`${label}: title contains an em dash`);
   if (entry.short.includes(EM_DASH)) errors.push(`${label}: short contains an em dash`);

@@ -220,7 +220,7 @@
       "id": "summary-capsule",
       "area": "logging",
       "slugs": {
-        "de": "uebersichts-kapsel",
+        "de": "uebersicht-beim-hinzufuegen",
         "en": "summary-capsule"
       },
       "platforms": [
@@ -540,11 +540,11 @@
       ]
     },
     {
-      "id": "activity-to-target",
+      "id": "activity-settings",
       "area": "goals-budget",
       "slugs": {
-        "de": "aktivitaet-zum-ziel",
-        "en": "activity-to-target"
+        "de": "einstellungen-aktivitaet",
+        "en": "activity-settings"
       },
       "platforms": [
         "ios",

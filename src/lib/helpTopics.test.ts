@@ -1,7 +1,8 @@
-import { existsSync, readdirSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import {
+  assertManifest,
   HELP_AREAS,
   loadHelpManifest,
   topicPath,
@@ -11,6 +12,19 @@ import {
 
 const manifest = loadHelpManifest();
 const slugPattern = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+const helpRoot = join(process.cwd(), 'content/help');
+const topicFiles = (): { folder: string; file: string; text: string }[] =>
+  readdirSync(helpRoot, { withFileTypes: true })
+    .filter((dirent) => dirent.isDirectory())
+    .flatMap((dirent) =>
+      readdirSync(join(helpRoot, dirent.name))
+        .filter((file) => file.endsWith('.md'))
+        .map((file) => ({
+          folder: dirent.name,
+          file: `${dirent.name}/${file}`,
+          text: readFileSync(join(helpRoot, dirent.name, file), 'utf8'),
+        })),
+    );
 
 const entry = (overrides: Partial<HelpTopicEntryData> = {}): HelpTopicEntryData => ({
   id: 'copy-meal',
@@ -48,6 +62,21 @@ describe('help topic manifest', () => {
     expect(guide?.slugs).toEqual({ de: 'eigener-api-schluessel', en: 'own-api-key' });
   });
 
+  it('assertManifest rejects a duplicate slug, a malformed slug and a moved byok guide', () => {
+    const topics = manifest.topics;
+    const clone = (mutate: (copy: typeof topics) => void) => {
+      const copy = structuredClone(topics);
+      mutate(copy);
+      return { version: 1, topics: copy };
+    };
+    expect(() => assertManifest(clone((copy) => (copy[1].slugs.de = copy[0].slugs.de)))).toThrow(/duplicate de slug/);
+    expect(() => assertManifest(clone((copy) => (copy[0].slugs.en = 'Bad Slug')))).toThrow(/malformed en slug/);
+    expect(() =>
+      assertManifest(clone((copy) => (copy.find((topic) => topic.id === 'byok-guide')!.slugs.de = 'byok'))),
+    ).toThrow(/must keep the slugs/);
+    expect(() => assertManifest(clone((copy) => (copy[1].id = copy[0].id)))).toThrow(/duplicate id/);
+  });
+
   it("topicPath('copy-meal') is /hilfe/<de-slug> and /en/help/<en-slug>", () => {
     const topic = manifest.topics.find((candidate) => candidate.id === 'copy-meal');
     expect(topic).toBeDefined();
@@ -76,12 +105,36 @@ describe('validateTopicEntry', () => {
     expect(longStep.length).toBeGreaterThan(0);
   });
 
+  it('allows customPage only on byok-guide and requires it there', () => {
+    expect(validateTopicEntry(entry({ customPage: 'byokGuide' }), manifest).length).toBeGreaterThan(0);
+    expect(validateTopicEntry(entry({ id: 'byok-guide' }), manifest).length).toBeGreaterThan(0);
+    expect(validateTopicEntry(entry({ id: 'byok-guide', customPage: 'byokGuide' }), manifest)).toEqual([]);
+  });
+
   it('flags an em dash in title, short or any step', () => {
     expect(validateTopicEntry(entry({ title: 'Kopieren — so geht es' }), manifest).length).toBeGreaterThan(0);
     expect(validateTopicEntry(entry({ short: 'Kurz — knapp.' }), manifest).length).toBeGreaterThan(0);
     expect(
       validateTopicEntry(entry({ steps: [{ text: 'Tippe — dann kopiere.' }] }), manifest).length,
     ).toBeGreaterThan(0);
+  });
+});
+
+describe('help content files', () => {
+  it("every file's frontmatter id equals its folder", () => {
+    const files = topicFiles();
+    expect(files.length).toBeGreaterThan(0);
+    for (const { folder, file, text } of files) {
+      const id = /^id:\s*["']?([^"'\s]+)["']?\s*$/m.exec(text)?.[1];
+      expect(id, file).toBe(folder);
+    }
+  });
+
+  it('no help markdown file contains an em dash, body included', () => {
+    const offenders = topicFiles()
+      .filter(({ text }) => text.includes('\u2014'))
+      .map(({ file }) => file);
+    expect(offenders).toEqual([]);
   });
 });
 
