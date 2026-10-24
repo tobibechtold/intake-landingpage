@@ -1,0 +1,153 @@
+---
+import { getEntry, render, type CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import { ArrowRight } from 'lucide-astro';
+import PageBreadcrumbs from '@/components/astro/PageBreadcrumbs.astro';
+import { buildLocalizedPath } from '@/lib/localeRouting';
+import { findTopic, topicPath, type HelpPlatform } from '@/lib/helpTopics';
+import { useT } from '@/i18n/t';
+import type { Language } from '@/i18n/translations';
+
+/**
+ * One help topic: title, platform-only note, short answer, numbered steps, an optional
+ * markdown body for "Warum…" topics, and up to three related topics.
+ *
+ * Both platforms are in the HTML. Every step carries one block per platform the topic
+ * supports, marked data-platform-block="ios|android", each under its own label, so the
+ * page reads fully without JavaScript; the platform switch hides the other one.
+ */
+interface Props {
+  lang: Language;
+  topic: CollectionEntry<'helpTopics'>;
+}
+
+const { lang, topic } = Astro.props;
+const t = useT(lang);
+const { Content } = await render(topic);
+const manifestTopic = findTopic(topic.data.id);
+if (!manifestTopic) throw new Error(`Help topic "${topic.data.id}" is not in the manifest`);
+
+const COPY = {
+  de: {
+    short: 'Kurz:',
+    steps: 'So geht es',
+    related: 'Verwandte Themen',
+    platform: { ios: 'iPhone', android: 'Android' },
+    only: { ios: 'Nur auf dem iPhone', android: 'Nur auf Android' },
+  },
+  en: {
+    short: 'In short:',
+    steps: 'How to',
+    related: 'Related topics',
+    platform: { ios: 'iPhone', android: 'Android' },
+    only: { ios: 'Only on iPhone', android: 'Only on Android' },
+  },
+} as const;
+const copy = COPY[lang];
+
+const platforms = (['ios', 'android'] as HelpPlatform[]).filter((platform) =>
+  manifestTopic.platforms.includes(platform),
+);
+const platformNote =
+  platforms.length === 1 ? (topic.data.platformNote ?? copy.only[platforms[0]]) : undefined;
+
+const steps = (topic.data.steps ?? []).map((step) => ({
+  blocks: platforms.map((platform) => ({
+    platform,
+    text: step[platform]?.text ?? step.text,
+    image: step[platform]?.image,
+  })),
+}));
+
+// Related topics link only once their page exists in this language.
+const related = (
+  await Promise.all(
+    (topic.data.related ?? []).map((id) => getEntry('helpTopics', `${id}/${lang}`)),
+  )
+)
+  .filter((entry): entry is CollectionEntry<'helpTopics'> => Boolean(entry))
+  .map((entry) => ({ title: entry.data.title, short: entry.data.short, href: topicPath(entry.data.id, lang) }));
+
+const breadcrumbs = [
+  { label: t('homeNav'), href: buildLocalizedPath('home', lang) },
+  { label: t('helpNav'), href: buildLocalizedPath('help', lang) },
+  { label: topic.data.title },
+];
+---
+<main class="section-gradient min-h-screen pb-20 pt-28">
+  <div class="container max-w-3xl">
+    <PageBreadcrumbs items={breadcrumbs} />
+
+    <article class="space-y-10">
+      <header class="space-y-4">
+        <h1 class="text-3xl text-foreground md:text-5xl">{topic.data.title}</h1>
+        {platformNote && <p class="badge-accent" data-platform-note>{platformNote}</p>}
+        <p class="text-base leading-7 text-foreground/70 md:text-lg">
+          <strong class="font-semibold text-foreground">{copy.short}</strong>
+          {' '}{topic.data.short}
+        </p>
+      </header>
+
+      {steps.length > 0 && (
+        <section aria-label={copy.steps}>
+          <ol class="space-y-6">
+            {steps.map((step, index) => (
+              <li class="flex items-start gap-4">
+                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+                  {index + 1}
+                </span>
+                <div class="min-w-0 flex-1 space-y-4">
+                  {step.blocks.map((block) => (
+                    <div data-platform-block={block.platform} class="space-y-3">
+                      <p
+                        data-platform-label
+                        class="text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/45"
+                      >
+                        {copy.platform[block.platform]}
+                      </p>
+                      <p class="text-base leading-7 text-foreground">{block.text}</p>
+                      {block.image && (
+                        <Image
+                          src={block.image}
+                          alt={block.text}
+                          loading="lazy"
+                          class="w-full max-w-sm rounded-xl border border-white/[0.08]"
+                        />
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
+
+      <div class="prose prose-invert max-w-none prose-headings:text-foreground prose-p:text-base prose-p:text-foreground/70 prose-a:text-primary prose-strong:text-foreground prose-li:text-foreground/70 prose-img:rounded-xl prose-img:border prose-img:border-white/[0.08]">
+        <Content />
+      </div>
+
+      {related.length > 0 && (
+        <section class="space-y-4 border-t border-white/[0.08] pt-8">
+          <h2 class="section-kicker">{copy.related}</h2>
+          <ul class="space-y-3">
+            {related.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="group flex items-start gap-3 rounded-xl border border-white/[0.08] bg-white/[0.02] p-4 transition-colors hover:border-white/[0.16] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55"
+                >
+                  <span class="min-w-0 flex-1">
+                    <span class="block font-semibold text-foreground">{item.title}</span>
+                    <span class="mt-1 block text-sm leading-6 text-foreground/50">{item.short}</span>
+                  </span>
+                  <ArrowRight class="mt-1 h-4 w-4 shrink-0 text-foreground/40 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </article>
+  </div>
+</main>

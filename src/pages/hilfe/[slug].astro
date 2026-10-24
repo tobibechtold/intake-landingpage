@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SiteShell from '@/components/astro/SiteShell.astro';
+import HelpTopicPage from '@/components/astro/HelpTopicPage.astro';
+import { findTopic } from '@/lib/helpTopics';
+import { pageProps } from '@/lib/pageSeo';
+
+// One page per help topic that has a German entry. The BYOK guide (customPage) keeps its
+// own static page next to this route.
+export async function getStaticPaths() {
+  const entries = await getCollection(
+    'helpTopics',
+    (entry) => entry.id.endsWith('/de') && !entry.data.customPage,
+  );
+  return entries.map((topic) => {
+    const slug = findTopic(topic.data.id)?.slugs.de;
+    if (!slug) throw new Error(`Help topic "${topic.data.id}" is not in the manifest`);
+    return { params: { slug }, props: { topic } };
+  });
+}
+
+const { topic } = Astro.props;
+const { slug } = Astro.params;
+const route = `/hilfe/${slug}`;
+const { lang } = pageProps(route);
+---
+<BaseLayout route={route} title={`${topic.data.title} | Intake`} description={topic.data.short}>
+  <SiteShell route={route}>
+    <HelpTopicPage lang={lang} topic={topic} />
+  </SiteShell>
+</BaseLayout>

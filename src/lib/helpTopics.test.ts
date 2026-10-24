@@ -111,6 +111,13 @@ describe('validateTopicEntry', () => {
     expect(validateTopicEntry(entry({ id: 'byok-guide', customPage: 'byokGuide' }), manifest)).toEqual([]);
   });
 
+  it('allows platformNote only on a one-platform topic, without an em dash', () => {
+    const wide = { id: 'wide-screen-layout' };
+    expect(validateTopicEntry(entry({ ...wide, platformNote: 'Nur auf iPhone Duo und iPad' }), manifest)).toEqual([]);
+    expect(validateTopicEntry(entry({ ...wide, platformNote: 'Nur — iPad' }), manifest).length).toBeGreaterThan(0);
+    expect(validateTopicEntry(entry({ platformNote: 'Nur auf dem iPhone' }), manifest).length).toBeGreaterThan(0);
+  });
+
   it('flags an em dash in title, short or any step', () => {
     expect(validateTopicEntry(entry({ title: 'Kopieren — so geht es' }), manifest).length).toBeGreaterThan(0);
     expect(validateTopicEntry(entry({ short: 'Kurz — knapp.' }), manifest).length).toBeGreaterThan(0);

@@ -49,4 +49,24 @@ describe('getHreflangPair', () => {
       en: '/en/whats-new/2.5.1',
     });
   });
+
+  it('pairs help topics by their translated slugs', () => {
+    const pair = { de: '/hilfe/mahlzeit-kopieren', en: '/en/help/copy-meal' };
+    expect(getHreflangPair('/hilfe/mahlzeit-kopieren')).toEqual(pair);
+    expect(getHreflangPair('/en/help/copy-meal')).toEqual(pair);
+  });
+
+  it('does not pair an unknown help slug', () => {
+    expect(getHreflangPair('/hilfe/gibt-es-nicht')).toBeNull();
+  });
 });
+
+describe('help topic SEO', () => {
+  it('resolves the language and canonical of a help topic route', () => {
+    const seo = getPageSeo('/en/help/copy-meal');
+    expect(seo.lang).toBe('en');
+    expect(seo.ogLocale).toBe('en_US');
+    expect(seo.canonical).toBe(`${SITE_ORIGIN}/en/help/copy-meal`);
+  });
+});
+

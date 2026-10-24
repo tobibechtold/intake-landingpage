@@ -1,6 +1,6 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { describe, expect, it } from 'vitest';
+import { beforeAll, describe, expect, it } from 'vitest';
 import urls from './fixtures/production-urls.json';
 
 const distFileFor = (route: string) =>
@@ -63,4 +63,44 @@ describe('build output', () => {
   it('overrides title per What’s New entry rather than reusing the index title', () => {
     expect(read('/whats-new/2.5.1')).toContain('<title>Was ist neu in Intake 2.5.1 | Intake</title>');
   });
+
+  describe('help topic pages', () => {
+    let de = '';
+    let en = '';
+    beforeAll(() => {
+      de = read('/hilfe/mahlzeit-kopieren');
+      en = read('/en/help/copy-meal');
+    });
+
+    it('renders the title, the short answer and one block per platform', () => {
+      expect(de).toContain('Mahlzeit auf einen anderen Tag kopieren');
+      expect(de).toContain('Du entscheidest, welche Einträge mitkommen');
+      expect(de.match(/data-platform-block="ios"/g)).toHaveLength(1);
+      expect(de.match(/data-platform-block="android"/g)).toHaveLength(1);
+      expect(en).toContain('Copy a meal to another day');
+    });
+
+    it('pairs the translated slugs with reciprocal hreflang', () => {
+      for (const html of [de, en]) {
+        expect(html).toContain('<link rel="alternate" hreflang="en" href="https://www.getintake.de/en/help/copy-meal">');
+        expect(html).toContain('<link rel="alternate" hreflang="de" href="https://www.getintake.de/hilfe/mahlzeit-kopieren">');
+      }
+    });
+
+    it('uses the topic title per page', () => {
+      expect(de).toContain('<title>Mahlzeit auf einen anderen Tag kopieren | Intake</title>');
+    });
+
+    it('lists both language URLs in the sitemap', () => {
+      const sitemap = readFileSync(join('dist', 'sitemap-0.xml'), 'utf8');
+      expect(sitemap).toContain('<loc>https://www.getintake.de/hilfe/mahlzeit-kopieren</loc>');
+      expect(sitemap).toContain('<loc>https://www.getintake.de/en/help/copy-meal</loc>');
+    });
+
+    it('keeps the BYOK guide on its own static pages', () => {
+      expect(read('/hilfe/eigener-api-schluessel')).toContain('data-testid="byok-guide-screenshot"');
+      expect(read('/en/help/own-api-key')).toContain('data-testid="byok-guide-screenshot"');
+    });
+  });
 });
+

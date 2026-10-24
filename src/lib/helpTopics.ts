@@ -63,6 +63,8 @@ export interface HelpTopicEntryData {
   related?: string[];
   steps?: HelpStep[];
   customPage?: 'byokGuide';
+  /** Replaces the default platform-only note, e.g. "Nur auf iPhone Duo und iPad". */
+  platformNote?: string;
 }
 
 export const SHORT_MAX_LENGTH = 220;
@@ -123,6 +125,12 @@ export const loadHelpManifest = (): HelpManifest => manifest;
 export const findTopic = (id: string, source: HelpManifest = manifest): HelpTopic | undefined =>
   source.topics.find((topic) => topic.id === id);
 
+export const findTopicBySlug = (
+  slug: string,
+  lang: Language,
+  source: HelpManifest = manifest,
+): HelpTopic | undefined => source.topics.find((topic) => topic.slugs[lang] === slug);
+
 export const topicPath = (id: string, lang: Language): string => {
   const topic = findTopic(id);
   if (!topic) throw new Error(`Unknown help topic "${id}"`);
@@ -147,6 +155,10 @@ export const validateTopicEntry = (entry: HelpTopicEntryData, source: HelpManife
 
   if (entry.title.includes(EM_DASH)) errors.push(`${label}: title contains an em dash`);
   if (entry.short.includes(EM_DASH)) errors.push(`${label}: short contains an em dash`);
+  if (entry.platformNote !== undefined) {
+    if (entry.platformNote.includes(EM_DASH)) errors.push(`${label}: platformNote contains an em dash`);
+    if (topic && topic.platforms.length > 1) errors.push(`${label}: platformNote on a topic for both platforms`);
+  }
   if (entry.short.length > SHORT_MAX_LENGTH) {
     errors.push(`${label}: short is ${entry.short.length} characters, max ${SHORT_MAX_LENGTH}`);
   }

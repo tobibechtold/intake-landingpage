@@ -73,6 +73,7 @@ const helpTopics = defineCollection({
           )
           .optional(),
         customPage: z.literal('byokGuide').optional(),
+        platformNote: z.string().optional(),
       })
       .superRefine((data, ctx) => {
         for (const message of validateTopicEntry(data, loadHelpManifest())) {

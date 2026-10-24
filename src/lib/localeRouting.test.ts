@@ -102,4 +102,35 @@ describe("localeRouting", () => {
       xDefault: "https://www.getintake.de/",
     });
   });
+
+  describe("help topics", () => {
+    // Slugs from content/help/topics.json: copy-meal is mahlzeit-kopieren / copy-meal.
+    it("detects a help topic page in both languages", () => {
+      expect(getPageFromPathname("/hilfe/mahlzeit-kopieren")).toBe("helpTopic");
+      expect(getPageFromPathname("/en/help/copy-meal")).toBe("helpTopic");
+      expect(getPageFromPathname("/hilfe/eigener-api-schluessel")).toBe("byokGuide");
+      expect(getPageFromPathname("/hilfe/gibt-es-nicht")).toBe("notFound");
+    });
+
+    it("builds a help topic path from the topic id", () => {
+      expect(buildLocalizedPath("helpTopic", "de", "copy-meal")).toBe("/hilfe/mahlzeit-kopieren");
+      expect(buildLocalizedPath("helpTopic", "en", "copy-meal")).toBe("/en/help/copy-meal");
+    });
+
+    it("pairs a German help topic with its translated English slug, and back", () => {
+      const pair = {
+        en: "https://www.getintake.de/en/help/copy-meal",
+        de: "https://www.getintake.de/hilfe/mahlzeit-kopieren",
+        xDefault: "https://www.getintake.de/",
+      };
+      expect(buildAlternateUrls("/hilfe/mahlzeit-kopieren", origin)).toEqual({
+        canonical: "https://www.getintake.de/hilfe/mahlzeit-kopieren",
+        ...pair,
+      });
+      expect(buildAlternateUrls("/en/help/copy-meal", origin)).toEqual({
+        canonical: "https://www.getintake.de/en/help/copy-meal",
+        ...pair,
+      });
+    });
+  });
 });

@@ -1,4 +1,5 @@
 import { type Language } from "@/i18n/translations";
+import { BYOK_GUIDE_ID, findTopicBySlug, topicPath } from "@/lib/helpTopics";
 
 export type SitePage =
   | "home"
@@ -9,6 +10,7 @@ export type SitePage =
   | "intakeAI"
   | "help"
   | "byokGuide"
+  | "helpTopic"
   | "comparisonDetail"
   | "press"
   | "privacy"
@@ -18,7 +20,7 @@ export type SitePage =
   | "notFound";
 
 const PAGE_SEGMENT_BY_PAGE: Record<
-  Exclude<SitePage, "home" | "comparisonDetail" | "whatsNewEntry" | "notFound">,
+  Exclude<SitePage, "home" | "comparisonDetail" | "whatsNewEntry" | "helpTopic" | "notFound">,
   Record<Language, string>
 > = {
   features: {
@@ -95,6 +97,24 @@ export const getComparisonSlugFromPathname = (pathname: string): string | null =
   return match?.[1] ?? null;
 };
 
+/**
+ * The topic id of a help topic page (/hilfe/<de slug>, /en/help/<en slug>), looked up
+ * in content/help/topics.json. Slugs are translated, so the id is what pairs the two
+ * languages. The BYOK guide is a topic too but keeps its own page type.
+ */
+export const getHelpTopicIdFromPathname = (pathname: string): string | null => {
+  const normalized = normalizePathname(pathname);
+  const locale = getLocaleFromPathname(normalized);
+  const pattern = locale === "de" ? /^\/hilfe\/([^/]+)$/ : /^\/en\/help\/([^/]+)$/;
+  const slug = normalized.match(pattern)?.[1];
+  if (!slug) {
+    return null;
+  }
+
+  const topic = findTopicBySlug(slug, locale);
+  return topic && topic.id !== BYOK_GUIDE_ID ? topic.id : null;
+};
+
 export const getLocaleFromPathname = (pathname: string): Language => {
   const normalized = normalizePathname(pathname);
   return normalized === "/en" || normalized.startsWith("/en/") ? "en" : "de";
@@ -109,7 +129,7 @@ export const getPageFromPathname = (pathname: string): SitePage => {
       : normalized.replace(/^\/(?:de|en)(?=\/|$)/, "") || "/";
   const localizedSegments = Object.fromEntries(
     Object.entries(PAGE_SEGMENT_BY_PAGE).map(([page, segments]) => [page, segments[locale]])
-  ) as Record<Exclude<SitePage, "home" | "comparisonDetail" | "whatsNewEntry" | "notFound">, string>;
+  ) as Record<Exclude<SitePage, "home" | "comparisonDetail" | "whatsNewEntry" | "helpTopic" | "notFound">, string>;
 
   if (/^\/whats-new\/[^/]+$/.test(noLocale)) {
     return "whatsNewEntry";
@@ -129,6 +149,10 @@ export const getPageFromPathname = (pathname: string): SitePage => {
 
   if (noLocale === `/${localizedSegments.help}`) {
     return "help";
+  }
+
+  if (getHelpTopicIdFromPathname(normalized)) {
+    return "helpTopic";
   }
 
   if (noLocale === `/${localizedSegments.intakeAI}`) {
@@ -178,6 +202,14 @@ export const buildLocalizedPath = (page: SitePage, locale: Language, detail?: st
     return `${prefix}/${comparisonsSegment}/${detail}`;
   }
 
+  if (page === "helpTopic") {
+    if (!detail) {
+      throw new Error("buildLocalizedPath requires a topic id for helpTopic routes.");
+    }
+
+    return topicPath(detail, locale);
+  }
+
   if (page === "whatsNewEntry") {
     if (!detail) {
       throw new Error("buildLocalizedPath requires a version for whatsNewEntry routes.");
@@ -220,7 +252,9 @@ export const buildAlternateUrls = (pathname: string, origin: string) => {
       ? getWhatsNewVersionFromPathname(pathname)
       : page === "comparisonDetail"
         ? getComparisonSlugFromPathname(pathname)
-        : undefined;
+        : page === "helpTopic"
+          ? getHelpTopicIdFromPathname(pathname)
+          : undefined;
   const canonicalPath = buildLocalizedPath(page, locale, detail ?? undefined);
 
   return {
