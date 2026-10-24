@@ -28,7 +28,7 @@ export const FAQ_SECTIONS_BY_LANGUAGE: Record<Language, FaqSection[]> = {
         {
           question: "Is there a trial period?",
           answer:
-            "No, not for the app. A trial period would move things in the direction of in-app purchases and paywalls, and I do not want that in Intake. I do not want to lock people out or gate features after a certain amount of time. If you do not like the app, you can return it in both stores within the available return period. Intake AI, the optional subscription, starts with a 3-day free trial.",
+            "Not for the app: it is a one-time purchase, and you can return it within the store's return period. Intake AI, the optional subscription, starts with a 3-day free trial for new subscribers.",
         },
         {
           question: "Why does Intake AI require a subscription?",
@@ -53,12 +53,12 @@ export const FAQ_SECTIONS_BY_LANGUAGE: Record<Language, FaqSection[]> = {
         {
           question: "What is the difference between Intake AI and own API key (BYOK)?",
           answer:
-            "Both log meals from a text description or a photo, show the estimate as a card, and let you change the portion and adjust it before logging. Intake AI adds the correction view for ingredients and amounts and nutrition-label scanning, works without a key or provider account, and keeps improving. With your own API key (BYOK) you use your own provider account and pay its usage costs.",
+            "Both log meals from a text description or a photo, show the estimate as a card, and let you change the portion and log it as one meal or ingredient by ingredient. Intake AI adds the correction view for ingredients and amounts and nutrition-label scanning, works without a key or provider account, and keeps improving. With your own API key (BYOK) you use your own provider account and pay its usage costs.",
         },
         {
           question: "Which features are Intake AI exclusive?",
           answer:
-            "Two features need Intake AI: the correction view, where you change the food, the portion or the nutrition values and edit, remove or add ingredients, and nutrition-label scanning, which fills in the create-product form from a photo of the label.",
+            "Two features need Intake AI: the correction view, where you correct the food, amounts or nutrition values and edit, remove or add ingredients, and nutrition-label scanning, which fills in the create-product form from a photo of the label.",
         },
         {
           question: "Are Intake AI nutrition values exact?",
@@ -73,7 +73,7 @@ export const FAQ_SECTIONS_BY_LANGUAGE: Record<Language, FaqSection[]> = {
         {
           question: "Can I use AI logging with my own API key (BYOK)?",
           answer:
-            "Yes. You can add your own OpenAI, Claude, or Gemini API key in Settings and use basic AI food logging without paying for the Intake AI subscription. Your chosen provider's terms and usage costs still apply.",
+            "Yes. You can add your own OpenAI, Claude, or Gemini API key in Settings and log meals by text or photo with AI without paying for the Intake AI subscription. Your chosen provider's terms and usage costs still apply.",
         },
         {
           question: "Do I need an Intake AI subscription if I use my own API key (BYOK)?",
@@ -154,7 +154,7 @@ export const FAQ_SECTIONS_BY_LANGUAGE: Record<Language, FaqSection[]> = {
         {
           question: "Gibt es eine Testphase?",
           answer:
-            "Nein, nicht für die App. Eine Testphase würde in die Richtung In-App-Käufe und Paywalls gehen und das möchte ich in Intake nicht haben. Ich möchte niemanden nach einem bestimmten Zeitraum aussperren oder Features sperren müssen. Wenn dir die App nicht gefällt, kannst du sie in beiden Stores innerhalb des jeweiligen Rückgabezeitraums zurückgeben. Intake AI, das optionale Abo, startet mit 3 Tagen kostenloser Testphase.",
+            "Nicht für die App: Sie ist ein Einmalkauf, und du kannst sie innerhalb der Rückgabefrist des Stores zurückgeben. Intake AI, das optionale Abo, startet für neue Abonnenten mit 3 Tagen kostenloser Testphase.",
         },
         {
           question: "Warum braucht Intake AI ein Abo?",
@@ -179,12 +179,12 @@ export const FAQ_SECTIONS_BY_LANGUAGE: Record<Language, FaqSection[]> = {
         {
           question: "Was ist der Unterschied zwischen Intake AI und eigenem API-Schlüssel (BYOK)?",
           answer:
-            "Beide erfassen Mahlzeiten aus einer Beschreibung oder einem Foto, zeigen die Schätzung als Karte und lassen dich die Portion ändern und vor dem Loggen anpassen. Intake AI hat zusätzlich die Korrekturansicht für Zutaten und Mengen und das Scannen von Nährwertlabels, funktioniert ohne Schlüssel und Anbieterkonto und wird laufend verbessert. Mit eigenem API-Schlüssel (BYOK) nutzt du dein eigenes Anbieterkonto und zahlst dessen Nutzungskosten.",
+            "Beide erfassen Mahlzeiten aus einer Beschreibung oder einem Foto, zeigen die Schätzung als Karte und lassen dich die Portion ändern und als eine Mahlzeit oder Zutat für Zutat loggen. Intake AI hat zusätzlich die Korrekturansicht für Zutaten und Mengen und das Scannen von Nährwertlabels, funktioniert ohne Schlüssel und Anbieterkonto und wird laufend verbessert. Mit eigenem API-Schlüssel (BYOK) nutzt du dein eigenes Anbieterkonto und zahlst dessen Nutzungskosten.",
         },
         {
           question: "Welche Funktionen gibt es nur mit Intake AI?",
           answer:
-            "Zwei Funktionen gibt es nur mit Intake AI: die Korrekturansicht, in der du Lebensmittel, Portion oder Nährwerte änderst und Zutaten bearbeitest, entfernst oder ergänzt, und das Scannen von Nährwertlabels, das das Formular zum Erstellen eines Produkts aus einem Foto des Labels ausfüllt.",
+            "Zwei Funktionen gibt es nur mit Intake AI: die Korrekturansicht, in der du Lebensmittel, Mengen oder Nährwerte korrigierst und Zutaten bearbeitest, entfernst oder ergänzt, und das Scannen von Nährwertlabels, das das Formular zum Erstellen eines Produkts aus einem Foto des Labels ausfüllt.",
         },
         {
           question: "Sind die Nährwerte von Intake AI exakt?",
@@ -199,7 +199,7 @@ export const FAQ_SECTIONS_BY_LANGUAGE: Record<Language, FaqSection[]> = {
         {
           question: "Kann ich KI-Logging mit eigenem API-Schlüssel (BYOK) nutzen?",
           answer:
-            "Ja. Du kannst in den Einstellungen deinen eigenen OpenAI-, Claude- oder Gemini-API-Schlüssel hinterlegen und grundlegendes KI-Food-Logging nutzen, ohne für das Intake-AI-Abo zu zahlen. Die Bedingungen und eventuelle Nutzungskosten deines gewählten Anbieters gelten trotzdem.",
+            "Ja. Du kannst in den Einstellungen deinen eigenen OpenAI-, Claude- oder Gemini-API-Schlüssel hinterlegen und Mahlzeiten per Text oder Foto mit KI erfassen, ohne für das Intake-AI-Abo zu zahlen. Die Bedingungen und eventuelle Nutzungskosten deines gewählten Anbieters gelten trotzdem.",
         },
         {
           question: "Brauche ich ein Intake-AI-Abo, wenn ich meinen eigenen API-Schlüssel (BYOK) nutze?",
