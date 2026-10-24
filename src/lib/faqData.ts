@@ -10,6 +10,11 @@ export interface FaqSection {
   items: FaqItem[];
 }
 
+/**
+ * The pre-purchase FAQ on the help home (price, Intake AI, own key, privacy, food data,
+ * Health compatibility). Everything about how the app works lives in help topics; see
+ * docs/superpowers/specs/2026-10-25-help-center/faq-review.md for what moved where.
+ */
 export const FAQ_SECTIONS_BY_LANGUAGE: Record<Language, FaqSection[]> = {
   en: [
     {
@@ -23,7 +28,7 @@ export const FAQ_SECTIONS_BY_LANGUAGE: Record<Language, FaqSection[]> = {
         {
           question: "Is there a trial period?",
           answer:
-            "No. A trial period would move things in the direction of in-app purchases and paywalls, and I do not want that in Intake. I do not want to lock people out or gate features after a certain amount of time. If you do not like the app, you can return it in both stores within the available return period.",
+            "No, not for the app. A trial period would move things in the direction of in-app purchases and paywalls, and I do not want that in Intake. I do not want to lock people out or gate features after a certain amount of time. If you do not like the app, you can return it in both stores within the available return period. Intake AI, the optional subscription, starts with a 3-day free trial.",
         },
         {
           question: "Why does Intake AI require a subscription?",
@@ -43,17 +48,17 @@ export const FAQ_SECTIONS_BY_LANGUAGE: Record<Language, FaqSection[]> = {
         {
           question: "What does the Intake AI subscription include?",
           answer:
-            "Intake AI lets you describe meals with text, analyze meal photos, scan nutrition labels, review recognized ingredients separately, correct estimates in place, adjust portions and amounts, and edit calories before logging. It costs 3.99 € per month or 39.99 € per year, each with a 3-day free trial.",
+            "Intake AI lets you describe meals with text, analyze meal photos, scan nutrition labels, log recognized ingredients separately, correct ingredients and amounts in place, adjust portions, and edit calories before logging. In Germany it costs 3.99 € per month or 39.99 € per year, each with a 3-day free trial. The App Store and Google Play show the price for your country.",
         },
         {
           question: "What is the difference between Intake AI and own API key (BYOK)?",
           answer:
-            "Intake AI has the richer food-logging workflow: separate ingredient review, in-place corrections, portion controls, manual calorie adjustments, nutrition-label product creation, and continuous improvements. Own API key (BYOK) is the basic AI food logging chat using your provider key.",
+            "Both log meals from a text description or a photo, show the estimate as a card, and let you change the portion and adjust it before logging. Intake AI adds the correction view for ingredients and amounts and nutrition-label scanning, works without a key or provider account, and keeps improving. With your own API key (BYOK) you use your own provider account and pay its usage costs.",
         },
         {
           question: "Which features are Intake AI exclusive?",
           answer:
-            "Intake AI exclusive features include logging recognized ingredients separately, editing ingredient names and amounts directly, choosing larger or smaller portions, removing or adding ingredients, manually adjusting calories before logging, and scanning nutrition labels to prefill the create-product form.",
+            "Two features need Intake AI: the correction view, where you change the food, the portion or the nutrition values and edit, remove or add ingredients, and nutrition-label scanning, which fills in the create-product form from a photo of the label.",
         },
         {
           question: "Are Intake AI nutrition values exact?",
@@ -73,17 +78,12 @@ export const FAQ_SECTIONS_BY_LANGUAGE: Record<Language, FaqSection[]> = {
         {
           question: "Do I need an Intake AI subscription if I use my own API key (BYOK)?",
           answer:
-            "No. Own API key (BYOK) logging does not require an Intake AI subscription. It is still limited to the basic AI chat flow and does not include Intake AI exclusive controls.",
+            "No. Own API key (BYOK) logging does not require an Intake AI subscription. It does not include the two Intake AI features: the correction view and nutrition-label scanning.",
         },
         {
           question: "Which providers can I use with my own API key (BYOK)?",
           answer:
             "Intake supports own API key (BYOK) logging with OpenAI, Anthropic Claude, and Google Gemini providers.",
-        },
-        {
-          question: "How do I get an OpenAI, Anthropic, or Gemini API key?",
-          answer:
-            "Create or sign in to an account in the OpenAI dashboard, the Anthropic Console, or Google AI Studio, create an API key there, then paste it into Intake's AI settings. Keep the key private and delete it if you no longer want to use it.",
         },
         {
           question: "Does ChatGPT Plus or Claude Pro include an API key?",
@@ -98,7 +98,7 @@ export const FAQ_SECTIONS_BY_LANGUAGE: Record<Language, FaqSection[]> = {
         {
           question: "Do I need an account to use Intake?",
           answer:
-            "No account is required. Your data stays on your device and can sync via your iCloud account or Google Drive.",
+            "No account is required. Your data stays on your device. On iPhone it can sync through your own iCloud account, and on Android you can turn on an encrypted backup to your Google Drive.",
         },
         {
           question: "What data is sent when I use Intake AI?",
@@ -113,12 +113,12 @@ export const FAQ_SECTIONS_BY_LANGUAGE: Record<Language, FaqSection[]> = {
         {
           question: "Is Intake privacy-first?",
           answer:
-            "Yes. All of your data stays on your device by default. iCloud and Google Drive backups are optional. Intake is designed to work without account tracking and without selling your personal data.",
+            "Yes. All of your data stays on your device by default. iCloud sync on iPhone and the encrypted Google Drive backup on Android are optional. Intake is designed to work without account tracking and without selling your personal data.",
         },
       ],
     },
     {
-      title: "Tracking features",
+      title: "Food data",
       items: [
         {
           question: "How many foods are included?",
@@ -129,45 +129,15 @@ export const FAQ_SECTIONS_BY_LANGUAGE: Record<Language, FaqSection[]> = {
           answer:
             "Intake combines food data from USDA, the German Bundeslebensmittelschlüssel (BLS), and Open Food Facts (which provides most entries). By combining these sources, search results are broader and more accurate. The data is updated daily so you always get the latest information.",
         },
-        {
-          question: "Can I set my own goals in Intake?",
-          answer:
-            "Yes. In Intake, you can choose whether you want to lose weight, gain weight, or maintain your weight. You can let Intake calculate your calorie target and macros, or enter your own values.",
-        },
-        {
-          question: "Can I personalize Intake?",
-          answer:
-            "Yes. At the bottom of the Today page, you can edit your Today page, show or hide tiles and meals, and create your own meals.",
-        },
       ],
     },
     {
-      title: "Sync & integrations",
+      title: "Integrations",
       items: [
         {
           question: "Does Intake integrate with Apple Health (iOS) or Health Connect (Android)?",
           answer:
             "Yes. Intake supports Apple Health on iOS and Health Connect on Android so your nutrition data can sync with your health ecosystem.",
-        },
-        {
-          question: "What data does Intake read from Apple Health / Health Connect?",
-          answer:
-            "Intake reads your activity data, including workouts, steps, distance, and calories burned, and also your weight if you use a smart scale.",
-        },
-        {
-          question: "Can I import historical weight data?",
-          answer:
-            "Yes. You can import your historical weight data from Apple Health so you can also view your full statistics inside Intake.",
-        },
-        {
-          question: "Are activity calories added to my daily target?",
-          answer:
-            "Yes. But only if you want them to be. You can change that at any time in the settings.",
-        },
-        {
-          question: "What data does Intake write to Apple Health / Health Connect?",
-          answer:
-            "Intake writes all nutrition values and calories from your meals so you can also use that information in other apps. Intake also writes the water you log in Intake or consume through marked foods.",
         },
       ],
     },
@@ -184,7 +154,7 @@ export const FAQ_SECTIONS_BY_LANGUAGE: Record<Language, FaqSection[]> = {
         {
           question: "Gibt es eine Testphase?",
           answer:
-            "Nein. Eine Testphase würde in die Richtung In-App-Käufe und Paywalls gehen und das möchte ich in Intake nicht haben. Ich möchte niemanden nach einem bestimmten Zeitraum aussperren oder Features sperren müssen. Wenn dir die App nicht gefällt, kannst du sie in beiden Stores innerhalb des jeweiligen Rückgabezeitraums zurückgeben.",
+            "Nein, nicht für die App. Eine Testphase würde in die Richtung In-App-Käufe und Paywalls gehen und das möchte ich in Intake nicht haben. Ich möchte niemanden nach einem bestimmten Zeitraum aussperren oder Features sperren müssen. Wenn dir die App nicht gefällt, kannst du sie in beiden Stores innerhalb des jeweiligen Rückgabezeitraums zurückgeben. Intake AI, das optionale Abo, startet mit 3 Tagen kostenloser Testphase.",
         },
         {
           question: "Warum braucht Intake AI ein Abo?",
@@ -204,17 +174,17 @@ export const FAQ_SECTIONS_BY_LANGUAGE: Record<Language, FaqSection[]> = {
         {
           question: "Was ist im Intake-AI-Abo enthalten?",
           answer:
-            "Mit Intake AI kannst du Mahlzeiten per Text beschreiben, Fotos analysieren, Nährwertlabels scannen, erkannte Zutaten einzeln prüfen, Schätzungen direkt korrigieren, Portionen und Mengen anpassen und Kalorien vor dem Loggen bearbeiten. Es kostet 3,99 € pro Monat oder 39,99 € pro Jahr, jeweils mit 3 Tagen kostenloser Testphase.",
+            "Mit Intake AI kannst du Mahlzeiten per Text beschreiben, Fotos analysieren, Nährwertlabels scannen, erkannte Zutaten einzeln loggen, Zutaten und Mengen direkt korrigieren, Portionen anpassen und Kalorien vor dem Loggen bearbeiten. In Deutschland kostet es 3,99 € pro Monat oder 39,99 € pro Jahr, jeweils mit 3 Tagen kostenloser Testphase. Im App Store und bei Google Play siehst du den Preis für dein Land.",
         },
         {
           question: "Was ist der Unterschied zwischen Intake AI und eigenem API-Schlüssel (BYOK)?",
           answer:
-            "Intake AI bietet den umfangreicheren Food-Logging-Ablauf: einzelne Zutaten prüfen, direkte Korrekturen, Portionssteuerung, manuelle Kalorienanpassung, Produkterstellung per Nährwertlabel und kontinuierliche Verbesserungen. Eigener API-Schlüssel (BYOK) ist der grundlegende KI-Food-Logging-Chat mit deinem Anbieter-Schlüssel.",
+            "Beide erfassen Mahlzeiten aus einer Beschreibung oder einem Foto, zeigen die Schätzung als Karte und lassen dich die Portion ändern und vor dem Loggen anpassen. Intake AI hat zusätzlich die Korrekturansicht für Zutaten und Mengen und das Scannen von Nährwertlabels, funktioniert ohne Schlüssel und Anbieterkonto und wird laufend verbessert. Mit eigenem API-Schlüssel (BYOK) nutzt du dein eigenes Anbieterkonto und zahlst dessen Nutzungskosten.",
         },
         {
           question: "Welche Funktionen gibt es nur mit Intake AI?",
           answer:
-            "Nur Intake AI kann erkannte Zutaten einzeln loggen, Zutaten und Mengen direkt bearbeiten, größere oder kleinere Portionen wählen, Zutaten entfernen oder ergänzen, Kalorien vor dem Loggen manuell anpassen und Nährwertlabels nutzen, um das Formular zum Erstellen eines Produkts vorauszufüllen.",
+            "Zwei Funktionen gibt es nur mit Intake AI: die Korrekturansicht, in der du Lebensmittel, Portion oder Nährwerte änderst und Zutaten bearbeitest, entfernst oder ergänzt, und das Scannen von Nährwertlabels, das das Formular zum Erstellen eines Produkts aus einem Foto des Labels ausfüllt.",
         },
         {
           question: "Sind die Nährwerte von Intake AI exakt?",
@@ -234,17 +204,12 @@ export const FAQ_SECTIONS_BY_LANGUAGE: Record<Language, FaqSection[]> = {
         {
           question: "Brauche ich ein Intake-AI-Abo, wenn ich meinen eigenen API-Schlüssel (BYOK) nutze?",
           answer:
-            "Nein. Logging mit eigenem API-Schlüssel (BYOK) braucht kein Intake-AI-Abo. Es bleibt aber auf den grundlegenden KI-Chat beschränkt und enthält nicht die exklusiven Intake-AI-Bedienelemente.",
+            "Nein. Logging mit eigenem API-Schlüssel (BYOK) braucht kein Intake-AI-Abo. Die zwei Intake-AI-Funktionen sind dann nicht dabei: die Korrekturansicht und das Scannen von Nährwertlabels.",
         },
         {
           question: "Welche Anbieter kann ich mit eigenem API-Schlüssel (BYOK) nutzen?",
           answer:
             "Intake unterstützt Logging mit eigenem API-Schlüssel (BYOK) über OpenAI, Anthropic Claude und Google Gemini.",
-        },
-        {
-          question: "Wie bekomme ich einen OpenAI-, Anthropic- oder Gemini-API-Schlüssel?",
-          answer:
-            "Erstelle oder öffne dein Konto im OpenAI-Dashboard, in der Anthropic Console oder in Google AI Studio, erstelle dort einen API-Schlüssel und füge ihn in den KI-Einstellungen von Intake ein. Behandle den Schlüssel vertraulich und lösche ihn, wenn du ihn nicht mehr nutzen möchtest.",
         },
         {
           question: "Enthält ChatGPT Plus oder Claude Pro einen API-Schlüssel?",
@@ -259,7 +224,7 @@ export const FAQ_SECTIONS_BY_LANGUAGE: Record<Language, FaqSection[]> = {
         {
           question: "Brauche ich ein Konto für Intake?",
           answer:
-            "Nein. Du brauchst kein Konto. Deine Daten bleiben auf deinem Gerät und können über iCloud oder Google Drive synchronisiert werden.",
+            "Nein. Du brauchst kein Konto. Deine Daten bleiben auf deinem Gerät. Auf dem iPhone können sie über dein eigenes iCloud-Konto synchronisiert werden, auf Android kannst du ein verschlüsseltes Backup in dein Google Drive einschalten.",
         },
         {
           question: "Welche Daten werden bei Intake AI gesendet?",
@@ -274,12 +239,12 @@ export const FAQ_SECTIONS_BY_LANGUAGE: Record<Language, FaqSection[]> = {
         {
           question: "Ist Intake datenschutzfreundlich?",
           answer:
-            "Ja. Alle deine Daten bleiben standardmäßig auf deinem Gerät. iCloud- und Google-Drive-Backups sind optional. Intake ist auf Privatsphäre ausgelegt, ohne Account-Tracking und ohne Verkauf persönlicher Daten.",
+            "Ja. Alle deine Daten bleiben standardmäßig auf deinem Gerät. Der iCloud-Sync auf dem iPhone und das verschlüsselte Google-Drive-Backup auf Android sind optional. Intake ist auf Privatsphäre ausgelegt, ohne Account-Tracking und ohne Verkauf persönlicher Daten.",
         },
       ],
     },
     {
-      title: "Tracking-Funktionen",
+      title: "Lebensmitteldaten",
       items: [
         {
           question: "Wie viele Lebensmittel sind enthalten?",
@@ -290,45 +255,15 @@ export const FAQ_SECTIONS_BY_LANGUAGE: Record<Language, FaqSection[]> = {
           answer:
             "Intake kombiniert Lebensmitteldaten aus USDA, dem Bundeslebensmittelschlüssel (BLS) und Open Food Facts. Von Open Food Facts stammt der Großteil der Einträge. Durch die Kombination dieser Quellen sind Suchergebnisse breiter und genauer. Die Daten werden täglich aktualisiert.",
         },
-        {
-          question: "Kann ich in Intake eigene Ziele festlegen?",
-          answer:
-            "Ja. In Intake kannst du angeben, ob du abnehmen, zunehmen oder dein Gewicht halten möchtest. Dazu kannst du Intake dein Kalorienziel und deine Makronährwerte berechnen lassen oder eigene Werte angeben.",
-        },
-        {
-          question: "Kann ich Intake personalisieren?",
-          answer:
-            "Ja. Du kannst am Ende der Heute-Seite deine Heute-Seite bearbeiten, Kacheln und Mahlzeiten ein- oder ausblenden und eigene Mahlzeiten anlegen.",
-        },
       ],
     },
     {
-      title: "Sync & Integrationen",
+      title: "Integrationen",
       items: [
         {
           question: "Unterstützt Intake Apple Health (iOS) oder Health Connect (Android)?",
           answer:
             "Ja. Intake unterstützt Apple Health auf iOS und Health Connect auf Android, damit deine Ernährungsdaten in dein Gesundheits-Ökosystem passen.",
-        },
-        {
-          question: "Welche Daten liest Intake aus Apple Health / Health Connect?",
-          answer:
-            "Intake liest deine Aktivitätsdaten, also Workouts, Schritte, Strecke und verbrannte Kalorien, und außerdem dein Gewicht, falls du eine smarte Waage verwendest.",
-        },
-        {
-          question: "Kann ich historische Gewichtsdaten importieren?",
-          answer:
-            "Ja. Du kannst deine historischen Gewichtsdaten aus Apple Health importieren, damit du auch deine vollständige Statistik in Intake ansehen kannst.",
-        },
-        {
-          question: "Werden Aktivitätskalorien zu meinem Tagesziel addiert?",
-          answer:
-            "Ja. Aber nur, wenn du das möchtest. Du kannst das jederzeit in den Einstellungen ändern.",
-        },
-        {
-          question: "Welche Daten schreibt Intake in Apple Health / Health Connect?",
-          answer:
-            "Intake schreibt alle Nährwerte und Kalorien deiner Mahlzeiten, damit du diese Informationen auch in anderen Apps verwenden kannst. Außerdem schreibt Intake auch das Wasser, das du in Intake einträgst oder durch markierte Lebensmittel zu dir nimmst.",
         },
       ],
     },

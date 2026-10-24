@@ -1,5 +1,6 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { runInNewContext } from 'node:vm';
 import { beforeAll, describe, expect, it } from 'vitest';
 import urls from './fixtures/production-urls.json';
 
@@ -34,12 +35,51 @@ describe('build output', () => {
     expect(visibleWords(read(route))).toBeGreaterThan(minWords);
   });
 
-  // Radix Accordion unmounts collapsed content by default, which silently stripped
-  // all 26 FAQ answers out of the static HTML. forceMount in ui/accordion.tsx keeps
-  // them in the DOM; this asserts they stay there.
+  // Every remaining FAQ answer must stay in the static HTML so it stays crawlable.
   it('includes FAQ questions in the static HTML of the help pages', () => {
     expect(read('/hilfe')).toContain('Ist Intake ein Abo-Modell?');
     expect(read('/en/help')).toContain('Is Intake a subscription-based app?');
+  });
+
+  describe('help home', () => {
+    const indexOf = (html: string) =>
+      JSON.parse(html.match(/<script type="application\/json" data-help-index>([\s\S]*?)<\/script>/)?.[1] ?? '[]') as {
+        id: string;
+        title: string;
+        short: string;
+        href: string;
+      }[];
+
+    it('has a search field and an inline index of the topics with content', () => {
+      for (const [route, copyMeal, guide] of [
+        ['/hilfe', '/hilfe/mahlzeit-kopieren', '/hilfe/eigener-api-schluessel'],
+        ['/en/help', '/en/help/copy-meal', '/en/help/own-api-key'],
+      ]) {
+        const html = read(route);
+        expect(html).toContain('data-help-search');
+        const index = indexOf(html);
+        expect(index.find((item) => item.id === 'copy-meal')?.href).toBe(copyMeal);
+        expect(index.find((item) => item.id === 'byok-guide')?.href).toBe(guide);
+        // Topics without content yet are not in the index.
+        expect(index.map((item) => item.id)).not.toContain('calorie-ring');
+      }
+    });
+
+    it('lists the topics by area, linking only pages that exist', () => {
+      const html = read('/hilfe');
+      expect(html).toMatch(/<h2[^>]*>\s*Essen erfassen\s*<\/h2>/);
+      expect(html).toContain('href="/hilfe/mahlzeit-kopieren"');
+      expect(html).toContain('href="/hilfe/eigener-api-schluessel"');
+      expect(html).not.toContain('href="/hilfe/kalorienring"');
+      const links = [...html.matchAll(/href="(\/hilfe\/[a-z0-9-]+)"/g)].map((match) => match[1]);
+      expect(links.filter((link) => !existsSync(distFileFor(link)))).toEqual([]);
+      expect(read('/en/help')).toMatch(/<h2[^>]*>\s*Logging food\s*<\/h2>/);
+    });
+
+    it('keeps only the pre-purchase questions in the FAQ', () => {
+      expect(read('/hilfe')).not.toContain('Kann ich Intake personalisieren?');
+      expect(read('/en/help')).not.toContain('What data does Intake read from Apple Health / Health Connect?');
+    });
   });
 
   // Astro resolves src/assets imports to ImageMetadata objects, not URL strings the
@@ -101,11 +141,43 @@ describe('build output', () => {
 
     it('sets the platform attribute from an inline head script before first paint', () => {
       const head = de.slice(0, de.indexOf('</head>'));
-      const script = head.match(/<script>(\(function\(\)\{[\s\S]*?)<\/script>/)?.[1] ?? '';
-      expect(script).toMatch(/documentElement;d\.dataset\.helpPlatform=/);
-      expect(script).toContain('intake.help.platform');
+      // Any inline (no src) script in the head that reads the stored platform.
+      const script =
+        [...head.matchAll(/<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/g)]
+          .map((match) => match[1])
+          .find((body) => body.includes('intake.help.platform')) ?? '';
+      expect(script).not.toBe('');
       expect(Buffer.byteLength(script)).toBeLessThan(1024);
       expect(head).not.toMatch(/<script[^>]*src=[^>]*help-?platform/i);
+
+      // Run the script exactly as built, not the vitest-transformed source.
+      const run = (search: string, stored: string | null, userAgent: string) => {
+        const dataset: Record<string, string> = {};
+        runInNewContext(script, {
+          URLSearchParams,
+          location: { search },
+          navigator: { userAgent },
+          localStorage: { getItem: (key: string) => (key === 'intake.help.platform' ? stored : null) },
+          document: { documentElement: { dataset } },
+        });
+        return dataset;
+      };
+      const android = 'Mozilla/5.0 (Linux; Android 15; Pixel 9) AppleWebKit/537.36 Mobile Safari/537.36';
+      const iphone = 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15';
+      expect(run('?platform=ios', null, android)).toEqual({ helpPlatform: 'ios' });
+      expect(run('?platform=android&source=app', null, iphone)).toEqual({ helpPlatform: 'android', helpSwitch: 'hidden' });
+      expect(run('', 'android', iphone)).toEqual({ helpPlatform: 'android' });
+      expect(run('', null, android)).toEqual({ helpPlatform: 'android' });
+    });
+
+    it('hides the switch until the head script has set the platform', () => {
+      const css = [...de.matchAll(/<style>([\s\S]*?)<\/style>/g)].map((match) => match[1]).join('\n');
+      expect(css).toMatch(/(^|[}\s])\[data-platform-switch\]\{display:none\}/);
+      expect(css).toMatch(/html\[data-help-platform\] \[data-platform-switch\]\{display:block\}/);
+      // The app-link rule comes after the reveal so it still wins.
+      expect(css.lastIndexOf("html[data-help-switch=hidden] [data-platform-switch]")).toBeGreaterThan(
+        css.indexOf('html[data-help-platform] [data-platform-switch]'),
+      );
     });
 
     it('renders the switch on a two-platform topic', () => {
