@@ -36,8 +36,8 @@
     "sha": "7bbdcc8690dd93ab"
   },
   "/en/help": {
-    "words": 1409,
-    "sha": "1647af04f8b017a7"
+    "words": 1431,
+    "sha": "0ac9066711b927b0"
   },
   "/en/help/activity-settings": {
     "words": 363,
@@ -56,8 +56,12 @@
     "sha": "f8fcdb33d0809083"
   },
   "/en/help/body-data": {
-    "words": 277,
-    "sha": "f543c25624dc4098"
+    "words": 340,
+    "sha": "277de598d507761a"
+  },
+  "/en/help/body-measurements": {
+    "words": 353,
+    "sha": "b5ae5315263033d7"
   },
   "/en/help/calorie-goal": {
     "words": 502,
@@ -142,6 +146,10 @@
   "/en/help/log-water": {
     "words": 411,
     "sha": "f34da41ae4a52d4c"
+  },
+  "/en/help/log-weight": {
+    "words": 304,
+    "sha": "e27ce1e0e406e817"
   },
   "/en/help/macro-goals": {
     "words": 394,
@@ -235,6 +243,10 @@
     "words": 321,
     "sha": "911f893c1fb16515"
   },
+  "/en/help/starting-weight": {
+    "words": 304,
+    "sha": "83dfb235c337f4a4"
+  },
   "/en/help/steps-workouts": {
     "words": 520,
     "sha": "710fa463ac8765d2"
@@ -274,6 +286,10 @@
   "/en/help/weekly-overview": {
     "words": 373,
     "sha": "9da399d94020b4b6"
+  },
+  "/en/help/weight-trend": {
+    "words": 330,
+    "sha": "9a50514e7f08fe03"
   },
   "/en/help/workouts-without-double-counting": {
     "words": 288,
@@ -428,8 +444,8 @@
     "sha": "84b6a4723fdb5f28"
   },
   "/hilfe": {
-    "words": 1269,
-    "sha": "f2d3ec6816527a10"
+    "words": 1284,
+    "sha": "cf748f482fe70d58"
   },
   "/hilfe/aktivitaet-eintragen": {
     "words": 365,
@@ -495,6 +511,14 @@
     "words": 319,
     "sha": "6fcc6c1b715599b1"
   },
+  "/hilfe/gewicht-eintragen": {
+    "words": 299,
+    "sha": "18f909c063c07c63"
+  },
+  "/hilfe/gewichtsverlauf": {
+    "words": 299,
+    "sha": "69895d9312e911ad"
+  },
   "/hilfe/health-connect-schaetzung": {
     "words": 449,
     "sha": "87ea04efe48e121e"
@@ -528,8 +552,12 @@
     "sha": "2143514c4274860f"
   },
   "/hilfe/koerperdaten": {
-    "words": 256,
-    "sha": "5e283672bfef42c2"
+    "words": 317,
+    "sha": "1d154e42467ccb58"
+  },
+  "/hilfe/koerpermasse": {
+    "words": 337,
+    "sha": "1db64e744df70746"
   },
   "/hilfe/lebensmittel-hinzufuegen": {
     "words": 304,
@@ -618,6 +646,10 @@
   "/hilfe/schritte-workouts": {
     "words": 499,
     "sha": "c9aa36b58a3d1b98"
+  },
+  "/hilfe/startgewicht": {
+    "words": 280,
+    "sha": "669fb156ac974e68"
   },
   "/hilfe/stimmung": {
     "words": 233,
