@@ -1,33 +1,98 @@
-/* Intake coral (the landing page's --primary, hsl(338 92% 63%)) in both themes. */
+/* Theme: calm neutral surfaces, warm off-white text, Intake coral used sparingly
+   (links, icons, the current page's icon). Modelled on the Fumadocs look Tobias
+   picked as the reference (docs.zen-browser.app). */
 :root {
   --intake-coral: #f74a8a;
-  --sl-color-accent-low: #4a1226;
+  --sl-font: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --sl-content-width: 45rem;
+  --sl-text-h1: 2.125rem;
+  --sl-text-h2: 1.5rem;
+  --sl-text-h3: 1.2rem;
+  --docs-radius: 12px;
+
+  /* Dark (Starlight's default theme). */
+  --sl-color-accent-low: #3a1424;
   --sl-color-accent: var(--intake-coral);
-  --sl-color-accent-high: var(--intake-coral);
+  --sl-color-accent-high: #f9709f;
+  --sl-color-white: #f2f0e8;
+  --sl-color-gray-1: #e6e4da;
+  --sl-color-gray-2: #cfcdc1;
+  --sl-color-gray-3: #a3a196;
+  --sl-color-gray-4: #6e6c64;
+  --sl-color-gray-5: #333331;
+  --sl-color-gray-6: #262625;
+  --sl-color-black: #1b1b1a;
+  --sl-color-bg-nav: #1b1b1a;
+  --sl-color-bg-sidebar: #1b1b1a;
+  --sl-color-hairline-light: #2c2c2a;
+  --sl-color-hairline: #2a2a28;
+  --sl-color-hairline-shade: #141413;
+  --docs-active-bg: #2c2c2a;
+  --docs-card-bg: #171716;
 }
 :root[data-theme='light'] {
-  /* A warm off-white instead of pure white, easier on the eyes. */
-  --sl-color-bg: #fbf8f5;
-  --sl-color-bg-nav: #f5f0eb;
-  --sl-color-bg-sidebar: #f5f0eb;
-  --sl-color-accent-low: #fde1eb;
-  /* A shade darker so links keep enough contrast on white. */
+  --sl-color-accent-low: #fbe3ec;
   --sl-color-accent: #d62e6c;
-  --sl-color-accent-high: #8f1a46;
+  --sl-color-accent-high: #b8235a;
+  --sl-color-white: #1c1a17;
+  --sl-color-gray-1: #2a2824;
+  --sl-color-gray-2: #3d3a35;
+  --sl-color-gray-3: #66625a;
+  --sl-color-gray-4: #9a958b;
+  --sl-color-gray-5: #e4ded5;
+  --sl-color-gray-6: #efeae3;
+  --sl-color-gray-7: #f5f1eb;
+  --sl-color-black: #fbf8f5;
+  --sl-color-bg: #fbf8f5;
+  --sl-color-bg-nav: #fbf8f5;
+  --sl-color-bg-sidebar: #fbf8f5;
+  --sl-color-hairline-light: #ebe5dc;
+  --sl-color-hairline: #e6e0d7;
+  --sl-color-hairline-shade: #d9d2c8;
+  --docs-active-bg: #f0ebe4;
+  --docs-card-bg: #ffffff;
 }
-/* The selected sidebar entry: coral with white text in dark mode. */
-:root:not([data-theme='light']) .sidebar-content a[aria-current='page'] {
-  color: #fff;
-}
-.step-shot { max-width: 320px; border-radius: 18px; margin-top: .5rem; box-shadow: 0 1px 6px rgb(0 0 0 / .15); }
+
+/* Headings: semibold with slightly tighter tracking. */
+.sl-markdown-content :is(h1, h2, h3, h4), .content-panel h1 { font-weight: 600; letter-spacing: -0.02em; }
+body { -webkit-font-smoothing: antialiased; }
+
+/* Links: coral, underlined only on hover. */
+.sl-markdown-content a:not(.doc-card):not(.store-badges a) { text-decoration: none; font-weight: 500; }
+.sl-markdown-content a:not(.doc-card):hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Sidebar: same surface as the page, small text, a quiet highlight for the current page. */
+.sidebar-pane { border-inline-end: 1px solid var(--sl-color-hairline); }
+.sidebar-content a, .sidebar-content summary { font-size: 0.875rem; }
+.sidebar-content ul.top-level > li > details > summary .group-label > .large,
+.sidebar-content ul.top-level > li > a.large { font-size: 0.875rem; font-weight: 600; color: var(--sl-color-white); }
+.sidebar-content a { padding-block: 0.3rem; border-radius: 8px; }
+.sidebar-content a:hover { background-color: var(--docs-active-bg); color: var(--sl-color-white); }
+.sidebar-content a[aria-current='page'],
+.sidebar-content a[aria-current='page']:hover,
+.sidebar-content a[aria-current='page']:focus { background-color: var(--docs-active-bg); color: var(--sl-color-white); font-weight: 500; }
+/* Icons stay neutral grey; hover and the current page lift them to the text colour. */
+.sidebar-content a:hover > span::before,
+.sidebar-content summary:hover .group-label > span::before,
+.sidebar-content a[aria-current='page'] > span::before { background-color: var(--sl-color-white) !important; }
+
+/* Header: a hairline instead of a band. */
+header.header { border-bottom-color: var(--sl-color-hairline); }
+site-search button { border-radius: 10px; border-color: var(--sl-color-hairline-light); background-color: var(--sl-color-gray-6); }
+
+/* iPhone / Android tabs as a small segmented pill. */
+starlight-tabs [role='tablist'] { display: inline-flex; gap: 2px; padding: 3px; border: none; border-radius: 10px; background-color: var(--sl-color-gray-6); }
+starlight-tabs [role='tablist'] li { border: none; }
+starlight-tabs [role='tab'] { border: none !important; border-radius: 8px; padding: 0.3rem 0.95rem !important; font-size: 0.875rem; color: var(--sl-color-gray-3); }
+starlight-tabs [role='tab'][aria-selected='true'] { background-color: var(--sl-color-black); color: var(--sl-color-white); font-weight: 500; box-shadow: 0 1px 2px rgb(0 0 0 / 0.12); }
+:root[data-theme='light'] starlight-tabs [role='tab'][aria-selected='true'] { background-color: #fff; }
+
+.step-shot { max-width: 320px; border-radius: var(--docs-radius); margin-top: .6rem; border: 1px solid var(--sl-color-hairline-light); box-shadow: none; }
 /* App links (source=app) open the page on the app's platform without the switch. */
 :root[data-platform-switch='hidden'] starlight-tabs[data-sync-key='platform'] [role='tablist'] { display: none; }
 /* The site name follows the theme: white in dark mode, black in light mode. */
 .site-title { color: var(--sl-color-white); }
 
-/* Sidebar icons: the icon per entry and its mask come from sidebar-icons.css.
-   On the current page the icon takes the text colour (white on coral in dark mode). */
-.sidebar-content a[data-icon][aria-current='page'] > span::before { background-color: currentColor; }
 
 /* Store badges (the <!-- store-badges --> marker in a topic body). */
 .store-badges { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-block: 1.25rem; }
@@ -41,16 +106,16 @@
   gap: 0.85rem;
   align-items: flex-start;
   padding: 1rem 1.1rem;
-  border: 1px solid var(--sl-color-gray-5);
-  border-radius: 0.5rem;
-  background-color: var(--sl-color-black);
+  border: 1px solid var(--sl-color-hairline-light);
+  border-radius: var(--docs-radius);
+  background-color: var(--docs-card-bg);
   color: var(--sl-color-gray-2);
   text-decoration: none;
-  box-shadow: var(--sl-shadow-sm);
   transition: border-color 0.15s ease, background-color 0.15s ease;
 }
-.doc-card:hover, .doc-card:focus-visible { border-color: var(--sl-color-accent); background-color: var(--sl-color-gray-7, var(--sl-color-gray-6)); }
-.doc-card-icon { flex-shrink: 0; display: inline-flex; color: var(--sl-color-accent); margin-top: 0.1rem; }
+.doc-card:hover, .doc-card:focus-visible { border-color: var(--sl-color-gray-4); background-color: var(--docs-active-bg); }
+.doc-card-icon { flex-shrink: 0; display: inline-flex; color: var(--sl-color-gray-3); margin-top: 0.1rem; transition: color 0.15s ease; }
+.doc-card:hover .doc-card-icon, .doc-card:focus-visible .doc-card-icon { color: var(--sl-color-white); }
 .doc-card-icon svg { width: 1.5rem; height: 1.5rem; }
 .doc-card-body { display: flex; flex-direction: column; gap: 0.2rem; line-height: 1.45; font-size: var(--sl-text-sm); }
 .doc-card-body strong { color: var(--sl-color-white); font-size: var(--sl-text-base); font-weight: 600; }
@@ -59,3 +124,102 @@
    instead of Starlight's large top-level style. */
 .sidebar-content ul.top-level ul .group-label > .large { font-size: var(--sl-text-sm); font-weight: 500; color: var(--sl-color-gray-2); }
 .sidebar-content ul.top-level ul details:has([aria-current='page']) > summary .group-label > .large { color: var(--sl-color-white); font-weight: 600; }
+
+/* Sidebar rhythm, after the Fumadocs reference: sections as plain headings
+   (no caret, no indent, no rule), even 32 px rows with the icon aligned under
+   the heading, more air between sections, and the indent with a hairline only
+   for the pages inside a manual chapter. */
+.sidebar-content ul.top-level > li + li { margin-top: 1.4rem; }
+.sidebar-content ul.top-level > li > details > summary { padding: 0 0.5rem 0.35rem; cursor: default; pointer-events: none; }
+.sidebar-content ul.top-level > li > details > summary .caret { display: none; }
+.sidebar-content ul.top-level > li > details > summary .group-label > .large { font-size: 0.8125rem; font-weight: 600; color: var(--sl-color-white); }
+.sidebar-content ul.top-level > li > details > ul { border-inline-start: none; margin-inline-start: 0; padding-inline-start: 0; }
+.sidebar-content ul.top-level > li > details > ul > li > a,
+.sidebar-content ul.top-level > li > details > ul > li > details > summary { padding: 0.375rem 0.5rem; line-height: 1.25rem; min-height: 2rem; border-radius: 8px; }
+.sidebar-content ul.top-level > li > details > ul > li > details > summary:hover { background-color: var(--docs-active-bg); }
+.sidebar-content ul.top-level > li > details > ul > li > details > summary .group-label > .large { font-size: 0.875rem; }
+.sidebar-content ul.top-level > li > details > ul > li > details > ul { margin: 0.15rem 0 0.35rem 1.05rem; padding-inline-start: 0.6rem; border-inline-start: 1px solid var(--sl-color-hairline-light); }
+.sidebar-content ul.top-level > li > details > ul > li > details > ul a { padding: 0.3rem 0.5rem; line-height: 1.2rem; font-size: 0.8125rem; color: var(--sl-color-gray-3); }
+.sidebar-content ul.top-level > li > details > ul > li > details > ul a[aria-current='page'] { color: var(--sl-color-white); }
+.sidebar-content li { margin: 0; }
+/* Starlight draws its nesting rule on every nested li; the sections' own rows go without. */
+.sidebar-content ul.top-level > li > details > ul > li { border-inline-start: none; margin-inline-start: 0; padding-inline-start: 0; }
+.sidebar-content ul.top-level > li > details > ul > li > details > ul > li { border-inline-start: none; margin-inline-start: 0; padding-inline-start: 0; }
+
+/* Previous / next links: hairline cards like the rest, no shadow, calmer type. */
+.pagination-links a { border: 1px solid var(--sl-color-hairline-light); border-radius: var(--docs-radius); box-shadow: none; background-color: var(--docs-card-bg); }
+.pagination-links a:hover { border-color: var(--sl-color-gray-4); background-color: var(--docs-active-bg); }
+.pagination-links .link-title { font-size: 1rem; font-weight: 600; color: var(--sl-color-white); }
+.pagination-links a > span { font-size: 0.8125rem; color: var(--sl-color-gray-3); }
+
+/* Sidebar scrollbar: thin and invisible until the pointer is over the sidebar,
+   so the sidebar doesn't read as a separate panel. */
+.sidebar-pane { scrollbar-width: thin; scrollbar-color: transparent transparent; transition: scrollbar-color 0.2s ease; }
+.sidebar-pane:hover, .sidebar-pane:focus-within { scrollbar-color: var(--sl-color-gray-5) transparent; }
+/* Safari still uses the WebKit pseudo-elements. */
+.sidebar-pane::-webkit-scrollbar { width: 8px; }
+.sidebar-pane::-webkit-scrollbar-track { background: transparent; }
+.sidebar-pane::-webkit-scrollbar-thumb { background-color: transparent; border-radius: 8px; border: 2px solid transparent; background-clip: content-box; }
+.sidebar-pane:hover::-webkit-scrollbar-thumb { background-color: var(--sl-color-gray-5); }
+
+/* Search: a single floating bar like the Fumadocs reference. The field is the
+   dialog; results open inside it below a hairline. Phones get the same bar
+   (no full-screen sheet); tapping outside closes it, as Starlight already does. */
+site-search dialog {
+  margin: 4.5rem auto auto !important;
+  width: calc(100% - 2rem) !important;
+  max-width: 40rem !important;
+  height: fit-content !important;
+  min-height: 0 !important;
+  max-height: min(70vh, calc(100% - 6rem)) !important;
+  border: 1px solid var(--sl-color-hairline-light) !important;
+  border-radius: 12px !important;
+  background-color: var(--sl-color-gray-6) !important;
+  box-shadow: 0 24px 60px rgb(0 0 0 / 0.45) !important;
+}
+:root[data-theme='light'] site-search dialog { background-color: #fff !important; box-shadow: 0 24px 60px rgb(40 30 20 / 0.14) !important; }
+site-search dialog::backdrop { background-color: rgb(0 0 0 / 0.5); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+:root[data-theme='light'] site-search dialog::backdrop { background-color: rgb(40 30 20 / 0.18); }
+site-search .dialog-frame { padding: 0 !important; gap: 0 !important; }
+site-search button[data-close-modal] { display: none !important; }
+#starlight__search {
+  --pagefind-ui-scale: 0.78;
+  --sl-search-cancel-space: 0px !important;
+  --pagefind-ui-border: transparent;
+  --pagefind-ui-border-width: 0px;
+  --pagefind-ui-background: transparent;
+  --pagefind-ui-border-radius: 12px;
+}
+#starlight__search .pagefind-ui__search-input {
+  width: 100% !important;
+  font-size: 1rem !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding-inline-end: 3.75rem !important;
+}
+#starlight__search .pagefind-ui__form::before { background-color: var(--sl-color-gray-3) !important; }
+#starlight__search .pagefind-ui__search-clear { display: none !important; }
+#starlight__search .pagefind-ui__form::after {
+  content: 'Esc';
+  position: absolute;
+  inset-inline-end: 0.85rem;
+  top: calc(32px * var(--pagefind-ui-scale));
+  transform: translateY(-50%);
+  padding: 0.1rem 0.4rem;
+  border: 1px solid var(--sl-color-hairline-light);
+  border-radius: 6px;
+  background-color: var(--sl-color-black);
+  color: var(--sl-color-gray-3);
+  font-size: 0.7rem;
+  font-weight: 500;
+  pointer-events: none;
+}
+@media (hover: none) { #starlight__search .pagefind-ui__form::after { display: none; } }
+#starlight__search .pagefind-ui__drawer:not(.pagefind-ui__hidden) { border-top: 1px solid var(--sl-color-hairline); padding: 0 0.75rem 0.75rem; }
+#starlight__search .pagefind-ui__message { padding: 0.6rem 0.25rem 0.1rem; height: auto; font-size: 0.8125rem; font-weight: 500; color: var(--sl-color-gray-3); }
+#starlight__search .pagefind-ui__results { padding-top: 0.25rem; }
+@media (max-width: 49.99rem) { site-search dialog { margin-top: 0.75rem !important; } }
+#starlight__search .pagefind-ui__results-area { margin-top: 0; }
+#starlight__search .pagefind-ui__drawer { gap: 0; }
