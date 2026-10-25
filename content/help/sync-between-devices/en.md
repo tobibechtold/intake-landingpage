@@ -1,7 +1,7 @@
 ---
 id: sync-between-devices
 title: "iPhone, iPad and Android: what syncs between devices"
-short: "Between iPhone and iPad, Intake syncs your data through iCloud. There is no sync between iPhone and Android. On Android, you back up your data to Google Drive."
+short: "Between iPhone and iPad, Intake syncs your data through iCloud. On Android, an encrypted Google Drive backup takes the place of iCloud sync."
 related:
   - icloud-sync
   - google-drive-backup
@@ -17,4 +17,4 @@ Data from Apple Health, such as steps, workouts or a weight from your scale, doe
 
 ## Android
 
-Intake on Android doesn’t sync between devices. With the [encrypted Google Drive backup](/en/help/google-drive-backup), you keep a copy of your data and can bring it to a new device.
+On Android, the [encrypted Google Drive backup](/en/help/google-drive-backup) takes the place of iCloud sync. Intake backs up your data to Google Drive automatically, and you restore it with your passphrase.

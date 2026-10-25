@@ -17,6 +17,6 @@ steps:
       image: ./assets/en/ios/3.webp
 ---
 
-This deletes your profile, diary, library, recipes, products and body measurements in iCloud. Your other devices keep their own copy and upload it again as long as iCloud sync is on there. Turn it off on those devices first if everything should disappear from iCloud.
+Everything Intake keeps in iCloud is deleted: profile and goals, diary, library, recipes, products, body measurements, fasting plan and photos. Your other devices keep their own copy and upload it again as long as iCloud sync is on there. Turn it off on those devices first if everything should disappear from iCloud.
 
 “Reset app” under “Data”, on the other hand, only deletes the data on this device, not in iCloud.

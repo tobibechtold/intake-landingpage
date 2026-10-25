@@ -80,16 +80,16 @@
     "sha": "c6acda53cd7d5cd8"
   },
   "/en/help/calories-from-steps": {
-    "words": 370,
-    "sha": "69a91bc5e01c3762"
+    "words": 355,
+    "sha": "a0a3aa04825e442b"
   },
   "/en/help/calories-left-when-adding": {
     "words": 323,
     "sha": "fdd0783ae0e4ca64"
   },
   "/en/help/connect-health": {
-    "words": 387,
-    "sha": "ed16ee3a857ae5ae"
+    "words": 367,
+    "sha": "e15ea84f8c3492fd"
   },
   "/en/help/copy-meal": {
     "words": 346,
@@ -112,8 +112,8 @@
     "sha": "cc7c155269435819"
   },
   "/en/help/delete-icloud-data": {
-    "words": 272,
-    "sha": "82cb58997638a24d"
+    "words": 279,
+    "sha": "de16c9676dd70ed7"
   },
   "/en/help/drinks-water-goal": {
     "words": 341,
@@ -140,8 +140,8 @@
     "sha": "a2c8945fd3dfa18c"
   },
   "/en/help/fix-icloud-sync": {
-    "words": 350,
-    "sha": "b8d9116bc2d5c650"
+    "words": 345,
+    "sha": "3fcb01c6f88dc372"
   },
   "/en/help/food-photos": {
     "words": 298,
@@ -156,8 +156,8 @@
     "sha": "16343f0033e10aa9"
   },
   "/en/help/icloud-sync": {
-    "words": 352,
-    "sha": "f4895a28835cee0b"
+    "words": 347,
+    "sha": "5fd357a10b09ad65"
   },
   "/en/help/import-weight-history": {
     "words": 325,
@@ -224,8 +224,8 @@
     "sha": "d3196035fe48fe96"
   },
   "/en/help/pull-to-refresh": {
-    "words": 266,
-    "sha": "d3f698440ea8122d"
+    "words": 261,
+    "sha": "63093fdff61f218a"
   },
   "/en/help/quick-add-calories": {
     "words": 294,
@@ -300,12 +300,12 @@
     "sha": "5dfd47f8441e7128"
   },
   "/en/help/sync-between-devices": {
-    "words": 294,
-    "sha": "85d33615de0b9e59"
+    "words": 289,
+    "sha": "0993fff59dba3c4d"
   },
   "/en/help/sync-weight": {
-    "words": 400,
-    "sha": "72c3a69ae6a08bb2"
+    "words": 368,
+    "sha": "ccfe1226d42e4266"
   },
   "/en/help/tags": {
     "words": 307,
@@ -556,8 +556,8 @@
     "sha": "91a797f7be48fd75"
   },
   "/hilfe/geraete-synchronisieren": {
-    "words": 280,
-    "sha": "8804199deb99b815"
+    "words": 275,
+    "sha": "46fdea3b8caa5ee7"
   },
   "/hilfe/getraenke-wasserziel": {
     "words": 317,
@@ -568,8 +568,8 @@
     "sha": "78b4079bee5444a0"
   },
   "/hilfe/gewicht-synchronisieren": {
-    "words": 395,
-    "sha": "b5fe04718ca82e52"
+    "words": 367,
+    "sha": "23b2590758b03853"
   },
   "/hilfe/gewichtsverlauf": {
     "words": 331,
@@ -588,32 +588,32 @@
     "sha": "7f01e4e322c8611f"
   },
   "/hilfe/health-verbinden": {
-    "words": 395,
-    "sha": "a34e2efa80c5e170"
+    "words": 361,
+    "sha": "e23461d365ebcf31"
   },
   "/hilfe/heute-seite-bearbeiten": {
     "words": 350,
     "sha": "dd381b5e7d0b9aeb"
   },
   "/hilfe/icloud-daten-loeschen": {
-    "words": 249,
-    "sha": "f3042387144041dc"
+    "words": 256,
+    "sha": "2bfd47fbc8898868"
   },
   "/hilfe/icloud-sync": {
-    "words": 337,
-    "sha": "53d8d960fcae6e59"
+    "words": 329,
+    "sha": "453b5c10dd10ba93"
   },
   "/hilfe/icloud-sync-reparieren": {
-    "words": 331,
-    "sha": "1f61d1ba9625fdd3"
+    "words": 323,
+    "sha": "3cb6ce1f6d017314"
   },
   "/hilfe/ipad-iphone-duo": {
     "words": 117,
     "sha": "5598427d3b947b0e"
   },
   "/hilfe/kalorien-aus-schritten": {
-    "words": 354,
-    "sha": "724dac99cced478d"
+    "words": 336,
+    "sha": "296fc6ed6c7bcef9"
   },
   "/hilfe/kalorien-einstellen": {
     "words": 375,
@@ -720,8 +720,8 @@
     "sha": "0b7c0e27698d48af"
   },
   "/hilfe/ruheenergie": {
-    "words": 292,
-    "sha": "c3c2e8b7555b07f5"
+    "words": 288,
+    "sha": "14a2bc2776b7fd31"
   },
   "/hilfe/schlagwoerter": {
     "words": 305,
@@ -796,8 +796,8 @@
     "sha": "8958647aef220bb0"
   },
   "/hilfe/zum-aktualisieren-ziehen": {
-    "words": 267,
-    "sha": "2397ed9b4c8fbeef"
+    "words": 259,
+    "sha": "39a03990e3355bd9"
   },
   "/intake-ai": {
     "words": 631,

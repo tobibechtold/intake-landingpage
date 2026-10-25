@@ -1,7 +1,7 @@
 ---
 id: connect-health
 title: "Apple Health oder Health Connect verbinden"
-short: "Verbinde Intake in den Einstellungen mit Apple Health oder Health Connect. Dann zählen deine Schritte und Workouts, und deine Lebensmittel, dein Wasser und dein Gewicht landen auch dort."
+short: "Verbinde Intake in den Einstellungen mit Apple Health oder Health Connect. Dann zählen Schritte und Workouts, und Lebensmittel, Wasser und Gewicht landen auch dort."
 related:
   - health-read-write
   - steps-workouts
@@ -17,11 +17,11 @@ steps:
       image: ./assets/de/ios/2.webp
   - text: "Danach ist die Verbindung an. Mit dem Schalter setzt du sie jederzeit aus."
     ios:
-      text: "Danach steht oben „Verbunden“. Mit „Apple Health verwenden“ schaltest du die Verbindung aus und wieder an."
+      text: "Danach steht oben „Verbunden“. „Apple Health verwenden“ schaltet die Verbindung aus und wieder an."
       image: ./assets/de/ios/3.webp
 draft: true
 ---
 
-Du kannst die Verbindung auch gleich bei der Einrichtung von Intake herstellen. Was Intake lesen und schreiben darf, legst du in der Abfrage fest und änderst es später in Apple Health oder Health Connect. Welche Daten das sind, steht unter [Was Intake liest und schreibt](/hilfe/health-lesen-schreiben).
+Was Intake darf, änderst du später in Apple Health oder Health Connect. Welche Daten das sind, steht unter [Was Intake liest und schreibt](/hilfe/health-lesen-schreiben).
 
-Auf dem iPhone kommen neue Daten aus Apple Health auch im Hintergrund an. Mit „Apple-Health-Berechtigungen erneuern“ holst du eine Erlaubnis nach, die ein Update neu braucht, etwa für neue Nährstoffe.
+Auf dem iPhone kommen neue Daten aus Apple Health auch im Hintergrund an. „Apple-Health-Berechtigungen erneuern“ fragt nach einem Update erneut, etwa für neue Nährstoffe.

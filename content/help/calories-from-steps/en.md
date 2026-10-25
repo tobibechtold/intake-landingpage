@@ -11,7 +11,7 @@ steps:
     ios:
       text: "On Today, tap the gear at the top, then “Apple Health”."
       image: ./assets/en/ios/1.webp
-  - text: "Let Intake estimate calories from your steps."
+  - text: "Intake estimates the calories when only steps arrive, without any calories."
     ios:
       text: "Turn on “Estimate calories from steps”. It is off at first."
       image: ./assets/en/ios/2.webp
@@ -22,8 +22,6 @@ steps:
 draft: true
 ---
 
-On iPhone, Intake uses the distance from Apple Health and your weight, about 0.53 kcal per kilogram and kilometre. If Apple Health reports active calories, for example from an Apple Watch, Intake doesn’t estimate anything.
+On iPhone, Intake uses the distance from Apple Health and your weight. If Apple Health reports active calories, for example from an Apple Watch, Intake doesn’t estimate anything.
 
 On Android, Intake estimates on its own whenever no app shares calories, see [“Why Health Connect calories are shown as an estimate”](/en/help/health-connect-estimate).
-
-Whether activity raises your daily target is set under “Activity” in Settings.

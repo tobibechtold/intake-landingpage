@@ -17,6 +17,6 @@ steps:
       image: ./assets/de/ios/3.webp
 ---
 
-Gelöscht werden Profil, Tagebuch, Bibliothek, Rezepte, Produkte und Körpermaße in iCloud. Deine anderen Geräte behalten ihre eigene Kopie und laden sie wieder hoch, solange dort iCloud-Sync an ist. Schalte es dort vorher aus, wenn alles aus iCloud verschwinden soll.
+Gelöscht wird alles von Intake in iCloud: Profil und Ziele, Tagebuch, Bibliothek, Rezepte, Produkte, Körpermaße, Fastenplan und Fotos. Deine anderen Geräte behalten ihre eigene Kopie und laden sie wieder hoch, solange dort iCloud-Sync an ist. Schalte es dort vorher aus, wenn alles aus iCloud verschwinden soll.
 
 „App zurücksetzen“ unter „Daten“ löscht dagegen nur die Daten auf diesem Gerät, nicht die in iCloud.

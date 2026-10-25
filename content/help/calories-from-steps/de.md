@@ -11,7 +11,7 @@ steps:
     ios:
       text: "Tippe auf Heute oben auf das Zahnrad und dann auf „Apple Health“."
       image: ./assets/de/ios/1.webp
-  - text: "Lass Intake Kalorien aus deinen Schritten schätzen."
+  - text: "Intake schätzt die Kalorien, wenn nur Schritte, aber keine Kalorien ankommen."
     ios:
       text: "Schalte „Kalorien aus Schritten schätzen“ ein. Es ist von Anfang an aus."
       image: ./assets/de/ios/2.webp
@@ -22,8 +22,6 @@ steps:
 draft: true
 ---
 
-Auf dem iPhone rechnet Intake mit der Strecke aus Apple Health und deinem Gewicht, etwa 0,53 kcal pro Kilogramm und Kilometer. Meldet Apple Health Aktivitätskalorien, zum Beispiel von einer Apple Watch, schätzt Intake nichts.
+Auf dem iPhone rechnet Intake mit der Strecke aus Apple Health und deinem Gewicht. Meldet Apple Health Aktivitätskalorien, etwa von einer Apple Watch, schätzt Intake nichts.
 
 Auf Android schätzt Intake von selbst, sobald keine App Kalorien weitergibt, siehe [„Warum Health Connect Kalorien als Schätzung zeigt“](/hilfe/health-connect-schaetzung).
-
-Ob die Aktivität dein Tagesziel erhöht, legst du in den Einstellungen unter „Aktivität“ fest.

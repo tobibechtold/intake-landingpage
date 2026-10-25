@@ -1,7 +1,7 @@
 ---
 id: sync-between-devices
 title: "iPhone, iPad und Android: was zwischen Geräten synchronisiert wird"
-short: "Zwischen iPhone und iPad gleicht Intake deine Daten über iCloud ab. Zwischen iPhone und Android gibt es keinen Abgleich. Auf Android sicherst du deine Daten mit einem Google-Drive-Backup."
+short: "Zwischen iPhone und iPad gleicht Intake deine Daten über iCloud ab. Auf Android gibt es statt iCloud-Sync ein verschlüsseltes Google-Drive-Backup."
 related:
   - icloud-sync
   - google-drive-backup
@@ -17,4 +17,4 @@ Nicht über iCloud gehen Daten aus Apple Health, etwa Schritte, Workouts oder ei
 
 ## Android
 
-Intake auf Android gleicht nicht zwischen Geräten ab. Mit dem [verschlüsselten Google-Drive-Backup](/hilfe/google-drive-backup) sicherst du deine Daten und holst sie auf ein neues Gerät.
+Auf Android ersetzt das [verschlüsselte Google-Drive-Backup](/hilfe/google-drive-backup) den iCloud-Sync. Intake sichert deine Daten damit automatisch in Google Drive, und du stellst sie mit deiner Passphrase wieder her.

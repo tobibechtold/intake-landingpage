@@ -11,7 +11,7 @@ steps:
     ios:
       text: "On Today, tap the gear at the top, then “Apple Health”."
       image: ./assets/en/ios/1.webp
-  - text: "Leave weight syncing on."
+  - text: "Syncing runs as long as the connection is on."
     ios:
       text: "Leave “Sync weight from Apple Health” on. It is on from the start."
       image: ./assets/en/ios/2.webp
@@ -21,6 +21,4 @@ steps:
 draft: true
 ---
 
-On iPhone, Intake only takes a weight from Apple Health if it is at least as recent as your last logged one and you haven’t logged a weight yourself for that day. The switch only controls reading: what you log is written to Apple Health as long as Apple Health is connected. For older weights, use [“Import weight history”](/en/help/import-weight-history).
-
-A weight from Apple Health doesn’t travel to your other devices through iCloud. Each device reads it from Apple Health itself.
+On iPhone, Intake takes no weight for a day where you logged one yourself, and none older than your last entry. The switch only controls reading. Writing happens as long as “Use Apple Health” is on. For older weights, use [“Import weight history”](/en/help/import-weight-history).

@@ -22,6 +22,6 @@ steps:
 draft: true
 ---
 
-You can also connect right away while setting up Intake. What Intake may read and write is chosen in the prompt and can be changed later in Apple Health or Health Connect. See [What Intake reads and writes](/en/help/health-read-write) for the details.
+You can change what Intake may access later in Apple Health or Health Connect. See [What Intake reads and writes](/en/help/health-read-write) for the details.
 
-On iPhone, new Apple Health data also arrives in the background. “Renew Apple Health Permissions” asks again for access an update needs, for example for new nutrients.
+On iPhone, new Apple Health data also arrives in the background. “Renew Apple Health Permissions” asks again after an update, for example for new nutrients.

@@ -11,7 +11,7 @@ steps:
     ios:
       text: "Tippe auf Heute oben auf das Zahnrad und dann auf „Apple Health“."
       image: ./assets/de/ios/1.webp
-  - text: "Lass den Abgleich des Gewichts eingeschaltet."
+  - text: "Der Abgleich läuft, solange die Verbindung an ist."
     ios:
       text: "Lass „Gewicht aus Apple Health synchronisieren“ eingeschaltet. Es ist von Anfang an an."
       image: ./assets/de/ios/2.webp
@@ -21,6 +21,4 @@ steps:
 draft: true
 ---
 
-Auf dem iPhone übernimmt Intake ein Gewicht aus Apple Health nur, wenn es mindestens so neu ist wie dein zuletzt eingetragenes und du für diesen Tag nichts selbst eingetragen hast. Der Schalter regelt nur das Lesen: Was du einträgst, schreibt Intake nach Apple Health, solange Apple Health verbunden ist. Ältere Gewichte holst du mit [„Gewichtsverlauf importieren“](/hilfe/gewichtsverlauf-importieren).
-
-Ein Gewicht aus Apple Health geht nicht über iCloud an deine anderen Geräte. Jedes Gerät liest es selbst aus Apple Health.
+Auf dem iPhone übernimmt Intake kein Gewicht für einen Tag, an dem du selbst eins eingetragen hast, und keins, das älter ist als dein letzter Eintrag. Der Schalter regelt nur das Lesen. Geschrieben wird, solange „Apple Health verwenden“ an ist. Ältere Gewichte holst du mit [„Gewichtsverlauf importieren“](/hilfe/gewichtsverlauf-importieren).
