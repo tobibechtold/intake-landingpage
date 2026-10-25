@@ -31,7 +31,6 @@ steps:
     ios:
       text: "Wähle „Eine Mahlzeit“ oder „Zutaten einzeln“ und tippe auf „Mahlzeit loggen“."
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Mengen und Marken machen die Schätzung genauer. Stimmt etwas nicht, antworte einfach im Chat, zum Beispiel „Es waren 200 g Hähnchen“, siehe [Schätzung von Intake AI korrigieren](/hilfe/intake-ai-korrigieren). Statt zu tippen kannst du auch diktieren.

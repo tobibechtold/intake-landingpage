@@ -26,7 +26,6 @@ steps:
     ios:
       text: "Confirm with “Reset App” at the bottom."
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 This can’t be undone. How to make a backup first is explained in [Export your data and import it again](/en/help/export-data).

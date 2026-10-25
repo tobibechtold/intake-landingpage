@@ -6,7 +6,6 @@ related:
   - control-center
   - apple-watch
   - log-water
-draft: true
 ---
 
 ## Welche Widgets es gibt

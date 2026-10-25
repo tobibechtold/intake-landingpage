@@ -35,7 +35,6 @@ steps:
     ios:
       text: "Under “Provider”, pick OpenAI, Claude or Gemini, paste your key and tap “Save API key”."
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 With your own key you pay the provider directly; to get one, see [Set up your own API key for Intake AI](/en/byok-guide/).

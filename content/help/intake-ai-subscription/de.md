@@ -28,7 +28,6 @@ steps:
     ios:
       text: "Tippe dafür auf „Käufe wiederherstellen“."
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Das Abo enthält die Schätzungen per Text und Foto, das Fotografieren von Nährwerttabellen und „Korrigieren“. Du wählst ein Monats- oder Jahresabo, beim ersten Abschluss mit 3 Tagen zum kostenlosen Testen. Kündigen kannst du jederzeit in den Abo-Einstellungen deines App-Store- oder Google-Play-Kontos.

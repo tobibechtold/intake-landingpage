@@ -17,7 +17,6 @@ steps:
       image: ./assets/de/android/2.webp
     ios:
       image: ./assets/de/ios/2.webp
-draft: true
 ---
 
 In der Mail stehen unten schon App-Version, Systemversion, Gerät und Sprache. Lass sie drin, das hilft bei der Antwort. Beschreib, was du getan hast und was passiert ist, ein Screenshot hilft oft.

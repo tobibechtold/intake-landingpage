@@ -31,7 +31,6 @@ steps:
     ios:
       text: "Choose “One meal” or “Ingredients separately” and tap “Log meal”."
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 The more detail you give, the better the estimate, for example amounts or brands. If something’s off, just reply in the chat, say “It was 200 g of chicken”, see [Correct an Intake AI estimate](/en/help/correct-ai-estimate). You can also dictate instead of typing.

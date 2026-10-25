@@ -32,7 +32,6 @@ steps:
     ios:
       text: "Choose your country under “Food database country” and add more under “I also shop in…”."
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 Intake comes in English, German, Spanish, French, Portuguese, Italian, Dutch and Japanese. The language applies to the whole app, whatever language your phone uses. On iPhone, widgets and the Apple Watch follow it too.

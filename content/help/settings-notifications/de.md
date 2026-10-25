@@ -34,7 +34,6 @@ steps:
       image: ./assets/de/android/4.webp
     ios:
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Jede Erinnerung ist zuerst aus, du schaltest jede Mahlzeit einzeln ein. Frühstück, Mittagessen, Abendessen und Snacks haben schon eine vorgeschlagene Uhrzeit.

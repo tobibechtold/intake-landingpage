@@ -35,7 +35,6 @@ steps:
     ios:
       text: "Wähle unter „Anbieter“ OpenAI, Claude oder Gemini, füge den Schlüssel ein und tippe auf „API-Schlüssel speichern“."
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Du kannst jederzeit wechseln. Mit eigenem Schlüssel zahlst du direkt beim Anbieter, wie du ihn bekommst, steht unter [Eigenen API-Schlüssel für Intake AI einrichten](/byok-guide/).

@@ -6,7 +6,6 @@ related:
   - byok-guide
   - set-up-intake-ai
   - contact-support
-draft: true
 ---
 
 ## Common messages

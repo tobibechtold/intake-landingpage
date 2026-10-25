@@ -31,7 +31,6 @@ steps:
     ios:
       text: "Under “App Icon”, pick a different icon."
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 This is also where you turn “Swipe between days” and the status colors of the calorie ring and day strip on or off, and set whether Intake uses photos and shows them on Today.

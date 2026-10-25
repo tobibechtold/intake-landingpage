@@ -28,7 +28,6 @@ steps:
     ios:
       text: "Tap “Restore purchases” to do that."
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 The subscription covers estimates from text and photos, photographing nutrition labels and “Correct”. Choose monthly or yearly; the first time, you can try it free for 3 days. Cancel any time in your App Store or Google Play subscription settings.

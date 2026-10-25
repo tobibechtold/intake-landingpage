@@ -26,7 +26,6 @@ steps:
       image: ./assets/en/android/3.webp
     ios:
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 The file isn’t encrypted, so keep it somewhere safe. For a report to read or to show your doctor, use the [PDF report](/en/help/pdf-report).

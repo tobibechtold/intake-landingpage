@@ -35,7 +35,6 @@ steps:
     ios:
       text: "Tap the checkmark at the top right. Intake AI works out the estimate again."
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 It’s often quicker to just write in the chat what’s wrong.

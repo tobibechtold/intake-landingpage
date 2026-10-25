@@ -32,7 +32,6 @@ steps:
     ios:
       text: "Wähle bei „Lebensmittel-Datenbank Land“ dein Land und unter „Ich kaufe auch ein in …“ weitere Länder."
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Intake gibt es auf Deutsch, Englisch, Spanisch, Französisch, Portugiesisch, Italienisch, Niederländisch und Japanisch. Die Sprache gilt für die ganze App, unabhängig von der Sprache deines Handys. Auf dem iPhone folgen ihr auch Widgets und die Apple Watch.

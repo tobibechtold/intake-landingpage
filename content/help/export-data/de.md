@@ -26,7 +26,6 @@ steps:
       image: ./assets/de/android/3.webp
     ios:
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Die Datei ist nicht verschlüsselt, bewahre sie sicher auf. Für einen Bericht zum Lesen oder für deinen Arzt nimm den [PDF-Bericht](/hilfe/pdf-bericht).

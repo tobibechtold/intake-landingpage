@@ -39,7 +39,6 @@ steps:
     ios:
       text: "Turn on “Enable iCloud Sync” if you like and tap “Start tracking”."
       image: ./assets/en/ios/5.webp
-draft: true
 ---
 
 On iPhone with Apple Health, “About you” can use your measured resting energy instead, see [Maintenance calories from resting energy in Apple Health](/en/help/resting-energy).

@@ -25,7 +25,6 @@ steps:
       image: ./assets/de/android/3.webp
     ios:
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Zum Foto kannst du eine Notiz schreiben, etwa „halbe Portion“ oder „ohne Soße“. Fotografieren kannst du Teller und verpackte Produkte. Pro Schätzung gibt es ein Foto.

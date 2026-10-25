@@ -26,7 +26,6 @@ steps:
     ios:
       text: "Prüfe die Werte im Formular und tippe oben rechts auf das Häkchen."
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Intake AI trägt Nährwerte und Portionsgröße ein. Prüfe sie und gib dem Produkt einen passenden Namen, bevor du speicherst.

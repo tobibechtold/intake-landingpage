@@ -19,7 +19,6 @@ steps:
       image: ./assets/de/android/2.webp
     ios:
       image: ./assets/de/ios/2.webp
-draft: true
 ---
 
 Die Übersicht kommt einmal nach dem Update, nicht nach einer Neuinstallation. Hast du die Karte oben weggetippt, findest du die Seite unter „Rechtliches & Support“ bei „Was ist neu?“.

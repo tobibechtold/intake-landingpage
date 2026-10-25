@@ -35,7 +35,6 @@ steps:
     ios:
       text: "Tippe oben rechts auf das Häkchen. Intake AI rechnet die Schätzung neu."
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Schneller geht es oft im Chat: Schreib einfach, was nicht stimmt, zum Beispiel „ohne Dressing“ oder „es waren 250 g“.

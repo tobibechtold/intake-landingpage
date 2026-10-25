@@ -25,7 +25,6 @@ steps:
       image: ./assets/en/android/3.webp
     ios:
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 You can add a note to the photo, like “half portion” or “no sauce”. It works for plates and for packaged products. Each estimate takes one photo.

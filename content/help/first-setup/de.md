@@ -39,7 +39,6 @@ steps:
     ios:
       text: "Schalte auf Wunsch „iCloud-Sync aktivieren“ ein und tippe auf „Tracking starten“."
       image: ./assets/de/ios/5.webp
-draft: true
 ---
 
 Auf dem iPhone kannst du mit Apple Health unter „Über dich“ statt der Schätzung deine gemessene Ruheenergie als Grundlage nehmen, siehe [Erhaltungskalorien aus der Ruheenergie in Apple Health](/hilfe/ruheenergie).

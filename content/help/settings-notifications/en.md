@@ -34,7 +34,6 @@ steps:
       image: ./assets/en/android/4.webp
     ios:
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 Every reminder starts off, and you turn each meal on yourself. Breakfast, Lunch, Dinner and Snacks already come with a suggested time.

@@ -26,7 +26,6 @@ steps:
     ios:
       text: "Check the values in the form and tap the checkmark at the top right."
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 Intake AI fills in the nutrition values and the serving size. Check them and give the product a proper name before you save.

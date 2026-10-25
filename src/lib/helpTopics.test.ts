@@ -182,9 +182,9 @@ describe('help content files', () => {
 });
 
 describe('help launch gate', () => {
-  // Drafts carry text without screenshots (Task 7a). Task 9 removes this skip before
-  // launch: the help center goes live only when no entry is a draft any more.
-  it.skip('no help entry is still a draft', () => {
+  // Drafts carry text without screenshots. The docs hide them, so main ships none:
+  // a topic stays a draft only on its working branch.
+  it('no help entry is still a draft', () => {
     const drafts = topicFiles()
       .filter(({ text }) => /^draft:\s*true\s*$/m.test(text))
       .map(({ file }) => file);
@@ -193,8 +193,8 @@ describe('help launch gate', () => {
 });
 
 describe('help content coverage', () => {
-  // Runs against the real content/help; un-skipped by Task 8 once every topic is written.
-  it.skip('every manifest topic has a de and an en entry, every entry is in the manifest', () => {
+  // Runs against the real content/help.
+  it('every manifest topic has a de and an en entry, every entry is in the manifest', () => {
     const root = join(process.cwd(), 'content/help');
     const ids = new Set(manifest.topics.map((topic) => topic.id));
     for (const id of ids) {

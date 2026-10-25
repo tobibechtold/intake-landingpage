@@ -17,7 +17,6 @@ steps:
       image: ./assets/en/android/2.webp
     ios:
       image: ./assets/en/ios/2.webp
-draft: true
 ---
 
 The email already lists your app version, system version, device and language at the bottom. Leave them in, it helps with the answer. Describe what you did and what happened; a screenshot often helps.

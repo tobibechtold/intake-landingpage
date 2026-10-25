@@ -31,7 +31,6 @@ steps:
     ios:
       text: "Wähle unter „App-Icon“ ein anderes Icon."
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Außerdem schaltest du hier „Zwischen Tagen wischen“ und die Statusfarben von Kalorienring und Tagesleiste ein oder aus und legst fest, ob Intake Fotos verwendet und auf Heute zeigt.

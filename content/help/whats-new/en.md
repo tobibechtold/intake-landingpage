@@ -19,7 +19,6 @@ steps:
       image: ./assets/en/android/2.webp
     ios:
       image: ./assets/en/ios/2.webp
-draft: true
 ---
 
 The overview appears once after an update, not after a fresh install. If you dismissed the card at the top, you’ll find the page under “Legal & Support” as “What's New”.

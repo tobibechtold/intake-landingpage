@@ -26,7 +26,6 @@ steps:
     ios:
       text: "Bestätige unten mit „App zurücksetzen“."
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Das lässt sich nicht rückgängig machen. Wie du vorher eine Sicherung anlegst, steht unter [Daten exportieren und wieder importieren](/hilfe/daten-exportieren).
