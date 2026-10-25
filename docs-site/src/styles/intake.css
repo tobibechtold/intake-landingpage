@@ -6,6 +6,10 @@
   --sl-color-accent-high: var(--intake-coral);
 }
 :root[data-theme='light'] {
+  /* A warm off-white instead of pure white, easier on the eyes. */
+  --sl-color-bg: #fbf8f5;
+  --sl-color-bg-nav: #f5f0eb;
+  --sl-color-bg-sidebar: #f5f0eb;
   --sl-color-accent-low: #fde1eb;
   /* A shade darker so links keep enough contrast on white. */
   --sl-color-accent: #d62e6c;
@@ -23,3 +27,21 @@
 :root[data-theme='light'] .hero-phone-dark,
 :root:not([data-theme='light']) .hero-phone-light { display: none; }
 @media (max-width: 50rem) { .hero-phone { height: min(44vh, 400px); } }
+
+/* The site name follows the theme: white in dark mode, black in light mode. */
+.site-title { color: var(--sl-color-white); }
+
+/* Chapter icons in the sidebar (the icon per entry comes from sidebar-icons.css). */
+.sidebar-content ul.top-level > li > a > span::before,
+.sidebar-content ul.top-level > li > details > summary .group-label > span::before {
+  content: '';
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  margin-inline-end: 0.6em;
+  vertical-align: -0.2em;
+  background-color: var(--sl-color-accent);
+  -webkit-mask: var(--chapter-icon) center / contain no-repeat;
+  mask: var(--chapter-icon) center / contain no-repeat;
+}
+.sidebar-content ul.top-level > li > a[aria-current='page'] > span::before { background-color: currentColor; }

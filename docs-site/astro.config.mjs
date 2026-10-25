@@ -17,7 +17,7 @@ export default defineConfig({
       },
       head: [{ tag: 'script', content: PLATFORM_SCRIPT }],
       sidebar,
-      customCss: ['./src/styles/intake.css'],
+      customCss: ['./src/styles/intake.css', './src/generated/sidebar-icons.css'],
       lastUpdated: false,
       pagination: false,
     }),
