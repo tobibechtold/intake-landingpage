@@ -6,7 +6,6 @@ related:
   - byok-guide
   - set-up-intake-ai
   - contact-support
-draft: true
 ---
 
 ## Common messages
@@ -19,4 +18,4 @@ draft: true
 - **No key saved:** add your key in Settings.
 - **Subscription not active:** check the subscription in Settings under “Intake AI” or restore it.
 
-On iPhone, “Retry” below the message sends the same request again. If none of this helps, write to us via “Contact” in Settings and include the message.
+On iPhone, “Retry” below the message sends the same request again; on Android, just send your message once more. If none of this helps, write to us via “Contact” in Settings and include the message.

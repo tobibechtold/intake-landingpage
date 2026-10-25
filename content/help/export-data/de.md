@@ -8,17 +8,24 @@ related:
   - icloud-sync
 steps:
   - text: "Öffne in den Einstellungen „Daten“."
+    android:
+      text: "Tippe auf Heute oben auf das Zahnrad und scrolle zu „Daten“."
+      image: ./assets/de/android/1.webp
     ios:
       text: "Tippe auf Heute oben auf das Zahnrad und dann unter „Daten“ auf „Daten“."
       image: ./assets/de/ios/1.webp
   - text: "Tippe auf „Daten exportieren“ und sichere die Datei."
+    android:
+      text: "Tippe auf „Daten exportieren“ und wähle, wohin die Datei soll."
+      image: ./assets/de/android/2.webp
     ios:
       text: "Tippe auf „Daten exportieren“ und wähle im Teilen-Menü, wohin die Datei soll, zum Beispiel „In Dateien sichern“."
       image: ./assets/de/ios/2.webp
   - text: "Zum Wiederherstellen tippst du auf „Daten importieren“ und wählst die Datei."
+    android:
+      image: ./assets/de/android/3.webp
     ios:
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Die Datei ist nicht verschlüsselt, bewahre sie sicher auf. Für einen Bericht zum Lesen oder für deinen Arzt nimm den [PDF-Bericht](/hilfe/pdf-bericht).

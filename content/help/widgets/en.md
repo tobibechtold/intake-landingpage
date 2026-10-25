@@ -6,7 +6,6 @@ related:
   - control-center
   - apple-watch
   - log-water
-draft: true
 ---
 
 ## The widgets
@@ -23,3 +22,7 @@ The widgets show the same numbers as Today, and a tap opens Intake at the right 
 Touch and hold the Home Screen, tap “Edit” and “Add Widget”, search for Intake and pick a size. Calories Left and Calories Eaten also come for the Lock Screen: touch and hold it, tap “Customize” and choose a widget slot.
 
 Each tap on plus or minus in the water widget counts one glass of your glass size. The “Intake AI” widget opens Intake AI for typing (“Ask”) or straight into the camera.
+
+## On Android
+
+Touch and hold the home screen, tap “Widgets”, search for Intake and drag the widget onto the screen. Touch and hold an Intake widget to resize it. Settings > “Widgets” has the same instructions inside the app.

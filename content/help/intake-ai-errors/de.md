@@ -6,7 +6,6 @@ related:
   - byok-guide
   - set-up-intake-ai
   - contact-support
-draft: true
 ---
 
 ## Häufige Meldungen
@@ -19,4 +18,4 @@ draft: true
 - **Kein Schlüssel gespeichert:** Füge deinen Schlüssel in den Einstellungen hinzu.
 - **Abo nicht aktiv:** Prüfe das Abo in den Einstellungen unter „Intake AI“ oder stell es wieder her.
 
-Auf dem iPhone schickt „Erneut versuchen“ unter der Meldung dieselbe Anfrage noch einmal. Hilft nichts davon, schreib uns über „Kontakt“ in den Einstellungen und nenn die Meldung.
+Auf dem iPhone schickt „Erneut versuchen“ unter der Meldung dieselbe Anfrage noch einmal, auf Android schickst du deine Nachricht einfach noch einmal ab. Hilft nichts davon, schreib uns über „Kontakt“ in den Einstellungen und nenn die Meldung.
