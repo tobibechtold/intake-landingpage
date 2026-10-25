@@ -79,7 +79,7 @@ const sections = docsSections(entries, lang);
         <p class="section-kicker mt-6 justify-center">{copy.docsKicker}</p>
         <h1 class="mt-4 text-4xl text-foreground md:text-6xl">{copy.docsTitle}</h1>
         <p class="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-foreground/60 md:text-lg">{copy.docsBody}</p>
-        <a href={copy.docsHref} data-docs-link class="btn-primary group mx-auto mt-8 w-fit">
+        <a href={copy.docsHref} target="_blank" rel="noopener" data-docs-link class="btn-primary group mx-auto mt-8 w-fit">
           {copy.docsCta}
           <ArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
         </a>
@@ -102,6 +102,8 @@ const sections = docsSections(entries, lang);
                       <li>
                         <a
                           href={topic.href}
+                          target="_blank"
+                          rel="noopener"
                           class="text-sm leading-6 text-foreground/60 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55"
                         >
                           {topic.title}
