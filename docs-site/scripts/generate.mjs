@@ -146,8 +146,8 @@ const AREA_CARDS = {
   settings: { icon: 'setting', de: 'Alles in den Einstellungen.', en: 'Everything in Settings.' },
 };
 const HOME = {
-  de: { tagline: 'Jede Funktion von Intake, Schritt für Schritt erklärt. Für iPhone und Android.', start: 'Erste Schritte', site: 'Zur Website', more: 'Themen ansehen' },
-  en: { tagline: 'Every Intake feature, explained step by step. On iPhone and Android.', start: 'Get started', site: 'Visit the website', more: 'See topics' },
+  de: { tagline: 'Jede Funktion von Intake, Schritt für Schritt erklärt. Für iPhone und Android.', start: 'Erste Schritte', site: 'Zur Website', more: 'Themen ansehen', heroAlt: 'Die Heute-Seite von Intake auf dem iPhone' },
+  en: { tagline: 'Every Intake feature, explained step by step. On iPhone and Android.', start: 'Get started', site: 'Visit the website', more: 'See topics', heroAlt: 'The Today page of Intake on iPhone' },
 };
 for (const lang of LANGS) {
   const prefix = lang === 'de' ? '' : '/en';
@@ -165,7 +165,7 @@ template: splash
 hero:
   tagline: ${yamlString(c.tagline)}
   image:
-    file: ../../${lang === 'de' ? '' : '../'}assets/intake-icon.png
+    html: ${yamlString(`<img class="hero-phone hero-phone-light" src="/hero/today-${lang}-light.webp" width="640" height="1326" alt="${c.heroAlt}" /><img class="hero-phone hero-phone-dark" src="/hero/today-${lang}-dark.webp" width="640" height="1326" alt="${c.heroAlt}" />`)}
   actions:
     - text: ${yamlString(c.start)}
       link: ${prefix}/${first}/
@@ -189,5 +189,7 @@ ${cards}
 }
 
 fs.mkdirSync(GENERATED, { recursive: true });
-fs.writeFileSync(path.join(GENERATED, 'sidebar.json'), JSON.stringify(sidebar, null, 2) + '\n');
+// The start page first; Starlight puts /en in front of it on English pages.
+const home = { label: 'Startseite', translations: { en: 'Home' }, link: '/' };
+fs.writeFileSync(path.join(GENERATED, 'sidebar.json'), JSON.stringify([home, ...sidebar], null, 2) + '\n');
 console.log(`docs: ${published.size} topics, ${external.length} external, drafts ${HIDE_DRAFTS ? 'hidden' : 'shown'}`);

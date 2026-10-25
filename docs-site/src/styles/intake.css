@@ -18,3 +18,8 @@
 .step-shot { max-width: 320px; border-radius: 18px; margin-top: .5rem; box-shadow: 0 1px 6px rgb(0 0 0 / .15); }
 /* App links (source=app) open the page on the app's platform without the switch. */
 :root[data-platform-switch='hidden'] starlight-tabs[data-sync-key='platform'] [role='tablist'] { display: none; }
+/* Start page: the framed Today screenshot, light or dark with the theme. */
+.hero-phone { display: block; margin-inline: auto; width: auto; height: min(62vh, 560px); filter: drop-shadow(0 20px 40px rgb(0 0 0 / .25)); }
+:root[data-theme='light'] .hero-phone-dark,
+:root:not([data-theme='light']) .hero-phone-light { display: none; }
+@media (max-width: 50rem) { .hero-phone { height: min(44vh, 400px); } }
