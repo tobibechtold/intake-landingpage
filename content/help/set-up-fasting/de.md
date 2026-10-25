@@ -1,0 +1,27 @@
+---
+id: set-up-fasting
+title: "Intervallfasten einschalten und Essensfenster festlegen"
+short: "Schalte das Fasten in den Einstellungen unter „Fasten“ ein und lege mit erster und letzter Mahlzeit dein Essensfenster fest. Danach zeigt der Tab „Fasten“, wie lange du noch fastest."
+related:
+  - start-end-fast
+  - fasting-lock-screen
+  - fasting-notifications
+steps:
+  - text: "Öffne in den Einstellungen „Fasten“."
+    ios:
+      text: "Tippe auf Heute oben auf das Zahnrad und dann unter „Profil & Ziele“ auf „Fasten“."
+      image: ./assets/de/ios/1.webp
+  - text: "Schalte das Fasten ein."
+    ios:
+      text: "Schalte „Fasten-Tab aktivieren“ ein."
+      image: ./assets/de/ios/2.webp
+  - text: "Lege mit „Erste Mahlzeit“ und „Letzte Mahlzeit“ dein Essensfenster fest."
+    ios:
+      image: ./assets/de/ios/3.webp
+  - text: "Im neuen Tab „Fasten“ siehst du, ob du gerade fastest oder isst und wie lange noch."
+    ios:
+      image: ./assets/de/ios/4.webp
+draft: true
+---
+
+Alles außerhalb des Essensfensters gilt als Fasten. Von 12:00 bis 20:00 sind das zum Beispiel 16 Stunden Fasten und 8 Stunden Essen.

@@ -36,8 +36,8 @@
     "sha": "7bbdcc8690dd93ab"
   },
   "/en/help": {
-    "words": 1348,
-    "sha": "783fa5e143037bca"
+    "words": 1384,
+    "sha": "abc73ce750926774"
   },
   "/en/help/activity-settings": {
     "words": 363,
@@ -102,6 +102,14 @@
   "/en/help/edit-today-page": {
     "words": 361,
     "sha": "8b25e24486bcce50"
+  },
+  "/en/help/fasting-lock-screen": {
+    "words": 308,
+    "sha": "af92245be48f1920"
+  },
+  "/en/help/fasting-notifications": {
+    "words": 266,
+    "sha": "b256144b6a8c3559"
   },
   "/en/help/food-photos": {
     "words": 298,
@@ -203,6 +211,10 @@
     "words": 295,
     "sha": "bdd5ad19b2a9b681"
   },
+  "/en/help/set-up-fasting": {
+    "words": 359,
+    "sha": "8217cfe342d1ec37"
+  },
   "/en/help/share-meal": {
     "words": 363,
     "sha": "705174b3df72c15b"
@@ -214,6 +226,10 @@
   "/en/help/share-recipe": {
     "words": 343,
     "sha": "c130b8cf56d925ca"
+  },
+  "/en/help/start-end-fast": {
+    "words": 321,
+    "sha": "911f893c1fb16515"
   },
   "/en/help/steps-workouts": {
     "words": 520,
@@ -396,8 +412,8 @@
     "sha": "84b6a4723fdb5f28"
   },
   "/hilfe": {
-    "words": 1224,
-    "sha": "8bdb1d0e0b48073d"
+    "words": 1251,
+    "sha": "5e147293c404a314"
   },
   "/hilfe/aktivitaet-eintragen": {
     "words": 365,
@@ -438,6 +454,22 @@
   "/hilfe/eintrag-verschieben": {
     "words": 301,
     "sha": "cf4f0df06c79947e"
+  },
+  "/hilfe/fasten-einrichten": {
+    "words": 324,
+    "sha": "ce79fcc99a4adcd4"
+  },
+  "/hilfe/fasten-mitteilungen": {
+    "words": 256,
+    "sha": "8d1a8eb8680f9bb1"
+  },
+  "/hilfe/fasten-sperrbildschirm": {
+    "words": 280,
+    "sha": "066d60e9761143eb"
+  },
+  "/hilfe/fasten-starten-beenden": {
+    "words": 290,
+    "sha": "e28b2e59dccea6f9"
   },
   "/hilfe/fotos-an-eintraegen": {
     "words": 293,
