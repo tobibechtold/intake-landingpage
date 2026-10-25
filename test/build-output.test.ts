@@ -57,6 +57,12 @@ describe('build output', () => {
         const link = /<a[^>]*data-docs-link[^>]*>[\s\S]*?<\/a>/.exec(html)?.[0] ?? '';
         expect(link).toContain(`href="${href}"`);
         expect(link).toContain(cta);
+        // Every link into the docs opens in a new tab, so getintake.de stays open.
+        expect(link).toContain('target="_blank"');
+        for (const docsLink of html.matchAll(/<a[^>]*href="https:\/\/docs\.getintake\.de[^"]*"[^>]*>/g)) {
+          expect(docsLink[0]).toContain('target="_blank"');
+          expect(docsLink[0]).toContain('rel="noopener"');
+        }
         expect(html).toContain('Intake Docs');
       }
     });
