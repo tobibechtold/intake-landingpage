@@ -1,33 +1,95 @@
-/* Intake coral (the landing page's --primary, hsl(338 92% 63%)) in both themes. */
+/* Theme: calm neutral surfaces, warm off-white text, Intake coral used sparingly
+   (links, icons, the current page's icon). Modelled on the Fumadocs look Tobias
+   picked as the reference (docs.zen-browser.app). */
 :root {
   --intake-coral: #f74a8a;
-  --sl-color-accent-low: #4a1226;
+  --sl-font: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --sl-content-width: 45rem;
+  --sl-text-h1: 2.125rem;
+  --sl-text-h2: 1.5rem;
+  --sl-text-h3: 1.2rem;
+  --docs-radius: 12px;
+
+  /* Dark (Starlight's default theme). */
+  --sl-color-accent-low: #3a1424;
   --sl-color-accent: var(--intake-coral);
-  --sl-color-accent-high: var(--intake-coral);
+  --sl-color-accent-high: #f9709f;
+  --sl-color-white: #f2f0e8;
+  --sl-color-gray-1: #e6e4da;
+  --sl-color-gray-2: #cfcdc1;
+  --sl-color-gray-3: #a3a196;
+  --sl-color-gray-4: #6e6c64;
+  --sl-color-gray-5: #333331;
+  --sl-color-gray-6: #262625;
+  --sl-color-black: #1b1b1a;
+  --sl-color-bg-nav: #1b1b1a;
+  --sl-color-bg-sidebar: #1b1b1a;
+  --sl-color-hairline-light: #2c2c2a;
+  --sl-color-hairline: #2a2a28;
+  --sl-color-hairline-shade: #141413;
+  --docs-active-bg: #2c2c2a;
+  --docs-card-bg: #171716;
 }
 :root[data-theme='light'] {
-  /* A warm off-white instead of pure white, easier on the eyes. */
-  --sl-color-bg: #fbf8f5;
-  --sl-color-bg-nav: #f5f0eb;
-  --sl-color-bg-sidebar: #f5f0eb;
-  --sl-color-accent-low: #fde1eb;
-  /* A shade darker so links keep enough contrast on white. */
+  --sl-color-accent-low: #fbe3ec;
   --sl-color-accent: #d62e6c;
-  --sl-color-accent-high: #8f1a46;
+  --sl-color-accent-high: #b8235a;
+  --sl-color-white: #1c1a17;
+  --sl-color-gray-1: #2a2824;
+  --sl-color-gray-2: #3d3a35;
+  --sl-color-gray-3: #66625a;
+  --sl-color-gray-4: #9a958b;
+  --sl-color-gray-5: #e4ded5;
+  --sl-color-gray-6: #efeae3;
+  --sl-color-gray-7: #f5f1eb;
+  --sl-color-black: #fbf8f5;
+  --sl-color-bg: #fbf8f5;
+  --sl-color-bg-nav: #fbf8f5;
+  --sl-color-bg-sidebar: #fbf8f5;
+  --sl-color-hairline-light: #ebe5dc;
+  --sl-color-hairline: #e6e0d7;
+  --sl-color-hairline-shade: #d9d2c8;
+  --docs-active-bg: #f0ebe4;
+  --docs-card-bg: #ffffff;
 }
-/* The selected sidebar entry: coral with white text in dark mode. */
-:root:not([data-theme='light']) .sidebar-content a[aria-current='page'] {
-  color: #fff;
-}
-.step-shot { max-width: 320px; border-radius: 18px; margin-top: .5rem; box-shadow: 0 1px 6px rgb(0 0 0 / .15); }
+
+/* Headings: semibold with slightly tighter tracking. */
+.sl-markdown-content :is(h1, h2, h3, h4), .content-panel h1 { font-weight: 600; letter-spacing: -0.02em; }
+body { -webkit-font-smoothing: antialiased; }
+
+/* Links: coral, underlined only on hover. */
+.sl-markdown-content a:not(.doc-card):not(.store-badges a) { text-decoration: none; font-weight: 500; }
+.sl-markdown-content a:not(.doc-card):hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Sidebar: same surface as the page, small text, a quiet highlight for the current page. */
+.sidebar-pane { border-inline-end: 1px solid var(--sl-color-hairline); }
+.sidebar-content a, .sidebar-content summary { font-size: 0.875rem; }
+.sidebar-content ul.top-level > li > details > summary .group-label > .large,
+.sidebar-content ul.top-level > li > a.large { font-size: 0.875rem; font-weight: 600; color: var(--sl-color-white); }
+.sidebar-content a { padding-block: 0.3rem; border-radius: 8px; }
+.sidebar-content a:hover { background-color: var(--docs-active-bg); color: var(--sl-color-white); }
+.sidebar-content a[aria-current='page'],
+.sidebar-content a[aria-current='page']:hover,
+.sidebar-content a[aria-current='page']:focus { background-color: var(--docs-active-bg); color: var(--sl-color-white); font-weight: 500; }
+.sidebar-content a[aria-current='page'] > span::before { background-color: var(--sl-color-accent-high) !important; }
+
+/* Header: a hairline instead of a band. */
+header.header { border-bottom-color: var(--sl-color-hairline); }
+site-search button { border-radius: 10px; border-color: var(--sl-color-hairline-light); background-color: var(--sl-color-gray-6); }
+
+/* iPhone / Android tabs as a small segmented pill. */
+starlight-tabs [role='tablist'] { display: inline-flex; gap: 2px; padding: 3px; border: none; border-radius: 10px; background-color: var(--sl-color-gray-6); }
+starlight-tabs [role='tablist'] li { border: none; }
+starlight-tabs [role='tab'] { border: none !important; border-radius: 8px; padding: 0.3rem 0.95rem !important; font-size: 0.875rem; color: var(--sl-color-gray-3); }
+starlight-tabs [role='tab'][aria-selected='true'] { background-color: var(--sl-color-black); color: var(--sl-color-white); font-weight: 500; box-shadow: 0 1px 2px rgb(0 0 0 / 0.12); }
+:root[data-theme='light'] starlight-tabs [role='tab'][aria-selected='true'] { background-color: #fff; }
+
+.step-shot { max-width: 320px; border-radius: var(--docs-radius); margin-top: .6rem; border: 1px solid var(--sl-color-hairline-light); box-shadow: none; }
 /* App links (source=app) open the page on the app's platform without the switch. */
 :root[data-platform-switch='hidden'] starlight-tabs[data-sync-key='platform'] [role='tablist'] { display: none; }
 /* The site name follows the theme: white in dark mode, black in light mode. */
 .site-title { color: var(--sl-color-white); }
 
-/* Sidebar icons: the icon per entry and its mask come from sidebar-icons.css.
-   On the current page the icon takes the text colour (white on coral in dark mode). */
-.sidebar-content a[data-icon][aria-current='page'] > span::before { background-color: currentColor; }
 
 /* Store badges (the <!-- store-badges --> marker in a topic body). */
 .store-badges { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-block: 1.25rem; }
@@ -41,15 +103,14 @@
   gap: 0.85rem;
   align-items: flex-start;
   padding: 1rem 1.1rem;
-  border: 1px solid var(--sl-color-gray-5);
-  border-radius: 0.5rem;
-  background-color: var(--sl-color-black);
+  border: 1px solid var(--sl-color-hairline-light);
+  border-radius: var(--docs-radius);
+  background-color: var(--docs-card-bg);
   color: var(--sl-color-gray-2);
   text-decoration: none;
-  box-shadow: var(--sl-shadow-sm);
   transition: border-color 0.15s ease, background-color 0.15s ease;
 }
-.doc-card:hover, .doc-card:focus-visible { border-color: var(--sl-color-accent); background-color: var(--sl-color-gray-7, var(--sl-color-gray-6)); }
+.doc-card:hover, .doc-card:focus-visible { border-color: var(--sl-color-gray-4); background-color: var(--docs-active-bg); }
 .doc-card-icon { flex-shrink: 0; display: inline-flex; color: var(--sl-color-accent); margin-top: 0.1rem; }
 .doc-card-icon svg { width: 1.5rem; height: 1.5rem; }
 .doc-card-body { display: flex; flex-direction: column; gap: 0.2rem; line-height: 1.45; font-size: var(--sl-text-sm); }
