@@ -39,7 +39,6 @@ steps:
       image: ./assets/en/android/5.webp
     ios:
       image: ./assets/en/ios/5.webp
-draft: true
 ---
 
 Bring your own key (BYOK) lets Intake use an AI provider account that belongs to you. Only the correction view and nutrition-label scanning need Intake AI. Provider, optional model name, API key: that is all Intake needs.

@@ -39,7 +39,6 @@ steps:
       image: ./assets/de/android/5.webp
     ios:
       image: ./assets/de/ios/5.webp
-draft: true
 ---
 
 Mit Bring Your Own Key (BYOK) nutzt Intake ein KI-Anbieterkonto, das dir gehört. Nur die Korrekturansicht und das Scannen von Nährwertlabels brauchen Intake AI. Anbieter, optionaler Modellname, API-Schlüssel: Mehr braucht Intake nicht.
