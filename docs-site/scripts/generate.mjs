@@ -129,18 +129,60 @@ for (const t of manifest.topics.filter((x) => published.has(x.id))) {
   }
 }
 
-// Home: one card per area, linking its topics.
+// Home: Starlight's splash page, a hero and one card per area.
+const AREA_CARDS = {
+  heute: { icon: 'sun', de: 'Kalorienring, Mahlzeiten und die Heute-Seite anpassen.', en: 'The calorie ring, your meals and customizing Today.' },
+  logging: { icon: 'pencil', de: 'Suchen, scannen, Portionen und schnell erfassen.', en: 'Search, scan, portions and quick logging.' },
+  'recipes-library': { icon: 'open-book', de: 'Rezepte, Routinen und eigene Produkte.', en: 'Recipes, routines and your own products.' },
+  'goals-budget': { icon: 'star', de: 'Kalorienziel, Makros und Wochenbudget.', en: 'Calorie goal, macros and weekly budget.' },
+  fasting: { icon: 'clock', de: 'Zeitplan, Timer und Erinnerungen.', en: 'Schedule, timer and reminders.' },
+  water: { icon: 'notes', de: 'Wasserziel, Getränke und Erinnerungen.', en: 'Water goal, drinks and reminders.' },
+  'weight-body': { icon: 'list-format', de: 'Gewicht und Körpermaße eintragen.', en: 'Log your weight and body measurements.' },
+  stats: { icon: 'analytics', de: 'Woche, Monat und Jahr im Überblick.', en: 'Week, month and year at a glance.' },
+  health: { icon: 'heart', de: 'Apple Health und Health Connect verbinden.', en: 'Connect Apple Health and Health Connect.' },
+  sync: { icon: 'cloud-download', de: 'iCloud, Backup und mehrere Geräte.', en: 'iCloud, backup and more than one device.' },
+  'widgets-watch-shortcuts': { icon: 'puzzle', de: 'Widgets, Apple Watch und Kurzbefehle.', en: 'Widgets, Apple Watch and Shortcuts.' },
+  'intake-ai': { icon: 'comment', de: 'Mit KI erfassen, im Abo oder mit eigenem Schlüssel.', en: 'Log with AI, by subscription or with your own key.' },
+  settings: { icon: 'setting', de: 'Alles in den Einstellungen.', en: 'Everything in Settings.' },
+};
+const HOME = {
+  de: { tagline: 'Jede Funktion von Intake, Schritt für Schritt erklärt. Für iPhone und Android.', start: 'Erste Schritte', site: 'Zur Website', more: 'Themen ansehen' },
+  en: { tagline: 'Every Intake feature, explained step by step. On iPhone and Android.', start: 'Get started', site: 'Visit the website', more: 'See topics' },
+};
 for (const lang of LANGS) {
   const prefix = lang === 'de' ? '' : '/en';
-  const home = lang === 'de'
-    ? { title: 'Intake Docs', tagline: 'Jede Funktion von Intake, Schritt für Schritt erklärt. Für iPhone und Android.' }
-    : { title: 'Intake Docs', tagline: 'Every Intake feature, explained step by step. On iPhone and Android.' };
+  const c = HOME[lang];
+  const first = published.has('first-setup') ? 'first-setup' : sidebar[0].items[0];
   const cards = sidebar.map((group) => {
+    const area = Object.keys(AREAS).find((a) => AREAS[a].de === group.label);
     const label = lang === 'de' ? group.label : group.translations.en;
-    const links = group.items.map((id) => `- [${readTopic(id, lang).data.title}](${prefix}/${id}/)`).join('\n');
-    return `<Card title=${yamlString(label)}>\n\n${links}\n\n</Card>`;
+    return `<Card title=${yamlString(label)} icon="${AREA_CARDS[area].icon}">\n${AREA_CARDS[area][lang]} [${c.more}](${prefix}/${group.items[0]}/)\n</Card>`;
   }).join('\n\n');
-  const page = `---\ntitle: ${yamlString(home.title)}\ndescription: ${yamlString(home.tagline)}\ntemplate: splash\nhero:\n  tagline: ${yamlString(home.tagline)}\n---\nimport { Card, CardGrid } from '@astrojs/starlight/components';\n\n<CardGrid>\n\n${cards}\n\n</CardGrid>\n`;
+  const page = `---
+title: Intake Docs
+description: ${yamlString(c.tagline)}
+template: splash
+hero:
+  tagline: ${yamlString(c.tagline)}
+  image:
+    file: ../../${lang === 'de' ? '' : '../'}assets/intake-icon.png
+  actions:
+    - text: ${yamlString(c.start)}
+      link: ${prefix}/${first}/
+      icon: right-arrow
+    - text: ${yamlString(c.site)}
+      link: https://www.getintake.de${lang === 'de' ? '' : '/en'}
+      icon: external
+      variant: minimal
+---
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid>
+
+${cards}
+
+</CardGrid>
+`;
   const dir = lang === 'de' ? DOCS : path.join(DOCS, 'en');
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.mdx'), page);
