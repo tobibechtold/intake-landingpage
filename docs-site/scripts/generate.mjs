@@ -76,8 +76,20 @@ function stepList(topic, id, lang, platform) {
         img = `\n\n   <img class="step-shot" src="/img/${rel}" alt="" loading="lazy" decoding="async" />`;
       }
     }
-    return `${i + 1}. ${esc(p.text ?? step.text)}${img}`;
+    return `${i + 1}. ${esc(rewriteHelpLinks(p.text ?? step.text))}${img}`;
   }).join('\n\n');
+}
+
+// Topic bodies still link the old getintake.de help pages (/hilfe/<slug>,
+// /en/help/<slug>). On the docs those become /<id>/ and /en/<id>/; a link to a
+// topic that is not published here turns into plain text instead of a 404.
+function rewriteHelpLinks(text) {
+  return text.replace(/\[([^\]]+)\]\((?:https:\/\/(?:www\.)?getintake\.de)?\/(hilfe|en\/help)\/([a-z0-9-]+)(#[^)]*)?\)/g, (all, label, base, slug) => {
+    const lang = base === 'hilfe' ? 'de' : 'en';
+    const topic = manifest.topics.find((t) => t.slugs[lang] === slug);
+    if (!topic || !published.has(topic.id)) return label;
+    return `[${label}](${lang === 'de' ? '' : '/en'}/${topic.id}/)`;
+  });
 }
 
 const manifest = JSON.parse(fs.readFileSync(path.join(HELP, 'topics.json'), 'utf8'));
@@ -103,11 +115,11 @@ for (const t of manifest.topics.filter((x) => published.has(x.id))) {
     const c = COPY[lang];
     const both = t.platforms.includes('ios') && t.platforms.includes('android');
     const only = both ? null : t.platforms[0];
-    const parts = [`import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';`, '', esc(topic.data.short)];
+    const parts = [`import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';`, '', esc(rewriteHelpLinks(topic.data.short))];
     if (topic.data.draft) parts.splice(2, 0, `<Aside type="caution">${c.draft}</Aside>`, '');
     if (only) parts.push('', `<Aside type="note" title=${yamlString(topic.data.platformNote ?? c.only[only])} />`);
     const [before, after] = topic.body.includes(STEPS_MARKER) ? topic.body.split(STEPS_MARKER).map((s) => s.trim()) : ['', topic.body];
-    if (before) parts.push('', esc(before));
+    if (before) parts.push('', esc(rewriteHelpLinks(before)));
     if (topic.data.steps?.length) {
       if (both) {
         parts.push('', '<Tabs syncKey="platform">', `<TabItem label="${c.ios}">`, '', stepList(topic, t.id, lang, 'ios'), '', '</TabItem>',
@@ -116,7 +128,7 @@ for (const t of manifest.topics.filter((x) => published.has(x.id))) {
         parts.push('', stepList(topic, t.id, lang, only));
       }
     }
-    if (after) parts.push('', esc(after));
+    if (after) parts.push('', esc(rewriteHelpLinks(after)));
     const related = (topic.data.related ?? []).flatMap((r) => {
       const prefix = lang === 'de' ? '' : '/en';
       return published.has(r) ? [`- [${readTopic(r, lang).data.title}](${prefix}/${r}/)`] : [];
