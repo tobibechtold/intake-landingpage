@@ -22,26 +22,40 @@
 .step-shot { max-width: 320px; border-radius: 18px; margin-top: .5rem; box-shadow: 0 1px 6px rgb(0 0 0 / .15); }
 /* App links (source=app) open the page on the app's platform without the switch. */
 :root[data-platform-switch='hidden'] starlight-tabs[data-sync-key='platform'] [role='tablist'] { display: none; }
-/* Start page: the framed Today screenshot, light or dark with the theme. */
-.hero-phone { display: block; margin-inline: auto; width: auto; height: min(62vh, 560px); filter: drop-shadow(0 20px 40px rgb(0 0 0 / .25)); }
-:root[data-theme='light'] .hero-phone-dark,
-:root:not([data-theme='light']) .hero-phone-light { display: none; }
-@media (max-width: 50rem) { .hero-phone { height: min(44vh, 400px); } }
-
 /* The site name follows the theme: white in dark mode, black in light mode. */
 .site-title { color: var(--sl-color-white); }
 
-/* Chapter icons in the sidebar (the icon per entry comes from sidebar-icons.css). */
-.sidebar-content ul.top-level > li > a > span::before,
-.sidebar-content ul.top-level > li > details > summary .group-label > span::before {
-  content: '';
-  display: inline-block;
-  width: 1.15em;
-  height: 1.15em;
-  margin-inline-end: 0.6em;
-  vertical-align: -0.2em;
-  background-color: var(--sl-color-accent);
-  -webkit-mask: var(--chapter-icon) center / contain no-repeat;
-  mask: var(--chapter-icon) center / contain no-repeat;
+/* Sidebar icons: the icon per entry and its mask come from sidebar-icons.css.
+   On the current page the icon takes the text colour (white on coral in dark mode). */
+.sidebar-content a[data-icon][aria-current='page'] > span::before { background-color: currentColor; }
+
+/* Store badges (the <!-- store-badges --> marker in a topic body). */
+.store-badges { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-block: 1.25rem; }
+.store-badges a { display: inline-flex; }
+.store-badges img { height: 48px; width: auto; display: block; }
+
+/* Start page cards: icon, bold title, one line, like Starlight's link cards. */
+.doc-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); gap: 1rem; margin-top: 2rem; }
+.doc-card {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.5rem;
+  background-color: var(--sl-color-black);
+  color: var(--sl-color-gray-2);
+  text-decoration: none;
+  box-shadow: var(--sl-shadow-sm);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
 }
-.sidebar-content ul.top-level > li > a[aria-current='page'] > span::before { background-color: currentColor; }
+.doc-card:hover, .doc-card:focus-visible { border-color: var(--sl-color-accent); background-color: var(--sl-color-gray-7, var(--sl-color-gray-6)); }
+.doc-card-icon { flex-shrink: 0; display: inline-flex; color: var(--sl-color-accent); margin-top: 0.1rem; }
+.doc-card-icon svg { width: 1.5rem; height: 1.5rem; }
+.doc-card-body { display: flex; flex-direction: column; gap: 0.2rem; line-height: 1.45; font-size: var(--sl-text-sm); }
+.doc-card-body strong { color: var(--sl-color-white); font-size: var(--sl-text-base); font-weight: 600; }
+
+/* The manual's chapters sit one level down: their labels match the entries above them
+   instead of Starlight's large top-level style. */
+.sidebar-content ul.top-level ul .group-label > .large { font-size: var(--sl-text-sm); font-weight: 500; color: var(--sl-color-gray-2); }
+.sidebar-content ul.top-level ul details:has([aria-current='page']) > summary .group-label > .large { color: var(--sl-color-white); font-weight: 600; }

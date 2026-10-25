@@ -21,6 +21,8 @@ export default defineConfig({
       },
       head: [{ tag: 'script', content: PLATFORM_SCRIPT }],
       sidebar,
+      // English targets for the getintake.de links, and prev/next without external links.
+      routeMiddleware: './src/routeData.ts',
       customCss: ['./src/styles/intake.css', './src/generated/sidebar-icons.css'],
       lastUpdated: false,
     }),
