@@ -8,14 +8,22 @@ related:
   - health-read-write
 steps:
   - text: "On Today, tap the gear at the top and open the Apple Health or Health Connect connection."
+    android:
+      text: "On Today, tap the gear at the top and scroll to “Integrations”."
+      image: ./assets/en/android/1.webp
     ios:
       text: "On Today, tap the gear at the top, then “Apple Health”."
       image: ./assets/en/ios/1.webp
   - text: "Syncing runs as long as the connection is on."
+    android:
+      text: "As long as “Use Health Connect” is on, Intake syncs your weight. There is no separate weight switch."
+      image: ./assets/en/android/2.webp
     ios:
       text: "Leave “Sync weight from Apple Health” on. It is on from the start."
       image: ./assets/en/ios/2.webp
   - text: "The “Weight” card on Today shows when it last synced. The icon next to it syncs right away."
+    android:
+      image: ./assets/en/android/3.webp
     ios:
       image: ./assets/en/ios/3.webp
 draft: true

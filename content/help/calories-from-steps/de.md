@@ -8,14 +8,23 @@ related:
   - health-connect-estimate
 steps:
   - text: "Tippe auf Heute oben auf das Zahnrad und öffne die Verbindung zu Apple Health oder Health Connect."
+    android:
+      text: "Tippe auf Heute oben auf das Zahnrad und dann unter „Integrationen“ auf „Health-Connect-Aktivität“."
+      image: ./assets/de/android/1.webp
     ios:
       text: "Tippe auf Heute oben auf das Zahnrad und dann auf „Apple Health“."
       image: ./assets/de/ios/1.webp
   - text: "Intake schätzt die Kalorien, wenn nur Schritte, aber keine Kalorien ankommen."
+    android:
+      text: "Unter „Kalorien“ steht, woher die Kalorien kommen. Liefert keine App Kalorien, schätzt Intake sie von selbst."
+      image: ./assets/de/android/2.webp
     ios:
       text: "Schalte „Kalorien aus Schritten schätzen“ ein. Es ist von Anfang an aus."
       image: ./assets/de/ios/2.webp
   - text: "Die Karte „Aktivität“ auf Heute zählt die geschätzten Kalorien dann mit."
+    android:
+      text: "Die Karte „Aktivität“ auf Heute zeigt dann „Aus Schritten geschätzt“ und zählt die Kalorien mit."
+      image: ./assets/de/android/3.webp
     ios:
       text: "In der Karte „Aktivität“ zählen sie dann in „Gesamt verbrannt“ mit. Die kcal-Kachel zeigt weiter, was Apple Health meldet."
       image: ./assets/de/ios/3.webp
