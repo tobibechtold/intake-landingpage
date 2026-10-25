@@ -8,20 +8,35 @@ related:
   - intake-ai-text
 steps:
   - text: "Öffne in Intake die Einstellungen."
+    android:
+      text: "Tippe auf Heute oben auf das Zahnrad."
+      image: ./assets/de/android/1.webp
     ios:
       text: "Tippe auf Heute oben auf das Zahnrad."
       image: ./assets/de/ios/1.webp
   - text: "Tippe auf Intake AI und wähle „Meinen API-Schlüssel verwenden“."
+    android:
+      text: "Tippe in den Einstellungen auf „Intake AI“ und dann auf den Kreis bei „Meinen API-Schlüssel verwenden“."
+      image: ./assets/de/android/2.webp
     ios:
       text: "Tippe in den Einstellungen unter Integrationen auf Intake AI und wähle „Eigenen API-Schlüssel nutzen“."
       image: ./assets/de/ios/2.webp
   - text: "Wähle denselben Anbieter, bei dem du den Schlüssel erstellt hast. Ein Schlüssel eines Anbieters funktioniert nicht bei einem anderen."
+    android:
+      text: "Wähle unter „Eigenen API-Schlüssel nutzen“ denselben Anbieter, bei dem du den Schlüssel erstellt hast: OpenAI, Claude oder Gemini."
+      image: ./assets/de/android/3.webp
     ios:
       image: ./assets/de/ios/3.webp
   - text: "Behalte das Standardmodell. Ändere den Modellnamen nur, wenn du den exakten Namen eines unterstützten Modells kennst."
+    android:
+      text: "Behalte unter „Modell“ das vorgegebene Modell. Ändere es nur, wenn du den exakten Namen eines unterstützten Modells kennst."
+      image: ./assets/de/android/4.webp
     ios:
       image: ./assets/de/ios/4.webp
   - text: "Füge den vollständigen Schlüssel ohne zusätzliche Leerzeichen ein, speichere und sende eine kurze Mahlzeitenbeschreibung zum Testen."
+    android:
+      text: "Füge unter „API-Schlüssel“ den vollständigen Schlüssel ohne Leerzeichen ein, tippe auf „API-Schlüssel speichern“ und teste mit einer kurzen Mahlzeit."
+      image: ./assets/de/android/5.webp
     ios:
       image: ./assets/de/ios/5.webp
 draft: true
