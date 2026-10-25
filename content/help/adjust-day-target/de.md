@@ -1,0 +1,27 @@
+---
+id: adjust-day-target
+title: "Tagesziel für einen Tag anpassen"
+short: "Tippe auf Heute auf „Ziel“, um das Tagesziel nur für diesen Tag oder für jeden gleichen Wochentag zu ändern, zum Beispiel plus 300 kcal am Samstag."
+related:
+  - weekday-targets
+  - weekly-budget
+  - calorie-goal
+steps:
+  - text: "Tippe auf Heute im Kalorienring auf „Ziel“."
+    ios:
+      image: ./assets/de/ios/1.webp
+  - text: "Wähle, ob die Änderung nur für dieses Datum gilt oder für jeden gleichen Wochentag."
+    ios:
+      text: "Wähle „Einmalig für dieses Datum anwenden“ oder „Jeden … anwenden“ mit dem Wochentag."
+      image: ./assets/de/ios/2.webp
+  - text: "Mit Wochenbudget wählst du, woher die Kalorien kommen: „Zusätzlich“, „Von den anderen Tagen“ oder „Aus dem Wochensaldo“."
+    ios:
+      image: ./assets/de/ios/3.webp
+  - text: "Stell die Menge ein und speichere."
+    ios:
+      text: "Stell die Menge mit den Knöpfen ein und tippe oben rechts auf das Häkchen."
+      image: ./assets/de/ios/4.webp
+draft: true
+---
+
+Auf dem iPhone nimmt „Zurücksetzen“ die Änderung wieder weg. Mit Wochenbudget fällt dabei kein Tag unter deinen Grundumsatz und nie unter 1.200 kcal.
