@@ -23,7 +23,6 @@ export default defineConfig({
       sidebar,
       customCss: ['./src/styles/intake.css', './src/generated/sidebar-icons.css'],
       lastUpdated: false,
-      pagination: false,
     }),
   ],
 });
