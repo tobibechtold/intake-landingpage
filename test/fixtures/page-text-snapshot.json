@@ -36,8 +36,8 @@
     "sha": "7bbdcc8690dd93ab"
   },
   "/en/help": {
-    "words": 1487,
-    "sha": "1eb92bdf3647d9e5"
+    "words": 1517,
+    "sha": "68f6f462204f54b4"
   },
   "/en/help/activity-settings": {
     "words": 363,
@@ -111,6 +111,10 @@
     "words": 324,
     "sha": "cc7c155269435819"
   },
+  "/en/help/delete-icloud-data": {
+    "words": 272,
+    "sha": "82cb58997638a24d"
+  },
   "/en/help/drinks-water-goal": {
     "words": 341,
     "sha": "f52c6a4e5bea6342"
@@ -135,6 +139,10 @@
     "words": 294,
     "sha": "a2c8945fd3dfa18c"
   },
+  "/en/help/fix-icloud-sync": {
+    "words": 350,
+    "sha": "b8d9116bc2d5c650"
+  },
   "/en/help/food-photos": {
     "words": 298,
     "sha": "90948feb53485350"
@@ -146,6 +154,10 @@
   "/en/help/health-read-write": {
     "words": 485,
     "sha": "16343f0033e10aa9"
+  },
+  "/en/help/icloud-sync": {
+    "words": 352,
+    "sha": "f4895a28835cee0b"
   },
   "/en/help/import-weight-history": {
     "words": 325,
@@ -212,8 +224,8 @@
     "sha": "d3196035fe48fe96"
   },
   "/en/help/pull-to-refresh": {
-    "words": 230,
-    "sha": "6bf41c4c12466fcf"
+    "words": 266,
+    "sha": "d3f698440ea8122d"
   },
   "/en/help/quick-add-calories": {
     "words": 294,
@@ -286,6 +298,10 @@
   "/en/help/switch-days": {
     "words": 284,
     "sha": "5dfd47f8441e7128"
+  },
+  "/en/help/sync-between-devices": {
+    "words": 294,
+    "sha": "85d33615de0b9e59"
   },
   "/en/help/sync-weight": {
     "words": 400,
@@ -476,8 +492,8 @@
     "sha": "84b6a4723fdb5f28"
   },
   "/hilfe": {
-    "words": 1331,
-    "sha": "b3269c76c7717757"
+    "words": 1355,
+    "sha": "cebb9b0dcf411a69"
   },
   "/hilfe/aktivitaet-eintragen": {
     "words": 365,
@@ -539,6 +555,10 @@
     "words": 293,
     "sha": "91a797f7be48fd75"
   },
+  "/hilfe/geraete-synchronisieren": {
+    "words": 280,
+    "sha": "8804199deb99b815"
+  },
   "/hilfe/getraenke-wasserziel": {
     "words": 317,
     "sha": "54ca95dda616d606"
@@ -574,6 +594,18 @@
   "/hilfe/heute-seite-bearbeiten": {
     "words": 350,
     "sha": "dd381b5e7d0b9aeb"
+  },
+  "/hilfe/icloud-daten-loeschen": {
+    "words": 249,
+    "sha": "f3042387144041dc"
+  },
+  "/hilfe/icloud-sync": {
+    "words": 337,
+    "sha": "53d8d960fcae6e59"
+  },
+  "/hilfe/icloud-sync-reparieren": {
+    "words": 331,
+    "sha": "1f61d1ba9625fdd3"
   },
   "/hilfe/ipad-iphone-duo": {
     "words": 117,
@@ -764,8 +796,8 @@
     "sha": "8958647aef220bb0"
   },
   "/hilfe/zum-aktualisieren-ziehen": {
-    "words": 230,
-    "sha": "92b70e961681d8de"
+    "words": 267,
+    "sha": "2397ed9b4c8fbeef"
   },
   "/intake-ai": {
     "words": 631,
