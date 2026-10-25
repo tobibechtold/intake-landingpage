@@ -36,6 +36,10 @@ const whatsNew = defineCollection({
 // its own screenshot, or (outside a draft: true entry) any step without a screenshot
 // per platform. The frontmatter id must equal the folder, or a copied file
 // would validate and render as the wrong topic.
+//
+// No page here renders these entries any more (the topics live on docs.getintake.de,
+// built from the same files by docs-site/). The collection stays as the build-time
+// content gate.
 const helpTopics = defineCollection({
   loader: glob({
     pattern: '*/{de,en}.md',

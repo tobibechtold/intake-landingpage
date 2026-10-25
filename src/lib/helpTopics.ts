@@ -131,17 +131,17 @@ export const loadHelpManifest = (): HelpManifest => manifest;
 export const findTopic = (id: string, source: HelpManifest = manifest): HelpTopic | undefined =>
   source.topics.find((topic) => topic.id === id);
 
-export const findTopicBySlug = (
-  slug: string,
-  lang: Language,
-  source: HelpManifest = manifest,
-): HelpTopic | undefined => source.topics.find((topic) => topic.slugs[lang] === slug);
+/** The help topics live on the Starlight docs site; getintake.de/hilfe only keeps the FAQ. */
+export const DOCS_ORIGIN = 'https://docs.getintake.de';
 
-export const topicPath = (id: string, lang: Language): string => {
-  const topic = findTopic(id);
-  if (!topic) throw new Error(`Unknown help topic "${id}"`);
-  return lang === 'de' ? `/hilfe/${topic.slugs.de}` : `/en/help/${topic.slugs.en}`;
+/** The docs URL of a topic: German at the root, English under /en. */
+export const docsUrl = (id: string, lang: Language): string => {
+  if (!findTopic(id)) throw new Error(`Unknown help topic "${id}"`);
+  return lang === 'de' ? `${DOCS_ORIGIN}/${id}` : `${DOCS_ORIGIN}/en/${id}`;
 };
+
+/** The docs home in a language. */
+export const docsHome = (lang: Language): string => (lang === 'de' ? DOCS_ORIGIN : `${DOCS_ORIGIN}/en`);
 
 /** Error messages for one topic entry; empty when the entry is valid. */
 export const validateTopicEntry = (entry: HelpTopicEntryData, source: HelpManifest): string[] => {

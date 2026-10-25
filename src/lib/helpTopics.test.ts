@@ -5,7 +5,8 @@ import {
   assertManifest,
   HELP_AREAS,
   loadHelpManifest,
-  topicPath,
+  docsHome,
+  docsUrl,
   validateTopicEntry,
   type HelpTopicEntryData,
 } from './helpTopics';
@@ -77,11 +78,12 @@ describe('help topic manifest', () => {
     expect(() => assertManifest(clone((copy) => (copy[1].id = copy[0].id)))).toThrow(/duplicate id/);
   });
 
-  it("topicPath('copy-meal') is /hilfe/<de-slug> and /en/help/<en-slug>", () => {
-    const topic = manifest.topics.find((candidate) => candidate.id === 'copy-meal');
-    expect(topic).toBeDefined();
-    expect(topicPath('copy-meal', 'de')).toBe('/hilfe/' + topic!.slugs.de);
-    expect(topicPath('copy-meal', 'en')).toBe('/en/help/' + topic!.slugs.en);
+  it("docsUrl('copy-meal') is docs.getintake.de/<id> and /en/<id>", () => {
+    expect(docsUrl('copy-meal', 'de')).toBe('https://docs.getintake.de/copy-meal');
+    expect(docsUrl('copy-meal', 'en')).toBe('https://docs.getintake.de/en/copy-meal');
+    expect(() => docsUrl('gibt-es-nicht', 'de')).toThrow(/Unknown help topic/);
+    expect(docsHome('de')).toBe('https://docs.getintake.de');
+    expect(docsHome('en')).toBe('https://docs.getintake.de/en');
   });
 });
 

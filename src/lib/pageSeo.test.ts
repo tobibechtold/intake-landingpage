@@ -50,23 +50,19 @@ describe('getHreflangPair', () => {
     });
   });
 
-  it('pairs help topics by their translated slugs', () => {
-    const pair = { de: '/hilfe/mahlzeit-kopieren', en: '/en/help/copy-meal' };
-    expect(getHreflangPair('/hilfe/mahlzeit-kopieren')).toEqual(pair);
-    expect(getHreflangPair('/en/help/copy-meal')).toEqual(pair);
-  });
-
-  it('does not pair an unknown help slug', () => {
-    expect(getHreflangPair('/hilfe/gibt-es-nicht')).toBeNull();
+  it('pairs the BYOK guide and pairs no former help topic route', () => {
+    expect(getHreflangPair('/hilfe/eigener-api-schluessel')).toEqual({
+      de: '/hilfe/eigener-api-schluessel',
+      en: '/en/help/own-api-key',
+    });
+    // The topics live on docs.getintake.de now; vercel.json redirects these paths.
+    expect(getHreflangPair('/hilfe/mahlzeit-kopieren')).toBeNull();
+    expect(getHreflangPair('/en/help/copy-meal')).toBeNull();
   });
 });
 
 describe('help topic SEO', () => {
-  it('resolves the language and canonical of a help topic route', () => {
-    const seo = getPageSeo('/en/help/copy-meal');
-    expect(seo.lang).toBe('en');
-    expect(seo.ogLocale).toBe('en_US');
-    expect(seo.canonical).toBe(`${SITE_ORIGIN}/en/help/copy-meal`);
+  it('has no metadata for a former help topic route', () => {
+    expect(() => getPageSeo('/en/help/copy-meal')).toThrow();
   });
 });
-

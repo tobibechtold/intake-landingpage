@@ -5,8 +5,6 @@
 // was kept: the 1098 lines of duplicated body content that lived alongside it are
 // gone, because Astro now renders the real page content as HTML.
 
-import { BYOK_GUIDE_ID, findTopicBySlug, topicPath } from './helpTopics';
-
 export type Locale = 'de' | 'en';
 
 export interface PageSeo {
@@ -243,21 +241,6 @@ const ROUTE_PAIRS: ReadonlyArray<readonly [string, string]> = [
 
 const WHATS_NEW_ENTRY = /^\/(en\/)?whats-new\/([^/]+)$/;
 const COMPARISON_DETAIL = /^\/(?:vergleiche|en\/comparisons)\/([^/]+)$/;
-const HELP_TOPIC = /^\/(?:hilfe|(en)\/help)\/([^/]+)$/;
-
-/** The topic id and language of a help topic route, from content/help/topics.json. */
-const helpTopicRoute = (route: string): { id: string; lang: Locale } | null => {
-  const match = HELP_TOPIC.exec(route);
-  if (!match) {
-    return null;
-  }
-
-  const lang: Locale = match[1] ? 'en' : 'de';
-  const topic = findTopicBySlug(match[2], lang);
-  // The BYOK guide has static pages with their own entries above.
-  return topic && topic.id !== BYOK_GUIDE_ID ? { id: topic.id, lang } : null;
-};
-
 export const getPageSeo = (route: string): PageSeo => {
   const staticSeo = STATIC_PAGE_SEO[route];
   if (staticSeo) {
@@ -277,21 +260,6 @@ export const getPageSeo = (route: string): PageSeo => {
       description: index.description,
       canonical: `${SITE_ORIGIN}${route}`,
       ogLocale: locale === 'de' ? 'de_DE' : 'en_US',
-    };
-  }
-
-  const topic = helpTopicRoute(route);
-  if (topic) {
-    const index = STATIC_PAGE_SEO[topic.lang === 'de' ? '/hilfe' : '/en/help'];
-
-    // Like What's New entries, the route file overrides title and description from
-    // the topic's content entry.
-    return {
-      lang: topic.lang,
-      title: index.title,
-      description: index.description,
-      canonical: `${SITE_ORIGIN}${route}`,
-      ogLocale: topic.lang === 'de' ? 'de_DE' : 'en_US',
     };
   }
 
@@ -332,11 +300,6 @@ export const getHreflangPair = (route: string): { de: string; en: string } | nul
   if (comparisonMatch) {
     const slug = comparisonMatch[1];
     return { de: `/vergleiche/${slug}`, en: `/en/comparisons/${slug}` };
-  }
-
-  const topic = helpTopicRoute(route);
-  if (topic) {
-    return { de: topicPath(topic.id, 'de'), en: topicPath(topic.id, 'en') };
   }
 
   return null;
