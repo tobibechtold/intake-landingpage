@@ -8,15 +8,23 @@ related:
   - stats
 steps:
   - text: "On Today, tap the share button at the top."
+    android:
+      image: ./assets/en/android/1.webp
     ios:
       image: ./assets/en/ios/1.webp
   - text: "Choose what to share, for example the whole day or a meal."
+    android:
+      image: ./assets/en/android/2.webp
     ios:
       image: ./assets/en/ios/2.webp
   - text: "Choose “Sticker” or “Card” and the size “Story 9:16” or “Post 4:5”."
+    android:
+      image: ./assets/en/android/3.webp
     ios:
       image: ./assets/en/ios/3.webp
   - text: "Tap “Share” or “Save to Photos”."
+    android:
+      image: ./assets/en/android/4.webp
     ios:
       image: ./assets/en/ios/4.webp
 draft: true

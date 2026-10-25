@@ -8,12 +8,19 @@ related:
   - create-recipe
 steps:
   - text: "On Today, tap the meal’s name, for example Breakfast."
+    android:
+      image: ./assets/en/android/1.webp
     ios:
       image: ./assets/en/ios/1.webp
   - text: "At the top you see the meal’s calories and nutrients, below them every entry."
+    android:
+      image: ./assets/en/android/2.webp
     ios:
       image: ./assets/en/ios/2.webp
   - text: "The menu holds “Create Recipe”, “Copy Meal” and “Delete meal”."
+    android:
+      text: "The menu (three dots) holds “Copy meal”, “Create Recipe” and “Delete meal”."
+      image: ./assets/en/android/3.webp
     ios:
       text: "The menu (three dots in a circle) holds “Create Recipe”, “Copy Meal” and “Delete meal”."
       image: ./assets/en/ios/3.webp

@@ -8,12 +8,19 @@ related:
   - calorie-goal
 steps:
   - text: "The ring shows how much of your daily target is left. Once you eat more, it says “kcal too much”."
+    android:
+      image: ./assets/en/android/1.webp
     ios:
       image: ./assets/en/ios/1.webp
   - text: "Next to it are your “Target”, what you’ve “Eaten” and what you’ve “Burned” through activity."
+    android:
+      image: ./assets/en/android/2.webp
     ios:
       image: ./assets/en/ios/2.webp
   - text: "Expand “Macros” to see every macro with its target."
+    android:
+      text: "Tap “More” next to “Macros” to see every macro with its target."
+      image: ./assets/en/android/3.webp
     ios:
       text: "Tap “More” next to “Macros” to see every macro with its target."
       image: ./assets/en/ios/3.webp
