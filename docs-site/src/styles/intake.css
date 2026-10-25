@@ -162,20 +162,64 @@ starlight-tabs [role='tab'][aria-selected='true'] { background-color: var(--sl-c
 .sidebar-pane::-webkit-scrollbar-thumb { background-color: transparent; border-radius: 8px; border: 2px solid transparent; background-clip: content-box; }
 .sidebar-pane:hover::-webkit-scrollbar-thumb { background-color: var(--sl-color-gray-5); }
 
-/* Search dialog: the field in the docs' own style, and on phones enough room for
-   "Abbrechen" (Starlight reserves 5rem, which Inter's German label overruns). */
+/* Search: a single floating bar like the Fumadocs reference. The field is the
+   dialog; results open inside it below a hairline. Phones get the same bar
+   (no full-screen sheet); tapping outside closes it, as Starlight already does. */
+site-search dialog {
+  margin: 4.5rem auto auto !important;
+  width: calc(100% - 2rem) !important;
+  max-width: 40rem !important;
+  height: fit-content !important;
+  min-height: 0 !important;
+  max-height: min(70vh, calc(100% - 6rem)) !important;
+  border: 1px solid var(--sl-color-hairline-light) !important;
+  border-radius: 12px !important;
+  background-color: var(--sl-color-gray-6) !important;
+  box-shadow: 0 24px 60px rgb(0 0 0 / 0.45) !important;
+}
+:root[data-theme='light'] site-search dialog { background-color: #fff !important; box-shadow: 0 24px 60px rgb(40 30 20 / 0.14) !important; }
+site-search dialog::backdrop { background-color: rgb(0 0 0 / 0.5); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+:root[data-theme='light'] site-search dialog::backdrop { background-color: rgb(40 30 20 / 0.18); }
+site-search .dialog-frame { padding: 0 !important; gap: 0 !important; }
+site-search button[data-close-modal] { display: none !important; }
 #starlight__search {
-  --pagefind-ui-border-radius: 10px;
-  --pagefind-ui-border: var(--sl-color-hairline-light);
-  --pagefind-ui-background: var(--sl-color-gray-6);
+  --pagefind-ui-scale: 0.78;
+  --sl-search-cancel-space: 0px !important;
+  --pagefind-ui-border: transparent;
+  --pagefind-ui-border-width: 0px;
+  --pagefind-ui-background: transparent;
+  --pagefind-ui-border-radius: 12px;
 }
-#starlight__search .pagefind-ui__search-input:focus,
-#starlight__search .pagefind-ui__search-input:focus-visible {
-  outline: none;
-  --pagefind-ui-border: var(--sl-color-gray-4);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--sl-color-accent) 22%, transparent);
+#starlight__search .pagefind-ui__search-input {
+  width: 100% !important;
+  font-size: 1rem !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding-inline-end: 3.75rem !important;
 }
-@media (max-width: 49.99rem) {
-  #starlight__search { --sl-search-cancel-space: 6.75rem; }
-  site-search button[data-close-modal] { padding-inline: 0.5rem; }
+#starlight__search .pagefind-ui__form::before { background-color: var(--sl-color-gray-3) !important; }
+#starlight__search .pagefind-ui__search-clear { display: none !important; }
+#starlight__search .pagefind-ui__form::after {
+  content: 'Esc';
+  position: absolute;
+  inset-inline-end: 0.85rem;
+  top: calc(32px * var(--pagefind-ui-scale));
+  transform: translateY(-50%);
+  padding: 0.1rem 0.4rem;
+  border: 1px solid var(--sl-color-hairline-light);
+  border-radius: 6px;
+  background-color: var(--sl-color-black);
+  color: var(--sl-color-gray-3);
+  font-size: 0.7rem;
+  font-weight: 500;
+  pointer-events: none;
 }
+@media (hover: none) { #starlight__search .pagefind-ui__form::after { display: none; } }
+#starlight__search .pagefind-ui__drawer:not(.pagefind-ui__hidden) { border-top: 1px solid var(--sl-color-hairline); padding: 0 0.75rem 0.75rem; }
+#starlight__search .pagefind-ui__message { padding: 0.6rem 0.25rem 0.1rem; height: auto; font-size: 0.8125rem; font-weight: 500; color: var(--sl-color-gray-3); }
+#starlight__search .pagefind-ui__results { padding-top: 0.25rem; }
+@media (max-width: 49.99rem) { site-search dialog { margin-top: 0.75rem !important; } }
+#starlight__search .pagefind-ui__results-area { margin-top: 0; }
+#starlight__search .pagefind-ui__drawer { gap: 0; }
