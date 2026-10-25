@@ -36,8 +36,8 @@
     "sha": "7bbdcc8690dd93ab"
   },
   "/en/help": {
-    "words": 1517,
-    "sha": "68f6f462204f54b4"
+    "words": 1649,
+    "sha": "7a82d836c8139bfa"
   },
   "/en/help/activity-settings": {
     "words": 363,
@@ -54,6 +54,10 @@
   "/en/help/adjust-day-target": {
     "words": 357,
     "sha": "f8fcdb33d0809083"
+  },
+  "/en/help/apple-watch": {
+    "words": 335,
+    "sha": "d41ce1567a6f0f2f"
   },
   "/en/help/body-data": {
     "words": 340,
@@ -91,9 +95,21 @@
     "words": 367,
     "sha": "e15ea84f8c3492fd"
   },
+  "/en/help/contact-support": {
+    "words": 308,
+    "sha": "a4fbffd4a891ed89"
+  },
+  "/en/help/control-center": {
+    "words": 307,
+    "sha": "4edc4e9b8133a703"
+  },
   "/en/help/copy-meal": {
     "words": 346,
     "sha": "56edd8ea7676f794"
+  },
+  "/en/help/correct-ai-estimate": {
+    "words": 357,
+    "sha": "079ca8021b155d6c"
   },
   "/en/help/create-product": {
     "words": 375,
@@ -131,6 +147,10 @@
     "words": 361,
     "sha": "8b25e24486bcce50"
   },
+  "/en/help/export-data": {
+    "words": 335,
+    "sha": "06ca84cf905f3eef"
+  },
   "/en/help/fasting-lock-screen": {
     "words": 308,
     "sha": "af92245be48f1920"
@@ -139,13 +159,17 @@
     "words": 294,
     "sha": "a2c8945fd3dfa18c"
   },
+  "/en/help/first-setup": {
+    "words": 370,
+    "sha": "6921975085ec9f7c"
+  },
   "/en/help/fix-icloud-sync": {
     "words": 345,
     "sha": "3fcb01c6f88dc372"
   },
   "/en/help/food-photos": {
-    "words": 298,
-    "sha": "90948feb53485350"
+    "words": 334,
+    "sha": "62b71cc124cb8291"
   },
   "/en/help/health-connect-estimate": {
     "words": 485,
@@ -162,6 +186,18 @@
   "/en/help/import-weight-history": {
     "words": 325,
     "sha": "1632fdcba9b10d71"
+  },
+  "/en/help/intake-ai-errors": {
+    "words": 340,
+    "sha": "d0460117de51ab66"
+  },
+  "/en/help/intake-ai-subscription": {
+    "words": 377,
+    "sha": "ec34363642dad194"
+  },
+  "/en/help/intake-ai-text": {
+    "words": 386,
+    "sha": "3209448666952726"
   },
   "/en/help/ipad-iphone-duo": {
     "words": 114,
@@ -216,8 +252,12 @@
     "sha": "780c69485c0afcdd"
   },
   "/en/help/pdf-report": {
-    "words": 274,
-    "sha": "043e9246c24ef58b"
+    "words": 308,
+    "sha": "ebf02bcb50b51515"
+  },
+  "/en/help/photo-logging": {
+    "words": 364,
+    "sha": "10beaddb2b837c94"
   },
   "/en/help/portions-units": {
     "words": 400,
@@ -226,6 +266,10 @@
   "/en/help/pull-to-refresh": {
     "words": 261,
     "sha": "63093fdff61f218a"
+  },
+  "/en/help/quick-actions": {
+    "words": 250,
+    "sha": "36a068031cd12efa"
   },
   "/en/help/quick-add-calories": {
     "words": 294,
@@ -247,6 +291,10 @@
     "words": 358,
     "sha": "16b83771a3f0b3a0"
   },
+  "/en/help/reset-app": {
+    "words": 287,
+    "sha": "ca18dc542dac2cbf"
+  },
   "/en/help/resting-energy": {
     "words": 314,
     "sha": "b38ebd7684622978"
@@ -259,9 +307,29 @@
     "words": 295,
     "sha": "bdd5ad19b2a9b681"
   },
+  "/en/help/scan-nutrition-label": {
+    "words": 348,
+    "sha": "545e8dc546b54796"
+  },
   "/en/help/set-up-fasting": {
     "words": 359,
     "sha": "8217cfe342d1ec37"
+  },
+  "/en/help/set-up-intake-ai": {
+    "words": 367,
+    "sha": "eac38c5dac6e4326"
+  },
+  "/en/help/settings-appearance": {
+    "words": 334,
+    "sha": "fcce403957d2b4b6"
+  },
+  "/en/help/settings-notifications": {
+    "words": 313,
+    "sha": "c7dc54f18c124d80"
+  },
+  "/en/help/settings-region": {
+    "words": 359,
+    "sha": "980bb2db7c1f086f"
   },
   "/en/help/share-meal": {
     "words": 363,
@@ -274,6 +342,10 @@
   "/en/help/share-recipe": {
     "words": 343,
     "sha": "c130b8cf56d925ca"
+  },
+  "/en/help/siri-shortcuts": {
+    "words": 358,
+    "sha": "dde1a8933c18695a"
   },
   "/en/help/start-end-fast": {
     "words": 321,
@@ -296,8 +368,8 @@
     "sha": "cce9287cffcd46c6"
   },
   "/en/help/switch-days": {
-    "words": 284,
-    "sha": "5dfd47f8441e7128"
+    "words": 320,
+    "sha": "b32e3b03b4d6e5b7"
   },
   "/en/help/sync-between-devices": {
     "words": 289,
@@ -338,6 +410,14 @@
   "/en/help/weight-trend": {
     "words": 365,
     "sha": "78241cec4f7acc3b"
+  },
+  "/en/help/whats-new": {
+    "words": 293,
+    "sha": "f8a8ef2845c150b0"
+  },
+  "/en/help/widgets": {
+    "words": 341,
+    "sha": "2d45bdd8c986446a"
   },
   "/en/help/workouts-without-double-counting": {
     "words": 288,
@@ -492,12 +572,20 @@
     "sha": "84b6a4723fdb5f28"
   },
   "/hilfe": {
-    "words": 1355,
-    "sha": "cebb9b0dcf411a69"
+    "words": 1467,
+    "sha": "fa0f704331a5550f"
   },
   "/hilfe/aktivitaet-eintragen": {
     "words": 365,
     "sha": "ff1cb4efacf24da9"
+  },
+  "/hilfe/app-zuruecksetzen": {
+    "words": 268,
+    "sha": "1e05b729f2dd3ccf"
+  },
+  "/hilfe/apple-watch": {
+    "words": 324,
+    "sha": "2144a4472df6ecd0"
   },
   "/hilfe/barcode-scannen": {
     "words": 266,
@@ -510,6 +598,10 @@
   "/hilfe/bild-teilen": {
     "words": 357,
     "sha": "ff55daa28d0ec4e0"
+  },
+  "/hilfe/daten-exportieren": {
+    "words": 317,
+    "sha": "7c30d81fcff48a64"
   },
   "/hilfe/eigene-mahlzeiten": {
     "words": 363,
@@ -527,6 +619,18 @@
     "words": 338,
     "sha": "537db752e2c5db7c"
   },
+  "/hilfe/einstellungen-darstellung": {
+    "words": 314,
+    "sha": "522c2451d63beabd"
+  },
+  "/hilfe/einstellungen-mitteilungen": {
+    "words": 307,
+    "sha": "b0aa9a63ebdcb930"
+  },
+  "/hilfe/einstellungen-region": {
+    "words": 359,
+    "sha": "18b19ac060113787"
+  },
   "/hilfe/eintrag-bearbeiten": {
     "words": 369,
     "sha": "30ec5955db32289f"
@@ -534,6 +638,14 @@
   "/hilfe/eintrag-verschieben": {
     "words": 301,
     "sha": "cf4f0df06c79947e"
+  },
+  "/hilfe/ersteinrichtung": {
+    "words": 336,
+    "sha": "d17f3d90cd3c6c76"
+  },
+  "/hilfe/essen-fotografieren": {
+    "words": 343,
+    "sha": "24097f03fe7b33b2"
   },
   "/hilfe/fasten-einrichten": {
     "words": 324,
@@ -552,8 +664,8 @@
     "sha": "8cd7b35e24195129"
   },
   "/hilfe/fotos-an-eintraegen": {
-    "words": 293,
-    "sha": "91a797f7be48fd75"
+    "words": 327,
+    "sha": "52b4c2b3eed6ffb2"
   },
   "/hilfe/geraete-synchronisieren": {
     "words": 275,
@@ -607,6 +719,26 @@
     "words": 323,
     "sha": "3cb6ce1f6d017314"
   },
+  "/hilfe/intake-ai-abo": {
+    "words": 339,
+    "sha": "3db16bbd822fd4be"
+  },
+  "/hilfe/intake-ai-einrichten": {
+    "words": 347,
+    "sha": "4b0a8fddb0fd7063"
+  },
+  "/hilfe/intake-ai-fehler": {
+    "words": 336,
+    "sha": "ff00b4a77d42e279"
+  },
+  "/hilfe/intake-ai-korrigieren": {
+    "words": 345,
+    "sha": "e59b5fc34467338d"
+  },
+  "/hilfe/intake-ai-text": {
+    "words": 382,
+    "sha": "a2101140f85cacb7"
+  },
   "/hilfe/ipad-iphone-duo": {
     "words": 117,
     "sha": "5598427d3b947b0e"
@@ -638,6 +770,10 @@
   "/hilfe/koerpermasse": {
     "words": 337,
     "sha": "1db64e744df70746"
+  },
+  "/hilfe/kontrollzentrum": {
+    "words": 279,
+    "sha": "3b11c7b03c079dcb"
   },
   "/hilfe/lebensmittel-hinzufuegen": {
     "words": 304,
@@ -675,13 +811,21 @@
     "words": 305,
     "sha": "2af4663c05de1e59"
   },
+  "/hilfe/naehrwertlabel-scannen": {
+    "words": 305,
+    "sha": "9eaf3098452978b6"
+  },
+  "/hilfe/neuigkeiten": {
+    "words": 300,
+    "sha": "6e1a2fb859d0427f"
+  },
   "/hilfe/nur-kalorien-erfassen": {
     "words": 272,
     "sha": "ff9563c493efea77"
   },
   "/hilfe/pdf-bericht": {
-    "words": 256,
-    "sha": "948087127a82ca8d"
+    "words": 285,
+    "sha": "662ce8484ad91748"
   },
   "/hilfe/portionen-einheiten": {
     "words": 394,
@@ -727,9 +871,17 @@
     "words": 305,
     "sha": "e6ac64cbb2373e73"
   },
+  "/hilfe/schnellaktionen": {
+    "words": 234,
+    "sha": "3da54a9a0e3e9310"
+  },
   "/hilfe/schritte-workouts": {
     "words": 499,
     "sha": "c9aa36b58a3d1b98"
+  },
+  "/hilfe/siri-kurzbefehle": {
+    "words": 337,
+    "sha": "f5c0a15dca77b234"
   },
   "/hilfe/startgewicht": {
     "words": 280,
@@ -751,9 +903,13 @@
     "words": 233,
     "sha": "0f7f4472c0528392"
   },
+  "/hilfe/support-kontaktieren": {
+    "words": 306,
+    "sha": "7a0f55c1ee94d608"
+  },
   "/hilfe/tag-wechseln": {
-    "words": 279,
-    "sha": "7a7ad9f434d632bd"
+    "words": 313,
+    "sha": "a669f35843f1789c"
   },
   "/hilfe/tagesziel-anpassen": {
     "words": 329,
@@ -778,6 +934,10 @@
   "/hilfe/wasserziel": {
     "words": 296,
     "sha": "0d40780640b68096"
+  },
+  "/hilfe/widgets": {
+    "words": 334,
+    "sha": "04d48126354ae1d6"
   },
   "/hilfe/wochenbudget": {
     "words": 518,
