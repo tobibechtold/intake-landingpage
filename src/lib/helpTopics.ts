@@ -12,6 +12,7 @@ import rawManifest from '../../content/help/topics.json';
 
 /** Areas in display order. */
 export const HELP_AREAS = [
+  'getting-started',
   'heute',
   'logging',
   'recipes-library',

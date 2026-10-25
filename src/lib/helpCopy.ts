@@ -34,6 +34,7 @@ export const HELP_FAQ_COPY = {
 /** Area names on the help home, the same as the docs sidebar chapters. */
 export const HELP_AREA_LABELS: Record<Language, Record<HelpArea, string>> = {
   de: {
+    "getting-started": "Erste Schritte",
     heute: "Heute",
     logging: "Essen erfassen",
     "recipes-library": "Rezepte & Bibliothek",
@@ -49,6 +50,7 @@ export const HELP_AREA_LABELS: Record<Language, Record<HelpArea, string>> = {
     settings: "Einstellungen",
   },
   en: {
+    "getting-started": "Getting started",
     heute: "Today",
     logging: "Logging food",
     "recipes-library": "Recipes & Library",
