@@ -36,8 +36,8 @@
     "sha": "7bbdcc8690dd93ab"
   },
   "/en/help": {
-    "words": 1384,
-    "sha": "abc73ce750926774"
+    "words": 1409,
+    "sha": "1647af04f8b017a7"
   },
   "/en/help/activity-settings": {
     "words": 363,
@@ -95,6 +95,10 @@
     "words": 324,
     "sha": "cc7c155269435819"
   },
+  "/en/help/drinks-water-goal": {
+    "words": 345,
+    "sha": "47fc9487eeccdd05"
+  },
   "/en/help/edit-entry": {
     "words": 385,
     "sha": "2c687b6d4dd11202"
@@ -108,8 +112,8 @@
     "sha": "af92245be48f1920"
   },
   "/en/help/fasting-notifications": {
-    "words": 266,
-    "sha": "b256144b6a8c3559"
+    "words": 296,
+    "sha": "f3ea2ea82e473590"
   },
   "/en/help/food-photos": {
     "words": 298,
@@ -120,8 +124,8 @@
     "sha": "26a81b4c4a2b4c06"
   },
   "/en/help/health-read-write": {
-    "words": 401,
-    "sha": "9beceef20818611b"
+    "words": 442,
+    "sha": "00cf26bd76c80e51"
   },
   "/en/help/ipad-iphone-duo": {
     "words": 114,
@@ -136,8 +140,8 @@
     "sha": "1e11aed25e078698"
   },
   "/en/help/log-water": {
-    "words": 297,
-    "sha": "a2f683ada0a549f8"
+    "words": 411,
+    "sha": "f34da41ae4a52d4c"
   },
   "/en/help/macro-goals": {
     "words": 394,
@@ -246,6 +250,18 @@
   "/en/help/tags": {
     "words": 307,
     "sha": "aeb4782080672f7a"
+  },
+  "/en/help/water-from-other-apps": {
+    "words": 312,
+    "sha": "deb8092b2e88b38e"
+  },
+  "/en/help/water-goal": {
+    "words": 329,
+    "sha": "310ff08a5595fc4a"
+  },
+  "/en/help/water-reminders": {
+    "words": 320,
+    "sha": "687a88f1559f6e57"
   },
   "/en/help/weekday-targets": {
     "words": 347,
@@ -412,8 +428,8 @@
     "sha": "84b6a4723fdb5f28"
   },
   "/hilfe": {
-    "words": 1251,
-    "sha": "5e147293c404a314"
+    "words": 1269,
+    "sha": "f2d3ec6816527a10"
   },
   "/hilfe/aktivitaet-eintragen": {
     "words": 365,
@@ -460,8 +476,8 @@
     "sha": "ce79fcc99a4adcd4"
   },
   "/hilfe/fasten-mitteilungen": {
-    "words": 256,
-    "sha": "8d1a8eb8680f9bb1"
+    "words": 284,
+    "sha": "41386bc50f3ee8a2"
   },
   "/hilfe/fasten-sperrbildschirm": {
     "words": 280,
@@ -475,13 +491,17 @@
     "words": 293,
     "sha": "91a797f7be48fd75"
   },
+  "/hilfe/getraenke-wasserziel": {
+    "words": 319,
+    "sha": "6fcc6c1b715599b1"
+  },
   "/hilfe/health-connect-schaetzung": {
     "words": 449,
     "sha": "87ea04efe48e121e"
   },
   "/hilfe/health-lesen-schreiben": {
-    "words": 374,
-    "sha": "382a680710e28730"
+    "words": 414,
+    "sha": "beefd78c00fedd24"
   },
   "/hilfe/heute-seite-bearbeiten": {
     "words": 350,
@@ -611,13 +631,25 @@
     "words": 329,
     "sha": "d2420f63178e7452"
   },
+  "/hilfe/trinkerinnerungen": {
+    "words": 293,
+    "sha": "45a2c1f907500611"
+  },
   "/hilfe/verlauf-haeufig-favoriten": {
     "words": 315,
     "sha": "3e28b737cd687b63"
   },
+  "/hilfe/wasser-aus-anderen-apps": {
+    "words": 302,
+    "sha": "16d812e67d9221c3"
+  },
   "/hilfe/wasser-eintragen": {
-    "words": 295,
-    "sha": "ff9ee350fee96a6e"
+    "words": 397,
+    "sha": "8b367d5a993b6ae3"
+  },
+  "/hilfe/wasserziel": {
+    "words": 303,
+    "sha": "de67867b605e8c43"
   },
   "/hilfe/wochenbudget": {
     "words": 518,
