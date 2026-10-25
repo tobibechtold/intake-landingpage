@@ -36,8 +36,8 @@
     "sha": "7bbdcc8690dd93ab"
   },
   "/en/help": {
-    "words": 1431,
-    "sha": "0ac9066711b927b0"
+    "words": 1461,
+    "sha": "fc348bbc63c277a2"
   },
   "/en/help/activity-settings": {
     "words": 363,
@@ -75,6 +75,10 @@
     "words": 404,
     "sha": "aaa73e111a82b655"
   },
+  "/en/help/calorie-stats": {
+    "words": 384,
+    "sha": "c6acda53cd7d5cd8"
+  },
   "/en/help/calories-left-when-adding": {
     "words": 323,
     "sha": "fdd0783ae0e4ca64"
@@ -106,6 +110,10 @@
   "/en/help/edit-entry": {
     "words": 385,
     "sha": "2c687b6d4dd11202"
+  },
+  "/en/help/edit-stats": {
+    "words": 318,
+    "sha": "22171e128c64e503"
   },
   "/en/help/edit-today-page": {
     "words": 361,
@@ -183,6 +191,10 @@
     "words": 841,
     "sha": "780c69485c0afcdd"
   },
+  "/en/help/pdf-report": {
+    "words": 274,
+    "sha": "043e9246c24ef58b"
+  },
   "/en/help/portions-units": {
     "words": 400,
     "sha": "d3196035fe48fe96"
@@ -232,8 +244,8 @@
     "sha": "705174b3df72c15b"
   },
   "/en/help/share-picture": {
-    "words": 346,
-    "sha": "72bfec0a706f0221"
+    "words": 381,
+    "sha": "549780e5e7f098d8"
   },
   "/en/help/share-recipe": {
     "words": 343,
@@ -246,6 +258,10 @@
   "/en/help/starting-weight": {
     "words": 304,
     "sha": "83dfb235c337f4a4"
+  },
+  "/en/help/stats": {
+    "words": 340,
+    "sha": "0d80b5e4004f548f"
   },
   "/en/help/steps-workouts": {
     "words": 520,
@@ -288,8 +304,8 @@
     "sha": "9da399d94020b4b6"
   },
   "/en/help/weight-trend": {
-    "words": 330,
-    "sha": "9a50514e7f08fe03"
+    "words": 365,
+    "sha": "78241cec4f7acc3b"
   },
   "/en/help/workouts-without-double-counting": {
     "words": 288,
@@ -444,8 +460,8 @@
     "sha": "84b6a4723fdb5f28"
   },
   "/hilfe": {
-    "words": 1284,
-    "sha": "cf748f482fe70d58"
+    "words": 1308,
+    "sha": "31b2b325e2a588fa"
   },
   "/hilfe/aktivitaet-eintragen": {
     "words": 365,
@@ -460,8 +476,8 @@
     "sha": "a34648bf74d9c988"
   },
   "/hilfe/bild-teilen": {
-    "words": 325,
-    "sha": "56c552b1d76921c7"
+    "words": 357,
+    "sha": "ff55daa28d0ec4e0"
   },
   "/hilfe/eigene-mahlzeiten": {
     "words": 363,
@@ -516,8 +532,8 @@
     "sha": "18f909c063c07c63"
   },
   "/hilfe/gewichtsverlauf": {
-    "words": 299,
-    "sha": "69895d9312e911ad"
+    "words": 331,
+    "sha": "361d585914217b0d"
   },
   "/hilfe/health-connect-schaetzung": {
     "words": 449,
@@ -599,6 +615,10 @@
     "words": 272,
     "sha": "ff9563c493efea77"
   },
+  "/hilfe/pdf-bericht": {
+    "words": 256,
+    "sha": "948087127a82ca8d"
+  },
   "/hilfe/portionen-einheiten": {
     "words": 394,
     "sha": "862e75c862dbfb36"
@@ -650,6 +670,18 @@
   "/hilfe/startgewicht": {
     "words": 280,
     "sha": "669fb156ac974e68"
+  },
+  "/hilfe/statistik": {
+    "words": 334,
+    "sha": "76f736d613b58c80"
+  },
+  "/hilfe/statistik-bearbeiten": {
+    "words": 317,
+    "sha": "9f5ca852f081f0ff"
+  },
+  "/hilfe/statistik-kalorien": {
+    "words": 352,
+    "sha": "c7612b74ba61e010"
   },
   "/hilfe/stimmung": {
     "words": 233,
