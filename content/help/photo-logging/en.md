@@ -8,13 +8,21 @@ related:
   - scan-nutrition-label
 steps:
   - text: "On Today, tap the plus next to the meal, then “Intake AI”."
+    android:
+      image: ./assets/en/android/1.webp
     ios:
       image: ./assets/en/ios/1.webp
   - text: "Take a new photo or pick one from your photos and send it."
+    android:
+      text: "Tap the plus on the left for a photo from your gallery, or the camera in the text field, then tap the arrow."
+      image: ./assets/en/android/2.webp
     ios:
       text: "Tap the plus to the left of the text field, choose “Camera” or “Library” and tap the arrow."
       image: ./assets/en/ios/2.webp
   - text: "Check the estimate and log it."
+    android:
+      text: "Check the estimate and tap “Log meal”."
+      image: ./assets/en/android/3.webp
     ios:
       image: ./assets/en/ios/3.webp
 draft: true

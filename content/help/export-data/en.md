@@ -8,14 +8,22 @@ related:
   - icloud-sync
 steps:
   - text: "Open “Data” in Settings."
+    android:
+      text: "On Today, tap the gear at the top and scroll to “Data”."
+      image: ./assets/en/android/1.webp
     ios:
       text: "On Today, tap the gear at the top, then “Data” under “Data”."
       image: ./assets/en/ios/1.webp
   - text: "Tap “Export data” and save the file."
+    android:
+      text: "Tap “Export data” and choose where the file goes."
+      image: ./assets/en/android/2.webp
     ios:
       text: "Tap “Export data” and choose where the file goes in the share sheet, for example “Save to Files”."
       image: ./assets/en/ios/2.webp
   - text: "To restore, tap “Import data” and choose the file."
+    android:
+      image: ./assets/en/android/3.webp
     ios:
       image: ./assets/en/ios/3.webp
 draft: true

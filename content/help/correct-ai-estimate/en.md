@@ -8,18 +8,30 @@ related:
   - intake-ai-subscription
 steps:
   - text: "Tap “Correct” below the estimate."
+    android:
+      text: "Tap the pencil on the left below the estimate."
+      image: ./assets/en/android/1.webp
     ios:
       text: "Tap the pencil on the left below the estimate."
       image: ./assets/en/ios/1.webp
   - text: "Change amounts, remove ingredients or add new ones."
+    android:
+      text: "Change amounts with minus and plus, remove ingredients with the trash can or add new ones below."
+      image: ./assets/en/android/2.webp
     ios:
       text: "Change amounts with minus and plus, remove ingredients with the trash can or add new ones at the bottom."
       image: ./assets/en/ios/2.webp
   - text: "Adjust the portion or the calories if you like."
+    android:
+      text: "Under “Portion” choose “Less” or “More”; under “Calories” set the value on the wheel."
+      image: ./assets/en/android/3.webp
     ios:
       text: "Under “Portion”, choose “Smaller” or “Larger”; under “Calories”, set the value on the wheel."
       image: ./assets/en/ios/3.webp
   - text: "Save the correction. Intake AI works out the estimate again."
+    android:
+      text: "Tap the checkmark at the top right. Intake AI works out the estimate again."
+      image: ./assets/en/android/4.webp
     ios:
       text: "Tap the checkmark at the top right. Intake AI works out the estimate again."
       image: ./assets/en/ios/4.webp

@@ -8,13 +8,21 @@ related:
   - photo-logging
 steps:
   - text: "Tippe beim Hinzufügen oben auf „Erstellen“."
+    android:
+      image: ./assets/de/android/1.webp
     ios:
       image: ./assets/de/ios/1.webp
   - text: "Fotografiere die Nährwerttabelle oder wähle ein Foto davon aus."
+    android:
+      text: "Tippe unter „Nährwertlabel scannen“ auf „Foto“ oder „Kamera“."
+      image: ./assets/de/android/2.webp
     ios:
       text: "Tippe unter „Nährwertlabel scannen“ auf „Kamera“ oder „Mediathek“."
       image: ./assets/de/ios/2.webp
   - text: "Prüfe die übernommenen Werte und speichere das Produkt."
+    android:
+      text: "Prüfe die Werte im Formular und tippe unten auf „Speichern & hinzufügen“."
+      image: ./assets/de/android/3.webp
     ios:
       text: "Prüfe die Werte im Formular und tippe oben rechts auf das Häkchen."
       image: ./assets/de/ios/3.webp

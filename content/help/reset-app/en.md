@@ -8,13 +8,21 @@ related:
   - first-setup
 steps:
   - text: "Open “Data” in Settings."
+    android:
+      text: "On Today, tap the gear at the top and scroll to “Data”."
+      image: ./assets/en/android/1.webp
     ios:
       text: "On Today, tap the gear at the top, then “Data” under “Data”."
       image: ./assets/en/ios/1.webp
   - text: "Tap “Reset app”."
+    android:
+      image: ./assets/en/android/2.webp
     ios:
       image: ./assets/en/ios/2.webp
   - text: "Confirm."
+    android:
+      text: "Confirm with “Reset app”."
+      image: ./assets/en/android/3.webp
     ios:
       text: "Confirm with “Reset App” at the bottom."
       image: ./assets/en/ios/3.webp

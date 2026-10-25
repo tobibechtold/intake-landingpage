@@ -8,9 +8,13 @@ related:
   - export-data
 steps:
   - text: "At the bottom of Settings, under “Legal & Support”, tap “Contact”."
+    android:
+      image: ./assets/en/android/1.webp
     ios:
       image: ./assets/en/ios/1.webp
   - text: "Under “Ideas & Bugs”, you ask for features and vote for other people’s ideas."
+    android:
+      image: ./assets/en/android/2.webp
     ios:
       image: ./assets/en/ios/2.webp
 draft: true

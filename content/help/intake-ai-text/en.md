@@ -8,16 +8,26 @@ related:
   - set-up-intake-ai
 steps:
   - text: "On Today, tap the plus next to the meal, then “Intake AI”."
+    android:
+      image: ./assets/en/android/1.webp
     ios:
       image: ./assets/en/ios/1.webp
   - text: "Describe what you ate and send the message."
+    android:
+      text: "Describe what you ate and tap the arrow."
+      image: ./assets/en/android/2.webp
     ios:
       text: "Describe what you ate and tap the arrow."
       image: ./assets/en/ios/2.webp
   - text: "Check the estimate: calories, macros and each ingredient."
+    android:
+      image: ./assets/en/android/3.webp
     ios:
       image: ./assets/en/ios/3.webp
   - text: "Choose whether to log it as one meal or ingredient by ingredient, then log it."
+    android:
+      text: "Choose “One meal” or “Ingredients separately” and tap “Log meal”."
+      image: ./assets/en/android/4.webp
     ios:
       text: "Choose “One meal” or “Ingredients separately” and tap “Log meal”."
       image: ./assets/en/ios/4.webp

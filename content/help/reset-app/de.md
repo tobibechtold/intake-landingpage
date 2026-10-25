@@ -8,13 +8,21 @@ related:
   - first-setup
 steps:
   - text: "Öffne in den Einstellungen „Daten“."
+    android:
+      text: "Tippe auf Heute oben auf das Zahnrad und scrolle zu „Daten“."
+      image: ./assets/de/android/1.webp
     ios:
       text: "Tippe auf Heute oben auf das Zahnrad und dann unter „Daten“ auf „Daten“."
       image: ./assets/de/ios/1.webp
   - text: "Tippe auf „App zurücksetzen“."
+    android:
+      image: ./assets/de/android/2.webp
     ios:
       image: ./assets/de/ios/2.webp
   - text: "Bestätige die Rückfrage."
+    android:
+      text: "Bestätige mit „App zurücksetzen“."
+      image: ./assets/de/android/3.webp
     ios:
       text: "Bestätige unten mit „App zurücksetzen“."
       image: ./assets/de/ios/3.webp

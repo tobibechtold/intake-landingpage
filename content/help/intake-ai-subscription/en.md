@@ -8,14 +8,23 @@ related:
   - scan-nutrition-label
 steps:
   - text: "Open “Intake AI” in Settings and choose the subscription."
+    android:
+      text: "In Settings, tap “Intake AI”. The “Subscription” row is at the bottom."
+      image: ./assets/en/android/1.webp
     ios:
       text: "In Settings, tap “Intake AI”, then “Intake AI” at the top."
       image: ./assets/en/ios/1.webp
   - text: "It shows whether your subscription is active, and you can view or manage it."
+    android:
+      text: "It says “Active” or “Not active”. Tap it to open the offer."
+      image: ./assets/en/android/2.webp
     ios:
       text: "“Subscription status” says “Active” or “Not active”. “View subscription” opens the offer; with an active one it’s “Manage subscription”."
       image: ./assets/en/ios/2.webp
   - text: "After reinstalling or on a new device, restore your subscription."
+    android:
+      text: "Tap “Restore purchases” at the bottom of it."
+      image: ./assets/en/android/3.webp
     ios:
       text: "Tap “Restore purchases” to do that."
       image: ./assets/en/ios/3.webp
