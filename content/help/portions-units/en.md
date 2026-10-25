@@ -9,9 +9,18 @@ related:
   - add-food
 steps:
   - text: "In the search, tap a food."
+    android:
+      text: "While adding, tap a food, for example under “Frequent” or in the search."
+      image: ./assets/en/android/1.webp
   - text: "Under “Select Portion”, choose one of the product’s portions or “Custom amount”."
+    android:
+      image: ./assets/en/android/2.webp
   - text: "Next to “Custom amount”, tap the unit and pick, for example, Tablespoon or Cup."
+    android:
+      image: ./assets/en/android/3.webp
   - text: "If a unit weighs something else for you, tap the line “… per Tablespoon, tap to change” and enter the weight."
+    android:
+      image: ./assets/en/android/4.webp
 ---
 
 Intake remembers that weight for the food and uses it automatically next time. For drinks you enter the amount in millilitres. Ounces appear when you choose imperial units under Settings > “Region & Units”.

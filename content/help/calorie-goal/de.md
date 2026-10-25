@@ -9,9 +9,18 @@ related:
   - activity-settings
 steps:
   - text: "Tippe auf Heute oben auf das Zahnrad und dann auf „Kalorien“."
+    android:
+      image: ./assets/de/android/1.webp
   - text: "Wähle bei „Quelle der Erhaltungskalorien“, woher dein Erhaltungsbedarf kommt."
+    android:
+      text: "Wähle unter „Erhaltungskalorien“ „Automatisch berechnen“ oder „Eigener TDEE“."
+      image: ./assets/de/android/2.webp
   - text: "Wähle bei „Ziel“ „Abnehmen“, „Halten“ oder „Zunehmen“ und stell mit dem Regler die tägliche Anpassung ein."
+    android:
+      image: ./assets/de/android/3.webp
   - text: "Darunter siehst du deine „Erhaltungskalorien“ und das „Tagesziel“, das daraus entsteht."
+    android:
+      image: ./assets/de/android/4.webp
 ---
 
 ## Woher der Erhaltungsbedarf kommt

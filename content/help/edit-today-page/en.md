@@ -8,10 +8,20 @@ related:
   - calorie-ring
 steps:
   - text: "Scroll to the very bottom of Today and tap “Edit Today Page”."
+    android:
+      image: ./assets/en/android/1.webp
   - text: "Under “Sections”, switch off what you don’t need, for example Water or Weight."
+    android:
+      image: ./assets/en/android/2.webp
   - text: "Hold a row by the handle on the right and drag it to a new place."
+    android:
+      image: ./assets/en/android/3.webp
   - text: "Under “Meals”, hide meals, or type a name into “New custom meal” and tap “Add”."
+    android:
+      image: ./assets/en/android/4.webp
   - text: "Tap the checkmark at the top right."
+    android:
+      image: ./assets/en/android/5.webp
 ---
 
 The Dashboard with the calorie ring always stays visible. “Reset to default” at the very bottom brings back the original page.

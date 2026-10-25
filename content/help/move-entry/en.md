@@ -8,9 +8,19 @@ related:
   - edit-entry
 steps:
   - text: "On Today, tap the entry."
+    android:
+      image: ./assets/en/android/1.webp
   - text: "Further down, under “Meal”, pick the new meal."
+    android:
+      text: "Further down, under “Meals”, pick the new meal."
+      image: ./assets/en/android/2.webp
   - text: "Under “Time”, set the new time."
+    android:
+      text: "Under “Time”, tap “Add time” and set the time."
+      image: ./assets/en/android/3.webp
   - text: "Tap the checkmark at the top right."
+    android:
+      image: ./assets/en/android/4.webp
 ---
 
 **To another day:** copy the entry to the new day with [“Copy Meal”](/en/help/copy-meal), leaving only that entry ticked. Then open it on the old day and delete it with the trash icon at the top.

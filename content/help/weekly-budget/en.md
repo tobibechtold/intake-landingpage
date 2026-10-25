@@ -9,9 +9,19 @@ related:
   - calorie-goal
 steps:
   - text: "On Today, tap the gear at the top, then “Calories” and “Daily and weekly goals”."
+    android:
+      text: "On Today, tap the gear at the top, then “Calories”."
+      image: ./assets/en/android/1.webp
   - text: "Turn on “Weekly budget” and choose “Spread automatically” or “Manually”."
+    android:
+      text: "Scroll to “Weekly budget”, turn it on and choose “Spread automatically” or “Manual”."
+      image: ./assets/en/android/2.webp
   - text: "On Today, the “Week” row in the calorie ring card shows what is left this week, or how far over you are."
+    android:
+      image: ./assets/en/android/3.webp
   - text: "Tap “Week” to open the overview with every day of the week."
+    android:
+      image: ./assets/en/android/4.webp
 ---
 
 ## How Intake counts

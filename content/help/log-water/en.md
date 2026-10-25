@@ -9,10 +9,22 @@ related:
   - water-from-other-apps
 steps:
   - text: "On Today, tap the plus on the “Water” card to add a glass."
+    android:
+      image: ./assets/en/android/1.webp
   - text: "The minus takes away the glass you added last."
+    android:
+      text: "The minus takes away one glass."
+      image: ./assets/en/android/2.webp
   - text: "For a different amount, tap “Custom” and enter the millilitres."
+    android:
+      text: "For a different amount, tap “Custom”, set the amount and tap the checkmark."
+      image: ./assets/en/android/3.webp
   - text: "For other drinks, turn on “Mark as beverage” while adding them, and their amount counts toward your water goal."
+    android:
+      image: ./assets/en/android/4.webp
   - text: "The pencil at the top of the card sets your water goal and glass size."
+    android:
+      image: ./assets/en/android/5.webp
 ---
 
 Marked drinks are listed on the card under “Other beverages”. Water you log in other apps shows up on iPhone as long as “Water from other apps” under Settings > “Apple Health” is on (the default).

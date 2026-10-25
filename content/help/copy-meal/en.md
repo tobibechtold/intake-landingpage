@@ -8,10 +8,23 @@ related:
   - routines
 steps:
   - text: "On Today, tap the name of the meal, for example Breakfast."
+    android:
+      image: ./assets/en/android/1.webp
   - text: "In the Meal Summary, tap the menu (three dots in a circle) at the top right, then “Copy Meal”."
+    android:
+      text: "In the meal overview, tap the menu with the three dots at the top right, then “Copy meal”."
+      image: ./assets/en/android/2.webp
   - text: "Under “Products to Copy”, untick anything that should stay behind."
+    android:
+      text: "Under “Products to add”, untick anything that should stay behind."
+      image: ./assets/en/android/3.webp
   - text: "Pick the destination date in the calendar and the destination meal below it."
+    android:
+      image: ./assets/en/android/4.webp
   - text: "Tap the checkmark at the top right."
+    android:
+      text: "Tap “Add to diary” at the bottom."
+      image: ./assets/en/android/5.webp
 ---
 
 To copy a single entry, do the same and leave only that one ticked.

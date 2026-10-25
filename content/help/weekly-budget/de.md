@@ -9,9 +9,19 @@ related:
   - calorie-goal
 steps:
   - text: "Tippe auf Heute oben auf das Zahnrad, dann auf „Kalorien“ und „Tages- und Wochenziele“."
+    android:
+      text: "Tippe auf Heute oben auf das Zahnrad und dann auf „Kalorien“."
+      image: ./assets/de/android/1.webp
   - text: "Schalte „Wochenbudget“ ein und wähle „Automatisch verteilen“ oder „Manuell“."
+    android:
+      text: "Scrolle zu „Wochenbudget“, schalte es ein und wähle „Automatisch verteilen“ oder „Manuell“."
+      image: ./assets/de/android/2.webp
   - text: "Auf Heute zeigt die Zeile „Woche“ im Kalorienring, was diese Woche übrig ist oder wie viel du drüber bist."
+    android:
+      image: ./assets/de/android/3.webp
   - text: "Tippe auf „Woche“, um die Übersicht mit jedem Tag der Woche zu öffnen."
+    android:
+      image: ./assets/de/android/4.webp
 ---
 
 ## So rechnet Intake

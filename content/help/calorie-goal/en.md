@@ -9,9 +9,18 @@ related:
   - activity-settings
 steps:
   - text: "On Today, tap the gear at the top, then “Calories”."
+    android:
+      image: ./assets/en/android/1.webp
   - text: "Under “Maintenance source”, choose where your maintenance calories come from."
+    android:
+      text: "Under “Maintenance calories”, choose “Auto estimate” or “Custom TDEE”."
+      image: ./assets/en/android/2.webp
   - text: "Under “Goal”, pick “Lose”, “Maintain” or “Gain” and set the daily adjustment with the slider."
+    android:
+      image: ./assets/en/android/3.webp
   - text: "Below that you see your “Maintenance calories” and the resulting “Daily target”."
+    android:
+      image: ./assets/en/android/4.webp
 ---
 
 ## Where maintenance comes from
@@ -25,4 +34,4 @@ steps:
 - The adjustment starts at minus 500 kcal for losing and plus 500 kcal for gaining. The slider goes from minus to plus 1,000 kcal.
 - A “Fixed daily target” under “Advanced” replaces the whole calculation.
 - Your daily target never drops below a minimum: 800 kcal on iPhone, 1,200 kcal on Android.
-- To change a single day, tap “Target” on Today. Fixed changes per weekday live under Settings > “Calories” (on iPhone in “Daily and weekly goals”, on Android in the day-based targets).
+- To change a single day, tap “Target” on Today. Fixed changes per weekday live under Settings > “Calories” (on iPhone in “Daily and weekly goals”, on Android in “Day-based targets”).

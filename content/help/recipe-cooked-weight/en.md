@@ -9,9 +9,18 @@ related:
   - create-recipe
 steps:
   - text: "In the Library, open “Recipes”, tap your recipe, then the pencil at the top."
+    android:
+      image: ./assets/en/android/1.webp
   - text: "Turn off “Use calculated weight”."
+    android:
+      text: "Under “Basics” > “Portions”, turn off “Use calculated weight”."
+      image: ./assets/en/android/2.webp
   - text: "Under “Finished weight (total)”, enter what the finished dish weighs, then save."
+    android:
+      image: ./assets/en/android/3.webp
   - text: "When you log it, tap “Custom grams” and enter how much you ate."
+    android:
+      image: ./assets/en/android/4.webp
 ---
 
 **Copy a recipe:** in the recipe, tap the three-dot menu at the top, then “Duplicate”. In the recipe list, a long press on a recipe does the same.

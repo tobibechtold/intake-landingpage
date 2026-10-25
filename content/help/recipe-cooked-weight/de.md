@@ -9,9 +9,18 @@ related:
   - create-recipe
 steps:
   - text: "Öffne in der Bibliothek „Rezepte“, tippe auf dein Rezept und dann oben auf den Stift."
+    android:
+      image: ./assets/de/android/1.webp
   - text: "Schalte „Berechnetes Gewicht verwenden“ aus."
+    android:
+      text: "Schalte unter „Grundlagen“ bei „Portionen“ „Berechnetes Gewicht verwenden“ aus."
+      image: ./assets/de/android/2.webp
   - text: "Trag bei „Fertiggewicht (gesamt)“ ein, was das fertige Gericht wiegt, und speichere."
+    android:
+      image: ./assets/de/android/3.webp
   - text: "Beim Loggen tippst du auf „Eigene Gramm“ und gibst ein, wie viel du gegessen hast."
+    android:
+      image: ./assets/de/android/4.webp
 ---
 
 **Rezept kopieren:** Tippe im Rezept oben auf das Menü mit den drei Punkten und dann auf „Duplizieren“. In der Rezeptliste geht das auch, wenn du lange auf ein Rezept drückst.
