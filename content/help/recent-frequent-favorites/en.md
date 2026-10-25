@@ -8,12 +8,18 @@ related:
   - routines
 steps:
   - text: "“Suggestions” lists foods you often eat at this meal. The plus adds them with your usual amount."
+    android:
+      image: ./assets/en/android/1.webp
     ios:
       image: ./assets/en/ios/1.webp
   - text: "Under “Library”, open “Favorites”, “Recent” or “Frequent”."
+    android:
+      image: ./assets/en/android/2.webp
     ios:
       image: ./assets/en/ios/2.webp
   - text: "Tap the heart to save a food as a favorite."
+    android:
+      image: ./assets/en/android/3.webp
     ios:
       image: ./assets/en/ios/3.webp
 draft: true

@@ -8,15 +8,24 @@ related:
   - recent-frequent-favorites
 steps:
   - text: "On Today, tap the plus on a meal."
+    android:
+      image: ./assets/en/android/1.webp
     ios:
       image: ./assets/en/ios/1.webp
   - text: "Type a name or brand into the search field at the bottom."
+    android:
+      image: ./assets/en/android/2.webp
     ios:
       image: ./assets/en/ios/2.webp
   - text: "Tap the matching food."
+    android:
+      image: ./assets/en/android/3.webp
     ios:
       image: ./assets/en/ios/3.webp
   - text: "Choose the portion and confirm."
+    android:
+      text: "Choose the portion and tap the checkmark at the top right."
+      image: ./assets/en/android/4.webp
     ios:
       text: "Choose the portion and tap the checkmark at the top right."
       image: ./assets/en/ios/4.webp

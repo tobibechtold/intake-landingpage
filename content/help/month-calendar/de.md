@@ -8,12 +8,18 @@ related:
   - weekly-budget
 steps:
   - text: "Tippe auf Heute oben auf das Kalendersymbol."
+    android:
+      image: ./assets/de/android/1.webp
     ios:
       image: ./assets/de/ios/1.webp
   - text: "Unter jedem Tag mit Einträgen steht ein farbiger Strich. Oben siehst du, wie viele Tage im Monat grün, orange und rot sind."
+    android:
+      image: ./assets/de/android/2.webp
     ios:
       image: ./assets/de/ios/2.webp
   - text: "Tippe auf einen Tag, um ihn zu öffnen."
+    android:
+      image: ./assets/de/android/3.webp
     ios:
       text: "Tippe auf einen Tag und dann auf „Fertig“, um ihn zu öffnen."
       image: ./assets/de/ios/3.webp
@@ -22,4 +28,4 @@ draft: true
 
 Mit den Pfeilen blätterst du zu anderen Monaten. Tage ohne Einträge bleiben ohne Farbe.
 
-Dieselben Farben zeigt die Wochenleiste oben auf Heute. Auf dem iPhone blendest du sie dort unter Einstellungen > „Darstellung“ > „Kalorienstatus in der Tagesleiste anzeigen“ aus.
+Dieselben Farben zeigt die Wochenleiste oben auf Heute. Auf dem iPhone blendest du sie dort unter Einstellungen > „Darstellung“ > „Kalorienstatus in der Tagesleiste anzeigen“ aus, auf Android mit „Tagesstreifen-Indikatoren“.

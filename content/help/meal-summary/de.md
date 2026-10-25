@@ -8,12 +8,19 @@ related:
   - create-recipe
 steps:
   - text: "Tippe auf Heute auf den Namen der Mahlzeit, zum Beispiel Frühstück."
+    android:
+      image: ./assets/de/android/1.webp
     ios:
       image: ./assets/de/ios/1.webp
   - text: "Oben stehen Kalorien und Nährwerte der Mahlzeit, darunter alle Einträge."
+    android:
+      image: ./assets/de/android/2.webp
     ios:
       image: ./assets/de/ios/2.webp
   - text: "Im Menü findest du „Rezept erstellen“, „Mahlzeit kopieren“ und „Mahlzeit löschen“."
+    android:
+      text: "Im Menü (drei Punkte) findest du „Mahlzeit kopieren“, „Rezept erstellen“ und „Mahlzeit löschen“."
+      image: ./assets/de/android/3.webp
     ios:
       text: "Im Menü (drei Punkte im Kreis) findest du „Rezept erstellen“, „Mahlzeit kopieren“ und „Mahlzeit löschen“."
       image: ./assets/de/ios/3.webp

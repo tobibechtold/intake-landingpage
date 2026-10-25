@@ -8,12 +8,18 @@ related:
   - routines
 steps:
   - text: "Unter „Vorschläge“ stehen Lebensmittel, die du zu dieser Mahlzeit oft isst. Das Plus trägt sie mit der gewohnten Menge ein."
+    android:
+      image: ./assets/de/android/1.webp
     ios:
       image: ./assets/de/ios/1.webp
   - text: "Unter „Bibliothek“ öffnest du „Favoriten“, „Verlauf“ und „Häufig“."
+    android:
+      image: ./assets/de/android/2.webp
     ios:
       image: ./assets/de/ios/2.webp
   - text: "Tippe auf das Herz, um ein Lebensmittel als Favorit zu speichern."
+    android:
+      image: ./assets/de/android/3.webp
     ios:
       image: ./assets/de/ios/3.webp
 draft: true

@@ -8,15 +8,23 @@ related:
   - stats
 steps:
   - text: "Tippe auf Heute oben auf den Teilen-Button."
+    android:
+      image: ./assets/de/android/1.webp
     ios:
       image: ./assets/de/ios/1.webp
   - text: "Wähle, was du teilen willst, zum Beispiel den ganzen Tag oder eine Mahlzeit."
+    android:
+      image: ./assets/de/android/2.webp
     ios:
       image: ./assets/de/ios/2.webp
   - text: "Wähle „Sticker“ oder „Karte“ und das Format „Story 9:16“ oder „Beitrag 4:5“."
+    android:
+      image: ./assets/de/android/3.webp
     ios:
       image: ./assets/de/ios/3.webp
   - text: "Tippe auf „Teilen“ oder „In Fotos sichern“."
+    android:
+      image: ./assets/de/android/4.webp
     ios:
       image: ./assets/de/ios/4.webp
 draft: true

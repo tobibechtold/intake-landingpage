@@ -8,15 +8,24 @@ related:
   - recent-frequent-favorites
 steps:
   - text: "Tippe auf Heute bei einer Mahlzeit auf das Plus."
+    android:
+      image: ./assets/de/android/1.webp
     ios:
       image: ./assets/de/ios/1.webp
   - text: "Gib unten im Suchfeld einen Namen oder eine Marke ein."
+    android:
+      image: ./assets/de/android/2.webp
     ios:
       image: ./assets/de/ios/2.webp
   - text: "Tippe auf das passende Lebensmittel."
+    android:
+      image: ./assets/de/android/3.webp
     ios:
       image: ./assets/de/ios/3.webp
   - text: "Wähle die Portion und bestätige."
+    android:
+      text: "Wähle die Portion und tippe oben rechts auf das Häkchen."
+      image: ./assets/de/android/4.webp
     ios:
       text: "Wähle die Portion und tippe oben rechts auf das Häkchen."
       image: ./assets/de/ios/4.webp

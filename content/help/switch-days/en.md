@@ -8,13 +8,19 @@ related:
   - settings-appearance
 steps:
   - text: "Tap a day in the week strip at the top, or swipe left or right on Today."
+    android:
+      image: ./assets/en/android/1.webp
     ios:
       image: ./assets/en/ios/1.webp
   - text: "Tap the calendar button at the top and pick a day."
+    android:
+      image: ./assets/en/android/2.webp
     ios:
       text: "Tap the calendar button at the top, pick a day and tap “Done”."
       image: ./assets/en/ios/2.webp
   - text: "On another day, “Today” at the top takes you back to today."
+    android:
+      image: ./assets/en/android/3.webp
     ios:
       text: "On another day, the arrow at the top takes you back to today."
       image: ./assets/en/ios/3.webp
