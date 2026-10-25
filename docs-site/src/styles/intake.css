@@ -161,3 +161,21 @@ starlight-tabs [role='tab'][aria-selected='true'] { background-color: var(--sl-c
 .sidebar-pane::-webkit-scrollbar-track { background: transparent; }
 .sidebar-pane::-webkit-scrollbar-thumb { background-color: transparent; border-radius: 8px; border: 2px solid transparent; background-clip: content-box; }
 .sidebar-pane:hover::-webkit-scrollbar-thumb { background-color: var(--sl-color-gray-5); }
+
+/* Search dialog: the field in the docs' own style, and on phones enough room for
+   "Abbrechen" (Starlight reserves 5rem, which Inter's German label overruns). */
+#starlight__search {
+  --pagefind-ui-border-radius: 10px;
+  --pagefind-ui-border: var(--sl-color-hairline-light);
+  --pagefind-ui-background: var(--sl-color-gray-6);
+}
+#starlight__search .pagefind-ui__search-input:focus,
+#starlight__search .pagefind-ui__search-input:focus-visible {
+  outline: none;
+  --pagefind-ui-border: var(--sl-color-gray-4);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--sl-color-accent) 22%, transparent);
+}
+@media (max-width: 49.99rem) {
+  #starlight__search { --sl-search-cancel-space: 6.75rem; }
+  site-search button[data-close-modal] { padding-inline: 0.5rem; }
+}
