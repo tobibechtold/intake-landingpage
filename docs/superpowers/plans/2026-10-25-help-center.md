@@ -256,7 +256,7 @@ Run `npx vitest run src/lib/helpTopics.test.ts`. Expect PASS: every manifest top
 - Modify: memory `release-pr-definition-of-done`.
 
 - [ ] **Step 1:** Commit the AGENTS.md line (`docs: help center upkeep in the definition of done`).
-- [ ] **Step 2:** Run `npm run lint`, `npm run test` and `npm run build` in the landing page; all green.
+- [ ] **Step 2:** Remove the `it.skip` from `no help entry is still a draft` in `src/lib/helpTopics.test.ts`; every entry has dropped `draft: true` and carries its screenshots. Then run `npm run lint`, `npm run test` and `npm run build` in the landing page; all green.
 - [ ] **Step 3:** Send Tobias samples:
   - a Vercel preview link to the help home;
   - 6 topics: `copy-meal`, the Health activity topic, the calorie goal topic, the weekly budget topic, one settings topic and one platform-only topic, each opened once with `?platform=ios&source=app` and once without.
