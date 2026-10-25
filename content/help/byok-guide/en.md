@@ -8,20 +8,35 @@ related:
   - intake-ai-text
 steps:
   - text: "Open Settings in Intake."
+    android:
+      text: "On Today, tap the gear at the top."
+      image: ./assets/en/android/1.webp
     ios:
       text: "On Today, tap the gear at the top."
       image: ./assets/en/ios/1.webp
   - text: "Tap Intake AI and choose “Use my API key”."
+    android:
+      text: "In Settings, tap “Intake AI”, then the circle next to “Use my API key”."
+      image: ./assets/en/android/2.webp
     ios:
       text: "In Settings, tap Intake AI under Integrations and choose “Use your own API key”."
       image: ./assets/en/ios/2.webp
   - text: "Choose the same provider you used to create your key. A key from one provider cannot be used with another."
+    android:
+      text: "Under “Bring your own API key”, choose the provider you created your key with: OpenAI, Claude or Gemini."
+      image: ./assets/en/android/3.webp
     ios:
       image: ./assets/en/ios/3.webp
   - text: "Keep the default model. Only change the model name when you know the exact name of a supported model."
+    android:
+      text: "Keep the default under “Model”. Only change it when you know the exact name of a supported model."
+      image: ./assets/en/android/4.webp
     ios:
       image: ./assets/en/ios/4.webp
   - text: "Paste the complete key without adding spaces, save, then send a short meal description to check that everything works."
+    android:
+      text: "Paste the complete key under “API key” without spaces, tap “Save API key”, then test with a short meal description."
+      image: ./assets/en/android/5.webp
     ios:
       image: ./assets/en/ios/5.webp
 draft: true
