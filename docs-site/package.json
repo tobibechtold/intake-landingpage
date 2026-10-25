@@ -1,0 +1,21 @@
+{
+  "name": "intake-docs",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "dev": "node scripts/generate.mjs && astro dev",
+    "build": "node scripts/generate.mjs && astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "0.42.7",
+    "astro": "7.2.10",
+    "lucide-static": "1.55.0",
+    "sharp": "0.34.4",
+    "yaml": "2.8.1"
+  },
+  "engines": {
+    "node": ">=22.12"
+  }
+}

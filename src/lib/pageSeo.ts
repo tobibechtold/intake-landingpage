@@ -88,13 +88,6 @@ const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     "canonical": "https://www.getintake.de/en/help",
     "ogLocale": "en_US"
   },
-  "/en/help/own-api-key": {
-    "lang": "en",
-    "title": "Set Up Your Own API Key (BYOK) for Intake AI",
-    "description": "Learn how to create and securely add an OpenAI, Claude, or Gemini API key to Intake AI, choose a provider, and optionally select a model.",
-    "canonical": "https://www.getintake.de/en/help/own-api-key",
-    "ogLocale": "en_US"
-  },
   "/en/intake-ai": {
     "lang": "en",
     "title": "Intake AI - Optional AI Food Logging With Text and Photos",
@@ -135,13 +128,6 @@ const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     "title": "Hilfe & FAQ | Intake",
     "description": "Antworten zu Preis, Datenschutz, Sync, Apple Health, Health Connect, Lebensmitteldaten und den wichtigsten Intake-Funktionen.",
     "canonical": "https://www.getintake.de/hilfe",
-    "ogLocale": "de_DE"
-  },
-  "/hilfe/eigener-api-schluessel": {
-    "lang": "de",
-    "title": "Eigenen API-Schlüssel (BYOK) für Intake AI einrichten",
-    "description": "Erfahre, wie du einen API-Schlüssel von OpenAI, Claude oder Gemini sicher in Intake AI hinterlegst, den Anbieter wählst und optional ein Modell einträgst.",
-    "canonical": "https://www.getintake.de/hilfe/eigener-api-schluessel",
     "ogLocale": "de_DE"
   },
   "/intake-ai": {
@@ -232,7 +218,6 @@ const ROUTE_PAIRS: ReadonlyArray<readonly [string, string]> = [
   ['/intake-ai', '/en/intake-ai'],
   ['/vergleiche', '/en/comparisons'],
   ['/hilfe', '/en/help'],
-  ['/hilfe/eigener-api-schluessel', '/en/help/own-api-key'],
   ['/privacy', '/en/privacy'],
   ['/terms', '/en/terms'],
   ['/whats-new', '/en/whats-new'],
@@ -241,7 +226,6 @@ const ROUTE_PAIRS: ReadonlyArray<readonly [string, string]> = [
 
 const WHATS_NEW_ENTRY = /^\/(en\/)?whats-new\/([^/]+)$/;
 const COMPARISON_DETAIL = /^\/(?:vergleiche|en\/comparisons)\/([^/]+)$/;
-
 export const getPageSeo = (route: string): PageSeo => {
   const staticSeo = STATIC_PAGE_SEO[route];
   if (staticSeo) {

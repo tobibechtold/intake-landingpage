@@ -49,4 +49,18 @@ describe('getHreflangPair', () => {
       en: '/en/whats-new/2.5.1',
     });
   });
+
+  it('pairs no former help topic route, the BYOK guide included', () => {
+    expect(getHreflangPair('/hilfe/eigener-api-schluessel')).toBeNull();
+    expect(getHreflangPair('/en/help/own-api-key')).toBeNull();
+    // The topics live on docs.getintake.de now; vercel.json redirects these paths.
+    expect(getHreflangPair('/hilfe/mahlzeit-kopieren')).toBeNull();
+    expect(getHreflangPair('/en/help/copy-meal')).toBeNull();
+  });
+});
+
+describe('help topic SEO', () => {
+  it('has no metadata for a former help topic route', () => {
+    expect(() => getPageSeo('/en/help/copy-meal')).toThrow();
+  });
 });

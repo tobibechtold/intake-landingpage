@@ -1,0 +1,31 @@
+---
+id: sync-weight
+title: "Sync your weight"
+short: "When you log your weight in Intake, it is saved to Apple Health or Health Connect too. If you weigh yourself with a scale or another app, Intake takes the latest weight from there."
+related:
+  - log-weight
+  - import-weight-history
+  - health-read-write
+steps:
+  - text: "On Today, tap the gear at the top and open the Apple Health or Health Connect connection."
+    android:
+      text: "On Today, tap the gear at the top and scroll to “Integrations”."
+      image: ./assets/en/android/1.webp
+    ios:
+      text: "On Today, tap the gear at the top, then “Apple Health”."
+      image: ./assets/en/ios/1.webp
+  - text: "Syncing runs as long as the connection is on."
+    android:
+      text: "As long as “Use Health Connect” is on, Intake syncs your weight. There is no separate weight switch."
+      image: ./assets/en/android/2.webp
+    ios:
+      text: "Leave “Sync weight from Apple Health” on. It is on from the start."
+      image: ./assets/en/ios/2.webp
+  - text: "The “Weight” card on Today shows when it last synced. The icon next to it syncs right away."
+    android:
+      image: ./assets/en/android/3.webp
+    ios:
+      image: ./assets/en/ios/3.webp
+---
+
+On iPhone, Intake takes no weight for a day where you logged one yourself, and none older than your last entry. The switch only controls reading. Writing happens as long as “Use Apple Health” is on. For older weights, use [“Import weight history”](/en/help/import-weight-history).

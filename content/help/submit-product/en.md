@@ -1,0 +1,36 @@
+---
+id: submit-product
+title: "Submit a product"
+short: "Submit one of your own products for review so it can join the shared database. You follow its status in the Library under “Submissions”."
+related:
+  - create-product
+  - my-products
+  - scan-barcode
+steps:
+  - text: "Open your product under “My Products”, or create a new one."
+    android:
+      image: ./assets/en/android/1.webp
+    ios:
+      image: ./assets/en/ios/1.webp
+  - text: "Turn on “Submit for review”."
+    android:
+      image: ./assets/en/android/2.webp
+    ios:
+      image: ./assets/en/ios/2.webp
+  - text: "A review needs a name, brand, barcode and calories, fat, carbs and protein per 100 g. Then save."
+    android:
+      text: "A review needs a name, brand, barcode and calories, fat, carbs and protein per 100 g. Then tap “Save” at the bottom."
+      image: ./assets/en/android/3.webp
+    ios:
+      text: "A review needs a name, brand, barcode and calories, fat, carbs and protein per 100 g. Then tap the checkmark at the top right."
+      image: ./assets/en/ios/3.webp
+  - text: "“Submissions” shows what is being reviewed right now."
+    android:
+      image: ./assets/en/android/4.webp
+    ios:
+      image: ./assets/en/ios/4.webp
+---
+
+Until there’s a decision, you use your own version. If it isn’t accepted, it stays in your Library as a private product.
+
+**A mistake in a database product:** On the product’s page, tap “Report issue” and pick what’s wrong, for example “Wrong nutrients”. On iPhone, if editing can fix it, the editor opens right away and you submit the correction. On Android, choose “Edit instead” for that.

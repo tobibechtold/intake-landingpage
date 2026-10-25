@@ -55,3 +55,38 @@ describe.each(PAGES)('$lang homepage structured data', (page) => {
     expect(text).toContain(page.price);
   });
 });
+
+/**
+ * FAQPage must list exactly the questions the help home shows, with the answers it shows.
+ * The FAQ there is the reviewed pre-purchase block; every other answer moved into a topic.
+ */
+const decode = (s: string) =>
+  s.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+
+describe.each([
+  { file: 'dist/hilfe/index.html', lang: 'de', sample: 'Ist Intake ein Abo-Modell?' },
+  { file: 'dist/en/help/index.html', lang: 'en', sample: 'Is Intake a subscription-based app?' },
+])('$lang help home FAQPage', (page) => {
+  const html = readFileSync(page.file, 'utf8');
+  const node = [...html.matchAll(/application\/ld\+json">([\s\S]*?)<\/script>/g)]
+    .map((m) => JSON.parse(m[1]))
+    .find((n) => n['@type'] === 'FAQPage');
+  const rendered = [...html.matchAll(/<details data-faq-item[^>]*>\s*<summary[^>]*>\s*<span>([\s\S]*?)<\/span>[\s\S]*?<p(?:\s[^>]*)?>([\s\S]*?)<\/p>/g)].map(
+    (m) => ({ question: decode(m[1].trim()), answer: decode(m[2].trim()) }),
+  );
+
+  it('declares a FAQPage in the page language', () => {
+    expect(node).toBeTruthy();
+    expect(node.inLanguage).toBe(page.lang);
+  });
+
+  it('lists exactly the rendered questions and answers, in order', () => {
+    expect(rendered.length).toBeGreaterThan(0);
+    expect(rendered.map((item) => item.question)).toContain(page.sample);
+    const declared = node.mainEntity.map((q: { name: string; acceptedAnswer: { text: string } }) => ({
+      question: q.name,
+      answer: q.acceptedAnswer.text,
+    }));
+    expect(declared).toEqual(rendered);
+  });
+});

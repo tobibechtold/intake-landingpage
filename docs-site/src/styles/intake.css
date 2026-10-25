@@ -1,0 +1,47 @@
+/* Intake coral (the landing page's --primary, hsl(338 92% 63%)) in both themes. */
+:root {
+  --intake-coral: #f74a8a;
+  --sl-color-accent-low: #4a1226;
+  --sl-color-accent: var(--intake-coral);
+  --sl-color-accent-high: var(--intake-coral);
+}
+:root[data-theme='light'] {
+  /* A warm off-white instead of pure white, easier on the eyes. */
+  --sl-color-bg: #fbf8f5;
+  --sl-color-bg-nav: #f5f0eb;
+  --sl-color-bg-sidebar: #f5f0eb;
+  --sl-color-accent-low: #fde1eb;
+  /* A shade darker so links keep enough contrast on white. */
+  --sl-color-accent: #d62e6c;
+  --sl-color-accent-high: #8f1a46;
+}
+/* The selected sidebar entry: coral with white text in dark mode. */
+:root:not([data-theme='light']) .sidebar-content a[aria-current='page'] {
+  color: #fff;
+}
+.step-shot { max-width: 320px; border-radius: 18px; margin-top: .5rem; box-shadow: 0 1px 6px rgb(0 0 0 / .15); }
+/* App links (source=app) open the page on the app's platform without the switch. */
+:root[data-platform-switch='hidden'] starlight-tabs[data-sync-key='platform'] [role='tablist'] { display: none; }
+/* Start page: the framed Today screenshot, light or dark with the theme. */
+.hero-phone { display: block; margin-inline: auto; width: auto; height: min(62vh, 560px); filter: drop-shadow(0 20px 40px rgb(0 0 0 / .25)); }
+:root[data-theme='light'] .hero-phone-dark,
+:root:not([data-theme='light']) .hero-phone-light { display: none; }
+@media (max-width: 50rem) { .hero-phone { height: min(44vh, 400px); } }
+
+/* The site name follows the theme: white in dark mode, black in light mode. */
+.site-title { color: var(--sl-color-white); }
+
+/* Chapter icons in the sidebar (the icon per entry comes from sidebar-icons.css). */
+.sidebar-content ul.top-level > li > a > span::before,
+.sidebar-content ul.top-level > li > details > summary .group-label > span::before {
+  content: '';
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  margin-inline-end: 0.6em;
+  vertical-align: -0.2em;
+  background-color: var(--sl-color-accent);
+  -webkit-mask: var(--chapter-icon) center / contain no-repeat;
+  mask: var(--chapter-icon) center / contain no-repeat;
+}
+.sidebar-content ul.top-level > li > a[aria-current='page'] > span::before { background-color: currentColor; }

@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
+import { docsUrl, loadHelpManifest } from '../src/lib/helpTopics';
 
 /**
  * vercel.json carries three behaviours that no build output can prove: the smart-link
@@ -83,5 +84,53 @@ describe('/de locale alias', () => {
   it('is ordered after the root locale redirect, which must win on /', () => {
     const sources = config.redirects.map((r: { source: string }) => r.source);
     expect(sources.indexOf('/')).toBeLessThan(sources.indexOf('/de'));
+  });
+});
+
+describe('help topic redirects', () => {
+  /**
+   * The help topics moved to docs.getintake.de. Both apps hard-code /hilfe/<de slug> and
+   * /en/help/<en slug> from content/help/topics.json, so every published slug needs a
+   * permanent redirect to its docs page. scripts/help-redirects.mjs writes them; a new
+   * topic without a redirect fails here. The BYOK guide is a docs topic like every other.
+   */
+  type Redirect = { source: string; destination: string; permanent?: boolean };
+  const helpRedirects = (config.redirects as Redirect[]).filter((r) =>
+    r.destination.startsWith('https://docs.getintake.de'),
+  );
+  const expected = loadHelpManifest()
+    .topics.flatMap((topic) => [
+      { source: `/hilfe/${topic.slugs.de}`, destination: docsUrl(topic.id, 'de'), permanent: true },
+      { source: `/en/help/${topic.slugs.en}`, destination: docsUrl(topic.id, 'en'), permanent: true },
+    ]);
+
+  it('has exactly one permanent redirect per topic and language, and nothing else', () => {
+    const bySource = (a: Redirect, b: Redirect) => a.source.localeCompare(b.source);
+    expect([...helpRedirects].sort(bySource)).toEqual([...expected].sort(bySource));
+  });
+
+  it('sends copy-meal to the docs in both languages', () => {
+    const find = (source: string) => helpRedirects.find((r) => r.source === source)?.destination;
+    expect(find('/hilfe/mahlzeit-kopieren')).toBe('https://docs.getintake.de/copy-meal');
+    expect(find('/en/help/copy-meal')).toBe('https://docs.getintake.de/en/copy-meal');
+  });
+
+  it('sends the old BYOK guide URLs to the docs', () => {
+    const find = (source: string) => helpRedirects.find((r) => r.source === source)?.destination;
+    expect(find('/hilfe/eigener-api-schluessel')).toBe('https://docs.getintake.de/byok-guide');
+    expect(find('/en/help/own-api-key')).toBe('https://docs.getintake.de/en/byok-guide');
+  });
+
+  it('leaves the help home on getintake.de', () => {
+    const sources = (config.redirects as Redirect[]).map((r) => r.source);
+    for (const source of ['/hilfe', '/en/help']) {
+      expect(sources).not.toContain(source);
+    }
+  });
+
+  it('keeps the query string: Vercel appends it only to a destination without its own', () => {
+    // ?platform=ios&source=app from the apps must reach the docs page.
+    expect(helpRedirects.filter((r) => r.destination.includes('?'))).toEqual([]);
+    expect(helpRedirects.filter((r) => /[:(*]/.test(r.source))).toEqual([]);
   });
 });

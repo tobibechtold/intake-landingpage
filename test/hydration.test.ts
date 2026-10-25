@@ -27,7 +27,7 @@ describe('hydration', () => {
 
   // No page hydrates any more. Hero's webm/mp4 choice is two <source> elements, the
   // gallery is CSS scroll-snap, Reviews' "show more" is a <details>, and the FAQ is
-  // <details> plus a small vanilla filter. react-dom is not in the build at all.
+  // <details>. react-dom is not in the build at all.
   it('the homepage ships no framework JavaScript either', () => {
     const html = read('/');
     expect(islandCount(html)).toBe(0);
@@ -36,10 +36,10 @@ describe('hydration', () => {
     expect(html).toContain('<details');         // review show-more
   });
 
-  it('the help page keeps its FAQ interactive without React', () => {
+  it('the help page keeps its docs link and FAQ working without React', () => {
     const html = read('/hilfe');
     expect(islandCount(html)).toBe(0);
-    expect(html).toContain('data-faq-search');
+    expect(html).toMatch(/<a[^>]*href="https:\/\/docs\.getintake\.de"[^>]*data-docs-link/);
     expect(html).toContain('data-faq-section');
     // Every answer must stay in the DOM so the long-tail Q&A remain crawlable.
     expect(html).toContain('Ist Intake ein Abo-Modell?');
