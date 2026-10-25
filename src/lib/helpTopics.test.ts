@@ -86,8 +86,42 @@ describe('help topic manifest', () => {
 });
 
 describe('validateTopicEntry', () => {
+  // Stands in for Astro's resolved image metadata; validation only checks presence.
+  const shot = { src: '/shot.webp', width: 1, height: 1, format: 'webp' };
+
   it('accepts a valid entry', () => {
-    expect(validateTopicEntry(entry({ steps: [{ text: 'Tippe auf die Mahlzeit.' }] }), manifest)).toEqual([]);
+    expect(
+      validateTopicEntry(
+        entry({ steps: [{ text: 'Tippe auf die Mahlzeit.', ios: { image: shot }, android: { image: shot } }] }),
+        manifest,
+      ),
+    ).toEqual([]);
+  });
+
+  it('flags a step without a screenshot for each platform of the topic', () => {
+    const iosOnly = validateTopicEntry(
+      entry({ steps: [{ text: 'Tippe auf die Mahlzeit.', ios: { image: shot } }] }),
+      manifest,
+    );
+    expect(iosOnly).toEqual([expect.stringContaining('no android.image')]);
+    const none = validateTopicEntry(entry({ steps: [{ text: 'Tippe auf die Mahlzeit.' }] }), manifest);
+    expect(none).toHaveLength(2);
+  });
+
+  it('asks a one-platform topic only for its own screenshot', () => {
+    const wide = { id: 'wide-screen-layout', platformNote: 'Nur auf iPhone Duo und iPad' };
+    expect(validateTopicEntry(entry({ ...wide, steps: [{ text: 'Klapp es auf.', ios: { image: shot } }] }), manifest)).toEqual([]);
+  });
+
+  it('lets a draft omit screenshots but keeps every other check', () => {
+    expect(validateTopicEntry(entry({ draft: true, steps: [{ text: 'Tippe auf die Mahlzeit.' }] }), manifest)).toEqual([]);
+    expect(
+      validateTopicEntry(entry({ draft: true, steps: [{ text: 'Tippe — dann kopiere.' }] }), manifest).length,
+    ).toBeGreaterThan(0);
+    expect(validateTopicEntry(entry({ draft: true, steps: [{ text: 'a'.repeat(161) }] }), manifest).length).toBeGreaterThan(0);
+    expect(
+      validateTopicEntry(entry({ draft: true, steps: [{ text: 'Tippe.', ios: { text: 'Tippe oben.' } }] }), manifest),
+    ).toEqual([expect.stringContaining('ios.text has no ios.image')]);
   });
 
   it('flags a step that has ios.text but no ios.image', () => {
@@ -142,6 +176,17 @@ describe('help content files', () => {
       .filter(({ text }) => text.includes('\u2014'))
       .map(({ file }) => file);
     expect(offenders).toEqual([]);
+  });
+});
+
+describe('help launch gate', () => {
+  // Drafts carry text without screenshots (Task 7a). Task 9 removes this skip before
+  // launch: the help center goes live only when no entry is a draft any more.
+  it.skip('no help entry is still a draft', () => {
+    const drafts = topicFiles()
+      .filter(({ text }) => /^draft:\s*true\s*$/m.test(text))
+      .map(({ file }) => file);
+    expect(drafts).toEqual([]);
   });
 });
 

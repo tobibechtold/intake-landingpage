@@ -112,12 +112,30 @@ describe('build output', () => {
       en = read('/en/help/copy-meal');
     });
 
-    it('renders the title, the short answer and one block per platform', () => {
+    it('renders the title, the short answer and one block per platform for every step', () => {
       expect(de).toContain('Mahlzeit auf einen anderen Tag kopieren');
       expect(de).toContain('Du entscheidest, welche Einträge mitkommen');
-      expect(de.match(/data-platform-block="ios"/g)).toHaveLength(1);
-      expect(de.match(/data-platform-block="android"/g)).toHaveLength(1);
+      const steps = (de.match(/<li class="flex items-start gap-4">/g) ?? []).length;
+      expect(steps).toBeGreaterThan(1);
+      expect(de.match(/data-platform-block="ios"/g)).toHaveLength(steps);
+      expect(de.match(/data-platform-block="android"/g)).toHaveLength(steps);
       expect(en).toContain('Copy a meal to another day');
+    });
+
+    it('renders the steps and the iPhone-only note on an iOS-only topic with steps', () => {
+      for (const [route, note] of [
+        ['/hilfe/workouts-ohne-doppelzaehlung', 'Nur auf dem iPhone'],
+        ['/en/help/workouts-without-double-counting', 'Only on iPhone'],
+      ]) {
+        const html = read(route);
+        expect(html).toContain(`data-platform-note>${note}<`);
+        const steps = (html.match(/<li class="flex items-start gap-4">/g) ?? []).length;
+        expect(steps).toBeGreaterThan(0);
+        expect(html.match(/data-platform-block="ios"/g)).toHaveLength(steps);
+        expect(html).not.toContain('data-platform-block="android"');
+        expect(html).not.toMatch(/<div[^>]*data-platform-switch/);
+      }
+      expect(read('/hilfe/workouts-ohne-doppelzaehlung')).toContain('Schalte „Workouts ohne Doppelzählung“ ein.');
     });
 
     it('pairs the translated slugs with reciprocal hreflang', () => {

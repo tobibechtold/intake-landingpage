@@ -65,6 +65,12 @@ export interface HelpTopicEntryData {
   customPage?: 'byokGuide';
   /** Replaces the default platform-only note, e.g. "Nur auf iPhone Duo und iPad". */
   platformNote?: string;
+  /**
+   * Text written, screenshots still missing. Only a draft may have steps without a
+   * screenshot per platform; the launch gate (helpTopics.test.ts) fails while any
+   * entry is still a draft.
+   */
+  draft?: boolean;
 }
 
 export const SHORT_MAX_LENGTH = 220;
@@ -179,6 +185,15 @@ export const validateTopicEntry = (entry: HelpTopicEntryData, source: HelpManife
       if (text.includes(EM_DASH)) errors.push(`${stepLabel}: text contains an em dash`);
       if (text.length > STEP_TEXT_MAX_LENGTH) {
         errors.push(`${stepLabel}: text is ${text.length} characters, max ${STEP_TEXT_MAX_LENGTH}`);
+      }
+    }
+    // Every step shows a screenshot on every platform of the topic. Drafts are the one
+    // exception, so text can be reviewed before the capture runs.
+    if (topic && !entry.draft) {
+      for (const platform of topic.platforms) {
+        if (!step[platform]?.image) {
+          errors.push(`${stepLabel}: no ${platform}.image (only a draft: true entry may omit screenshots)`);
+        }
       }
     }
     for (const platform of PLATFORMS) {

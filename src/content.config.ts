@@ -33,7 +33,8 @@ const whatsNew = defineCollection({
 // Entry ids take the form "<topic>/<lang>", e.g. "copy-meal/de". The topic ids and
 // slugs come from content/help/topics.json; validateTopicEntry fails the build for a
 // topic that is not in it, a too-long text, an em dash, or a platform step without
-// its own screenshot. The frontmatter id must equal the folder, or a copied file
+// its own screenshot, or (outside a draft: true entry) any step without a screenshot
+// per platform. The frontmatter id must equal the folder, or a copied file
 // would validate and render as the wrong topic.
 const helpTopics = defineCollection({
   loader: glob({
@@ -74,6 +75,7 @@ const helpTopics = defineCollection({
           .optional(),
         customPage: z.literal('byokGuide').optional(),
         platformNote: z.string().optional(),
+        draft: z.boolean().optional(),
       })
       .superRefine((data, ctx) => {
         for (const message of validateTopicEntry(data, loadHelpManifest())) {

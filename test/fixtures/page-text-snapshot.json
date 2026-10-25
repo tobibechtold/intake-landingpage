@@ -36,12 +36,12 @@
     "sha": "7bbdcc8690dd93ab"
   },
   "/en/help": {
-    "words": 1003,
-    "sha": "336d3994d9466f5e"
+    "words": 1114,
+    "sha": "e3b66996f1d963ce"
   },
   "/en/help/own-api-key": {
-    "words": 822,
-    "sha": "6f1fa97887d5c5aa"
+    "words": 841,
+    "sha": "780c69485c0afcdd"
   },
   "/en/intake-ai": {
     "words": 679,
@@ -192,12 +192,12 @@
     "sha": "84b6a4723fdb5f28"
   },
   "/hilfe": {
-    "words": 924,
-    "sha": "32ae5771637c4ceb"
+    "words": 1029,
+    "sha": "8ef0bdb452dbb635"
   },
   "/hilfe/eigener-api-schluessel": {
-    "words": 715,
-    "sha": "d71d4332192c7d32"
+    "words": 743,
+    "sha": "c420e2d06001ab84"
   },
   "/intake-ai": {
     "words": 631,

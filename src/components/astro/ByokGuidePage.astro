@@ -24,8 +24,8 @@ const CONTENT = {
     kicker: "BYOK setup guide",
     title: "Set up your own API key for Intake AI",
     intro:
-      "Bring your own key (BYOK) lets Intake use an AI provider account that belongs to you. Choose OpenAI, Claude, or Gemini, paste your key once, and you can use basic AI food logging without an Intake AI subscription.",
-    summary: "Provider, optional model name, API key—that is all Intake needs.",
+      "Bring your own key (BYOK) lets Intake use an AI provider account that belongs to you. Choose OpenAI, Claude, or Gemini, paste your key once, and log meals by text or photo with AI, without an Intake AI subscription. Only the correction view and nutrition-label scanning need Intake AI.",
+    summary: "Provider, optional model name, API key: that is all Intake needs.",
     primerTitle: "First time using an API key? Start here.",
     apiKeyTitle: "What is an API key?",
     apiKeyBody:
@@ -38,7 +38,7 @@ const CONTENT = {
     providersKicker: "Step 1",
     providersTitle: "Choose a provider and create a key",
     providersDescription:
-      "Open the official key page, sign in or create an account, then create a new secret key. Copy it immediately—the provider may show the complete key only once.",
+      "Open the official key page, sign in or create an account, then create a new secret key. Copy it right away, because the provider may show the complete key only once.",
     providerCta: (provider: string) => `Create an API key with ${provider}`,
     providerNotes: {
       OpenAI: "Uses your OpenAI API account and its current usage pricing.",
@@ -53,7 +53,7 @@ const CONTENT = {
     steps: [
       {
         title: "Open the Intake AI settings",
-        body: "In Intake, open Settings and choose Intake AI, then select the option to use your own API key.",
+        body: "In Intake, open Settings, tap Intake AI and choose “Use your own API key” (on Android: “Use my API key”).",
       },
       {
         title: "Choose OpenAI, Claude, or Gemini",
@@ -61,7 +61,7 @@ const CONTENT = {
       },
       {
         title: "Keep the default model or enter another",
-        body: "Intake sets a suitable default model for every provider. The model name is optional—only change it when you know the exact supported model name you want to use.",
+        body: "Intake sets a suitable default model for every provider. The model name is optional. Only change it when you know the exact name of a supported model.",
       },
       {
         title: "Paste your API key",
@@ -81,7 +81,7 @@ const CONTENT = {
         alt: "Intake AI navigation item in Settings under Integrations.",
         label: "Step 3",
         title: "Open Intake AI",
-        body: "Under Integrations, tap Intake AI to open its settings.",
+        body: "Tap Intake AI in Settings. On iPhone you find it under Integrations.",
       },
       {
         src: "/intake-ai/byok/byok-form-en.png",
@@ -131,8 +131,8 @@ const CONTENT = {
     kicker: "BYOK-Einrichtung",
     title: "Eigenen API-Schlüssel für Intake AI einrichten",
     intro:
-      "Mit Bring Your Own Key (BYOK) nutzt Intake ein KI-Anbieterkonto, das dir gehört. Wähle OpenAI, Claude oder Gemini, hinterlege einmal deinen Schlüssel und nutze grundlegendes KI-Food-Logging ohne Intake-AI-Abo.",
-    summary: "Anbieter, optionaler Modellname, API-Schlüssel—mehr braucht Intake nicht.",
+      "Mit Bring Your Own Key (BYOK) nutzt Intake ein KI-Anbieterkonto, das dir gehört. Wähle OpenAI, Claude oder Gemini, hinterlege einmal deinen Schlüssel und erfasse Mahlzeiten per Text oder Foto mit KI, ohne Intake-AI-Abo. Nur die Korrekturansicht und das Scannen von Nährwertlabels brauchen Intake AI.",
+    summary: "Anbieter, optionaler Modellname, API-Schlüssel: Mehr braucht Intake nicht.",
     primerTitle: "Noch nie einen API-Schlüssel benutzt? Starte hier.",
     apiKeyTitle: "Was ist ein API-Schlüssel?",
     apiKeyBody:
@@ -145,7 +145,7 @@ const CONTENT = {
     providersKicker: "Schritt 1",
     providersTitle: "Anbieter wählen und Schlüssel erstellen",
     providersDescription:
-      "Öffne die offizielle Schlüssel-Seite, melde dich an oder erstelle ein Konto und lege einen neuen geheimen Schlüssel an. Kopiere ihn direkt—manche Anbieter zeigen den vollständigen Schlüssel nur einmal.",
+      "Öffne die offizielle Schlüssel-Seite, melde dich an oder erstelle ein Konto und lege einen neuen geheimen Schlüssel an. Kopiere ihn direkt, denn manche Anbieter zeigen den vollständigen Schlüssel nur einmal.",
     providerCta: (provider: string) => `API-Schlüssel bei ${provider} erstellen`,
     providerNotes: {
       OpenAI: "Nutzt dein OpenAI-API-Konto und dessen aktuelle Nutzungspreise.",
@@ -160,7 +160,7 @@ const CONTENT = {
     steps: [
       {
         title: "Intake-AI-Einstellungen öffnen",
-        body: "Öffne in Intake die Einstellungen, wähle Intake AI und anschließend die Option für deinen eigenen API-Schlüssel.",
+        body: "Öffne in Intake die Einstellungen, tippe auf Intake AI und wähle „Eigenen API-Schlüssel nutzen“ (auf Android „Meinen API-Schlüssel verwenden“).",
       },
       {
         title: "OpenAI, Claude oder Gemini wählen",
@@ -168,7 +168,7 @@ const CONTENT = {
       },
       {
         title: "Standardmodell behalten oder anderes eintragen",
-        body: "Intake hinterlegt für jeden Anbieter ein passendes Standardmodell. Der Modellname ist optional—ändere ihn nur, wenn du den exakten Namen eines unterstützten Modells kennst.",
+        body: "Intake hinterlegt für jeden Anbieter ein passendes Standardmodell. Der Modellname ist optional. Ändere ihn nur, wenn du den exakten Namen eines unterstützten Modells kennst.",
       },
       {
         title: "API-Schlüssel einfügen",
@@ -188,7 +188,7 @@ const CONTENT = {
         alt: "Navigationspunkt Intake AI in den Einstellungen unter Integrationen.",
         label: "Schritt 3",
         title: "Intake AI öffnen",
-        body: "Tippe unter Integrationen auf Intake AI, um die zugehörigen Einstellungen zu öffnen.",
+        body: "Tippe in den Einstellungen auf Intake AI. Auf dem iPhone findest du es unter Integrationen.",
       },
       {
         src: "/intake-ai/byok/byok-form-de.png",
@@ -205,7 +205,7 @@ const CONTENT = {
       "Bei BYOK sendet Intake deine Essensanfrage direkt von deinem Gerät an den gewählten Anbieter. Der Anbieter verarbeitet sie nach seinen eigenen Bedingungen und Datenschutzregeln.",
     costTitle: "Du kontrollierst die Anbieter-Kosten",
     costBody:
-      "Für BYOK fällt kein Intake-AI-Abo an. Dein Anbieter kann die verarbeitete API-Nutzung berechnen, meist anhand von Eingabe- und Ausgabe-Tokens. Manche Anbieter verlangen Guthaben oder eine Abrechnungseinrichtung—prüfe deshalb die aktuellen Bedingungen und Preise.",
+      "Für BYOK fällt kein Intake-AI-Abo an. Dein Anbieter kann die verarbeitete API-Nutzung berechnen, meist anhand von Eingabe- und Ausgabe-Tokens. Manche Anbieter verlangen Guthaben oder eine eingerichtete Abrechnung, prüfe deshalb ihre aktuellen Bedingungen und Preise.",
     geminiNote:
       "Gemini hat derzeit eine kostenlose Stufe für bestimmte Modelle und Regionen. Sie besitzt Nutzungslimits und kann von Google künftig geändert oder eingestellt werden.",
     troubleshootingTitle: "Wenn es nicht funktioniert",
