@@ -26,7 +26,6 @@ steps:
       image: ./assets/en/android/3.webp
     ios:
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 On iPhone, Intake takes no weight for a day where you logged one yourself, and none older than your last entry. The switch only controls reading. Writing happens as long as “Use Apple Health” is on. For older weights, use [“Import weight history”](/en/help/import-weight-history).

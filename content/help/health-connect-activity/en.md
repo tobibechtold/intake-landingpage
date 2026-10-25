@@ -16,7 +16,6 @@ steps:
   - text: "Under “Use only this app” you pick the one app Intake counts your activity from."
     android:
       image: ./assets/en/android/3.webp
-draft: true
 ---
 
 With “Order in Health Connect”, the order you set in Health Connect under “Data sources and priority” decides. Apps missing there don’t count.

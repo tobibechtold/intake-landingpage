@@ -28,7 +28,6 @@ steps:
     ios:
       text: "The top row now says “Connected”. “Use Apple Health” turns the connection off and back on."
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 You can change what Intake may access later in Apple Health or Health Connect. See [What Intake reads and writes](/en/help/health-read-write) for the details.

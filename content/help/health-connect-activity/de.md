@@ -16,7 +16,6 @@ steps:
   - text: "Unter „Nur diese App verwenden“ wählst du eine App, aus der Intake deine Aktivität zählt."
     android:
       image: ./assets/de/android/3.webp
-draft: true
 ---
 
 Mit „Reihenfolge in Health Connect“ entscheidet die Reihenfolge, die du in Health Connect unter „Datenquellen und Priorität“ festgelegt hast. Apps, die dort fehlen, zählen nicht mit.

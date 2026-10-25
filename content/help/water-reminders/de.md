@@ -28,7 +28,6 @@ steps:
     ios:
       text: "Lege mit „Tagesbeginn“, „Tagesende“ und „Intervall“ fest, wann und wie oft Intake dich erinnert."
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 „Smart“ richtet sich danach, wie weit du mit deinem Wasserziel gerade bist. Beim ersten Einschalten fragt dein Handy, ob Intake Mitteilungen senden darf. Auf dem iPhone trägst du direkt aus der Mitteilung ein Glas ein.

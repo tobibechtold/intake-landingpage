@@ -33,7 +33,6 @@ steps:
       image: ./assets/en/android/4.webp
     ios:
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 Everything outside your eating window counts as fasting. A window from 12:00 to 20:00, for example, gives you 16 hours of fasting and 8 hours of eating.

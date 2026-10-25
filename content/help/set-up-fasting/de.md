@@ -32,7 +32,6 @@ steps:
       image: ./assets/de/android/4.webp
     ios:
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Alles außerhalb des Essensfensters gilt als Fasten. Von 12:00 bis 20:00 sind das zum Beispiel 16 Stunden Fasten und 8 Stunden Essen.

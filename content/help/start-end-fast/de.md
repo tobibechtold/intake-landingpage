@@ -20,7 +20,6 @@ steps:
     ios:
       text: "Mit „Zum Zeitplan zurücksetzen“ gilt sofort wieder dein Zeitplan."
       image: ./assets/de/ios/2.webp
-draft: true
 ---
 
 „Fasten beenden“ stellt bis zum nächsten geplanten Fasten auf Essen um, und „Fasten starten“ startet ein Fasten mit der Länge aus deinem Zeitplan, danach folgt die Essenszeit und dann wieder der Zeitplan. Auf dem iPhone zeigen mit iCloud-Sync deine anderen Apple-Geräte dasselbe Fasten.

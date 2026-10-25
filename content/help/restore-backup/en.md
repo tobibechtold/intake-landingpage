@@ -9,7 +9,6 @@ steps:
   - text: "On Today, tap the gear at the top, then “Restore backup” on the backup card."
     android:
       image: ./assets/en/android/1.webp
-draft: true
 ---
 
 Intake shows your “Most recent backup”; older ones are under “Show older backups”. Enter your passphrase and tap “Restore selected backup”. Restoring replaces the data in the app with the data from the backup.

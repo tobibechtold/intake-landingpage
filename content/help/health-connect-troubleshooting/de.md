@@ -16,7 +16,6 @@ steps:
   - text: "Hilft das nicht, tippe auf „Bericht senden“ und schick uns die Datei, zum Beispiel per Mail."
     android:
       image: ./assets/de/android/3.webp
-draft: true
 ---
 
 Ist oben unter „Health-Connect-Aktivitätsquellen“ eine Zeile rot markiert, tippe darauf. Intake sagt dir dann, was fehlt, etwa eine Berechtigung oder ein Update von Health Connect, und bietet den passenden Schritt an.

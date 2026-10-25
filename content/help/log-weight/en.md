@@ -26,7 +26,6 @@ steps:
     ios:
       text: "Intake saves by itself. Below it, “Trend”, “Total” and “Last logged” show how your weight has changed."
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 For another day, switch to that day on Today first. If Apple Health or Health Connect is connected, Intake keeps your weight in step with it. On iPhone you can also log it with Siri or on Apple Watch.

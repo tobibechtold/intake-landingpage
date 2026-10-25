@@ -35,7 +35,6 @@ steps:
     ios:
       text: "Tap “Done” at the top right."
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 Nutrient cards work out the daily average only from days where that nutrient was logged. On iPhone, caffeine is an estimate, because not every product lists its caffeine.

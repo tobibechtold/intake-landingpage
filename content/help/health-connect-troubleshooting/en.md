@@ -16,7 +16,6 @@ steps:
   - text: "If that doesn’t help, tap “Send report” and send us the file, for example by email."
     android:
       image: ./assets/en/android/3.webp
-draft: true
 ---
 
 If a line under “Health Connect activity sources” at the top is marked red, tap it. Intake tells you what is missing, such as a permission or a Health Connect update, and offers the step that fixes it.

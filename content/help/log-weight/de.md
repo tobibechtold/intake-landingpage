@@ -26,7 +26,6 @@ steps:
     ios:
       text: "Intake speichert von selbst. Darunter zeigen „Trend“, „Gesamt“ und „Zuletzt erfasst“, wie sich dein Gewicht verändert hat."
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Für einen anderen Tag wechselst du auf Heute erst zu diesem Tag. Ist Apple Health oder Health Connect verbunden, gleicht Intake dein Gewicht damit ab. Auf dem iPhone trägst du es auch per Siri oder auf der Apple Watch ein.

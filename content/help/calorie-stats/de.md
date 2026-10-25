@@ -24,7 +24,6 @@ steps:
       image: ./assets/de/android/3.webp
     ios:
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Die Durchschnitte zählen nur Tage, an denen du etwas eingetragen hast, das zeigt „Tage erfasst“. Ein vergessener Tag zieht den Schnitt also nicht nach unten.

@@ -28,7 +28,6 @@ steps:
     ios:
       text: "Use “Wake start”, “Wake end” and “Interval” to choose when and how often Intake reminds you."
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 “Smart” adjusts to how far along you are with your water goal right now. The first time you turn reminders on, your phone asks whether Intake may send notifications. On iPhone you can log a glass straight from the notification.

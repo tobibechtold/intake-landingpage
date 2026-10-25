@@ -35,7 +35,6 @@ steps:
       image: ./assets/de/android/5.webp
     ios:
       image: ./assets/de/ios/5.webp
-draft: true
 ---
 
 Für einen früheren Tag änderst du dort das Datum. Auf dem iPhone tauscht Intake Taille und Körperfett mit Apple Health aus, die anderen Maße bleiben in Intake.

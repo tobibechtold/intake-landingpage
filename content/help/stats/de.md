@@ -31,7 +31,6 @@ steps:
       image: ./assets/de/android/4.webp
     ios:
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 In „Makronährstoffe“ blendest du mit einem Tipp auf einen Wert diesen Nährstoff im Diagramm ein oder aus. Auf dem iPhone ziehst du die Statistik nach unten, um die Daten neu zu laden.

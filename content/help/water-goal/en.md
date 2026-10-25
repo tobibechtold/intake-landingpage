@@ -28,7 +28,6 @@ steps:
     ios:
       text: "Tap the checkmark at the top right."
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 The plus on the card always adds one glass of your glass size. On iPhone, “Use calculated goal” sets the goal back to the value Intake works out from your weight and activity level.

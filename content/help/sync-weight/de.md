@@ -26,7 +26,6 @@ steps:
       image: ./assets/de/android/3.webp
     ios:
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Auf dem iPhone übernimmt Intake kein Gewicht für einen Tag, an dem du selbst eins eingetragen hast, und keins, das älter ist als dein letzter Eintrag. Der Schalter regelt nur das Lesen. Geschrieben wird, solange „Apple Health verwenden“ an ist. Ältere Gewichte holst du mit [„Gewichtsverlauf importieren“](/hilfe/gewichtsverlauf-importieren).

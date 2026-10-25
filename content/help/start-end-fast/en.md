@@ -20,7 +20,6 @@ steps:
     ios:
       text: "“Reset To Schedule” puts your schedule back in charge right away."
       image: ./assets/en/ios/2.webp
-draft: true
 ---
 
 “End Fasting” switches you to eating until your next scheduled fast, and “Start Fasting” begins a fast as long as the one in your schedule, then your eating time, and after that your schedule takes over again. On iPhone, with iCloud sync, your other Apple devices show the same fast.

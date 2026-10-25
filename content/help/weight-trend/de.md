@@ -31,7 +31,6 @@ steps:
       image: ./assets/de/android/4.webp
     ios:
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Auf dem iPhone löschst du einen falschen Eintrag in der Woche oder im Monat, indem du lange auf seinen Balken drückst. Ist Apple Health verbunden, verschwindet er auch dort.

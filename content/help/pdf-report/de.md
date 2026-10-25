@@ -31,7 +31,6 @@ steps:
     ios:
       text: "Tippe oben rechts auf „Erstellen“. Das PDF öffnet sich in einer Vorschau, aus der du es teilst."
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 „Für KI (Markdown)“ ist eine Textdatei mit denselben Zahlen. Gib sie einem KI-Chat, zum Beispiel für eine Auswertung deines Monats.

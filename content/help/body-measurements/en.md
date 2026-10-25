@@ -37,7 +37,6 @@ steps:
       image: ./assets/en/android/5.webp
     ios:
       image: ./assets/en/ios/5.webp
-draft: true
 ---
 
 For an earlier day, change the date there. On iPhone, Intake shares waist and body fat with Apple Health; the other measurements stay in Intake.

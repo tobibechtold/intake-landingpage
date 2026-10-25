@@ -31,7 +31,6 @@ steps:
     ios:
       text: "Tap “Generate” at the top right. The PDF opens in a preview you can share it from."
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 “For AI (Markdown)” is a text file with the same figures. Give it to an AI chat, for example to look back on your month.

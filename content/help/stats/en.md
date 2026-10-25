@@ -31,7 +31,6 @@ steps:
       image: ./assets/en/android/4.webp
     ios:
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 In “Macronutrients”, tap a value to show or hide that nutrient in the chart. On iPhone, pull Stats down to load the data again.

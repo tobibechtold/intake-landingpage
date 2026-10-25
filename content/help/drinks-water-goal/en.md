@@ -26,7 +26,6 @@ steps:
     ios:
       text: "Tap “Other beverages” to see which drinks were counted."
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 On iPhone the whole amount of the drink counts toward your water goal. A recipe such as a smoothie can count too: turn on “Mark recipe as beverage” in the recipe.

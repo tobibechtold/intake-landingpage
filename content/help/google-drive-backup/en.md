@@ -19,7 +19,6 @@ steps:
   - text: "“Back up now” backs up right away. The first time, you set a passphrase of at least 8 characters."
     android:
       image: ./assets/en/android/4.webp
-draft: true
 ---
 
 The passphrase stays on your phone and never leaves it. Intake cannot recover it. If you forget it, your earlier backups can no longer be opened. “Change passphrase” encrypts your backups with a new one.

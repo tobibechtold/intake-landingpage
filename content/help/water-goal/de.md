@@ -28,7 +28,6 @@ steps:
     ios:
       text: "Tippe oben rechts auf das Häkchen."
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Das Plus in der Karte fügt immer ein Glas in deiner Glasgröße hinzu. Auf dem iPhone setzt „Berechnetes Ziel verwenden“ das Ziel zurück auf den Wert, den Intake aus deinem Gewicht und deinem Aktivitätslevel berechnet.

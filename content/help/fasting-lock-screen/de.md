@@ -21,7 +21,6 @@ steps:
     ios:
       text: "Schalte unter „Live-Aktivität“ „Live-Aktivität anzeigen“ ein."
       image: ./assets/de/ios/2.webp
-draft: true
 ---
 
 Auf dem iPhone ist die Live-Aktivität an, sobald du das Fasten einschaltest. Timer und Balken laufen von selbst weiter. Wischst du sie weg, bleibt sie bis zum nächsten Wechsel zwischen Fasten und Essen verborgen.

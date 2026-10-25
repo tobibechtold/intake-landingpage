@@ -9,7 +9,6 @@ steps:
   - text: "Tippe auf Heute oben auf das Zahnrad und in der Backup-Karte auf „Backup wiederherstellen“."
     android:
       image: ./assets/de/android/1.webp
-draft: true
 ---
 
 Intake zeigt dein „Neuestes Backup“, ältere findest du unter „Ältere Backups anzeigen“. Gib deine Passphrase ein und tippe auf „Ausgewähltes Backup wiederherstellen“. Die Wiederherstellung ersetzt die Daten in der App durch die aus dem Backup.

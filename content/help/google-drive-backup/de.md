@@ -19,7 +19,6 @@ steps:
   - text: "„Jetzt sichern“ sichert sofort. Beim ersten Mal legst du eine Passphrase mit mindestens 8 Zeichen fest."
     android:
       image: ./assets/de/android/4.webp
-draft: true
 ---
 
 Die Passphrase bleibt auf deinem Handy und verlässt es nicht. Intake kann sie nicht wiederherstellen. Vergisst du sie, lassen sich deine bisherigen Backups nicht mehr öffnen. Mit „Passphrase ändern“ verschlüsselst du deine Backups mit einer neuen.

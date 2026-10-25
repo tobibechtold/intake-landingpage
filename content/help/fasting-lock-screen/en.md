@@ -21,7 +21,6 @@ steps:
     ios:
       text: "Under “Live Activity”, turn on “Show Live Activity”."
       image: ./assets/en/ios/2.webp
-draft: true
 ---
 
 On iPhone the Live Activity is on as soon as you turn fasting on. The timer and the bar keep moving by themselves. If you swipe it away, it stays hidden until you next switch between fasting and eating.

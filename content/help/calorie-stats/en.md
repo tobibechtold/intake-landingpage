@@ -26,7 +26,6 @@ steps:
     ios:
       text: "Below the chart, “Avg / day” and “Avg target” compare your daily average with your target. “Avg vs target” shows the difference."
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 The averages only count days you logged something, shown under days logged. A day you forgot does not drag your average down.

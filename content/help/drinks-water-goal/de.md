@@ -26,7 +26,6 @@ steps:
     ios:
       text: "Tippe auf „Weitere Getränke“, um zu sehen, welche Getränke mitgezählt wurden."
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Auf dem iPhone zählt die ganze Menge des Getränks zum Wasserziel. Auch ein Rezept, etwa ein Smoothie, kann zählen: Schalte dafür im Rezept „Rezept als Getränk markieren“ ein.

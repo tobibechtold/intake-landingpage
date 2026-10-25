@@ -28,7 +28,6 @@ steps:
     ios:
       text: "The “Activity” card then counts them in “Total burned”. The kcal tile still shows what Apple Health reports."
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 On iPhone, Intake uses the distance from Apple Health and your weight. If Apple Health reports active calories, for example from an Apple Watch, Intake doesn’t estimate anything.

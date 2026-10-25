@@ -31,7 +31,6 @@ steps:
       image: ./assets/en/android/4.webp
     ios:
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 On iPhone you delete a wrong entry in the week or month view by pressing and holding its bar. If Apple Health is connected, it is removed there too.

@@ -24,7 +24,6 @@ steps:
       image: ./assets/en/android/3.webp
     ios:
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 Without a date of your own, Intake counts from your first weight. “Reset” takes you back to that.

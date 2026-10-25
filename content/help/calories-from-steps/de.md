@@ -28,7 +28,6 @@ steps:
     ios:
       text: "In der Karte „Aktivität“ zählen sie dann in „Gesamt verbrannt“ mit. Die kcal-Kachel zeigt weiter, was Apple Health meldet."
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Auf dem iPhone rechnet Intake mit der Strecke aus Apple Health und deinem Gewicht. Meldet Apple Health Aktivitätskalorien, etwa von einer Apple Watch, schätzt Intake nichts.

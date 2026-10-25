@@ -35,7 +35,6 @@ steps:
     ios:
       text: "Tippe oben rechts auf „Fertig“."
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Nährstoff-Karten rechnen den Tagesschnitt nur aus Tagen, an denen der Nährstoff eingetragen ist. Auf dem iPhone ist Koffein eine Schätzung, weil nicht jedes Produkt einen Koffeinwert hat.

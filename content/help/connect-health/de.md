@@ -28,7 +28,6 @@ steps:
     ios:
       text: "Danach steht oben „Verbunden“. „Apple Health verwenden“ schaltet die Verbindung aus und wieder an."
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Was Intake darf, änderst du später in Apple Health oder Health Connect. Welche Daten das sind, steht unter [Was Intake liest und schreibt](/hilfe/health-lesen-schreiben).

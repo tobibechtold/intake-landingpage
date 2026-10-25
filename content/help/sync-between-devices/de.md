@@ -6,7 +6,6 @@ related:
   - icloud-sync
   - google-drive-backup
   - health-read-write
-draft: true
 ---
 
 ## iPhone und iPad
