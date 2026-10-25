@@ -12,7 +12,6 @@ steps:
       image: ./assets/en/android/1.webp
     ios:
       image: ./assets/en/ios/1.webp
-draft: true
 ---
 
 Hold the camera steady on the barcode until Intake opens the product. Then choose the portion as usual.

@@ -29,7 +29,6 @@ steps:
       image: ./assets/de/android/4.webp
     ios:
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Bei Rezepten zählt Intake die einzelnen Zutaten. Die Nährwerte einer einzelnen Mahlzeit siehst du, wenn du auf ihren Namen tippst.

@@ -6,7 +6,6 @@ related:
   - steps-workouts
   - sync-between-devices
   - health-read-write
-draft: true
 ---
 
 Usually you don’t need to: Intake fetches new data whenever you open the app. Pulling helps when your watch or another app has only just handed over steps or a workout.

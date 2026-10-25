@@ -24,7 +24,6 @@ steps:
       image: ./assets/de/android/3.webp
     ios:
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Schaltest du Fotos aus, bleiben sie gespeichert und kommen zurück, sobald du sie wieder einschaltest.

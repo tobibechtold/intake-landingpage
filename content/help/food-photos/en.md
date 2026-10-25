@@ -24,7 +24,6 @@ steps:
       image: ./assets/en/android/3.webp
     ios:
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 Photos you switch off stay stored and come back when you switch them on again.

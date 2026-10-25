@@ -24,7 +24,6 @@ steps:
     ios:
       text: "On another day, the arrow at the top takes you back to today."
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 You can turn off swiping between days under Settings > “Appearance” with “Swipe between days”.

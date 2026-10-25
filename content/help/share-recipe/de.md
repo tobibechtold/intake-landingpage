@@ -33,7 +33,6 @@ steps:
     ios:
       text: "Für eine Kopie tippst du oben rechts auf die drei Punkte und dann auf „Duplizieren“."
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Das Foto des Rezepts kommt mit. Eine Datei, die schon auf deinem Gerät liegt, importierst du in „Rezepte“ über das Menü mit „Rezept importieren“.

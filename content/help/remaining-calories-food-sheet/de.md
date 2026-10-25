@@ -21,7 +21,6 @@ steps:
     ios:
       text: "Auch auf den nächsten Seiten, zum Beispiel bei der Portion, steht die Zahl unter dem Titel."
       image: ./assets/de/ios/2.webp
-draft: true
 ---
 
 Auf dem iPhone ändert sich die Zahl erst, wenn du etwas einträgst, nicht schon beim Auswählen. Bist du über deinem Ziel, steht dort „kcal zu viel“.

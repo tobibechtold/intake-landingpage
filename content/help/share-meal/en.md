@@ -33,7 +33,6 @@ steps:
     ios:
       text: "Then they pick the day and meal, untick anything they don’t want and tap the checkmark at the top right."
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 A single entry works the same way: tap the entry and choose “Send as file”.

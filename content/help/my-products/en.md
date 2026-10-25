@@ -31,7 +31,6 @@ steps:
     ios:
       text: "To delete it, tap the three dots next to the product, then “Delete product”."
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 Add a new product here with the plus button.

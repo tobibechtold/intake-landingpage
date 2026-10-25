@@ -30,7 +30,6 @@ steps:
       image: ./assets/de/android/4.webp
     ios:
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Die berechneten Gramm richten sich nach deinem Tagesziel und ändern sich mit ihm.

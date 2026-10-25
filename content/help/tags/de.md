@@ -28,7 +28,6 @@ steps:
     ios:
       text: "Oben in der Liste tippst du auf ein Schlagwort, um nur diese Lebensmittel zu sehen."
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Ein Lebensmittel kann mehrere Stichwörter haben. Auf dem iPhone heißen sie „Schlagwörter“, auf Android „Tags“.

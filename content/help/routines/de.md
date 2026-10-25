@@ -28,7 +28,6 @@ steps:
     ios:
       text: "Die Routine steht beim Hinzufügen oben unter „Routinen“. Mit „Jede Zutat“ loggst du sie mit „Alle“, sonst tippst du sie an und wählst die Menge."
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Unter „Routinen“ in der Bibliothek nimmst du ein Rezept mit „Aus Routinen entfernen“ wieder heraus. Das Rezept bleibt erhalten.

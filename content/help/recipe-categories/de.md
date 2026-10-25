@@ -32,7 +32,6 @@ steps:
     ios:
       text: "Tippe oben auf die Pfeile und wähle „Name (A–Z)“, „Zuletzt hinzugefügt“ oder „Kalorien pro Portion“."
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Löschst du eine Kategorie, verschwindet sie aus allen Rezepten. Die Rezepte selbst bleiben.

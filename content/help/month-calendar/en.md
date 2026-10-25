@@ -23,7 +23,6 @@ steps:
     ios:
       text: "Tap a day, then “Done” to open it."
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 Use the arrows to go to other months. Days without entries stay uncolored.

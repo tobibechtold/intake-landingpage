@@ -33,7 +33,6 @@ steps:
     ios:
       text: "Tap the checkmark at the top right."
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 Breakfast, Lunch, Dinner and Snacks can be hidden but not deleted. You delete a meal of your own in the same list. Its entries stay and show up on Today as “Archived”.

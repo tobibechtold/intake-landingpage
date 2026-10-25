@@ -31,7 +31,6 @@ steps:
     ios:
       text: "Zum Löschen tippst du neben dem Produkt auf die drei Punkte und dann auf „Produkt löschen“."
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Ein neues Produkt legst du hier mit dem Plus an.

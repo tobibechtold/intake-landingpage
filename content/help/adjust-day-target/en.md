@@ -32,7 +32,6 @@ steps:
     ios:
       text: "Set the amount with the buttons and tap the checkmark at the top right."
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 On iPhone, “Reset” removes the change. With the weekly budget on, no day drops below your basal metabolic rate, and never below 1,200 kcal.

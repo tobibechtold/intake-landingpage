@@ -26,7 +26,6 @@ steps:
     ios:
       text: "Under “Weekly rules”, tap a weekday, set the amount and tap the checkmark."
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 A change for a single day is made on Today with “Target”.

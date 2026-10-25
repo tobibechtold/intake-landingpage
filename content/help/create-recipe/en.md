@@ -33,7 +33,6 @@ steps:
     ios:
       text: "Tap the checkmark at the top right."
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 From a meal, its entries are already the ingredients. If the finished dish weighs less than its ingredients, enter the finished weight (see cooking loss).

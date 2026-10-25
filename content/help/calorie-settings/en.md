@@ -29,7 +29,6 @@ steps:
     ios:
       text: "“Daily and weekly goals” takes you to the weekly budget and to goals per weekday."
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 Under “Daily target” you see right away what your settings add up to. On iPhone, maintenance can also come from your resting energy in Apple Health.

@@ -32,7 +32,6 @@ steps:
     ios:
       text: "Stell die Menge mit den Knöpfen ein und tippe oben rechts auf das Häkchen."
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Auf dem iPhone nimmt „Zurücksetzen“ die Änderung wieder weg. Mit Wochenbudget fällt dabei kein Tag unter deinen Grundumsatz und nie unter 1.200 kcal.

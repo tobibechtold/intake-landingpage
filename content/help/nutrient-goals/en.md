@@ -26,7 +26,6 @@ steps:
       image: ./assets/en/android/3.webp
     ios:
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 ## How Intake calculates them

@@ -24,7 +24,6 @@ steps:
     ios:
       text: "Tippe bei „Makros“ auf „Mehr“, um alle Makros mit ihren Zielen zu sehen."
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Tippst du auf den Ring, zeigt er die gegessenen statt der übrigen Kalorien. Seine Farbe zeigt, wie dein Tag läuft: grün im Plan, orange knapp, rot über dem Ziel.

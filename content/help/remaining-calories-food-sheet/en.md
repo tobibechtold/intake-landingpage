@@ -21,7 +21,6 @@ steps:
     ios:
       text: "The following pages, for example the portion, show the number under their title too."
       image: ./assets/en/ios/2.webp
-draft: true
 ---
 
 On iPhone the number only changes once you log something, not while you’re choosing. Once you’re over your target, it says “kcal too much”.

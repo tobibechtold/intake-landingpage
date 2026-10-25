@@ -26,7 +26,6 @@ steps:
       image: ./assets/en/android/3.webp
     ios:
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 A food can have several tags.

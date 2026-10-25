@@ -24,7 +24,6 @@ steps:
     ios:
       text: "The menu (three dots in a circle) holds “Create Recipe”, “Copy Meal” and “Delete meal”."
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 “Delete meal” removes every entry of the meal after asking you to confirm. On iPhone this also removes the data Intake wrote to Apple Health.

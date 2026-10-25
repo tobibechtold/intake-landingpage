@@ -29,7 +29,6 @@ steps:
     ios:
       text: "Im Modus „Manuell“ tippst du auf „Saldo verschieben“ und legst die übrigen Kalorien auf einen Tag."
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Ein markierter Tag zählt mit 0 kcal. Mit „Markierung entfernen“ nimmst du die Markierung zurück. Unten führt „Wochenbudget-Einstellungen“ zu den Einstellungen.

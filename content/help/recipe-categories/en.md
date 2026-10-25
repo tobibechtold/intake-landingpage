@@ -32,7 +32,6 @@ steps:
     ios:
       text: "Tap the arrows at the top and choose “Name (A–Z)”, “Recently added” or “Calories per portion”."
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 Deleting a category removes it from every recipe. The recipes themselves stay.

@@ -33,7 +33,6 @@ steps:
     ios:
       text: "Leg unter „Anteil der Aktivitätskalorien“ mit dem Regler fest, wie viel Prozent dazukommen."
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Das ändert nur dein Tagesziel und die übrigen Kalorien, nicht die verbrannten Kalorien, die Intake anzeigt.

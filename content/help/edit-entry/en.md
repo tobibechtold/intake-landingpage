@@ -33,7 +33,6 @@ steps:
     ios:
       text: "To delete it, tap the trash can at the top."
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 Further down you change the meal and the time. On iPhone, the menu with the three dots shares the entry as a picture or a file, or saves it as a favorite. On Android, the buttons that share it as a picture or a file sit at the top next to the trash can.

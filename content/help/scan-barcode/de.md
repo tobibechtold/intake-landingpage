@@ -12,7 +12,6 @@ steps:
       image: ./assets/de/android/1.webp
     ios:
       image: ./assets/de/ios/1.webp
-draft: true
 ---
 
 Halte die Kamera ruhig auf den Barcode, bis Intake das Produkt öffnet. Dann wählst du wie gewohnt die Portion.

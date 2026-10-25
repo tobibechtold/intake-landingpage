@@ -34,7 +34,6 @@ steps:
     ios:
       text: "Tippe oben rechts auf das Häkchen. Intake speichert das Produkt und trägt es in die Mahlzeit ein."
       image: ./assets/de/ios/5.webp
-draft: true
 ---
 
 Weiter unten legst du mit „Portionsgröße hinzufügen“ eigene Portionen an, zum Beispiel „1 Brötchen“. Mit „Zur Prüfung einreichen“ schlägst du das Produkt für die gemeinsame Datenbank vor.

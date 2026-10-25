@@ -26,7 +26,6 @@ steps:
     ios:
       text: "Tippe unter „Wöchentliche Regeln“ auf einen Wochentag, stell die Menge ein und tippe auf das Häkchen."
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Eine Änderung nur für einen einzelnen Tag machst du direkt auf Heute über „Ziel“.

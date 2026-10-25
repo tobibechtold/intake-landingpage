@@ -33,7 +33,6 @@ steps:
     ios:
       text: "Tippe oben rechts auf das Häkchen."
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Änderst oder ergänzt du beim Loggen Zutaten, gilt das nur für diesen Eintrag. Das gespeicherte Rezept bleibt, wie es ist.

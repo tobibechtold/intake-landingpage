@@ -24,7 +24,6 @@ steps:
     ios:
       text: "Auf einem anderen Tag bringt dich der Pfeil oben zurück zum heutigen Tag."
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Das Wischen zwischen Tagen schaltest du unter Einstellungen > „Darstellung“ mit „Zwischen Tagen wischen“ aus.

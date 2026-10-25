@@ -29,7 +29,6 @@ steps:
     ios:
       text: "Wähle die Portion und tippe oben rechts auf das Häkchen."
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Oben tippst du auf den Namen der Mahlzeit, um sie zu wechseln. Das Plus in einer Zeile trägt ein Lebensmittel sofort mit der gewohnten Menge ein.

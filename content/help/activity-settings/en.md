@@ -33,7 +33,6 @@ steps:
     ios:
       text: "Under “Activity calories counted”, use the slider to set what percentage is added."
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 This only changes your daily target and the calories left, not the burned calories Intake shows.

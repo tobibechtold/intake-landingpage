@@ -19,7 +19,6 @@ steps:
     ios:
       text: "Add a note if you like and tap the checkmark."
       image: ./assets/en/ios/2.webp
-draft: true
 ---
 
 You can change your mood any time from the card. If you don’t need the card, hide “Mood” under “Edit Today Page”.

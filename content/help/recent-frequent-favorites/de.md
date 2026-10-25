@@ -22,7 +22,6 @@ steps:
       image: ./assets/de/android/3.webp
     ios:
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Aus „Verlauf“ und „Häufig“ entfernst du ein Lebensmittel, indem du es nach links wischst oder lange drückst. Es bleibt dabei in der Datenbank.

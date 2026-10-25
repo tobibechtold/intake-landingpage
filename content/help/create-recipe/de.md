@@ -33,7 +33,6 @@ steps:
     ios:
       text: "Tippe oben rechts auf das Häkchen."
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Aus einer Mahlzeit sind die Einträge schon die Zutaten. Wiegt das fertige Gericht weniger als die Zutaten, trag das Fertiggewicht ein (siehe Garverlust).

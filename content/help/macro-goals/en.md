@@ -30,7 +30,6 @@ steps:
       image: ./assets/en/android/4.webp
     ios:
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 The calculated grams follow your daily target and change with it.

@@ -29,7 +29,6 @@ steps:
       image: ./assets/en/android/4.webp
     ios:
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 Until there’s a decision, you use your own version. If it isn’t accepted, it stays in your Library as a private product.

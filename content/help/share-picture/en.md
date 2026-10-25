@@ -27,7 +27,6 @@ steps:
       image: ./assets/en/android/4.webp
     ios:
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 With “Card”, swipe across the preview to pick another design. With “Your photo” the sticker goes on a photo of your own. If Instagram is installed, “Share to Instagram Story” puts the picture straight into your story.

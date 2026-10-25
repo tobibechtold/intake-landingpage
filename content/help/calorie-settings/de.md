@@ -29,7 +29,6 @@ steps:
     ios:
       text: "Unter „Tages- und Wochenziele“ geht es zum Wochenbudget und zu Zielen je Wochentag."
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Unter „Tagesziel“ siehst du sofort, was aus deinen Angaben wird. Auf dem iPhone kann der Erhaltungsbedarf auch aus der Ruheenergie in Apple Health kommen.

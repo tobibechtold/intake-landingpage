@@ -29,7 +29,6 @@ steps:
     ios:
       text: "With “Manually” selected, tap “Move balance” and put the leftover calories on a day."
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 A marked day counts as 0 kcal. “Remove mark” takes the mark back. “Weekly budget settings” at the bottom takes you to the settings.

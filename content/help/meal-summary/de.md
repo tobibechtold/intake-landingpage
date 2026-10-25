@@ -24,7 +24,6 @@ steps:
     ios:
       text: "Im Menü (drei Punkte im Kreis) findest du „Rezept erstellen“, „Mahlzeit kopieren“ und „Mahlzeit löschen“."
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 „Mahlzeit löschen“ entfernt nach einer Rückfrage alle Einträge der Mahlzeit. Auf dem iPhone werden dabei auch die Daten entfernt, die Intake an Apple Health übertragen hat.

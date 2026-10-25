@@ -33,7 +33,6 @@ steps:
     ios:
       text: "Danach wählt man Tag und Mahlzeit, nimmt bei Bedarf Häkchen weg und tippt oben rechts auf das Häkchen."
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Einen einzelnen Eintrag teilst du genauso: Tippe auf den Eintrag und wähle „Als Datei senden“.

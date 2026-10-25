@@ -26,7 +26,6 @@ steps:
     ios:
       text: "Set your height and weight with minus and plus."
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 Below that you pick the “Starting weight” that “Total” on Today counts from. With “Imperial” under Settings > “Region & Units” you enter feet, inches and pounds.

@@ -31,7 +31,6 @@ steps:
     ios:
       text: "Tippe oben rechts auf das Häkchen."
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Fehlt deine Sportart, wähle unter „Typ“ „Neue eigene Aktivität…“ und leg sie mit Name, Emoji und Kalorien pro Stunde an. Auf Android heißt das Feld „Trainingsart“ und der Eintrag „+ Eigene hinzufügen“.

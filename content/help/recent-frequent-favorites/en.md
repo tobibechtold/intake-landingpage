@@ -22,7 +22,6 @@ steps:
       image: ./assets/en/android/3.webp
     ios:
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 To remove a food from “Recent” or “Frequent”, swipe it to the left or press and hold it. It stays in the database.

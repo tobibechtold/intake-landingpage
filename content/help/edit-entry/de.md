@@ -33,7 +33,6 @@ steps:
     ios:
       text: "Zum Löschen tippe oben auf den Papierkorb."
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Weiter unten änderst du Mahlzeit und Uhrzeit. Auf dem iPhone teilst du den Eintrag im Menü mit den drei Punkten als Bild oder Datei oder speicherst ihn als Favorit. Auf Android liegen die Buttons zum Teilen als Bild oder Datei oben neben dem Papierkorb.

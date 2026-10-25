@@ -24,7 +24,6 @@ steps:
     ios:
       text: "Tap “More” next to “Macros” to see every macro with its target."
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 Tap the ring and it shows the calories you’ve eaten instead of the ones left. Its color tells you how the day is going: green is on track, orange is getting tight, red is over target.

@@ -34,7 +34,6 @@ steps:
     ios:
       text: "Tap the checkmark at the top right. Intake saves the product and adds it to the meal."
       image: ./assets/en/ios/5.webp
-draft: true
 ---
 
 Further down, “Add portion size” sets up your own portions, for example “1 roll”. With “Submit for review” you suggest the product for the shared database.

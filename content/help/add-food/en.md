@@ -29,7 +29,6 @@ steps:
     ios:
       text: "Choose the portion and tap the checkmark at the top right."
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 Tap the meal’s name at the top to switch meals. The plus in a row adds a food straight away with your usual amount.

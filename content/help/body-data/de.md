@@ -26,7 +26,6 @@ steps:
     ios:
       text: "Stell Größe und Gewicht mit Minus und Plus ein."
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Darunter wählst du das „Startgewicht“, ab dem „Gesamt“ auf Heute zählt. Mit „Imperial“ unter Einstellungen > „Region & Einheiten“ gibst du Fuß, Zoll und Pfund ein.

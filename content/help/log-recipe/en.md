@@ -33,7 +33,6 @@ steps:
     ios:
       text: "Tap the checkmark at the top right."
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 If you change or add ingredients while logging, that applies to this entry only. The saved recipe stays as it is.

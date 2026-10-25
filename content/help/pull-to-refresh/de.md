@@ -6,7 +6,6 @@ related:
   - steps-workouts
   - sync-between-devices
   - health-read-write
-draft: true
 ---
 
 Normalerweise musst du das nicht tun: Intake holt neue Daten, sobald du die App öffnest. Ziehen hilft, wenn deine Uhr oder eine andere App gerade erst Schritte oder ein Training übertragen hat.

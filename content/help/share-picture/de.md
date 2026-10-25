@@ -27,7 +27,6 @@ steps:
       image: ./assets/de/android/4.webp
     ios:
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Bei „Karte“ wischst du über die Vorschau, um ein anderes Design zu wählen. Mit „Dein Foto“ legst du den Sticker auf ein eigenes Foto. Ist Instagram installiert, teilst du das Bild mit „In Instagram Story teilen“ direkt in deine Story.

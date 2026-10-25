@@ -23,7 +23,6 @@ steps:
     ios:
       text: "Tippe auf einen Tag und dann auf „Fertig“, um ihn zu öffnen."
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Mit den Pfeilen blätterst du zu anderen Monaten. Tage ohne Einträge bleiben ohne Farbe.

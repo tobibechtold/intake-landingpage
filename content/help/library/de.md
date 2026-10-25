@@ -22,7 +22,6 @@ steps:
       image: ./assets/de/android/3.webp
     ios:
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Mit „Bibliothek durchsuchen“ suchst du in allen Bereichen auf einmal.

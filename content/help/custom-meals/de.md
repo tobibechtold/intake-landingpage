@@ -33,7 +33,6 @@ steps:
     ios:
       text: "Tippe oben rechts auf das Häkchen."
       image: ./assets/de/ios/4.webp
-draft: true
 ---
 
 Frühstück, Mittagessen, Abendessen und Snacks kannst du ausblenden, aber nicht löschen. Eine eigene Mahlzeit löschst du in derselben Liste. Ihre Einträge bleiben erhalten und stehen auf Heute als „Archiviert“.

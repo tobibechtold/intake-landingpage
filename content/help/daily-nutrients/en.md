@@ -29,7 +29,6 @@ steps:
       image: ./assets/en/android/4.webp
     ios:
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 For recipes, Intake counts the individual ingredients. To see the nutrients of a single meal, tap the meal’s name.

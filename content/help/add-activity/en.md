@@ -31,7 +31,6 @@ steps:
     ios:
       text: "Tap the checkmark at the top right."
       image: ./assets/en/ios/4.webp
-draft: true
 ---
 
 If your sport is missing, choose “New custom activity…” under “Type” and set it up with a name, an emoji and calories per hour. On Android the field is “Workout type” and the entry is “+ Add custom”.

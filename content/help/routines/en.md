@@ -28,7 +28,6 @@ steps:
     ios:
       text: "The routine is at the top under “Routines”. Set to “Each ingredient”, “Add all” logs it; otherwise tap it and choose the amount."
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 Under “Routines” in the Library, “Remove from routines” takes a recipe out again. The recipe itself stays.
