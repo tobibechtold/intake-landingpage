@@ -24,4 +24,4 @@ steps:
       image: ./assets/de/android/5.webp
 ---
 
-Das Dashboard mit dem Kalorienring bleibt immer sichtbar. Mit „Auf Standard zurücksetzen“ ganz unten holst du die ursprüngliche Seite zurück.
+Auf dem iPhone bleibt das Dashboard mit dem Kalorienring immer sichtbar, auf Android kannst du es mit dem Schalter „Dashboard“ ausblenden. Mit „Auf Standard zurücksetzen“ ganz unten holst du die ursprüngliche Seite zurück.

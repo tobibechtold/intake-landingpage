@@ -27,4 +27,4 @@ steps:
       image: ./assets/de/android/5.webp
 ---
 
-Markierte Getränke stehen in der Karte unter „Weitere Getränke“. Wasser, das du in anderen Apps einträgst, zeigt Intake auf dem iPhone, solange unter Einstellungen > „Apple Health“ „Wasser aus anderen Apps“ eingeschaltet ist (Standard).
+Markierte Getränke stehen in der Karte unter „Weitere Getränke“ (Android: „Andere Getränke“). Wasser, das du in anderen Apps einträgst, zeigt Intake auf dem iPhone, solange unter Einstellungen > „Apple Health“ „Wasser aus anderen Apps“ eingeschaltet ist (Standard).

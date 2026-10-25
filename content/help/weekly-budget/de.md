@@ -34,6 +34,6 @@ steps:
 ## Automatisch oder manuell
 
 - **Automatisch verteilen:** Intake verteilt den Saldo gleichmäßig auf heute bis Sonntag, deine Tagesziele steigen oder sinken also von selbst. Dabei fällt kein Tag unter deinen Grundumsatz und nie unter 1.200 kcal. Was nicht mehr passt, bleibt im Saldo.
-- **Manuell:** Deine Tagesziele bleiben, wie sie sind. Übrige Kalorien legst du selbst auf einen Tag, mit „Saldo verschieben“ in der Übersicht oder über „Ziel“ > „Woher“ > „Aus dem Wochensaldo“.
+- **Manuell:** Deine Tagesziele bleiben, wie sie sind. Übrige Kalorien legst du selbst auf einen Tag, mit „Saldo verschieben“ in der Übersicht (Android: „Aus dem Wochensaldo übertragen“) oder über „Ziel“ > „Woher“ > „Aus dem Wochensaldo“. Auf Android heißt dieser Bereich „Woher kommen die Kalorien?“.
 
 Hast du einen Tag bewusst nichts gegessen, markiere ihn in der Übersicht mit „Nichts gegessen“. Sonst zählt er als „nichts eingetragen“ und nicht mit.

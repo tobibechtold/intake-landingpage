@@ -30,7 +30,7 @@ steps:
 
 **Zählt Aktivität zu deinem Ziel?** Das legst du unter Einstellungen > „Aktivität“ fest: ob Aktivität dein Tagesziel erhöht, ob alle Aktivität oder nur Workouts zählen und welcher Anteil davon.
 
-**Workout doppelt gezählt?** Apple Health rechnet Workout-Kalorien meist schon in die Aktivitätskalorien ein. Mit [„Workouts ohne Doppelzählung“](/hilfe/workouts-ohne-doppelzaehlung) zählt ein Workout nur die Kalorien, die dort noch fehlen.
+**iPhone: Workout doppelt gezählt?** Apple Health rechnet Workout-Kalorien meist schon in die Aktivitätskalorien ein. Mit [„Workouts ohne Doppelzählung“](/hilfe/workouts-ohne-doppelzaehlung) zählt ein Workout nur die Kalorien, die dort noch fehlen.
 
 **iPhone ohne Apple Watch:** „Kalorien aus Schritten schätzen“ unter Einstellungen > „Apple Health“ springt ein, wenn Apple Health Schritte, aber keine Aktivitätskalorien meldet.
 

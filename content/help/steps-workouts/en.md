@@ -30,7 +30,7 @@ steps:
 
 **Does activity count toward your goal?** You decide under Settings > “Activity”: whether activity raises your daily target, whether all activity or only workouts count, and how much of it.
 
-**Workout counted twice?** Apple Health usually already includes workout calories in your active calories. With [“Count workouts without overlap”](/en/help/workouts-without-double-counting), a workout only adds the calories that are still missing there.
+**iPhone: workout counted twice?** Apple Health usually already includes workout calories in your active calories. With [“Count workouts without overlap”](/en/help/workouts-without-double-counting), a workout only adds the calories that are still missing there.
 
 **iPhone without Apple Watch:** “Estimate calories from steps” under Settings > “Apple Health” steps in when Apple Health reports steps but no active calories.
 

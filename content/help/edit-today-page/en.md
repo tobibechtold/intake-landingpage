@@ -24,4 +24,4 @@ steps:
       image: ./assets/en/android/5.webp
 ---
 
-The Dashboard with the calorie ring always stays visible. “Reset to default” at the very bottom brings back the original page.
+On iPhone the Dashboard with the calorie ring always stays visible, on Android you can hide it with the “Dashboard” switch. “Reset to default” at the very bottom brings back the original page.

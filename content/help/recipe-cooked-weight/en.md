@@ -23,4 +23,4 @@ steps:
       image: ./assets/en/android/4.webp
 ---
 
-**Copy a recipe:** in the recipe, tap the three-dot menu at the top, then “Duplicate”. In the recipe list, a long press on a recipe does the same.
+**Copy a recipe:** on iPhone, tap the three-dot menu at the top of the recipe, then “Duplicate”, or long-press the recipe in the list. On Android, tap “Duplicate” at the top of the recipe.

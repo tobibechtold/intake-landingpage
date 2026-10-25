@@ -23,4 +23,4 @@ steps:
       image: ./assets/de/android/4.webp
 ---
 
-**Rezept kopieren:** Tippe im Rezept oben auf das Menü mit den drei Punkten und dann auf „Duplizieren“. In der Rezeptliste geht das auch, wenn du lange auf ein Rezept drückst.
+**Rezept kopieren:** Auf dem iPhone tippst du im Rezept oben auf das Menü mit den drei Punkten und dann auf „Duplizieren“, in der Rezeptliste geht das auch mit langem Drücken. Auf Android tippst du im Rezept oben direkt auf „Duplizieren“.

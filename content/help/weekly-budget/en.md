@@ -34,6 +34,6 @@ steps:
 ## Automatic or manual
 
 - **Spread automatically:** Intake spreads the balance evenly over today through Sunday, so your day goals go up or down on their own. No day drops below your basal metabolic rate, and never below 1,200 kcal. Whatever doesn’t fit stays in the balance.
-- **Manually:** your day goals stay as planned. You put leftover calories on a day yourself, with “Move balance” in the overview or through “Target” > “Taken from” > “From the weekly balance”.
+- **Manually:** your day goals stay as planned. You put leftover calories on a day yourself, with “Move balance” in the overview (Android: “Move from weekly balance”) or through “Target” > “Taken from” > “From the weekly balance”. On Android that section is called “Where do the calories come from?”.
 
 If you deliberately ate nothing on a day, mark it “Ate nothing” in the overview. Otherwise it shows “nothing logged” and doesn’t count.
