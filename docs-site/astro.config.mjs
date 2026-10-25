@@ -5,6 +5,10 @@ import { PLATFORM_SCRIPT } from './src/scripts/platform.mjs';
 
 export default defineConfig({
   site: 'https://docs.getintake.de',
+  // Pin this folder's tsconfig. Left to search, Vite also reads the landing
+  // page's tsconfig one level up, whose "astro/tsconfigs/strict" only resolves
+  // where the landing page's packages are installed (not on Vercel).
+  vite: { tsconfig: './tsconfig.json' },
   integrations: [
     starlight({
       title: 'Intake Docs',
