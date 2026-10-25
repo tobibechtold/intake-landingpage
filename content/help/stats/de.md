@@ -14,8 +14,9 @@ steps:
     ios:
       text: "Jede Karte zeigt die aktuelle Woche. Tippe auf eine Karte, um ihre Details zu öffnen."
       image: ./assets/de/ios/2.webp
-  - text: "Wähle oben Woche, Monat oder Jahr. Mit den Pfeilen blätterst du zu früheren Zeiträumen."
+  - text: "Wähle oben Woche, Monat oder Jahr und blättere zu früheren Zeiträumen."
     ios:
+      text: "Wähle oben Woche, Monat oder Jahr. Mit den Pfeilen blätterst du zu früheren Zeiträumen."
       image: ./assets/de/ios/3.webp
   - text: "Tippe auf einen Balken, um seinen genauen Wert zu sehen."
     ios:

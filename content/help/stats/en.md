@@ -14,8 +14,9 @@ steps:
     ios:
       text: "Each card shows the current week. Tap a card to open its details."
       image: ./assets/en/ios/2.webp
-  - text: "Choose Week, Month or Year at the top. The arrows take you to earlier periods."
+  - text: "Choose Week, Month or Year at the top and page back to earlier periods."
     ios:
+      text: "Choose Week, Month or Year at the top. The arrows take you to earlier periods."
       image: ./assets/en/ios/3.webp
   - text: "Tap a bar to see its exact value."
     ios:

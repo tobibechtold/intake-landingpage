@@ -17,4 +17,4 @@ steps:
 draft: true
 ---
 
-„Fasten beenden“ stellt bis zum nächsten geplanten Fasten auf Essen um. Auf dem iPhone startet „Fasten starten“ ein Fasten mit der Länge aus deinem Zeitplan, danach folgt die Essenszeit und dann wieder der Zeitplan. Mit iCloud-Sync zeigen deine anderen Apple-Geräte dasselbe Fasten.
+Auf dem iPhone stellt „Fasten beenden“ bis zum nächsten geplanten Fasten auf Essen um, und „Fasten starten“ startet ein Fasten mit der Länge aus deinem Zeitplan, danach folgt die Essenszeit und dann wieder der Zeitplan. Mit iCloud-Sync zeigen deine anderen Apple-Geräte dasselbe Fasten.

@@ -17,4 +17,4 @@ steps:
 draft: true
 ---
 
-Ending a fast switches you to eating until your next scheduled fast. On iPhone, “Start Fasting” begins a fast as long as the one in your schedule, then your eating time, and after that your schedule takes over again. With iCloud sync, your other Apple devices show the same fast.
+On iPhone, “End Fasting” switches you to eating until your next scheduled fast, and “Start Fasting” begins a fast as long as the one in your schedule, then your eating time, and after that your schedule takes over again. With iCloud sync, your other Apple devices show the same fast.

@@ -1,16 +1,17 @@
 ---
 id: water-goal
 title: "Wasserziel und Glasgröße einstellen"
-short: "Wasserziel und Glasgröße stellst du direkt in der Karte „Wasser“ auf Heute ein, über den Stift oben rechts. In den Einstellungen gibt es dafür keinen Eintrag."
+short: "Wasserziel und Glasgröße stellst du direkt in der Karte „Wasser“ auf Heute ein, über den Stift. In den Einstellungen gibt es dafür keinen Eintrag."
 related:
   - log-water
   - drinks-water-goal
   - water-reminders
 steps:
-  - text: "Tippe auf Heute in der Karte „Wasser“ oben auf den Stift."
+  - text: "Tippe auf Heute in der Karte „Wasser“ auf den Stift."
     ios:
+      text: "Tippe auf Heute in der Karte „Wasser“ oben rechts auf den Stift."
       image: ./assets/de/ios/1.webp
-  - text: "Stell dein Tagesziel und die Glasgröße in Millilitern ein."
+  - text: "Stell dein Tagesziel und die Glasgröße ein."
     ios:
       text: "Stell mit Minus und Plus „Tagesziel (ml)“ und „Glasgröße (ml)“ ein, oder tippe auf die Zahl und gib sie ein."
       image: ./assets/de/ios/2.webp

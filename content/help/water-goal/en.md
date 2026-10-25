@@ -1,16 +1,17 @@
 ---
 id: water-goal
 title: "Set your water goal and glass size"
-short: "You set your water goal and glass size right on the “Water” card on Today, with the pencil at the top right. There is no entry for it in Settings."
+short: "You set your water goal and glass size right on the “Water” card on Today, with the pencil. There is no entry for it in Settings."
 related:
   - log-water
   - drinks-water-goal
   - water-reminders
 steps:
-  - text: "On Today, tap the pencil at the top of the “Water” card."
+  - text: "On Today, tap the pencil on the “Water” card."
     ios:
+      text: "On Today, tap the pencil at the top right of the “Water” card."
       image: ./assets/en/ios/1.webp
-  - text: "Set your daily goal and your glass size in millilitres."
+  - text: "Set your daily goal and your glass size."
     ios:
       text: "Set “Daily goal (ml)” and “Glass size (ml)” with minus and plus, or tap the number and type it."
       image: ./assets/en/ios/2.webp

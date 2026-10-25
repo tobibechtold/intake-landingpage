@@ -7,7 +7,7 @@ related:
   - calorie-stats
   - daily-nutrients
 steps:
-  - text: "In Stats, open editing at the top right."
+  - text: "In Stats, open editing."
     ios:
       text: "In Stats, tap “Edit” at the top right."
       image: ./assets/en/ios/1.webp
@@ -19,7 +19,7 @@ steps:
     ios:
       text: "Drag a card by the handle on the right to another place."
       image: ./assets/en/ios/3.webp
-  - text: "Save your changes."
+  - text: "Close editing. Stats then shows your cards."
     ios:
       text: "Tap “Done” at the top right."
       image: ./assets/en/ios/4.webp

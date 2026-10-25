@@ -10,8 +10,9 @@ steps:
   - text: "Tippe auf Heute in der Karte „Gewicht“ auf die Zahl und gib dein Gewicht ein."
     ios:
       image: ./assets/de/ios/1.webp
-  - text: "Mit Minus und Plus änderst du es in Schritten von 0,1 kg."
+  - text: "Mit Minus und Plus änderst du es in kleinen Schritten."
     ios:
+      text: "Mit Minus und Plus änderst du es in Schritten von 0,1 kg."
       image: ./assets/de/ios/2.webp
   - text: "Intake speichert das Gewicht von selbst. Darunter siehst du, wie es sich verändert hat."
     ios:

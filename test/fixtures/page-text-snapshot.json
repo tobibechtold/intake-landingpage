@@ -104,8 +104,8 @@
     "sha": "cc7c155269435819"
   },
   "/en/help/drinks-water-goal": {
-    "words": 345,
-    "sha": "47fc9487eeccdd05"
+    "words": 341,
+    "sha": "f52c6a4e5bea6342"
   },
   "/en/help/edit-entry": {
     "words": 385,
@@ -113,7 +113,7 @@
   },
   "/en/help/edit-stats": {
     "words": 318,
-    "sha": "22171e128c64e503"
+    "sha": "06dd9029cd083f0e"
   },
   "/en/help/edit-today-page": {
     "words": 361,
@@ -124,8 +124,8 @@
     "sha": "af92245be48f1920"
   },
   "/en/help/fasting-notifications": {
-    "words": 296,
-    "sha": "f3ea2ea82e473590"
+    "words": 294,
+    "sha": "a2c8945fd3dfa18c"
   },
   "/en/help/food-photos": {
     "words": 298,
@@ -152,12 +152,12 @@
     "sha": "1e11aed25e078698"
   },
   "/en/help/log-water": {
-    "words": 411,
-    "sha": "f34da41ae4a52d4c"
+    "words": 407,
+    "sha": "1aa103277ce0dec9"
   },
   "/en/help/log-weight": {
-    "words": 304,
-    "sha": "e27ce1e0e406e817"
+    "words": 302,
+    "sha": "8a0aff7e513b392f"
   },
   "/en/help/macro-goals": {
     "words": 394,
@@ -253,15 +253,15 @@
   },
   "/en/help/start-end-fast": {
     "words": 321,
-    "sha": "911f893c1fb16515"
+    "sha": "1fe829bdba0a32b1"
   },
   "/en/help/starting-weight": {
     "words": 304,
     "sha": "83dfb235c337f4a4"
   },
   "/en/help/stats": {
-    "words": 340,
-    "sha": "0d80b5e4004f548f"
+    "words": 339,
+    "sha": "ca82ea89e1ff38c3"
   },
   "/en/help/steps-workouts": {
     "words": 520,
@@ -284,12 +284,12 @@
     "sha": "deb8092b2e88b38e"
   },
   "/en/help/water-goal": {
-    "words": 329,
-    "sha": "310ff08a5595fc4a"
+    "words": 319,
+    "sha": "f2efe95ad733b83e"
   },
   "/en/help/water-reminders": {
-    "words": 320,
-    "sha": "687a88f1559f6e57"
+    "words": 315,
+    "sha": "1991dea4b5617eca"
   },
   "/en/help/weekday-targets": {
     "words": 347,
@@ -508,28 +508,28 @@
     "sha": "ce79fcc99a4adcd4"
   },
   "/hilfe/fasten-mitteilungen": {
-    "words": 284,
-    "sha": "41386bc50f3ee8a2"
+    "words": 281,
+    "sha": "bf0301132be61bd4"
   },
   "/hilfe/fasten-sperrbildschirm": {
     "words": 280,
     "sha": "066d60e9761143eb"
   },
   "/hilfe/fasten-starten-beenden": {
-    "words": 290,
-    "sha": "e28b2e59dccea6f9"
+    "words": 291,
+    "sha": "8cd7b35e24195129"
   },
   "/hilfe/fotos-an-eintraegen": {
     "words": 293,
     "sha": "91a797f7be48fd75"
   },
   "/hilfe/getraenke-wasserziel": {
-    "words": 319,
-    "sha": "6fcc6c1b715599b1"
+    "words": 317,
+    "sha": "54ca95dda616d606"
   },
   "/hilfe/gewicht-eintragen": {
-    "words": 299,
-    "sha": "18f909c063c07c63"
+    "words": 297,
+    "sha": "82b87b599d0d18f6"
   },
   "/hilfe/gewichtsverlauf": {
     "words": 331,
@@ -672,12 +672,12 @@
     "sha": "669fb156ac974e68"
   },
   "/hilfe/statistik": {
-    "words": 334,
-    "sha": "76f736d613b58c80"
+    "words": 329,
+    "sha": "fb9c4b24989b5315"
   },
   "/hilfe/statistik-bearbeiten": {
-    "words": 317,
-    "sha": "9f5ca852f081f0ff"
+    "words": 319,
+    "sha": "b98b8150f6ae209d"
   },
   "/hilfe/statistik-kalorien": {
     "words": 352,
@@ -696,8 +696,8 @@
     "sha": "d2420f63178e7452"
   },
   "/hilfe/trinkerinnerungen": {
-    "words": 293,
-    "sha": "45a2c1f907500611"
+    "words": 290,
+    "sha": "127b49739a16ae8a"
   },
   "/hilfe/verlauf-haeufig-favoriten": {
     "words": 315,
@@ -708,12 +708,12 @@
     "sha": "16d812e67d9221c3"
   },
   "/hilfe/wasser-eintragen": {
-    "words": 397,
-    "sha": "8b367d5a993b6ae3"
+    "words": 395,
+    "sha": "69175de01081bfb3"
   },
   "/hilfe/wasserziel": {
-    "words": 303,
-    "sha": "de67867b605e8c43"
+    "words": 296,
+    "sha": "0d40780640b68096"
   },
   "/hilfe/wochenbudget": {
     "words": 518,
