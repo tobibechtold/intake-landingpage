@@ -15,4 +15,4 @@ steps:
   - text: "The pencil at the top of the card sets your water goal and glass size."
 ---
 
-Marked drinks are listed on the card under “Other beverages”. Water you log in other apps shows up on iPhone when you turn on “Water from other apps” under Settings > “Apple Health”.
+Marked drinks are listed on the card under “Other beverages”. Water you log in other apps shows up on iPhone as long as “Water from other apps” under Settings > “Apple Health” is on (the default).

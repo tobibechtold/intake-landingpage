@@ -14,6 +14,6 @@ steps:
 
 ## iPhone: Apple Health
 
-**Intake liest** Aktivitätskalorien, Ruheenergie, Schritte, Strecke, Workouts, Gewicht, Größe, Taillenumfang und Körperfett. Geburtsdatum und Geschlecht nutzt Intake nur, um bei der Einrichtung deine Körperdaten vorzufüllen. Wasser aus anderen Apps liest Intake nur, wenn du „Wasser aus anderen Apps“ einschaltest.
+**Intake liest** Aktivitätskalorien, Ruheenergie, Schritte, Strecke, Workouts, Gewicht, Größe, Taillenumfang und Körperfett. Geburtsdatum und Geschlecht nutzt Intake nur, um bei der Einrichtung deine Körperdaten vorzufüllen. Wasser aus anderen Apps liest Intake, solange „Wasser aus anderen Apps“ eingeschaltet ist (Standard); unter Einstellungen > „Apple Health“ kannst du es ausschalten.
 
 **Intake schreibt** jedes Lebensmittel mit seinen Nährwerten, dein Wasser, dein Gewicht und, wenn du es erlaubst, Taillenumfang und Körperfett. Löschst du einen Eintrag in Intake, verschwinden auch seine Daten in Apple Health.

@@ -24,5 +24,5 @@ steps:
 
 - Die Anpassung ist beim Abnehmen anfangs minus 500 kcal, beim Zunehmen plus 500 kcal. Der Regler reicht von minus bis plus 1.000 kcal.
 - Ein „Fixes Tagesziel“ unter „Erweitert“ ersetzt die ganze Berechnung.
-- Dein Tagesziel liegt nie unter 800 kcal.
-- Einen einzelnen Tag änderst du auf Heute über „Ziel“, feste Änderungen je Wochentag unter „Tages- und Wochenziele“.
+- Dein Tagesziel fällt nie unter einen Mindestwert: 800 kcal auf dem iPhone, 1.200 kcal auf Android.
+- Einen einzelnen Tag änderst du auf Heute über „Ziel“, feste Änderungen je Wochentag unter Einstellungen > „Kalorien“ (auf dem iPhone in „Tages- und Wochenziele“, auf Android in „Tagesabhängige Ziele“).

@@ -24,5 +24,5 @@ steps:
 
 - The adjustment starts at minus 500 kcal for losing and plus 500 kcal for gaining. The slider goes from minus to plus 1,000 kcal.
 - A “Fixed daily target” under “Advanced” replaces the whole calculation.
-- Your daily target never drops below 800 kcal.
-- To change a single day, tap “Target” on Today. Fixed changes per weekday live under “Daily and weekly goals”.
+- Your daily target never drops below a minimum: 800 kcal on iPhone, 1,200 kcal on Android.
+- To change a single day, tap “Target” on Today. Fixed changes per weekday live under Settings > “Calories” (on iPhone in “Daily and weekly goals”, on Android in the day-based targets).

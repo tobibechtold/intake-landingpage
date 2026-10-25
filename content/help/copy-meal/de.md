@@ -8,7 +8,7 @@ related:
   - routines
 steps:
   - text: "Tippe auf Heute auf den Namen der Mahlzeit, zum Beispiel Frühstück."
-  - text: "Tippe in der Mahlzeitübersicht oben rechts auf das Menü mit den drei Punkten und dann auf „Mahlzeit kopieren“."
+  - text: "Tippe in der Mahlzeitübersicht oben rechts auf das Menü (drei Punkte im Kreis) und dann auf „Mahlzeit kopieren“."
   - text: "Nimm unter „Zu kopierende Produkte“ den Haken bei allem weg, was nicht mitkommen soll."
   - text: "Wähle im Kalender das Zieldatum und darunter die Zielmahlzeit."
   - text: "Tippe oben rechts auf das Häkchen."

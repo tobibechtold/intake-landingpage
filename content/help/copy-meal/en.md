@@ -8,7 +8,7 @@ related:
   - routines
 steps:
   - text: "On Today, tap the name of the meal, for example Breakfast."
-  - text: "In the Meal Summary, tap the three-dot menu at the top right, then “Copy Meal”."
+  - text: "In the Meal Summary, tap the menu (three dots in a circle) at the top right, then “Copy Meal”."
   - text: "Under “Products to Copy”, untick anything that should stay behind."
   - text: "Pick the destination date in the calendar and the destination meal below it."
   - text: "Tap the checkmark at the top right."

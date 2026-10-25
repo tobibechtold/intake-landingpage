@@ -15,4 +15,4 @@ steps:
   - text: "Über den Stift oben in der Karte stellst du Wasserziel und Glasgröße ein."
 ---
 
-Markierte Getränke stehen in der Karte unter „Weitere Getränke“. Wasser, das du in anderen Apps einträgst, zeigt Intake auf dem iPhone, wenn du unter Einstellungen > „Apple Health“ „Wasser aus anderen Apps“ einschaltest.
+Markierte Getränke stehen in der Karte unter „Weitere Getränke“. Wasser, das du in anderen Apps einträgst, zeigt Intake auf dem iPhone, solange unter Einstellungen > „Apple Health“ „Wasser aus anderen Apps“ eingeschaltet ist (Standard).

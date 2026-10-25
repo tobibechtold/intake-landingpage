@@ -9,7 +9,7 @@ related:
   - calorie-goal
 steps:
   - text: "On Today, tap the gear at the top, then “Apple Health”."
-  - text: "Tap “Connect Apple Health” and allow access."
+  - text: "The first time, tap “Connect Apple Health” and allow access; after that the page shows “Use Apple Health”."
   - text: "The “Activity” card on Today then shows active calories, steps, distance and your workouts."
   - text: "Tap a workout to include or exclude its calories from “Total burned”."
   - text: "No watch? Log a workout yourself with “Add” on the “Activity” card."

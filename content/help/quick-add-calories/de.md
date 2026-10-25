@@ -8,7 +8,7 @@ related:
   - add-food
 steps:
   - text: "Tippe auf Heute bei der Mahlzeit auf das Plus."
-  - text: "Tippe oben auf „Erstellen“."
+  - text: "Lass das Suchfeld leer und tippe oben auf „Erstellen“."
   - text: "Wähle oben „Nur schnell hinzufügen“."
   - text: "Gib einen Namen und die Kalorien ein; Fett, Kohlenhydrate und Protein kannst du dazuschreiben."
   - text: "Tippe oben rechts auf das Häkchen."

@@ -14,6 +14,6 @@ steps:
 
 ## iPhone: Apple Health
 
-**Intake reads** active calories, resting energy, steps, distance, workouts, weight, height, waist circumference and body fat. It uses your date of birth and sex only to prefill your body data during setup. It reads water from other apps only when you turn on “Water from other apps”.
+**Intake reads** active calories, resting energy, steps, distance, workouts, weight, height, waist circumference and body fat. It uses your date of birth and sex only to prefill your body data during setup. It reads water from other apps as long as “Water from other apps” is on (the default); you can turn it off under Settings > “Apple Health”.
 
 **Intake writes** every food with its nutrition values, your water, your weight and, if you allow it, waist circumference and body fat. When you delete an entry in Intake, its data disappears from Apple Health too.

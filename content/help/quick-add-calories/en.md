@@ -8,7 +8,7 @@ related:
   - add-food
 steps:
   - text: "On Today, tap the plus next to the meal."
-  - text: "Tap “Create” at the top."
+  - text: "With the search field empty, tap “Create” at the top."
   - text: "Choose “Quick add only” at the top."
   - text: "Enter a name and the calories; you can add fat, carbs and protein if you like."
   - text: "Tap the checkmark at the top right."
