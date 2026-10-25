@@ -13,14 +13,11 @@ steps:
   - text: "Daneben stehen dein „Ziel“, was du „Gegessen“ hast und was du durch Aktivität „Verbrannt“ hast."
     ios:
       image: ./assets/de/ios/2.webp
-  - text: "Tippe bei „Makros“ auf „Mehr“, um alle Makros mit ihren Zielen zu sehen."
+  - text: "Klapp die „Makros“ auf, um alle Makros mit ihren Zielen zu sehen."
     ios:
+      text: "Tippe bei „Makros“ auf „Mehr“, um alle Makros mit ihren Zielen zu sehen."
       image: ./assets/de/ios/3.webp
 draft: true
 ---
 
-Tippst du auf den Ring, zeigt er die gegessenen Kalorien statt der übrigen. Intake merkt sich deine Wahl.
-
-Die Farbe des Rings zeigt, wie dein Tag läuft: grün im Plan, orange knapp, rot über dem Ziel. Auf dem iPhone schaltest du das unter Einstellungen > „Darstellung“ > „Kalorienring nach Status färben“ ab.
-
-Tippst du auf „Ziel“, passt du das Ziel für diesen Tag an.
+Tippst du auf den Ring, zeigt er die gegessenen statt der übrigen Kalorien. Seine Farbe zeigt, wie dein Tag läuft: grün im Plan, orange knapp, rot über dem Ziel.

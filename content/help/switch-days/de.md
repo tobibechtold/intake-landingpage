@@ -10,8 +10,9 @@ steps:
   - text: "Tippe in der Wochenleiste oben auf einen Tag oder wische auf Heute nach links oder rechts."
     ios:
       image: ./assets/de/ios/1.webp
-  - text: "Tippe oben auf das Kalendersymbol, wähle einen Tag und tippe auf „Fertig“."
+  - text: "Tippe oben auf das Kalendersymbol und wähle einen Tag."
     ios:
+      text: "Tippe oben auf das Kalendersymbol, wähle einen Tag und tippe auf „Fertig“."
       image: ./assets/de/ios/2.webp
   - text: "Auf einem anderen Tag bringt dich „Heute“ oben zurück zum heutigen Tag."
     ios:
@@ -20,4 +21,4 @@ steps:
 draft: true
 ---
 
-Das Wischen zwischen Tagen schaltest du unter Einstellungen > „Darstellung“ > „Zwischen Tagen wischen“ aus.
+Das Wischen zwischen Tagen schaltest du unter Einstellungen > „Darstellung“ mit „Zwischen Tagen wischen“ aus.

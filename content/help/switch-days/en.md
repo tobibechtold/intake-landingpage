@@ -10,8 +10,9 @@ steps:
   - text: "Tap a day in the week strip at the top, or swipe left or right on Today."
     ios:
       image: ./assets/en/ios/1.webp
-  - text: "Tap the calendar button at the top, pick a day and tap “Done”."
+  - text: "Tap the calendar button at the top and pick a day."
     ios:
+      text: "Tap the calendar button at the top, pick a day and tap “Done”."
       image: ./assets/en/ios/2.webp
   - text: "On another day, “Today” at the top takes you back to today."
     ios:
@@ -20,4 +21,4 @@ steps:
 draft: true
 ---
 
-You can turn off swiping between days under Settings > “Appearance” > “Swipe between days”.
+You can turn off swiping between days under Settings > “Appearance” with “Swipe between days”.

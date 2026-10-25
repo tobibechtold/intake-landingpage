@@ -15,4 +15,4 @@ draft: true
 
 Halte die Kamera ruhig auf den Barcode, bis Intake das Produkt öffnet. Dann wählst du wie gewohnt die Portion.
 
-Kennt Intake den Barcode nicht, öffnet sich gleich das Formular für ein eigenes Produkt mit diesem Barcode. Trag die Werte von der Packung ein und speichere es. Beim nächsten Scan findet Intake es sofort.
+Kennt Intake den Barcode nicht, öffnet sich auf dem iPhone gleich das Formular für ein eigenes Produkt mit diesem Barcode. Trag die Werte von der Packung ein und speichere es. Beim nächsten Scan findet Intake es sofort.

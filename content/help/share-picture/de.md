@@ -10,7 +10,7 @@ steps:
   - text: "Tippe auf Heute oben auf den Teilen-Button."
     ios:
       image: ./assets/de/ios/1.webp
-  - text: "Wähle, was du teilen willst, zum Beispiel „Ganzer Tag“ oder eine Mahlzeit."
+  - text: "Wähle, was du teilen willst, zum Beispiel den ganzen Tag oder eine Mahlzeit."
     ios:
       image: ./assets/de/ios/2.webp
   - text: "Wähle „Sticker“ oder „Karte“ und das Format „Story 9:16“ oder „Beitrag 4:5“."

@@ -7,8 +7,9 @@ related:
   - create-product
   - settings-appearance
 steps:
-  - text: "Tap an entry, then the picture button next to its name. Choose “Take Photo” or “Choose Photo”."
+  - text: "Tap an entry and add a photo, from the camera or your photos."
     ios:
+      text: "Tap an entry, then the picture button next to its name. Choose “Take Photo” or “Choose Photo”."
       image: ./assets/en/ios/1.webp
   - text: "For your own products and recipes, tap “Add Photo” while creating or editing them."
     ios:

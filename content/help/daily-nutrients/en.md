@@ -13,8 +13,9 @@ steps:
   - text: "You see where you stand and which foods contributed how much."
     ios:
       image: ./assets/en/ios/2.webp
-  - text: "Tap “More”, then “Show all nutrients”."
+  - text: "Expand the macros and tap “Show all nutrients”."
     ios:
+      text: "Tap “More”, then “Show all nutrients”."
       image: ./assets/en/ios/3.webp
   - text: "It lists every nutrient of the day, including fatty acids, vitamins and minerals."
     ios:

@@ -10,14 +10,17 @@ steps:
   - text: "Tippe auf Heute auf den Eintrag."
     ios:
       image: ./assets/de/ios/1.webp
-  - text: "Ändere die Menge mit Minus und Plus oder tippe auf die Zahl. Darunter wechselst du die Einheit."
+  - text: "Ändere die Menge und bei Bedarf die Einheit."
     ios:
+      text: "Ändere die Menge mit Minus und Plus oder tippe auf die Zahl. Darunter wechselst du die Einheit."
       image: ./assets/de/ios/2.webp
-  - text: "Tippe oben rechts auf das Häkchen, um zu speichern."
+  - text: "Speichere die Änderung."
     ios:
+      text: "Tippe oben rechts auf das Häkchen, um zu speichern."
       image: ./assets/de/ios/3.webp
-  - text: "Zum Löschen tippe oben auf den Papierkorb."
+  - text: "Zum Löschen tippe auf „Löschen“."
     ios:
+      text: "Zum Löschen tippe oben auf den Papierkorb."
       image: ./assets/de/ios/4.webp
 draft: true
 ---

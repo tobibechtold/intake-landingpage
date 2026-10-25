@@ -15,4 +15,4 @@ draft: true
 
 Hold the camera steady on the barcode until Intake opens the product. Then choose the portion as usual.
 
-If Intake doesn’t know the barcode, the form for a product of your own opens with that barcode filled in. Enter the values from the package and save it. Next time you scan it, Intake finds it right away.
+If Intake doesn’t know the barcode, on iPhone the form for a product of your own opens with that barcode filled in. Enter the values from the package and save it. Next time you scan it, Intake finds it right away.

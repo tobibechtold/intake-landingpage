@@ -13,14 +13,11 @@ steps:
   - text: "Next to it are your “Target”, what you’ve “Eaten” and what you’ve “Burned” through activity."
     ios:
       image: ./assets/en/ios/2.webp
-  - text: "Tap “More” next to “Macros” to see every macro with its target."
+  - text: "Expand “Macros” to see every macro with its target."
     ios:
+      text: "Tap “More” next to “Macros” to see every macro with its target."
       image: ./assets/en/ios/3.webp
 draft: true
 ---
 
-Tap the ring and it shows the calories you’ve eaten instead of the ones left. Intake remembers your choice.
-
-The ring’s color tells you how the day is going: green is on track, orange is getting tight, red is over target. On iPhone you can turn this off under Settings > “Appearance” > “Color calorie ring by status”.
-
-Tap “Target” to adjust the target for this day.
+Tap the ring and it shows the calories you’ve eaten instead of the ones left. Its color tells you how the day is going: green is on track, orange is getting tight, red is over target.

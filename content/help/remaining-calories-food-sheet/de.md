@@ -1,17 +1,19 @@
 ---
 id: remaining-calories-food-sheet
 title: "Übrige Kalorien beim Hinzufügen"
-short: "Beim Hinzufügen steht unter dem Titel, wie viele Kalorien dir an diesem Tag noch bleiben. So siehst du vor dem Eintragen, wie viel noch passt."
+short: "Beim Hinzufügen siehst du unter dem Titel, wie viele Kalorien dir an diesem Tag noch bleiben. So siehst du vor dem Eintragen, wie viel noch passt."
 related:
   - add-food
   - calorie-ring
   - adjust-day-target
 steps:
-  - text: "Unter dem Namen der Mahlzeit steht, wie viele Kalorien an diesem Tag noch übrig sind."
+  - text: "Unter dem Titel siehst du, wie viele Kalorien an diesem Tag noch übrig sind."
     ios:
+      text: "Unter dem Namen der Mahlzeit steht, wie viele Kalorien an diesem Tag noch übrig sind."
       image: ./assets/de/ios/1.webp
-  - text: "Auch auf den nächsten Seiten, zum Beispiel bei der Portion, steht die Zahl unter dem Titel."
+  - text: "Auch auf den nächsten Seiten, zum Beispiel bei der Portion, siehst du die Zahl."
     ios:
+      text: "Auch auf den nächsten Seiten, zum Beispiel bei der Portion, steht die Zahl unter dem Titel."
       image: ./assets/de/ios/2.webp
 draft: true
 ---

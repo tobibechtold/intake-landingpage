@@ -10,14 +10,16 @@ steps:
   - text: "On Today, tap “Add” on the “Activity” card."
     ios:
       image: ./assets/en/ios/1.webp
-  - text: "Choose the activity under “Type” and how long it lasted under “Duration”."
+  - text: "Choose the activity and how long it lasted."
     ios:
+      text: "Choose the activity under “Type” and how long it lasted under “Duration”."
       image: ./assets/en/ios/2.webp
   - text: "Intake calculates the calories. With “Manual” you enter them yourself."
     ios:
       image: ./assets/en/ios/3.webp
-  - text: "Tap the checkmark at the top right."
+  - text: "Save the activity."
     ios:
+      text: "Tap the checkmark at the top right."
       image: ./assets/en/ios/4.webp
 draft: true
 ---

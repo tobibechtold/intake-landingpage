@@ -10,14 +10,16 @@ steps:
   - text: "Tippe auf Heute in der Karte „Aktivität“ auf „Hinzufügen“."
     ios:
       image: ./assets/de/ios/1.webp
-  - text: "Wähle bei „Typ“ die Aktivität und bei „Dauer“, wie lange sie ging."
+  - text: "Wähle die Aktivität und wie lange sie ging."
     ios:
+      text: "Wähle bei „Typ“ die Aktivität und bei „Dauer“, wie lange sie ging."
       image: ./assets/de/ios/2.webp
   - text: "Intake berechnet die Kalorien. Mit „Manuell“ trägst du sie selbst ein."
     ios:
       image: ./assets/de/ios/3.webp
-  - text: "Tippe oben rechts auf das Häkchen."
+  - text: "Speichere die Aktivität."
     ios:
+      text: "Tippe oben rechts auf das Häkchen."
       image: ./assets/de/ios/4.webp
 draft: true
 ---

@@ -9,8 +9,9 @@ steps:
   - text: "Scroll to “How are you feeling today?” on Today and tap the emoji that fits."
     ios:
       image: ./assets/en/ios/1.webp
-  - text: "Add a note if you like and tap the checkmark."
+  - text: "Add a note if you like and save."
     ios:
+      text: "Add a note if you like and tap the checkmark."
       image: ./assets/en/ios/2.webp
 draft: true
 ---

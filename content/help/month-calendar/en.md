@@ -13,8 +13,9 @@ steps:
   - text: "Every day with entries has a colored line under it. At the top you see how many days this month are green, orange and red."
     ios:
       image: ./assets/en/ios/2.webp
-  - text: "Tap a day, then “Done” to open it."
+  - text: "Tap a day to open it."
     ios:
+      text: "Tap a day, then “Done” to open it."
       image: ./assets/en/ios/3.webp
 draft: true
 ---

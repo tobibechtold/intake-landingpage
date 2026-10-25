@@ -16,12 +16,11 @@ steps:
   - text: "Tap the matching food."
     ios:
       image: ./assets/en/ios/3.webp
-  - text: "Choose the portion and tap the checkmark at the top right."
+  - text: "Choose the portion and confirm."
     ios:
+      text: "Choose the portion and tap the checkmark at the top right."
       image: ./assets/en/ios/4.webp
 draft: true
 ---
 
-Tap the meal’s name at the top to switch to another meal. The plus in a search row adds a food straight away with your usual amount.
-
-On iPhone, the big plus at the bottom right opens the same view for the meal that fits the time of day. Below the portion you can also set the meal and the time there.
+Tap the meal’s name at the top to switch meals. The plus in a row adds a food straight away with your usual amount.

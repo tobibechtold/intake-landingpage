@@ -7,8 +7,9 @@ related:
   - create-product
   - settings-appearance
 steps:
-  - text: "Tippe auf einen Eintrag und dann auf das Bildsymbol neben dem Namen. Wähle „Foto aufnehmen“ oder „Foto auswählen“."
+  - text: "Tippe auf einen Eintrag und füg ein Foto hinzu, mit der Kamera oder aus deinen Fotos."
     ios:
+      text: "Tippe auf einen Eintrag und dann auf das Bildsymbol neben dem Namen. Wähle „Foto aufnehmen“ oder „Foto auswählen“."
       image: ./assets/de/ios/1.webp
   - text: "Bei eigenen Produkten und Rezepten tippst du beim Anlegen oder Bearbeiten auf „Foto hinzufügen“."
     ios:

@@ -10,14 +10,17 @@ steps:
   - text: "On Today, tap the entry."
     ios:
       image: ./assets/en/ios/1.webp
-  - text: "Change the amount with minus and plus or tap the number. Below it you switch the unit."
+  - text: "Change the amount and, if needed, the unit."
     ios:
+      text: "Change the amount with minus and plus or tap the number. Below it you switch the unit."
       image: ./assets/en/ios/2.webp
-  - text: "Tap the checkmark at the top right to save."
+  - text: "Save the change."
     ios:
+      text: "Tap the checkmark at the top right to save."
       image: ./assets/en/ios/3.webp
-  - text: "To delete it, tap the trash can at the top."
+  - text: "To delete it, tap “Delete”."
     ios:
+      text: "To delete it, tap the trash can at the top."
       image: ./assets/en/ios/4.webp
 draft: true
 ---

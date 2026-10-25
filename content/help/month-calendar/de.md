@@ -13,8 +13,9 @@ steps:
   - text: "Unter jedem Tag mit Einträgen steht ein farbiger Strich. Oben siehst du, wie viele Tage im Monat grün, orange und rot sind."
     ios:
       image: ./assets/de/ios/2.webp
-  - text: "Tippe auf einen Tag und dann auf „Fertig“, um ihn zu öffnen."
+  - text: "Tippe auf einen Tag, um ihn zu öffnen."
     ios:
+      text: "Tippe auf einen Tag und dann auf „Fertig“, um ihn zu öffnen."
       image: ./assets/de/ios/3.webp
 draft: true
 ---

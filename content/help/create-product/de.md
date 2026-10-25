@@ -19,8 +19,9 @@ steps:
   - text: "Wähle „pro 100 g“ oder „pro Portion“ und trag darunter die Nährwerte ein."
     ios:
       image: ./assets/de/ios/4.webp
-  - text: "Tippe oben rechts auf das Häkchen. Intake speichert das Produkt und trägt es in die Mahlzeit ein."
+  - text: "Speichere. Intake legt das Produkt an und trägt es in die Mahlzeit ein."
     ios:
+      text: "Tippe oben rechts auf das Häkchen. Intake speichert das Produkt und trägt es in die Mahlzeit ein."
       image: ./assets/de/ios/5.webp
 draft: true
 ---

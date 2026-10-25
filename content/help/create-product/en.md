@@ -19,8 +19,9 @@ steps:
   - text: "Choose “per 100 g” or “per serving” and enter the nutrition below."
     ios:
       image: ./assets/en/ios/4.webp
-  - text: "Tap the checkmark at the top right. Intake saves the product and adds it to the meal."
+  - text: "Save. Intake creates the product and adds it to the meal."
     ios:
+      text: "Tap the checkmark at the top right. Intake saves the product and adds it to the meal."
       image: ./assets/en/ios/5.webp
 draft: true
 ---

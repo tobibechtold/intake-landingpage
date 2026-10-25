@@ -13,8 +13,9 @@ steps:
   - text: "Du siehst deinen Stand und welche Lebensmittel wie viel dazu beigetragen haben."
     ios:
       image: ./assets/de/ios/2.webp
-  - text: "Tippe auf „Mehr“ und dann auf „Alle Nährstoffe anzeigen“."
+  - text: "Klapp die Makros auf und tippe auf „Alle Nährstoffe anzeigen“."
     ios:
+      text: "Tippe auf „Mehr“ und dann auf „Alle Nährstoffe anzeigen“."
       image: ./assets/de/ios/3.webp
   - text: "Dort steht jeder Nährwert des Tages, auch Fettsäuren, Vitamine und Mineralstoffe."
     ios:

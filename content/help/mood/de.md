@@ -9,8 +9,9 @@ steps:
   - text: "Scrolle auf Heute zu „Wie fühlst du dich heute?“ und tippe auf das passende Emoji."
     ios:
       image: ./assets/de/ios/1.webp
-  - text: "Schreib bei Bedarf eine Notiz dazu und tippe auf das Häkchen."
+  - text: "Schreib bei Bedarf eine Notiz dazu und speichere."
     ios:
+      text: "Schreib bei Bedarf eine Notiz dazu und tippe auf das Häkchen."
       image: ./assets/de/ios/2.webp
 draft: true
 ---

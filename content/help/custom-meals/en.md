@@ -10,18 +10,21 @@ steps:
   - text: "Scroll to the bottom of Today and tap “Edit Today Page”."
     ios:
       image: ./assets/en/ios/1.webp
-  - text: "Under “Meals”, type a name for the new meal and tap “Add”."
+  - text: "Under “Meals”, add a new meal with a name."
     ios:
+      text: "Under “Meals”, type a name for the new meal and tap “Add”."
       image: ./assets/en/ios/2.webp
-  - text: "Use the switch to hide a meal. Drag the handle on the right to move it somewhere else."
+  - text: "Hide the meals you don’t need and reorder them."
     ios:
+      text: "Use the switch to hide a meal. Drag the handle on the right to move it somewhere else."
       image: ./assets/en/ios/3.webp
-  - text: "Tap the checkmark at the top right."
+  - text: "Save your changes."
     ios:
+      text: "Tap the checkmark at the top right."
       image: ./assets/en/ios/4.webp
 draft: true
 ---
 
-Breakfast, Lunch, Dinner and Snacks can be hidden but not deleted. To delete a meal of your own, tap the trash can in the same list. Its entries stay and show up on Today as “Archived”.
+Breakfast, Lunch, Dinner and Snacks can be hidden but not deleted. You delete a meal of your own in the same list. Its entries stay and show up on Today as “Archived”.
 
 On iPhone, the cutlery button next to the name picks an icon for the meal.

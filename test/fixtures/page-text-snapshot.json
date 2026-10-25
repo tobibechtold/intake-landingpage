@@ -40,52 +40,52 @@
     "sha": "93d3bba5edfd921f"
   },
   "/en/help/add-activity": {
-    "words": 326,
-    "sha": "9c85df10f6cdb70e"
+    "words": 318,
+    "sha": "19f1385a8fff1b89"
   },
   "/en/help/add-food": {
-    "words": 360,
-    "sha": "3be30eedad30ed3e"
+    "words": 316,
+    "sha": "c9977a1c59942b57"
   },
   "/en/help/calorie-goal": {
     "words": 441,
     "sha": "de4604a3be434982"
   },
   "/en/help/calorie-ring": {
-    "words": 351,
-    "sha": "7bfdfbd6b7fc5a4d"
+    "words": 317,
+    "sha": "cb9a5184c86ee3df"
   },
   "/en/help/calories-left-when-adding": {
-    "words": 266,
-    "sha": "593247cb1f140c23"
+    "words": 261,
+    "sha": "072f42c9ca492fa1"
   },
   "/en/help/copy-meal": {
     "words": 309,
     "sha": "1c379fc514011249"
   },
   "/en/help/create-product": {
-    "words": 314,
-    "sha": "410dfa06ba1a63e2"
+    "words": 308,
+    "sha": "bd63e6a90d22c382"
   },
   "/en/help/custom-meals": {
-    "words": 374,
-    "sha": "f2cd42e84aeb9f0e"
+    "words": 354,
+    "sha": "64ea94f875674b9f"
   },
   "/en/help/daily-nutrients": {
-    "words": 293,
-    "sha": "a111cae6cba4d0c9"
+    "words": 295,
+    "sha": "d666f5b4dc84beed"
   },
   "/en/help/edit-entry": {
-    "words": 363,
-    "sha": "728111e2d8a2345f"
+    "words": 343,
+    "sha": "f15eb26a46bc8dd9"
   },
   "/en/help/edit-today-page": {
     "words": 361,
     "sha": "8b25e24486bcce50"
   },
   "/en/help/food-photos": {
-    "words": 297,
-    "sha": "7b5554ac1fb33492"
+    "words": 293,
+    "sha": "12735729a214b85e"
   },
   "/en/help/health-connect-estimate": {
     "words": 485,
@@ -108,12 +108,12 @@
     "sha": "cec2d67738cfec9c"
   },
   "/en/help/month-calendar": {
-    "words": 362,
-    "sha": "68d23883311b63ea"
+    "words": 360,
+    "sha": "2a18d6ce5a3bf373"
   },
   "/en/help/mood": {
-    "words": 248,
-    "sha": "029d83f4b483c180"
+    "words": 246,
+    "sha": "03199b7fb21b99e6"
   },
   "/en/help/move-entry": {
     "words": 294,
@@ -148,24 +148,24 @@
     "sha": "8b85bcd42327803e"
   },
   "/en/help/scan-barcode": {
-    "words": 262,
-    "sha": "ebf359e328632585"
+    "words": 264,
+    "sha": "cc5cb11594bd8210"
   },
   "/en/help/share-meal": {
     "words": 322,
     "sha": "dd5a749f3116a6e3"
   },
   "/en/help/share-picture": {
-    "words": 344,
-    "sha": "e1f17db91495c69c"
+    "words": 346,
+    "sha": "72bfec0a706f0221"
   },
   "/en/help/steps-workouts": {
     "words": 520,
     "sha": "710fa463ac8765d2"
   },
   "/en/help/switch-days": {
-    "words": 286,
-    "sha": "a3aa4cd77c54fb1e"
+    "words": 284,
+    "sha": "5dfd47f8441e7128"
   },
   "/en/help/weekly-budget": {
     "words": 471,
@@ -328,40 +328,40 @@
     "sha": "2d57e305695dcce1"
   },
   "/hilfe/aktivitaet-eintragen": {
-    "words": 317,
-    "sha": "3152147a0572035a"
+    "words": 310,
+    "sha": "c1043b205df41519"
   },
   "/hilfe/barcode-scannen": {
-    "words": 234,
-    "sha": "7a4abeffe5f6b982"
+    "words": 237,
+    "sha": "e99a777fdf84b68d"
   },
   "/hilfe/bild-teilen": {
-    "words": 323,
-    "sha": "bbf437989db1052f"
+    "words": 325,
+    "sha": "56c552b1d76921c7"
   },
   "/hilfe/eigene-mahlzeiten": {
-    "words": 364,
-    "sha": "1a2fa9d883b437e4"
+    "words": 347,
+    "sha": "827d7e5d5b986822"
   },
   "/hilfe/eigener-api-schluessel": {
     "words": 743,
     "sha": "c420e2d06001ab84"
   },
   "/hilfe/eigenes-produkt-anlegen": {
-    "words": 297,
-    "sha": "261132edf6c8b1e5"
+    "words": 293,
+    "sha": "b40053792850fcf8"
   },
   "/hilfe/eintrag-bearbeiten": {
-    "words": 354,
-    "sha": "5830b674909cb4df"
+    "words": 337,
+    "sha": "caa119b50d00e844"
   },
   "/hilfe/eintrag-verschieben": {
     "words": 301,
     "sha": "cf4f0df06c79947e"
   },
   "/hilfe/fotos-an-eintraegen": {
-    "words": 292,
-    "sha": "e21354af16c2b31c"
+    "words": 290,
+    "sha": "5af7a17a657ca990"
   },
   "/hilfe/health-connect-schaetzung": {
     "words": 449,
@@ -380,20 +380,20 @@
     "sha": "5598427d3b947b0e"
   },
   "/hilfe/kalorien-uebrig-beim-hinzufuegen": {
-    "words": 265,
-    "sha": "d8ea639da101ff3a"
+    "words": 263,
+    "sha": "6badd57b98df5ca9"
   },
   "/hilfe/kalorienring": {
-    "words": 340,
-    "sha": "88882ce89108c221"
+    "words": 304,
+    "sha": "363a0885d3ba9cb1"
   },
   "/hilfe/kalorienziel": {
     "words": 408,
     "sha": "d799afbcc44aea4e"
   },
   "/hilfe/lebensmittel-hinzufuegen": {
-    "words": 335,
-    "sha": "d6be1e08ee3ee349"
+    "words": 299,
+    "sha": "e43552ea92653764"
   },
   "/hilfe/mahlzeit-kopieren": {
     "words": 302,
@@ -408,12 +408,12 @@
     "sha": "5f7cd2dbc645cad8"
   },
   "/hilfe/monatskalender": {
-    "words": 339,
-    "sha": "146fffc3fad8610a"
+    "words": 335,
+    "sha": "ffc51d1148c71a9d"
   },
   "/hilfe/naehrstoffe-des-tages": {
-    "words": 299,
-    "sha": "c734d6c4541c4540"
+    "words": 300,
+    "sha": "80e2a15853d2cf7a"
   },
   "/hilfe/nur-kalorien-erfassen": {
     "words": 272,
@@ -436,12 +436,12 @@
     "sha": "c9aa36b58a3d1b98"
   },
   "/hilfe/stimmung": {
-    "words": 240,
-    "sha": "1c9b9946e76fccf4"
+    "words": 237,
+    "sha": "a835932e04751c02"
   },
   "/hilfe/tag-wechseln": {
-    "words": 282,
-    "sha": "7a6b3848134db93a"
+    "words": 279,
+    "sha": "7a7ad9f434d632bd"
   },
   "/hilfe/verlauf-haeufig-favoriten": {
     "words": 259,

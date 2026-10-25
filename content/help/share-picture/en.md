@@ -10,7 +10,7 @@ steps:
   - text: "On Today, tap the share button at the top."
     ios:
       image: ./assets/en/ios/1.webp
-  - text: "Choose what to share, for example “Whole day” or a meal."
+  - text: "Choose what to share, for example the whole day or a meal."
     ios:
       image: ./assets/en/ios/2.webp
   - text: "Choose “Sticker” or “Card” and the size “Story 9:16” or “Post 4:5”."
