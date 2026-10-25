@@ -25,6 +25,6 @@ steps:
 draft: true
 ---
 
-Frühstück, Mittagessen, Abendessen und Snacks haben feste Standardzeiten, eigene Mahlzeiten bleiben aus, bis du sie einschaltest.
+Jede Erinnerung ist zuerst aus, du schaltest jede Mahlzeit einzeln ein. Frühstück, Mittagessen, Abendessen und Snacks haben schon eine vorgeschlagene Uhrzeit.
 
 Auf dem iPhone fragt Intake erst nach der Erlaubnis, wenn du eine Erinnerung einschaltest. Hast du abgelehnt, erlaubst du Mitteilungen über „iOS-Einstellungen öffnen“.

@@ -26,6 +26,6 @@ steps:
 draft: true
 ---
 
-It’s often quicker in the chat: just write what’s wrong, like “no dressing” or “it was 250 g”.
+It’s often quicker to just write in the chat what’s wrong.
 
 With your own API key, there’s no “Correct”. On iPhone, the pencil then opens the edit screen before logging.

@@ -28,4 +28,4 @@ steps:
 draft: true
 ---
 
-On iPhone with Apple Health, you can use your measured resting energy as the base under “About you” instead of the estimate, see [Maintenance calories from resting energy in Apple Health](/en/help/resting-energy).
+On iPhone with Apple Health, “About you” can use your measured resting energy instead, see [Maintenance calories from resting energy in Apple Health](/en/help/resting-energy).

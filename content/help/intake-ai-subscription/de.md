@@ -1,7 +1,7 @@
 ---
 id: intake-ai-subscription
 title: "Das Intake-AI-Abo"
-short: "Intake AI ist ein freiwilliges Abo nur für die KI-Funktionen. Alles andere in Intake, auch Fasten, gehört zum einmaligen Kauf. KI ohne Abo nutzt du mit deinem eigenen API-Schlüssel."
+short: "Intake AI ist ein freiwilliges Abo nur für die KI-Funktionen. Alles andere in Intake, auch Fasten, funktioniert ohne. KI ohne Abo nutzt du mit deinem eigenen API-Schlüssel."
 related:
   - set-up-intake-ai
   - byok-guide
@@ -24,4 +24,4 @@ draft: true
 
 Das Abo enthält die Schätzungen per Text und Foto, das Fotografieren von Nährwerttabellen und „Korrigieren“. Du wählst ein Monats- oder Jahresabo, beim ersten Abschluss mit 3 Tagen zum kostenlosen Testen. Kündigen kannst du jederzeit in den Abo-Einstellungen deines App-Store- oder Google-Play-Kontos.
 
-Jede KI-Anfrage kostet beim Anbieter Geld. So zahlt nur, wer KI nutzt, und Intake bleibt ein Einmalkauf.
+Auf dem iPhone ist Intake selbst ein Einmalkauf, das Abo deckt nur die Kosten der KI-Anfragen.

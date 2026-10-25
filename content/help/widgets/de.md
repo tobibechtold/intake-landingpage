@@ -16,7 +16,7 @@ draft: true
 - **Mahlzeit schnell erfassen:** Tippe auf eine Mahlzeit, und Intake öffnet die Suche für genau diese Mahlzeit.
 - **Wasser schnell erfassen:** Mit Plus und Minus trägst du Wasser ein, ohne die App zu öffnen.
 
-Die Widgets zeigen dieselben Zahlen wie Heute.
+Die Widgets zeigen dieselben Zahlen wie Heute, ein Tipp öffnet Intake an der passenden Stelle.
 
 ## Auf dem iPhone
 

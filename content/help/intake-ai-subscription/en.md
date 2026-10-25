@@ -1,7 +1,7 @@
 ---
 id: intake-ai-subscription
 title: "The Intake AI subscription"
-short: "Intake AI is an optional subscription for the AI features only. Everything else, fasting included, is in the one-time purchase. For AI without a subscription, use your own API key."
+short: "Intake AI is an optional subscription for the AI features only. Everything else, fasting included, works without it. For AI without a subscription, use your own API key."
 related:
   - set-up-intake-ai
   - byok-guide
@@ -22,6 +22,6 @@ steps:
 draft: true
 ---
 
-The subscription covers estimates from text and photos, photographing nutrition labels and “Correct”. You choose monthly or yearly, and the first time you subscribe you can try it free for 3 days. You can cancel at any time in the subscription settings of your App Store or Google Play account.
+The subscription covers estimates from text and photos, photographing nutrition labels and “Correct”. Choose monthly or yearly; the first time, you can try it free for 3 days. Cancel any time in your App Store or Google Play subscription settings.
 
-Every AI request costs the provider money, so only people who use AI pay for it and Intake stays a one-time purchase.
+On iPhone, Intake itself is a one-time purchase; the subscription only covers the cost of AI requests.

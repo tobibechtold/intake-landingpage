@@ -23,4 +23,4 @@ draft: true
 
 Die Datei ist nicht verschlüsselt, bewahre sie sicher auf. Für einen Bericht zum Lesen oder für deinen Arzt nimm den [PDF-Bericht](/hilfe/pdf-bericht).
 
-Auf dem iPhone enthält die Datei Profil und Ziele, Tagebuch, Bibliothek, Rezepte, eigene Produkte und Körpermaße, aber keine Fotos. Der Import ersetzt genau diese Daten auf dem Gerät.
+Auf dem iPhone enthält die Datei Profil und Ziele, Tagebuch, Bibliothek, Rezepte, eigene Produkte und Körpermaße, aber keine Fotos. Der Import ersetzt genau diese Daten auf dem Gerät. In Testversionen steht dort auch „Debug-Log exportieren“, das brauchst du nur, wenn der Support danach fragt.

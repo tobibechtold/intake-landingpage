@@ -25,6 +25,6 @@ steps:
 draft: true
 ---
 
-Breakfast, Lunch, Dinner and Snacks come with default times; your own meals stay off until you turn them on.
+Every reminder starts off, and you turn each meal on yourself. Breakfast, Lunch, Dinner and Snacks already come with a suggested time.
 
 On iPhone, Intake only asks for permission when you turn on a reminder. If you declined, allow notifications via “Open iOS Settings”.

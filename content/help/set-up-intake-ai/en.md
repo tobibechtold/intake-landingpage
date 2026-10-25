@@ -26,4 +26,4 @@ steps:
 draft: true
 ---
 
-You can switch at any time. With your own key you pay the provider directly; how to get one is explained in [Set up your own API key for Intake AI](/en/help/own-api-key).
+With your own key you pay the provider directly; to get one, see [Set up your own API key for Intake AI](/en/help/own-api-key).

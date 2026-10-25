@@ -16,7 +16,7 @@ draft: true
 - **Quick Log Meal:** tap a meal and Intake opens the search for exactly that meal.
 - **Water Quick Log:** add or remove water with plus and minus, without opening the app.
 
-The widgets show the same numbers as Today.
+The widgets show the same numbers as Today, and a tap opens Intake at the right place.
 
 ## On iPhone
 
