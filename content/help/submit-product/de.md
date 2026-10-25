@@ -1,0 +1,28 @@
+---
+id: submit-product
+title: "Produkt zur Prüfung einreichen oder einen Fehler melden"
+short: "Reich ein eigenes Produkt zur Prüfung ein, damit es in die gemeinsame Datenbank kommt. Wie es steht, siehst du in der Bibliothek unter „Einreichungen“."
+related:
+  - create-product
+  - my-products
+  - scan-barcode
+steps:
+  - text: "Öffne dein Produkt unter „Meine Produkte“ oder leg es neu an."
+    ios:
+      image: ./assets/de/ios/1.webp
+  - text: "Schalte „Zur Prüfung einreichen“ ein."
+    ios:
+      image: ./assets/de/ios/2.webp
+  - text: "Für die Prüfung braucht es Name, Marke, Barcode sowie Kalorien, Fett, Kohlenhydrate und Eiweiß pro 100 g. Speichere dann."
+    ios:
+      text: "Für die Prüfung braucht es Name, Marke, Barcode sowie Kalorien, Fett, Kohlenhydrate und Eiweiß pro 100 g. Tippe dann oben rechts auf das Häkchen."
+      image: ./assets/de/ios/3.webp
+  - text: "Unter „Einreichungen“ siehst du, was gerade geprüft wird."
+    ios:
+      image: ./assets/de/ios/4.webp
+draft: true
+---
+
+Bis zur Entscheidung nutzt du deine Version. Wird sie nicht angenommen, bleibt sie als privates Produkt in deiner Bibliothek.
+
+**Fehler bei einem Produkt aus der Datenbank:** Tippe auf der Seite des Produkts auf „Problem melden“ und wähle, was nicht stimmt, zum Beispiel „Falsche Nährwerte“. Auf dem iPhone öffnet sich danach gleich der Editor, wenn sich der Fehler durch Bearbeiten beheben lässt, und du reichst die Korrektur ein.

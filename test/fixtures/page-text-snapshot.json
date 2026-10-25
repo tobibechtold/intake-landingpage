@@ -36,8 +36,8 @@
     "sha": "7bbdcc8690dd93ab"
   },
   "/en/help": {
-    "words": 1224,
-    "sha": "93d3bba5edfd921f"
+    "words": 1286,
+    "sha": "a2bda1e35d177e6f"
   },
   "/en/help/add-activity": {
     "words": 318,
@@ -60,12 +60,16 @@
     "sha": "072f42c9ca492fa1"
   },
   "/en/help/copy-meal": {
-    "words": 309,
-    "sha": "1c379fc514011249"
+    "words": 346,
+    "sha": "54d120e86e4811dd"
   },
   "/en/help/create-product": {
-    "words": 308,
-    "sha": "bd63e6a90d22c382"
+    "words": 369,
+    "sha": "9e3b05cb301bde01"
+  },
+  "/en/help/create-recipe": {
+    "words": 338,
+    "sha": "318267d1abc874ba"
   },
   "/en/help/custom-meals": {
     "words": 354,
@@ -99,13 +103,21 @@
     "words": 114,
     "sha": "0424b1a6e7fe23cf"
   },
+  "/en/help/library": {
+    "words": 267,
+    "sha": "78f505253ac02aa7"
+  },
+  "/en/help/log-recipe": {
+    "words": 349,
+    "sha": "b72f49c6c4202432"
+  },
   "/en/help/log-water": {
     "words": 297,
     "sha": "a2f683ada0a549f8"
   },
   "/en/help/meal-summary": {
-    "words": 329,
-    "sha": "cec2d67738cfec9c"
+    "words": 366,
+    "sha": "48d50d00ed940e1f"
   },
   "/en/help/month-calendar": {
     "words": 360,
@@ -118,6 +130,10 @@
   "/en/help/move-entry": {
     "words": 294,
     "sha": "3b0ed14353375e3c"
+  },
+  "/en/help/my-products": {
+    "words": 287,
+    "sha": "3142022de559cbd0"
   },
   "/en/help/own-api-key": {
     "words": 841,
@@ -140,32 +156,52 @@
     "sha": "7de4744b81c840ed"
   },
   "/en/help/recent-frequent-favorites": {
-    "words": 261,
-    "sha": "112bcd6bed0e4fe6"
+    "words": 319,
+    "sha": "203d9892273d082a"
+  },
+  "/en/help/recipe-categories": {
+    "words": 325,
+    "sha": "5d4e2f48366c7374"
   },
   "/en/help/recipe-cooked-weight": {
-    "words": 283,
-    "sha": "8b85bcd42327803e"
+    "words": 358,
+    "sha": "16b83771a3f0b3a0"
+  },
+  "/en/help/routines": {
+    "words": 378,
+    "sha": "53fed9cb65506678"
   },
   "/en/help/scan-barcode": {
-    "words": 264,
-    "sha": "cc5cb11594bd8210"
+    "words": 297,
+    "sha": "4998b9c0b9bd683c"
   },
   "/en/help/share-meal": {
-    "words": 322,
-    "sha": "dd5a749f3116a6e3"
+    "words": 349,
+    "sha": "f200b52f8965ca30"
   },
   "/en/help/share-picture": {
     "words": 346,
     "sha": "72bfec0a706f0221"
   },
+  "/en/help/share-recipe": {
+    "words": 343,
+    "sha": "c130b8cf56d925ca"
+  },
   "/en/help/steps-workouts": {
     "words": 520,
     "sha": "710fa463ac8765d2"
   },
+  "/en/help/submit-product": {
+    "words": 372,
+    "sha": "cce9287cffcd46c6"
+  },
   "/en/help/switch-days": {
     "words": 284,
     "sha": "5dfd47f8441e7128"
+  },
+  "/en/help/tags": {
+    "words": 307,
+    "sha": "aeb4782080672f7a"
   },
   "/en/help/weekly-budget": {
     "words": 471,
@@ -324,16 +360,20 @@
     "sha": "84b6a4723fdb5f28"
   },
   "/hilfe": {
-    "words": 1118,
-    "sha": "2d57e305695dcce1"
+    "words": 1173,
+    "sha": "64a6d9f0a1c2482a"
   },
   "/hilfe/aktivitaet-eintragen": {
     "words": 310,
     "sha": "c1043b205df41519"
   },
   "/hilfe/barcode-scannen": {
-    "words": 237,
-    "sha": "e99a777fdf84b68d"
+    "words": 269,
+    "sha": "fecd7e97c123ff84"
+  },
+  "/hilfe/bibliothek": {
+    "words": 260,
+    "sha": "cedf7b3d489f6ef2"
   },
   "/hilfe/bild-teilen": {
     "words": 325,
@@ -348,8 +388,8 @@
     "sha": "c420e2d06001ab84"
   },
   "/hilfe/eigenes-produkt-anlegen": {
-    "words": 293,
-    "sha": "b40053792850fcf8"
+    "words": 352,
+    "sha": "b4a558d8e6938a20"
   },
   "/hilfe/eintrag-bearbeiten": {
     "words": 337,
@@ -396,16 +436,20 @@
     "sha": "e43552ea92653764"
   },
   "/hilfe/mahlzeit-kopieren": {
-    "words": 302,
-    "sha": "649f0bcb497f3bc9"
+    "words": 337,
+    "sha": "a6e2386399e83620"
   },
   "/hilfe/mahlzeit-teilen": {
-    "words": 307,
-    "sha": "089fc542c479001b"
+    "words": 336,
+    "sha": "8c9ac3334b1cba0a"
   },
   "/hilfe/mahlzeit-uebersicht": {
-    "words": 316,
-    "sha": "5f7cd2dbc645cad8"
+    "words": 354,
+    "sha": "c062098e1acfb57c"
+  },
+  "/hilfe/meine-produkte": {
+    "words": 281,
+    "sha": "d5f1c7b617047cc4"
   },
   "/hilfe/monatskalender": {
     "words": 335,
@@ -423,13 +467,41 @@
     "words": 394,
     "sha": "862e75c862dbfb36"
   },
+  "/hilfe/produkt-einreichen": {
+    "words": 366,
+    "sha": "cbb8aeb562ca7753"
+  },
+  "/hilfe/rezept-erstellen": {
+    "words": 318,
+    "sha": "9dfe8f895d6c022d"
+  },
   "/hilfe/rezept-gargewicht": {
-    "words": 293,
-    "sha": "3df0b0cb45b384fb"
+    "words": 362,
+    "sha": "c6229b0d9e7552a8"
+  },
+  "/hilfe/rezept-loggen": {
+    "words": 331,
+    "sha": "276199ed07ee5b39"
+  },
+  "/hilfe/rezept-teilen": {
+    "words": 339,
+    "sha": "b52556701565d093"
+  },
+  "/hilfe/rezeptkategorien": {
+    "words": 321,
+    "sha": "b4e69a7fbed98db0"
   },
   "/hilfe/roh-oder-gekocht": {
     "words": 330,
     "sha": "5b892c9f387aa142"
+  },
+  "/hilfe/routinen": {
+    "words": 358,
+    "sha": "b00be0c395c2e6ed"
+  },
+  "/hilfe/schlagwoerter": {
+    "words": 295,
+    "sha": "97633ec2af61a96d"
   },
   "/hilfe/schritte-workouts": {
     "words": 499,
@@ -444,8 +516,8 @@
     "sha": "7a7ad9f434d632bd"
   },
   "/hilfe/verlauf-haeufig-favoriten": {
-    "words": 259,
-    "sha": "75be15bf14b79ff9"
+    "words": 317,
+    "sha": "e55fae2cb39326b7"
   },
   "/hilfe/wasser-eintragen": {
     "words": 295,
