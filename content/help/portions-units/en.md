@@ -18,7 +18,7 @@ steps:
   - text: "Next to “Custom amount”, tap the unit and pick, for example, Tablespoon or Cup."
     android:
       image: ./assets/en/android/3.webp
-  - text: "If a unit weighs something else for you, tap the line “… per Tablespoon, tap to change” and enter the weight."
+  - text: "If a unit weighs something else for you, tap the line “… per tablespoon, tap to change” and enter the weight."
     android:
       image: ./assets/en/android/4.webp
 ---
