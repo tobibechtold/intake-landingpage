@@ -36,8 +36,8 @@
     "sha": "7bbdcc8690dd93ab"
   },
   "/en/help": {
-    "words": 1461,
-    "sha": "fc348bbc63c277a2"
+    "words": 1487,
+    "sha": "1eb92bdf3647d9e5"
   },
   "/en/help/activity-settings": {
     "words": 363,
@@ -79,9 +79,17 @@
     "words": 384,
     "sha": "c6acda53cd7d5cd8"
   },
+  "/en/help/calories-from-steps": {
+    "words": 370,
+    "sha": "69a91bc5e01c3762"
+  },
   "/en/help/calories-left-when-adding": {
     "words": 323,
     "sha": "fdd0783ae0e4ca64"
+  },
+  "/en/help/connect-health": {
+    "words": 387,
+    "sha": "ed16ee3a857ae5ae"
   },
   "/en/help/copy-meal": {
     "words": 346,
@@ -136,8 +144,12 @@
     "sha": "26a81b4c4a2b4c06"
   },
   "/en/help/health-read-write": {
-    "words": 442,
-    "sha": "00cf26bd76c80e51"
+    "words": 485,
+    "sha": "16343f0033e10aa9"
+  },
+  "/en/help/import-weight-history": {
+    "words": 325,
+    "sha": "1632fdcba9b10d71"
   },
   "/en/help/ipad-iphone-duo": {
     "words": 114,
@@ -156,8 +168,8 @@
     "sha": "1aa103277ce0dec9"
   },
   "/en/help/log-weight": {
-    "words": 302,
-    "sha": "8a0aff7e513b392f"
+    "words": 345,
+    "sha": "4c44398295dbe61b"
   },
   "/en/help/macro-goals": {
     "words": 394,
@@ -224,8 +236,8 @@
     "sha": "16b83771a3f0b3a0"
   },
   "/en/help/resting-energy": {
-    "words": 282,
-    "sha": "997a433a89483278"
+    "words": 314,
+    "sha": "b38ebd7684622978"
   },
   "/en/help/routines": {
     "words": 352,
@@ -274,6 +286,10 @@
   "/en/help/switch-days": {
     "words": 284,
     "sha": "5dfd47f8441e7128"
+  },
+  "/en/help/sync-weight": {
+    "words": 400,
+    "sha": "72c3a69ae6a08bb2"
   },
   "/en/help/tags": {
     "words": 307,
@@ -460,8 +476,8 @@
     "sha": "84b6a4723fdb5f28"
   },
   "/hilfe": {
-    "words": 1308,
-    "sha": "31b2b325e2a588fa"
+    "words": 1331,
+    "sha": "b3269c76c7717757"
   },
   "/hilfe/aktivitaet-eintragen": {
     "words": 365,
@@ -528,20 +544,32 @@
     "sha": "54ca95dda616d606"
   },
   "/hilfe/gewicht-eintragen": {
-    "words": 297,
-    "sha": "82b87b599d0d18f6"
+    "words": 338,
+    "sha": "78b4079bee5444a0"
+  },
+  "/hilfe/gewicht-synchronisieren": {
+    "words": 395,
+    "sha": "b5fe04718ca82e52"
   },
   "/hilfe/gewichtsverlauf": {
     "words": 331,
     "sha": "361d585914217b0d"
+  },
+  "/hilfe/gewichtsverlauf-importieren": {
+    "words": 311,
+    "sha": "3a8c28ebfea7178a"
   },
   "/hilfe/health-connect-schaetzung": {
     "words": 449,
     "sha": "87ea04efe48e121e"
   },
   "/hilfe/health-lesen-schreiben": {
-    "words": 414,
-    "sha": "beefd78c00fedd24"
+    "words": 455,
+    "sha": "7f01e4e322c8611f"
+  },
+  "/hilfe/health-verbinden": {
+    "words": 395,
+    "sha": "a34e2efa80c5e170"
   },
   "/hilfe/heute-seite-bearbeiten": {
     "words": 350,
@@ -550,6 +578,10 @@
   "/hilfe/ipad-iphone-duo": {
     "words": 117,
     "sha": "5598427d3b947b0e"
+  },
+  "/hilfe/kalorien-aus-schritten": {
+    "words": 354,
+    "sha": "724dac99cced478d"
   },
   "/hilfe/kalorien-einstellen": {
     "words": 375,
@@ -656,8 +688,8 @@
     "sha": "0b7c0e27698d48af"
   },
   "/hilfe/ruheenergie": {
-    "words": 258,
-    "sha": "fdd96b1318842de4"
+    "words": 292,
+    "sha": "c3c2e8b7555b07f5"
   },
   "/hilfe/schlagwoerter": {
     "words": 305,
