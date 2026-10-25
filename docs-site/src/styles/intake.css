@@ -151,3 +151,13 @@ starlight-tabs [role='tab'][aria-selected='true'] { background-color: var(--sl-c
 .pagination-links a:hover { border-color: var(--sl-color-gray-4); background-color: var(--docs-active-bg); }
 .pagination-links .link-title { font-size: 1rem; font-weight: 600; color: var(--sl-color-white); }
 .pagination-links a > span { font-size: 0.8125rem; color: var(--sl-color-gray-3); }
+
+/* Sidebar scrollbar: thin and invisible until the pointer is over the sidebar,
+   so the sidebar doesn't read as a separate panel. */
+.sidebar-pane { scrollbar-width: thin; scrollbar-color: transparent transparent; transition: scrollbar-color 0.2s ease; }
+.sidebar-pane:hover, .sidebar-pane:focus-within { scrollbar-color: var(--sl-color-gray-5) transparent; }
+/* Safari still uses the WebKit pseudo-elements. */
+.sidebar-pane::-webkit-scrollbar { width: 8px; }
+.sidebar-pane::-webkit-scrollbar-track { background: transparent; }
+.sidebar-pane::-webkit-scrollbar-thumb { background-color: transparent; border-radius: 8px; border: 2px solid transparent; background-clip: content-box; }
+.sidebar-pane:hover::-webkit-scrollbar-thumb { background-color: var(--sl-color-gray-5); }
