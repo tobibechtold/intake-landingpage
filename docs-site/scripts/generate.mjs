@@ -98,7 +98,7 @@ for (const area of Object.keys(AREAS)) {
     published.add(t.id);
     items.push(t.id);
   }
-  if (items.length) sidebar.push({ label: AREAS[area].de, translations: { en: AREAS[area].en }, collapsed: false, items });
+  if (items.length) sidebar.push({ label: AREAS[area].de, translations: { en: AREAS[area].en }, collapsed: true, items });
 }
 
 for (const t of manifest.topics.filter((x) => published.has(x.id))) {
