@@ -9,6 +9,7 @@ import {
   HeartPulse,
   LayoutGrid,
   RefreshCw,
+  Rocket,
   Scale,
   Settings,
   Sparkles,
@@ -44,6 +45,7 @@ const homePath = buildLocalizedPath('home', lang);
 const areaLabels = HELP_AREA_LABELS[lang];
 // Same icons as the docs sidebar chapters (AREA_ICONS in docs-site/scripts/generate.mjs).
 const AREA_ICONS: Record<HelpArea, typeof Sun> = {
+  'getting-started': Rocket,
   heute: Sun,
   logging: Utensils,
   'recipes-library': BookOpen,

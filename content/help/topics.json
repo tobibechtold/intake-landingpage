@@ -2,6 +2,78 @@
   "version": 1,
   "topics": [
     {
+      "id": "install",
+      "area": "getting-started",
+      "slugs": {
+        "de": "intake-installieren",
+        "en": "install"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "set-up",
+      "area": "getting-started",
+      "slugs": {
+        "de": "intake-einrichten",
+        "en": "set-up"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "first-food",
+      "area": "getting-started",
+      "slugs": {
+        "de": "erstes-essen",
+        "en": "first-food"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "understand-today",
+      "area": "getting-started",
+      "slugs": {
+        "de": "heute-verstehen",
+        "en": "understand-today"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "weight-and-water",
+      "area": "getting-started",
+      "slugs": {
+        "de": "gewicht-und-wasser",
+        "en": "weight-and-water"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
+      "id": "more-features",
+      "area": "getting-started",
+      "slugs": {
+        "de": "mehr-aus-intake",
+        "en": "more-features"
+      },
+      "platforms": [
+        "ios",
+        "android"
+      ]
+    },
+    {
       "id": "calorie-ring",
       "area": "heute",
       "slugs": {

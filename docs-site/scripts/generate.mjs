@@ -16,16 +16,43 @@ const GENERATED = path.join(ROOT, 'src', 'generated');
 const HIDE_DRAFTS = process.env.VERCEL_ENV === 'production';
 const LANGS = ['de', 'en'];
 
-// Lucide icons (same family as getintake.de) for the sidebar chapters.
-const HOME_ICON = 'house';
+// Lucide icons (same family as getintake.de) for the sidebar entries and start page cards.
 const AREA_ICONS = {
   heute: 'sun', logging: 'utensils', 'recipes-library': 'book-open', 'goals-budget': 'target',
   fasting: 'timer', water: 'droplet', 'weight-body': 'scale', stats: 'chart-column',
   health: 'heart-pulse', sync: 'refresh-cw', 'widgets-watch-shortcuts': 'layout-grid',
   'intake-ai': 'sparkles', settings: 'settings',
 };
+const GETTING_STARTED_ICONS = {
+  install: 'download', 'set-up': 'user-cog', 'first-food': 'utensils',
+  'understand-today': 'sun', 'weight-and-water': 'scale', 'more-features': 'sparkles',
+};
+const GETTING_STARTED_ICON = 'rocket';
 const ICON_DIR = path.join(ROOT, 'node_modules', 'lucide-static', 'icons');
-const iconUrl = (name) => `url("data:image/svg+xml,${encodeURIComponent(fs.readFileSync(path.join(ICON_DIR, `${name}.svg`), 'utf8').replace(/<!--[\s\S]*?-->/g, '').trim())}")`;
+const iconSvg = (name) => fs.readFileSync(path.join(ICON_DIR, `${name}.svg`), 'utf8').replace(/<!--[\s\S]*?-->/g, '').replace(/\s*\n\s*/g, ' ').trim();
+const iconUrl = (name) => `url("data:image/svg+xml,${encodeURIComponent(iconSvg(name))}")`;
+
+// getintake.de pages linked from the docs. External links in the sidebar are the
+// same on every locale, so src/routeData.ts swaps the German URL for the English
+// one on English pages (from src/generated/external-links.json).
+const SITE = 'https://www.getintake.de';
+const FAQ_URL = { de: `${SITE}/hilfe`, en: `${SITE}/en/help` };
+const PRIVACY_URL = { de: `${SITE}/privacy`, en: `${SITE}/en/privacy` };
+const NEW_TAB = { target: '_blank', rel: 'noopener' };
+
+// Store links come from the landing page (src/lib/storeLinks.ts), so both sites
+// link the same listings: the German App Store for German pages.
+const storeLinks = fs.readFileSync(path.join(ROOT, '..', 'src', 'lib', 'storeLinks.ts'), 'utf8');
+const storeUrl = (re) => {
+  const m = storeLinks.match(re);
+  if (!m) throw new Error(`src/lib/storeLinks.ts: no match for ${re}`);
+  return m[1];
+};
+const STORE = {
+  de: { appStore: storeUrl(/\bde:\s*"(https:\/\/apps\.apple\.com\/[^"]+)"/), badgeApple: '/badges/app-store-de.svg', altApple: 'Laden im App Store', badgeGoogle: '/badges/google-play-de.png', altGoogle: 'Jetzt bei Google Play' },
+  en: { appStore: storeUrl(/\ben:\s*"(https:\/\/apps\.apple\.com\/[^"]+)"/), badgeApple: '/badges/app-store-en.svg', altApple: 'Download on the App Store', badgeGoogle: '/badges/google-play-en.png', altGoogle: 'Get it on Google Play' },
+};
+const GOOGLE_PLAY = storeUrl(/GOOGLE_PLAY_URL\s*=\s*"([^"]+)"/);
 
 const AREAS = {
   heute: { de: 'Heute', en: 'Today' },
@@ -49,6 +76,17 @@ const COPY = {
 // A body line `<!-- steps -->` places the steps there instead of before the body,
 // so a tutorial can explain what to prepare before the in-app steps.
 const STEPS_MARKER = '<!-- steps -->';
+// A body line `<!-- store-badges -->` becomes the App Store and Google Play badges.
+const BADGES_MARKER = '<!-- store-badges -->';
+const storeBadges = (lang) => {
+  const s = STORE[lang];
+  return `<div class="store-badges not-content">
+<a href="${s.appStore}" target="_blank" rel="noopener"><img src="${s.badgeApple}" alt="${s.altApple}" height="48" /></a>
+<a href="${GOOGLE_PLAY}" target="_blank" rel="noopener"><img src="${s.badgeGoogle}" alt="${s.altGoogle}" height="48" /></a>
+</div>`;
+};
+// Body text to MDX: links rewritten, special characters escaped, markers replaced.
+const bodyText = (text, lang) => text.split(BADGES_MARKER).map((s) => esc(rewriteHelpLinks(s.trim()))).join(`\n\n${storeBadges(lang)}\n\n`).trim();
 
 // MDX would read { } < > in plain help text as code.
 const esc = (s) => String(s).replace(/[{}<>]/g, (c) => ({ '{': '&#123;', '}': '&#125;', '<': '&lt;', '>': '&gt;' })[c]);
@@ -96,17 +134,19 @@ const manifest = JSON.parse(fs.readFileSync(path.join(HELP, 'topics.json'), 'utf
 for (const dir of [DOCS, IMG, GENERATED]) fs.rmSync(dir, { recursive: true, force: true });
 
 const published = new Set();
-const sidebar = [];
+const publishedIn = (area) => manifest.topics.filter((x) => x.area === area).flatMap((t) => {
+  const entries = Object.fromEntries(LANGS.map((l) => [l, readTopic(t.id, l)]));
+  if (!entries.de || !entries.en) return [];
+  if (HIDE_DRAFTS && (entries.de.data.draft || entries.en.data.draft)) return [];
+  published.add(t.id);
+  return [t.id];
+});
+const gettingStarted = publishedIn('getting-started');
+// The manual: one collapsed group per area (the current chapter opens).
+const manual = [];
 for (const area of Object.keys(AREAS)) {
-  const items = [];
-  for (const t of manifest.topics.filter((x) => x.area === area)) {
-    const entries = Object.fromEntries(LANGS.map((l) => [l, readTopic(t.id, l)]));
-    if (!entries.de || !entries.en) continue;
-    if (HIDE_DRAFTS && (entries.de.data.draft || entries.en.data.draft)) continue;
-    published.add(t.id);
-    items.push(t.id);
-  }
-  if (items.length) sidebar.push({ label: AREAS[area].de, translations: { en: AREAS[area].en }, collapsed: true, items });
+  const items = publishedIn(area);
+  if (items.length) manual.push({ area, label: AREAS[area].de, translations: { en: AREAS[area].en }, collapsed: true, items });
 }
 
 for (const t of manifest.topics.filter((x) => published.has(x.id))) {
@@ -119,7 +159,7 @@ for (const t of manifest.topics.filter((x) => published.has(x.id))) {
     if (topic.data.draft) parts.splice(2, 0, `<Aside type="caution">${c.draft}</Aside>`, '');
     if (only) parts.push('', `<Aside type="note" title=${yamlString(topic.data.platformNote ?? c.only[only])} />`);
     const [before, after] = topic.body.includes(STEPS_MARKER) ? topic.body.split(STEPS_MARKER).map((s) => s.trim()) : ['', topic.body];
-    if (before) parts.push('', esc(rewriteHelpLinks(before)));
+    if (before) parts.push('', bodyText(before, lang));
     if (topic.data.steps?.length) {
       if (both) {
         parts.push('', '<Tabs syncKey="platform">', `<TabItem label="${c.ios}">`, '', stepList(topic, t.id, lang, 'ios'), '', '</TabItem>',
@@ -128,7 +168,7 @@ for (const t of manifest.topics.filter((x) => published.has(x.id))) {
         parts.push('', stepList(topic, t.id, lang, only));
       }
     }
-    if (after) parts.push('', esc(rewriteHelpLinks(after)));
+    if (after) parts.push('', bodyText(after, lang));
     const related = (topic.data.related ?? []).flatMap((r) => {
       const prefix = lang === 'de' ? '' : '/en';
       return published.has(r) ? [`- [${readTopic(r, lang).data.title}](${prefix}/${r}/)`] : [];
@@ -141,72 +181,116 @@ for (const t of manifest.topics.filter((x) => published.has(x.id))) {
   }
 }
 
-// Home: Starlight's splash page, a hero and one card per area.
+// Home: a regular docs page ("Dokumentation") with a welcome line and one card
+// per chapter: Erste Schritte first, then the manual's areas, then the FAQ.
 const AREA_CARDS = {
-  heute: { icon: 'sun', de: 'Kalorienring, Mahlzeiten und die Heute-Seite anpassen.', en: 'The calorie ring, your meals and customizing Today.' },
-  logging: { icon: 'pencil', de: 'Suchen, scannen, Portionen und schnell erfassen.', en: 'Search, scan, portions and quick logging.' },
-  'recipes-library': { icon: 'open-book', de: 'Rezepte, Routinen und eigene Produkte.', en: 'Recipes, routines and your own products.' },
-  'goals-budget': { icon: 'star', de: 'Kalorienziel, Makros und Wochenbudget.', en: 'Calorie goal, macros and weekly budget.' },
-  fasting: { icon: 'clock', de: 'Zeitplan, Timer und Erinnerungen.', en: 'Schedule, timer and reminders.' },
-  water: { icon: 'notes', de: 'Wasserziel, Getränke und Erinnerungen.', en: 'Water goal, drinks and reminders.' },
-  'weight-body': { icon: 'list-format', de: 'Gewicht und Körpermaße eintragen.', en: 'Log your weight and body measurements.' },
-  stats: { icon: 'analytics', de: 'Woche, Monat und Jahr im Überblick.', en: 'Week, month and year at a glance.' },
-  health: { icon: 'heart', de: 'Apple Health und Health Connect verbinden.', en: 'Connect Apple Health and Health Connect.' },
-  sync: { icon: 'cloud-download', de: 'iCloud, Backup und mehrere Geräte.', en: 'iCloud, backup and more than one device.' },
-  'widgets-watch-shortcuts': { icon: 'puzzle', de: 'Widgets, Apple Watch und Kurzbefehle.', en: 'Widgets, Apple Watch and Shortcuts.' },
-  'intake-ai': { icon: 'comment', de: 'Mit KI erfassen, im Abo oder mit eigenem Schlüssel.', en: 'Log with AI, by subscription or with your own key.' },
-  settings: { icon: 'setting', de: 'Alles in den Einstellungen.', en: 'Everything in Settings.' },
+  heute: { de: 'Kalorienring, Mahlzeiten und die Heute-Seite anpassen.', en: 'The calorie ring, your meals and customizing Today.' },
+  logging: { de: 'Suchen, scannen, Portionen und schnell erfassen.', en: 'Search, scan, portions and quick logging.' },
+  'recipes-library': { de: 'Rezepte, Routinen und eigene Produkte.', en: 'Recipes, routines and your own products.' },
+  'goals-budget': { de: 'Kalorienziel, Makros und Wochenbudget.', en: 'Calorie goal, macros and weekly budget.' },
+  fasting: { de: 'Zeitplan, Timer und Erinnerungen.', en: 'Schedule, timer and reminders.' },
+  water: { de: 'Wasserziel, Getränke und Erinnerungen.', en: 'Water goal, drinks and reminders.' },
+  'weight-body': { de: 'Gewicht und Körpermaße eintragen.', en: 'Log your weight and body measurements.' },
+  stats: { de: 'Woche, Monat und Jahr im Überblick.', en: 'Week, month and year at a glance.' },
+  health: { de: 'Apple Health und Health Connect verbinden.', en: 'Connect Apple Health and Health Connect.' },
+  sync: { de: 'iCloud, Backup und mehrere Geräte.', en: 'iCloud, backup and more than one device.' },
+  'widgets-watch-shortcuts': { de: 'Widgets, Apple Watch und Kurzbefehle.', en: 'Widgets, Apple Watch and Shortcuts.' },
+  'intake-ai': { de: 'Mit KI erfassen, im Abo oder mit eigenem Schlüssel.', en: 'Log with AI, by subscription or with your own key.' },
+  settings: { de: 'Alles in den Einstellungen.', en: 'Everything in Settings.' },
+};
+const LABELS = {
+  intro: { de: 'Einführung', en: 'Introduction' },
+  docs: { de: 'Dokumentation', en: 'Documentation' },
+  faq: { de: 'FAQ', en: 'FAQ' },
+  privacy: { de: 'Datenschutz', en: 'Privacy' },
+  gettingStarted: { de: 'Erste Schritte', en: 'Getting started' },
+  manual: { de: 'Handbuch', en: 'User manual' },
 };
 const HOME = {
-  de: { tagline: 'Jede Funktion von Intake, Schritt für Schritt erklärt. Für iPhone und Android.', start: 'Erste Schritte', site: 'Zur Website', more: 'Themen ansehen', heroAlt: 'Die Heute-Seite von Intake auf dem iPhone' },
-  en: { tagline: 'Every Intake feature, explained step by step. On iPhone and Android.', start: 'Get started', site: 'Visit the website', more: 'See topics', heroAlt: 'The Today page of Intake on iPhone' },
+  de: {
+    description: 'Willkommen in der Dokumentation von Intake',
+    intro: 'Hier findest du jede Funktion von Intake, Schritt für Schritt und mit Screenshots erklärt. Alles gilt für iPhone und Android, wo sich die Apps unterscheiden, zeigt dir jede Seite beide Wege.',
+    gettingStarted: 'Intake installieren, einrichten und das erste Essen erfassen.',
+    faq: 'Antworten auf die häufigsten Fragen vor dem Kauf.',
+  },
+  en: {
+    description: 'Welcome to the Intake documentation',
+    intro: 'Here you’ll find every Intake feature, explained step by step with screenshots. It all applies to iPhone and Android, and where the apps differ, each page shows you both ways.',
+    gettingStarted: 'Install Intake, set it up and log your first food.',
+    faq: 'Answers to the most common questions before you buy.',
+  },
 };
+const html = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+const card = ({ href, icon, title, text, external }) =>
+  `<a class="doc-card" href="${href}"${external ? ' target="_blank" rel="noopener"' : ''}><span class="doc-card-icon" aria-hidden="true">${iconSvg(icon)}</span><span class="doc-card-body"><strong>${html(title)}</strong><span>${html(text)}</span></span></a>`;
 for (const lang of LANGS) {
   const prefix = lang === 'de' ? '' : '/en';
   const c = HOME[lang];
-  const first = published.has('first-setup') ? 'first-setup' : sidebar[0].items[0];
-  const cards = sidebar.map((group) => {
-    const area = Object.keys(AREAS).find((a) => AREAS[a].de === group.label);
-    const label = lang === 'de' ? group.label : group.translations.en;
-    return `<Card title=${yamlString(label)} icon="${AREA_CARDS[area].icon}">\n${AREA_CARDS[area][lang]} [${c.more}](${prefix}/${group.items[0]}/)\n</Card>`;
-  }).join('\n\n');
+  const cards = [];
+  if (gettingStarted.length) cards.push(card({ href: `${prefix}/${gettingStarted[0]}/`, icon: GETTING_STARTED_ICON, title: LABELS.gettingStarted[lang], text: c.gettingStarted }));
+  for (const group of manual) {
+    cards.push(card({ href: `${prefix}/${group.items[0]}/`, icon: AREA_ICONS[group.area], title: AREAS[group.area][lang], text: AREA_CARDS[group.area][lang] }));
+  }
+  cards.push(card({ href: FAQ_URL[lang], icon: 'circle-help', title: LABELS.faq[lang], text: c.faq, external: true }));
+  // Markdown, not MDX: the card grid is plain HTML and passes through untouched.
   const page = `---
-title: Intake Docs
-description: ${yamlString(c.tagline)}
-template: splash
-hero:
-  tagline: ${yamlString(c.tagline)}
-  image:
-    html: ${yamlString(`<img class="hero-phone hero-phone-light" src="/hero/today-${lang}-light.webp" width="640" height="1326" alt="${c.heroAlt}" /><img class="hero-phone hero-phone-dark" src="/hero/today-${lang}-dark.webp" width="640" height="1326" alt="${c.heroAlt}" />`)}
-  actions:
-    - text: ${yamlString(c.start)}
-      link: ${prefix}/${first}/
-      icon: right-arrow
-    - text: ${yamlString(c.site)}
-      link: https://www.getintake.de${lang === 'de' ? '' : '/en'}
-      icon: external
-      variant: minimal
+title: ${yamlString(LABELS.docs[lang])}
+description: ${yamlString(c.description)}
 ---
-import { Card, CardGrid } from '@astrojs/starlight/components';
 
-<CardGrid>
+${c.intro}
 
-${cards}
-
-</CardGrid>
+<div class="doc-cards not-content">
+${cards.join('\n')}
+</div>
 `;
   const dir = lang === 'de' ? DOCS : path.join(DOCS, 'en');
   fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, 'index.mdx'), page);
+  fs.writeFileSync(path.join(dir, 'index.md'), page);
 }
 
+// Sidebar: Einführung, Erste Schritte, Handbuch. Internal links are written once;
+// Starlight puts /en in front of them on English pages.
+const label = (key) => ({ label: LABELS[key].de, translations: { en: LABELS[key].en } });
+const icon = (name) => ({ 'data-icon': name });
+const sidebar = [
+  { ...label('intro'), collapsed: false, items: [
+    { ...label('docs'), link: '/', attrs: icon('book-open') },
+    { ...label('faq'), link: FAQ_URL.de, attrs: { ...NEW_TAB, ...icon('circle-help') } },
+    { ...label('privacy'), link: PRIVACY_URL.de, attrs: { ...NEW_TAB, ...icon('shield') } },
+  ] },
+];
+if (gettingStarted.length) {
+  sidebar.push({ ...label('gettingStarted'), collapsed: false, items: gettingStarted.map((id) => {
+    const title = Object.fromEntries(LANGS.map((l) => [l, readTopic(id, l).data.title]));
+    return { slug: id, label: title.de, translations: { en: title.en }, attrs: icon(GETTING_STARTED_ICONS[id]) };
+  }) });
+}
+sidebar.push({ ...label('manual'), collapsed: false, items: manual.map(({ area, ...group }) => group) });
 fs.mkdirSync(GENERATED, { recursive: true });
-// The start page first; Starlight puts /en in front of it on English pages.
-const home = { label: 'Startseite', translations: { en: 'Home' }, link: '/' };
-fs.writeFileSync(path.join(GENERATED, 'sidebar.json'), JSON.stringify([home, ...sidebar], null, 2) + '\n');
-// One icon per top-level sidebar entry, in sidebar order (an area without
-// published topics is left out, so the order is only known here).
-const iconFor = [HOME_ICON, ...sidebar.map((g) => AREA_ICONS[Object.keys(AREAS).find((a) => AREAS[a].de === g.label)])];
-const iconCss = iconFor.map((icon, i) => `.sidebar-content ul.top-level > li:nth-child(${i + 1}) { --chapter-icon: ${iconUrl(icon)}; }`).join('\n');
-fs.writeFileSync(path.join(GENERATED, 'sidebar-icons.css'), `/* Generated by scripts/generate.mjs. */\n${iconCss}\n`);
+fs.writeFileSync(path.join(GENERATED, 'sidebar.json'), JSON.stringify(sidebar, null, 2) + '\n');
+fs.writeFileSync(path.join(GENERATED, 'external-links.json'), JSON.stringify({ [FAQ_URL.de]: FAQ_URL.en, [PRIVACY_URL.de]: PRIVACY_URL.en }, null, 2) + '\n');
+
+// Sidebar icons. Links carry data-icon; the manual's area groups have no attributes,
+// so they are found by position, which is only known here (an area without
+// published topics is left out).
+const iconNames = new Set(['book-open', 'circle-help', 'shield', ...gettingStarted.map((id) => GETTING_STARTED_ICONS[id])]);
+const manualLi = `.sidebar-content ul.top-level > li:nth-child(${sidebar.length}) > details > ul > li`;
+const css = [
+  ...[...iconNames].map((name) => `.sidebar-content a[data-icon='${name}'] { --entry-icon: ${iconUrl(name)}; }`),
+  ...manual.map((group, i) => `${manualLi}:nth-child(${i + 1}) > details > summary { --entry-icon: ${iconUrl(AREA_ICONS[group.area])}; }`),
+  `.sidebar-content a[data-icon] > span::before,
+${manualLi} > details > summary .group-label > span::before {
+  content: '';
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  margin-inline-end: 0.6em;
+  vertical-align: -0.2em;
+  background-color: var(--sl-color-accent);
+  -webkit-mask: var(--entry-icon) center / contain no-repeat;
+  mask: var(--entry-icon) center / contain no-repeat;
+}`,
+];
+fs.writeFileSync(path.join(GENERATED, 'sidebar-icons.css'), `/* Generated by scripts/generate.mjs. */\n${css.join('\n')}\n`);
 console.log(`docs: ${published.size} topics, drafts ${HIDE_DRAFTS ? 'hidden' : 'shown'}`);
