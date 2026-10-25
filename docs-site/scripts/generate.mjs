@@ -287,7 +287,7 @@ ${manualLi} > details > summary .group-label > span::before {
   height: 1.15em;
   margin-inline-end: 0.6em;
   vertical-align: -0.2em;
-  background-color: var(--sl-color-accent);
+  background-color: var(--docs-icon-color, var(--sl-color-gray-3));
   -webkit-mask: var(--entry-icon) center / contain no-repeat;
   mask: var(--entry-icon) center / contain no-repeat;
 }`,
