@@ -1,5 +1,20 @@
-:root { --sl-color-accent-low: #3d1420; --sl-color-accent: #e8557a; --sl-color-accent-high: #f9c6d3; }
-:root[data-theme='light'] { --sl-color-accent-low: #fde3ea; --sl-color-accent: #d63d66; --sl-color-accent-high: #6b1028; }
+/* Intake coral (the landing page's --primary, hsl(338 92% 63%)) in both themes. */
+:root {
+  --intake-coral: #f74a8a;
+  --sl-color-accent-low: #4a1226;
+  --sl-color-accent: var(--intake-coral);
+  --sl-color-accent-high: var(--intake-coral);
+}
+:root[data-theme='light'] {
+  --sl-color-accent-low: #fde1eb;
+  /* A shade darker so links keep enough contrast on white. */
+  --sl-color-accent: #d62e6c;
+  --sl-color-accent-high: #8f1a46;
+}
+/* The selected sidebar entry: coral with white text in dark mode. */
+:root:not([data-theme='light']) .sidebar-content a[aria-current='page'] {
+  color: #fff;
+}
 .step-shot { max-width: 320px; border-radius: 18px; margin-top: .5rem; box-shadow: 0 1px 6px rgb(0 0 0 / .15); }
 /* App links (source=app) open the page on the app's platform without the switch. */
 :root[data-platform-switch='hidden'] starlight-tabs[data-sync-key='platform'] [role='tablist'] { display: none; }
