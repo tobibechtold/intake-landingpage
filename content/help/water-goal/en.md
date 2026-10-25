@@ -8,14 +8,23 @@ related:
   - water-reminders
 steps:
   - text: "On Today, tap the pencil on the “Water” card."
+    android:
+      text: "On Today, tap the pencil at the top right of the “Water” card."
+      image: ./assets/en/android/1.webp
     ios:
       text: "On Today, tap the pencil at the top right of the “Water” card."
       image: ./assets/en/ios/1.webp
   - text: "Set your daily goal and your glass size."
+    android:
+      text: "Use minus and plus to set your daily goal at the top and your glass size below it."
+      image: ./assets/en/android/2.webp
     ios:
       text: "Set “Daily goal (ml)” and “Glass size (ml)” with minus and plus, or tap the number and type it."
       image: ./assets/en/ios/2.webp
   - text: "Save your changes."
+    android:
+      text: "Tap “Save”."
+      image: ./assets/en/android/3.webp
     ios:
       text: "Tap the checkmark at the top right."
       image: ./assets/en/ios/3.webp

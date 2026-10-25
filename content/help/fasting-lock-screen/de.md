@@ -8,10 +8,16 @@ related:
   - fasting-notifications
 steps:
   - text: "Öffne in den Einstellungen „Fasten“."
+    android:
+      text: "Tippe auf Heute oben auf das Zahnrad und dann unter „Einstellungen“ auf „Fasten“."
+      image: ./assets/de/android/1.webp
     ios:
       text: "Tippe auf Heute oben auf das Zahnrad und dann unter „Profil & Ziele“ auf „Fasten“."
       image: ./assets/de/ios/1.webp
   - text: "Schalte die Anzeige des Fastenfortschritts ein."
+    android:
+      text: "Schalte „Live-Update-Benachrichtigung“ ein und tippe oben rechts auf das Häkchen."
+      image: ./assets/de/android/2.webp
     ios:
       text: "Schalte unter „Live-Aktivität“ „Live-Aktivität anzeigen“ ein."
       image: ./assets/de/ios/2.webp
@@ -19,3 +25,5 @@ draft: true
 ---
 
 Auf dem iPhone ist die Live-Aktivität an, sobald du das Fasten einschaltest. Timer und Balken laufen von selbst weiter. Wischst du sie weg, bleibt sie bis zum nächsten Wechsel zwischen Fasten und Essen verborgen.
+
+Auf Android zeigt eine laufende Benachrichtigung den Fastenfortschritt, auch auf dem Sperrbildschirm.

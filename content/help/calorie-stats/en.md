@@ -8,14 +8,21 @@ related:
   - weekly-budget
 steps:
   - text: "In Stats, tap the calorie card."
+    android:
+      text: "In Stats, tap the “Calorie Intake” card."
+      image: ./assets/en/android/1.webp
     ios:
       text: "In Stats, tap the “Calorie Intake” card."
       image: ./assets/en/ios/1.webp
   - text: "At the top you see consumed, base target, burned and remaining for the whole period, with the sum."
+    android:
+      image: ./assets/en/android/2.webp
     ios:
       text: "At the top, “Consumed”, “Base target”, “Burned” and “Remaining” cover the whole period, with the sum."
       image: ./assets/en/ios/2.webp
   - text: "Below the chart, your daily average and your average target are side by side, with the difference."
+    android:
+      image: ./assets/en/android/3.webp
     ios:
       text: "Below the chart, “Avg / day” and “Avg target” compare your daily average with your target. “Avg vs target” shows the difference."
       image: ./assets/en/ios/3.webp

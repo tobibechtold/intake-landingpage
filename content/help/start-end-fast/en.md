@@ -7,14 +7,20 @@ related:
   - fasting-lock-screen
 steps:
   - text: "On the “Fasting” tab, end your fast to eat now, or start a fast now."
+    android:
+      text: "On the “Fasting” tab, tap “End fasting” to eat now, or “Start fasting” during your eating time."
+      image: ./assets/en/android/1.webp
     ios:
       text: "On the “Fasting” tab, tap “End Fasting” or “Start Fasting” and confirm."
       image: ./assets/en/ios/1.webp
   - text: "You can go back to your schedule at any time with one tap."
+    android:
+      text: "“Back to schedule” puts your schedule back in charge right away."
+      image: ./assets/en/android/2.webp
     ios:
       text: "“Reset To Schedule” puts your schedule back in charge right away."
       image: ./assets/en/ios/2.webp
 draft: true
 ---
 
-On iPhone, “End Fasting” switches you to eating until your next scheduled fast, and “Start Fasting” begins a fast as long as the one in your schedule, then your eating time, and after that your schedule takes over again. With iCloud sync, your other Apple devices show the same fast.
+“End Fasting” switches you to eating until your next scheduled fast, and “Start Fasting” begins a fast as long as the one in your schedule, then your eating time, and after that your schedule takes over again. On iPhone, with iCloud sync, your other Apple devices show the same fast.
