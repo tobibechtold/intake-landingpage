@@ -8,17 +8,27 @@ related:
   - stats
 steps:
   - text: "Tippe in der Statistik auf die Gewichtskarte."
+    android:
+      text: "Tippe in der Statistik auf die Karte „Gewichtsverlauf“."
+      image: ./assets/de/android/1.webp
     ios:
       text: "Tippe in der Statistik auf die Karte „Gewichtsverlauf“."
       image: ./assets/de/ios/1.webp
   - text: "Wähle oben den Zeitraum. „Alle“ zeigt dein ganzes Gewicht seit dem ersten Eintrag."
+    android:
+      image: ./assets/de/android/2.webp
     ios:
       image: ./assets/de/ios/2.webp
   - text: "Blende den Durchschnitt der letzten sieben Tage ein oder aus."
+    android:
+      text: "„Ø 7 Tage“ blendet die Linie mit dem Durchschnitt der letzten sieben Tage ein oder aus."
+      image: ./assets/de/android/3.webp
     ios:
       text: "„7-Tage-Schnitt“ blendet die Linie mit dem Durchschnitt der letzten sieben Tage ein oder aus."
       image: ./assets/de/ios/3.webp
   - text: "Darunter stehen die Werte des Zeitraums, zum Beispiel die Änderung und dein Tiefstwert."
+    android:
+      image: ./assets/de/android/4.webp
     ios:
       image: ./assets/de/ios/4.webp
 draft: true

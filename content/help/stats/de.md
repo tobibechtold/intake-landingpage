@@ -8,17 +8,27 @@ related:
   - weight-trend
 steps:
   - text: "Tippe unten auf „Statistik“."
+    android:
+      image: ./assets/de/android/1.webp
     ios:
       image: ./assets/de/ios/1.webp
   - text: "Tippe auf eine Karte, um ihre Details zu öffnen."
+    android:
+      text: "Jede Karte zeigt die aktuelle Woche. Tippe auf eine Karte, um ihre Details zu öffnen."
+      image: ./assets/de/android/2.webp
     ios:
       text: "Jede Karte zeigt die aktuelle Woche. Tippe auf eine Karte, um ihre Details zu öffnen."
       image: ./assets/de/ios/2.webp
   - text: "Wähle oben Woche, Monat oder Jahr und blättere zu früheren Zeiträumen."
+    android:
+      text: "Wähle oben Woche, Monat oder Jahr. Mit den Pfeilen blätterst du zu früheren Zeiträumen."
+      image: ./assets/de/android/3.webp
     ios:
       text: "Wähle oben Woche, Monat oder Jahr. Mit den Pfeilen blätterst du zu früheren Zeiträumen."
       image: ./assets/de/ios/3.webp
   - text: "Tippe auf einen Balken, um seinen genauen Wert zu sehen."
+    android:
+      image: ./assets/de/android/4.webp
     ios:
       image: ./assets/de/ios/4.webp
 draft: true

@@ -8,14 +8,23 @@ related:
   - water-reminders
 steps:
   - text: "Tippe auf Heute in der Karte „Wasser“ auf den Stift."
+    android:
+      text: "Tippe auf Heute in der Karte „Wasser“ oben rechts auf den Stift."
+      image: ./assets/de/android/1.webp
     ios:
       text: "Tippe auf Heute in der Karte „Wasser“ oben rechts auf den Stift."
       image: ./assets/de/ios/1.webp
   - text: "Stell dein Tagesziel und die Glasgröße ein."
+    android:
+      text: "Stell mit Minus und Plus oben dein Tagesziel und darunter die Glasgröße ein."
+      image: ./assets/de/android/2.webp
     ios:
       text: "Stell mit Minus und Plus „Tagesziel (ml)“ und „Glasgröße (ml)“ ein, oder tippe auf die Zahl und gib sie ein."
       image: ./assets/de/ios/2.webp
   - text: "Speichere deine Änderungen."
+    android:
+      text: "Tippe auf „Speichern“."
+      image: ./assets/de/android/3.webp
     ios:
       text: "Tippe oben rechts auf das Häkchen."
       image: ./assets/de/ios/3.webp

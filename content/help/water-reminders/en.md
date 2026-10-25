@@ -8,14 +8,23 @@ related:
   - fasting-notifications
 steps:
   - text: "Open the reminder settings in Settings."
+    android:
+      text: "On Today, tap the gear at the top, then “Notifications”."
+      image: ./assets/en/android/1.webp
     ios:
       text: "On Today, tap the gear at the top, then “Notifications”."
       image: ./assets/en/ios/1.webp
   - text: "Pick “Custom” or “Smart” for your water reminders."
+    android:
+      text: "Under “Water reminders”, pick “Custom” or “Smart”."
+      image: ./assets/en/android/2.webp
     ios:
       text: "Under “Water reminders”, set “Mode” to “Custom” or “Smart (Beta)”."
       image: ./assets/en/ios/2.webp
   - text: "Choose between which times and how often Intake reminds you."
+    android:
+      text: "Set when Intake reminds you with “Wake time”, “Sleep time” and “Interval (minutes)”, then tap the checkmark at the top right."
+      image: ./assets/en/android/3.webp
     ios:
       text: "Use “Wake start”, “Wake end” and “Interval” to choose when and how often Intake reminds you."
       image: ./assets/en/ios/3.webp

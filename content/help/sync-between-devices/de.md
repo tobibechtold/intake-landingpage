@@ -17,4 +17,4 @@ Nicht über iCloud gehen Daten aus Apple Health, etwa Schritte, Workouts oder ei
 
 ## Android
 
-Auf Android ersetzt das [verschlüsselte Google-Drive-Backup](/hilfe/google-drive-backup) den iCloud-Sync. Intake sichert deine Daten damit automatisch in Google Drive, und du stellst sie mit deiner Passphrase wieder her.
+Auf Android ersetzt das [verschlüsselte Google-Drive-Backup](/hilfe/google-drive-backup) den iCloud-Sync. Intake sichert deine Daten damit auf Wunsch automatisch in Google Drive, und du stellst sie mit deiner Passphrase wieder her.

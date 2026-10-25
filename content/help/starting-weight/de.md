@@ -8,13 +8,20 @@ related:
   - weight-trend
 steps:
   - text: "Öffne in den Einstellungen „Körperdaten“."
+    android:
+      text: "Tippe auf Heute oben auf das Zahnrad und dann unter „Profil & Ziele“ auf „Körperdaten“."
+      image: ./assets/de/android/1.webp
     ios:
       text: "Tippe auf Heute oben auf das Zahnrad und dann unter „Profil & Ziele“ auf „Körperdaten“."
       image: ./assets/de/ios/1.webp
   - text: "Wähle bei „Startgewicht“ den Tag, ab dem Intake zählen soll."
+    android:
+      image: ./assets/de/android/2.webp
     ios:
       image: ./assets/de/ios/2.webp
   - text: "Auf Heute zeigt „Gesamt“ in der Karte „Gewicht“ die Veränderung seit diesem Tag."
+    android:
+      image: ./assets/de/android/3.webp
     ios:
       image: ./assets/de/ios/3.webp
 draft: true

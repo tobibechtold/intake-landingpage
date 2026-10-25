@@ -8,13 +8,21 @@ related:
   - sync-weight
 steps:
   - text: "Tippe auf Heute in der Karte „Gewicht“ auf die Zahl und gib dein Gewicht ein."
+    android:
+      image: ./assets/de/android/1.webp
     ios:
       image: ./assets/de/ios/1.webp
   - text: "Mit Minus und Plus änderst du es in kleinen Schritten."
+    android:
+      text: "Mit Minus und Plus änderst du es in Schritten von 0,1 kg."
+      image: ./assets/de/android/2.webp
     ios:
       text: "Mit Minus und Plus änderst du es in Schritten von 0,1 kg."
       image: ./assets/de/ios/2.webp
   - text: "Intake speichert das Gewicht von selbst. Darunter siehst du, wie es sich verändert hat."
+    android:
+      text: "Intake speichert von selbst. Darunter zeigt „Gesamt“, wie sich dein Gewicht verändert hat."
+      image: ./assets/de/android/3.webp
     ios:
       text: "Intake speichert von selbst. Darunter zeigen „Trend“, „Gesamt“ und „Zuletzt erfasst“, wie sich dein Gewicht verändert hat."
       image: ./assets/de/ios/3.webp

@@ -470,7 +470,7 @@ Card below Integrations (shown when build flag `GOOGLE_DRIVE_BACKUP_ENABLED`, cu
 | D29.4 | Abschnitte: Zeitraumübersicht, Tägliche Mahlzeiten (+ Essenszeiten anzeigen), Tägliche Nährwerte, Tägliche Aktivität und Hydration, Gewichtsübersicht, Stimmung und Notizen | Sections: Period summary, Daily meals (+ Show meal times), Daily nutrition, Daily activity and hydration, Weight summary, Mood and notes | … → PDF-Bericht exportieren → Abschnitte | Choose report sections. | — |
 | D29.5 | Daten exportieren | Export data | Einstellungen → Daten | Saves a full, unencrypted JSON backup file (`intake-backup-<time>.json`) via the system file picker. | — |
 | D29.6 | Daten importieren | Import data | Einstellungen → Daten | Restores from such a JSON file (replaces local data). | — |
-| D29.7 | App zurücksetzen | Reset App | Einstellungen → Daten | Confirm "App zurücksetzen und alle deine Daten löschen?"; deletes local profile, logs, recipes and own products on this install. | iOS text also deletes iCloud data (`settings.resetAppSheetBody`); Android is local only. |
+| D29.7 | App zurücksetzen | Reset App | Einstellungen → Daten | Confirm "App zurücksetzen und alle deine Daten löschen?"; deletes local profile, logs, recipes and own products on this install. | Same as iOS: the iOS reset keeps iCloud data too (code and `settings.resetAppSheetBody` agree); both reset this device only. |
 
 ## 9. Feature tour, legal & support
 
