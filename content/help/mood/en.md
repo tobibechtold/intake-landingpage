@@ -1,7 +1,7 @@
 ---
 id: mood
 title: "Log your mood"
-short: "On Today, tap an emoji under “How are you feeling today?”. Adding a note is optional."
+short: "On Today, tap an emoji on the mood card. Adding a note is optional."
 related:
   - edit-today-page
   - calorie-ring

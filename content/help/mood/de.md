@@ -1,7 +1,7 @@
 ---
 id: mood
 title: "Stimmung eintragen"
-short: "Auf Heute tippst du unter „Wie fühlst du dich heute?“ auf ein Emoji. Eine Notiz dazu ist optional."
+short: "Auf Heute tippst du in der Stimmungskarte auf ein Emoji. Eine Notiz dazu ist optional."
 related:
   - edit-today-page
   - calorie-ring

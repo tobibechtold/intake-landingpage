@@ -29,4 +29,4 @@ draft: true
 
 „Mahlzeit löschen“ entfernt nach einer Rückfrage alle Einträge der Mahlzeit. Auf dem iPhone werden dabei auch die Daten entfernt, die Intake an Apple Health übertragen hat.
 
-Mit den beiden Buttons daneben teilst du die Mahlzeit als Bild oder als Datei. Auf dem iPhone klappst du eine Mahlzeit auf Heute mit dem Pfeil neben den Kalorien ein und aus.
+Mit den beiden Buttons daneben teilst du die Mahlzeit als Bild oder als Datei. Eine Mahlzeit klappst du auf Heute mit dem Pfeil neben den Kalorien ein und aus.
