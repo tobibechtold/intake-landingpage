@@ -9,7 +9,7 @@ related:
 steps:
   - text: "Öffne in Intake die Einstellungen."
     ios:
-      text: "Tippe im Intake-Dashboard oben rechts auf das Zahnrad."
+      text: "Tippe auf Heute oben auf das Zahnrad."
       image: ./assets/de/ios/1.webp
   - text: "Tippe auf Intake AI und wähle „Meinen API-Schlüssel verwenden“."
     ios:
@@ -19,7 +19,11 @@ steps:
     ios:
       image: ./assets/de/ios/3.webp
   - text: "Behalte das Standardmodell. Ändere den Modellnamen nur, wenn du den exakten Namen eines unterstützten Modells kennst."
+    ios:
+      image: ./assets/de/ios/4.webp
   - text: "Füge den vollständigen Schlüssel ohne zusätzliche Leerzeichen ein, speichere und sende eine kurze Mahlzeitenbeschreibung zum Testen."
+    ios:
+      image: ./assets/de/ios/5.webp
 draft: true
 ---
 
