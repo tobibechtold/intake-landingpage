@@ -7,8 +7,9 @@ related:
   - starting-weight
   - log-weight
 steps:
-  - text: "On Today, tap the gear at the top, then “Body Data”."
+  - text: "Open “Body Data” in Settings."
     ios:
+      text: "On Today, tap the gear at the top, then “Body Data” under “Profile & Goals”."
       image: ./assets/en/ios/1.webp
   - text: "Choose your sex and enter your birthday. Intake works out your age."
     ios:

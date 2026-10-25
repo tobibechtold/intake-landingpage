@@ -14,8 +14,9 @@ steps:
     ios:
       text: "Choose “One entry” or “Each ingredient” at the top."
       image: ./assets/en/ios/2.webp
-  - text: "Set the amount: portions or “Custom grams”."
+  - text: "Set the amount, in portions or in grams."
     ios:
+      text: "Set the amount: “Portion” or “Custom grams”."
       image: ./assets/en/ios/3.webp
   - text: "Add the recipe."
     ios:
@@ -24,4 +25,4 @@ steps:
 draft: true
 ---
 
-Under “Ingredients” you change or add ingredients for this entry only. The saved recipe stays as it is.
+If you change or add ingredients while logging, that applies to this entry only. The saved recipe stays as it is.

@@ -14,8 +14,9 @@ steps:
     ios:
       text: "Wähle oben „Ein Eintrag“ oder „Jede Zutat“."
       image: ./assets/de/ios/2.webp
-  - text: "Stell die Menge ein: Portionen oder „Eigene Gramm“."
+  - text: "Stell die Menge ein, in Portionen oder in Gramm."
     ios:
+      text: "Stell die Menge ein: „Portion“ oder „Eigene Gramm“."
       image: ./assets/de/ios/3.webp
   - text: "Füge das Rezept hinzu."
     ios:
@@ -24,4 +25,4 @@ steps:
 draft: true
 ---
 
-Unter „Zutaten“ änderst oder ergänzt du Zutaten nur für diesen Eintrag. Das gespeicherte Rezept bleibt, wie es ist.
+Änderst oder ergänzt du beim Loggen Zutaten, gilt das nur für diesen Eintrag. Das gespeicherte Rezept bleibt, wie es ist.

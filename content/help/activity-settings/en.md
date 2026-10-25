@@ -7,8 +7,9 @@ related:
   - workouts-without-double-counting
   - calorie-goal
 steps:
-  - text: "On Today, tap the gear at the top, then “Activity”."
+  - text: "Open “Activity” in Settings."
     ios:
+      text: "On Today, tap the gear at the top, then “Activity” under “Profile & Goals”."
       image: ./assets/en/ios/1.webp
   - text: "Turn on “Add activity to target”."
     ios:

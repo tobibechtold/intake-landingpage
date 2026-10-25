@@ -16,7 +16,6 @@ steps:
   - text: "Lass unter Einstellungen > „Aktivität“ „Aktivität zum Ziel addieren“ an. Sonst deckt dein Ziel nur die Ruheenergie ab."
     ios:
       image: ./assets/de/ios/3.webp
-draft: true
 ---
 
 Die Quelle gibt es, sobald Apple Health verbunden ist. Heute zählt nicht mit, und mit weniger als 3 Tagen Daten rechnet Intake mit deinen Körperdaten.

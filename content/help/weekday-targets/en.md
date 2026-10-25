@@ -22,3 +22,5 @@ draft: true
 ---
 
 A change for a single day is made on Today with “Target”.
+
+On iPhone the rules keep working with the weekly budget: turning the budget on turns them on too, and each rule shows whether it comes “on top” or “from the other days”.

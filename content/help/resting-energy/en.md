@@ -16,7 +16,6 @@ steps:
   - text: "Keep “Add activity to target” on under Settings > “Activity”. Otherwise your target only covers resting energy."
     ios:
       image: ./assets/en/ios/3.webp
-draft: true
 ---
 
 The source appears once Apple Health is connected. Today doesn’t count, and with less than 3 days of data Intake uses your body data instead.

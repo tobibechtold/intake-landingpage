@@ -7,8 +7,9 @@ related:
   - workouts-without-double-counting
   - calorie-goal
 steps:
-  - text: "Tippe auf Heute oben auf das Zahnrad und dann auf „Aktivität“."
+  - text: "Öffne in den Einstellungen „Aktivität“."
     ios:
+      text: "Tippe auf Heute oben auf das Zahnrad und dann unter „Profil & Ziele“ auf „Aktivität“."
       image: ./assets/de/ios/1.webp
   - text: "Schalte „Aktivität zum Ziel addieren“ ein."
     ios:

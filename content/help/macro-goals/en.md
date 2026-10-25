@@ -7,8 +7,9 @@ related:
   - calorie-goal
   - daily-nutrients
 steps:
-  - text: "On Today, tap the gear at the top, then “Macro goals”."
+  - text: "Open “Macro goals” in Settings."
     ios:
+      text: "On Today, tap the gear at the top, then “Macro goals” under “Profile & Goals”."
       image: ./assets/en/ios/1.webp
   - text: "Under “Protein target”, use the slider to set how many grams of protein per kilo you want."
     ios:

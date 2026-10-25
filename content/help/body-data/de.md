@@ -7,8 +7,9 @@ related:
   - starting-weight
   - log-weight
 steps:
-  - text: "Tippe auf Heute oben auf das Zahnrad und dann auf „Körperdaten“."
+  - text: "Öffne in den Einstellungen „Körperdaten“."
     ios:
+      text: "Tippe auf Heute oben auf das Zahnrad und dann unter „Profil & Ziele“ auf „Körperdaten“."
       image: ./assets/de/ios/1.webp
   - text: "Wähle dein Geschlecht und deinen Geburtstag. Das Alter rechnet Intake selbst aus."
     ios:

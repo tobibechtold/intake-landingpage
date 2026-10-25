@@ -22,3 +22,5 @@ draft: true
 ---
 
 Eine Änderung nur für einen einzelnen Tag machst du direkt auf Heute über „Ziel“.
+
+Auf dem iPhone gelten die Regeln auch mit Wochenbudget weiter: Das Wochenbudget schaltet sie mit ein, und jede Regel zeigt, ob sie „zusätzlich“ kommt oder „von den anderen Tagen“.

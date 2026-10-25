@@ -7,8 +7,9 @@ related:
   - calorie-goal
   - daily-nutrients
 steps:
-  - text: "Tippe auf Heute oben auf das Zahnrad und dann auf „Makro-Ziele“."
+  - text: "Öffne in den Einstellungen „Makro-Ziele“."
     ios:
+      text: "Tippe auf Heute oben auf das Zahnrad und dann unter „Profil & Ziele“ auf „Makro-Ziele“."
       image: ./assets/de/ios/1.webp
   - text: "Stell unter „Proteinziel“ mit dem Regler ein, wie viel Gramm Protein pro Kilo du willst."
     ios:
