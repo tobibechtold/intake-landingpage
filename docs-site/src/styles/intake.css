@@ -1,0 +1,5 @@
+:root { --sl-color-accent-low: #3d1420; --sl-color-accent: #e8557a; --sl-color-accent-high: #f9c6d3; }
+:root[data-theme='light'] { --sl-color-accent-low: #fde3ea; --sl-color-accent: #d63d66; --sl-color-accent-high: #6b1028; }
+.step-shot { max-width: 320px; border-radius: 18px; margin-top: .5rem; box-shadow: 0 1px 6px rgb(0 0 0 / .15); }
+/* App links (source=app) open the page on the app's platform without the switch. */
+:root[data-platform-switch='hidden'] starlight-tabs[data-sync-key='platform'] [role='tablist'] { display: none; }
