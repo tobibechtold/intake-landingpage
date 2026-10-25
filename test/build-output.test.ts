@@ -61,7 +61,7 @@ describe('build output', () => {
         expect(index.find((item) => item.id === 'copy-meal')?.href).toBe(copyMeal);
         expect(index.find((item) => item.id === 'byok-guide')?.href).toBe(guide);
         // Topics without content yet are not in the index.
-        expect(index.map((item) => item.id)).not.toContain('calorie-ring');
+        expect(index.map((item) => item.id)).not.toContain('whats-new');
       }
     });
 
@@ -70,7 +70,7 @@ describe('build output', () => {
       expect(html).toMatch(/<h2[^>]*>\s*Essen erfassen\s*<\/h2>/);
       expect(html).toContain('href="/hilfe/mahlzeit-kopieren"');
       expect(html).toContain('href="/hilfe/eigener-api-schluessel"');
-      expect(html).not.toContain('href="/hilfe/kalorienring"');
+      expect(html).not.toContain('href="/hilfe/neuigkeiten"');
       const links = [...html.matchAll(/href="(\/hilfe\/[a-z0-9-]+)"/g)].map((match) => match[1]);
       expect(links.filter((link) => !existsSync(distFileFor(link)))).toEqual([]);
       expect(read('/en/help')).toMatch(/<h2[^>]*>\s*Logging food\s*<\/h2>/);
