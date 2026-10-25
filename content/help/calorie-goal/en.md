@@ -1,6 +1,6 @@
 ---
 id: calorie-goal
-title: "How your calorie goal is calculated"
+title: "Calorie goal"
 short: "Your daily target is your maintenance calories plus a daily adjustment, for example minus 500 kcal to lose weight. You set both under Settings > “Calories”."
 related:
   - weekly-budget

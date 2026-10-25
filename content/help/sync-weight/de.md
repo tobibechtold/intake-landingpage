@@ -1,6 +1,6 @@
 ---
 id: sync-weight
-title: "Gewicht mit Apple Health oder Health Connect abgleichen"
+title: "Gewicht abgleichen"
 short: "Trägst du dein Gewicht in Intake ein, landet es auch in Apple Health oder Health Connect. Wiegst du dich mit einer Waage oder einer anderen App, übernimmt Intake das neueste Gewicht von dort."
 related:
   - log-weight

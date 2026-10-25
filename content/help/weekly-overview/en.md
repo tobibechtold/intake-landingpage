@@ -1,6 +1,6 @@
 ---
 id: weekly-overview
-title: "Weekly overview: move the balance and mark “Ate nothing”"
+title: "Weekly overview"
 short: "With the weekly budget on, tap “Week” on Today to see every day of the week with its plus or minus. There you mark days without food and, in manual mode, move the balance."
 related:
   - weekly-budget

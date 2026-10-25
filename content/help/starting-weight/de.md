@@ -1,6 +1,6 @@
 ---
 id: starting-weight
-title: "Startgewicht und Gesamtveränderung"
+title: "Startgewicht"
 short: "„Gesamt“ in der Karte „Gewicht“ zeigt, wie viel du seit deinem Startgewicht ab- oder zugenommen hast. Ab welchem Tag gezählt wird, stellst du unter „Körperdaten“ ein."
 related:
   - log-weight

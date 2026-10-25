@@ -1,6 +1,6 @@
 ---
 id: log-recipe
-title: "Rezept loggen: Portionen, Gramm, als Gericht oder einzelne Zutaten"
+title: "Rezept eintragen"
 short: "Such das Rezept beim Hinzufügen oder öffne „Rezepte“ unter „Bibliothek“. Du loggst Portionen oder Gramm, als einen Eintrag oder jede Zutat einzeln."
 related:
   - recipe-cooked-weight

@@ -1,6 +1,6 @@
 ---
 id: create-recipe
-title: "Create a recipe, also from a meal"
+title: "Create a recipe"
 short: "Create a new recipe in the Library under “Recipes”. Or turn a logged meal into a recipe: on Today, tap the meal’s name and choose “Create Recipe” from the menu."
 related:
   - recipe-cooked-weight

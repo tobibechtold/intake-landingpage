@@ -1,6 +1,6 @@
 ---
 id: set-up-intake-ai
-title: "Intake AI einrichten: mit Abo, eigenem Schlüssel oder ohne KI"
+title: "Intake AI einrichten"
 short: "In den Einstellungen unter „Intake AI“ wählst du: das Intake-AI-Abo, deinen eigenen API-Schlüssel ohne Abo oder keine KI. Intake funktioniert auch ohne KI vollständig."
 related:
   - byok-guide

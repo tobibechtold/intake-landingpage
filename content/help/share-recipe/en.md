@@ -1,6 +1,6 @@
 ---
 id: share-recipe
-title: "Share, import and duplicate a recipe"
+title: "Share a recipe"
 short: "You send a recipe as a file that anyone can open with Intake on iPhone or Android. “Duplicate” makes a copy."
 related:
   - create-recipe

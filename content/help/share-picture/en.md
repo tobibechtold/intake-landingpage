@@ -1,6 +1,6 @@
 ---
 id: share-picture
-title: "Share your day, a meal or your progress as a picture"
+title: "Share as a picture"
 short: "On Today, tap the share button at the top. You choose what goes on the picture, for example the whole day or a meal, then share it or save it to Photos."
 related:
   - meal-summary

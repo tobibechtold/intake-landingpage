@@ -1,6 +1,6 @@
 ---
 id: export-data
-title: "Export your data and import it again"
+title: "Export your data"
 short: "Under “Data” you save your Intake data as a JSON file and load it back later. When you import, the file replaces the data on this device."
 related:
   - pdf-report

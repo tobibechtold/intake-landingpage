@@ -1,6 +1,6 @@
 ---
 id: water-from-other-apps
-title: "Water from other apps through Apple Health"
+title: "Water from other apps"
 short: "If you log water in another app that shares it with Apple Health, Intake shows it on the “Water” card and counts it toward your goal. Apple Health has to be connected for this."
 related:
   - log-water

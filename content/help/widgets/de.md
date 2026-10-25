@@ -1,6 +1,6 @@
 ---
 id: widgets
-title: "Intake-Widgets auf dem Home-Bildschirm"
+title: "Widgets"
 short: "Intake hat Widgets für übrige und gegessene Kalorien, zum schnellen Erfassen einer Mahlzeit und für Wasser. Halte den Home-Bildschirm gedrückt und füge ein Intake-Widget hinzu."
 related:
   - control-center

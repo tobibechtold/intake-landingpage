@@ -1,6 +1,6 @@
 ---
 id: stats
-title: "Stats: choose a period and read the cards"
+title: "Stats at a glance"
 short: "The “Stats” tab shows calories, macros, weight, body measurements and water as cards. Tap a card for its details, where you choose a week, month or year."
 related:
   - calorie-stats

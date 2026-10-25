@@ -1,6 +1,6 @@
 ---
 id: sync-between-devices
-title: "iPhone, iPad und Android: was zwischen Geräten synchronisiert wird"
+title: "Sync zwischen Geräten"
 short: "Zwischen iPhone und iPad gleicht Intake deine Daten über iCloud ab. Auf Android gibt es statt iCloud-Sync ein verschlüsseltes Google-Drive-Backup."
 related:
   - icloud-sync

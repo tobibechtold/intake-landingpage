@@ -1,6 +1,6 @@
 ---
 id: submit-product
-title: "Produkt zur Prüfung einreichen oder einen Fehler melden"
+title: "Produkt einreichen"
 short: "Reich ein eigenes Produkt zur Prüfung ein, damit es in die gemeinsame Datenbank kommt. Wie es steht, siehst du in der Bibliothek unter „Einreichungen“."
 related:
   - create-product

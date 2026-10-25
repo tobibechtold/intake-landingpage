@@ -1,6 +1,6 @@
 ---
 id: correct-ai-estimate
-title: "Correct an Intake AI estimate"
+title: "Correct an estimate"
 short: "If an estimate is off, reply in the chat or open “Correct” to change ingredients, portion and calories; Intake AI then works it out again. “Correct” comes with the Intake AI subscription."
 related:
   - intake-ai-text

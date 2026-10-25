@@ -1,6 +1,6 @@
 ---
 id: share-meal
-title: "Share a meal as a file and import it"
+title: "Share a meal"
 short: "In the meal summary you send a meal as a file, for example in a message. Whoever opens it with Intake can add it to their diary."
 related:
   - copy-meal

@@ -1,6 +1,6 @@
 ---
 id: edit-entry
-title: "Eintrag bearbeiten oder löschen"
+title: "Eintrag bearbeiten"
 short: "Tippe auf Heute auf einen Eintrag. Du änderst Menge, Einheit, Mahlzeit oder Uhrzeit und speicherst. Mit dem Papierkorb löschst du ihn."
 related:
   - move-entry

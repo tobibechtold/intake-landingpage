@@ -1,6 +1,6 @@
 ---
 id: macro-goals
-title: "Makroziele festlegen"
+title: "Makro-Ziele"
 short: "Unter Einstellungen > „Makro-Ziele“ legst du dein Proteinziel in Gramm pro Kilo Körpergewicht fest und wählst, wie die übrigen Kalorien auf Kohlenhydrate und Fett verteilt werden."
 related:
   - nutrient-goals

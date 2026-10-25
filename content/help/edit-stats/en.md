@@ -1,6 +1,6 @@
 ---
 id: edit-stats
-title: "Add, hide and reorder Stats cards"
+title: "Customize Stats"
 short: "Edit Stats to choose which cards appear and in which order. There are cards for single nutrients too, such as fibre, vitamins or caffeine."
 related:
   - stats

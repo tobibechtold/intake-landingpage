@@ -1,6 +1,6 @@
 ---
 id: add-food
-title: "Search for food and add it"
+title: "Add food"
 short: "Tap the plus on a meal, search for the food, choose the portion and confirm. Search finds your recipes, your own products and foods from the database."
 related:
   - portions-units

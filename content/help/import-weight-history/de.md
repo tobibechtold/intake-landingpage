@@ -1,6 +1,6 @@
 ---
 id: import-weight-history
-title: "Gewichtsverlauf aus Apple Health importieren"
+title: "Gewichtsverlauf importieren"
 short: "Mit „Gewichtsverlauf importieren“ holst du alle Gewichte aus Apple Health in deinen Verlauf, zum Beispiel von einer smarten Waage oder aus einer anderen App."
 related:
   - sync-weight

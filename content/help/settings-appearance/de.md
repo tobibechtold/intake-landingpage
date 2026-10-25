@@ -1,6 +1,6 @@
 ---
 id: settings-appearance
-title: "Darstellung: Design, Akzentfarbe und App-Icon"
+title: "Darstellung"
 short: "Unter „Darstellung“ wählst du hell, dunkel oder wie das System, eine Akzentfarbe und ein anderes App-Icon. Dort legst du auch fest, wie Heute aussieht und ob Intake Fotos zeigt."
 related:
   - switch-days

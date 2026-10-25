@@ -1,6 +1,6 @@
 ---
 id: calorie-stats
-title: "How to read Calorie Intake in Stats"
+title: "The Calorie Intake card"
 short: "The calorie details do the maths for the period: base target plus calories burned minus calories eaten gives what is left. Below, you compare your daily average with your target."
 related:
   - stats

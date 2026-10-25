@@ -1,6 +1,6 @@
 ---
 id: resting-energy
-title: "Maintenance calories from resting energy in Apple Health"
+title: "Resting energy"
 short: "With “Apple Health” as the source, Intake uses the average of your resting energy over the last 7 days as your maintenance. Your movement comes on top through “Add activity to target”."
 related:
   - calorie-goal

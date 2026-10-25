@@ -1,6 +1,6 @@
 ---
 id: add-food
-title: "Lebensmittel suchen und hinzufügen"
+title: "Lebensmittel hinzufügen"
 short: "Tippe bei einer Mahlzeit auf das Plus, such das Lebensmittel, wähle die Portion und bestätige. Die Suche findet deine Rezepte, eigenen Produkte und Lebensmittel aus der Datenbank."
 related:
   - portions-units

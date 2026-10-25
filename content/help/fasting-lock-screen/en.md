@@ -1,6 +1,6 @@
 ---
 id: fasting-lock-screen
-title: "Fasting progress on the Lock Screen"
+title: "Fasting on the Lock Screen"
 short: "Intake shows your current fast outside the app too: on iPhone as a Live Activity on the Lock Screen and in the Dynamic Island. You turn it on or off in the fasting settings."
 related:
   - set-up-fasting

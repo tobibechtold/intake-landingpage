@@ -1,6 +1,6 @@
 ---
 id: tags
-title: "Sort foods with tags"
+title: "Add tags"
 short: "Give your products and favorites tags, for example “Breakfast”. Use them to filter the lists in the Library and when you add food."
 related:
   - my-products

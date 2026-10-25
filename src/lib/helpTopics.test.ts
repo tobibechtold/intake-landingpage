@@ -29,7 +29,7 @@ const topicFiles = (): { folder: string; file: string; text: string }[] =>
 
 const entry = (overrides: Partial<HelpTopicEntryData> = {}): HelpTopicEntryData => ({
   id: 'copy-meal',
-  title: 'Mahlzeit auf einen anderen Tag kopieren',
+  title: 'Mahlzeit kopieren',
   short: 'Öffne die Mahlzeit und kopiere sie über das Menü.',
   ...overrides,
 });
@@ -139,6 +139,12 @@ describe('validateTopicEntry', () => {
     const longStep = validateTopicEntry(entry({ steps: [{ text: 'a'.repeat(161) }] }), manifest);
     expect(longShort.length).toBeGreaterThan(0);
     expect(longStep.length).toBeGreaterThan(0);
+  });
+
+  it('flags a title longer than 32 characters or with a colon', () => {
+    expect(validateTopicEntry(entry({ title: 'a'.repeat(32) }), manifest)).toEqual([]);
+    expect(validateTopicEntry(entry({ title: 'a'.repeat(33) }), manifest).length).toBeGreaterThan(0);
+    expect(validateTopicEntry(entry({ title: 'Kalorienring: übrig' }), manifest).length).toBeGreaterThan(0);
   });
 
   it('allows customPage only on byok-guide and requires it there', () => {

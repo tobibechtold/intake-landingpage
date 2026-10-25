@@ -1,6 +1,6 @@
 ---
 id: weekly-budget
-title: "Wie das Wochenbudget funktioniert"
+title: "Wochenbudget"
 short: "Das Wochenbudget ist die Summe deiner Tagesziele von Montag bis Sonntag. Was du an einem Tag nicht isst, bleibt für die restliche Woche übrig, und was du zu viel isst, fehlt dort."
 related:
   - weekly-overview

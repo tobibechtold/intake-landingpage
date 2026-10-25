@@ -1,6 +1,6 @@
 ---
 id: switch-days
-title: "Switch days and pick a date"
+title: "Switch days"
 short: "Tap a day in the week strip or swipe left or right on Today. The calendar button takes you to any date."
 related:
   - month-calendar

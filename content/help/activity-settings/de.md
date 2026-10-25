@@ -1,6 +1,6 @@
 ---
 id: activity-settings
-title: "Einstellungen: Aktivität (Aktivitätskalorien zum Tagesziel addieren)"
+title: "Aktivitätskalorien"
 short: "Unter Einstellungen > „Aktivität“ legst du fest, ob verbrannte Kalorien dein Tagesziel erhöhen, welche zählen und wie viel davon."
 related:
   - steps-workouts

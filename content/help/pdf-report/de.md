@@ -1,6 +1,6 @@
 ---
 id: pdf-report
-title: "PDF-Bericht oder Markdown für KI exportieren"
+title: "PDF-Bericht exportieren"
 short: "Unter „PDF-Bericht exportieren“ in den Einstellungen erstellst du einen Bericht über einen Zeitraum, als PDF oder als Textdatei für eine KI."
 related:
   - stats

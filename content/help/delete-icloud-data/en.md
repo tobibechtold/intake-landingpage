@@ -1,6 +1,6 @@
 ---
 id: delete-icloud-data
-title: "Delete your iCloud data"
+title: "Delete iCloud data"
 short: "“Delete iCloud data” removes everything Intake stored in iCloud and turns iCloud sync off. The data on your device stays."
 related:
   - icloud-sync

@@ -1,6 +1,6 @@
 ---
 id: workouts-without-double-counting
-title: "Workouts ohne Doppelzählung und Workout-Kalorien einschließen"
+title: "Workouts ohne Doppelzählung"
 short: "Apple Health zählt Workout-Kalorien meist schon zu deinen Aktivitätskalorien. Mit „Workouts ohne Doppelzählung“ fügt ein Workout nur hinzu, was dort noch fehlt, und dein Tag passt zum Bewegungsring."
 related:
   - steps-workouts

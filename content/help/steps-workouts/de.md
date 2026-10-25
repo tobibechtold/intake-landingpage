@@ -1,6 +1,6 @@
 ---
 id: steps-workouts
-title: "Schritte, Aktivität und Workouts aus Apple Health und Health Connect"
+title: "Schritte und Workouts"
 short: "Intake liest Schritte, Aktivitätskalorien und Workouts aus Apple Health oder Health Connect. Garmin, Fitbit oder Strava tauchen nur auf, wenn sie ihre Daten dorthin schreiben."
 related:
   - workouts-without-double-counting

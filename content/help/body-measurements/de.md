@@ -1,6 +1,6 @@
 ---
 id: body-measurements
-title: "Körpermaße erfassen und auswerten"
+title: "Körpermaße eintragen"
 short: "Taille, Hüfte, Körperfett und weitere Maße trägst du auf Heute in der Karte „Körpermaße“ ein. Die Statistik zeigt jeden Wert als Verlauf."
 related:
   - log-weight

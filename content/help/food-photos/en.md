@@ -1,6 +1,6 @@
 ---
 id: food-photos
-title: "Photos on entries, products and recipes"
+title: "Add photos"
 short: "You can attach a photo to entries, your own products and recipes. On Today it shows next to the entry."
 related:
   - edit-entry

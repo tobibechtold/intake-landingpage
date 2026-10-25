@@ -1,6 +1,6 @@
 ---
 id: daily-nutrients
-title: "Welche Lebensmittel zu einem Nährwert beigetragen haben"
+title: "Nährwerte im Detail"
 short: "Tippe auf Heute auf einen Makro wie Protein. Du siehst, welche Lebensmittel wie viel dazu beigetragen haben. „Alle Nährstoffe anzeigen“ listet jeden Nährwert des Tages."
 related:
   - calorie-ring

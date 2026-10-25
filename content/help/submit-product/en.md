@@ -1,6 +1,6 @@
 ---
 id: submit-product
-title: "Submit a product for review or report a mistake"
+title: "Submit a product"
 short: "Submit one of your own products for review so it can join the shared database. You follow its status in the Library under “Submissions”."
 related:
   - create-product

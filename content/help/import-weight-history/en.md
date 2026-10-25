@@ -1,6 +1,6 @@
 ---
 id: import-weight-history
-title: "Import your weight history from Apple Health"
+title: "Import weight history"
 short: "“Import weight history” brings every weight from Apple Health into your history, for example from a smart scale or another app."
 related:
   - sync-weight

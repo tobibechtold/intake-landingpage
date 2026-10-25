@@ -1,6 +1,6 @@
 ---
 id: move-entry
-title: "Eintrag in eine andere Mahlzeit, Uhrzeit oder auf einen anderen Tag verschieben"
+title: "Eintrag verschieben"
 short: "Mahlzeit und Uhrzeit änderst du direkt im Eintrag. Ein Datum lässt sich dort nicht ändern: Für einen anderen Tag kopierst du den Eintrag dorthin und löschst ihn danach am alten Tag."
 related:
   - copy-meal

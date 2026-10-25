@@ -1,6 +1,6 @@
 ---
 id: scan-nutrition-label
-title: "Photograph a nutrition label to create a product"
+title: "Scan a nutrition label"
 short: "When you create a product, Intake AI fills in the form from a photo of the nutrition label. This comes with the Intake AI subscription, even if you otherwise use your own API key."
 related:
   - create-product

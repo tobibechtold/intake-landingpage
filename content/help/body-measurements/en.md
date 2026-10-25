@@ -1,6 +1,6 @@
 ---
 id: body-measurements
-title: "Log and track body measurements"
+title: "Log body measurements"
 short: "You log your waist, hip, body fat and other measurements on the “Body Measurements” card on Today. Stats shows each one as a trend."
 related:
   - log-weight

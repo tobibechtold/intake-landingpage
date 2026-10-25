@@ -1,6 +1,6 @@
 ---
 id: icloud-sync
-title: "Set up iCloud sync, photos included"
+title: "Set up iCloud sync"
 short: "With iCloud sync, your diary, library, recipes and goals stay the same on iPhone and iPad. Turn it on on every device, signed in with the same Apple Account."
 related:
   - fix-icloud-sync

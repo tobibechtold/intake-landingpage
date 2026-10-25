@@ -1,6 +1,6 @@
 ---
 id: water-goal
-title: "Wasserziel und Glasgröße einstellen"
+title: "Wasserziel einstellen"
 short: "Wasserziel und Glasgröße stellst du direkt in der Karte „Wasser“ auf Heute ein, über den Stift. In den Einstellungen gibt es dafür keinen Eintrag."
 related:
   - log-water

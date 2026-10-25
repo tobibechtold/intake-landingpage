@@ -1,6 +1,6 @@
 ---
 id: recent-frequent-favorites
-title: "Recent, Frequent, Favorites and Suggestions"
+title: "Recent foods and favorites"
 short: "While adding food, suggestions for the meal sit at the top. Below them you open your favorites, your recent foods and the foods you eat most often."
 related:
   - add-food

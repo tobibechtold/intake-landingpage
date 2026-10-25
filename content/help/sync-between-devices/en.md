@@ -1,6 +1,6 @@
 ---
 id: sync-between-devices
-title: "iPhone, iPad and Android: what syncs between devices"
+title: "Sync between devices"
 short: "Between iPhone and iPad, Intake syncs your data through iCloud. On Android, an encrypted Google Drive backup takes the place of iCloud sync."
 related:
   - icloud-sync

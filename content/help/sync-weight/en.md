@@ -1,6 +1,6 @@
 ---
 id: sync-weight
-title: "Sync your weight with Apple Health or Health Connect"
+title: "Sync your weight"
 short: "When you log your weight in Intake, it is saved to Apple Health or Health Connect too. If you weigh yourself with a scale or another app, Intake takes the latest weight from there."
 related:
   - log-weight

@@ -1,6 +1,6 @@
 ---
 id: food-photos
-title: "Fotos an Einträgen, Produkten und Rezepten"
+title: "Fotos hinzufügen"
 short: "An Einträge, eigene Produkte und Rezepte hängst du ein Foto. Auf Heute erscheint es neben dem Eintrag."
 related:
   - edit-entry

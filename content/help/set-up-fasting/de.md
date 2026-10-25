@@ -1,6 +1,6 @@
 ---
 id: set-up-fasting
-title: "Intervallfasten einschalten und Essensfenster festlegen"
+title: "Intervallfasten einrichten"
 short: "Schalte das Fasten in den Einstellungen unter „Fasten“ ein und lege mit erster und letzter Mahlzeit dein Essensfenster fest. Danach zeigt der Tab „Fasten“, wie lange du noch fastest."
 related:
   - start-end-fast

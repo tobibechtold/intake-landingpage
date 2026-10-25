@@ -1,6 +1,6 @@
 ---
 id: log-recipe
-title: "Log a recipe: portions, grams, as one dish or as single ingredients"
+title: "Log a recipe"
 short: "Search for the recipe when you add food, or open “Recipes” under “Library”. Log portions or grams, as one entry or each ingredient on its own."
 related:
   - recipe-cooked-weight

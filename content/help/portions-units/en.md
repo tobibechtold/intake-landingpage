@@ -1,6 +1,6 @@
 ---
 id: portions-units
-title: "Portions and units: g, ml, tbsp, cups and weight per unit"
+title: "Portions and units"
 short: "You log in the product’s portions or in a custom amount: grams, millilitres, teaspoons, tablespoons, cups or glasses. If your spoon weighs something else, adjust the weight once."
 related:
   - raw-or-cooked

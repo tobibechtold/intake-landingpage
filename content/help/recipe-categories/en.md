@@ -1,6 +1,6 @@
 ---
 id: recipe-categories
-title: "Recipe categories and sorting"
+title: "Recipe categories"
 short: "File recipes under categories like Breakfast or your own. At the top of the recipe list you filter by category, and sorting changes the order."
 related:
   - create-recipe

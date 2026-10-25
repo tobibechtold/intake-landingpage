@@ -1,6 +1,6 @@
 ---
 id: widgets
-title: "Intake widgets on your Home Screen"
+title: "Widgets"
 short: "Intake has widgets for calories left and eaten, for quickly logging a meal and for water. Touch and hold your Home Screen and add an Intake widget."
 related:
   - control-center

@@ -1,6 +1,6 @@
 ---
 id: control-center
-title: "Intake im Kontrollzentrum und auf dem Sperrbildschirm"
+title: "Kontrollzentrum"
 short: "Mit den Intake-Steuerelementen öffnest du die Suche, den Barcode-Scanner, „Erstellen“ oder Intake AI direkt aus dem Kontrollzentrum oder vom Sperrbildschirm."
 related:
   - widgets

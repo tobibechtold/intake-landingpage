@@ -1,6 +1,6 @@
 ---
 id: settings-region
-title: "Sprache, Maßeinheiten und Land für die Lebensmittelsuche"
+title: "Sprache und Einheiten"
 short: "Unter „Region & Einheiten“ wählst du die Sprache der App, metrische oder imperiale Einheiten und das Land, dessen Produkte die Lebensmittelsuche zuerst zeigt."
 related:
   - add-food

@@ -1,6 +1,6 @@
 ---
 id: portions-units
-title: "Portionen und Einheiten: g, ml, EL, Tasse und Gewicht pro Einheit"
+title: "Portionen und Einheiten"
 short: "Du erfasst in den Portionen des Produkts oder in einer eigenen Menge: Gramm, Milliliter, Teelöffel, Esslöffel, Tasse oder Glas. Wiegt dein Löffel anders, passt du das Gewicht einmal an."
 related:
   - raw-or-cooked

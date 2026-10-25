@@ -1,6 +1,6 @@
 ---
 id: my-products
-title: "Meine Produkte bearbeiten und löschen"
+title: "Meine Produkte"
 short: "Deine eigenen Produkte findest du in der Bibliothek unter „Meine Produkte“. Änderungen gelten für neue Einträge, bereits geloggte bleiben, wie sie sind."
 related:
   - create-product

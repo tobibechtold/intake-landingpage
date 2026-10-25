@@ -1,6 +1,6 @@
 ---
 id: recipe-categories
-title: "Rezeptkategorien und Sortierung"
+title: "Rezeptkategorien"
 short: "Ordne Rezepte in Kategorien wie Frühstück oder deine eigenen. Oben in der Rezeptliste filterst du nach Kategorie, über die Sortierung änderst du die Reihenfolge."
 related:
   - create-recipe

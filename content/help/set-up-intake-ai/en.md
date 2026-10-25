@@ -1,6 +1,6 @@
 ---
 id: set-up-intake-ai
-title: "Set up Intake AI: subscription, your own key or no AI"
+title: "Set up Intake AI"
 short: "In Settings under “Intake AI” you choose: the Intake AI subscription, your own API key with no subscription, or no AI. Intake works fully without AI too."
 related:
   - byok-guide

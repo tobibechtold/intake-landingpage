@@ -1,6 +1,6 @@
 ---
 id: adjust-day-target
-title: "Adjust the target for one day"
+title: "Target for one day"
 short: "On Today, tap “Target” to change the daily target for that day only or for every same weekday, for example plus 300 kcal on Saturdays."
 related:
   - weekday-targets

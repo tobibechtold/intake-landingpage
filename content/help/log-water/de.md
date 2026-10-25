@@ -1,6 +1,6 @@
 ---
 id: log-water
-title: "Wasser und Getränke eintragen"
+title: "Wasser eintragen"
 short: "Wasser trägst du auf Heute in der Karte „Wasser“ ein. Andere Getränke wie Kaffee oder Saft zählen zum Wasserziel, wenn du sie beim Hinzufügen als Getränk markierst."
 related:
   - drinks-water-goal

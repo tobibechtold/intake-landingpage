@@ -1,6 +1,6 @@
 ---
 id: activity-settings
-title: "Settings: Activity (add activity calories to your daily target)"
+title: "Activity calories"
 short: "Under Settings > “Activity” you decide whether burned calories raise your daily target, which ones count and how much of them."
 related:
   - steps-workouts

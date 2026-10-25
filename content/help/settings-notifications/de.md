@@ -1,6 +1,6 @@
 ---
 id: settings-notifications
-title: "Erinnerungen an Mahlzeiten einstellen"
+title: "Mahlzeit-Erinnerungen"
 short: "In den Einstellungen siehst du, ob Intake dir Mitteilungen schicken darf, und schaltest für jede Mahlzeit eine Erinnerung mit eigener Uhrzeit ein."
 related:
   - water-reminders

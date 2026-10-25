@@ -1,6 +1,6 @@
 ---
 id: fix-icloud-sync
-title: "Fix iCloud sync and back up to a file"
+title: "Fix iCloud sync"
 short: "If something is missing on one of your devices, tap “Sync now” in Intake’s iCloud settings. If that doesn’t help, “Resync all devices” syncs everything again without deleting anything."
 related:
   - icloud-sync

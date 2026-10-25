@@ -1,6 +1,6 @@
 ---
 id: intake-ai-errors
-title: "Wenn Intake AI eine Fehlermeldung zeigt"
+title: "Intake AI meldet einen Fehler"
 short: "Die meisten Fehler kommen vom KI-Anbieter, vor allem mit eigenem API-Schlüssel. Die Meldung im Chat sagt, was los ist, und du kannst die Anfrage direkt noch einmal schicken."
 related:
   - byok-guide

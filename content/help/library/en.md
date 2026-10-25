@@ -1,6 +1,6 @@
 ---
 id: library
-title: "The Library: Favorites, My Products, Routines and Recipes"
+title: "The Library"
 short: "The Library holds everything that’s yours: “Favorites”, “My Products”, “Routines”, “Submissions” and “Recipes”."
 related:
   - my-products

@@ -1,6 +1,6 @@
 ---
 id: connect-health
-title: "Connect Apple Health or Health Connect"
+title: "Connect your health app"
 short: "Connect Intake to Apple Health or Health Connect in Settings. Your steps and workouts then count, and your food, water and weight are saved there too."
 related:
   - health-read-write

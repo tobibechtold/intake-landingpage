@@ -1,6 +1,6 @@
 ---
 id: home-screen-quick-actions
-title: "Log a meal straight from the app icon"
+title: "Quick actions on the app icon"
 short: "Touch and hold the Intake icon on your Home Screen and pick a meal. Intake opens the search for that meal right away."
 related:
   - custom-meals

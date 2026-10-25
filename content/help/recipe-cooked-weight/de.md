@@ -1,6 +1,6 @@
 ---
 id: recipe-cooked-weight
-title: "Rezeptgewicht nach dem Kochen (Garverlust)"
+title: "Rezeptgewicht nach dem Kochen"
 short: "Ein Rezept wiegt zuerst so viel wie seine Zutaten zusammen. Gekocht ist es meist leichter: Trag das Fertiggewicht ein, dann stimmen die Nährwerte, wenn du in Gramm loggst."
 related:
   - raw-or-cooked

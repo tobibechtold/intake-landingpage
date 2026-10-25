@@ -1,6 +1,6 @@
 ---
 id: tags
-title: "Lebensmittel mit Schlagwörtern (Tags) ordnen"
+title: "Tags vergeben"
 short: "Gib deinen Produkten und Favoriten eigene Stichwörter, zum Beispiel „Frühstück“. Damit filterst du die Listen in der Bibliothek und beim Hinzufügen."
 related:
   - my-products

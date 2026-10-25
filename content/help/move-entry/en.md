@@ -1,6 +1,6 @@
 ---
 id: move-entry
-title: "Move an entry to another meal, time or day"
+title: "Move an entry"
 short: "You change the meal and the time right in the entry. The date can’t be changed there: to move an entry to another day, copy it over and then delete it on the old day."
 related:
   - copy-meal

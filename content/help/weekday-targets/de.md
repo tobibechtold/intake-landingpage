@@ -1,6 +1,6 @@
 ---
 id: weekday-targets
-title: "Unterschiedliche Kalorienziele je Wochentag"
+title: "Ziele je Wochentag"
 short: "Unter Einstellungen > „Kalorien“ legst du feste Änderungen je Wochentag an, zum Beispiel jeden Samstag plus 300 kcal."
 related:
   - adjust-day-target

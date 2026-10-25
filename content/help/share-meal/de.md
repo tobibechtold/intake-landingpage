@@ -1,6 +1,6 @@
 ---
 id: share-meal
-title: "Mahlzeit als Datei teilen und importieren"
+title: "Mahlzeit teilen"
 short: "In der Mahlzeit-Übersicht sendest du eine Mahlzeit als Datei, zum Beispiel per Nachricht. Wer sie mit Intake öffnet, übernimmt sie in sein Tagebuch."
 related:
   - copy-meal

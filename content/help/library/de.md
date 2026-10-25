@@ -1,6 +1,6 @@
 ---
 id: library
-title: "Die Bibliothek: Favoriten, Meine Produkte, Routinen und Rezepte"
+title: "Die Bibliothek"
 short: "In der Bibliothek liegt alles, was dir gehört: „Favoriten“, „Meine Produkte“, „Routinen“, „Einreichungen“ und „Rezepte“."
 related:
   - my-products

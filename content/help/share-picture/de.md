@@ -1,6 +1,6 @@
 ---
 id: share-picture
-title: "Tag, Mahlzeit oder Fortschritt als Bild teilen"
+title: "Als Bild teilen"
 short: "Tippe auf Heute oben auf den Teilen-Button. Du wählst, was aufs Bild kommt, zum Beispiel der ganze Tag oder eine Mahlzeit, und teilst es oder sicherst es in Fotos."
 related:
   - meal-summary

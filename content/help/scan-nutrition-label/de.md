@@ -1,6 +1,6 @@
 ---
 id: scan-nutrition-label
-title: "Nährwerttabelle fotografieren und Produkt anlegen"
+title: "Nährwerttabelle scannen"
 short: "Beim Anlegen eines Produkts füllt Intake AI das Formular aus einem Foto der Nährwerttabelle aus. Das gehört zum Intake-AI-Abo, auch wenn du sonst deinen eigenen API-Schlüssel nutzt."
 related:
   - create-product

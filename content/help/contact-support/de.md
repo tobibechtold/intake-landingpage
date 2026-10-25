@@ -1,6 +1,6 @@
 ---
 id: contact-support
-title: "Support kontaktieren und Ideen einreichen"
+title: "Support kontaktieren"
 short: "In den Einstellungen unter „Rechtliches & Support“ schreibst du über „Kontakt“ eine Mail an support@getintake.de. Wünsche und Fehler meldest du unter „Vorschläge & Bugs“."
 related:
   - intake-ai-errors

@@ -1,6 +1,6 @@
 ---
 id: first-setup
-title: "Setting up Intake the first time"
+title: "First-time setup"
 short: "The first time you open Intake, it asks for your goal, your body data and your activity level and works out your daily target from them. You can change all of it later in Settings."
 related:
   - calorie-goal

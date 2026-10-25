@@ -1,6 +1,6 @@
 ---
 id: settings-notifications
-title: "Set up meal reminders"
+title: "Meal reminders"
 short: "In Settings you see whether Intake may send you notifications, and you turn on a reminder for each meal with a time of its own."
 related:
   - water-reminders

@@ -1,6 +1,6 @@
 ---
 id: routines
-title: "Routinen: eine Mahlzeit schnell loggen"
+title: "Routinen"
 short: "Eine Routine ist ein Rezept mit fester Mahlzeit, zum Beispiel dein Frühstück. Beim Hinzufügen zu dieser Mahlzeit steht sie ganz oben, und du loggst sie direkt von dort."
 related:
   - create-recipe

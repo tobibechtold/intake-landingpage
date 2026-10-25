@@ -1,6 +1,6 @@
 ---
 id: nutrient-goals
-title: "Goals for fiber, sugar, saturated fat and salt"
+title: "Other nutrient goals"
 short: "Intake calculates goals for fiber, sugar, saturated fat and salt from your daily target. Under Settings > “Macro goals” you enter your own."
 related:
   - macro-goals

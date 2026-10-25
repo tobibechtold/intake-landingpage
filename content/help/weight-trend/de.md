@@ -1,6 +1,6 @@
 ---
 id: weight-trend
-title: "Gewichtsverlauf und 7-Tage-Schnitt"
+title: "Gewichtsverlauf"
 short: "In der Statistik zeigt die Gewichtskarte dein Gewicht über Woche, Monat, Jahr oder deinen ganzen Verlauf. Der 7-Tage-Schnitt glättet die Schwankungen von Tag zu Tag."
 related:
   - log-weight

@@ -1,6 +1,6 @@
 ---
 id: remaining-calories-food-sheet
-title: "Calories left while adding food"
+title: "Calories left while adding"
 short: "While you add food, you see under the title how many calories you have left that day. So you know what still fits before you log."
 related:
   - add-food

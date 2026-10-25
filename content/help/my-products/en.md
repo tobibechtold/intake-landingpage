@@ -1,6 +1,6 @@
 ---
 id: my-products
-title: "Edit and delete My Products"
+title: "My Products"
 short: "Your own products are in the Library under “My Products”. Changes apply to new entries, anything you already logged stays as it is."
 related:
   - create-product

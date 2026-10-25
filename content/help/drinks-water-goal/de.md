@@ -1,6 +1,6 @@
 ---
 id: drinks-water-goal
-title: "Getränke: was zum Wasserziel zählt"
+title: "Welche Getränke zählen"
 short: "Neben Wasser zählen alle Getränke, die du beim Hinzufügen als Getränk markierst, zum Beispiel Saft, Tee oder Kaffee. Ihre Kalorien stehen trotzdem in deiner Mahlzeit."
 related:
   - log-water

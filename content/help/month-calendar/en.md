@@ -1,6 +1,6 @@
 ---
 id: month-calendar
-title: "Month calendar and day colors (green, orange, red)"
+title: "Month calendar"
 short: "The calendar shows the whole month. Every day with entries is colored: green is on track, orange is getting tight, red is over target."
 related:
   - switch-days

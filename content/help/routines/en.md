@@ -1,6 +1,6 @@
 ---
 id: routines
-title: "Routines: log a meal quickly"
+title: "Routines"
 short: "A routine is a recipe with a fixed meal, for example your breakfast. When you add food to that meal, it sits at the top and you log it right from there."
 related:
   - create-recipe

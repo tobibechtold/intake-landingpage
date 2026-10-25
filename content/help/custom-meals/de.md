@@ -1,6 +1,6 @@
 ---
 id: custom-meals
-title: "Eigene Mahlzeiten anlegen und ausblenden"
+title: "Eigene Mahlzeiten"
 short: "Unter „Heute-Seite bearbeiten“ legst du eigene Mahlzeiten an, zum Beispiel einen zweiten Snack, und blendest Mahlzeiten aus, die du nicht brauchst."
 related:
   - edit-today-page

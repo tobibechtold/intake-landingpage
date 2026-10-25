@@ -1,6 +1,6 @@
 ---
 id: raw-or-cooked
-title: "Weighed raw or cooked"
+title: "Raw or cooked"
 short: "For pasta, rice, quinoa, millet, buckwheat and lentils you choose whether you weighed them raw or cooked. Intake then converts the nutrition values to match."
 related:
   - recipe-cooked-weight

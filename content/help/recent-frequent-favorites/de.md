@@ -1,6 +1,6 @@
 ---
 id: recent-frequent-favorites
-title: "Verlauf, Häufig, Favoriten und Vorschläge"
+title: "Verlauf und Favoriten"
 short: "Beim Hinzufügen stehen oben Vorschläge für die Mahlzeit. Darunter öffnest du deine Favoriten, den Verlauf und häufig gegessene Lebensmittel."
 related:
   - add-food

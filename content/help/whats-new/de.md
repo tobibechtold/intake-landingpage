@@ -1,6 +1,6 @@
 ---
 id: whats-new
-title: "Was ist neu nach einem Update?"
+title: "Was ist neu"
 short: "Nach einem Update zeigt Intake einmal, was neu ist. Später findest du es in den Einstellungen: oben unter „Neu in dieser Version“ und über „Feature-Tour“."
 related:
   - contact-support

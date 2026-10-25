@@ -1,6 +1,6 @@
 ---
 id: resting-energy
-title: "Erhaltungskalorien aus der Ruheenergie in Apple Health"
+title: "Ruheenergie"
 short: "Mit der Quelle „Apple Health“ nimmt Intake als Erhaltungsbedarf den Durchschnitt deiner Ruheenergie der letzten 7 Tage. Deine Bewegung kommt über „Aktivität zum Ziel addieren“ dazu."
 related:
   - calorie-goal

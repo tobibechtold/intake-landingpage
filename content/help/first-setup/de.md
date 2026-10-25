@@ -1,6 +1,6 @@
 ---
 id: first-setup
-title: "Die Einrichtung beim ersten Start"
+title: "Erste Einrichtung"
 short: "Beim ersten Start fragt Intake nach deinem Ziel, deinen Körperdaten und deinem Aktivitätslevel und berechnet daraus dein Tagesziel. Alles kannst du später in den Einstellungen ändern."
 related:
   - calorie-goal

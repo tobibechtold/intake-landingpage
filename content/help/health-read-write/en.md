@@ -1,6 +1,6 @@
 ---
 id: health-read-write
-title: "What Intake reads from Apple Health and Health Connect, and what it writes"
+title: "What Intake reads and writes"
 short: "Intake reads activity, weight and body measurements, and writes your food, water and weight back. It doesn’t read nutrition data from other apps."
 related:
   - steps-workouts

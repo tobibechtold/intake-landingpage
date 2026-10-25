@@ -1,6 +1,6 @@
 ---
 id: calorie-ring
-title: "Kalorienring: übrig, gegessen und verbrannt"
+title: "Der Kalorienring"
 short: "Der Ring auf Heute zeigt, wie viele Kalorien dir heute noch bleiben. Daneben stehen dein Ziel, was du gegessen und was du durch Aktivität verbrannt hast."
 related:
   - adjust-day-target

@@ -1,6 +1,6 @@
 ---
 id: daily-nutrients
-title: "Which foods contributed to a nutrient"
+title: "Nutrient details"
 short: "On Today, tap a macro such as protein. You see which foods contributed how much. “Show all nutrients” lists every nutrient of the day."
 related:
   - calorie-ring

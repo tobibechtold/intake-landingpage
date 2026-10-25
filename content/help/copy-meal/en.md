@@ -1,6 +1,6 @@
 ---
 id: copy-meal
-title: "Copy a meal to another day"
+title: "Copy a meal"
 short: "Tap the meal’s name and choose “Copy Meal” from the menu. You decide which entries come along and which day and meal they are copied to."
 related:
   - move-entry

@@ -1,6 +1,6 @@
 ---
 id: photo-logging
-title: "Essen fotografieren und mit Intake AI erfassen"
+title: "Mahlzeit per Foto erfassen"
 short: "Mach in Intake AI ein Foto von deinem Teller oder einer Verpackung, oder nimm eins aus deinen Fotos. Intake AI schätzt daraus Kalorien, Makros und Zutaten."
 related:
   - intake-ai-text

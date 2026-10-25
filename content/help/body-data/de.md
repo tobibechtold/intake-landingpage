@@ -1,6 +1,6 @@
 ---
 id: body-data
-title: "Körperdaten: Geschlecht, Geburtstag, Größe und Gewicht"
+title: "Körperdaten"
 short: "Unter Einstellungen > „Körperdaten“ trägst du Geschlecht, Geburtstag, Größe und Gewicht ein. Daraus berechnet Intake deinen Grundumsatz."
 related:
   - calorie-goal

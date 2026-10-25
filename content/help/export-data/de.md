@@ -1,6 +1,6 @@
 ---
 id: export-data
-title: "Daten exportieren und wieder importieren"
+title: "Daten exportieren"
 short: "Unter „Daten“ sicherst du deine Intake-Daten als JSON-Datei und spielst sie später wieder ein. Beim Import ersetzt die Datei die Daten auf diesem Gerät."
 related:
   - pdf-report

@@ -1,6 +1,6 @@
 ---
 id: start-end-fast
-title: "Fasten von Hand starten, beenden oder zum Plan zurückkehren"
+title: "Fasten starten und beenden"
 short: "Im Tab „Fasten“ beendest du ein Fasten früher oder startest eins außer der Reihe. Danach kehrst du mit einem Tipp zu deinem Zeitplan zurück."
 related:
   - set-up-fasting

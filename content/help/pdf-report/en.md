@@ -1,6 +1,6 @@
 ---
 id: pdf-report
-title: "Export a PDF report or Markdown for AI"
+title: "Export a PDF report"
 short: "Under “Export PDF report” in Settings you create a report for a period, as a PDF or as a text file for an AI."
 related:
   - stats

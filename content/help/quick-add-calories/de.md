@@ -1,6 +1,6 @@
 ---
 id: quick-add-calories
-title: "Nur Kalorien schnell erfassen, ohne Lebensmittel anzulegen"
+title: "Kalorien schnell eintragen"
 short: "Wähle unter „Erstellen“ den Modus „Nur schnell hinzufügen“. Name und Kalorien reichen, Nährwerte sind freiwillig, und in deiner Bibliothek wird nichts gespeichert."
 related:
   - create-product

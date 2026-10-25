@@ -1,6 +1,6 @@
 ---
 id: fix-icloud-sync
-title: "iCloud-Sync reparieren und iCloud-Backup sichern"
+title: "iCloud-Sync reparieren"
 short: "Fehlt etwas auf einem deiner Geräte, tippe in den iCloud-Einstellungen von Intake auf „Jetzt synchronisieren“. Hilft das nicht, gleicht „Alle Geräte neu abgleichen“ alles noch einmal ab, ohne etwas zu löschen."
 related:
   - icloud-sync

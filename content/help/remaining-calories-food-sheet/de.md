@@ -1,6 +1,6 @@
 ---
 id: remaining-calories-food-sheet
-title: "Übrige Kalorien beim Hinzufügen"
+title: "Restkalorien beim Hinzufügen"
 short: "Beim Hinzufügen siehst du unter dem Titel, wie viele Kalorien dir an diesem Tag noch bleiben. So siehst du vor dem Eintragen, wie viel noch passt."
 related:
   - add-food

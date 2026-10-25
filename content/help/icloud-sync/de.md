@@ -1,6 +1,6 @@
 ---
 id: icloud-sync
-title: "iCloud-Sync einrichten, auch für Fotos"
+title: "iCloud-Sync einrichten"
 short: "Mit iCloud-Sync sind dein Tagebuch, deine Bibliothek, Rezepte und Ziele auf iPhone und iPad gleich. Schalte es auf jedem Gerät ein, angemeldet mit demselben Apple Account."
 related:
   - fix-icloud-sync

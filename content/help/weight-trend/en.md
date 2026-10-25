@@ -1,6 +1,6 @@
 ---
 id: weight-trend
-title: "Weight trend and 7-day average"
+title: "Weight trend"
 short: "In Stats, the weight card shows your weight over a week, a month, a year or your whole history. The 7-day average smooths out the ups and downs from day to day."
 related:
   - log-weight

@@ -1,6 +1,6 @@
 ---
 id: fasting-lock-screen
-title: "Fastenfortschritt auf dem Sperrbildschirm"
+title: "Fasten auf dem Sperrbildschirm"
 short: "Intake zeigt dein laufendes Fasten auch außerhalb der App, auf dem iPhone als Live-Aktivität auf dem Sperrbildschirm und in der Dynamic Island. Du schaltest das in den Fasten-Einstellungen ein oder aus."
 related:
   - set-up-fasting

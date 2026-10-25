@@ -1,6 +1,6 @@
 ---
 id: home-screen-quick-actions
-title: "Mahlzeit direkt vom App-Symbol erfassen"
+title: "Schnellaktionen am App-Symbol"
 short: "Halte das Intake-Symbol auf dem Home-Bildschirm gedrückt und wähle eine Mahlzeit. Intake öffnet dann gleich die Suche für diese Mahlzeit."
 related:
   - custom-meals

@@ -1,6 +1,6 @@
 ---
 id: connect-health
-title: "Apple Health oder Health Connect verbinden"
+title: "Gesundheits-App verbinden"
 short: "Verbinde Intake in den Einstellungen mit Apple Health oder Health Connect. Dann zählen Schritte und Workouts, und Lebensmittel, Wasser und Gewicht landen auch dort."
 related:
   - health-read-write

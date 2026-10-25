@@ -1,6 +1,6 @@
 ---
 id: settings-region
-title: "Language, units and country for the food search"
+title: "Language and units"
 short: "Under “Region & Units” you choose the app’s language, metric or imperial units and the country whose products the food search shows first."
 related:
   - add-food

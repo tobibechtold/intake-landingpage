@@ -1,6 +1,6 @@
 ---
 id: edit-entry
-title: "Edit or delete an entry"
+title: "Edit an entry"
 short: "On Today, tap an entry. Change the amount, unit, meal or time and save. The trash can deletes it."
 related:
   - move-entry

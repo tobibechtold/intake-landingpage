@@ -1,6 +1,6 @@
 ---
 id: meal-summary
-title: "Mahlzeit-Übersicht: Nährwerte einer Mahlzeit und Mahlzeit löschen"
+title: "Mahlzeit-Übersicht"
 short: "Tippe auf Heute auf den Namen einer Mahlzeit. Die Übersicht zeigt Kalorien und Nährwerte der Mahlzeit. Dort kopierst, teilst oder löschst du die ganze Mahlzeit."
 related:
   - copy-meal

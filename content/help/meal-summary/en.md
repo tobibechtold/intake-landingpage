@@ -1,6 +1,6 @@
 ---
 id: meal-summary
-title: "Meal summary: a meal’s nutrients and deleting a meal"
+title: "Meal summary"
 short: "On Today, tap a meal’s name. The summary shows the meal’s calories and nutrients. From there you copy, share or delete the whole meal."
 related:
   - copy-meal

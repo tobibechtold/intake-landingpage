@@ -1,6 +1,6 @@
 ---
 id: switch-days
-title: "Zwischen Tagen wechseln und ein Datum wählen"
+title: "Tag wechseln"
 short: "Tippe in der Wochenleiste auf einen Tag oder wische auf Heute nach links oder rechts. Über das Kalendersymbol springst du zu jedem Datum."
 related:
   - month-calendar

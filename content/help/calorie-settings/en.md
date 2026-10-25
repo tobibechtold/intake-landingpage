@@ -1,6 +1,6 @@
 ---
 id: calorie-settings
-title: "Settings: Calories (maintenance, goal, adjustment, fixed daily target)"
+title: "Calorie settings"
 short: "Under Settings > “Calories” you set where your maintenance calories come from, whether you want to lose, maintain or gain, and how big the daily adjustment is."
 related:
   - calorie-goal

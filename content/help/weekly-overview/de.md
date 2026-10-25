@@ -1,6 +1,6 @@
 ---
 id: weekly-overview
-title: "Wochenübersicht: Saldo verschieben und „Nichts gegessen“ markieren"
+title: "Wochenübersicht"
 short: "Mit Wochenbudget tippst du auf Heute auf „Woche“ und siehst jeden Tag der Woche mit seinem Plus oder Minus. Dort markierst du Tage ohne Essen und verschiebst im manuellen Modus den Saldo."
 related:
   - weekly-budget

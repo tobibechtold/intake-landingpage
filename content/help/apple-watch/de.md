@@ -1,6 +1,6 @@
 ---
 id: apple-watch
-title: "Intake auf der Apple Watch"
+title: "Apple Watch"
 short: "Die Watch-App zeigt deine übrigen Kalorien, Makros, Wasser und Gewicht. Wasser und Gewicht trägst du direkt am Handgelenk ein, ohne das iPhone in die Hand zu nehmen."
 related:
   - widgets

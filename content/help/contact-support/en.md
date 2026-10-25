@@ -1,6 +1,6 @@
 ---
 id: contact-support
-title: "Contact support and share ideas"
+title: "Contact support"
 short: "In Settings under “Legal & Support”, “Contact” writes an email to support@getintake.de. Wishes and bugs go under “Ideas & Bugs”."
 related:
   - intake-ai-errors

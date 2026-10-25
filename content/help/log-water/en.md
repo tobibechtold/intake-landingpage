@@ -1,6 +1,6 @@
 ---
 id: log-water
-title: "Log water and drinks"
+title: "Log water"
 short: "You log water on the “Water” card on Today. Other drinks such as coffee or juice count toward your water goal when you mark them as a beverage while adding them."
 related:
   - drinks-water-goal

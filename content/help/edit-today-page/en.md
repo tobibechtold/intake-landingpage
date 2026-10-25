@@ -1,6 +1,6 @@
 ---
 id: edit-today-page
-title: "Edit the Today page: show and hide sections"
+title: "Customize Today"
 short: "At the very bottom of Today, tap “Edit Today Page”. There you hide sections such as Water or Weight and single meals, change their order and add your own meals."
 related:
   - custom-meals

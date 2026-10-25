@@ -1,6 +1,6 @@
 ---
 id: intake-ai-text
-title: "Mahlzeit mit Intake AI per Text erfassen"
+title: "Mahlzeit per Text erfassen"
 short: "Beschreib in Intake AI, was du gegessen hast. Du bekommst eine Schätzung mit Kalorien, Makros und Zutaten, die du prüfst und dann loggst."
 related:
   - photo-logging

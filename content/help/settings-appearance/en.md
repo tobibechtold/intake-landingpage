@@ -1,6 +1,6 @@
 ---
 id: settings-appearance
-title: "Appearance: theme, accent color and app icon"
+title: "Appearance"
 short: "Under “Appearance” you choose light, dark or system, an accent color and a different app icon. It’s also where you set how Today looks and whether Intake shows photos."
 related:
   - switch-days

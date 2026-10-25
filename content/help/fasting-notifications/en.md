@@ -1,6 +1,6 @@
 ---
 id: fasting-notifications
-title: "Get notified when eating or fasting starts"
+title: "Fasting notifications"
 short: "In the fasting settings you can turn on a notification for when your eating window starts, when your fast starts, or both."
 related:
   - set-up-fasting

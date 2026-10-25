@@ -1,6 +1,6 @@
 ---
 id: calorie-stats
-title: "Kalorienaufnahme in der Statistik richtig lesen"
+title: "Die Karte Kalorienaufnahme"
 short: "Die Kalorien-Details rechnen dir den Zeitraum vor: Basisziel plus verbrannte Kalorien minus gegessene ergibt, was übrig ist. Darunter vergleichst du deinen Tagesschnitt mit deinem Ziel."
 related:
   - stats

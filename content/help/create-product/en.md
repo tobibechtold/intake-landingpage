@@ -1,6 +1,6 @@
 ---
 id: create-product
-title: "Create a product of your own"
+title: "Create a product"
 short: "If a food is missing, tap “Create” while adding food and enter the name and nutrition from the package. Intake saves it under “My Products”."
 related:
   - my-products

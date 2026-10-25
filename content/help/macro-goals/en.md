@@ -1,6 +1,6 @@
 ---
 id: macro-goals
-title: "Set your macro goals"
+title: "Macro goals"
 short: "Under Settings > “Macro goals” you set your protein target in grams per kilo of body weight and choose how the remaining calories are split between carbs and fat."
 related:
   - nutrient-goals

@@ -1,6 +1,6 @@
 ---
 id: water-goal
-title: "Set your water goal and glass size"
+title: "Set your water goal"
 short: "You set your water goal and glass size right on the “Water” card on Today, with the pencil. There is no entry for it in Settings."
 related:
   - log-water

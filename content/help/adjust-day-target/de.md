@@ -1,6 +1,6 @@
 ---
 id: adjust-day-target
-title: "Tagesziel für einen Tag anpassen"
+title: "Ziel für einen Tag"
 short: "Tippe auf Heute auf „Ziel“, um das Tagesziel nur für diesen Tag oder für jeden gleichen Wochentag zu ändern, zum Beispiel plus 300 kcal am Samstag."
 related:
   - weekday-targets

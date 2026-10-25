@@ -1,6 +1,6 @@
 ---
 id: edit-today-page
-title: "Heute-Seite bearbeiten: Abschnitte ein- und ausblenden"
+title: "Heute-Seite anpassen"
 short: "Ganz unten auf Heute tippst du auf „Heute-Seite bearbeiten“. Dort blendest du Abschnitte wie Wasser oder Gewicht und einzelne Mahlzeiten aus, änderst die Reihenfolge und legst eigene Mahlzeiten an."
 related:
   - custom-meals

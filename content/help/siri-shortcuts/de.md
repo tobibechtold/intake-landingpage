@@ -1,6 +1,6 @@
 ---
 id: siri-shortcuts
-title: "Intake mit Siri und Kurzbefehlen"
+title: "Siri und Kurzbefehle"
 short: "Sag zum Beispiel „Wasser in Intake eintragen“ oder „Wie viele Kalorien habe ich noch in Intake“. Dieselben Aktionen findest du in der App „Kurzbefehle“."
 related:
   - control-center

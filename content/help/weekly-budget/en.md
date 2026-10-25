@@ -1,6 +1,6 @@
 ---
 id: weekly-budget
-title: "How the weekly budget works"
+title: "Weekly budget"
 short: "The weekly budget is the sum of your day goals from Monday to Sunday. What you don’t eat one day stays available for the rest of the week, and what you eat on top is taken from it."
 related:
   - weekly-overview

@@ -1,6 +1,6 @@
 ---
 id: starting-weight
-title: "Starting weight and total change"
+title: "Starting weight"
 short: "“Total” on the “Weight” card shows how much you have lost or gained since your starting weight. You choose the day it counts from under “Body Data”."
 related:
   - log-weight

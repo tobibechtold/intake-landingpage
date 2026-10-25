@@ -1,6 +1,6 @@
 ---
 id: health-read-write
-title: "Was Intake aus Apple Health und Health Connect liest und was es schreibt"
+title: "Was Intake liest und schreibt"
 short: "Intake liest Aktivität, Gewicht und Körpermaße und schreibt deine Lebensmittel, Wasser und Gewicht zurück. Ernährungsdaten aus anderen Apps liest Intake nicht."
 related:
   - steps-workouts

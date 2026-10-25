@@ -1,6 +1,6 @@
 ---
 id: nutrient-goals
-title: "Ziele für Ballaststoffe, Zucker, gesättigte Fette und Salz"
+title: "Weitere Nährwertziele"
 short: "Für Ballaststoffe, Zucker, gesättigte Fette und Salz berechnet Intake Ziele aus deinem Tagesziel. Unter Einstellungen > „Makro-Ziele“ trägst du eigene ein."
 related:
   - macro-goals

@@ -1,6 +1,6 @@
 ---
 id: edit-stats
-title: "Statistik-Karten hinzufügen, ausblenden und sortieren"
+title: "Statistik anpassen"
 short: "In der Statistik wählst du über die Bearbeitung aus, welche Karten erscheinen und in welcher Reihenfolge. Es gibt auch Karten für einzelne Nährstoffe, etwa Ballaststoffe, Vitamine oder Koffein."
 related:
   - stats

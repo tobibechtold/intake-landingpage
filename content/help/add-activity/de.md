@@ -1,6 +1,6 @@
 ---
 id: add-activity
-title: "Aktivität oder Training von Hand eintragen"
+title: "Aktivität eintragen"
 short: "Tippe auf Heute in der Karte „Aktivität“ auf „Hinzufügen“, wähle Sportart und Dauer und speichere. Intake rechnet die Kalorien aus, du kannst sie aber auch selbst eintragen."
 related:
   - steps-workouts

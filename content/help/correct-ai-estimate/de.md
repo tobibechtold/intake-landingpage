@@ -1,6 +1,6 @@
 ---
 id: correct-ai-estimate
-title: "Schätzung von Intake AI korrigieren"
+title: "Schätzung korrigieren"
 short: "Stimmt an einer Schätzung etwas nicht, antworte im Chat oder öffne „Korrigieren“. Dort änderst du Zutaten, Portion und Kalorien, und Intake AI rechnet neu. „Korrigieren“ gehört zum Intake-AI-Abo."
 related:
   - intake-ai-text

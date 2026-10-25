@@ -1,6 +1,6 @@
 ---
 id: custom-meals
-title: "Create and hide your own meals"
+title: "Custom meals"
 short: "Under “Edit Today Page” you add your own meals, for example a second snack, and hide meals you don’t need."
 related:
   - edit-today-page

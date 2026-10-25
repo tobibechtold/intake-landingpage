@@ -1,6 +1,6 @@
 ---
 id: siri-shortcuts
-title: "Intake with Siri and Shortcuts"
+title: "Siri and Shortcuts"
 short: "Say, for example, “Log water in Intake” or “How many calories do I have left in Intake”. You’ll find the same actions in the Shortcuts app."
 related:
   - control-center

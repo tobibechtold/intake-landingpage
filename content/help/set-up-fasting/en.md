@@ -1,6 +1,6 @@
 ---
 id: set-up-fasting
-title: "Turn on intermittent fasting and set your eating window"
+title: "Set up fasting"
 short: "Turn fasting on under “Fasting” in Settings and set your eating window with your first and last meal. The “Fasting” tab then shows how long your fast still runs."
 related:
   - start-end-fast

@@ -1,6 +1,6 @@
 ---
 id: stats
-title: "Statistik: Zeitraum wählen und Karten lesen"
+title: "Statistik im Überblick"
 short: "Der Tab „Statistik“ zeigt Kalorien, Makros, Gewicht, Körpermaße und Wasser als Karten. Tippe auf eine Karte für die Details, dort wählst du Woche, Monat oder Jahr."
 related:
   - calorie-stats

@@ -1,6 +1,6 @@
 ---
 id: share-recipe
-title: "Rezept teilen, importieren und duplizieren"
+title: "Rezept teilen"
 short: "Ein Rezept verschickst du als Datei, die jemand mit Intake auf dem iPhone oder auf Android öffnen kann. Eine Kopie machst du mit „Duplizieren“."
 related:
   - create-recipe

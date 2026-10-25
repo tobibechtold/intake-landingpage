@@ -1,6 +1,6 @@
 ---
 id: photo-logging
-title: "Photograph your food and log it with Intake AI"
+title: "Log a meal by photo"
 short: "Take a photo of your plate or a package in Intake AI, or pick one from your photos. Intake AI estimates calories, macros and ingredients from it."
 related:
   - intake-ai-text

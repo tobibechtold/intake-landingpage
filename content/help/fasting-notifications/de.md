@@ -1,6 +1,6 @@
 ---
 id: fasting-notifications
-title: "Mitteilung, wenn das Essen oder das Fasten beginnt"
+title: "Fasten-Mitteilungen"
 short: "In den Fasten-Einstellungen schaltest du eine Mitteilung ein, wenn dein Essensfenster beginnt, wenn das Fasten beginnt, oder beides."
 related:
   - set-up-fasting

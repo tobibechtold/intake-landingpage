@@ -1,6 +1,6 @@
 ---
 id: workouts-without-double-counting
-title: "Count workouts without overlap, and include workout calories"
+title: "Workouts counted once"
 short: "Apple Health usually counts workout calories as active calories already. With “Count workouts without overlap”, a workout only adds what is still missing, so your day matches the Move ring."
 related:
   - steps-workouts

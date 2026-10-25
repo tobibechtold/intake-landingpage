@@ -1,6 +1,6 @@
 ---
 id: month-calendar
-title: "Monatskalender und Tagesfarben (grün, orange, rot)"
+title: "Monatskalender"
 short: "Der Kalender zeigt den ganzen Monat. Jeder Tag mit Einträgen ist eingefärbt: grün im Plan, orange knapp, rot über dem Ziel."
 related:
   - switch-days

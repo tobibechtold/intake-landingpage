@@ -73,6 +73,8 @@ export interface HelpTopicEntryData {
   draft?: boolean;
 }
 
+/** One line in the docs sidebar. */
+export const TITLE_MAX_LENGTH = 32;
 export const SHORT_MAX_LENGTH = 220;
 export const STEP_TEXT_MAX_LENGTH = 160;
 export const RELATED_MAX = 3;
@@ -165,6 +167,11 @@ export const validateTopicEntry = (entry: HelpTopicEntryData, source: HelpManife
     if (entry.platformNote.includes(EM_DASH)) errors.push(`${label}: platformNote contains an em dash`);
     if (topic && topic.platforms.length > 1) errors.push(`${label}: platformNote on a topic for both platforms`);
   }
+  if (entry.title.length > TITLE_MAX_LENGTH) {
+    errors.push(`${label}: title is ${entry.title.length} characters, max ${TITLE_MAX_LENGTH}`);
+  }
+  // Details belong in short; the title is the plain name of the task or thing.
+  if (entry.title.includes(':')) errors.push(`${label}: title contains a colon`);
   if (entry.short.length > SHORT_MAX_LENGTH) {
     errors.push(`${label}: short is ${entry.short.length} characters, max ${SHORT_MAX_LENGTH}`);
   }

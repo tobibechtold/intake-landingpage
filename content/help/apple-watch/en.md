@@ -1,6 +1,6 @@
 ---
 id: apple-watch
-title: "Intake on Apple Watch"
+title: "Apple Watch"
 short: "The Watch app shows your calories left, macros, water and weight. You log water and weight right on your wrist, without reaching for your iPhone."
 related:
   - widgets

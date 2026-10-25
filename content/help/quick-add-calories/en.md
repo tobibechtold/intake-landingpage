@@ -1,6 +1,6 @@
 ---
 id: quick-add-calories
-title: "Quickly log calories without creating a food"
+title: "Quick-add calories"
 short: "Under “Create”, choose “Quick add only”. A name and the calories are enough, nutrition values are optional, and nothing is saved to your library."
 related:
   - create-product

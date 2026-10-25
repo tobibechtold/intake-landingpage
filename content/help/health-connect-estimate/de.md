@@ -1,6 +1,6 @@
 ---
 id: health-connect-estimate
-title: "Warum Health Connect Kalorien als Schätzung zeigt"
+title: "Schätzung bei Health Connect"
 short: "Fitness-Apps schreiben unterschiedliche Daten in Health Connect. Fehlen gemessene Aktivitätskalorien, schätzt Intake sie aus Gesamtkalorien oder Schritten und sagt das dazu, etwa „Aus Schritten geschätzt“."
 related:
   - steps-workouts

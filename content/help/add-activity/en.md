@@ -1,6 +1,6 @@
 ---
 id: add-activity
-title: "Log an activity or workout by hand"
+title: "Log an activity"
 short: "On Today, tap “Add” on the “Activity” card, choose the activity and duration and save. Intake works out the calories, or you enter them yourself."
 related:
   - steps-workouts

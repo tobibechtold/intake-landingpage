@@ -1,6 +1,6 @@
 ---
 id: intake-ai-text
-title: "Log a meal with Intake AI by text"
+title: "Log a meal by text"
 short: "Describe what you ate in Intake AI. You get an estimate with calories, macros and ingredients that you check and then log."
 related:
   - photo-logging

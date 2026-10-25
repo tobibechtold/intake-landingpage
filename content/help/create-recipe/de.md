@@ -1,6 +1,6 @@
 ---
 id: create-recipe
-title: "Rezept erstellen, auch aus einer Mahlzeit"
+title: "Rezept erstellen"
 short: "Leg in der Bibliothek unter „Rezepte“ ein neues Rezept an. Oder mach aus einer geloggten Mahlzeit ein Rezept: Tippe auf Heute auf den Namen der Mahlzeit und wähle im Menü „Rezept erstellen“."
 related:
   - recipe-cooked-weight

@@ -1,6 +1,6 @@
 ---
 id: start-end-fast
-title: "Start or end a fast by hand, or go back to your schedule"
+title: "Start and end a fast"
 short: "On the “Fasting” tab you can end a fast early or start one outside your schedule. Going back to your schedule takes one tap."
 related:
   - set-up-fasting

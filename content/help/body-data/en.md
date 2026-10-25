@@ -1,6 +1,6 @@
 ---
 id: body-data
-title: "Body data: sex, birthday, height and weight"
+title: "Body data"
 short: "Under Settings > “Body Data” you enter your sex, birthday, height and weight. Intake calculates your basal metabolic rate from them."
 related:
   - calorie-goal

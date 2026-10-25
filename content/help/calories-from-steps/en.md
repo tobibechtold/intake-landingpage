@@ -1,6 +1,6 @@
 ---
 id: calories-from-steps
-title: "Estimate calories from steps"
+title: "Calories from steps"
 short: "If Apple Health or Health Connect has your steps but no active calories, for example without a smartwatch, Intake estimates the calories from your steps and your weight."
 related:
   - steps-workouts

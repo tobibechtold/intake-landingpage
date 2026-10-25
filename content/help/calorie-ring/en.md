@@ -1,6 +1,6 @@
 ---
 id: calorie-ring
-title: "Calorie ring: left, eaten and burned"
+title: "The calorie ring"
 short: "The ring on Today shows how many calories you have left today. Next to it you see your target, what you’ve eaten and what you’ve burned through activity."
 related:
   - adjust-day-target

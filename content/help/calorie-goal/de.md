@@ -1,6 +1,6 @@
 ---
 id: calorie-goal
-title: "So entsteht dein Kalorienziel"
+title: "Kalorienziel"
 short: "Dein Tagesziel ist dein Erhaltungsbedarf plus eine tägliche Anpassung, zum Beispiel minus 500 kcal zum Abnehmen. Beides stellst du unter Einstellungen > „Kalorien“ ein."
 related:
   - weekly-budget

@@ -1,6 +1,6 @@
 ---
 id: steps-workouts
-title: "Steps, activity and workouts from Apple Health and Health Connect"
+title: "Steps and workouts"
 short: "Intake reads steps, active calories and workouts from Apple Health or Health Connect. Garmin, Fitbit or Strava only show up when they write their data there."
 related:
   - workouts-without-double-counting

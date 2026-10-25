@@ -1,6 +1,6 @@
 ---
 id: calories-from-steps
-title: "Kalorien aus Schritten schätzen"
+title: "Kalorien aus Schritten"
 short: "Meldet Apple Health oder Health Connect Schritte, aber keine Aktivitätskalorien, etwa ohne Smartwatch, schätzt Intake die Kalorien aus deinen Schritten und deinem Gewicht."
 related:
   - steps-workouts

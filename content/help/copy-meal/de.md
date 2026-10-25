@@ -1,6 +1,6 @@
 ---
 id: copy-meal
-title: "Mahlzeit auf einen anderen Tag kopieren"
+title: "Mahlzeit kopieren"
 short: "Tippe auf den Namen der Mahlzeit und wähle im Menü „Mahlzeit kopieren“. Du entscheidest, welche Einträge mitkommen und auf welchen Tag und in welche Mahlzeit sie kopiert werden."
 related:
   - move-entry

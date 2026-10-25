@@ -1,6 +1,6 @@
 ---
 id: calorie-settings
-title: "Einstellungen: Kalorien (Erhaltung, Ziel, Anpassung, festes Tagesziel)"
+title: "Kalorien-Einstellungen"
 short: "Unter Einstellungen > „Kalorien“ legst du fest, woher dein Erhaltungsbedarf kommt, ob du abnehmen, halten oder zunehmen willst, und wie groß die tägliche Anpassung ist."
 related:
   - calorie-goal

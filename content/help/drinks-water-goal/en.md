@@ -1,6 +1,6 @@
 ---
 id: drinks-water-goal
-title: "Drinks: what counts toward your water goal"
+title: "Which drinks count"
 short: "Besides water, every drink you mark as a beverage while adding it counts, such as juice, tea or coffee. Its calories still show up in your meal."
 related:
   - log-water

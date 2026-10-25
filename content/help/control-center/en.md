@@ -1,6 +1,6 @@
 ---
 id: control-center
-title: "Intake in Control Center and on the Lock Screen"
+title: "Control Center"
 short: "Intake’s controls open the search, the barcode scanner, “Create” or Intake AI straight from Control Center or the Lock Screen."
 related:
   - widgets
