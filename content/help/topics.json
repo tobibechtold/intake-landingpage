@@ -220,8 +220,8 @@
       "id": "remaining-calories-food-sheet",
       "area": "logging",
       "slugs": {
-        "de": "uebersicht-beim-hinzufuegen",
-        "en": "summary-capsule"
+        "de": "kalorien-uebrig-beim-hinzufuegen",
+        "en": "calories-left-when-adding"
       },
       "platforms": [
         "ios",

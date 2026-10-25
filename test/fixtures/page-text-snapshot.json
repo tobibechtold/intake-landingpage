@@ -55,6 +55,10 @@
     "words": 351,
     "sha": "7bfdfbd6b7fc5a4d"
   },
+  "/en/help/calories-left-when-adding": {
+    "words": 266,
+    "sha": "593247cb1f140c23"
+  },
   "/en/help/copy-meal": {
     "words": 309,
     "sha": "1c379fc514011249"
@@ -158,10 +162,6 @@
   "/en/help/steps-workouts": {
     "words": 520,
     "sha": "710fa463ac8765d2"
-  },
-  "/en/help/summary-capsule": {
-    "words": 266,
-    "sha": "593247cb1f140c23"
   },
   "/en/help/switch-days": {
     "words": 286,
@@ -379,6 +379,10 @@
     "words": 117,
     "sha": "5598427d3b947b0e"
   },
+  "/hilfe/kalorien-uebrig-beim-hinzufuegen": {
+    "words": 265,
+    "sha": "d8ea639da101ff3a"
+  },
   "/hilfe/kalorienring": {
     "words": 340,
     "sha": "88882ce89108c221"
@@ -438,10 +442,6 @@
   "/hilfe/tag-wechseln": {
     "words": 282,
     "sha": "7a6b3848134db93a"
-  },
-  "/hilfe/uebersicht-beim-hinzufuegen": {
-    "words": 265,
-    "sha": "d8ea639da101ff3a"
   },
   "/hilfe/verlauf-haeufig-favoriten": {
     "words": 259,
