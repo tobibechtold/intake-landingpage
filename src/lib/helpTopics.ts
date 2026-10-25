@@ -62,7 +62,6 @@ export interface HelpTopicEntryData {
   short: string;
   related?: string[];
   steps?: HelpStep[];
-  customPage?: 'byokGuide';
   /** Replaces the default platform-only note, e.g. "Nur auf iPhone Duo und iPad". */
   platformNote?: string;
   /**
@@ -152,14 +151,6 @@ export const validateTopicEntry = (entry: HelpTopicEntryData, source: HelpManife
   const label = `help topic "${entry.id}"`;
 
   if (!topic) errors.push(`${label}: id is not in content/help/topics.json`);
-
-  // The BYOK guide renders from its own static pages; no other topic may claim that.
-  if (entry.id === BYOK_GUIDE_ID && entry.customPage !== 'byokGuide') {
-    errors.push(`${label}: needs customPage: byokGuide`);
-  }
-  if (entry.id !== BYOK_GUIDE_ID && entry.customPage !== undefined) {
-    errors.push(`${label}: customPage is only allowed on ${BYOK_GUIDE_ID}`);
-  }
 
   if (entry.title.includes(EM_DASH)) errors.push(`${label}: title contains an em dash`);
   if (entry.short.includes(EM_DASH)) errors.push(`${label}: short contains an em dash`);

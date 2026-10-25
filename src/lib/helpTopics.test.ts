@@ -147,12 +147,6 @@ describe('validateTopicEntry', () => {
     expect(validateTopicEntry(entry({ title: 'Kalorienring: übrig' }), manifest).length).toBeGreaterThan(0);
   });
 
-  it('allows customPage only on byok-guide and requires it there', () => {
-    expect(validateTopicEntry(entry({ customPage: 'byokGuide' }), manifest).length).toBeGreaterThan(0);
-    expect(validateTopicEntry(entry({ id: 'byok-guide' }), manifest).length).toBeGreaterThan(0);
-    expect(validateTopicEntry(entry({ id: 'byok-guide', customPage: 'byokGuide' }), manifest)).toEqual([]);
-  });
-
   it('allows platformNote only on a one-platform topic, without an em dash', () => {
     const wide = { id: 'wide-screen-layout' };
     expect(validateTopicEntry(entry({ ...wide, platformNote: 'Nur auf iPhone Duo und iPad' }), manifest)).toEqual([]);

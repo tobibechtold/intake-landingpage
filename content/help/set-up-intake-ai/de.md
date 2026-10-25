@@ -26,4 +26,4 @@ steps:
 draft: true
 ---
 
-Du kannst jederzeit wechseln. Mit eigenem Schlüssel zahlst du direkt beim Anbieter, wie du ihn bekommst, steht unter [Eigenen API-Schlüssel für Intake AI einrichten](/hilfe/eigener-api-schluessel).
+Du kannst jederzeit wechseln. Mit eigenem Schlüssel zahlst du direkt beim Anbieter, wie du ihn bekommst, steht unter [Eigenen API-Schlüssel für Intake AI einrichten](/byok-guide/).
