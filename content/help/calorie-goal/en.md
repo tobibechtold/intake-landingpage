@@ -1,6 +1,5 @@
 ---
 id: calorie-goal
-draft: true
 title: "How your calorie goal is calculated"
 short: "Your daily target is your maintenance calories plus a daily adjustment, for example minus 500 kcal to lose weight. You set both under Settings > “Calories”."
 related:
@@ -9,16 +8,25 @@ related:
   - activity-settings
 steps:
   - text: "On Today, tap the gear at the top, then “Calories”."
+    ios:
+      image: ./assets/en/ios/1.webp
     android:
       image: ./assets/en/android/1.webp
-  - text: "Under “Maintenance source”, choose where your maintenance calories come from."
+  - text: "Under “Maintenance calories”, choose where your maintenance calories come from, for example “Auto estimate”."
+    ios:
+      image: ./assets/en/ios/2.webp
     android:
       text: "Under “Maintenance calories”, choose “Auto estimate” or “Custom TDEE”."
       image: ./assets/en/android/2.webp
-  - text: "Under “Goal”, pick “Lose”, “Maintain” or “Gain” and set the daily adjustment with the slider."
+  - text: "Pick “Lose”, “Maintain” or “Gain” and set the daily adjustment with the slider under “Adjustment”."
+    ios:
+      image: ./assets/en/ios/3.webp
     android:
+      text: "Under “Goal”, pick “Lose”, “Maintain” or “Gain” and set the daily adjustment with the slider."
       image: ./assets/en/android/3.webp
   - text: "Below that you see your “Maintenance calories” and the resulting “Daily target”."
+    ios:
+      image: ./assets/en/ios/4.webp
     android:
       image: ./assets/en/android/4.webp
 ---

@@ -1,6 +1,5 @@
 ---
 id: steps-workouts
-draft: true
 title: "Schritte, Aktivität und Workouts aus Apple Health und Health Connect"
 short: "Intake liest Schritte, Aktivitätskalorien und Workouts aus Apple Health oder Health Connect. Garmin, Fitbit oder Strava tauchen nur auf, wenn sie ihre Daten dorthin schreiben."
 related:
@@ -9,21 +8,31 @@ related:
   - calorie-goal
 steps:
   - text: "Tippe auf Heute oben auf das Zahnrad und dann auf „Apple Health“."
+    ios:
+      image: ./assets/de/ios/1.webp
     android:
       text: "Tippe auf Heute oben auf das Zahnrad und scrolle zu „Integrationen“."
       image: ./assets/de/android/1.webp
   - text: "Tippe beim ersten Mal auf „Apple Health verbinden“ und erlaube den Zugriff; danach steht dort „Apple Health verwenden“."
+    ios:
+      image: ./assets/de/ios/2.webp
     android:
       text: "Schalte „Health Connect verwenden“ ein und erlaube in Health Connect den Zugriff."
       image: ./assets/de/android/2.webp
   - text: "Die Karte „Aktivität“ auf Heute zeigt dann Aktivitätskalorien, Schritte, Strecke und deine Workouts."
+    ios:
+      image: ./assets/de/ios/3.webp
     android:
       image: ./assets/de/android/3.webp
   - text: "Tippe ein Workout an, um seine Kalorien in „Gesamt verbrannt“ ein- oder auszuschließen."
+    ios:
+      image: ./assets/de/ios/4.webp
     android:
       text: "Schreiben mehrere Apps deine Aktivität, wählst du unter Einstellungen > „Health-Connect-Aktivität“ bei „Nur diese App verwenden“ die App, die zählt."
       image: ./assets/de/android/4.webp
   - text: "Ohne Uhr trägst du ein Training über „Hinzufügen“ in der Karte „Aktivität“ selbst ein."
+    ios:
+      image: ./assets/de/ios/5.webp
     android:
       image: ./assets/de/android/5.webp
 ---

@@ -1,6 +1,5 @@
 ---
 id: calorie-goal
-draft: true
 title: "So entsteht dein Kalorienziel"
 short: "Dein Tagesziel ist dein Erhaltungsbedarf plus eine tägliche Anpassung, zum Beispiel minus 500 kcal zum Abnehmen. Beides stellst du unter Einstellungen > „Kalorien“ ein."
 related:
@@ -9,16 +8,25 @@ related:
   - activity-settings
 steps:
   - text: "Tippe auf Heute oben auf das Zahnrad und dann auf „Kalorien“."
+    ios:
+      image: ./assets/de/ios/1.webp
     android:
       image: ./assets/de/android/1.webp
-  - text: "Wähle bei „Quelle der Erhaltungskalorien“, woher dein Erhaltungsbedarf kommt."
+  - text: "Wähle unter „Erhaltungskalorien“, woher dein Erhaltungsbedarf kommt, zum Beispiel „Automatisch berechnen“."
+    ios:
+      image: ./assets/de/ios/2.webp
     android:
       text: "Wähle unter „Erhaltungskalorien“ „Automatisch berechnen“ oder „Eigener TDEE“."
       image: ./assets/de/android/2.webp
-  - text: "Wähle bei „Ziel“ „Abnehmen“, „Halten“ oder „Zunehmen“ und stell mit dem Regler die tägliche Anpassung ein."
+  - text: "Wähle „Abnehmen“, „Halten“ oder „Zunehmen“ und stell unter „Anpassung“ mit dem Regler die tägliche Anpassung ein."
+    ios:
+      image: ./assets/de/ios/3.webp
     android:
+      text: "Wähle bei „Ziel“ „Abnehmen“, „Halten“ oder „Zunehmen“ und stell mit dem Regler die tägliche Anpassung ein."
       image: ./assets/de/android/3.webp
   - text: "Darunter siehst du deine „Erhaltungskalorien“ und das „Tagesziel“, das daraus entsteht."
+    ios:
+      image: ./assets/de/ios/4.webp
     android:
       image: ./assets/de/android/4.webp
 ---

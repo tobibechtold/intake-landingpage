@@ -1,6 +1,5 @@
 ---
 id: weekly-budget
-draft: true
 title: "How the weekly budget works"
 short: "The weekly budget is the sum of your day goals from Monday to Sunday. What you don’t eat one day stays available for the rest of the week, and what you eat on top is taken from it."
 related:
@@ -9,17 +8,25 @@ related:
   - calorie-goal
 steps:
   - text: "On Today, tap the gear at the top, then “Calories” and “Daily and weekly goals”."
+    ios:
+      image: ./assets/en/ios/1.webp
     android:
       text: "On Today, tap the gear at the top, then “Calories”."
       image: ./assets/en/android/1.webp
   - text: "Turn on “Weekly budget” and choose “Spread automatically” or “Manually”."
+    ios:
+      image: ./assets/en/ios/2.webp
     android:
       text: "Scroll to “Weekly budget”, turn it on and choose “Spread automatically” or “Manual”."
       image: ./assets/en/android/2.webp
   - text: "On Today, the “Week” row in the calorie ring card shows what is left this week, or how far over you are."
+    ios:
+      image: ./assets/en/ios/3.webp
     android:
       image: ./assets/en/android/3.webp
   - text: "Tap “Week” to open the overview with every day of the week."
+    ios:
+      image: ./assets/en/ios/4.webp
     android:
       image: ./assets/en/android/4.webp
 ---

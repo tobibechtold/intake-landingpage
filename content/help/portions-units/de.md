@@ -1,6 +1,5 @@
 ---
 id: portions-units
-draft: true
 title: "Portionen und Einheiten: g, ml, EL, Tasse und Gewicht pro Einheit"
 short: "Du erfasst in den Portionen des Produkts oder in einer eigenen Menge: Gramm, Milliliter, Teelöffel, Esslöffel, Tasse oder Glas. Wiegt dein Löffel anders, passt du das Gewicht einmal an."
 related:
@@ -9,16 +8,24 @@ related:
   - add-food
 steps:
   - text: "Tippe in der Suche auf ein Lebensmittel."
+    ios:
+      image: ./assets/de/ios/1.webp
     android:
       text: "Tippe beim Hinzufügen auf ein Lebensmittel, zum Beispiel unter „Häufig“ oder in der Suche."
       image: ./assets/de/android/1.webp
   - text: "Wähle unter „Portion wählen“ eine Portion des Produkts oder „Eigene Menge“."
+    ios:
+      image: ./assets/de/ios/2.webp
     android:
       image: ./assets/de/android/2.webp
   - text: "Tippe bei „Eigene Menge“ auf die Einheit und wähle zum Beispiel Esslöffel oder Tasse."
+    ios:
+      image: ./assets/de/ios/3.webp
     android:
       image: ./assets/de/android/3.webp
   - text: "Wiegt eine Einheit bei dir anders, tippe auf die Zeile „… pro Esslöffel, tippen zum Ändern“ und trag das Gewicht ein."
+    ios:
+      image: ./assets/de/ios/4.webp
     android:
       image: ./assets/de/android/4.webp
 ---

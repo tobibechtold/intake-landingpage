@@ -1,6 +1,5 @@
 ---
 id: weekly-budget
-draft: true
 title: "Wie das Wochenbudget funktioniert"
 short: "Das Wochenbudget ist die Summe deiner Tagesziele von Montag bis Sonntag. Was du an einem Tag nicht isst, bleibt für die restliche Woche übrig, und was du zu viel isst, fehlt dort."
 related:
@@ -9,17 +8,25 @@ related:
   - calorie-goal
 steps:
   - text: "Tippe auf Heute oben auf das Zahnrad, dann auf „Kalorien“ und „Tages- und Wochenziele“."
+    ios:
+      image: ./assets/de/ios/1.webp
     android:
       text: "Tippe auf Heute oben auf das Zahnrad und dann auf „Kalorien“."
       image: ./assets/de/android/1.webp
   - text: "Schalte „Wochenbudget“ ein und wähle „Automatisch verteilen“ oder „Manuell“."
+    ios:
+      image: ./assets/de/ios/2.webp
     android:
       text: "Scrolle zu „Wochenbudget“, schalte es ein und wähle „Automatisch verteilen“ oder „Manuell“."
       image: ./assets/de/android/2.webp
   - text: "Auf Heute zeigt die Zeile „Woche“ im Kalorienring, was diese Woche übrig ist oder wie viel du drüber bist."
+    ios:
+      image: ./assets/de/ios/3.webp
     android:
       image: ./assets/de/android/3.webp
   - text: "Tippe auf „Woche“, um die Übersicht mit jedem Tag der Woche zu öffnen."
+    ios:
+      image: ./assets/de/ios/4.webp
     android:
       image: ./assets/de/android/4.webp
 ---

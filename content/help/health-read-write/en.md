@@ -1,6 +1,5 @@
 ---
 id: health-read-write
-draft: true
 title: "What Intake reads from Apple Health and Health Connect, and what it writes"
 short: "Intake reads activity, weight and body measurements, and writes your food, water and weight back. It doesn’t read nutrition data from other apps."
 related:
@@ -9,10 +8,14 @@ related:
   - water-from-other-apps
 steps:
   - text: "On Today, tap the gear at the top, then “Apple Health”."
+    ios:
+      image: ./assets/en/ios/1.webp
     android:
       text: "On Today, tap the gear at the top and scroll to “Integrations”."
       image: ./assets/en/android/1.webp
   - text: "There you turn Apple Health and single options such as weight or water from other apps on or off."
+    ios:
+      image: ./assets/en/ios/2.webp
     android:
       text: "There you turn “Use Health Connect” on or off; what Intake may read and write is set in Health Connect."
       image: ./assets/en/android/2.webp

@@ -1,6 +1,5 @@
 ---
 id: raw-or-cooked
-draft: true
 title: "Roh oder gekocht gewogen"
 short: "Bei Nudeln, Reis, Quinoa, Hirse, Buchweizen und Linsen wählst du, ob du roh oder gekocht gewogen hast. Intake rechnet die Nährwerte dann passend um."
 related:
@@ -9,12 +8,18 @@ related:
   - add-food
 steps:
   - text: "Suche das Lebensmittel, zum Beispiel Reis, und tippe es an."
+    ios:
+      image: ./assets/de/ios/1.webp
     android:
       image: ./assets/de/android/1.webp
   - text: "Wähle bei „Gewogen“ „Roh“ oder „Gekocht“, je nachdem, wie du abgewogen hast."
+    ios:
+      image: ./assets/de/ios/2.webp
     android:
       image: ./assets/de/android/2.webp
   - text: "Gib die Menge in Gramm ein und tippe auf das Häkchen."
+    ios:
+      image: ./assets/de/ios/3.webp
     android:
       image: ./assets/de/android/3.webp
 ---
