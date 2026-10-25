@@ -8,12 +8,18 @@ related:
   - recent-frequent-favorites
 steps:
   - text: "Tap “Library” at the bottom."
+    android:
+      image: ./assets/en/android/1.webp
     ios:
       image: ./assets/en/ios/1.webp
   - text: "Tap a section, for example “My Products”."
+    android:
+      image: ./assets/en/android/2.webp
     ios:
       image: ./assets/en/ios/2.webp
   - text: "When you add food, the same lists are under “Library”."
+    android:
+      image: ./assets/en/android/3.webp
     ios:
       image: ./assets/en/ios/3.webp
 draft: true

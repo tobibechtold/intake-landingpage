@@ -40,8 +40,8 @@
     "sha": "68f6f462204f54b4"
   },
   "/en/help/activity-settings": {
-    "words": 363,
-    "sha": "bca22b0033bb1047"
+    "words": 384,
+    "sha": "ae02fbd7ba9ea155"
   },
   "/en/help/add-activity": {
     "words": 378,
@@ -52,12 +52,12 @@
     "sha": "43def1511f4020bb"
   },
   "/en/help/adjust-day-target": {
-    "words": 357,
-    "sha": "f8fcdb33d0809083"
+    "words": 366,
+    "sha": "aed8d265c7e3d1c2"
   },
   "/en/help/body-data": {
-    "words": 340,
-    "sha": "277de598d507761a"
+    "words": 358,
+    "sha": "ea4ea8e35057a1bb"
   },
   "/en/help/body-measurements": {
     "words": 353,
@@ -72,8 +72,8 @@
     "sha": "15b00ca66afc1bb2"
   },
   "/en/help/calorie-settings": {
-    "words": 404,
-    "sha": "aaa73e111a82b655"
+    "words": 408,
+    "sha": "71f59819747a9dda"
   },
   "/en/help/calorie-stats": {
     "words": 384,
@@ -100,8 +100,8 @@
     "sha": "480b0c4145238746"
   },
   "/en/help/create-recipe": {
-    "words": 338,
-    "sha": "318267d1abc874ba"
+    "words": 359,
+    "sha": "4deaf28a7acb4ae7"
   },
   "/en/help/custom-meals": {
     "words": 372,
@@ -172,8 +172,8 @@
     "sha": "6c49823ba1207913"
   },
   "/en/help/log-recipe": {
-    "words": 353,
-    "sha": "1e11aed25e078698"
+    "words": 349,
+    "sha": "724a9cdfb667b16a"
   },
   "/en/help/log-water": {
     "words": 407,
@@ -184,8 +184,8 @@
     "sha": "4c44398295dbe61b"
   },
   "/en/help/macro-goals": {
-    "words": 394,
-    "sha": "e85c86962b6e9dea"
+    "words": 411,
+    "sha": "d47dbbce95055664"
   },
   "/en/help/meal-summary": {
     "words": 366,
@@ -204,12 +204,12 @@
     "sha": "3b0ed14353375e3c"
   },
   "/en/help/my-products": {
-    "words": 287,
-    "sha": "3142022de559cbd0"
+    "words": 294,
+    "sha": "f6278f51be8457f5"
   },
   "/en/help/nutrient-goals": {
-    "words": 326,
-    "sha": "ab08e9fe497095f4"
+    "words": 331,
+    "sha": "e143f399e58a0a1a"
   },
   "/en/help/own-api-key": {
     "words": 841,
@@ -240,8 +240,8 @@
     "sha": "5e8fb0ec3abd163d"
   },
   "/en/help/recipe-categories": {
-    "words": 325,
-    "sha": "5d4e2f48366c7374"
+    "words": 344,
+    "sha": "08b39e16c20cabdb"
   },
   "/en/help/recipe-cooked-weight": {
     "words": 358,
@@ -252,8 +252,8 @@
     "sha": "b38ebd7684622978"
   },
   "/en/help/routines": {
-    "words": 352,
-    "sha": "4cf126063b974149"
+    "words": 362,
+    "sha": "34e37ddc00a7d4fa"
   },
   "/en/help/scan-barcode": {
     "words": 295,
@@ -272,8 +272,8 @@
     "sha": "549780e5e7f098d8"
   },
   "/en/help/share-recipe": {
-    "words": 343,
-    "sha": "c130b8cf56d925ca"
+    "words": 351,
+    "sha": "4e9b7f6a0591e907"
   },
   "/en/help/start-end-fast": {
     "words": 321,
@@ -292,8 +292,8 @@
     "sha": "710fa463ac8765d2"
   },
   "/en/help/submit-product": {
-    "words": 372,
-    "sha": "cce9287cffcd46c6"
+    "words": 383,
+    "sha": "1f1ab509e2bd93a0"
   },
   "/en/help/switch-days": {
     "words": 284,
@@ -308,8 +308,8 @@
     "sha": "ccfe1226d42e4266"
   },
   "/en/help/tags": {
-    "words": 307,
-    "sha": "aeb4782080672f7a"
+    "words": 310,
+    "sha": "92c3559561efb293"
   },
   "/en/help/water-from-other-apps": {
     "words": 312,
@@ -324,16 +324,16 @@
     "sha": "1991dea4b5617eca"
   },
   "/en/help/weekday-targets": {
-    "words": 347,
-    "sha": "dd5328f86ac809b6"
+    "words": 388,
+    "sha": "00a5ab200a9d7dc5"
   },
   "/en/help/weekly-budget": {
     "words": 545,
     "sha": "7eabce70d8039d90"
   },
   "/en/help/weekly-overview": {
-    "words": 373,
-    "sha": "9da399d94020b4b6"
+    "words": 378,
+    "sha": "4f2923f5f7431fd4"
   },
   "/en/help/weight-trend": {
     "words": 365,
@@ -524,8 +524,8 @@
     "sha": "d0a3de027094071b"
   },
   "/hilfe/einstellungen-aktivitaet": {
-    "words": 338,
-    "sha": "537db752e2c5db7c"
+    "words": 356,
+    "sha": "99f602bab6592c57"
   },
   "/hilfe/eintrag-bearbeiten": {
     "words": 369,
@@ -616,8 +616,8 @@
     "sha": "296fc6ed6c7bcef9"
   },
   "/hilfe/kalorien-einstellen": {
-    "words": 375,
-    "sha": "aba2d61493592d06"
+    "words": 378,
+    "sha": "529da8db9ed1513d"
   },
   "/hilfe/kalorien-uebrig-beim-hinzufuegen": {
     "words": 321,
@@ -632,8 +632,8 @@
     "sha": "2143514c4274860f"
   },
   "/hilfe/koerperdaten": {
-    "words": 317,
-    "sha": "1d154e42467ccb58"
+    "words": 334,
+    "sha": "f3517ac83d25fff0"
   },
   "/hilfe/koerpermasse": {
     "words": 337,
@@ -656,12 +656,12 @@
     "sha": "003bdf0f806c405e"
   },
   "/hilfe/makroziele": {
-    "words": 372,
-    "sha": "beb7d3022701bcbb"
+    "words": 387,
+    "sha": "92281d4be0890351"
   },
   "/hilfe/meine-produkte": {
-    "words": 283,
-    "sha": "6d48cc336787b215"
+    "words": 292,
+    "sha": "e4faf1467d7d8049"
   },
   "/hilfe/monatskalender": {
     "words": 339,
@@ -672,8 +672,8 @@
     "sha": "3ee75d5534b087e6"
   },
   "/hilfe/naehrstoffziele": {
-    "words": 305,
-    "sha": "2af4663c05de1e59"
+    "words": 310,
+    "sha": "81a229b45b80b213"
   },
   "/hilfe/nur-kalorien-erfassen": {
     "words": 272,
@@ -688,44 +688,44 @@
     "sha": "862e75c862dbfb36"
   },
   "/hilfe/produkt-einreichen": {
-    "words": 366,
-    "sha": "cbb8aeb562ca7753"
+    "words": 376,
+    "sha": "8f7e341cc6805053"
   },
   "/hilfe/rezept-erstellen": {
-    "words": 318,
-    "sha": "9dfe8f895d6c022d"
+    "words": 337,
+    "sha": "44ae36e01c97dece"
   },
   "/hilfe/rezept-gargewicht": {
     "words": 362,
     "sha": "c6229b0d9e7552a8"
   },
   "/hilfe/rezept-loggen": {
-    "words": 332,
-    "sha": "a6320b4b3ad0f1d5"
+    "words": 326,
+    "sha": "54232d1e832b05dc"
   },
   "/hilfe/rezept-teilen": {
-    "words": 339,
-    "sha": "b52556701565d093"
+    "words": 343,
+    "sha": "b23c771f6ba80bbd"
   },
   "/hilfe/rezeptkategorien": {
-    "words": 321,
-    "sha": "b4e69a7fbed98db0"
+    "words": 341,
+    "sha": "71421b0891042a92"
   },
   "/hilfe/roh-oder-gekocht": {
     "words": 330,
     "sha": "5b892c9f387aa142"
   },
   "/hilfe/routinen": {
-    "words": 339,
-    "sha": "0b7c0e27698d48af"
+    "words": 354,
+    "sha": "e44903ad09976e8b"
   },
   "/hilfe/ruheenergie": {
     "words": 288,
     "sha": "14a2bc2776b7fd31"
   },
   "/hilfe/schlagwoerter": {
-    "words": 305,
-    "sha": "e6ac64cbb2373e73"
+    "words": 318,
+    "sha": "8ff0442ce95f65af"
   },
   "/hilfe/schritte-workouts": {
     "words": 499,
@@ -756,8 +756,8 @@
     "sha": "7a7ad9f434d632bd"
   },
   "/hilfe/tagesziel-anpassen": {
-    "words": 329,
-    "sha": "d2420f63178e7452"
+    "words": 336,
+    "sha": "3169990aec83f030"
   },
   "/hilfe/trinkerinnerungen": {
     "words": 290,
@@ -784,16 +784,16 @@
     "sha": "39c522397ef4001f"
   },
   "/hilfe/wochenuebersicht": {
-    "words": 349,
-    "sha": "d84d2963f277543c"
+    "words": 356,
+    "sha": "724e61402e5c4b6b"
   },
   "/hilfe/workouts-ohne-doppelzaehlung": {
     "words": 275,
     "sha": "05cd761e9c87b4b8"
   },
   "/hilfe/ziele-je-wochentag": {
-    "words": 337,
-    "sha": "8958647aef220bb0"
+    "words": 374,
+    "sha": "d268570c9ee9c983"
   },
   "/hilfe/zum-aktualisieren-ziehen": {
     "words": 259,

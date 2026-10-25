@@ -8,15 +8,24 @@ related:
   - weekday-targets
 steps:
   - text: "Wähle unter „Erhaltungskalorien“ „Automatisch berechnen“ mit deinem „Aktivitätslevel“ oder „Eigener TDEE“."
+    android:
+      image: ./assets/de/android/1.webp
     ios:
       image: ./assets/de/ios/1.webp
   - text: "Wähle „Abnehmen“, „Halten“ oder „Zunehmen“ und stell die tägliche Anpassung ein."
+    android:
+      image: ./assets/de/android/2.webp
     ios:
       image: ./assets/de/ios/2.webp
   - text: "Ein „Fixes Tagesziel“ unter „Erweitert“ ersetzt die ganze Berechnung durch eine feste Zahl."
+    android:
+      image: ./assets/de/android/3.webp
     ios:
       image: ./assets/de/ios/3.webp
   - text: "Weiter unten geht es zum Wochenbudget und zu Zielen je Wochentag."
+    android:
+      text: "Darunter schaltest du das „Wochenbudget“ ein, und „Tagesabhängige Ziele“ führt zu Zielen je Wochentag."
+      image: ./assets/de/android/4.webp
     ios:
       text: "Unter „Tages- und Wochenziele“ geht es zum Wochenbudget und zu Zielen je Wochentag."
       image: ./assets/de/ios/4.webp
