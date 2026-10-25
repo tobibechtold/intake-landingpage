@@ -207,3 +207,36 @@ export const validateTopicEntry = (entry: HelpTopicEntryData, source: HelpManife
 
   return errors;
 };
+
+/** The topic data the docs sections on the help home need from one entry. */
+export interface DocsSectionEntry {
+  id: string;
+  lang: Language;
+  title: string;
+  draft?: boolean;
+}
+
+export interface DocsSection {
+  area: HelpArea;
+  topics: { id: string; title: string; href: string }[];
+}
+
+/**
+ * The docs topics by area for the help home, in manifest order. Only topics the docs
+ * site publishes in production are listed (an entry in both languages, neither a
+ * draft; see docs-site/scripts/generate.mjs), so no link 404s. Empty areas are left out.
+ */
+export const docsSections = (entries: DocsSectionEntry[], lang: Language, source: HelpManifest = manifest): DocsSection[] => {
+  const byKey = new Map(entries.map((entry) => [`${entry.id}/${entry.lang}`, entry]));
+  const published = source.topics.filter((topic) => {
+    const de = byKey.get(`${topic.id}/de`);
+    const en = byKey.get(`${topic.id}/en`);
+    return de && en && !de.draft && !en.draft;
+  });
+  return HELP_AREAS.map((area) => ({
+    area,
+    topics: published
+      .filter((topic) => topic.area === area)
+      .map((topic) => ({ id: topic.id, title: byKey.get(`${topic.id}/${lang}`)!.title, href: docsUrl(topic.id, lang) })),
+  })).filter((section) => section.topics.length > 0);
+};

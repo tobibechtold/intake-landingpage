@@ -14,6 +14,7 @@ import CTA from '@/components/astro/CTA.astro';
 import PageBreadcrumbs from '@/components/astro/PageBreadcrumbs.astro';
 import PhoneFrame from '@/components/astro/PhoneFrame.astro';
 import { buildLocalizedPath } from "@/lib/localeRouting";
+import { docsUrl } from "@/lib/helpTopics";
 
 const CONTENT = {
   en: {
@@ -284,7 +285,7 @@ const t = useT(lang);
 const content = CONTENT[lang];
   const homePath = buildLocalizedPath("home", lang);
   const helpPath = buildLocalizedPath("help", lang);
-  const byokGuidePath = buildLocalizedPath("byokGuide", lang);
+  const byokGuidePath = docsUrl("byok-guide", lang);
   const demoVideoSrc =
     lang === "de" ? "/intake-ai-demo-de.mp4" : "/intake-ai-demo-en.mp4";
 ---

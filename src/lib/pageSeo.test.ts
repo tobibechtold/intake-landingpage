@@ -50,11 +50,9 @@ describe('getHreflangPair', () => {
     });
   });
 
-  it('pairs the BYOK guide and pairs no former help topic route', () => {
-    expect(getHreflangPair('/hilfe/eigener-api-schluessel')).toEqual({
-      de: '/hilfe/eigener-api-schluessel',
-      en: '/en/help/own-api-key',
-    });
+  it('pairs no former help topic route, the BYOK guide included', () => {
+    expect(getHreflangPair('/hilfe/eigener-api-schluessel')).toBeNull();
+    expect(getHreflangPair('/en/help/own-api-key')).toBeNull();
     // The topics live on docs.getintake.de now; vercel.json redirects these paths.
     expect(getHreflangPair('/hilfe/mahlzeit-kopieren')).toBeNull();
     expect(getHreflangPair('/en/help/copy-meal')).toBeNull();

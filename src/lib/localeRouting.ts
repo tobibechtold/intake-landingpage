@@ -8,7 +8,6 @@ export type SitePage =
   | "comparisons"
   | "intakeAI"
   | "help"
-  | "byokGuide"
   | "comparisonDetail"
   | "press"
   | "privacy"
@@ -44,10 +43,6 @@ const PAGE_SEGMENT_BY_PAGE: Record<
   help: {
     de: "hilfe",
     en: "help",
-  },
-  byokGuide: {
-    de: "hilfe/eigener-api-schluessel",
-    en: "help/own-api-key",
   },
   press: {
     de: "presse",
@@ -121,10 +116,6 @@ export const getPageFromPathname = (pathname: string): SitePage => {
 
   if (noLocale === `/${localizedSegments.comparisons}`) {
     return "comparisons";
-  }
-
-  if (noLocale === `/${localizedSegments.byokGuide}`) {
-    return "byokGuide";
   }
 
   if (noLocale === `/${localizedSegments.help}`) {

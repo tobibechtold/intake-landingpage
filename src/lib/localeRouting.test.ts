@@ -27,14 +27,12 @@ describe("localeRouting", () => {
     expect(getPageFromPathname("/vergleiche/yazio-alternative")).toBe("comparisonDetail");
     expect(getPageFromPathname("/intake-ai")).toBe("intakeAI");
     expect(getPageFromPathname("/hilfe")).toBe("help");
-    expect(getPageFromPathname("/hilfe/eigener-api-schluessel")).toBe("byokGuide");
     expect(getPageFromPathname("/privacy")).toBe("privacy");
     expect(getPageFromPathname("/terms")).toBe("terms");
     expect(getPageFromPathname("/whats-new")).toBe("whatsNewIndex");
     expect(getPageFromPathname("/en/features")).toBe("features");
     expect(getPageFromPathname("/en/intake-ai")).toBe("intakeAI");
     expect(getPageFromPathname("/en/help")).toBe("help");
-    expect(getPageFromPathname("/en/help/own-api-key")).toBe("byokGuide");
     expect(getPageFromPathname("/en/comparisons/yazio-alternative")).toBe("comparisonDetail");
     expect(getPageFromPathname("/en/whats-new")).toBe("whatsNewIndex");
     expect(getPageFromPathname("/en/whats-new/2.1.1")).toBe("whatsNewEntry");
@@ -56,8 +54,6 @@ describe("localeRouting", () => {
     expect(buildLocalizedPath("intakeAI", "en")).toBe("/en/intake-ai");
     expect(buildLocalizedPath("help", "de")).toBe("/hilfe");
     expect(buildLocalizedPath("help", "en")).toBe("/en/help");
-    expect(buildLocalizedPath("byokGuide", "de")).toBe("/hilfe/eigener-api-schluessel");
-    expect(buildLocalizedPath("byokGuide", "en")).toBe("/en/help/own-api-key");
     expect(buildLocalizedPath("privacy", "de")).toBe("/privacy");
     expect(buildLocalizedPath("privacy", "en")).toBe("/en/privacy");
     expect(buildLocalizedPath("whatsNewIndex", "de")).toBe("/whats-new");
@@ -88,13 +84,6 @@ describe("localeRouting", () => {
       xDefault: "https://www.getintake.de/",
     });
 
-    expect(buildAlternateUrls("/hilfe/eigener-api-schluessel", origin)).toEqual({
-      canonical: "https://www.getintake.de/hilfe/eigener-api-schluessel",
-      en: "https://www.getintake.de/en/help/own-api-key",
-      de: "https://www.getintake.de/hilfe/eigener-api-schluessel",
-      xDefault: "https://www.getintake.de/",
-    });
-
     expect(buildAlternateUrls("/en/whats-new/2.1.1", origin)).toEqual({
       canonical: "https://www.getintake.de/en/whats-new/2.1.1",
       en: "https://www.getintake.de/en/whats-new/2.1.1",
@@ -105,11 +94,12 @@ describe("localeRouting", () => {
 
   describe("help topics", () => {
     // The topics moved to docs.getintake.de; vercel.json redirects their old paths.
-    // Only the help home and the BYOK guide are pages here.
-    it("knows no help topic page any more, only the help home and the BYOK guide", () => {
+    // Only the help home is a page here; the BYOK guide is a docs topic too.
+    it("knows no help topic page any more, only the help home", () => {
       expect(getPageFromPathname("/hilfe/mahlzeit-kopieren")).toBe("notFound");
       expect(getPageFromPathname("/en/help/copy-meal")).toBe("notFound");
-      expect(getPageFromPathname("/hilfe/eigener-api-schluessel")).toBe("byokGuide");
+      expect(getPageFromPathname("/hilfe/eigener-api-schluessel")).toBe("notFound");
+      expect(getPageFromPathname("/en/help/own-api-key")).toBe("notFound");
       expect(getPageFromPathname("/en/help")).toBe("help");
     });
   });

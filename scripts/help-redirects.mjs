@@ -3,7 +3,6 @@
 // slug (the apps and old links still use them) gets a permanent redirect:
 //   /hilfe/<de slug>   -> https://docs.getintake.de/<topic id>
 //   /en/help/<en slug> -> https://docs.getintake.de/en/<topic id>
-// Topics with a customPage (the BYOK guide) keep their own page and get none.
 //
 // Vercel passes the incoming query string on to the destination by default, so
 // ?platform=ios&source=app survives without a pattern; the destinations carry no query.
@@ -12,7 +11,7 @@
 // redirect stays as it is. Run after a topic is added to content/help/topics.json:
 //   node scripts/help-redirects.mjs
 // test/vercel-config.test.ts fails while vercel.json is out of date.
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -20,20 +19,10 @@ export const DOCS_ORIGIN = 'https://docs.getintake.de';
 
 const ROOT = join(fileURLToPath(new URL('.', import.meta.url)), '..');
 
-/** True when content/help/<id>/<lang>.md declares a customPage in its frontmatter. */
-const hasCustomPage = (id, root) =>
-  ['de', 'en'].some((lang) => {
-    const file = join(root, 'content/help', id, `${lang}.md`);
-    if (!existsSync(file)) return false;
-    const frontmatter = /^---\n([\s\S]*?)\n---/.exec(readFileSync(file, 'utf8'))?.[1] ?? '';
-    return /^customPage:/m.test(frontmatter);
-  });
-
 /** The help redirects for the current manifest, in manifest order. */
 export const helpRedirects = (root = ROOT) => {
   const manifest = JSON.parse(readFileSync(join(root, 'content/help/topics.json'), 'utf8'));
   return manifest.topics
-    .filter((topic) => !hasCustomPage(topic.id, root))
     .flatMap((topic) => [
       { source: `/hilfe/${topic.slugs.de}`, destination: `${DOCS_ORIGIN}/${topic.id}`, permanent: true },
       { source: `/en/help/${topic.slugs.en}`, destination: `${DOCS_ORIGIN}/en/${topic.id}`, permanent: true },

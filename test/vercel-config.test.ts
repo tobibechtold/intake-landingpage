@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import { BYOK_GUIDE_ID, docsUrl, loadHelpManifest } from '../src/lib/helpTopics';
+import { docsUrl, loadHelpManifest } from '../src/lib/helpTopics';
 
 /**
  * vercel.json carries three behaviours that no build output can prove: the smart-link
@@ -92,15 +92,14 @@ describe('help topic redirects', () => {
    * The help topics moved to docs.getintake.de. Both apps hard-code /hilfe/<de slug> and
    * /en/help/<en slug> from content/help/topics.json, so every published slug needs a
    * permanent redirect to its docs page. scripts/help-redirects.mjs writes them; a new
-   * topic without a redirect fails here. The BYOK guide (customPage) keeps its own page.
+   * topic without a redirect fails here. The BYOK guide is a docs topic like every other.
    */
   type Redirect = { source: string; destination: string; permanent?: boolean };
   const helpRedirects = (config.redirects as Redirect[]).filter((r) =>
     r.destination.startsWith('https://docs.getintake.de'),
   );
   const expected = loadHelpManifest()
-    .topics.filter((topic) => topic.id !== BYOK_GUIDE_ID)
-    .flatMap((topic) => [
+    .topics.flatMap((topic) => [
       { source: `/hilfe/${topic.slugs.de}`, destination: docsUrl(topic.id, 'de'), permanent: true },
       { source: `/en/help/${topic.slugs.en}`, destination: docsUrl(topic.id, 'en'), permanent: true },
     ]);
@@ -116,9 +115,15 @@ describe('help topic redirects', () => {
     expect(find('/en/help/copy-meal')).toBe('https://docs.getintake.de/en/copy-meal');
   });
 
-  it('leaves the BYOK guide pages and the help home on getintake.de', () => {
+  it('sends the old BYOK guide URLs to the docs', () => {
+    const find = (source: string) => helpRedirects.find((r) => r.source === source)?.destination;
+    expect(find('/hilfe/eigener-api-schluessel')).toBe('https://docs.getintake.de/byok-guide');
+    expect(find('/en/help/own-api-key')).toBe('https://docs.getintake.de/en/byok-guide');
+  });
+
+  it('leaves the help home on getintake.de', () => {
     const sources = (config.redirects as Redirect[]).map((r) => r.source);
-    for (const source of ['/hilfe', '/en/help', '/hilfe/eigener-api-schluessel', '/en/help/own-api-key']) {
+    for (const source of ['/hilfe', '/en/help']) {
       expect(sources).not.toContain(source);
     }
   });

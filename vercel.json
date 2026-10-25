@@ -195,6 +195,8 @@
     { "source": "/en/help/quick-actions", "destination": "https://docs.getintake.de/en/home-screen-quick-actions", "permanent": true },
     { "source": "/hilfe/intake-ai-einrichten", "destination": "https://docs.getintake.de/set-up-intake-ai", "permanent": true },
     { "source": "/en/help/set-up-intake-ai", "destination": "https://docs.getintake.de/en/set-up-intake-ai", "permanent": true },
+    { "source": "/hilfe/eigener-api-schluessel", "destination": "https://docs.getintake.de/byok-guide", "permanent": true },
+    { "source": "/en/help/own-api-key", "destination": "https://docs.getintake.de/en/byok-guide", "permanent": true },
     { "source": "/hilfe/intake-ai-text", "destination": "https://docs.getintake.de/intake-ai-text", "permanent": true },
     { "source": "/en/help/intake-ai-text", "destination": "https://docs.getintake.de/en/intake-ai-text", "permanent": true },
     { "source": "/hilfe/essen-fotografieren", "destination": "https://docs.getintake.de/photo-logging", "permanent": true },

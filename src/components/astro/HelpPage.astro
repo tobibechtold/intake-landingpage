@@ -1,14 +1,33 @@
 ---
-import { ArrowRight, BookOpen, KeyRound, ChevronDown } from 'lucide-astro';
+import { getCollection } from 'astro:content';
+import {
+  ArrowRight,
+  BookOpen,
+  ChartColumn,
+  ChevronDown,
+  Droplet,
+  HeartPulse,
+  LayoutGrid,
+  RefreshCw,
+  Scale,
+  Settings,
+  Sparkles,
+  Sun,
+  Target,
+  Timer,
+  Utensils,
+} from 'lucide-astro';
 import { FAQ_SECTIONS_BY_LANGUAGE } from '@/lib/faqData';
-import { HELP_FAQ_COPY } from '@/lib/helpCopy';
+import { HELP_AREA_LABELS, HELP_FAQ_COPY } from '@/lib/helpCopy';
+import { docsSections, type HelpArea } from '@/lib/helpTopics';
 import { buildLocalizedPath } from '@/lib/localeRouting';
 import { useT } from '@/i18n/t';
 import type { Language } from '@/i18n/translations';
 
 /**
  * The help home: a large hero pointing to the Intake Docs (docs.getintake.de), where
- * every help topic lives, then the BYOK setup guide and the short pre-purchase FAQ.
+ * every help topic lives, then one card per docs area linking its topics, then the short
+ * pre-purchase FAQ.
  *
  * The FAQ stays native <details>: every answer is in the DOM, crawlable, and matches the
  * FAQPage structured data built from the same faqData.
@@ -22,7 +41,30 @@ const t = useT(lang);
 const faqSections = FAQ_SECTIONS_BY_LANGUAGE[lang];
 const copy = HELP_FAQ_COPY[lang];
 const homePath = buildLocalizedPath('home', lang);
-const guidePath = buildLocalizedPath('byokGuide', lang);
+const areaLabels = HELP_AREA_LABELS[lang];
+// Same icons as the docs sidebar chapters (AREA_ICONS in docs-site/scripts/generate.mjs).
+const AREA_ICONS: Record<HelpArea, typeof Sun> = {
+  heute: Sun,
+  logging: Utensils,
+  'recipes-library': BookOpen,
+  'goals-budget': Target,
+  fasting: Timer,
+  water: Droplet,
+  'weight-body': Scale,
+  stats: ChartColumn,
+  health: HeartPulse,
+  sync: RefreshCw,
+  'widgets-watch-shortcuts': LayoutGrid,
+  'intake-ai': Sparkles,
+  settings: Settings,
+};
+const entries = (await getCollection('helpTopics')).map(({ id, data }) => ({
+  id: data.id,
+  lang: id.split('/')[1] as Language,
+  title: data.title,
+  draft: data.draft,
+}));
+const sections = docsSections(entries, lang);
 ---
 <main class="pb-24 pt-32 md:pt-36">
   <section class="section-gradient py-20">
@@ -43,23 +85,36 @@ const guidePath = buildLocalizedPath('byokGuide', lang);
         </a>
       </div>
 
-      <a
-        href={guidePath}
-        class="group mx-auto mt-10 flex max-w-3xl items-start gap-4 rounded-xl border border-white/[0.08] bg-white/[0.025] p-6 text-left transition-colors hover:border-white/[0.16] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55"
-      >
-        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-white/[0.05] text-foreground/70">
-          <KeyRound class="h-6 w-6" aria-hidden="true" />
-        </span>
-        <span class="min-w-0 flex-1">
-          <span class="section-kicker">{copy.guideKicker}</span>
-          <span class="mt-2 block text-xl font-semibold text-foreground">{copy.guideTitle}</span>
-          <span class="mt-2 block text-sm leading-6 text-foreground/50">{copy.guideBody}</span>
-          <span class="btn-secondary mt-4 w-fit">
-            {copy.guideCta}
-            <ArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
-          </span>
-        </span>
-      </a>
+      {sections.length > 0 && (
+        <section data-docs-sections aria-labelledby="help-docs-sections-title" class="mt-12">
+          <h2 id="help-docs-sections-title" class="section-kicker">{copy.sectionsTitle}</h2>
+          <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {sections.map((section) => {
+              const Icon = AREA_ICONS[section.area];
+              return (
+                <div data-docs-section={section.area} class="rounded-xl border border-white/[0.08] bg-white/[0.02] p-5">
+                  <h3 class="flex items-center gap-2.5 text-base font-semibold text-foreground">
+                    <Icon class="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                    {areaLabels[section.area]}
+                  </h3>
+                  <ul class="mt-3 space-y-1.5">
+                    {section.topics.map((topic) => (
+                      <li>
+                        <a
+                          href={topic.href}
+                          class="text-sm leading-6 text-foreground/60 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/55"
+                        >
+                          {topic.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      )}
 
       <section class="mt-16" aria-labelledby="help-faq-title">
         <p class="section-kicker">{copy.faqKicker}</p>

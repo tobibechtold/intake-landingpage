@@ -2,6 +2,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import urls from './fixtures/production-urls.json';
+import { docsUrl, loadHelpManifest } from '../src/lib/helpTopics';
 
 const distFileFor = (route: string) =>
   route === '/' ? join('dist', 'index.html') : join('dist', route.slice(1), 'index.html');
@@ -60,17 +61,40 @@ describe('build output', () => {
       }
     });
 
-    it('has no topic search, topic index or topic links any more, but keeps the BYOK guide', () => {
+    it('has no topic search, topic index or links to topic pages on getintake.de', () => {
       for (const route of ['/hilfe', '/en/help']) {
         const html = read(route);
         expect(html).not.toContain('data-help-search');
         expect(html).not.toContain('data-help-index');
         expect(html).not.toContain('data-help-topics');
       }
-      const de = read('/hilfe');
-      const links = [...de.matchAll(/href="(\/hilfe\/[a-z0-9-]+)"/g)].map((match) => match[1]);
-      expect(links).toEqual(['/hilfe/eigener-api-schluessel']);
-      expect(read('/en/help')).toContain('href="/en/help/own-api-key"');
+      expect([...read('/hilfe').matchAll(/href="(\/hilfe\/[^"]*)"/g)]).toEqual([]);
+      expect([...read('/en/help').matchAll(/href="(\/en\/help\/[^"]*)"/g)]).toEqual([]);
+    });
+
+    it('lists the docs sections, linking only published docs topics in the page language', () => {
+      const topicFiles = (lang: string) =>
+        loadHelpManifest().topics.flatMap((topic) => {
+          const file = join('content/help', topic.id, `${lang}.md`);
+          return existsSync(file) ? [{ id: topic.id, text: readFileSync(file, 'utf8') }] : [];
+        });
+      const isDraft = (text: string) => /^draft:\s*true\s*$/m.test(text.split(/^---$/m)[1] ?? '');
+      const drafts = new Set(['de', 'en'].flatMap((lang) => topicFiles(lang).filter((f) => isDraft(f.text)).map((f) => f.id)));
+      const published = loadHelpManifest()
+        .topics.map((topic) => topic.id)
+        .filter((id) => !drafts.has(id) && ['de', 'en'].every((lang) => existsSync(join('content/help', id, `${lang}.md`))));
+      expect(published.length).toBeGreaterThan(0);
+
+      for (const [route, lang] of [['/hilfe', 'de'], ['/en/help', 'en']] as const) {
+        const html = read(route);
+        const grid = /<section[^>]*data-docs-sections[\s\S]*?<\/section>/.exec(html)?.[0] ?? '';
+        expect(grid).not.toBe('');
+        const hrefs = [...grid.matchAll(/href="([^"]+)"/g)].map((match) => match[1]);
+        expect([...hrefs].sort()).toEqual(published.map((id) => docsUrl(id, lang)).sort());
+        // The section grid sits between the docs hero and the FAQ.
+        expect(html.indexOf('data-docs-hero')).toBeLessThan(html.indexOf('data-docs-sections'));
+        expect(html.indexOf('data-docs-sections')).toBeLessThan(html.indexOf('data-faq-section'));
+      }
     });
 
     it('keeps only the pre-purchase questions in the FAQ', () => {
@@ -112,9 +136,11 @@ describe('build output', () => {
       expect(sitemap).toContain('<loc>https://www.getintake.de/hilfe</loc>');
     });
 
-    it('keeps the BYOK guide on its own static pages', () => {
-      expect(read('/hilfe/eigener-api-schluessel')).toContain('data-testid="byok-guide-screenshot"');
-      expect(read('/en/help/own-api-key')).toContain('data-testid="byok-guide-screenshot"');
+    it('builds no BYOK guide pages any more and links the guide in the docs', () => {
+      expect(existsSync(distFileFor('/hilfe/eigener-api-schluessel'))).toBe(false);
+      expect(existsSync(distFileFor('/en/help/own-api-key'))).toBe(false);
+      expect(read('/intake-ai')).toContain('href="https://docs.getintake.de/byok-guide"');
+      expect(read('/en/intake-ai')).toContain('href="https://docs.getintake.de/en/byok-guide"');
     });
   });
 });
