@@ -16,6 +16,7 @@ steps:
     android:
       image: ./assets/en/android/2.webp
     ios:
+      text: "Every day with entries has a colored ring. It closes once you reach your goal. At the top you see how many days this month are green, orange and red."
       image: ./assets/en/ios/2.webp
   - text: "Tap a day to open it."
     android:
