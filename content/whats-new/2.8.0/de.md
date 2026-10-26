@@ -5,15 +5,19 @@ title: "Was ist neu in Intake 2.8.0"
 summary: "Mit dem Wochenbudget zählt die ganze Woche statt jedes einzelnen Tages, und der neue Monatskalender zeigt dir, wie dein Monat gelaufen ist. Die Intake-AI-Karte ist übersichtlicher, und in der neuen Hilfe ist jede Funktion erklärt, für iPhone und Android. Auf dem iPhone laufen Erinnerungen, Live-Aktivität, Widgets und Apple Watch jetzt auch dann mit, wenn Intake geschlossen ist."
 coverImage: "./assets/cover.svg"
 highlights:
+  - "iOS: Auf dem halb aufgeklappten iPhone Duo treffen sich die Spalten am Falz"
   - "iOS und Android: Wochenbudget, deine Kalorien über die ganze Woche verteilt"
   - "iOS und Android: Monatskalender, der zeigt, wie jeder Tag gelaufen ist"
   - "iOS und Android: übersichtlichere Intake-AI-Karte"
   - "iOS: Erinnerungen und Live-Aktivität laufen von selbst weiter"
   - "iOS: Widgets und Apple Watch im Stil von Heute, Wasser und Gewicht auch bei geschlossener App"
   - "iOS und Android: neue Hilfe mit einer Anleitung für jede Funktion"
-  - "iOS: Auf dem halb aufgeklappten iPhone Duo treffen sich die Spalten am Falz"
   - "Android: Das Mahlzeiten-Widget öffnet direkt die Suche"
 ---
+
+## iPhone Duo
+
+Halb aufgeklappt treffen sich die beiden Spalten von Heute genau am Falz, und die Statistik legt den Abstand zwischen ihren Kacheln auf den Falz. Keine Karte und kein Text liegen unter der Knickstelle.
 
 ## Wochenbudget
 
@@ -62,10 +66,6 @@ Auf dem iPhone gleicht sich jetzt auch dein Fasten über iCloud ab. Startest du 
 Beim Gewicht zeigt die Statistik jetzt den Durchschnitt der letzten 7 Tage als Linie und als Wert, „Ø 7 Tage“. Du kannst ihn ein- und ausblenden.
 
 Zahlen und Daten folgen der Sprache, die du in Intake eingestellt hast, Uhrzeiten der 12/24-Stunden-Einstellung deines Handys.
-
-## iPhone Duo
-
-Halb aufgeklappt treffen sich die beiden Spalten von Heute genau am Falz, und die Statistik legt den Abstand zwischen ihren Kacheln auf den Falz. Keine Karte und kein Text liegen unter der Knickstelle.
 
 ## Die neue Hilfe
 

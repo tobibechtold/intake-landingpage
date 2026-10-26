@@ -5,15 +5,19 @@ title: "What's new in Intake 2.8.0"
 summary: "With the weekly budget, your week counts instead of every single day, and the new month calendar shows how your month went. The Intake AI card is easier to read, and the new help center explains every feature for iPhone and Android. On iPhone, reminders, the Live Activity, widgets and Apple Watch now keep going even when Intake is closed."
 coverImage: "./assets/cover.svg"
 highlights:
+  - "iOS: on a half-open iPhone Duo the columns meet at the fold"
   - "iOS and Android: weekly budget, your calories spread across the whole week"
   - "iOS and Android: a month calendar that shows how each day went"
   - "iOS and Android: a clearer Intake AI card"
   - "iOS: reminders and the Live Activity keep running on their own"
   - "iOS: widgets and Apple Watch in the style of Today, water and weight even with the app closed"
   - "iOS and Android: a new help center with a guide for every feature"
-  - "iOS: on a half-open iPhone Duo the columns meet at the fold"
   - "Android: the meal widget opens its search straight away"
 ---
+
+## iPhone Duo
+
+Half open, the two columns of Today meet exactly at the fold, and Stats puts the gap between its tiles on the fold. No card or text sits under the crease.
 
 ## Weekly budget
 
@@ -62,10 +66,6 @@ On iPhone your fasting now syncs through iCloud too. Start a fast on your iPhone
 For weight, Stats now shows your 7-day average as a line and as a value, "7-day avg". You can show or hide it.
 
 Numbers and dates follow the language you set in Intake, and times follow your phone's 12/24-hour setting.
-
-## iPhone Duo
-
-Half open, the two columns of Today meet exactly at the fold, and Stats puts the gap between its tiles on the fold. No card or text sits under the crease.
 
 ## The new help center
 
