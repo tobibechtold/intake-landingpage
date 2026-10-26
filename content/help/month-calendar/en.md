@@ -14,11 +14,13 @@ steps:
       image: ./assets/en/ios/1.webp
   - text: "Every day with entries has a colored line under it. At the top you see how many days this month are green, orange and red."
     android:
+      text: "Every day with entries has a ring in green, orange or red. At the top you see how many days this month have each color."
       image: ./assets/en/android/2.webp
     ios:
       image: ./assets/en/ios/2.webp
   - text: "Tap a day to open it."
     android:
+      text: "Tap a day, then “Done” to open it."
       image: ./assets/en/android/3.webp
     ios:
       text: "Tap a day, then “Done” to open it."

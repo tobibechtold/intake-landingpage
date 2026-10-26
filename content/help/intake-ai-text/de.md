@@ -35,4 +35,4 @@ steps:
 
 Mengen und Marken machen die Schätzung genauer. Stimmt etwas nicht, antworte einfach im Chat, zum Beispiel „Es waren 200 g Hähnchen“, siehe [Schätzung von Intake AI korrigieren](/hilfe/intake-ai-korrigieren). Statt zu tippen kannst du auch diktieren.
 
-Auf dem iPhone änderst du mit „Portion“ die Menge vor dem Loggen, und oben auf der Karte wählst du die Mahlzeit.
+Mit „Portion“ änderst du die Menge vor dem Loggen, und oben auf der Karte wählst du die Mahlzeit.
