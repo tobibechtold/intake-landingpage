@@ -35,4 +35,4 @@ steps:
 
 The more detail you give, the better the estimate, for example amounts or brands. If something’s off, just reply in the chat, say “It was 200 g of chicken”, see [Correct an Intake AI estimate](/en/help/correct-ai-estimate). You can also dictate instead of typing.
 
-On iPhone, “Portion” changes the amount before you log, and the top of the card lets you pick the meal.
+“Portion” changes the amount before you log, and the top of the card lets you pick the meal.
