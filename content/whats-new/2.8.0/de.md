@@ -53,7 +53,7 @@ Die Live-Aktivität beim Fasten läuft auf dem Sperrbildschirm und in der Dynami
 
 Das Widget „Kalorien übrig“ sieht jetzt aus wie der Kalorienring auf Heute, zeigt dasselbe Ziel und spricht die Sprache, die du in Intake eingestellt hast. Um Mitternacht springen Widgets und Apple Watch von allein auf den neuen Tag.
 
-Trägst du Wasser oder Gewicht auf der Apple Watch, im Widget oder mit Siri ein, ist es sofort in Intake, in Apple Health und auf deinen anderen Geräten, auch wenn Intake auf dem iPhone geschlossen ist.
+Trägst du Wasser oder Gewicht auf der Apple Watch oder mit Siri ein, ist es sofort in Intake, in Apple Health und auf deinen anderen Geräten, auch wenn Intake auf dem iPhone geschlossen ist.
 
 ## Immer aktuell
 
