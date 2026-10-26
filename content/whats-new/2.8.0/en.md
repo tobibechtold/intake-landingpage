@@ -31,7 +31,7 @@ The help center explains it all in detail under [Weekly budget](https://docs.get
 
 ## Month calendar
 
-Tap the calendar on Today to see the whole month at a glance. On iPhone, every day has a small ring that fills just like the big ring on Today, in green, orange or red, and the top of the month tells you how many days ended up in each color. On Android, each day takes the color of how it went, matching the week strip. Tap a day to jump straight to it.
+Tap the calendar on Today to see the whole month at a glance. Every day has a small ring that fills just like the big ring on Today, in green, orange or red, and the top of the month tells you how many days ended up in each color. Tap a day to jump straight to it.
 
 ## Intake AI in a new design
 
@@ -39,7 +39,7 @@ The Intake AI chat has a new design, and so does the result card, for a more mod
 
 ## See what's left while you add food
 
-When you add food, you always know how much is left for the day. On iPhone it sits under the title, on every page you open from there too. On Android a small ring at the top of the add-food sheet and in the Intake AI chat shows the calories you have left, and tapping it shows your macros.
+When you add food, you always know how much is left for the day: it sits right under the title.
 
 The big number in search is now per 100 g, or per 100 ml for drinks, so you can compare products directly, with the portion underneath. On iPhone you can also keep as many favorites as you like.
 

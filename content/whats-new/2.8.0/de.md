@@ -31,7 +31,7 @@ Alles im Detail steht in der Hilfe unter [Wochenbudget](https://docs.getintake.d
 
 ## Monatskalender
 
-Tipp auf Heute auf den Kalender, und du hast den ganzen Monat im Blick. Auf dem iPhone hat jeder Tag einen kleinen Ring wie der große auf Heute, in Grün, Orange oder Rot, und oben steht, wie viele Tage es von jeder Farbe gab. Auf Android hat jeder Tag die Farbe seines Ergebnisses, genau wie in der Wochenleiste. Tippst du auf einen Tag, springst du direkt dorthin.
+Tipp auf Heute auf den Kalender, und du hast den ganzen Monat im Blick. Jeder Tag hat einen kleinen Ring wie der große auf Heute, in Grün, Orange oder Rot, und oben steht, wie viele Tage es von jeder Farbe gab. Tippst du auf einen Tag, springst du direkt dorthin.
 
 ## Intake AI im neuen Design
 
@@ -39,7 +39,7 @@ Der Intake-AI-Chat hat ein neues Design bekommen, und auch die Ergebniskarte sie
 
 ## Beim Eintragen siehst du, was noch geht
 
-Wenn du Essen hinzufügst, weißt du immer, wie viel dir heute noch bleibt. Auf dem iPhone steht es unter dem Titel, auch auf jeder Seite, die du von dort aus öffnest. Auf Android zeigt ein kleiner Ring oben im Hinzufügen-Fenster und im Intake-AI-Chat deine restlichen Kalorien, ein Tipp darauf zeigt deine Makros.
+Wenn du Essen hinzufügst, weißt du immer, wie viel dir heute noch bleibt: Es steht direkt unter dem Titel.
 
 Die große Zahl in der Suche bezieht sich jetzt auf 100 g, bei Getränken auf 100 ml. So kannst du Produkte direkt vergleichen, die Portion steht darunter. Auf dem iPhone kannst du außerdem so viele Favoriten speichern, wie du willst.
 
