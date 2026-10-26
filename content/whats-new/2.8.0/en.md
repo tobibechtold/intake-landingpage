@@ -2,13 +2,13 @@
 version: "2.8.0"
 publishedAt: "2026-10-26"
 title: "What's new in Intake 2.8.0"
-summary: "With the weekly budget, your week counts instead of every single day, and the new month calendar shows how your month went. The Intake AI card is easier to read, and the new help center explains every feature for iPhone and Android. On iPhone, reminders, the Live Activity, widgets and Apple Watch now keep going even when Intake is closed."
+summary: "With the weekly budget, your week counts instead of every single day, and the new month calendar shows how your month went. Intake AI has a new design, and the new help center explains every feature for iPhone and Android. On iPhone, reminders, the Live Activity, widgets and Apple Watch now keep going even when Intake is closed."
 coverImage: "./assets/cover.svg"
 highlights:
   - "iOS: on a half-open iPhone Duo the columns meet at the fold"
   - "iOS and Android: weekly budget, your calories spread across the whole week"
   - "iOS and Android: a month calendar that shows how each day went"
-  - "iOS and Android: a clearer Intake AI card"
+  - "iOS and Android: Intake AI in a new design"
   - "iOS: reminders and the Live Activity keep running on their own"
   - "iOS: widgets and Apple Watch in the style of Today, water and weight even with the app closed"
   - "iOS and Android: a new help center with a guide for every feature"
@@ -33,9 +33,9 @@ The help center explains it all in detail under [Weekly budget](https://docs.get
 
 Tap the calendar on Today to see the whole month at a glance. On iPhone, every day has a small ring that fills just like the big ring on Today, in green, orange or red, and the top of the month tells you how many days ended up in each color. On Android, each day takes the color of how it went, matching the week strip. Tap a day to jump straight to it.
 
-## The new Intake AI card
+## Intake AI in a new design
 
-An estimate now reads at a glance. On iPhone your photo sits next to the dish, with the calories in large type, the macros on one line, and every ingredient with its amount and kcal in a tidy table. On Android the card shows macro bars and groups the ingredients by dish in tiles. On both, you pick the meal right on the card and choose whether to log "One meal" or the "Ingredients separately".
+The Intake AI chat has a new design, and so does the result card, for a more modern look.
 
 ## See what's left while you add food
 

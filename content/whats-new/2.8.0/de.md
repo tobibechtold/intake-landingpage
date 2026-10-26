@@ -2,13 +2,13 @@
 version: "2.8.0"
 publishedAt: "2026-10-26"
 title: "Was ist neu in Intake 2.8.0"
-summary: "Mit dem Wochenbudget zählt die ganze Woche, nicht jeder einzelne Tag. Der neue Monatskalender zeigt dir, wie dein Monat gelaufen ist, die Intake-AI-Karte ist aufgeräumter, und die neue Hilfe erklärt jede Funktion, auf iPhone und Android. Auf dem iPhone arbeiten Erinnerungen, Live-Aktivität, Widgets und Apple Watch jetzt auch, wenn Intake geschlossen ist."
+summary: "Mit dem Wochenbudget zählt die ganze Woche, nicht jeder einzelne Tag. Der neue Monatskalender zeigt dir, wie dein Monat gelaufen ist, Intake AI hat ein neues Design, und die neue Hilfe erklärt jede Funktion, auf iPhone und Android. Auf dem iPhone arbeiten Erinnerungen, Live-Aktivität, Widgets und Apple Watch jetzt auch, wenn Intake geschlossen ist."
 coverImage: "./assets/cover.svg"
 highlights:
   - "iOS: Halb aufgeklappt teilt das iPhone Duo Heute und Statistik genau am Falz"
   - "iOS und Android: Wochenbudget, deine Kalorien für die ganze Woche"
   - "iOS und Android: Monatskalender, jeder Tag auf einen Blick"
-  - "iOS und Android: aufgeräumte Intake-AI-Karte"
+  - "iOS und Android: Intake AI im neuen Design"
   - "iOS: Erinnerungen und Live-Aktivität laufen von allein"
   - "iOS: Widgets und Apple Watch im Look von Heute, Wasser und Gewicht auch bei geschlossener App"
   - "iOS und Android: neue Hilfe mit einer Anleitung zu jeder Funktion"
@@ -33,9 +33,9 @@ Alles im Detail steht in der Hilfe unter [Wochenbudget](https://docs.getintake.d
 
 Tipp auf Heute auf den Kalender, und du hast den ganzen Monat im Blick. Auf dem iPhone hat jeder Tag einen kleinen Ring wie der große auf Heute, in Grün, Orange oder Rot, und oben steht, wie viele Tage es von jeder Farbe gab. Auf Android hat jeder Tag die Farbe seines Ergebnisses, genau wie in der Wochenleiste. Tippst du auf einen Tag, springst du direkt dorthin.
 
-## Die neue Intake-AI-Karte
+## Intake AI im neuen Design
 
-Eine Schätzung erfasst du jetzt mit einem Blick. Auf dem iPhone steht dein Foto neben dem Gericht, darunter groß die Kalorien, die Makros in einer Zeile und alle Zutaten mit Menge und kcal in einer Tabelle. Auf Android zeigt die Karte Balken für die Makros und fasst die Zutaten pro Gericht in Kacheln zusammen. Auf beiden suchst du dir direkt auf der Karte die Mahlzeit aus und ob du alles als „Eine Mahlzeit“ oder die „Zutaten einzeln“ einträgst.
+Der Intake-AI-Chat hat ein neues Design bekommen, und auch die Ergebniskarte sieht jetzt moderner aus.
 
 ## Beim Eintragen siehst du, was noch geht
 
