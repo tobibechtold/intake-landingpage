@@ -39,7 +39,7 @@ The Intake AI chat has a new design, and so does the result card, for a more mod
 
 ## See what's left while you add food
 
-When you add food, you always know how much is left for the day: it sits right under the title.
+When you add food, you always know how much is left for the day. On iPhone, a small ring at the top shows the calories left, in Intake AI too. Tap it to see protein, carbs and fat. You can turn it off under Settings, Appearance.
 
 The big number in search is now per 100 g, or per 100 ml for drinks, so you can compare products directly, with the portion underneath. On iPhone you can also keep as many favorites as you like.
 

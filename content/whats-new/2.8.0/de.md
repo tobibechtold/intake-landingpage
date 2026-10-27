@@ -39,7 +39,7 @@ Der Intake-AI-Chat hat ein neues Design bekommen, und auch die Ergebniskarte sie
 
 ## Beim Eintragen siehst du, was noch geht
 
-Wenn du Essen hinzufügst, weißt du immer, wie viel dir heute noch bleibt: Es steht direkt unter dem Titel.
+Wenn du Essen hinzufügst, weißt du immer, wie viel dir heute noch bleibt. Auf dem iPhone zeigt dir oben ein kleiner Ring die übrigen Kalorien, auch in Intake AI. Tippst du darauf, siehst du Protein, Kohlenhydrate und Fett. Unter Einstellungen, Darstellung schaltest du ihn aus.
 
 Die große Zahl in der Suche bezieht sich jetzt auf 100 g, bei Getränken auf 100 ml. So kannst du Produkte direkt vergleichen, die Portion steht darunter. Auf dem iPhone kannst du außerdem so viele Favoriten speichern, wie du willst.
 
