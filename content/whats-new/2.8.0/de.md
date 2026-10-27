@@ -51,7 +51,7 @@ Die Live-Aktivität beim Fasten läuft auf dem Sperrbildschirm und in der Dynami
 
 ## Widgets, Apple Watch und Siri
 
-Die Widgets „Kalorien übrig“ und „Kalorien gegessen“ sehen jetzt aus wie der Kalorienring auf Heute, zeigen dasselbe Ziel und sprechen die Sprache, die du in Intake eingestellt hast. Um Mitternacht springen Widgets und Apple Watch von allein auf den neuen Tag.
+Auf iPhone und Android sehen die Widgets „Kalorien übrig“ und „Kalorien gegessen“ jetzt aus wie der Kalorienring auf Heute. Auf dem iPhone zeigen sie dasselbe Ziel wie Heute und sprechen die Sprache, die du in Intake eingestellt hast. Um Mitternacht springen Widgets und Apple Watch von allein auf den neuen Tag.
 
 Trägst du Wasser oder Gewicht auf der Apple Watch oder mit Siri ein, ist es sofort in Intake, in Apple Health und auf deinen anderen Geräten, auch wenn Intake auf dem iPhone geschlossen ist.
 

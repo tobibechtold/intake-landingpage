@@ -51,7 +51,7 @@ The fasting Live Activity keeps moving on the Lock Screen and in the Dynamic Isl
 
 ## Widgets, Apple Watch and Siri
 
-The "Calories Left" and "Calories Eaten" widgets now look like the calorie ring on Today, show the same goal as Today, and use the language you set in Intake. At midnight, widgets and Apple Watch move on to the new day by themselves.
+On iPhone and Android, the "Calories Left" and "Calories Eaten" widgets now look like the calorie ring on Today. On iPhone they show the same goal as Today and use the language you set in Intake. At midnight, widgets and Apple Watch move on to the new day by themselves.
 
 Water and weight from your Apple Watch or Siri go straight into Intake, Apple Health and your other devices, even when Intake is closed on your iPhone.
 
