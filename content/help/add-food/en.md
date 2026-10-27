@@ -31,6 +31,6 @@ steps:
       image: ./assets/en/ios/4.webp
 ---
 
-Tap the meal’s name at the top to switch meals. The plus in a row adds a food straight away with your usual amount.
+Tap the meal’s name at the top to switch meals. The plus in a row adds a food straight away: from your history and favorites with your usual amount, from search with one serving.
 
-A small ring at the top shows how many calories are left for the day. Tap it to see protein, carbs and fat. You can turn it off under Settings, “Appearance”.
+A small ring at the top shows how many calories are left for the day. Tap it to see protein, carbs and fat. After each entry it briefly shows what you added, then counts down. You can turn it off under Settings, “Appearance”.

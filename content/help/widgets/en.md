@@ -11,7 +11,7 @@ related:
 ## The widgets
 
 - **Calories Left:** what’s left for today, plus your macro progress.
-- **Calories Eaten:** what you’ve eaten today.
+- **Calories Eaten:** what you’ve eaten today, and what’s left.
 - **Quick Log Meal:** tap a meal and Intake opens the search for exactly that meal.
 - **Water Quick Log:** add or remove water with plus and minus, without opening the app.
 

@@ -31,6 +31,6 @@ steps:
       image: ./assets/de/ios/4.webp
 ---
 
-Oben tippst du auf den Namen der Mahlzeit, um sie zu wechseln. Das Plus in einer Zeile trägt ein Lebensmittel sofort mit der gewohnten Menge ein.
+Oben tippst du auf den Namen der Mahlzeit, um sie zu wechseln. Das Plus in einer Zeile trägt ein Lebensmittel sofort ein: in Verlauf und Favoriten mit der gewohnten Menge, in der Suche mit einer Portion.
 
-Oben zeigt dir ein kleiner Ring, wie viele Kalorien dir heute noch bleiben. Tippst du darauf, siehst du Protein, Kohlenhydrate und Fett. Ausschalten kannst du ihn unter Einstellungen, „Darstellung“.
+Oben zeigt dir ein kleiner Ring, wie viele Kalorien dir heute noch bleiben. Tippst du darauf, siehst du Protein, Kohlenhydrate und Fett. Nach jedem Eintrag zeigt er kurz, was du hinzugefügt hast, und zählt dann herunter. Ausschalten kannst du ihn unter Einstellungen, „Darstellung“.
