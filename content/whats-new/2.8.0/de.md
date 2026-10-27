@@ -39,9 +39,9 @@ Der Intake-AI-Chat hat ein neues Design bekommen, und auch die Ergebniskarte sie
 
 ## Beim Eintragen siehst du, was noch geht
 
-Wenn du Essen hinzufügst, weißt du immer, wie viel dir heute noch bleibt. Oben zeigt dir ein kleiner Ring die übrigen Kalorien, auch in Intake AI. Tippst du darauf, siehst du Protein, Kohlenhydrate und Fett. Unter Einstellungen, Darstellung schaltest du ihn aus.
+Wenn du Essen hinzufügst, weißt du immer, wie viel dir heute noch bleibt. Oben zeigt dir ein kleiner Ring die übrigen Kalorien, auch in Intake AI. Tippst du darauf, siehst du Protein, Kohlenhydrate und Fett. Nach jedem Eintrag zeigt er kurz, was du hinzugefügt hast, und zählt dann herunter, und du kannst sofort weiter eintragen. Unter Einstellungen, Darstellung schaltest du ihn aus.
 
-Die große Zahl in der Suche bezieht sich jetzt auf 100 g, bei Getränken auf 100 ml. So kannst du Produkte direkt vergleichen, die Portion steht darunter. Auf dem iPhone kannst du außerdem so viele Favoriten speichern, wie du willst.
+Jedes Suchergebnis hat jetzt ein Plus: Ein Tipp trägt eine Portion ein, ohne dass du das Produkt erst öffnest. Die große Zahl in der Suche bezieht sich jetzt auf 100 g, bei Getränken auf 100 ml. So kannst du Produkte direkt vergleichen, die Portion steht darunter. Auf dem iPhone kannst du außerdem so viele Favoriten speichern, wie du willst.
 
 ## Erinnerungen und Live-Aktivität auf dem iPhone
 
@@ -51,7 +51,7 @@ Die Live-Aktivität beim Fasten läuft auf dem Sperrbildschirm und in der Dynami
 
 ## Widgets, Apple Watch und Siri
 
-Das Widget „Kalorien übrig“ sieht jetzt aus wie der Kalorienring auf Heute, zeigt dasselbe Ziel und spricht die Sprache, die du in Intake eingestellt hast. Um Mitternacht springen Widgets und Apple Watch von allein auf den neuen Tag.
+Die Widgets „Kalorien übrig“ und „Kalorien gegessen“ sehen jetzt aus wie der Kalorienring auf Heute, zeigen dasselbe Ziel und sprechen die Sprache, die du in Intake eingestellt hast. Um Mitternacht springen Widgets und Apple Watch von allein auf den neuen Tag.
 
 Trägst du Wasser oder Gewicht auf der Apple Watch oder mit Siri ein, ist es sofort in Intake, in Apple Health und auf deinen anderen Geräten, auch wenn Intake auf dem iPhone geschlossen ist.
 

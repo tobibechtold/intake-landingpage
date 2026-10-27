@@ -39,9 +39,9 @@ The Intake AI chat has a new design, and so does the result card, for a more mod
 
 ## See what's left while you add food
 
-When you add food, you always know how much is left for the day. A small ring at the top shows the calories left, in Intake AI too. Tap it to see protein, carbs and fat. You can turn it off under Settings, Appearance.
+When you add food, you always know how much is left for the day. A small ring at the top shows the calories left, in Intake AI too. Tap it to see protein, carbs and fat. After each entry it briefly shows what you added, then counts down, and you can keep logging right away. You can turn it off under Settings, Appearance.
 
-The big number in search is now per 100 g, or per 100 ml for drinks, so you can compare products directly, with the portion underneath. On iPhone you can also keep as many favorites as you like.
+Every search result now has a plus: one tap logs a serving without opening the product first. The big number in search is now per 100 g, or per 100 ml for drinks, so you can compare products directly, with the portion underneath. On iPhone you can also keep as many favorites as you like.
 
 ## Reminders and the Live Activity on iPhone
 
@@ -51,7 +51,7 @@ The fasting Live Activity keeps moving on the Lock Screen and in the Dynamic Isl
 
 ## Widgets, Apple Watch and Siri
 
-The "Calories Left" widget now looks like the calorie ring on Today, shows the same goal as Today, and uses the language you set in Intake. At midnight, widgets and Apple Watch move on to the new day by themselves.
+The "Calories Left" and "Calories Eaten" widgets now look like the calorie ring on Today, show the same goal as Today, and use the language you set in Intake. At midnight, widgets and Apple Watch move on to the new day by themselves.
 
 Water and weight from your Apple Watch or Siri go straight into Intake, Apple Health and your other devices, even when Intake is closed on your iPhone.
 
