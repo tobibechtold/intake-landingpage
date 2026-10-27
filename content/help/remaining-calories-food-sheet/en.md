@@ -9,13 +9,11 @@ related:
 steps:
   - text: "A small ring at the top shows how many calories are left that day."
     android:
-      text: "Under the meal’s name you see how many calories are left that day."
       image: ./assets/en/android/1.webp
     ios:
       image: ./assets/en/ios/1.webp
   - text: "Tap the ring to see protein, carbs and fat."
     android:
-      text: "The following pages, for example the portion, show the number under their title too."
       image: ./assets/en/android/2.webp
     ios:
       image: ./assets/en/ios/2.webp
