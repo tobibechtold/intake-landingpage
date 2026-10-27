@@ -33,6 +33,6 @@ steps:
       image: ./assets/de/ios/4.webp
 ---
 
-Außerdem schaltest du hier „Zwischen Tagen wischen“ und die Statusfarben von Kalorienring und Tagesleiste ein oder aus und legst fest, ob Intake Fotos verwendet und auf Heute zeigt. Auf dem iPhone schaltest du hier auch „Übrige Kalorien beim Hinzufügen“ ein oder aus.
+Außerdem schaltest du hier „Zwischen Tagen wischen“ und die Statusfarben von Kalorienring und Tagesleiste ein oder aus und legst fest, ob Intake Fotos verwendet und auf Heute zeigt. Hier schaltest du auch „Übrige Kalorien beim Hinzufügen“ ein oder aus.
 
 Auf dem iPhone findest du ganz unten Anleitungen für die Widgets und die Apple Watch App.

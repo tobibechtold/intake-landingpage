@@ -33,4 +33,4 @@ steps:
 
 Tap the meal’s name at the top to switch meals. The plus in a row adds a food straight away with your usual amount.
 
-On iPhone, a small ring at the top shows how many calories are left for the day. Tap it to see protein, carbs and fat. You can turn it off under Settings, “Appearance”.
+A small ring at the top shows how many calories are left for the day. Tap it to see protein, carbs and fat. You can turn it off under Settings, “Appearance”.

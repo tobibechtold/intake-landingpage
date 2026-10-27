@@ -33,4 +33,4 @@ steps:
 
 Oben tippst du auf den Namen der Mahlzeit, um sie zu wechseln. Das Plus in einer Zeile trägt ein Lebensmittel sofort mit der gewohnten Menge ein.
 
-Auf dem iPhone zeigt dir oben ein kleiner Ring, wie viele Kalorien dir heute noch bleiben. Tippst du darauf, siehst du Protein, Kohlenhydrate und Fett. Ausschalten kannst du ihn unter Einstellungen, „Darstellung“.
+Oben zeigt dir ein kleiner Ring, wie viele Kalorien dir heute noch bleiben. Tippst du darauf, siehst du Protein, Kohlenhydrate und Fett. Ausschalten kannst du ihn unter Einstellungen, „Darstellung“.
