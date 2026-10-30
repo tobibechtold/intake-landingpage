@@ -23,7 +23,7 @@ steps:
       image: ./assets/en/ios/2.webp
   - text: "Adjust the portion or the calories if you like."
     android:
-      text: "Under “Portion” choose “Less” or “More”; under “Calories” set the value on the wheel."
+      text: "Under “Portion”, choose “Smaller” or “Larger”; under “Calories”, set the value on the wheel."
       image: ./assets/en/android/3.webp
     ios:
       text: "Under “Portion”, choose “Smaller” or “Larger”; under “Calories”, set the value on the wheel."

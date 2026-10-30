@@ -11,7 +11,7 @@ related:
 ## Welche Widgets es gibt
 
 - **Kalorien übrig:** was heute noch übrig ist, dazu der Fortschritt deiner Makros.
-- **Kalorien gegessen:** was du heute gegessen hast.
+- **Kalorien gegessen:** was du heute gegessen hast, dazu was noch übrig ist.
 - **Mahlzeit schnell erfassen:** Tippe auf eine Mahlzeit, und Intake öffnet die Suche für genau diese Mahlzeit.
 - **Wasser schnell erfassen:** Mit Plus und Minus trägst du Wasser ein, ohne die App zu öffnen.
 

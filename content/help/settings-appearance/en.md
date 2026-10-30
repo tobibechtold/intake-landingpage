@@ -33,6 +33,6 @@ steps:
       image: ./assets/en/ios/4.webp
 ---
 
-This is also where you turn “Swipe between days” and the status colors of the calorie ring and day strip on or off, and set whether Intake uses photos and shows them on Today.
+This is also where you turn “Swipe between days” and the status colors of the calorie ring and day strip on or off, and set whether Intake uses photos and shows them on Today. You also turn “Calories left when adding food” on or off here.
 
 On iPhone, you’ll find guides for the widgets and the Apple Watch App at the very bottom.

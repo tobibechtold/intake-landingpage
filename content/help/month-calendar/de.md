@@ -12,17 +12,16 @@ steps:
       image: ./assets/de/android/1.webp
     ios:
       image: ./assets/de/ios/1.webp
-  - text: "Unter jedem Tag mit Einträgen steht ein farbiger Strich. Oben siehst du, wie viele Tage im Monat grün, orange und rot sind."
+  - text: "Jeder Tag mit Einträgen hat einen Ring in Grün, Orange oder Rot. Oben siehst du, wie viele Tage im Monat welche Farbe haben."
     android:
       image: ./assets/de/android/2.webp
     ios:
       text: "Jeder Tag mit Einträgen hat einen farbigen Ring, der sich schließt, wenn du dein Ziel erreichst. Oben steht, wie viele Tage grün, orange und rot sind."
       image: ./assets/de/ios/2.webp
-  - text: "Tippe auf einen Tag, um ihn zu öffnen."
+  - text: "Tippe auf einen Tag und dann auf „Fertig“, um ihn zu öffnen."
     android:
       image: ./assets/de/android/3.webp
     ios:
-      text: "Tippe auf einen Tag und dann auf „Fertig“, um ihn zu öffnen."
       image: ./assets/de/ios/3.webp
 ---
 
