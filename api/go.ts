@@ -11,6 +11,12 @@ import {
 } from "../src/lib/smartlink.js";
 import { buildStoreInterstitial } from "../src/lib/storeInterstitial.js";
 
+// Slugs that skip the Instagram interstitial and get the plain 302. As of
+// 2026-11-01 Instagram appears to have stopped blocking App Store links (a
+// tapped store link worked again), so one campaign trials the direct redirect
+// before the interstitial is removed for everyone.
+const DIRECT_HANDOFF_TRIAL_SLUGS = new Set(["insta-reel"]);
+
 export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
   const slug = (typeof req.query.slug === "string" ? req.query.slug : "").toLowerCase();
   const userAgent = typeof req.headers["user-agent"] === "string" ? req.headers["user-agent"] : "";
@@ -57,7 +63,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   // instead, with the store link as a tap target plus a manual way out. Only
   // iOS is affected: the Android leg goes to a Play Store web page, which needs
   // no app handoff and opens normally.
-  if (redirect.platform === "ios" && blocksAppStoreHandoff(userAgent)) {
+  if (
+    redirect.platform === "ios" &&
+    blocksAppStoreHandoff(userAgent) &&
+    !DIRECT_HANDOFF_TRIAL_SLUGS.has(slug)
+  ) {
     const html = buildStoreInterstitial({
       storeUrl: redirect.url,
       language: languageFromAcceptLanguage(acceptLanguage),

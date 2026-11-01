@@ -212,6 +212,16 @@ describe("/go handler", () => {
       expect(redirect).toHaveBeenCalledTimes(1);
       expect(redirect.mock.calls[0][1]).toContain("utm_medium=smartlink");
     });
+
+    it("sends trial slugs straight to the App Store", async () => {
+      const { res, redirect, send } = makeRes();
+      await handler(makeReq("insta-reel", INSTAGRAM_IOS_UA), res);
+
+      expect(send).not.toHaveBeenCalled();
+      expect(redirect).toHaveBeenCalledTimes(1);
+      expect(redirect.mock.calls[0][1]).toContain("apps.apple.com");
+      expect(redirect.mock.calls[0][1]).toContain("ct=insta-reel");
+    });
   });
 
   it("redirects unknown slugs to the landing page without recording a click", async () => {
