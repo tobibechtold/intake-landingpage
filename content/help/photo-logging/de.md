@@ -17,7 +17,7 @@ steps:
       text: "Tippe links auf das Plus für ein Foto aus deiner Galerie oder im Textfeld auf die Kamera und dann auf den Pfeil."
       image: ./assets/de/android/2.webp
     ios:
-      text: "Tippe links neben dem Textfeld auf das Plus, wähle „Kamera“ oder „Mediathek“ und tippe auf den Pfeil."
+      text: "Tippe links neben dem Textfeld auf die Kamera, wähle „Kamera“ oder „Mediathek“ und tippe auf den Pfeil."
       image: ./assets/de/ios/2.webp
   - text: "Prüfe die Schätzung und logge sie."
     android:
