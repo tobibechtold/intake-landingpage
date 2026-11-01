@@ -20,11 +20,6 @@ const INSTAGRAM_IOS_UA =
 const INSTAGRAM_ANDROID_UA =
   "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 " +
   "Mobile Safari/537.36 Instagram 440.0.0.30.81 Android";
-const FACEBOOK_IOS_UA =
-  "Mozilla/5.0 (iPhone; CPU iPhone OS 26_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) " +
-  "Mobile/23G71 [FBAN/FBIOS;FBDV/iPhone17,5;FBSV/26.6]";
-const DESKTOP_UA =
-  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36";
 
 type HandlerArgs = Parameters<typeof handler>;
 
@@ -154,73 +149,30 @@ describe("/go handler", () => {
     expect(redirect).toHaveBeenCalledTimes(1);
   });
 
-  // Instagram's in-app browser drops App Store navigations, so a 302 there is a
-  // silent dead end. See src/lib/inAppBrowser.ts for the evidence.
-  describe("Instagram in-app browser", () => {
+  // Instagram's in-app browser blocked App Store navigations from July 2026
+  // until about 2026-11-01, which /go once worked around with an interstitial.
+  // Every platform now gets the plain 302.
+  describe("in-app browsers", () => {
     beforeEach(() => {
       vi.stubGlobal("fetch", vi.fn(async () => ({ ok: true, status: 201 })));
     });
 
-    it("serves the interstitial instead of redirecting iOS visitors to the App Store", async () => {
-      const { res, redirect, status, send, setHeader } = makeRes();
-      await handler(makeReq("ugc-lisa-1", INSTAGRAM_IOS_UA), res);
-
-      expect(redirect).not.toHaveBeenCalled();
-      expect(status).toHaveBeenCalledWith(200);
-      expect(setHeader).toHaveBeenCalledWith("content-type", "text/html; charset=utf-8");
-
-      const html = send.mock.calls[0][0] as string;
-      expect(html).toContain("apps.apple.com");
-      expect(html).toContain("ct=ugc-lisa-1");
-    });
-
-    it("still records the click when it serves the interstitial", async () => {
-      const fetchMock = vi.fn(async () => ({ ok: true, status: 201 }));
-      vi.stubGlobal("fetch", fetchMock);
-
-      const { res } = makeRes();
-      await handler(makeReq("ugc-lisa-1", INSTAGRAM_IOS_UA), res);
-
-      expect(fetchMock).toHaveBeenCalledTimes(1);
-    });
-
-    // Play Store links are ordinary web pages needing no app handoff, and they
-    // open normally in that browser — an interstitial would be pure friction.
-    it("leaves Android visitors on the fast Play Store redirect", async () => {
+    it("redirects Instagram on iOS straight to the App Store", async () => {
       const { res, redirect, send } = makeRes();
+      await handler(makeReq("ugc-lisa-1", INSTAGRAM_IOS_UA), res);
+
+      expect(send).not.toHaveBeenCalled();
+      expect(redirect).toHaveBeenCalledTimes(1);
+      expect(redirect.mock.calls[0][0]).toBe(302);
+      expect(redirect.mock.calls[0][1]).toContain("apps.apple.com");
+      expect(redirect.mock.calls[0][1]).toContain("ct=ugc-lisa-1");
+    });
+
+    it("redirects Instagram on Android to the Play Store", async () => {
+      const { res, redirect } = makeRes();
       await handler(makeReq("ugc-lisa-1", INSTAGRAM_ANDROID_UA), res);
 
-      expect(send).not.toHaveBeenCalled();
-      expect(redirect).toHaveBeenCalledTimes(1);
       expect(redirect.mock.calls[0][1]).toContain("play.google.com");
-    });
-
-    it("leaves the Facebook in-app browser on the fast App Store redirect", async () => {
-      const { res, redirect, send } = makeRes();
-      await handler(makeReq("ugc-lisa-1", FACEBOOK_IOS_UA), res);
-
-      expect(send).not.toHaveBeenCalled();
-      expect(redirect).toHaveBeenCalledTimes(1);
-      expect(redirect.mock.calls[0][1]).toContain("apps.apple.com");
-    });
-
-    it("leaves desktop visitors on the landing page redirect", async () => {
-      const { res, redirect, send } = makeRes();
-      await handler(makeReq("ugc-lisa-1", DESKTOP_UA), res);
-
-      expect(send).not.toHaveBeenCalled();
-      expect(redirect).toHaveBeenCalledTimes(1);
-      expect(redirect.mock.calls[0][1]).toContain("utm_medium=smartlink");
-    });
-
-    it("sends trial slugs straight to the App Store", async () => {
-      const { res, redirect, send } = makeRes();
-      await handler(makeReq("insta-reel", INSTAGRAM_IOS_UA), res);
-
-      expect(send).not.toHaveBeenCalled();
-      expect(redirect).toHaveBeenCalledTimes(1);
-      expect(redirect.mock.calls[0][1]).toContain("apps.apple.com");
-      expect(redirect.mock.calls[0][1]).toContain("ct=insta-reel");
     });
   });
 
