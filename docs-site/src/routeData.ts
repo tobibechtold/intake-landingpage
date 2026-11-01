@@ -13,8 +13,27 @@ const links = (entries: SidebarEntry[]): SidebarLink[] =>
  * pages they point to the English page. Previous/next links skip them, so the guided
  * path reads Dokumentation > Intake installieren > ... instead of leaving the docs.
  */
+const TITLE_SUFFIX = { de: 'Intake Kalorienzähler App', en: 'Intake Calorie Counter App' };
+const HOME_TITLE = {
+  de: 'Intake Hilfe & Anleitungen – Kalorienzähler App',
+  en: 'Intake Help & Guides – Calorie Counter App',
+};
+
+/**
+ * Search result titles. Starlight's default "<page> | Intake Docs" names neither the app
+ * category nor anything people search for, so the browser/Google title gets the app name
+ * and category instead. Only the <title> tag changes; the header and H1 stay as they are.
+ */
+const searchTitle = (route: StarlightRouteData): string => {
+  const lang = route.locale === 'en' ? 'en' : 'de';
+  const isHome = route.id === '' || route.id === 'en';
+  return isHome ? HOME_TITLE[lang] : `${route.entry.data.title} – ${TITLE_SUFFIX[lang]}`;
+};
+
 export const onRequest = defineRouteMiddleware((context) => {
   const route = context.locals.starlightRoute;
+  const title = route.head.find((entry) => entry.tag === 'title');
+  if (title) title.content = searchTitle(route);
   const all = links(route.sidebar);
   if (route.locale === 'en') {
     const english = externalLinks as Record<string, string>;

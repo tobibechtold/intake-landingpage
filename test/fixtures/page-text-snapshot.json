@@ -1,374 +1,374 @@
 {
   "/": {
-    "words": 1221,
-    "sha": "bab0d523f426cc83"
+    "words": 1222,
+    "sha": "6d2406d1470f4f84"
   },
   "/404": {
-    "words": 69,
-    "sha": "3de1c8238f230714"
+    "words": 70,
+    "sha": "08209caecd581a09"
   },
   "/en": {
-    "words": 1305,
-    "sha": "a95e4f02827c0344"
+    "words": 1306,
+    "sha": "417a9849958327eb"
   },
   "/en/calorie-counter-no-subscription": {
-    "words": 299,
-    "sha": "41f29ee347121b08"
+    "words": 300,
+    "sha": "a2c11e164ed668f0"
   },
   "/en/calorie-tracker-no-account": {
-    "words": 302,
-    "sha": "4807c3b3c93cab01"
+    "words": 303,
+    "sha": "279adddd8e382197"
   },
   "/en/comparisons": {
-    "words": 256,
-    "sha": "e82c0bb37d287ba8"
+    "words": 257,
+    "sha": "a8deeae474f08610"
   },
   "/en/comparisons/fddb-alternative": {
-    "words": 462,
-    "sha": "0d36c38cac9862f0"
+    "words": 463,
+    "sha": "12aa415a534277cb"
   },
   "/en/comparisons/yazio-alternative": {
-    "words": 478,
-    "sha": "bff7783a3435e208"
+    "words": 479,
+    "sha": "efec4b6e99e05b99"
   },
   "/en/features": {
-    "words": 572,
-    "sha": "7bbdcc8690dd93ab"
+    "words": 573,
+    "sha": "7f74802b9c109940"
   },
   "/en/help": {
-    "words": 1296,
-    "sha": "5be533f680a8f493"
+    "words": 1297,
+    "sha": "d45fc67a73d0a451"
   },
   "/en/intake-ai": {
-    "words": 679,
-    "sha": "7be8e9a6fba4f156"
+    "words": 680,
+    "sha": "cc9d03a7d2a9aa6f"
   },
   "/en/press": {
-    "words": 776,
-    "sha": "79939ee6dc9de487"
+    "words": 777,
+    "sha": "f0e48e0c57c60c98"
   },
   "/en/privacy": {
-    "words": 419,
-    "sha": "e15df49020c1897a"
+    "words": 420,
+    "sha": "723159a0d4d89c72"
   },
   "/en/terms": {
-    "words": 426,
-    "sha": "fb33e5264fa430e5"
+    "words": 427,
+    "sha": "82533fd814b6cd01"
   },
   "/en/whats-new": {
-    "words": 3036,
-    "sha": "fb354ae2929bbd18"
+    "words": 3037,
+    "sha": "55c609f6193527d5"
   },
   "/en/whats-new/2.1.1": {
-    "words": 437,
-    "sha": "2fb5f46f7225683f"
+    "words": 438,
+    "sha": "a590f2b3459b754b"
   },
   "/en/whats-new/2.1.2": {
-    "words": 113,
-    "sha": "182558f203b90d7e"
+    "words": 114,
+    "sha": "0c9bdeaed43dc508"
   },
   "/en/whats-new/2.1.3": {
-    "words": 320,
-    "sha": "1f84fd9be7e93095"
+    "words": 321,
+    "sha": "5d7881020a7b2b5c"
   },
   "/en/whats-new/2.1.4": {
-    "words": 483,
-    "sha": "6b7012878948bd09"
+    "words": 484,
+    "sha": "fb75a33301be5677"
   },
   "/en/whats-new/2.2.0": {
-    "words": 566,
-    "sha": "012e33961cf3f6b3"
+    "words": 567,
+    "sha": "ed49dd72d6322954"
   },
   "/en/whats-new/2.2.1": {
-    "words": 214,
-    "sha": "cc5e1f5e819639ff"
+    "words": 215,
+    "sha": "145164504c1cc851"
   },
   "/en/whats-new/2.2.2": {
-    "words": 371,
-    "sha": "72473e02114225e5"
+    "words": 372,
+    "sha": "1c966dda4993df27"
   },
   "/en/whats-new/2.3.0": {
-    "words": 434,
-    "sha": "334b48561b733a8b"
+    "words": 435,
+    "sha": "d52918d923f64a0e"
   },
   "/en/whats-new/2.3.1": {
-    "words": 372,
-    "sha": "b0ff8bd1fce194b5"
+    "words": 373,
+    "sha": "b538dddfc844c5aa"
   },
   "/en/whats-new/2.3.2": {
-    "words": 375,
-    "sha": "bfb4455b8dd0a098"
+    "words": 376,
+    "sha": "fa37253ae3fb38ae"
   },
   "/en/whats-new/2.4.0": {
-    "words": 581,
-    "sha": "e01a24371ee3f5df"
+    "words": 582,
+    "sha": "d2de719d11d72729"
   },
   "/en/whats-new/2.4.1": {
-    "words": 337,
-    "sha": "0206a5a7d7876d46"
+    "words": 338,
+    "sha": "6aaaed25ad6a46c9"
   },
   "/en/whats-new/2.4.2": {
-    "words": 237,
-    "sha": "b9aa07368701e783"
+    "words": 238,
+    "sha": "2cc3d25a54e05042"
   },
   "/en/whats-new/2.4.3": {
-    "words": 328,
-    "sha": "8f2cec4df5c86f6b"
+    "words": 329,
+    "sha": "2d5ec5507fb3f62c"
   },
   "/en/whats-new/2.4.4": {
-    "words": 360,
-    "sha": "6ea7f5115f6dc936"
+    "words": 361,
+    "sha": "78e86e829c5b0393"
   },
   "/en/whats-new/2.4.5": {
-    "words": 360,
-    "sha": "5fcdbed7ef4b52be"
+    "words": 361,
+    "sha": "2a2cc06ec85d827a"
   },
   "/en/whats-new/2.4.6": {
-    "words": 335,
-    "sha": "3097f4ad6b8ed1de"
+    "words": 336,
+    "sha": "c78c406bd60a308c"
   },
   "/en/whats-new/2.4.7": {
-    "words": 250,
-    "sha": "7cd63030a3234754"
+    "words": 251,
+    "sha": "706ad6903744fb82"
   },
   "/en/whats-new/2.5.0": {
-    "words": 389,
-    "sha": "aa58313ed0ff3fae"
+    "words": 390,
+    "sha": "515dc27ed10d9b98"
   },
   "/en/whats-new/2.5.1": {
-    "words": 1224,
-    "sha": "acb5c126b7df4c13"
+    "words": 1225,
+    "sha": "9a3b21b65164f200"
   },
   "/en/whats-new/2.5.2": {
-    "words": 240,
-    "sha": "64ab60c01437c20e"
+    "words": 241,
+    "sha": "92f69ad5bf04fd08"
   },
   "/en/whats-new/2.6.0": {
-    "words": 658,
-    "sha": "f85f89c59b63d532"
+    "words": 659,
+    "sha": "e2f4507891e5c813"
   },
   "/en/whats-new/2.6.1": {
-    "words": 582,
-    "sha": "de1c17d948e12964"
+    "words": 583,
+    "sha": "8e52107e5a0e0deb"
   },
   "/en/whats-new/2.6.2": {
-    "words": 614,
-    "sha": "e6983def9e9b7c8f"
+    "words": 615,
+    "sha": "8be1bb159c7beee3"
   },
   "/en/whats-new/2.6.3": {
-    "words": 822,
-    "sha": "834e6f682ca38b1e"
+    "words": 823,
+    "sha": "4d6852dbf323be09"
   },
   "/en/whats-new/2.7.0": {
-    "words": 617,
-    "sha": "7d0bb95544ad9d77"
+    "words": 618,
+    "sha": "dc942a25dc782833"
   },
   "/en/whats-new/2.7.1": {
-    "words": 1672,
-    "sha": "9533ec5df18cd599"
+    "words": 1673,
+    "sha": "3a714f5b0f3232be"
   },
   "/en/whats-new/2.7.2": {
-    "words": 1227,
-    "sha": "f03e9099f786b359"
+    "words": 1228,
+    "sha": "f637fa92aa2cbd56"
   },
   "/en/whats-new/2.7.3": {
-    "words": 1094,
-    "sha": "a4cd49680cb0de06"
+    "words": 1095,
+    "sha": "b2e8cdeadb11d917"
   },
   "/en/whats-new/2.7.4": {
-    "words": 758,
-    "sha": "aca8c6c42c189c22"
+    "words": 759,
+    "sha": "1889db5da0df7c41"
   },
   "/en/whats-new/2.7.5": {
-    "words": 247,
-    "sha": "d4937536dee77559"
+    "words": 248,
+    "sha": "9671b9b2a8b1d17c"
   },
   "/en/whats-new/2.7.6": {
-    "words": 147,
-    "sha": "01fe56e728a9f99d"
+    "words": 148,
+    "sha": "24a09473997b1c5d"
   },
   "/en/whats-new/2.8.0": {
-    "words": 1261,
-    "sha": "f9312b8ec587b079"
+    "words": 1262,
+    "sha": "95bde44c3ac23bb1"
   },
   "/funktionen": {
-    "words": 511,
-    "sha": "84b6a4723fdb5f28"
+    "words": 512,
+    "sha": "9165a478c240396e"
   },
   "/hilfe": {
-    "words": 1145,
-    "sha": "af2b504d9cc50a40"
+    "words": 1146,
+    "sha": "94ec6457cf5b210f"
   },
   "/intake-ai": {
-    "words": 631,
-    "sha": "9bb5609a8e624dd9"
+    "words": 632,
+    "sha": "f656628b786f0503"
   },
   "/kalorien-tracker-ohne-konto": {
-    "words": 291,
-    "sha": "ff36d4fe809875ce"
+    "words": 292,
+    "sha": "c10a5df8103c2660"
   },
   "/kalorienzaehler-ohne-abo": {
-    "words": 276,
-    "sha": "d147113292a83759"
+    "words": 277,
+    "sha": "6cda021dc2b5c09e"
   },
   "/presse": {
-    "words": 703,
-    "sha": "477c464f451b783d"
+    "words": 704,
+    "sha": "98cfc1e3b2d2acd5"
   },
   "/privacy": {
-    "words": 477,
-    "sha": "68b6a54e5c1b7347"
+    "words": 478,
+    "sha": "aff2b2e815c1ee82"
   },
   "/terms": {
-    "words": 509,
-    "sha": "fd7e3e0116b01149"
+    "words": 510,
+    "sha": "5479835d96345435"
   },
   "/vergleiche": {
-    "words": 251,
-    "sha": "57c96e36eb6517f9"
+    "words": 252,
+    "sha": "45688d22cbf39f72"
   },
   "/vergleiche/fddb-alternative": {
-    "words": 428,
-    "sha": "d75a5510edeaedf9"
+    "words": 429,
+    "sha": "0f01cc825bc339d8"
   },
   "/vergleiche/yazio-alternative": {
-    "words": 413,
-    "sha": "b377aba42b6113db"
+    "words": 414,
+    "sha": "d82185c37709793d"
   },
   "/whats-new": {
-    "words": 2790,
-    "sha": "1fd891e48d1a11db"
+    "words": 2791,
+    "sha": "2742f1a290b5f874"
   },
   "/whats-new/2.1.1": {
-    "words": 456,
-    "sha": "7d5f4715c1de36bf"
+    "words": 457,
+    "sha": "b6479af22ddf0c41"
   },
   "/whats-new/2.1.2": {
-    "words": 126,
-    "sha": "a825b29e0337e128"
+    "words": 127,
+    "sha": "59f1b5d44dba3d03"
   },
   "/whats-new/2.1.3": {
-    "words": 325,
-    "sha": "ce2f25e645de46dd"
+    "words": 326,
+    "sha": "37953affaa26cea3"
   },
   "/whats-new/2.1.4": {
-    "words": 470,
-    "sha": "f66a82493a3e8a0e"
+    "words": 471,
+    "sha": "029c6129cb97a4a9"
   },
   "/whats-new/2.2.0": {
-    "words": 616,
-    "sha": "cf9b5200c90bccf5"
+    "words": 617,
+    "sha": "4b917a77b7809566"
   },
   "/whats-new/2.2.1": {
-    "words": 199,
-    "sha": "99ab642044ce0cb9"
+    "words": 200,
+    "sha": "0bacd023b7eda7dd"
   },
   "/whats-new/2.2.2": {
-    "words": 424,
-    "sha": "7d877aacf5027071"
+    "words": 425,
+    "sha": "ecc7111fc5681ba7"
   },
   "/whats-new/2.3.0": {
-    "words": 446,
-    "sha": "362955d8f18aa1e2"
+    "words": 447,
+    "sha": "dc00c2a049ccb89b"
   },
   "/whats-new/2.3.1": {
-    "words": 368,
-    "sha": "8f1873ef6192eda2"
+    "words": 369,
+    "sha": "7aba0aa357a8e136"
   },
   "/whats-new/2.3.2": {
-    "words": 372,
-    "sha": "175a00f6439b48ba"
+    "words": 373,
+    "sha": "9157cb9a41adc9f2"
   },
   "/whats-new/2.4.0": {
-    "words": 553,
-    "sha": "e2de30dbcf0b0afe"
+    "words": 554,
+    "sha": "cab2c41dbf75b78a"
   },
   "/whats-new/2.4.1": {
-    "words": 322,
-    "sha": "2c2b106d90b6da2d"
+    "words": 323,
+    "sha": "4640c7fb6df9a1dd"
   },
   "/whats-new/2.4.2": {
-    "words": 216,
-    "sha": "5dad03f8dcbddbff"
+    "words": 217,
+    "sha": "11e90b678e554051"
   },
   "/whats-new/2.4.3": {
-    "words": 320,
-    "sha": "6adbfa9ea860f54e"
+    "words": 321,
+    "sha": "d39a96718eb93421"
   },
   "/whats-new/2.4.4": {
-    "words": 350,
-    "sha": "80bc6996ed0e1095"
+    "words": 351,
+    "sha": "0ac63a7572b72598"
   },
   "/whats-new/2.4.5": {
-    "words": 350,
-    "sha": "924d0825c1480b70"
+    "words": 351,
+    "sha": "c38aad3d463441bd"
   },
   "/whats-new/2.4.6": {
-    "words": 339,
-    "sha": "7c234963cb26e309"
+    "words": 340,
+    "sha": "88cd9195dfd19486"
   },
   "/whats-new/2.4.7": {
-    "words": 243,
-    "sha": "5966091bb626df4f"
+    "words": 244,
+    "sha": "707df137dc3a4d18"
   },
   "/whats-new/2.5.0": {
-    "words": 384,
-    "sha": "37779df3315faa22"
+    "words": 385,
+    "sha": "bcb2f5019e71db46"
   },
   "/whats-new/2.5.1": {
-    "words": 1148,
-    "sha": "0874f2895c779ab4"
+    "words": 1149,
+    "sha": "c808e36edc70d96f"
   },
   "/whats-new/2.5.2": {
-    "words": 242,
-    "sha": "1841bc8e394f2e75"
+    "words": 243,
+    "sha": "d4abd0afc326470c"
   },
   "/whats-new/2.6.0": {
-    "words": 615,
-    "sha": "5aaa18c107f2d145"
+    "words": 616,
+    "sha": "1a9a30d58d71ce09"
   },
   "/whats-new/2.6.1": {
-    "words": 543,
-    "sha": "6e927557c9b935b4"
+    "words": 544,
+    "sha": "98bada1ed602e0ea"
   },
   "/whats-new/2.6.2": {
-    "words": 594,
-    "sha": "00bdb92127fa3a89"
+    "words": 595,
+    "sha": "0c612043e3ebdae7"
   },
   "/whats-new/2.6.3": {
-    "words": 793,
-    "sha": "5e0b6d713cb08548"
+    "words": 794,
+    "sha": "dc9f372e9fbd830e"
   },
   "/whats-new/2.7.0": {
-    "words": 621,
-    "sha": "52a6a9614055b7ac"
+    "words": 622,
+    "sha": "de8603b12517ad0b"
   },
   "/whats-new/2.7.1": {
-    "words": 1614,
-    "sha": "a7e62a4113ea8c43"
+    "words": 1615,
+    "sha": "ad6415143cc7b412"
   },
   "/whats-new/2.7.2": {
-    "words": 1169,
-    "sha": "b7dc615341d18972"
+    "words": 1170,
+    "sha": "712f8d97b48002c3"
   },
   "/whats-new/2.7.3": {
-    "words": 1038,
-    "sha": "45b5026f7f084163"
+    "words": 1039,
+    "sha": "2d369fc60bd4a551"
   },
   "/whats-new/2.7.4": {
-    "words": 773,
-    "sha": "5660f3c39b96b694"
+    "words": 774,
+    "sha": "9e0bafd499dd9e14"
   },
   "/whats-new/2.7.5": {
-    "words": 243,
-    "sha": "8b591c3ef55f75d6"
+    "words": 244,
+    "sha": "9616f11349c5b19d"
   },
   "/whats-new/2.7.6": {
-    "words": 143,
-    "sha": "eb3d12a2f9b7a798"
+    "words": 144,
+    "sha": "a2fb6dc7daa191cd"
   },
   "/whats-new/2.8.0": {
-    "words": 1261,
-    "sha": "2ea19e8c1a78e475"
+    "words": 1262,
+    "sha": "45f84536e71fa8c6"
   }
 }

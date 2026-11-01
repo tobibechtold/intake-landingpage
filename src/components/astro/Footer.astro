@@ -1,5 +1,6 @@
 ---
 import logo from '@/assets/logo.png';
+import { docsHome } from '@/lib/helpTopics';
 import { buildLocalizedPath } from '@/lib/localeRouting';
 import { getAppStoreUrl, getGooglePlayUrl } from '@/lib/storeLinks';
 import { useT } from '@/i18n/t';
@@ -25,6 +26,7 @@ const discover = [
   { href: buildLocalizedPath('intakeAI', lang), label: t('intakeAINav') },
   { href: buildLocalizedPath('comparisons', lang), label: t('comparisonsNav') },
   { href: buildLocalizedPath('help', lang), label: t('helpNav') },
+  { href: docsHome(lang), label: t('docsNav'), external: true },
   { href: buildLocalizedPath('comparisonDetail', lang, 'yazio-alternative'), label: t('yazioAlternative') },
   { href: buildLocalizedPath('comparisonDetail', lang, 'fddb-alternative'), label: t('fddbAlternative') },
 ];
@@ -54,7 +56,16 @@ const year = new Date().getFullYear();
       <div class="flex flex-col gap-6 md:flex-row md:gap-12">
         <div class="flex flex-col gap-3">
           <span class={HEADING}>{t('discover')}</span>
-          {discover.map((item) => <a href={item.href} class={LINK}>{item.label}</a>)}
+          {discover.map((item) => (
+            <a
+              href={item.href}
+              class={LINK}
+              target={'external' in item ? '_blank' : undefined}
+              rel={'external' in item ? 'noopener' : undefined}
+            >
+              {item.label}
+            </a>
+          ))}
         </div>
 
         <div class="flex flex-col gap-3">
