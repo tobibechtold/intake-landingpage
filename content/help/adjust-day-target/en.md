@@ -34,4 +34,4 @@ steps:
       image: ./assets/en/ios/4.webp
 ---
 
-On iPhone, “Reset” removes the change. With the weekly budget on, no day drops below your basal metabolic rate, and never below 1,200 kcal.
+On iPhone, “Reset” removes the change. With the weekly budget on, no day drops below your basal metabolic rate, and never below 1,200 kcal. If your daily goal is already below your basal metabolic rate, only the 1,200 kcal limit applies to your changes.

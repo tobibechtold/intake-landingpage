@@ -26,6 +26,8 @@ steps:
       image: ./assets/de/ios/3.webp
 ---
 
-Die Durchschnitte zählen nur Tage, an denen du etwas eingetragen hast, das zeigt „Tage erfasst“. Ein vergessener Tag zieht den Schnitt also nicht nach unten.
+Die Durchschnitte und „Übrig“ zählen nur Tage, an denen du etwas eingetragen oder „Nichts gegessen“ markiert hast, das zeigt „Tage erfasst“. Ein vergessener Tag zieht den Schnitt also nicht nach unten und zählt nicht als übrige Kalorien.
+
+Mit Wochenbudget misst die Statistik jeden Tag an deinem geplanten Ziel. Kalorien, die du mit dem Wochenbudget von einem Tag auf einen anderen verschiebst, zählen so nur einmal.
 
 „Ø Ziel“ enthält die Aktivitätskalorien, die zu deinem Ziel addiert wurden. Zählt nur ein Teil deiner verbrannten Kalorien fürs Ziel, steht unter „Verbrannt“, wie viel davon eingerechnet wurde.
