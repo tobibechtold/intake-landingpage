@@ -18,9 +18,21 @@ highlights:
 - **Water at a glance.** The water card is fresher and more compact. Every glass counts, even past your goal, and you log one or two glasses with a single tap.
 - **Activity, clearly explained.** The activity card shows first how many calories your activity adds to today's goal.
 
+![The new water and activity cards](assets/cards-ios-en.png)
+
+![The new water and activity cards on Android](assets/cards-android-en.png)
+
 ### iOS
 
 - **A new design on Apple Watch.** The watch app is calmer and more modern. You set your weight with the Digital Crown, and Intake fits on every watch face, including a Smart Stack card that logs a glass of water with one tap.
+
+![Intake on Apple Watch](assets/watch-en.png)
+
+### Android
+
+- **The water widget, redesigned.** The water widget now looks like the card: your glasses against your goal, also past it, and a tap adds a glass. It comes in two sizes.
+
+![The water widget on Android](assets/widget-android-en.png)
 
 ## Bug fixes
 
