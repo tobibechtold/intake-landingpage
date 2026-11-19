@@ -7,7 +7,7 @@ related:
   - water-goal
   - water-from-other-apps
 steps:
-  - text: "On Today, tap the plus on the “Water” card to add a glass."
+  - text: "On Today, tap the blue button with your glass size on the “Water” card, for example “+ 250 ml”, to add a glass. The button next to it adds two glasses."
     ios:
       image: ./assets/en/ios/1.webp
     android:
@@ -35,5 +35,7 @@ steps:
     android:
       image: ./assets/en/android/5.webp
 ---
+
+Every glass keeps counting past your goal, for example 11 / 10 glasses.
 
 Marked drinks are listed on the card under “Other beverages”. Water you log in other apps shows up on iPhone as long as “Water from other apps” under Settings > “Apple Health” is on (the default).

@@ -7,7 +7,7 @@ related:
   - water-goal
   - water-from-other-apps
 steps:
-  - text: "Tippe auf Heute in der Karte „Wasser“ auf das Plus, um ein Glas hinzuzufügen."
+  - text: "Tippe auf Heute in der Karte „Wasser“ auf den blauen Knopf mit deiner Glasgröße, etwa „+ 250 ml“, um ein Glas hinzuzufügen. Der Knopf daneben fügt zwei Gläser hinzu."
     ios:
       image: ./assets/de/ios/1.webp
     android:
@@ -18,11 +18,11 @@ steps:
     android:
       text: "Das Minus nimmt ein Glas wieder weg."
       image: ./assets/de/android/2.webp
-  - text: "Für eine andere Menge tippst du auf „Benutzerdefiniert“ und gibst die Milliliter ein."
+  - text: "Für eine andere Menge tippst du auf „Eigene“ und gibst die Milliliter ein."
     ios:
       image: ./assets/de/ios/3.webp
     android:
-      text: "Für eine andere Menge tippst du auf „Benutzerdefiniert“, stellst die Menge ein und tippst auf das Häkchen."
+      text: "Für eine andere Menge tippst du auf „Eigene“, stellst die Menge ein und tippst auf das Häkchen."
       image: ./assets/de/android/3.webp
   - text: "Bei anderen Getränken schaltest du beim Hinzufügen „Als Getränk markieren“ ein, dann zählt ihre Menge zum Wasserziel."
     ios:
@@ -35,5 +35,7 @@ steps:
     android:
       image: ./assets/de/android/5.webp
 ---
+
+Auch über deinem Ziel zählt jedes Glas weiter, zum Beispiel 11 / 10 Gläser.
 
 Markierte Getränke stehen in der Karte unter „Weitere Getränke“ (Android: „Andere Getränke“). Wasser, das du in anderen Apps einträgst, zeigt Intake auf dem iPhone, solange unter Einstellungen > „Apple Health“ „Wasser aus anderen Apps“ eingeschaltet ist (Standard).
