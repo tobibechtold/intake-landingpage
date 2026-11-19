@@ -2,13 +2,25 @@
 version: "2.8.2"
 publishedAt: "2026-11-19"
 title: "What's new in Intake 2.8.2"
-summary: "Stats add up with the weekly budget, calories from the other days work with a goal below your basal metabolic rate, and your own Claude key returns results reliably."
+summary: "See water and activity at a glance, enjoy a new design on Apple Watch, and get Stats that add up with the weekly budget."
 coverImage: "./assets/cover.svg"
 highlights:
+  - "Water at a glance, every glass counts past your goal"
+  - "Activity shows first what it adds to your daily goal"
+  - "iOS: a new design on Apple Watch"
   - "Stats count weekly-budget calories once"
-  - "Calories from the other days, even below your BMR"
-  - "Your own Claude key works reliably, with Haiku too"
 ---
+
+## New
+
+### Both platforms
+
+- **Water at a glance.** The water card is fresher and more compact. Every glass counts, even past your goal, and you log one or two glasses with a single tap.
+- **Activity, clearly explained.** The activity card shows first how many calories your activity adds to today's goal.
+
+### iOS
+
+- **A new design on Apple Watch.** The watch app is calmer and more modern. You set your weight with the Digital Crown, and Intake fits on every watch face, including a Smart Stack card that logs a glass of water with one tap.
 
 ## Bug fixes
 

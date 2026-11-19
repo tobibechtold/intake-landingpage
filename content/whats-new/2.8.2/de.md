@@ -2,13 +2,25 @@
 version: "2.8.2"
 publishedAt: "2026-11-19"
 title: "Was ist neu in Intake 2.8.2"
-summary: "Die Statistik stimmt mit dem Wochenbudget, Kalorien von den anderen Tagen gehen auch mit einem Ziel unter dem Grundumsatz, und dein eigener Claude-Schlüssel liefert zuverlässig Ergebnisse."
+summary: "Wasser und Aktivität siehst du jetzt auf einen Blick, die Apple Watch bekommt ein neues Design, und die Statistik stimmt mit dem Wochenbudget."
 coverImage: "./assets/cover.svg"
 highlights:
+  - "Wasser auf einen Blick, jedes Glas zählt auch über dem Ziel"
+  - "Aktivität zeigt zuerst, was sie deinem Tagesziel gutschreibt"
+  - "iOS: Neues Design auf der Apple Watch"
   - "Statistik zählt Wochenbudget-Kalorien nur einmal"
-  - "Kalorien von den anderen Tagen auch unter dem Grundumsatz"
-  - "Eigener Claude-Schlüssel liefert zuverlässig, auch mit Haiku"
 ---
+
+## Neu
+
+### Beide Plattformen
+
+- **Wasser auf einen Blick.** Die Wasserkarte ist frischer und kompakter. Jedes Glas zählt, auch über dein Ziel hinaus, und ein oder zwei Gläser trägst du mit einem Tipp ein.
+- **Aktivität, klar erklärt.** Die Aktivitätskarte zeigt zuerst, wie viele Kalorien deine Bewegung heute deinem Tagesziel gutschreibt.
+
+### iOS
+
+- **Neues Design auf der Apple Watch.** Die Watch-App ist ruhiger und moderner. Dein Gewicht stellst du mit der Digital Crown ein, und Intake gibt es auf jedem Zifferblatt, auch als Karte im Smart Stack, die mit einem Tipp ein Glas Wasser einträgt.
 
 ## Fehlerbehebungen
 
