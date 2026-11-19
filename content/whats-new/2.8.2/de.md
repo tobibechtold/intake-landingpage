@@ -22,17 +22,17 @@ highlights:
 
 ![Die neue Wasser- und Aktivitätskarte auf Android](assets/cards-android-de.png)
 
+- **Das Wasser-Widget im neuen Look.** Das Wasser-Widget sieht jetzt aus wie die Karte: deine Gläser im Verhältnis zum Ziel, auch darüber hinaus, und ein Tipp trägt ein Glas ein.
+
+![Das Wasser-Widget auf dem Home-Bildschirm](assets/widget-ios-de.png)
+
+![Das Wasser-Widget auf Android](assets/widget-android-de.png)
+
 ### iOS
 
 - **Neues Design auf der Apple Watch.** Die Watch-App ist ruhiger und moderner. Dein Gewicht stellst du mit der Digital Crown ein, und Intake gibt es auf jedem Zifferblatt, auch als Karte im Smart Stack, die mit einem Tipp ein Glas Wasser einträgt.
 
 ![Intake auf der Apple Watch](assets/watch-de.png)
-
-### Android
-
-- **Das Wasser-Widget im neuen Look.** Das Wasser-Widget sieht jetzt aus wie die Karte: deine Gläser im Verhältnis zum Ziel, auch darüber hinaus, und ein Tipp trägt ein Glas ein. Es gibt das Widget in zwei Größen.
-
-![Das Wasser-Widget auf Android](assets/widget-android-de.png)
 
 ## Fehlerbehebungen
 
