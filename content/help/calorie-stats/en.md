@@ -28,6 +28,8 @@ steps:
       image: ./assets/en/ios/3.webp
 ---
 
-The averages only count days you logged something, shown under days logged. A day you forgot does not drag your average down.
+The averages and what is left only count days you logged something or marked “Ate nothing”, shown under days logged. A day you forgot does not drag your average down and does not count as calories left.
+
+With the weekly budget on, Stats measures each day against its planned goal. Calories you move from one day to another with the weekly budget therefore count only once.
 
 Your average target includes the activity calories added to your target. If only part of the calories you burned counts toward your target, the burned tile shows how much of it was counted.

@@ -34,4 +34,4 @@ steps:
       image: ./assets/de/ios/4.webp
 ---
 
-Auf dem iPhone nimmt „Zurücksetzen“ die Änderung wieder weg. Mit Wochenbudget fällt dabei kein Tag unter deinen Grundumsatz und nie unter 1.200 kcal.
+Auf dem iPhone nimmt „Zurücksetzen“ die Änderung wieder weg. Mit Wochenbudget fällt dabei kein Tag unter deinen Grundumsatz und nie unter 1.200 kcal. Liegt dein Tagesziel schon unter deinem Grundumsatz, gilt für deine Änderungen nur die Grenze von 1.200 kcal.
