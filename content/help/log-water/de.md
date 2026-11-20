@@ -7,7 +7,7 @@ related:
   - water-goal
   - water-from-other-apps
 steps:
-  - text: "Tippe auf Heute in der Karte „Wasser“ auf den blauen Knopf mit deiner Glasgröße, etwa „+ 250 ml“, um ein Glas hinzuzufügen. Der Knopf daneben fügt zwei Gläser hinzu."
+  - text: "Tippe auf Heute in der Karte „Wasser“ auf den blauen Knopf mit deiner Glasgröße, etwa „+ 250 ml“. Der Knopf daneben fügt zwei Gläser hinzu."
     ios:
       image: ./assets/de/ios/1.webp
     android:
